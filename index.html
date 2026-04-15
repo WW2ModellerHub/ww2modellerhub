@@ -66,12 +66,12 @@ body{
 
 /* ── HEADER ─────────────────────────────────────── */
 header{
-  background:linear-gradient(180deg,var(--raf-dark) 0%,var(--raf-mid) 100%);
+  background:linear-gradient(180deg,#081422 0%,#0d1c35 100%);
   border-bottom:3px solid var(--brass);
   padding:1.2rem 2rem .8rem;
   display:flex;align-items:center;justify-content:space-between;
   position:sticky;top:0;z-index:100;
-  box-shadow:0 4px 24px rgba(0,0,0,.5);
+  box-shadow:0 4px 32px rgba(0,0,0,.7);
 }
 .logo{
   font-family:'Special Elite',cursive;
@@ -97,6 +97,7 @@ header{
   padding:5rem 2rem 4rem;
   text-align:center;
   border-bottom:1px solid rgba(255,255,255,.08);
+  position:relative;overflow:hidden;
 }
 .hero-eyebrow{
   font-family:'Oswald',sans-serif;font-size:13px;font-weight:500;
@@ -339,7 +340,14 @@ footer a:hover{color:var(--brass)}
 <body>
 
 <header>
-  <a href="index.html" class="logo">WW2 <span>Modeller</span></a>
+  <a href="index.html" class="logo">
+    <svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-right:.6rem" aria-label="RAF Roundel">
+      <circle cx="18" cy="18" r="18" fill="#003087"/>
+      <circle cx="18" cy="18" r="12" fill="#fff"/>
+      <circle cx="18" cy="18" r="7" fill="#CF142B"/>
+    </svg>
+    WW2 <span>Modeller</span>
+  </a>
   <div class="header-tagline">
     <span class="header-stat"><span class="header-stat-n">1</span> aircraft live</span>
     <span class="header-divider">·</span>
@@ -360,11 +368,26 @@ footer a:hover{color:var(--brass)}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow">Scale Modelling · History · Reference</div>
+  <!-- SVG Hurricane silhouette watermark -->
+  <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg"
+       style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:110%;height:120%;opacity:.05;pointer-events:none">
+    <!-- Hurricane top-view silhouette -->
+    <!-- Fuselage -->
+    <ellipse cx="450" cy="140" rx="200" ry="14" fill="white"/>
+    <!-- Nose -->
+    <ellipse cx="260" cy="140" rx="30" ry="12" fill="white"/>
+    <!-- Wings — broad elliptical Hurricane wings -->
+    <ellipse cx="440" cy="140" rx="60" ry="95" fill="white" transform="rotate(-3 440 140)"/>
+    <!-- Tailplane -->
+    <ellipse cx="640" cy="140" rx="22" ry="48" fill="white"/>
+    <!-- Propeller disc -->
+    <ellipse cx="240" cy="140" rx="8" ry="52" fill="white" opacity=".6"/>
+  </svg>
+  <div class="hero-eyebrow">Scale Modelling · History · Reference · Battle of Britain</div>
   <h1 class="hero-title">WW2 Modeller Hub</h1>
-  <p class="hero-sub">Complete reference for scale modellers and aviation enthusiasts. Squadrons, pilots, paint codes, kits, decals, aftermarket and books — for every major WW2 aircraft.</p>
+  <p class="hero-sub">The complete reference for WW2 aircraft scale modellers. Squadrons, pilots, paint codes, kits, decals, aftermarket and step-by-step build guides — starting with the Hawker Hurricane.</p>
   <div>
-    <a href="hurricane_paradise.html?tab=build" class="hero-cta">Start with the Hurricane →</a>
+    <a href="hurricane_paradise.html" class="hero-cta">Hawker Hurricane Reference →</a>
     <a href="#aircraft" class="hero-cta outline">All Aircraft ↓</a>
   </div>
   <div style="margin-top:1.8rem;max-width:500px;margin-left:auto;margin-right:auto;position:relative">
@@ -378,6 +401,30 @@ footer a:hover{color:var(--brass)}
 
 <div class="main">
 <div class="content">
+
+<!-- ARTICLES SECTION -->
+<div style="margin-bottom:2.5rem">
+  <div class="section-label" style="margin-bottom:1.2rem">Latest guides & articles</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem">
+    <a href="article-hurricane-kits-guide.html" style="background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--brass);border-radius:3px;padding:1rem 1.1rem;text-decoration:none;display:block;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.04)'" onmouseout="this.style.background='rgba(21,39,68,.7)'">
+      <div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:.4rem">Build guide · Hurricane</div>
+      <div style="font-family:'Special Elite',cursive;font-size:1.05rem;color:#fff;margin-bottom:.4rem;line-height:1.3">Which Hurricane kit should you buy? The complete 2025 guide</div>
+      <div style="font-size:14px;color:rgba(255,255,255,.45);line-height:1.5">All 9 kits compared across 1:72, 1:48 and 1:32 — accuracy, detail, fit and value</div>
+    </a>
+    <a href="article-hurricane-bob-colours.html" style="background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--brass2);border-radius:3px;padding:1rem 1.1rem;text-decoration:none;display:block;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.04)'" onmouseout="this.style.background='rgba(21,39,68,.7)'">
+      <div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass2);margin-bottom:.4rem">Reference · Paint</div>
+      <div style="font-family:'Special Elite',cursive;font-size:1.05rem;color:#fff;margin-bottom:.4rem;line-height:1.3">Hurricane BoB camouflage — paint codes for all four brands</div>
+      <div style="font-size:14px;color:rgba(255,255,255,.45);line-height:1.5">Dark Earth, Dark Green and Sky matched across Humbrol, Tamiya, Vallejo and AK Interactive</div>
+    </a>
+    <a href="articles.html" style="background:rgba(21,39,68,.4);border:1px dashed rgba(255,255,255,.12);border-radius:3px;padding:1rem 1.1rem;text-decoration:none;display:flex;align-items:center;justify-content:center;transition:background .15s;min-height:100px" onmouseover="this.style.background='rgba(255,255,255,.03)'" onmouseout="this.style.background='rgba(21,39,68,.4)'">
+      <div style="text-align:center">
+        <div style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)">All articles →</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.3);margin-top:.4rem">Build guides · Reference · History</div>
+      </div>
+    </a>
+  </div>
+</div>
+
 
 <!-- AIRCRAFT SECTION -->
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:2.5rem">
@@ -760,7 +807,7 @@ footer a:hover{color:var(--brass)}
 </div><!-- /main -->
 
 <footer>
-  <p>WW2 Modeller Hub · For scale modellers and aviation enthusiasts · Not affiliated with any manufacturer or retailer</p>
+  <p><a href="about.html">About</a> · <a href="articles.html">Articles</a> · <a href="privacy.html">Privacy Policy</a></p>
   <p style="margin-top:.5rem"><a href="hurricane_paradise.html?tab=build">Hurricane</a> · More aircraft coming soon</p>
 </footer>
 
