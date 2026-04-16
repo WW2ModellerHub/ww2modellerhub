@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weathering the BoB Spitfire — Airfield Mud, Exhaust Staining and Gun Blast Marks — WW2 Modeller Hub</title>
+<meta name="description" content="Step-by-step weathering guide for Battle of Britain Spitfires. Station-specific mud colours for Hornchurch, Biggin Hill and Middle Wallop. Gun port blast marks, exhaust staining and walkway chipping.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--raf-dark:#0a1628;--raf-mid:#0e1f3a;--brass:#b8902a;--brass2:#d4a83a;--cream:#e8dfc0;--raf-sky:#4a8fce;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color:var(--cream);min-height:100vh;font-size:18px}
+header{background:linear-gradient(180deg,var(--raf-dark) 0%,var(--raf-mid) 100%);border-bottom:3px solid var(--brass);padding:1.2rem 2rem .8rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 4px 24px rgba(0,0,0,.5)}
+.logo{font-family:'Special Elite',cursive;font-size:1.6rem;color:#fff;text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.logo span{color:var(--brass2)}
+article{max-width:740px;margin:0 auto;padding:3rem 2rem 6rem}
+.art-eyebrow{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-bottom:.6rem}
+.art-title{font-family:'Special Elite',cursive;font-size:clamp(1.8rem,5vw,2.8rem);color:#fff;line-height:1.15;margin-bottom:.8rem}
+.art-meta{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:2rem;display:flex;gap:1rem;flex-wrap:wrap}
+.art-intro{font-size:1.1rem;color:rgba(255,255,255,.8);line-height:1.85;margin-bottom:2rem;border-left:3px solid var(--brass);padding-left:1.2rem}
+h2{font-family:'Special Elite',cursive;font-size:1.5rem;color:var(--brass2);margin:2.5rem 0 .8rem}
+h3{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--raf-sky);margin:1.5rem 0 .5rem}
+p{color:rgba(255,255,255,.78);line-height:1.85;margin-bottom:1rem;font-size:17px}
+a{color:var(--brass2);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{color:rgba(255,255,255,.78);line-height:1.85;margin:0 0 1rem 1.5rem;font-size:17px}
+li{margin-bottom:.4rem}
+.tip-box{background:rgba(184,144,42,.08);border:1px solid rgba(184,144,42,.2);border-radius:3px;padding:1rem 1.2rem;margin:1.5rem 0;font-size:16px;color:rgba(255,255,255,.78);line-height:1.8}
+.tip-label{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:.4rem}
+.colour-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;margin-bottom:1.5rem;overflow:hidden}
+.cc-swatch{height:64px;display:flex;align-items:center;padding:0 1.2rem;gap:.8rem}
+.cc-hex{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;color:rgba(255,255,255,.5)}
+.cc-raf-name{font-family:'Special Elite',cursive;font-size:1.1rem;color:#fff}
+.cc-body{padding:1rem 1.2rem}
+.codes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.7rem;margin-top:.6rem}
+.code-row{background:rgba(0,0,0,.25);border-radius:2px;padding:.5rem .7rem}
+.cr-brand{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:2px}
+.cr-code{font-family:'Oswald',sans-serif;font-size:14px;color:var(--brass2)}
+.cr-name{font-size:13px;color:rgba(255,255,255,.55);margin-top:1px}
+.kit-row{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-left:4px solid var(--brass);border-radius:2px;padding:1rem 1.2rem;margin-bottom:.8rem}
+.kit-name{font-family:'Special Elite',cursive;font-size:1.1rem;color:#fff;margin-bottom:.3rem}
+.kit-stars{color:var(--brass);margin-bottom:.3rem}
+.kit-detail{font-size:15px;color:rgba(255,255,255,.65);line-height:1.65}
+footer{background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.06);padding:2rem;text-align:center;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;color:rgba(255,255,255,.25)}
+footer a{color:rgba(255,255,255,.35);text-decoration:none}
+@media(max-width:600px){article{padding:2rem 1rem 4rem}.art-title{font-size:1.6rem}header{padding:.8rem 1rem}}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">
+    <svg width="30" height="30" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+      <circle cx="18" cy="18" r="18" fill="#003087"/>
+      <circle cx="18" cy="18" r="12" fill="#fff"/>
+      <circle cx="18" cy="18" r="7" fill="#CF142B"/>
+    </svg>
+    WW2 <span>Modeller</span>
+  </a>
+  <nav style="display:flex;align-items:center;gap:1rem;margin-left:auto">
+    <a href="hurricane_paradise.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none" onmouseover="this.style.color='var(--brass)'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Hurricane</a>
+    <a href="spitfire_paradise.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none" onmouseover="this.style.color='var(--brass)'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Spitfire</a>
+    <a href="articles.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none" onmouseover="this.style.color='var(--brass)'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Articles</a>
+    <a href="index.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);text-decoration:none;padding:.35rem .8rem;border:1px solid rgba(184,144,42,.3);border-radius:2px" onmouseover="this.style.background='rgba(184,144,42,.1)'" onmouseout="this.style.background='transparent'">← Hub</a>
+  </nav>
+</header>
+<article>
+  <div class="art-eyebrow">Build Guide · Weathering</div>
+  <h1 class="art-title">Weathering the BoB Spitfire — station by station</h1>
+  <div class="art-meta"><span>WW2 Modeller Hub</span><span>2025</span><span>10 min read</span></div>
+<p class="art-intro">A Battle of Britain Spitfire was not a pristine display piece. After weeks of intensive operations — multiple sorties per day, rapid turnarounds, field maintenance — the aircraft showed real wear. Getting this right means understanding which specific marks appeared where, and how the soil at each airfield looked on the undersurfaces. This guide works through the key weathering features step by step.</p>
+
+<h2>The five key weathering features</h2>
+
+<h3>1. Exhaust staining</h3>
+<p>All BoB Spitfires showed exhaust staining on the port upper cowling. The Merlin's individual ejector stacks discharged upward and rearward, leaving a 6–10 inch brown-black streak on the starboard-facing surface of the port cowling. Use brown-black oils (Lamp Black mixed with Raw Umber, roughly 70:30) streaked rearward with a fan brush dampened with Odourless Thinner. Build up in thin passes — the real staining was not uniform, fading toward the rear.</p>
+
+<div class="tip-box">
+<div class="tip-label">Getting it right</div>
+The exhaust exits were approximately at the level of the wing root leading edge on the upper surface. The streak runs at a slight downward angle toward the trailing edge — not perfectly horizontal. Look at photographs of AR501 at Old Warden in sunlight for the most accurate reference.
+</div>
+
+<h3>2. Gun port blast marks</h3>
+<p>All BoB Spitfires had eight Browning .303 machine guns — four per wing. Each gun port was sealed with yellow-doped fabric tape before flight; after firing, the spent case and blast scoring was visible behind each of the eight ports. Model this with carbon black airbrushed or dry-brushed rearward from each port. The tape itself (if unspent) was a warm buff-yellow — Humbrol 74 or Tamiya XF-3 lightened with XF-2.</p>
+
+<h3>3. Port wing walkway chipping</h3>
+<p>Every Spitfire had a painted walkway strip on the port wing root — a hatched area where ground crew stepped to access the cockpit. After operations this showed significant chipping and wear through to bare metal. Model with a silver pencil or Humbrol 56 applied with a fine brush in irregular chips. The wear was heaviest near the cockpit entry point and lessened toward the leading edge.</p>
+
+<h3>4. Cockpit sill chipping</h3>
+<p>The cockpit sill — the area that the pilot grabbed and stepped on to enter — showed heavy chipping and paint wear. Dark Earth (if upper-surface colour reached here) or Interior Grey-Green below the sill line. Apply chipping with a sponge fragment for irregular edges.</p>
+
+<h3>5. Leading edge aluminium wear</h3>
+<p>Spitfire wing leading edges wore through to bare aluminium from rain and insect impact during operational flying. A light dry-brush or silver pencil along the very tip of the leading edge — heaviest outboard — replicates this accurately. Do not overdo it: BoB Spitfires were in service weeks, not years.</p>
+
+<h2>Station mud colours</h2>
+
+<h3>Hornchurch — Thames alluvium</h3>
+<p>Pale tan-yellow. The alluvial soil of the Thames Estuary was lighter than the London clay of inland stations. Mix: Tamiya XF-57 + XF-60 (2:1) + trace XF-2. Apply with a stiff brush to the undercarriage, wheel bays and lower fuselage sides.</p>
+
+<h3>Biggin Hill — chalk and flint</h3>
+<p>Pale buff-grey. Chalk subsoil means pale, almost white dust rather than clay mud. Mix: Tamiya XF-57 + XF-2 (1:1) + trace XF-64. This is noticeably lighter than Hornchurch — the ground at Biggin in dry summer conditions left a pale grey-white film on the undersurfaces.</p>
+
+<h3>Westhampnett (now Goodwood) — Sussex clay</h3>
+<p>Dark rich brown. The heavy Sussex clay gives a much darker, redder-brown contamination than the chalk stations. Mix: Tamiya XF-64 + XF-52 (1:1). 602 Sqn Spitfires would have shown this distinctly on their undercarriages.</p>
+
+<h3>Middle Wallop — Hampshire chalk</h3>
+<p>Almost white. The palest mud of any BoB station — chalk downland drains rapidly and leaves a very fine, white-grey dust rather than wet mud. Mix: Tamiya XF-2 + trace XF-57 (10:1). Apply dry, not wet — this was primarily dust contamination.</p>
+
+<h3>Warmwell — Dorset limestone</h3>
+<p>Pale grey-buff. Similar to chalk but slightly darker and more grey in tone. Mix: Tamiya XF-2 + XF-57 (8:1). Minimal mud — limestone also drains quickly.</p>
+
+<h3>Duxford — Cambridgeshire clay</h3>
+<p>Dark brown. Heavy clay gives thick, dark contamination on undercarriages. Mix: Tamiya XF-64 + XF-52 (2:1). 19 and 66 Sqn aircraft would show this distinctly.</p>
+
+<div class="tip-box">
+<div class="tip-label">Sealing weathering</div>
+Always seal weathering with a thin matt varnish coat before applying pigments or mud effects. The final coat should be fully matte — BoB Spitfires wore MAP (Medium Aircraft Paint), which dried to a genuine flat finish. Even the canopy framing should be satin at most. A glossy Spitfire immediately looks wrong.
+</div>
+
+<p>For the full paint colour reference and interactive airfield map, see the <a href="spitfire_paradise.html">Spitfire reference page</a>.</p>
+</article>
+<footer>
+  <a href="index.html">WW2 Modeller Hub</a> · <a href="hurricane_paradise.html">Hurricane</a> · <a href="spitfire_paradise.html">Spitfire</a> · <a href="articles.html">Articles</a> · <a href="privacy.html">Privacy</a> · <a href="about.html">About</a>
+</footer>
+</body>
+</html>

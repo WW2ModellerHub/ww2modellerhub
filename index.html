@@ -349,17 +349,20 @@ footer a:hover{color:var(--brass)}
     WW2 <span>Modeller</span>
   </a>
   <div class="header-tagline">
-    <span class="header-stat"><span class="header-stat-n">1</span> aircraft live</span>
+    <span class="header-stat"><span class="header-stat-n">2</span> aircraft live</span>
     <span class="header-divider">·</span>
-    <span class="header-stat"><span class="header-stat-n">22</span> squadrons</span>
+    <span class="header-stat"><span class="header-stat-n">41</span> squadrons</span>
     <span class="header-divider">·</span>
-    <span class="header-stat"><span class="header-stat-n">200+</span> pilots</span>
+    <span class="header-stat"><span class="header-stat-n">380+</span> pilots</span>
     <span class="header-divider">·</span>
-    <span class="header-stat"><span class="header-stat-n">9</span> survivors</span>
-    <span class="header-divider">·</span>
-    <span class="header-stat"><span class="header-stat-n">17</span> books</span>
+    <span class="header-stat"><span class="header-stat-n">Hurricane</span> &amp; <span class="header-stat-n">Spitfire</span> live</span>
   </div>
-  <a href="hurricane_paradise.html" class="header-cta">Open Hurricane →</a>
+  <nav class="header-nav">
+    <a href="hurricane_paradise.html">Hurricane</a>
+    <a href="spitfire_paradise.html" style="color:var(--brass2)">Spitfire</a>
+    <a href="articles.html">Articles</a>
+  </nav>
+  <a href="spitfire_paradise.html" class="header-cta">Open Spitfire →</a>
 </header>
 
 <!-- TOP AD LEADERBOARD — Google AdSense 728×90 -->
@@ -665,25 +668,28 @@ footer a:hover{color:var(--brass)}
       </div>
     </a>
 
-    <!-- SPITFIRE — COMING SOON -->
-    <div class="aircraft-card coming-soon">
+    <!-- SPITFIRE — LIVE -->
+    <a href="spitfire_paradise.html" class="aircraft-card">
       <div class="card-accent" style="background:linear-gradient(90deg,#1e3a5c,#4a7fa5)"></div>
       <div class="card-body">
-        <div class="card-era">Battle of Britain · 1940–45</div>
+        <div class="card-era">Battle of Britain · 1940</div>
         <div class="card-title">Supermarine Spitfire</div>
-        <div class="card-subtitle">Mk.I through Mk.XIV</div>
-        <div class="card-desc">Squadrons, aces, camouflage schemes, kit guide and decals for every major Spitfire mark. From BoB 1940 through to 1945.</div>
+        <div class="card-subtitle">Mk.I / Mk.II · Fighter Command</div>
+        <div class="card-desc">19 squadrons, 180+ pilots, full paint codes, kit guide, decal sheets, weathering by airfield, maps and timeline. Sailor Malan, Stanford Tuck, Wellum, Deere — all here.</div>
         <div class="card-tags">
-          <span class="card-tag">Squadrons</span>
-          <span class="card-tag">Colour schemes</span>
-          <span class="card-tag">All marks</span>
+          <span class="card-tag">19 squadrons</span>
+          <span class="card-tag">Paint codes</span>
+          <span class="card-tag">Kits &amp; decals</span>
+          <span class="card-tag">Weathering</span>
+          <span class="card-tag">Maps</span>
+          <span class="card-tag">Timeline</span>
         </div>
       </div>
       <div class="card-footer">
-        <span class="card-footer-link">Coming soon</span>
-        <span class="card-footer-status">In development</span>
+        <span class="card-footer-link">Open reference →</span>
+        <span class="live-badge">LIVE</span>
       </div>
-    </div>
+    </a>
 
     <!-- LANCASTER — COMING SOON -->
     <div class="aircraft-card coming-soon">
@@ -968,13 +974,13 @@ footer a:hover{color:var(--brass)}
     <div class="sidebar-hd">What's New</div>
     <div class="news-item">
       <div class="news-date">Latest</div>
-      <div class="news-title">Hurricane reference updated</div>
-      <div class="news-desc">New books section with 16 titles, direct Amazon links and expanded weathering guides.</div>
+      <div class="news-title">Spitfire &amp; Hurricane both live</div>
+      <div class="news-desc">Two full aircraft references — 41 squadrons, 380+ pilots, paint, kits, decals, maps.</div>
     </div>
     <div class="news-item">
-      <div class="news-date">Coming soon</div>
-      <div class="news-title">Spitfire reference</div>
-      <div class="news-desc">Full Spitfire Mk.I–XIV coverage launching soon. Aces, paint codes, kit reviews.</div>
+      <div class="news-date">New — live now</div>
+      <div class="news-title"><a href="spitfire_paradise.html" style="color:#fff;text-decoration:none">Spitfire reference ↗</a></div>
+      <div class="news-desc">19 BoB squadrons, Malan, Wellum, Tuck, Deere. Full paint, kit, weathering and map coverage live.</div>
     </div>
   </div>
 </aside>
@@ -983,7 +989,7 @@ footer a:hover{color:var(--brass)}
 
 <footer>
   <p><a href="about.html">About</a> · <a href="articles.html">Articles</a> · <a href="privacy.html">Privacy Policy</a></p>
-  <p style="margin-top:.5rem"><a href="hurricane_paradise.html?tab=build">Hurricane</a> · More aircraft coming soon</p>
+  <p style="margin-top:.5rem"><a href="hurricane_paradise.html">Hurricane</a> · <a href="spitfire_paradise.html">Spitfire</a> · More aircraft coming soon</p>
 </footer>
 
 <script>
@@ -1024,7 +1030,14 @@ const SEARCH_INDEX = [
   {text:"weathering exhaust staining mud airfield",url:"hurricane_paradise.html",label:"Weathering guide"},
   {text:"Duxford Battle of Britain airshow",url:"#airshows",label:"Duxford BoB Air Show"},
   {text:"RIAT Fairford Royal International Air Tattoo",url:"#airshows",label:"RIAT 2026"},
-  {text:"Spitfire Mk.I Mk.XIV",url:"#aircraft",label:"Spitfire — coming soon"},
+  {text:"Spitfire Supermarine Mk.I Mk.II squadrons pilots paint kits Malan Tuck Wellum Deere",url:"spitfire_paradise.html",label:"Spitfire reference"},
+  {text:"74 Squadron Tiger Squadron Malan ZP Hornchurch",url:"spitfire_paradise.html",label:"No.74 Sqn — Malan"},
+  {text:"92 Squadron Biggin Hill QJ Tuck Wellum Kingcome",url:"spitfire_paradise.html",label:"No.92 Sqn — Biggin Hill"},
+  {text:"609 Squadron West Riding Middle Wallop PR Dundas Crook",url:"spitfire_paradise.html",label:"No.609 Sqn — West Riding"},
+  {text:"603 Squadron Edinburgh XT Hillary Hornchurch",url:"spitfire_paradise.html",label:"No.603 Sqn — Hillary"},
+  {text:"54 Squadron Hornchurch KL Deere Nine Lives",url:"spitfire_paradise.html",label:"No.54 Sqn — Deere"},
+  {text:"602 Squadron Glasgow Westhampnett LO Johnstone",url:"spitfire_paradise.html",label:"No.602 Sqn — Glasgow"},
+  {text:"Spitfire Mk.I Mk.XIV",url:"spitfire_paradise.html",label:"Spitfire — now live →"},
   {text:"Lancaster bomber 617 Dambusters",url:"#aircraft",label:"Lancaster — coming soon"},
   {text:"Bf 109 Messerschmitt RLM",url:"#aircraft",label:"Bf 109 — coming soon"},
 ];
