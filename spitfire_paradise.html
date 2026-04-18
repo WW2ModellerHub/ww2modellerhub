@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supermarine Spitfire — WW2 Modeller Hub</title>
+<meta name="description" content="Complete scale modelling reference for the Supermarine Spitfire. 19 squadrons, pilots, paint codes, kits, decals, weathering and maps for Battle of Britain 1940.">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --raf-dark:#0a1628; --raf-mid:#152744; --raf-light:#1e3a5c; --raf-sky:#4a7fa5;
+  --olive:#4a5220; --brass:#b8902a; --brass2:#d4a83a;
+  --cream:#f0ead8; --cream2:#e8e0c8; --cream3:#ddd5ba;
+  --ink:#1a1408; --ink2:#2e2818; --ink3:rgba(255,255,255,.45);
+  --border:rgba(255,255,255,.1); --shadow:0 2px 12px rgba(0,0,0,.3); --shadow2:0 6px 32px rgba(0,0,0,.5);
+  --paper:var(--cream); --paper2:var(--cream2); --canvas:var(--cream); --canvas2:var(--cream2);
+  --raf:var(--raf-light); --raf2:var(--raf-sky); --raf3:var(--raf-dark);
+  --gold:var(--brass); --gold2:var(--brass); --gold3:var(--brass2);
+  --red:#8a2820; --khaki:#8a7a4a; --green:var(--olive);
+  --bs:rgba(255,255,255,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color:var(--cream);min-height:100vh;font-size:18px}
+.site-header{background:linear-gradient(180deg,#081422 0%,#0d1c35 100%);border-bottom:3px solid var(--brass);position:sticky;top:0;z-index:200;box-shadow:0 4px 32px rgba(0,0,0,.7);display:flex;flex-direction:column}
+.header-inner{max-width:1400px;width:100%;margin:0 auto;padding:.7rem 1.5rem;display:flex;align-items:center;gap:1.2rem}
+.header-logo{font-family:'Special Elite',cursive;font-size:1.6rem;color:#fff;text-decoration:none;padding:.65rem 1.5rem .45rem 0;flex-shrink:0;border-right:1px solid rgba(255,255,255,.1)}
+.header-logo span{color:var(--brass2)}
+.header-breadcrumb{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.header-breadcrumb .sep{color:rgba(255,255,255,.2)}
+.header-breadcrumb .current{color:var(--brass)}
+.nav-tabs{display:flex;align-items:stretch;justify-content:center;overflow-x:auto;scrollbar-width:none;background:rgba(0,0,0,.25)}
+.nav-tabs::-webkit-scrollbar{display:none}
+.nav-tab{font-family:'Oswald',sans-serif;font-size:15px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:.7rem 1rem;border:none;background:transparent;color:rgba(255,255,255,.45);cursor:pointer;white-space:nowrap;flex-shrink:0;border-bottom:3px solid transparent;transition:all .15s}
+.nav-tab:hover{color:rgba(255,255,255,.85);background:rgba(255,255,255,.04)}
+.nav-tab.active{color:var(--brass2);border-bottom-color:var(--brass)}
+@media(max-width:860px){.nav-tabs{justify-content:flex-start;-webkit-mask:linear-gradient(to right,black 85%,transparent 100%);mask:linear-gradient(to right,black 85%,transparent 100%)}.header-breadcrumb{display:none}}
+@media(max-width:600px){.header-logo{font-size:1.1rem;padding-right:1rem}}
+.aircraft-hero{background:linear-gradient(to right,var(--raf-dark) 0%,rgba(21,39,68,.8) 60%,transparent 100%),linear-gradient(135deg,var(--raf-dark),var(--raf-mid));border-bottom:1px solid rgba(255,255,255,.08);padding:1.2rem 1.5rem 1rem;display:flex;align-items:center;gap:1.5rem;overflow:hidden;position:relative}
+.aircraft-hero::after{content:'RAF';position:absolute;right:2rem;top:50%;transform:translateY(-50%);font-family:'Special Elite',cursive;font-size:8rem;color:rgba(255,255,255,.025);letter-spacing:.1em;pointer-events:none;white-space:nowrap}
+.hero-roundel{width:52px;height:52px;flex-shrink:0;border-radius:50%;position:relative;overflow:hidden;border:2px solid rgba(255,255,255,.25);box-shadow:0 0 16px rgba(0,48,135,.5)}
+.hero-roundel::before{content:'';position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 50%,#cf142b 0%,#cf142b 28%,#fff 28%,#fff 52%,#003087 52%)}
+.hero-eyebrow{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.2rem}
+.hero-title{font-family:'Special Elite',cursive;font-size:clamp(1.4rem,4vw,2.2rem);color:#fff;line-height:1.05;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.hero-sub{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.05em;color:rgba(255,255,255,.45);margin-top:.3rem}
+.hero-stats{margin-left:auto;flex-shrink:0;display:flex;gap:1.2rem;align-items:center}
+.hero-stat{text-align:center}
+.hero-stat-val{font-family:'Special Elite',cursive;font-size:1.9rem;color:var(--brass2);line-height:1}
+.hero-stat-lbl{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:2px}
+@media(max-width:600px){.hero-stats{display:none}.aircraft-hero{padding:.9rem 1rem .8rem}}
+.filter-bar{background:rgba(0,0,0,.25);backdrop-filter:blur(4px);border-bottom:1px solid rgba(255,255,255,.07);padding:.4rem 1.5rem;display:flex;align-items:center;gap:5px;flex-wrap:wrap;position:sticky;top:64px;z-index:50}
+.filter-bar label{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.bar-sep{width:1px;height:14px;background:rgba(255,255,255,.1);margin:0 4px}
+.fb{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:2px;border:1px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.4);cursor:pointer;transition:all .15s;white-space:nowrap}
+.fb:hover{background:rgba(255,255,255,.07);color:rgba(255,255,255,.8)}
+.fb.on{background:var(--brass);color:var(--raf-dark);border-color:var(--brass);font-weight:600}
+.sq-count{margin-left:auto;font-family:'Oswald',sans-serif;font-size:12px;color:rgba(255,255,255,.25);letter-spacing:.05em;white-space:nowrap}
+.main-wrap{max-width:1400px;margin:0 auto;padding:1.2rem 1.5rem 4rem;display:grid;grid-template-columns:1fr 220px;gap:1.5rem}
+.main-content{min-width:0}
+.tab-panel{display:none}.tab-panel.active{display:block}
+@media(max-width:960px){.main-wrap{grid-template-columns:1fr}.sidebar{display:none}}
+@media(max-width:600px){.main-wrap{padding:.75rem .75rem 3rem}}
+.sidebar{display:flex;flex-direction:column;gap:1rem}
+.sidebar-block{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.09);border-radius:3px;overflow:hidden}
+.sidebar-hd{background:rgba(0,0,0,.3);padding:.55rem .9rem;font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brass);border-bottom:1px solid rgba(255,255,255,.06)}
+.sidebar-ad-slot{width:100%;height:240px;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.15);background:rgba(0,0,0,.2)}
+.shop-link{display:flex;align-items:center;gap:8px;padding:.5rem .9rem;border-bottom:1px solid rgba(255,255,255,.05);text-decoration:none;transition:background .15s}
+.shop-link:last-child{border-bottom:none}
+.shop-link:hover{background:rgba(255,255,255,.04)}
+.shop-name{font-family:'Special Elite',cursive;font-size:15px;color:#fff}
+.shop-cats{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:1px}
+.section-label,.sec-label{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:1rem;margin-top:1rem;display:flex;align-items:center;gap:.75rem}
+.section-label:first-child,.sec-label:first-child{margin-top:0}
+.section-label::after,.sec-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.08)}
+.info-box{background:rgba(21,39,68,.6);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--raf-sky);border-radius:2px;padding:.75rem 1rem;margin-bottom:1rem;font-size:17px;color:rgba(255,255,255,.65);line-height:1.7}
+.sq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.sq-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden;cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s;box-shadow:var(--shadow)}
+.sq-card:hover,.sq-card.active{border-color:var(--brass);box-shadow:var(--shadow2);transform:translateY(-1px)}
+.card-hd{background:linear-gradient(135deg,rgba(10,22,40,.9),rgba(21,39,68,.8));padding:.55rem .8rem;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,.07)}
+.card-circle{width:32px;height:32px;border-radius:50%;border:2px solid var(--brass);display:flex;align-items:center;justify-content:center;font-family:'Special Elite',cursive;font-size:11px;color:var(--brass2);flex-shrink:0}
+.card-name{font-family:'Special Elite',cursive;font-size:17px;color:#fff}
+.card-base{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.4);margin-top:1px}
+.card-body{padding:.6rem .8rem}
+.card-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-bottom:.5rem}
+.stat{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.07);border-radius:2px;padding:4px 5px;text-align:center}
+.stat-val{font-family:'Special Elite',cursive;font-size:18px;color:var(--brass2)}
+.stat-lbl{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.card-tags{display:flex;flex-wrap:wrap;gap:3px}
+.tag{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:2px 6px;border-radius:2px;border:1px solid}
+.t-blue{background:rgba(30,58,92,.3);color:#7aA8d8;border-color:rgba(122,168,216,.25)}
+.t-amber{background:rgba(184,144,42,.2);color:var(--brass2);border-color:rgba(184,144,42,.3)}
+.t-green{background:rgba(74,82,32,.3);color:#8aA060;border-color:rgba(74,82,32,.4)}
+.t-coral{background:rgba(140,40,30,.25);color:#e08070;border-color:rgba(140,40,30,.3)}
+.detail-panel{display:none;background:rgba(21,39,68,.85);backdrop-filter:blur(8px);border:2px solid var(--brass);border-radius:4px;margin:10px 0 4px;overflow:hidden;grid-column:1/-1;box-shadow:var(--shadow2)}
+.detail-panel.open{display:block}
+.dp-top{background:rgba(0,0,0,.4);padding:.8rem 1.2rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;border-bottom:2px solid var(--brass)}
+.dp-title{font-family:'Special Elite',cursive;font-size:1.4rem;color:#fff}
+.dp-meta{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.4);margin-top:3px}
+.close-btn{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--brass);background:transparent;color:var(--brass2);cursor:pointer;border-radius:2px;flex-shrink:0}
+.close-btn:hover{background:rgba(184,144,42,.15)}
+.ops-text{font-size:15px;color:rgba(255,255,255,.75);line-height:1.75}
+.pilot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-bottom:1rem}
+.pilot-card{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1);border-radius:2px;padding:6px 8px;cursor:pointer;transition:border-color .15s}
+.pilot-card:hover{border-color:var(--brass)}
+.pkills{float:right;font-family:'Special Elite',cursive;font-size:20px;color:var(--brass2)}
+.pname{font-size:14px;color:#fff}
+.pnote{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.4);margin-top:2px}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.photo-loading{grid-column:1/-1;text-align:center;font-family:'Oswald',sans-serif;font-size:12px;color:rgba(255,255,255,.3);padding:2rem 0}
+.shop-btn{display:inline-flex;align-items:center;font-family:'Oswald',sans-serif;font-size:13px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;padding:5px 12px;border-radius:2px;text-decoration:none;transition:all .15s;cursor:pointer;border:1px solid;white-space:nowrap}
+.hb-brass{background:var(--brass);color:var(--raf-dark);border-color:var(--brass)}
+.hb-brass:hover{background:var(--brass2)}
+.hb-outline{background:transparent;color:var(--brass2);border-color:rgba(184,144,42,.3)}
+.hb-outline:hover{background:rgba(184,144,42,.1);border-color:var(--brass)}
+.hb-raf{background:rgba(21,39,68,.8);color:var(--raf-sky);border-color:rgba(74,127,165,.3)}
+.hb-raf:hover{background:rgba(74,127,165,.15)}
+.hb-gold{background:rgba(184,144,42,.12);color:var(--brass2);border-color:rgba(184,144,42,.25)}
+.hb-gold:hover{background:rgba(184,144,42,.2)}
+.paint-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:.5rem}
+.paint-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;display:flex;box-shadow:var(--shadow)}
+.paint-swatch{width:56px;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-end;padding:5px;font-size:11px;color:rgba(255,255,255,.4);font-family:monospace}
+.paint-info{flex:1;padding:.6rem .75rem}
+.paint-name{font-family:'Special Elite',cursive;font-size:16px;color:#fff;margin-bottom:.2rem}
+.kit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.kit-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:.85rem;box-shadow:var(--shadow)}
+.kit-brand{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:.2rem}
+.kit-name{font-family:'Special Elite',cursive;font-size:17px;color:#fff;margin-bottom:.2rem}
+.kit-scale{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-bottom:.3rem}
+.kit-stars{font-size:16px;color:var(--brass);margin-bottom:.3rem}
+.kit-note{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5;margin-bottom:.5rem}
+.kit-tag{font-family:'Oswald',sans-serif;font-size:11px;padding:1px 5px;border-radius:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4)}
+.map-filter-btn{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;background:transparent;border:1px solid;border-radius:2px;cursor:pointer;transition:all .15s;opacity:.65}
+.map-filter-btn:hover{opacity:1}
+.map-filter-btn.on{opacity:1;background:rgba(255,255,255,.08)}
+.map-sqn-list{padding:1rem;background:rgba(0,0,0,.25);border-left:1px solid rgba(255,255,255,.08);min-height:300px}
+.map-sqn-chip{font-size:15px;padding:6px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:2px;color:rgba(255,255,255,.75);margin-bottom:5px;cursor:pointer;transition:background .15s}
+.map-sqn-chip:hover{background:rgba(255,255,255,.09)}
+.map-sqn-chip b{font-family:'Special Elite',cursive;color:var(--brass2);font-size:15px}
+.weather-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.weather-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;box-shadow:var(--shadow)}
+.weather-hd{padding:.6rem .9rem;background:rgba(0,0,0,.25);display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid rgba(255,255,255,.08)}
+.weather-base{font-family:'Special Elite',cursive;font-size:17px;color:#fff}
+.weather-group{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.weather-body{padding:.7rem .9rem}
+.weather-row{font-size:13px;color:rgba(255,255,255,.7);padding:3px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;gap:8px;line-height:1.4}
+.weather-row:last-child{border-bottom:none}
+.wr-label{flex-shrink:0;width:72px;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.aftermarket-section{margin-bottom:1.5rem}
+.aftermarket-section-title{font-family:'Special Elite',cursive;font-size:16px;color:#fff;margin-bottom:.75rem;padding-bottom:.4rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.am-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+.am-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:.8rem;box-shadow:var(--shadow)}
+.am-type{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:.2rem}
+.am-name{font-family:'Special Elite',cursive;font-size:13px;color:#fff;margin-bottom:.2rem}
+.am-maker{font-family:'Oswald',sans-serif;font-size:12px;color:rgba(255,255,255,.35);margin-bottom:.3rem}
+.am-desc{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5;margin-bottom:.4rem}
+.am-scales{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:.4rem}
+.am-scale{font-family:'Oswald',sans-serif;font-size:11px;padding:1px 5px;border-radius:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4)}
+.survivor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+.survivor-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;box-shadow:var(--shadow)}
+.survivor-hd{background:rgba(0,0,0,.3);padding:.65rem .9rem;display:flex;align-items:center;gap:8px;border-bottom:2px solid var(--brass)}
+.survivor-serial{font-family:'Special Elite',cursive;font-size:18px;color:var(--brass2)}
+.survivor-name{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.4)}
+.survivor-status{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:1px;margin-left:auto;flex-shrink:0}
+.status-fly{background:var(--olive);color:#e8dfc0}.status-static{background:var(--raf-light);color:#fff}.status-restore{background:#8a2820;color:#fff}
+.survivor-body{padding:.75rem .9rem}
+.survivor-row{font-size:15px;display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.survivor-row:last-child{border-bottom:none}
+.survivor-key{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.3);flex-shrink:0;width:72px}
+.books-section{margin-bottom:1.5rem}
+.books-section-title{font-family:'Special Elite',cursive;font-size:18px;color:#fff;margin-bottom:.75rem;padding-bottom:.4rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.books-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+.book-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:.8rem;box-shadow:var(--shadow);display:flex;gap:10px}
+.book-spine{width:10px;flex-shrink:0;border-radius:1px}
+.book-info{flex:1}
+.book-title{font-family:'Special Elite',cursive;font-size:17px;color:#fff;line-height:1.3;margin-bottom:.2rem}
+.book-author{font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:.05em;color:rgba(255,255,255,.35);margin-bottom:.3rem}
+.book-rating{color:var(--brass);font-size:15px;margin-bottom:.4rem}
+.book-desc{font-size:16px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:.5rem}
+.shop-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-left:4px solid var(--brass);border-radius:3px;padding:.9rem;box-shadow:var(--shadow);margin-bottom:8px}
+.shop-card-name{font-family:'Special Elite',cursive;font-size:15px;color:#fff;margin-bottom:.2rem;display:flex;align-items:center;gap:8px}
+.shop-card-cats{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:.3rem}
+.shop-card-desc{font-size:12px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:.5rem}
+.pm-overlay{display:none;position:fixed;inset:0;background:rgba(5,10,20,.85);z-index:500;align-items:center;justify-content:center;padding:1.5rem}
+.pm-overlay.open{display:flex}
+.pm-modal{background:rgba(21,39,68,.97);border-radius:4px;max-width:520px;width:100%;overflow:hidden;border:2px solid var(--brass);max-height:88vh;overflow-y:auto;box-shadow:0 8px 48px rgba(0,0,0,.8)}
+.pm-hd{background:rgba(0,0,0,.4);padding:.9rem 1.1rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;border-bottom:2px solid var(--brass)}
+.pm-name{font-family:'Special Elite',cursive;font-size:1.2rem;color:#fff}
+.pm-rank{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-top:3px}
+.pm-close{background:rgba(255,255,255,.08);border:1px solid var(--brass);color:var(--brass2);width:26px;height:26px;border-radius:50%;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pm-body{padding:.9rem 1.1rem}
+.pm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:.8rem}
+.pm-stat{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.08);border-radius:2px;padding:5px 7px;text-align:center}
+.pm-stat .v{font-family:'Special Elite',cursive;font-size:17px;color:var(--brass2)}
+.pm-stat .l{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.pm-bio{font-size:14px;color:rgba(255,255,255,.7);line-height:1.75}
+.pm-bio p{margin-bottom:.5rem}
+.pm-awards{display:flex;flex-wrap:wrap;gap:4px;margin-top:.6rem}
+.award{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;padding:2px 7px;border-radius:2px;background:rgba(184,144,42,.15);color:var(--brass2);border:1px solid rgba(184,144,42,.3)}
+.pm-links{display:flex;gap:5px;flex-wrap:wrap;margin-top:.8rem;padding-top:.7rem;border-top:1px solid rgba(255,255,255,.08)}
+.timeline-slider{width:100%;margin:1rem 0 .5rem;accent-color:var(--brass)}
+.timeline-labels{display:flex;justify-content:space-between;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.3)}
+.tl-sqn{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.07);border-left:3px solid rgba(255,255,255,.1);border-radius:2px;padding:5px 8px}
+.tl-sqn.active-tl{background:rgba(30,58,92,.4);border-left-color:var(--raf-sky)}
+.tl-sqn-num{font-family:'Special Elite',cursive;font-size:14px;color:#fff}
+.tl-sqn-status{font-family:'Oswald',sans-serif;font-size:12px;color:rgba(255,255,255,.35);letter-spacing:.04em}
+.tl-legend{display:flex;gap:12px;margin-bottom:1rem;flex-wrap:wrap;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.05em;color:rgba(255,255,255,.5)}
+.tl-dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:4px}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(5,10,20,.97);z-index:999;align-items:center;justify-content:center;padding:2rem}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:82vh;object-fit:contain;border-radius:2px;border:1px solid rgba(255,255,255,.1)}
+.lb-close{position:fixed;top:1.2rem;right:1.2rem;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid var(--brass);color:var(--brass2);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+</style>
+</head><body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo" style="display:flex;align-items:center;gap:.5rem">
+      <svg width="26" height="26" viewBox="0 0 36 36"><circle cx="18" cy="18" r="18" fill="#003087"/><circle cx="18" cy="18" r="12" fill="#fff"/><circle cx="18" cy="18" r="7" fill="#CF142B"/></svg>
+      WW2 <span style="color:var(--brass2)">Modeller</span>
+    </a>
+    <div class="header-breadcrumb">
+      <a href="index.html" style="color:rgba(255,255,255,.4);text-decoration:none">Hub</a>
+      <span class="sep">›</span>
+      <span class="current">Supermarine Spitfire</span>
+    </div>
+    <a href="hurricane_paradise.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.12);border-radius:2px;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.5)'">Hurricane</a>
+    <a href="articles.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);text-decoration:none;padding:.35rem .8rem;border:1px solid rgba(184,144,42,.3);border-radius:2px;margin-left:auto" onmouseover="this.style.background='rgba(184,144,42,.1)'" onmouseout="this.style.background='transparent'">Articles</a>
+  </div>
+  <nav class="nav-tabs" style="border-top:1px solid rgba(255,255,255,.07);padding:0 1.5rem">
+    <button class="nav-tab active" onclick="switchTab('squadrons',this)">Squadrons</button>
+    <button class="nav-tab" onclick="switchTab('build',this)">Build</button>
+    <button class="nav-tab" onclick="switchTab('reference',this)">Reference</button>
+    <button class="nav-tab" onclick="switchTab('stories',this)">Stories</button>
+    <button class="nav-tab" onclick="switchTab('media',this)">Media</button>
+  </nav>
+</header>
+
+<div class="aircraft-hero">
+  <div class="hero-roundel"></div>
+  <div class="hero-text">
+    <div class="hero-eyebrow">Royal Air Force · Battle of Britain 1940</div>
+    <h1 class="hero-title">Supermarine Spitfire</h1>
+    <div class="hero-sub">Mk.I / Mk.II · Fighter Command · 1939–1945</div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-val">19</div><div class="hero-stat-lbl">Squadrons</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">529</div><div class="hero-stat-lbl">Claims</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">36%</div><div class="hero-stat-lbl">BoB Kills</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">113</div><div class="hero-stat-lbl">Days</div></div>
+  </div>
+</div>
+
+<div class="filter-bar" id="sqn-bar">
+  <label>Group:</label>
+  <button class="fb on gf" onclick="setFilter('all',this)">All</button>
+  <button class="fb gf" onclick="setFilter('11',this)">11 Group</button>
+  <button class="fb gf" onclick="setFilter('12',this)">12 Group</button>
+  <button class="fb gf" onclick="setFilter('13',this)">13 Group</button>
+  <button class="fb gf" onclick="setFilter('10',this)">10 Group</button>
+  <div class="bar-sep"></div>
+  <label>Sort:</label>
+  <button class="fb on sf" onclick="setSort('num',this)">Number</button>
+  <button class="fb sf" onclick="setSort('kills',this)">Claims ↓</button>
+  <button class="fb sf" onclick="setSort('killrate',this)">Kill % ↓</button>
+  <button class="fb sf" onclick="setSort('base',this)">Base A–Z</button>
+  <span class="sq-count" id="sq-count"></span>
+</div>
+
+<div class="main-wrap">
+<div class="main-content">
+
+<div class="tab-panel active" id="tab-squadrons">
+  <div style="margin-bottom:1.5rem">
+    <div class="section-label" style="margin-bottom:.6rem">Battle of Britain · 10 July – 31 October 1940</div>
+    <p style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.75;max-width:720px">
+      Nineteen RAF Spitfire squadrons fought in the Battle of Britain, claiming approximately 36% of all RAF victories. Directed primarily against the Bf 109E fighter escort while Hurricanes attacked the bombers, the Spitfire was the aircraft the Luftwaffe feared most — roughly equal in performance to the Messerschmitt and capable of outturning it. Click any card to see pilots, aircraft codes, decals and photographs.
+    </p>
+    <div style="display:flex;gap:1.2rem;margin-top:.8rem;flex-wrap:wrap;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4)">
+      <span><span style="color:var(--brass2);font-size:14px;font-weight:600">19</span> squadrons</span>
+      <span>·</span>
+      <span><span style="color:var(--brass2);font-size:14px;font-weight:600">180+</span> named pilots</span>
+      <span>·</span>
+      <span><span style="color:var(--brass2);font-size:14px;font-weight:600">4</span> RAF groups</span>
+    </div>
+  </div>
+  <div class="sq-grid" id="grid"></div>
+</div>
+
+<div class="tab-panel" id="tab-build">
+  <div style="display:flex;gap:8px;margin-bottom:1.4rem;flex-wrap:wrap">
+    <button class="fb on btf" onclick="setBuildSub('kits',this)">Kits</button>
+    <button class="fb btf" onclick="setBuildSub('aftermarket',this)">Aftermarket</button>
+    <button class="fb btf" onclick="setBuildSub('paint',this)">Paint &amp; colours</button>
+    <button class="fb btf" onclick="setBuildSub('stepbystep',this)">Build guide</button>
+    <button class="fb btf" onclick="setBuildSub('weathering',this)">Weathering</button>
+  </div>
+  <div id="bsub-kits"><div class="section-label">Choosing your Spitfire kit</div><p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">More Spitfire kits exist than for any other WW2 aircraft. For a BoB Mk.I in 1:48 the <strong style="color:var(--cream)">Airfix AX05126A</strong> is the top recommendation — superb accuracy and value. The <strong style="color:var(--cream)">Eduard 82157 ProfiPACK</strong> adds photo-etch and masks for serious modellers. In 1:72 the <strong style="color:var(--cream)">Airfix AX01071B</strong> retool is the benchmark.</p><div class="kit-grid" id="kit-grid"></div></div>
+  <div id="bsub-aftermarket" style="display:none"><div class="section-label">Aftermarket for the Spitfire Mk.I</div><p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">The Airfix cockpit benefits greatly from Eduard SPACE 3D. <strong style="color:var(--cream)">Master Model AM-48-108</strong> brass Browning barrels transform the wing. Kabuki canopy masks are essential — the Spitfire's many curved panes are very hard to mask freehand.</p><div id="aftermarket-grid"></div></div>
+  <div id="bsub-paint" style="display:none">
+    <div class="section-label">Battle of Britain paint colours</div>
+    <p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">Every BoB Spitfire wore <strong style="color:var(--cream)">Dark Earth</strong> and <strong style="color:var(--cream)">Dark Green</strong> upper surfaces, <strong style="color:var(--cream)">Sky (Type S)</strong> undersides and spinner. The split line on the Spitfire's curved fuselage creates a characteristic wavy demarcation — the A-scheme has brown on the starboard nose side.</p>
+    <div class="paint-grid" id="paint-grid"></div>
+    <div style="margin-top:1.5rem;background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1.2rem">
+      <div class="sec-label">Brand colour comparison</div>
+      <div id="colour-compare-grid"></div>
+    </div>
+    <div style="margin-top:1.2rem;background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1rem">
+      <div class="sec-label">Roundel &amp; marking notes</div>
+      <div style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.75">
+        <p><strong style="color:#fff">July–Aug 1940:</strong> Type A1 roundels (no yellow ring) on fuselage. Type A upper wings. Type B lower wings. Large fin flash.</p>
+        <p style="margin-top:.5rem"><strong style="color:#fff">Sep–Oct 1940:</strong> Yellow outer ring on fuselage roundels increasingly common by October.</p>
+        <p style="margin-top:.5rem"><strong style="color:#fff">Code letters:</strong> Sky BS381C-216. ~24 inch height. Serial in black rear fuselage port side only. Some Spitfires had a Sky spinner with a narrow black spiral stripe.</p>
+      </div>
+    </div>
+  </div>
+  <div id="bsub-stepbystep" style="display:none"><div class="info-box">Stage-by-stage build guide for the Spitfire. Assumes 1:48, e.g. Airfix AX05126A.</div><div id="stepbystep-content"></div></div>
+  <div id="bsub-weathering" style="display:none"><div class="info-box">Period-accurate weathering by base. All Spitfires showed exhaust staining port upper cowling. Eight gun port blast marks along each leading edge. Port wing root walkway chipping is distinctive.</div><div class="weather-grid" id="weather-grid"></div><div style="margin-top:1.5rem" id="weathering-techniques"></div></div>
+</div>
+
+<div class="tab-panel" id="tab-reference">
+  <div style="display:flex;gap:8px;margin-bottom:1.4rem;flex-wrap:wrap">
+    <button class="fb on rtf" onclick="setRefSub('map',this)">Station map</button>
+    <button class="fb rtf" onclick="setRefSub('timeline',this)">BoB timeline</button>
+    <button class="fb rtf" onclick="setRefSub('compare',this)">Compare squadrons</button>
+    <button class="fb rtf" onclick="setRefSub('survivors',this)">Survivors</button>
+    <button class="fb rtf" onclick="setRefSub('books',this)">Books</button>
+  </div>
+  <div id="rsub-map">
+    <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem">
+      <span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-right:.25rem">Filter:</span>
+      <button onclick="filterMapGroup('all',this)" class="map-filter-btn on" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)">All Groups</button>
+      <button onclick="filterMapGroup('11',this)" class="map-filter-btn" style="border-color:#e05555;color:#e07777">11 Group</button>
+      <button onclick="filterMapGroup('10',this)" class="map-filter-btn" style="border-color:#4caf7d;color:#6ccc9a">10 Group</button>
+      <button onclick="filterMapGroup('12',this)" class="map-filter-btn" style="border-color:#5b9bd5;color:#7db8ea">12 Group</button>
+      <button onclick="filterMapGroup('13',this)" class="map-filter-btn" style="border-color:#b07fd5;color:#c89de8">13 Group</button>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr minmax(200px,260px);gap:0;background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden">
+      <div style="overflow:hidden">
+        <svg id="map-svg" viewBox="0 0 520 700" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <div class="map-sqn-list" id="map-sqn-list">
+        <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">Station Info</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.45)">Click a station dot on the map to see squadrons and notes.</div>
+        <div style="margin-top:1.2rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.5rem">Group colours</div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#e05555"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">11 Group (South)</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#4caf7d"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">10 Group (SW)</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#5b9bd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">12 Group (Midlands)</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#b07fd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">13 Group (North)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="rsub-timeline" style="display:none">
+    <div style="background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1.1rem;margin-bottom:1.1rem">
+      <div class="sec-label" style="margin-bottom:.4rem">Battle of Britain — Interactive Timeline</div>
+      <div style="font-size:14px;color:rgba(255,255,255,.55);margin-bottom:.75rem">Drag the slider through the 113-day battle. See squadron status at each point.</div>
+      <div style="font-family:'Special Elite',cursive;font-size:16px;color:var(--brass2);text-align:center;margin-bottom:.5rem" id="tl-date">10 July 1940</div>
+      <input type="range" class="timeline-slider" id="tl-slider" min="0" max="113" value="0" oninput="updateTimeline(this.value)">
+      <div class="timeline-labels"><span>10 Jul</span><span>15 Aug</span><span>15 Sep</span><span>31 Oct</span></div>
+      <div class="tl-legend" style="margin-top:.75rem">
+        <span><span class="tl-dot" style="background:#9ab840"></span>Front line</span>
+        <span><span class="tl-dot" style="background:#d4a83a"></span>Reserve</span>
+        <span><span class="tl-dot" style="background:rgba(255,255,255,.3)"></span>Resting</span>
+      </div>
+    </div>
+    <div id="tl-event-detail"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:5px;margin-top:1rem" id="tl-sqns"></div>
+  </div>
+  <div id="rsub-compare" style="display:none">
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:1rem">
+      <select id="cmp-a" onchange="renderCompare()" style="background:rgba(21,39,68,.9);color:#fff;border:1px solid rgba(255,255,255,.15);padding:.5rem .75rem;border-radius:2px;font-family:'Oswald',sans-serif;font-size:13px"></select>
+      <span style="color:var(--brass2);font-family:'Special Elite',cursive;font-size:1.2rem">vs</span>
+      <select id="cmp-b" onchange="renderCompare()" style="background:rgba(21,39,68,.9);color:#fff;border:1px solid rgba(255,255,255,.15);padding:.5rem .75rem;border-radius:2px;font-family:'Oswald',sans-serif;font-size:13px"></select>
+    </div>
+    <div id="compare-output"></div>
+  </div>
+  <div id="rsub-survivors" style="display:none">
+    <div class="info-box" style="margin-bottom:1rem">More Spitfires survive worldwide than any other WW2 fighter — over 60 airworthy. The most historically significant BoB-period aircraft are listed here.</div>
+    <div id="survivors-grid"></div>
+  </div>
+  <div id="rsub-books" style="display:none">
+    <div class="info-box" style="margin-bottom:1rem">Essential reading for Spitfire modellers: the finest pilot memoirs, histories and modelling guides.</div>
+    <div id="books-grid"></div>
+  </div>
+</div>
+
+<div class="tab-panel" id="tab-stories">
+  <div class="section-label">Pilot Stories — Spitfire aces of the Battle of Britain</div>
+  <div class="info-box">Five of the most significant Spitfire pilots of 1940, from squadron records and first-person memoirs.</div>
+  <div id="this-week-bob" style="margin-bottom:1.5rem"></div>
+  <div id="pilot-stories-grid"></div>
+</div>
+
+<div class="tab-panel" id="tab-media">
+  <div class="section-label">Films, audio &amp; archives</div>
+  <div class="info-box">Recommended video, audio and archive resources for Spitfire research and modelling inspiration.</div>
+  <div id="media-grid"></div>
+</div>
+
+</div>
+<aside class="sidebar">
+  <div class="sidebar-block">
+    <div class="sidebar-hd">Advertisement</div>
+    <div class="sidebar-ad-slot">AdSense 300×250</div>
+  </div>
+  <div class="sidebar-block">
+    <div class="sidebar-hd">Quick Links</div>
+    <a class="shop-link" href="https://www.hannants.co.uk/search?q=spitfire+mk+i+1940" target="_blank" rel="noopener">
+      <span style="font-size:14px">🇬🇧</span>
+      <div><div class="shop-name">Hannants</div><div class="shop-cats">Kits · Decals · Aftermarket</div></div>
+    </a>
+    <a class="shop-link" href="https://www.iwm.org.uk/collections/search?query=Spitfire+1940&filters=category%3APhotograph" target="_blank" rel="noopener">
+      <span style="font-size:14px">🏛</span>
+      <div><div class="shop-name">IWM Archive</div><div class="shop-cats">Photos · Documents</div></div>
+    </a>
+    <a class="shop-link" href="https://www.raf.mod.uk/our-organisation/units/royal-air-force-battle-of-britain-memorial-flight/" target="_blank" rel="noopener">
+      <span style="font-size:14px">✈</span>
+      <div><div class="shop-name">BBMF</div><div class="shop-cats">Airworthy survivors</div></div>
+    </a>
+    <a class="shop-link" href="https://barracudacals.com/collections/1-48-resin-detail-sets/spitfire" target="_blank" rel="noopener">
+      <span style="font-size:14px">🦈</span>
+      <div><div class="shop-name">Barracuda Studios</div><div class="shop-cats">Resin · Decals · Masks</div></div>
+    </a>
+    <a class="shop-link" href="https://www.shuttleworth.org" target="_blank" rel="noopener">
+      <span style="font-size:14px">✈</span>
+      <div><div class="shop-name">Shuttleworth</div><div class="shop-cats">Oldest flying Spitfire</div></div>
+    </a>
+  </div>
+</aside>
+</div>
+
+<div class="pm-overlay" id="pm-overlay" onclick="if(event.target===this)closePM()">
+  <div class="pm-modal">
+    <div class="pm-hd">
+      <div><div class="pm-name" id="pm-name"></div><div class="pm-rank" id="pm-rank"></div></div>
+      <button class="pm-close" onclick="closePM()">✕</button>
+    </div>
+    <div class="pm-body">
+      <div class="pm-stats">
+        <div class="pm-stat"><div class="v" id="pm-kills">—</div><div class="l">Victories</div></div>
+        <div class="pm-stat"><div class="v" id="pm-sorties">—</div><div class="l">Sorties</div></div>
+        <div class="pm-stat"><div class="v" id="pm-fate-short">—</div><div class="l">Fate</div></div>
+      </div>
+      <div class="pm-bio" id="pm-bio"></div>
+      <div class="pm-awards" id="pm-awards"></div>
+      <div class="pm-links">
+        <a id="pm-h-pilot" href="#" target="_blank" rel="noopener" class="shop-btn hb-brass">IWM archive ↗</a>
+        <a id="pm-h-sqn" href="#" target="_blank" rel="noopener" class="shop-btn hb-outline">Squadron decals ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lightbox" id="lightbox" onclick="closeLB()">
+  <button class="lb-close" onclick="closeLB()">✕</button>
+  <img id="lb-img" src="" alt="">
+  <div style="position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);font-family:'Oswald',sans-serif;font-size:13px;color:rgba(255,255,255,.5)" id="lb-cap"></div>
+</div>
+<script>
+const SQ=[
+ {num:"19",nat:"British",marks:"Mk.I",firstOp:"Jul 1940",lastOp:"Oct 1940",losses:11,group:"12",base:"Duxford",codes:"QV",kills:72,sorties:340,tags:["t-amber","t-blue"],tagTxt:["12 Group","Duxford"],roundel:"A1",spinner:"Sky",ops:"First squadron to receive the Spitfire. Part of 12 Group's controversial Big Wing. Initially hampered by 20mm cannon jamming — reverted to .303. George Unwin was the highest-scoring NCO Spitfire pilot of the battle.",decalRef:{serial:"X4178",codes:"QV-I",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr B.J.E. Lane",wiki:"Brian_Lane_(RAF_officer)",k:6,fate:"KIA Dec 1942",awards:"DFC",note:"CO, wrote 'Spitfire!' memoir"},{n:"Sgt G.C. Unwin",wiki:"George_Unwin",k:13,fate:"Survived",awards:"DFM Bar",note:"'Grumpy' — top NCO Spitfire ace of battle"},{n:"Flt Lt W.G. Clouston",k:8,fate:"Survived",awards:"DFC",note:"New Zealander, top scorer"},{n:"Plt Off A.R.D. MacDonell",k:7,fate:"Survived",awards:"DFC",note:"Later Wing Commander"},{n:"Flt Lt F.N. Brinsden",k:6,fate:"Survived",awards:"DFC",note:"New Zealander, flight commander"},{n:"Plt Off R.A.B. Learmond",k:3,fate:"KIA Aug 1940",awards:"—",note:"Killed August fighting"}]},
+ {num:"41",group:"11",base:"Hornchurch",codes:"EB",kills:89,sorties:410,tags:["t-blue","t-coral"],tagTxt:["11 Group","Hornchurch"],roundel:"A1",spinner:"Sky",ops:"Eric Lock's extraordinary score of 26 victories made him the top-scoring Fighter Command pilot of 1940. Suffered heavily during August–September airfield attacks around Hornchurch. Hood, the CO, was killed in action on 5 September.",decalRef:{serial:"X4386",codes:"EB-G",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr H.R.L. Hood",k:5,fate:"KIA 5 Sep 1940",awards:"DFC",note:"CO killed over Kent"},{n:"Plt Off E.S. Lock",wiki:"Eric_Lock",k:26,fate:"KIA Jul 1941",awards:"DSO DFC Bar",note:"Top-scoring FC pilot of 1940, age 21"},{n:"Flt Lt E.O. Ryder",k:7,fate:"Survived",awards:"DFC",note:"Flight commander"},{n:"Plt Off G.H. Bennions",k:9,fate:"Survived",awards:"DFC",note:"Badly wounded Aug 1940, returned"},{n:"Plt Off D.A. Adams",k:5,fate:"Survived",awards:"DFC",note:"Active Aug–Sep"},{n:"Sgt T.R. Mayers",k:4,fate:"KIA Sep 1940",awards:"DFM",note:"NCO pilot, killed Sep fighting"},{n:"Flt Lt N.T. Feary",k:6,fate:"Survived",awards:"DFC",note:"Skilled defensive flying"}]},
+ {num:"54",group:"11",base:"Hornchurch",codes:"KL",kills:103,sorties:470,tags:["t-blue","t-amber"],tagTxt:["11 Group","Hornchurch"],roundel:"A1",spinner:"Sky",ops:"Al Deere's nine escapes from death became legend. One of the most experienced Spitfire units. Fought throughout Channel battles and main engagement period. Deere's memoir Nine Lives is the definitive Spitfire account.",decalRef:{serial:"N3183",codes:"KL-B",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr J.A. Leathart",k:7,fate:"Survived",awards:"DSO DFC",note:"CO, later Air Marshal"},{n:"Flt Lt A.C. Deere",wiki:"Al_Deere",k:17,fate:"Survived",awards:"DSO DFC Bar",note:"'Al' Deere — wrote Nine Lives, nine escapes"},{n:"Plt Off C.F. Gray",k:14,fate:"Survived",awards:"DSO DFC",note:"New Zealander, second highest scorer"},{n:"Flt Lt J.L. Allen",k:8,fate:"KIA 24 Jul 1940",awards:"DFC",note:"Killed in Channel battle"},{n:"Plt Off G.A. Brown",k:6,fate:"Survived",awards:"DFC",note:"Active Aug–Sep"},{n:"Sgt D.H. Turley-George",k:4,fate:"Survived",awards:"DFM",note:"NCO pilot"},{n:"Flt Lt R.D. Hussey",k:5,fate:"Survived",awards:"DFC",note:"Flight commander, Channel"}]},
+ {num:"64",group:"11",base:"Kenley",codes:"SH",kills:76,sorties:360,tags:["t-blue","t-green"],tagTxt:["11 Group","Kenley"],roundel:"A1",spinner:"Sky",ops:"Covered the Kenley sector alongside Hurricane units. Kenley was attacked by low-level Do 17s on 18 August — all hangars destroyed. 64 Sqn operated from dispersal throughout the recovery period.",decalRef:{serial:"R6961",codes:"SH-D",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr A.R.D. MacDonell",k:6,fate:"Survived",awards:"DFC",note:"CO, effective tactics"},{n:"Flt Lt F.W. Edy",k:5,fate:"Survived",awards:"DFC",note:"Flight commander"},{n:"Plt Off J.L. Mann",k:4,fate:"Survived",awards:"DFC",note:"Active Aug–Sep"},{n:"Sgt L.C. Thorogood",k:4,fate:"KIA Sep 1940",awards:"DFM",note:"Killed September"},{n:"Plt Off A.G. Lewis",k:3,fate:"Survived",awards:"DFC",note:"Kenley sector"}]},
+ {num:"65",group:"11",base:"Hornchurch",codes:"YT",kills:82,sorties:390,tags:["t-blue","t-amber"],tagTxt:["11 Group","Hornchurch"],roundel:"A1",spinner:"Sky",ops:"Paddy Finucane flew here in the second half of the battle. Shared Hornchurch with 41 and 54 Sqns. Engaged Bf 109 escorts over the Thames Estuary throughout the campaign.",decalRef:{serial:"N3162",codes:"YT-N",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr G.A.W. Saunders",k:5,fate:"Survived",awards:"DFC",note:"CO, Aug–Sep"},{n:"Plt Off B.E. Finucane",k:12,fate:"KIA Jul 1942",awards:"DFC",note:"'Paddy' — Irish ace, later Wing Cdr, lost at sea"},{n:"Flt Lt R.H. Cooke",k:7,fate:"Survived",awards:"DFC",note:"Flight commander"},{n:"Plt Off K.H. Hart",k:4,fate:"Survived",awards:"DFC",note:"Active through battle"},{n:"Sgt F.J. Dixon",k:3,fate:"Survived",awards:"DFM",note:"NCO pilot"}]},
+ {num:"66",group:"12",base:"Coltishall",codes:"LZ",kills:68,sorties:320,tags:["t-amber","t-blue"],tagTxt:["12 Group","Coltishall"],roundel:"A1",spinner:"Sky",ops:"Part of 12 Group's Spitfire force. Participated in Duxford Big Wing when rotated south. Norfolk base meant long transit to the battle area — a recurring frustration for the 12 Group squadrons.",decalRef:{serial:"X4321",codes:"LZ-N",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr R.H.A. Leigh",k:5,fate:"Survived",awards:"DFC",note:"CO"},{n:"Flt Lt C.A.W. Bodie",k:6,fate:"Survived",awards:"DFC",note:"Big Wing participant"},{n:"Plt Off P.J. Howard-Williams",k:4,fate:"KIA 1941",awards:"DFC",note:"Active late battle"},{n:"Sgt A.R. Ridley",k:4,fate:"Survived",awards:"DFM",note:"NCO pilot"}]},
+ {num:"72",group:"11",base:"Biggin Hill",codes:"RN",kills:91,sorties:420,tags:["t-blue","t-coral"],tagTxt:["11 Group","Biggin Hill"],roundel:"A1",spinner:"Sky",ops:"Spitfire squadron at the legendary Biggin Hill sector. Arrived Aug 1940. Biggin was bombed six times in three days yet never ceased operations — the ops room famously moved to a local butcher's shop.",decalRef:{serial:"K9953",codes:"RN-N",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr A.R. Collins",k:5,fate:"Survived",awards:"DFC",note:"CO, Biggin Hill Aug–Sep"},{n:"Flt Lt E.E. Males",k:6,fate:"KIA Sep 1940",awards:"DFC",note:"Killed in action"},{n:"Plt Off D.F.B. Sheen",k:7,fate:"Survived",awards:"DFC",note:"Australian, later Wing Cdr"},{n:"Sgt R.E. Lonsdale",k:4,fate:"Survived",awards:"DFM",note:"NCO pilot"},{n:"Plt Off H.H. Gilbert",k:3,fate:"KIA Sep 1940",awards:"—",note:"Killed September"}]},
+ {num:"74",group:"11",base:"Hornchurch",codes:"ZP",kills:116,sorties:490,tags:["t-blue","t-amber"],tagTxt:["11 Group","Hornchurch"],roundel:"A1",spinner:"Sky",ops:"Tiger Squadron — Sailor Malan's unit and the most celebrated Spitfire squadron of the battle. Malan's Ten Rules of Air Fighting became the tactical doctrine for all Fighter Command. ZP-coded Spitfires are among the most modelled BoB aircraft.",decalRef:{serial:"N3239",codes:"ZP-K",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr A.G. Malan",wiki:"Adolph_Malan",k:27,fate:"Survived — died 1963",awards:"DSO Bar DFC Bar",note:"'Sailor' Malan — greatest Spitfire tactician"},{n:"Flt Lt H.M. Stephen",wiki:"Harbourne_Stephen",k:14,fate:"Survived",awards:"DSO DFC",note:"Malan's deputy, later Wing Cdr"},{n:"Plt Off P.C.F. Stevenson",k:8,fate:"KIA 18 Aug 1940",awards:"DFC",note:"Killed on The Hardest Day"},{n:"Sgt J.A. Freeth",k:6,fate:"KIA Aug 1940",awards:"DFM",note:"NCO ace, killed in combat"},{n:"Plt Off M.N. Freeborn",k:8,fate:"Survived",awards:"DFC",note:"Later Wing Commander"},{n:"Flt Lt W.E.G. Measures",k:5,fate:"Survived",awards:"DFC",note:"Flight commander"}]},
+ {num:"92",group:"11",base:"Biggin Hill",codes:"QJ",kills:127,sorties:510,tags:["t-blue","t-amber"],tagTxt:["11 Group","Biggin Hill"],roundel:"A1",spinner:"Sky",ops:"Highest-scoring Spitfire squadron of the entire battle. Stanford Tuck and Geoffrey Wellum flew here. Wellum's memoir First Light is the finest account of Spitfire flying ever written. 92 Sqn's record of 127 claims from Biggin Hill stands alone.",decalRef:{serial:"X4474",codes:"QJ-K",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr R.R.S. Tuck",wiki:"Robert_Stanford_Tuck",k:29,fate:"POW 1942 — died 1987",awards:"DSO DFC Bar",note:"'Bob' Stanford Tuck — one of the greatest aces"},{n:"Flt Lt B.J. Kingcome",k:10,fate:"Survived",awards:"DFC",note:"Later Air Vice-Marshal"},{n:"Plt Off G.H. Wellum",wiki:"Geoffrey_Wellum",k:4,fate:"Survived — died 2018",awards:"DFC",note:"Youngest BoB pilot, wrote First Light"},{n:"Flt Lt C.H. MacLean",k:7,fate:"Survived",awards:"DFC",note:"Flight commander"},{n:"Sgt T.G. Oldfield",k:5,fate:"KIA Sep 1940",awards:"DFM",note:"NCO killed September"},{n:"Plt Off P.G. McGregor",k:6,fate:"Survived",awards:"DFC",note:"Canadian, active Sep–Oct"}]},
+ {num:"152",group:"10",base:"Warmwell",codes:"UM",kills:73,sorties:350,tags:["t-green","t-blue"],tagTxt:["10 Group","Warmwell"],roundel:"A1",spinner:"Sky",ops:"Covered Portland naval base and west Dorset for 10 Group. Frequently intercepted Luftflotte 3 raids. Warmwell was a forward station — aircraft often scrambled with engines still warming.",decalRef:{serial:"R6834",codes:"UM-F",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr P.K. Devitt",k:6,fate:"Survived",awards:"DFC",note:"CO, Portland defence"},{n:"Flt Lt H.J.R. Carswell",k:5,fate:"Survived",awards:"DFC",note:"Flight commander"},{n:"Plt Off E.C. Deanesly",k:4,fate:"KIA Oct 1940",awards:"—",note:"Killed late battle"},{n:"Sgt L.A.J. Chipping",k:4,fate:"Survived",awards:"DFM",note:"NCO pilot"},{n:"Plt Off L.J. Griffiths",k:3,fate:"Survived",awards:"DFC",note:"Active Aug–Oct"}]},
+ {num:"222",group:"11",base:"Hornchurch",codes:"ZD",kills:78,sorties:370,tags:["t-blue","t-green"],tagTxt:["11 Group","Hornchurch"],roundel:"A1",spinner:"Sky",ops:"Arrived at Hornchurch in August 1940, covering the Thames Estuary. Don Kingaby began his remarkable career here — he went on to fly 108 victories through the war.",decalRef:{serial:"X4255",codes:"ZD-F",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr J.H. Hill",k:5,fate:"Survived",awards:"DFC",note:"CO"},{n:"Flt Lt T.M.A. Vigors",k:7,fate:"Survived",awards:"DFC",note:"Irish pilot, instructor later"},{n:"Plt Off C.A.B. Capon",k:4,fate:"KIA Aug 1940",awards:"—",note:"Killed August"},{n:"Sgt H.W. Steere",k:5,fate:"Survived",awards:"DFM",note:"NCO ace"},{n:"Plt Off D. Kingaby",k:7,fate:"Survived",awards:"DFM",note:"Later 108 total victories, Wing Commander"}]},
+ {num:"234",group:"10",base:"Middle Wallop",codes:"AZ",kills:62,sorties:310,tags:["t-green","t-amber"],tagTxt:["10 Group","M.Wallop"],roundel:"A1",spinner:"Sky",ops:"Pat Hughes, Australian CO, was one of the most aggressive squadron leaders in Fighter Command. Built 14 victories before being killed on the opening day of the Blitz, 7 September 1940, apparently colliding with a Bf 110 he had just destroyed.",decalRef:{serial:"P9372",codes:"AZ-D",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr P.C. Hughes",wiki:"Paterson_Clarence_Hughes",k:14,fate:"KIA 7 Sep 1940",awards:"DFC",note:"Australian CO — 14 victories, killed opening Blitz"},{n:"Flt Lt J.S. O'Brien",k:7,fate:"Survived",awards:"DFC",note:"Took command after Hughes"},{n:"Plt Off K.A. Lawrence",k:5,fate:"Survived",awards:"DFC",note:"New Zealander"},{n:"Sgt C.F. Babbage",k:5,fate:"Survived",awards:"DFM",note:"NCO pilot"},{n:"Plt Off R.E. Harker",k:4,fate:"Survived",awards:"DFC",note:"Active Aug–Oct"}]},
+ {num:"266",group:"12",base:"Wittering",codes:"UO",kills:55,sorties:280,tags:["t-amber","t-blue"],tagTxt:["12 Group","Wittering"],roundel:"A1",spinner:"Sky",ops:"Rhodesian squadron — first RAF unit with a specific national identity. Based at Wittering, served as part of 12 Group reserve, rotating south as needed.",decalRef:{serial:"X4053",codes:"UO-S",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr H.S. Darwent",k:4,fate:"KIA 1941",awards:"DFC",note:"CO, Rhodesian"},{n:"Flt Lt D.H. Hone",k:5,fate:"Survived",awards:"DFC",note:"Flight commander"},{n:"Plt Off N.J.V. Brettell",k:4,fate:"KIA 1942",awards:"DFC",note:"Later Great Escape victim"},{n:"Sgt A.J.M. Ingle",k:5,fate:"Survived",awards:"DFM",note:"NCO pilot"}]},
+ {num:"602",group:"11",base:"Westhampnett",codes:"LO",kills:87,sorties:410,tags:["t-blue","t-green"],tagTxt:["11 Group","Westhampnett"],roundel:"A1",spinner:"Sky",ops:"City of Glasgow Auxiliary. Based at Westhampnett (now Goodwood Circuit), satellite of Tangmere. Frequently engaged Luftflotte 3 attacking Portsmouth and Sussex coast. Paul Webb was an outstanding NCO ace.",decalRef:{serial:"P9466",codes:"LO-S",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr A.V.R. Johnstone",wiki:"Sandy_Johnstone",k:7,fate:"Survived",awards:"DFC",note:"CO, later Air Vice-Marshal"},{n:"Flt Lt P.C. Webb",k:7,fate:"Survived",awards:"DFM",note:"Outstanding NCO ace"},{n:"Plt Off A.C. Ingle",k:8,fate:"Survived",awards:"DFC",note:"Active throughout"},{n:"Plt Off F.R. Walker-Smith",k:5,fate:"Survived",awards:"DFC",note:"Active Jul–Sep"},{n:"Plt Off R.F. Boyd",k:7,fate:"KIA 1942",awards:"DFC",note:"Excellent pilot, later killed Malta"}]},
+ {num:"603",group:"13",base:"Drem/Hornchurch",codes:"XT",kills:95,sorties:440,tags:["t-coral","t-amber"],tagTxt:["13 Group","Drem/Hornchurch"],roundel:"A1",spinner:"Sky",ops:"City of Edinburgh Auxiliary. Moved south to Hornchurch in August. Richard Hillary — shot down and disfigured — wrote The Last Enemy from this squadron. The most celebrated literary account of the battle.",decalRef:{serial:"L1070",codes:"XT-D",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr G.L. Denholm",wiki:"George_Denholm",k:6,fate:"Survived",awards:"DFC",note:"'Uncle George', outstanding leader"},{n:"Plt Off R.H. Hillary",wiki:"Richard_Hillary",k:5,fate:"KIA Jan 1943",awards:"—",note:"Wrote The Last Enemy — burned, returned to ops"},{n:"Flt Lt S. Beaumont",k:5,fate:"Survived",awards:"DFC",note:"Flight commander"},{n:"Plt Off P.M. Howes",k:4,fate:"Survived",awards:"DFC",note:"Active Aug–Sep"},{n:"Sgt I.K. Arber",k:3,fate:"KIA Sep 1940",awards:"DFM",note:"Scottish NCO, killed"},{n:"Flt Lt K.M. Gilroy",k:6,fate:"Survived",awards:"DFC",note:"Later Wing Commander"}]},
+ {num:"609",group:"10",base:"Middle Wallop",codes:"PR",kills:98,sorties:460,tags:["t-green","t-amber"],tagTxt:["10 Group","M.Wallop"],roundel:"A1",spinner:"Sky",ops:"West Riding Auxiliary — one of the most productive Spitfire squadrons. John Dundas shot down Helmut Wick (top Luftwaffe ace with 56 kills) and was himself killed seconds later by Wick's wingman. David Crook's Spitfire Pilot is the essential Auxiliary memoir.",decalRef:{serial:"N3024",codes:"PR-F",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr H.S. Darley",wiki:"Squadron_Leader_Darley",k:7,fate:"Survived",awards:"DSO",note:"CO, outstanding at Middle Wallop"},{n:"Flt Lt J.C. Dundas",wiki:"John_Charles_Dundas",k:13,fate:"KIA 28 Nov 1940",awards:"DFC Bar",note:"Shot down Helmut Wick — killed seconds later"},{n:"Plt Off D.M. Crook",wiki:"David_Crook_(RAF_officer)",k:8,fate:"KIA 1944",awards:"DFC",note:"Wrote Spitfire Pilot"},{n:"Plt Off M.J. Appleby",k:7,fate:"Survived",awards:"DFC",note:"Active throughout"},{n:"Plt Off M.E. Staples",k:6,fate:"KIA Aug 1940",awards:"DFC",note:"Killed August"},{n:"Plt Off T.K. Rigler",k:4,fate:"Survived",awards:"DFC",note:"Active Aug–Sep"}]},
+ {num:"610",group:"13",base:"Acklington/Biggin",codes:"DW",kills:64,sorties:305,tags:["t-coral","t-blue"],tagTxt:["13 Group","Acklington"],roundel:"A1",spinner:"Sky",ops:"County of Chester Auxiliary. Initially north then rotated to Biggin Hill. 'Cocky' Dundas (brother of 609's John) was shot down twice in a fortnight and survived. 610 covered the northern defence before reinforcing 11 Group.",decalRef:{serial:"N3286",codes:"DW-K",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr A.L. Franks",k:5,fate:"Survived",awards:"DFC",note:"CO"},{n:"Flt Lt H.S.L. Dundas",wiki:"Hugh_Spencer_Lisle_Dundas",k:7,fate:"Survived",awards:"DFC",note:"'Cocky', shot down twice, later Air Marshal"},{n:"Plt Off D.S. Scott-Malden",k:6,fate:"Survived",awards:"DFC",note:"Later Wing Commander"},{n:"Flt Lt E.B.B. Smith",k:7,fate:"KIA Aug 1940",awards:"DFC",note:"Killed August"},{n:"Sgt A.C.R. Medway",k:3,fate:"Survived",awards:"DFM",note:"NCO pilot"}]},
+ {num:"611",group:"12",base:"Digby",codes:"FY",kills:48,sorties:260,tags:["t-amber","t-green"],tagTxt:["12 Group","Digby"],roundel:"A1",spinner:"Sky",ops:"West Lancashire Auxiliary. Part of 12 Group's Spitfire reserve. Participated in Duxford Wing operations. Covered the East Midlands from Digby in Lincolnshire.",decalRef:{serial:"L1028",codes:"FY-A",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr J.E. McComb",k:4,fate:"Survived",awards:"DFC",note:"CO"},{n:"Flt Lt E.R. Thorn",k:5,fate:"Survived",awards:"DFC",note:"Flight commander"},{n:"Plt Off P.R. Watkinson",k:3,fate:"Survived",awards:"DFC",note:"Active"},{n:"Sgt K.C. Holland",k:3,fate:"KIA 1941",awards:"DFM",note:"Killed following year"}]},
+ {num:"616",group:"11",base:"Kenley",codes:"YQ",kills:58,sorties:285,tags:["t-blue","t-amber"],tagTxt:["11 Group","Kenley"],roundel:"A1",spinner:"Sky",ops:"South Yorkshire Auxiliary. Suffered heavy losses during the August airfield attack phase. 'Cocky' Dundas survived being shot down twice in a fortnight. Eventually rebuilt and ended the war with a proud record.",decalRef:{serial:"X4382",codes:"YQ-B",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},pilots:[{n:"Sqn Ldr H.F. Burton",k:4,fate:"Survived",awards:"DFC",note:"CO"},{n:"Flt Lt H.S.L. Dundas",wiki:"Hugh_Spencer_Lisle_Dundas",k:7,fate:"Survived",awards:"DFC",note:"Also served 610; later Air Marshal"},{n:"Plt Off D.S. Scott-Malden",k:6,fate:"Survived",awards:"DFC",note:"Later Wing Commander"},{n:"Sgt R.J. Bland",k:3,fate:"Survived",awards:"DFM",note:"NCO pilot"},{n:"Plt Off E.F.J. Charles",k:4,fate:"Survived",awards:"DFC",note:"Active Aug–Sep"}]}
+];
+
+const BIOS={
+ "Sqn Ldr A.G. Malan":{kills:27,sorties:"~220+",fate:"Survived — died 1963",awards:["DSO Bar","DFC Bar"],bio:`<p>Adolph 'Sailor' Malan was born in South Africa and sailed the Cape mail route before joining the RAF. He commanded 74 Tiger Squadron and emerged as the greatest Spitfire tactician of the battle. His ten rules of air fighting — distributed to every Fighter Command pilot — defined Spitfire tactics for the rest of the war.</p><p>His score of 27 destroyed places him among the very highest-scoring pilots of the entire battle. He returned to South Africa after the war and became a prominent anti-apartheid campaigner until his death from Parkinson's disease in 1963.</p>`},
+ "Sqn Ldr R.R.S. Tuck":{kills:29,sorties:"~200+",fate:"POW 1942 — died 1987",awards:["DSO","DFC Bar"],bio:`<p>Robert Stanford Tuck was the most instinctive fighter pilot of his generation — a natural marksman with exceptional reflexes. His 29 victories placed him second only to Malan among BoB Spitfire aces. Shot down over France in January 1942, he became a prisoner and made multiple escape attempts from Stalag Luft III. He survived and died September 1987.</p>`},
+ "Flt Lt A.C. Deere":{kills:17,sorties:"~160+",fate:"Survived",awards:["DSO","DFC Bar"],bio:`<p>Al Deere, a New Zealander, survived nine separate near-fatal accidents during the Battle of Britain: baling out, crash-landing, mid-air collisions. His memoir Nine Lives is the most readable and technically accurate account of Spitfire combat ever written. After one crash-landing at Hornchurch he was nearly run over by a landing aircraft before he could get off the runway. He rose to Group Captain and remained an active voice for the veteran community.</p>`},
+ "Plt Off G.H. Wellum":{kills:4,sorties:"~90+",fate:"Survived — died 2018",awards:["DFC"],bio:`<p>Geoffrey Wellum joined 92 Squadron at Biggin Hill at eighteen — the youngest pilot in Fighter Command. His memoir First Light (published 2002) is the finest prose ever written about the Battle of Britain: honest about fear, precise about the physical sensation of Spitfire flight, elegiac about lost friends. He described the Spitfire as 'the most beautiful thing I had ever seen.' He died 18 July 2018, aged 96, one of the very last of the Few.</p>`},
+ "Flt Lt J.C. Dundas":{kills:13,sorties:"~120+",fate:"KIA 28 Nov 1940",awards:["DFC Bar"],bio:`<p>John Dundas flew with 609 West Riding Squadron through the entire battle. On 28 November 1940 he shot down Oberstleutnant Helmut Wick — the Luftwaffe's highest-scoring ace with 56 kills. Seconds later he was himself shot down by Wick's wingman. His body was never recovered. He was 23. His brother 'Cocky' Dundas survived the war to become an Air Marshal.</p>`},
+ "Plt Off R.H. Hillary":{kills:5,sorties:"~70+",fate:"KIA Jan 1943",awards:["—"],bio:`<p>Richard Hillary flew with 603 City of Edinburgh Squadron and was shot down and badly burned on 3 September 1940. Rescued after over an hour in the Channel, he underwent reconstructive surgery under Archibald McIndoe. He wrote The Last Enemy (1942) — the most celebrated literary account of the Battle of Britain. Against medical advice he returned to operations. He was killed in a training crash in January 1943. He was 23. His book has never been out of print.</p>`},
+ "Plt Off E.S. Lock":{kills:26,sorties:"~180+",fate:"KIA Jul 1941",awards:["DSO","DFC Bar"],bio:`<p>Eric Lock of 41 Squadron was the highest-scoring Fighter Command pilot of 1940 — 21 kills during the battle period, 26 by July 1941. A Shropshire farmer's son, Lock was an exceptional marksman who closed to point-blank range before firing. He was last seen diving into a strafing attack over France on 3 August 1941. He was 21. His body was never found.</p>`},
+ "Sqn Ldr P.C. Hughes":{kills:14,sorties:"~120+",fate:"KIA 7 Sep 1940",awards:["DFC"],bio:`<p>Pat Hughes was an Australian CO who built 14 victories through relentless aggression, often closing to ramming distance. On 7 September 1940 — opening day of the Blitz — he was killed apparently colliding with a Bf 110 he had just destroyed over the Thames Estuary. He had received four decorations in a single month. He was 22.</p>`},
+ "Flt Lt B.E. Finucane":{kills:12,sorties:"~130+",fate:"KIA Jul 1942",awards:["DFC"],bio:`<p>Brendan 'Paddy' Finucane was an Irishman who scored 12 victories with 65 Squadron in 1940 and went on to become one of the most celebrated RAF aces with 32 total kills. He was killed on 15 July 1942 by ground fire over the French coast. He was 21. The Irish Times led with his death on the front page.</p>`},
+ "Sqn Ldr B.J.E. Lane":{kills:6,sorties:"~100+",fate:"KIA Dec 1942",awards:["DFC"],bio:`<p>Brian Lane commanded 19 Squadron — the first to receive the Spitfire — and flew throughout the battle from Duxford. His memoir Spitfire! (published pseudonymously as 'B.J. Ellan' in 1942) remains one of the most vivid and technically accurate accounts of early Spitfire operations. He was declared missing over the North Sea in December 1942. He was 26.</p>`},
+ "Sgt G.C. Unwin":{kills:13,sorties:"~150+",fate:"Survived",awards:["DFM Bar"],bio:`<p>George 'Grumpy' Unwin was a pre-war regular NCO who became the highest-scoring sergeant pilot of the entire Battle of Britain with 19 Squadron. His 13 victories placed him above most commissioned officers. He was known for his laconic manner and precise flying — a fine example of the NCO aces who formed the backbone of Fighter Command in 1940.</p>`},
+ "Flt Lt D.M. Crook":{kills:8,sorties:"~100+",fate:"KIA 1944",awards:["DFC"],bio:`<p>David Crook flew with 609 Squadron and wrote Spitfire Pilot (1942) — the most immediate personal account of the West Riding Auxiliary experience. Published with minimal official interference, it conveys the reality of combat at Middle Wallop with unusual directness. He was killed in 1944 during a training flight. His book remains in print.</p>`}
+};
+
+const PAINTS=[
+ {name:"Dark Earth",bs:"BS381C-450",hex:"#7a5c3a",notes:"Upper surface camouflage. A-scheme: brown on starboard nose side.",brands:[{brand:"Humbrol",code:"29",url:"https://uk.humbrol.com/products/no-29-dark-earth-matt"},{brand:"Tamiya",code:"XF-52",url:"https://www.hannants.co.uk/product/TA87152"},{brand:"Vallejo",code:"MC-871",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/flat-earth-70871/"},{brand:"AK",code:"AK2102",url:"https://ak-interactive.com/product/raf-dark-earth/"}]},
+ {name:"Dark Green",bs:"BS381C-241",hex:"#3a4a2a",notes:"Upper surface camouflage. B-scheme reverses which colour is on which side of the nose.",brands:[{brand:"Humbrol",code:"116",url:"https://uk.humbrol.com/products/no-116-dark-green-matt"},{brand:"Tamiya",code:"XF-61",url:"https://www.hannants.co.uk/product/TA87161"},{brand:"Vallejo",code:"MC-893",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/us-dark-green-70893/"},{brand:"AK",code:"AK2099",url:"https://ak-interactive.com/product/raf-dark-green/"}]},
+ {name:"Sky (Type S)",bs:"BS381C-216",hex:"#8ab0a0",notes:"Undersides, spinner, fuselage band, code letters. Some Spitfires had narrow black spiral stripe on spinner.",brands:[{brand:"Humbrol",code:"90",url:"https://uk.humbrol.com/products/no-90-beige-green-matt"},{brand:"Tamiya",code:"XF-21",url:"https://www.hannants.co.uk/product/TA87121"},{brand:"Vallejo",code:"MC-900",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/sky-70900/"},{brand:"AK",code:"AK2101",url:"https://ak-interactive.com/product/raf-sky-type-s/"}]},
+ {name:"Night (Black)",bs:"BS381C-642",hex:"#1a1a1a",notes:"Port underside of wings — early July 1940 only.",brands:[{brand:"Humbrol",code:"21",url:"https://uk.humbrol.com/products/no-21-black-gloss"},{brand:"Tamiya",code:"XF-1",url:"https://www.hannants.co.uk/product/TA87101"},{brand:"Vallejo",code:"MC-950",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/black-70950/"},{brand:"AK",code:"AK11002",url:"https://ak-interactive.com/product/black-matt/"}]},
+ {name:"Aluminium",bs:"—",hex:"#c0c0c8",notes:"Leading edge wear, exhaust area, prop tips, port wing walkway wear (distinctive on Spitfire).",brands:[{brand:"Humbrol",code:"56",url:"https://uk.humbrol.com/products/no-56-aluminium-metallic"},{brand:"Tamiya",code:"XF-16",url:"https://www.hannants.co.uk/product/TA87116"},{brand:"Vallejo",code:"MC-997",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/silver-70997/"},{brand:"AK",code:"AK479",url:"https://ak-interactive.com/product/aluminium/"}]},
+ {name:"Propeller Yellow",bs:"BS381C-356",hex:"#f0c830",notes:"Last 48 inches of propeller tips. Bright yellow, crisp edge.",brands:[{brand:"Humbrol",code:"69",url:"https://uk.humbrol.com/products/no-69-yellow-gloss"},{brand:"Tamiya",code:"XF-3",url:"https://www.hannants.co.uk/product/TA87103"},{brand:"Vallejo",code:"MC-953",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/flat-yellow-70953/"},{brand:"AK",code:"AK2024",url:"https://ak-interactive.com/product/yellow/"}]},
+ {name:"Interior Grey-Green",bs:"BS381C-283",hex:"#7a8a70",notes:"Cockpit interior — tub, IP, seat, sidewalls, wheel bays. Spitfire cockpit is notably small.",brands:[{brand:"Humbrol",code:"78",url:"https://uk.humbrol.com/products/no-78-cockpit-green-matt"},{brand:"Tamiya",code:"XF-71",url:"https://www.hannants.co.uk/product/TA87171"},{brand:"Vallejo",code:"MC-886",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/green-grey-70886/"},{brand:"AK",code:"AK2099",url:"https://ak-interactive.com/product/raf-interior-green/"}]},
+ {name:"Exhaust Stain",bs:"—",hex:"#3a2a10",notes:"Port upper cowling streaking. Brown-black oil blend. Spitfire staining is slightly narrower than Hurricane's.",brands:[{brand:"Humbrol",code:"98",url:"https://uk.humbrol.com/products/no-98-chocolate-matt"},{brand:"Tamiya",code:"XF-64",url:"https://www.hannants.co.uk/product/TA87164"},{brand:"Vallejo",code:"MC-822",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/german-camo-black-brown-70822/"},{brand:"AK",code:"AK082",url:"https://ak-interactive.com/product/engine-grime/"}]},
+];
+
+const KITS=[
+ {brand:"Airfix",name:"Spitfire Mk.I",scale:"1:48",stars:5,
+  accuracy:"New-tool, superb accuracy. Best outline, surface detail and fit in the scale. Excellent cockpit for the price. Best value BoB Mk.I in 1:48. Recommended for all levels. Includes markings for 92 Sqn QJ and 65 Sqn YT.",
+  markings:["92 Sqn QJ-K (Tuck)","65 Sqn YT-N"],
+  shops:[
+   {label:"Hannants — AX05126A",url:"https://www.hannants.co.uk/product/AX05126A"},
+   {label:"Airfix direct",url:"https://uk.airfix.com/products/supermarine-spitfire-mki-a05126a"}]},
+ {brand:"Airfix",name:"Spitfire Mk.I",scale:"1:72",stars:5,
+  accuracy:"Recent retool, outstanding for the scale. Strong BoB markings options. The obvious 1:72 Spitfire choice for beginners and intermediates alike.",
+  markings:["603 Sqn XT","609 Sqn PR","74 Sqn ZP"],
+  shops:[
+   {label:"Hannants — AX01071B",url:"https://www.hannants.co.uk/product/AX01071B"},
+   {label:"Airfix direct",url:"https://uk.airfix.com/products/supermarine-spitfire-mki-a01071b"}]},
+ {brand:"Eduard",name:"Spitfire Mk.I early ProfiPACK",scale:"1:48",stars:5,
+  accuracy:"Definitive 1:48 Spitfire. 7 marking options. Pre-painted SPACE 3D cockpit PE, pre-cut Kabuki masks, outstanding decals covering pre-war and BoB subjects including 19, 54, 72 and 602 Sqns. Best out-of-box Spitfire experience available.",
+  markings:["19 Sqn QV","54 Sqn KL","72 Sqn RN","602 Sqn LO"],
+  shops:[
+   {label:"Hannants — EDK82152",url:"https://www.hannants.co.uk/product/EDK82152"},
+   {label:"Eduard direct",url:"https://www.eduard.com/store/en/spitfire-mk-i-early/p/82152/"}]},
+ {brand:"Eduard",name:"Spitfire Mk.Ia Weekend Edition",scale:"1:48",stars:4,
+  accuracy:"Same accurate Eduard moulding without the PE and masks. 4 marking options including 92 Sqn P7372 (Bartley), 602 Sqn L1004 (Johnstone), 234 Sqn X4036 (Doe). Good value entry to Eduard's Spitfire tooling.",
+  markings:["92 Sqn","602 Sqn","234 Sqn"],
+  shops:[
+   {label:"Hannants — EDK84179",url:"https://www.hannants.co.uk/product/EDK84179"},
+   {label:"Eduard direct",url:"https://www.eduard.com/store/en/spitfire-mk-ia/p/84179/"}]},
+ {brand:"Tamiya",name:"Spitfire Mk.Vb",scale:"1:48",stars:4,
+  accuracy:"Superb Tamiya quality — but this is the Mk.Vb with cannon wing blisters. Post-BoB variant only. Do not use for BoB Mk.I builds. Excellent for 1941–44 subjects.",
+  markings:["Various 1941–44"],
+  shops:[
+   {label:"Hannants — TA61033",url:"https://www.hannants.co.uk/product/TA61033"}]},
+ {brand:"Eduard",name:"The Spitfire Story — Limited Edition",scale:"1:48",stars:5,
+  accuracy:"10 marking options spanning 1938–BoB 1940. Includes PE, masks and outstanding decals. For the collector or modeller who wants a definitive BoB shelf piece.",
+  markings:["19 Sqn QV","602 Sqn LO","74 Sqn ZP","92 Sqn GR"],
+  shops:[
+   {label:"Hannants — EDK11143",url:"https://www.hannants.co.uk/product/EDK11143"},
+   {label:"Eduard direct",url:"https://www.eduard.com/store/en/spitfire-mk-i-the-spitfire-story/p/11143/"}]},
+ {brand:"Hasegawa",name:"Spitfire Mk.I",scale:"1:32",stars:3,
+  accuracy:"Older tool — dated surface detail by modern standards but accurate Mk.I shape. Good base for a superdetailed 1:32 build with CMK or Eduard Brassin resin upgrades. Resin cockpit, exhaust and wheel sets all available.",
+  markings:["74 Sqn ZP","92 Sqn QJ"],
+  shops:[
+   {label:"Hannants — search 1:32 Spitfire",url:"https://www.hannants.co.uk/search/?keyword_search=spitfire+mk+i&scale_id=953&product_type_id=1821"}]},
+ {brand:"Revell",name:"Spitfire Mk.IIa",scale:"1:32",stars:3,
+  accuracy:"Mk.II — slightly different cowling and exhaust profile from the Mk.I. Cheaper 1:32 entry point. Suitable for late-1940 subjects when Mk.IIs entered service with 19 Sqn from September 1940.",
+  markings:["19 Sqn QV","Various late 1940"],
+  shops:[
+   {label:"Hannants — RV03986",url:"https://www.hannants.co.uk/product/RV03986"}]},
+];
+
+const SQ_DECALS={
+ "19":[
+  {name:"Xtradecal X48143 — 1:48 BoB Pt.1 · R6776 QV-H (Unwin) 19 Sqn",url:"https://www.hannants.co.uk/product/X48143"},
+  {name:"Xtradecal X48059 — 1:48 Spitfire Mk.I/II · P9386 QV-K (Brian Lane) 19 Sqn March 1940",url:"https://www.hannants.co.uk/product/X48059"},
+  {name:"Xtradecal X48086 — 1:48 BoB RAF mixed · X4474 QV-I 19 Sqn (+ Hurricanes 85, 310 Sqn)",url:"https://www.hannants.co.uk/product/X48086"},
+  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 (10 aircraft) · R6776 QV-H 19 Sqn",url:"https://www.hannants.co.uk/product/X72221"}],
+ "41":[
+  {name:"Xtradecal X48145 — 1:48 BoB Pt.2 · EB-L 41 Sqn P/O Ted Shipman RAF Catterick",url:"https://www.hannants.co.uk/product/X48145"},
+  {name:"Hannants — search 41 Sqn Spitfire decals",url:"https://www.hannants.co.uk/search/?keyword_search=41+squadron+spitfire&product_type_id=2677"}],
+ "54":[
+  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · P9398 KL-B (Al Deere) 54 Sqn Hornchurch",url:"https://www.hannants.co.uk/product/X72221"},
+  {name:"Hannants — search 54 Sqn Spitfire decals",url:"https://www.hannants.co.uk/search/?keyword_search=54+squadron+spitfire&product_type_id=2677"}],
+ "64":[
+  {name:"Hannants — search 64 Sqn Spitfire decals",url:"https://www.hannants.co.uk/search/?keyword_search=64+squadron+spitfire&product_type_id=2677"},
+  {name:"Xtradecal X48147 — 1:48 National Insignia BoB 1940 (roundels + Sky codes)",url:"https://www.hannants.co.uk/product/X48147"}],
+ "65":[
+  {name:"Hannants — search 65 Sqn Spitfire decals",url:"https://www.hannants.co.uk/search/?keyword_search=65+squadron+spitfire&product_type_id=2677"},
+  {name:"Xtradecal X48147 — 1:48 National Insignia BoB 1940",url:"https://www.hannants.co.uk/product/X48147"}],
+ "66":[
+  {name:"Xtradecal X48086 — 1:48 BoB RAF mixed · R6800 LZ-N (Leigh) 66 Sqn + Hurricanes",url:"https://www.hannants.co.uk/product/X48086"},
+  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · R6800 LZ-N 66 Sqn S/Ldr Leigh Gravesend",url:"https://www.hannants.co.uk/product/X72221"}],
+ "72":[
+  {name:"Xtradecal X48143 — 1:48 BoB Pt.1 · RN-N 72 Sqn F/O Desmond Sheen",url:"https://www.hannants.co.uk/product/X48143"},
+  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · RN-N 72 Sqn F/O Desmond Sheen",url:"https://www.hannants.co.uk/product/X72221"}],
+ "74":[
+  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · K9953 ZP-A (Sailor Malan) 74 Tiger Sqn",url:"https://www.hannants.co.uk/product/X72221"},
+  {name:"Xtradecal X48147 — 1:48 National Insignia BoB 1940 (roundels + Sky codes for ZP)",url:"https://www.hannants.co.uk/product/X48147"},
+  {name:"Hannants — search 74 squadron spitfire Tiger",url:"https://www.hannants.co.uk/search/?keyword_search=74+squadron+spitfire&product_type_id=2677"}],
+ "92":[
+  {name:"Xtradecal X48143 — 1:48 BoB Pt.1 · N3290 GR-U 92 Sqn RAF Hornchurch",url:"https://www.hannants.co.uk/product/X48143"},
+  {name:"Xtradecal X48059 — 1:48 Spitfire Mk.I/II · N3249 QJ-P 92 Sqn Biggin Hill Sept 1940",url:"https://www.hannants.co.uk/product/X48059"},
+  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · N3290 GR-U 92 Sqn Hornchurch",url:"https://www.hannants.co.uk/product/X72221"},
+  {name:"Eduard EDK82152 ProfiPACK — includes BoB 92 Sqn markings",url:"https://www.hannants.co.uk/product/EDK82152"}],
+ "152":[
+  {name:"Hannants — search 152 Sqn Spitfire decals (Warmwell / 10 Group)",url:"https://www.hannants.co.uk/search/?keyword_search=152+squadron+spitfire&product_type_id=2677"},
+  {name:"Xtradecal X48147 — 1:48 National Insignia BoB 1940",url:"https://www.hannants.co.uk/product/X48147"}],
+ "222":[
+  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · P9323 ZD-F 222 Sqn Hornchurch",url:"https://www.hannants.co.uk/product/X72221"},
+  {name:"Hannants — search 222 Sqn Spitfire decals",url:"https://www.hannants.co.uk/search/?keyword_search=222+squadron+spitfire&product_type_id=2677"}],
+ "234":[
+  {name:"Eduard EDK84179 Weekend Mk.Ia — includes X4036 P/O Doe 234 Sqn Middle Wallop Aug 1940",url:"https://www.hannants.co.uk/product/EDK84179"},
+  {name:"Hannants — search 234 Sqn Spitfire decals",url:"https://www.hannants.co.uk/search/?keyword_search=234+squadron+spitfire&product_type_id=2677"}],
+ "266":[
+  {name:"Xtradecal X48143 — 1:48 BoB Pt.1 · X4593 UO-A 266 Sqn RAF Wittering",url:"https://www.hannants.co.uk/product/X48143"},
+  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · X4593 UO-A 266 Sqn Wittering",url:"https://www.hannants.co.uk/product/X72221"}],
+ "602":[
+  {name:"Xtradecal X48143 — 1:48 BoB Pt.1 · X4382 LO-G (P/O Hanbury) 602 City Glasgow",url:"https://www.hannants.co.uk/product/X48143"},
+  {name:"Xtradecal X48145 — 1:48 BoB Pt.2 · L1027 LO-A 602 Sqn Westhampnett (Johnstone)",url:"https://www.hannants.co.uk/product/X48145"},
+  {name:"Xtradecal X48086 — 1:48 BoB RAF mixed · K9899 LO-H 602 Sqn July 1940",url:"https://www.hannants.co.uk/product/X48086"},
+  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · X4382 LO-G 602 Sqn Westhampnett",url:"https://www.hannants.co.uk/product/X72221"},
+  {name:"Eduard EDK84179 Weekend Mk.Ia — includes L1004 LO-Q 602 Sqn (Johnstone) Drem May 1940",url:"https://www.hannants.co.uk/product/EDK84179"}],
+ "603":[
+  {name:"Hannants — search 603 City Edinburgh Spitfire decals",url:"https://www.hannants.co.uk/search/?keyword_search=603+squadron+spitfire&product_type_id=2677"},
+  {name:"Xtradecal X48147 — 1:48 National Insignia BoB 1940 (roundels + XT codes)",url:"https://www.hannants.co.uk/product/X48147"}],
+ "609":[
+  {name:"Hannants — search 609 West Riding Spitfire decals",url:"https://www.hannants.co.uk/search/?keyword_search=609+squadron+spitfire&product_type_id=2677"},
+  {name:"Xtradecal X48147 — 1:48 National Insignia BoB 1940",url:"https://www.hannants.co.uk/product/X48147"}],
+ "610":[
+  {name:"Hannants — search 610 County Chester Spitfire decals",url:"https://www.hannants.co.uk/search/?keyword_search=610+squadron+spitfire&product_type_id=2677"},
+  {name:"Xtradecal X48147 — 1:48 National Insignia BoB 1940",url:"https://www.hannants.co.uk/product/X48147"}],
+ "611":[
+  {name:"Xtradecal X48145 — 1:48 BoB Pt.2 · X4253 FY-N 611 Sqn Sgt Duncan-Smith RAF Rochford",url:"https://www.hannants.co.uk/product/X48145"},
+  {name:"Hannants — search 611 West Lancashire Spitfire decals",url:"https://www.hannants.co.uk/search/?keyword_search=611+squadron+spitfire&product_type_id=2677"}],
+ "616":[
+  {name:"Xtradecal X48143 — 1:48 BoB Pt.1 · N3093 QJ-W 616 Sqn (Gilliam) Leconfield",url:"https://www.hannants.co.uk/product/X48143"},
+  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · X4382 QJ-W 616 Sqn Leconfield",url:"https://www.hannants.co.uk/product/X72221"},
+  {name:"Hannants — search 616 S.Yorkshire Spitfire decals",url:"https://www.hannants.co.uk/search/?keyword_search=616+squadron+spitfire&product_type_id=2677"}],
+};
+
+const AFTERMARKET={
+ "Resin Cockpits & Interiors":[
+  {type:"Resin",name:"Spitfire Mk.I Cockpit 1:48 — Eduard Brassin 648578",maker:"Eduard Brassin",scales:["1:48"],
+   desc:"Full resin cockpit — seat, IP, sidewalls, harness, control column. 37 parts including pre-painted PE. Most impactful single upgrade for the Airfix or Eduard Mk.I.",
+   url:"https://www.genessis-models.co.uk/product/eduard-brassin-spitfire-mk-i-cockpit-1-48-scale/"},
+  {type:"Resin",name:"Spitfire Mk.I early LooK 1:48 — Eduard 644063",maker:"Eduard",scales:["1:48"],
+   desc:"Pre-painted 3D colour interior PE set. Cockpit sidewalls, IP and harness all pre-coloured. Fastest route to a convincing cockpit.",
+   url:"https://www.genessis-models.co.uk/product/eduard-brassin-spitfire-mk-i-early-look-1-48-scale/"},
+  {type:"Resin",name:"Spitfire Mk.I Seat with Sutton Harness — QB48151",maker:"Quickboost",scales:["1:48"],
+   desc:"Resin seat with Sutton Q-type harness detail. Single most impactful single-part upgrade — drop-fit for Airfix and Eduard 1:48.",
+   url:"https://www.spruebrothers.com/qb48151/"},
+ ],
+ "Exhausts & Undercarriage":[
+  {type:"Resin",name:"Spitfire Mk.I Exhaust Stacks 1:48 — Eduard Brassin 648580",maker:"Eduard Brassin",scales:["1:48"],
+   desc:"Correct individual ejector exhaust stacks for Merlin II/III. Hollowed ends — huge improvement over the simplified kit stubs.",
+   url:"https://www.genessis-models.co.uk/product/category/aftermarket-parts/",
+   urlEduard:"https://www.eduard.com/store/en/spitfire-mk-i-exhaust-stacks/p/648580/"},
+  {type:"Resin",name:"Spitfire Mk.I Wheels 1:48 — Eduard Brassin 648579",maker:"Eduard Brassin",scales:["1:48"],
+   desc:"Weighted, flat-spotted Dunlop resin wheels with correct hub detail. Transforms the parked appearance instantly.",
+   url:"https://www.genessis-models.co.uk/product/eduard-brassin-spitfire-mk-i-wheels-1-48-scale/"},
+  {type:"Resin",name:"Spitfire Mk.I Undercarriage Legs BRONZE 1:48 — Eduard Brassin 648589",maker:"Eduard Brassin",scales:["1:48"],
+   desc:"Cast bronze undercarriage legs with correct cross-section. Much stronger than plastic kit legs — no risk of collapse under a display model.",
+   url:"https://www.genessis-models.co.uk/product/eduard-brassin-spitfire-mk-i-undercarriage-legs-bronze-1-48-scale/"},
+  {type:"Metal",name:"Spitfire Browning .303 Barrels × 8 — Master Model AM-48-108",maker:"Master Model",scales:["1:48"],
+   desc:"Turned brass Browning .303 barrels — eight per Spitfire. One of the most visible improvements. Hollow ends, correctly profiled.",
+   url:"https://www.spruebrothers.com/am48108/"},
+ ],
+ "Photo-Etch & Masks":[
+  {type:"Photo-etch",name:"Spitfire Mk.I SPACE 3D Interior — Eduard 3DL48005",maker:"Eduard",scales:["1:48"],
+   desc:"Pre-painted 3D waterslide interior decals plus STEEL PE. Alternative to Brassin cockpit — every instrument printed in colour, fast to apply.",
+   url:"https://www.hannants.co.uk/product/ED3DL48005"},
+  {type:"Mask",name:"Spitfire Mk.I/II Canopy Masks — Eduard EX675",maker:"Eduard",scales:["1:48"],
+   desc:"Pre-cut Kabuki tape for all canopy panes and wheel hubs. Non-negotiable — the Spitfire's curved panes are near-impossible to mask freehand.",
+   url:"https://www.hannants.co.uk/product/EDEX675"},
+  {type:"Mask",name:"Spitfire Mk.I/II Canopy Masks 1:72 — Eduard EX704",maker:"Eduard",scales:["1:72"],
+   desc:"1:72 canopy masks. Even more important at 1:72 than at 1:48 — the panes are tiny.",
+   url:"https://www.hannants.co.uk/product/EDEX704"},
+ ],
+ "Conversion Sets":[
+  {type:"Conversion",name:"Spitfire Mk.I Fabric Control Surfaces 1:48",maker:"Barracuda Studios",scales:["1:48"],
+   desc:"Resin replacement ailerons, rudder and elevators with correct fabric weave texture moulded in. All BoB Spitfires had fabric surfaces — this is the only kit-compatible representation.",
+   url:"https://barracudacals.com/collections/1-48-resin-detail-sets/spitfire"},
+ ],
+ "Decals":[
+  {type:"Decals",name:"Xtradecal X48143 — 1:48 BoB Spitfire Pt.1 (6 aircraft)",maker:"Xtradecal",scales:["1:48"],
+   desc:"19 Sqn QV-H (Unwin), 72 Sqn RN-N (Sheen), 92 Sqn GR-U, 266 Sqn UO-A, 602 Sqn LO-G (Hanbury), 616 Sqn QJ-W (Gilliam).",
+   url:"https://www.hannants.co.uk/product/X48143"},
+  {type:"Decals",name:"Xtradecal X48145 — 1:48 BoB Spitfire Pt.2 (4 aircraft)",maker:"Xtradecal",scales:["1:48"],
+   desc:"41 Sqn EB-L (Shipman), 421 Flt LZ-I (Green), 602 Sqn LO-A (Johnstone), 611 Sqn FY-N (Duncan-Smith).",
+   url:"https://www.hannants.co.uk/product/X48145"},
+  {type:"Decals",name:"Xtradecal X48059 — 1:48 Spitfire Mk.I/II (5 aircraft)",maker:"Xtradecal",scales:["1:48"],
+   desc:"19 Sqn QV-K (Brian Lane) Fowlmere 1940, 92 Sqn QJ-P Biggin Hill Sept 1940, prototype K5054 1936, plus two Mk.IIa subjects.",
+   url:"https://www.hannants.co.uk/product/X48059"},
+  {type:"Decals",name:"Xtradecal X72221 — 1:72 BoB Spitfire Pt.1 (10 aircraft)",maker:"Xtradecal",scales:["1:72"],
+   desc:"19 QV-H (Unwin), 54 KL-B (Deere), 66 LZ-N (Leigh), 72 RN-N (Sheen), 74 ZP-A (Malan), 92 GR-U, 222 ZD-F, 266 UO-A, 602 LO-G, 616 QJ-W. Definitive 1:72 BoB Spitfire sheet.",
+   url:"https://www.hannants.co.uk/product/X72221"},
+  {type:"Decals",name:"Xtradecal X48147 — 1:48 BoB National Insignia (Spitfire + Hurricane)",maker:"Xtradecal",scales:["1:48"],
+   desc:"Double sheet — all roundel sizes, fin flashes and Sky code letter sets for BoB 1940. Essential companion to any aircraft-specific sheet.",
+   url:"https://www.hannants.co.uk/product/X48147"},
+ ]
+};
+
+const WEATHER=[
+ {base:"Hornchurch",group:"11",sqns:["41","54","65","74","222","603"],mudColour:"#c8b070",mudNote:"Thames Estuary alluvium — pale tan-yellow",mudMix:"Tamiya XF-57 + XF-60 (2:1) + trace XF-2",rows:[{l:"Surface",v:"Thames alluvium and gravel. Pale tan-yellow dust in dry conditions"},{l:"Mud",v:"Lighter than clay stations — pale ochre-tan build-up on undercarriage"},{l:"Ops tempo",v:"Extremely high — six Spitfire squadrons based or rotating through in 1940"},{l:"Condition",v:"Eight gun port blast marks visible, exhaust staining by late August. Sky codes often retouched"}]},
+ {base:"Biggin Hill",group:"11",sqns:["72","92","610"],mudColour:"#c8b88a",mudNote:"Chalk & flint dust — pale buff-grey",mudMix:"Tamiya XF-57 + XF-2 (1:1) + trace XF-64",rows:[{l:"Surface",v:"Chalk and flint subsoil. Very pale white-grey dust in dry conditions"},{l:"Mud",v:"Pale buff-grey chalk mud — Biggin's mud is much lighter than Thames Valley clay"},{l:"Attack",v:"Bombed six times in three days Aug 1940. Ops room to butcher's shop. Aircraft operated from dispersal."},{l:"Condition",v:"Well-worn by September. Wing root walkway chipping distinctive on 92 Sqn aircraft"}]},
+ {base:"Westhampnett",group:"11",sqns:["602"],mudColour:"#8a5830",mudNote:"Sussex clay — dark rich brown",mudMix:"Tamiya XF-64 + XF-52 (1:1)",rows:[{l:"Surface",v:"Sussex clay — satellite of Tangmere. Dark brown mud after rain"},{l:"Mud",v:"Dark ochre-brown. Significant undercarriage contamination. Note: Westhampnett is now Goodwood."},{l:"Salt",v:"Close to coast — salt residue on canopy and leading edges"},{l:"Condition",v:"602 Sqn aircraft show heavy operational wear by September after extended Channel sorties"}]},
+ {base:"Middle Wallop",group:"10",sqns:["234","609"],mudColour:"#ddd0a0",mudNote:"Hampshire chalk downland — very pale dust",mudMix:"Tamiya XF-2 + trace XF-57 (10:1)",rows:[{l:"Surface",v:"Hampshire chalk — palest dust of any BoB station. Almost white contamination on undersurfaces"},{l:"Mud",v:"Minimal — chalk drains rapidly. Fine white-grey dust rather than mud"},{l:"Ops",v:"609's Spitfires operating at max range against Luftflotte 3 from Normandy"},{l:"Condition",v:"Aircraft generally clean except exhaust and gun port staining"}]},
+ {base:"Warmwell",group:"10",sqns:["152"],mudColour:"#c8c0a0",mudNote:"Dorset limestone — pale grey-buff",mudMix:"Tamiya XF-2 + XF-57 (8:1)",rows:[{l:"Surface",v:"Dorset limestone — pale grey-buff dust"},{l:"Mud",v:"Light grey-buff. Minimal build-up. Limestone drains well."},{l:"Ops",v:"Short taxi, aircraft scrambled cold. Very fast turnarounds defending Portland."},{l:"Condition",v:"Standard BoB wear. No distinctive local features."}]},
+ {base:"Duxford",group:"12",sqns:["19","66"],mudColour:"#6a4820",mudNote:"Cambridgeshire clay — dark brown",mudMix:"Tamiya XF-64 + XF-52 (2:1)",rows:[{l:"Surface",v:"Cambridgeshire heavy clay — dark brown mud after rain"},{l:"Mud",v:"Deep brown clay build-up on undercarriage and tail wheel area"},{l:"Big Wing",v:"19 Sqn participated in controversial multi-squadron formations. Long transit south."},{l:"Condition",v:"Less intense ops tempo — aircraft generally better maintained than 11 Group units"}]},
+];
+
+const TECHNIQUES=[
+ {name:"Pre-shading",colour:"#2a3a60",desc:"Before base colours, spray dark grey along panel line recesses at low pressure. When base coat follows, recesses stay darker — subtle natural depth. The Spitfire's elliptical wings and curved fuselage benefit particularly from this technique.",products:"Tamiya XF-1 + XF-2 (4:1 pre-shade)",links:[{label:"YouTube: preshading Spitfire 1:48 technique",url:"https://www.youtube.com/results?search_query=pre-shading+spitfire+1:48+technique"},{label:"YouTube: modulation preshading RAF aircraft",url:"https://www.youtube.com/results?search_query=modulation+preshading+RAF+aircraft+airbrush"}]},
+ {name:"Exhaust staining",colour:"#5a3010",desc:"All BoB Spitfires showed heavy exhaust staining on port upper cowling, streaking 6–10 inches rearward. Use brown-black oils (Lamp Black + Raw Umber) streaked with a fan brush dampened with Odourless Thinner. Build gradually. Burnt Sienna adds rust tones at stack exits.",products:"AK Interactive Exhaust Wash AK081 · Abteilung 502 Lamp Black",links:[{label:"YouTube: exhaust staining Spitfire scale model",url:"https://www.youtube.com/results?search_query=exhaust+staining+spitfire+scale+model+oils"},{label:"YouTube: oil streaking WW2 aircraft model",url:"https://www.youtube.com/results?search_query=oil+streaking+technique+ww2+aircraft+model"}]},
+ {name:"Chipping & walkway wear",colour:"#3a2810",desc:"BoB Spitfires show wear at the port wing root walkway (painted on all Spitfires), cockpit sill, and leading edges. Use Aluminium (Humbrol 56) or a silver pencil for leading edge wear. Sponge chipping with foam at the walkway — the Spitfire's thin metal skin chips crisply.",products:"Humbrol 56 Aluminium · Tamiya X-11 Chrome Silver · Prismacolor silver pencil",links:[{label:"YouTube: chipping wear Spitfire wing walkway",url:"https://www.youtube.com/results?search_query=chipping+wear+spitfire+wing+leading+edge+scale+model"},{label:"YouTube: salt chipping technique RAF fighter",url:"https://www.youtube.com/results?search_query=salt+chipping+technique+raf+spitfire+model"}]},
+ {name:"Panel washing",colour:"#1a3a50",desc:"Flory Models Dark Dirt or AK Panel Line Wash with Odourless Thinner. Capillary action draws wash into lines. Remove excess wiping towards trailing edges — always in direction of airflow. Flush rivets give cleaner lines than the Hurricane's.",products:"Flory Models Dark Dirt · AK Interactive Panel Line Wash Dark Brown",links:[{label:"YouTube: panel wash Spitfire Airfix 1:48",url:"https://www.youtube.com/results?search_query=panel+line+wash+spitfire+airfix+1:48+tutorial"},{label:"YouTube: Flory Models washes aircraft",url:"https://www.youtube.com/results?search_query=flory+models+wash+aircraft+scale+model+tutorial"}]},
+ {name:"Final sealing",colour:"#5a3a20",desc:"Matt varnish overall to unify weathering. Oil dot filtering — Yellow Ochre, Raw Sienna, Titanium White on upper surfaces — blend with thinner for warm fade. Satin on canopy framing and metal fittings. BoB Spitfire was MAP (flat). Keep final coat very flat.",products:"Vallejo Matt Varnish · Abteilung 502 oils · Tamiya X-35 Satin for canopy framing",links:[{label:"YouTube: oil dot filter technique aircraft model",url:"https://www.youtube.com/results?search_query=oil+dot+filter+technique+aircraft+model"},{label:"YouTube: final varnish matt coat scale model",url:"https://www.youtube.com/results?search_query=final+varnish+matt+coat+scale+model+aircraft+tutorial"}]},
+];
+
+const STATIONS=[
+ {id:"hornchurch",name:"Hornchurch",x:381,y:541,group:"11",sqns:["41","54","65","74","222","603"],type:"sector",info:"Primary Spitfire sector — six Spitfire squadrons based or rotating. Thames alluvium pale tan dust. Never bombed despite being a key target."},
+ {id:"biggin",name:"Biggin Hill",x:371,y:557,group:"11",sqns:["72","92","610"],type:"sector",info:"72 and 92 Sqn Spitfires here. Bombed six times in three days Aug 1940. Chalk/flint dust — pale buff on undersurfaces."},
+ {id:"kenley",name:"Kenley",x:366,y:557,group:"11",sqns:["64","616"],type:"sector",info:"64 and 616 Sqn Spitfires. 18 Aug: Do 17s at low level destroyed all hangars. Surrey clay-chalk mix."},
+ {id:"westhampnett",name:"Westhampnett",x:331,y:593,group:"11",sqns:["602"],type:"satellite",info:"602 City of Glasgow Sqn — now Goodwood Motor Circuit. Sussex clay, dark brown mud."},
+ {id:"northolt",name:"Northolt",x:352,y:541,group:"11",sqns:["303","1"],type:"sector",info:"Primarily Hurricane base. Spitfire units passed through occasionally."},
+ {id:"northweald",name:"North Weald",x:376,y:527,group:"11",sqns:["56","151"],type:"sector",info:"Hurricane sector station. Essex clay dark mud."},
+ {id:"debden",name:"Debden",x:381,y:506,group:"11",sqns:["17","73"],type:"sector",info:"Hurricane sector station."},
+ {id:"wallop",name:"M. Wallop",x:297,y:569,group:"10",sqns:["234","609"],type:"sector",info:"234 and 609 Sqn Spitfires. Hampshire chalk — almost white dust. 609 Sqn Spitfires exceptionally clean."},
+ {id:"warmwell",name:"Warmwell",x:243,y:597,group:"10",sqns:["152"],type:"sector",info:"152 Sqn Spitfires defending Portland naval base. Dorset limestone pale dust."},
+ {id:"exeter",name:"Exeter",x:198,y:597,group:"10",sqns:["87","238"],type:"sector",info:"Hurricane base — 10 Group westernmost. Devon red clay."},
+ {id:"duxford",name:"Duxford",x:376,y:499,group:"12",sqns:["19","66"],type:"sector",info:"19 Sqn — first Spitfire unit — based here. Big Wing controversy. Dark Cambridgeshire clay."},
+ {id:"coltishall",name:"Coltishall",x:436,y:458,group:"12",sqns:["66","242"],type:"sector",info:"66 Sqn Spitfires later in battle. Norfolk sandy loam — light buff dust."},
+ {id:"wittering",name:"Wittering",x:351,y:451,group:"12",sqns:["266"],type:"sector",info:"266 Rhodesian Sqn. East Midlands coverage. Limestone dust."},
+ {id:"digby",name:"Digby",x:366,y:411,group:"12",sqns:["611"],type:"sector",info:"611 West Lancashire Sqn. Lincolnshire clay."},
+ {id:"drem",name:"Drem",x:233,y:228,group:"13",sqns:["603","605"],type:"sector",info:"603 City of Edinburgh home before moving south. 15 Aug — Luftflotte 5 from Norway met by 13 Group."},
+ {id:"acklington",name:"Acklington",x:290,y:278,group:"13",sqns:["610","72"],type:"sector",info:"610 County of Chester Sqn before rotating south. Northumbrian clay."},
+ {id:"turnhouse",name:"Turnhouse",x:213,y:235,group:"13",sqns:["253"],type:"sector",info:"Edinburgh airport. 13 Group central Scotland."},
+];
+
+const TL={
+ "19":[{s:0,e:113,st:"reserve"}],"41":[{s:0,e:113,st:"front"}],"54":[{s:0,e:65,st:"front"},{s:66,e:113,st:"rest"}],
+ "64":[{s:0,e:55,st:"front"},{s:56,e:113,st:"rest"}],"65":[{s:0,e:113,st:"front"}],"66":[{s:0,e:113,st:"reserve"}],
+ "72":[{s:0,e:45,st:"reserve"},{s:46,e:113,st:"front"}],"74":[{s:0,e:113,st:"front"}],"92":[{s:0,e:30,st:"rest"},{s:31,e:113,st:"front"}],
+ "152":[{s:0,e:113,st:"front"}],"222":[{s:0,e:113,st:"front"}],"234":[{s:0,e:70,st:"front"},{s:71,e:113,st:"rest"}],
+ "266":[{s:0,e:113,st:"reserve"}],"602":[{s:0,e:113,st:"front"}],"603":[{s:0,e:30,st:"reserve"},{s:31,e:113,st:"front"}],
+ "609":[{s:0,e:113,st:"front"}],"610":[{s:0,e:40,st:"reserve"},{s:41,e:113,st:"front"}],
+ "611":[{s:0,e:113,st:"reserve"}],"616":[{s:0,e:50,st:"front"},{s:51,e:113,st:"rest"}],
+};
+
+const PHASES=[
+ {start:0,end:33,name:"Phase 1 — Kanalkampf",colour:"#4a5020",desc:"Luftwaffe attacks Channel convoys. Spitfires clash with Bf 109E escorts over the Channel — the first real Spitfire vs Messerschmitt combat."},
+ {start:34,end:57,name:"Phase 2 — Adlerangriff",colour:"#7a3a10",desc:"Eagle Attack on RAF airfields. Spitfires directed against Bf 109 escorts. The most intense fighting period."},
+ {start:58,end:85,name:"Phase 3 — The Blitz",colour:"#5a1a1a",desc:"Hitler switches to bombing London. Spitfires engaging escort fighters at height. Pressure on sector airfields eases."},
+ {start:86,end:113,name:"Phase 4 — Daylight Battle Ends",colour:"#2a3a20",desc:"Luftwaffe switches to night bombing. Spitfire squadrons begin transition to offensive sweeps over France."}
+];
+
+const EVENTS=[
+ [0,"10 Jul — Battle Opens","Spitfires of 74 Sqn engage German formations over Dover Strait. Malan scores early kills.",6,13],
+ [34,"13 Aug — Adlertag","Eagle Day. Poor coordination blunts the attack. Spitfire squadrons engaged all along south coast.",13,45],
+ [36,"15 Aug — Black Thursday","All four Luftflotten attack. RAF: 34 lost. Luftwaffe: 75 lost. Largest day of battle.",34,75],
+ [39,"18 Aug — The Hardest Day","Stukas suffer crippling losses. Withdrawn thereafter. RAF: 68 aircraft. Luftwaffe: 69.",68,69],
+ [45,"24 Aug — Airfield attacks","Full effort against sector stations. Hornchurch, Biggin Hill, Kenley under sustained assault.",38,26],
+ [52,"31 Aug — Worst RAF day","Fighter Command's worst day. 39 aircraft. 14 killed.",39,41],
+ [58,"7 Sep — The Blitz","Hitler switches to London. 348 bombers. Fighter Command reprieved.",28,41],
+ [66,"15 Sep — Battle of Britain Day","Luftwaffe's last mass daylight raid. Decisive defeat. RAF: 26. Luftwaffe: 60.",26,60],
+ [68,"17 Sep — Sea Lion cancelled","Hitler postpones Sea Lion indefinitely.",3,6],
+ [113,"31 Oct — Battle ends","Official end. RAF not defeated.",2,4]
+];
+
+const SURVIVORS=[
+ {serial:"AR501",reg:"G-AIST",status:"fly",location:"Shuttleworth Collection, Old Warden, Bedfordshire",markings:"QJ-B / 92 Sqn — varies seasonally",
+  history:"The oldest airworthy Spitfire Mk.Ia in the world. Built 1941, served with 310 Czech Sqn, 19 Sqn and others. The closest aircraft to a BoB-configuration Mk.I currently flying. Flown throughout the Shuttleworth summer season at Old Warden.",
+  note:"Study this aircraft closely — it is the living reference for colour match, surface texture, proportions and undercarriage detail. The Shuttleworth Collection displays it at every summer airshow.",
+  link:"https://www.shuttleworth.org/aircraft/supermarine-spitfire-ar501/"},
+ {serial:"R6915",reg:"static",status:"static",location:"RAF Museum London, Hendon",markings:"SK-H / 92 Sqn Biggin Hill",
+  history:"A genuine Battle of Britain veteran Spitfire Mk.I. Served with 609, 92 and other BoB squadrons in 1940. On permanent display at RAF Museum London. Ground-accessible for close study.",
+  note:"A genuine 1940 combat aircraft. Study the cockpit (partially visible), wing gun fairings, undercarriage and surface finish at close range. Free museum entry. Essential reference visit.",
+  link:"https://www.rafmuseum.org.uk/london/collections/aircraft/supermarine-spitfire-mk1/"},
+ {serial:"X4590",reg:"static",status:"static",location:"IWM Duxford, Air Space Hall",markings:"QJ-J / 92 Sqn Biggin Hill",
+  history:"Battle of Britain Mk.I veteran. Served with 603 and 92 Squadrons in 1940. On static display at IWM Duxford in the Air Space Hall, ground-accessible for close study of all details.",
+  note:"Fully accessible at ground level — study the Merlin exhaust stacks, radiator housing, cockpit frame, undercarriage legs and surface rivet detail. Free with IWM membership.",
+  link:"https://www.iwm.org.uk/visits/iwm-duxford"},
+ {serial:"P9374",reg:"G-CFGJ",status:"fly",location:"Private — various UK airshows",markings:"AZ-P / 234 Sqn Middle Wallop",
+  history:"Genuine Battle of Britain combat veteran — built 1940, flew operationally in the battle, shot down over Dunkirk and recovered from a Belgian beach decades later. Restored to airworthiness 2017. One of only two confirmed BoB combat veterans flying.",
+  note:"Genuine combat veteran. Surface patina, rivet detail and overall proportions of a restored but original-structure aircraft. Check airshow schedules for appearances.",
+  link:"https://www.spitfirerestorations.co.uk"},
+ {serial:"K9942",reg:"static",status:"static",location:"RAF Museum Cosford, Shropshire",markings:"Natural metal / early primer finish",
+  history:"One of the earliest production Spitfire Mk.Is — among the first 100 aircraft off the Supermarine Woolston line. Shows the original short-exhaust-stub Merlin II configuration and early cockpit layout. Exceptionally rare early-production example.",
+  note:"Study the early configuration differences — short exhaust stubs, early cockpit, original wing profile. Free museum entry. Essential for modellers of very early Spitfires.",
+  link:"https://www.rafmuseum.org.uk/cosford"},
+ {serial:"MK356",reg:"ZX-M",status:"fly",location:"BBMF RAF Coningsby, Lincolnshire",markings:"Mk.IX — varies annually (check BBMF website each spring)",
+  history:"BBMF's primary display Spitfire. Note: this is a Mk.IX — different exhaust stacks, longer nose cowling and four-blade prop from the BoB Mk.I. Displayed in BoB-period roundel style annually. BBMF announce markings each February at raf.mod.uk.",
+  note:"Not a Mk.I — the longer nose, different cowl and exhausts are clearly visible. Excellent colour and weathering reference but confirm variant differences before modelling as a BoB Mk.I subject.",
+  link:"https://www.raf.mod.uk/our-organisation/units/royal-air-force-battle-of-britain-memorial-flight/"},
+ {serial:"AB910",reg:"EB-J",status:"fly",location:"BBMF RAF Coningsby, Lincolnshire",markings:"Mk.Vb — varies annually",
+  history:"BBMF's second Spitfire — a Mk.Vb. Cannon wing blisters, clipped wingtips on some schemes, four-blade prop. Post-BoB variant. The Mk.Vb cannon blisters are particularly visible in profile.",
+  note:"Mk.Vb with cannon blisters and different cowling from the Mk.I. Reference for Mk.Vb subjects only — do not use for BoB Mk.I modelling.",
+  link:"https://www.raf.mod.uk/our-organisation/units/royal-air-force-battle-of-britain-memorial-flight/"},
+];
+
+const BOOKS={
+ "History & Operations":[
+  {title:"Spitfire Mk I/II Aces 1939–41",author:"Alfred Price",year:2000,stars:5,colour:"#8a2a10",
+   desc:"Every top-scoring Spitfire pilot from the Battle through the Circus operations. Colour profiles and combat accounts. Essential for any BoB Spitfire modeller.",
+   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1855329913"}]},
+  {title:"Spitfire — A Test Pilot's Story",author:"Jeffrey Quill",year:1983,stars:5,colour:"#2a4a80",
+   desc:"Quill flew the Spitfire prototype and every production variant. Indispensable technical reference — the single most authoritative source on what the aircraft actually did.",
+   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/0907579450"}]},
+  {title:"The Battle of Britain: Then and Now",author:"Winston Ramsey (ed.)",year:1989,stars:5,colour:"#2a2a10",
+   desc:"900 pages of squadron accounts, aircraft records, photographs and maps. The ultimate BoB reference for any aircraft type.",
+   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/0900913673"}]},
+  {title:"Aces High — Fighter Aces of the British and Commonwealth Air Forces",author:"Shores & Williams",year:1994,stars:5,colour:"#4a5020",
+   desc:"Every Fighter Command ace with five or more victories. Definitive roll of honour with photographs and full combat records.",
+   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1854092405"}]},
+  {title:"Spitfire: The Illustrated Biography",author:"Alfred Price",year:2000,stars:4,colour:"#5a2a10",
+   desc:"Comprehensive single-volume history covering all variants. Good colour profile section. Solid introduction to the full Spitfire story.",
+   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/0752840606"}]},
+ ],
+ "Pilot Memoirs":[
+  {title:"Nine Lives",author:"Alan C. Deere",year:1959,stars:5,colour:"#1a3a60",
+   desc:"The finest action memoir of the entire Battle of Britain. Al Deere's New Zealand directness makes it the most readable Spitfire account. Essential reading.",
+   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1906502781"}]},
+  {title:"First Light",author:"Geoffrey Wellum",year:2002,stars:5,colour:"#2a4a60",
+   desc:"92 Squadron — the most beautifully written account of the battle. Wellum's prose captures the experience of flying a Spitfire with extraordinary fidelity.",
+   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/0141029145"}]},
+  {title:"Spitfire Pilot",author:"David Crook DFC",year:1942,stars:5,colour:"#1a4a30",
+   desc:"609 Squadron, Middle Wallop — written immediately post-battle. Raw, immediate, honest. The most direct account of what Auxiliary Air Force Spitfire combat actually felt like.",
+   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1906502803"}]},
+  {title:"The Last Enemy",author:"Richard Hillary",year:1942,stars:5,colour:"#3a1a10",
+   desc:"603 Squadron. Hillary burned, underwent McIndoe's surgery, wrote this, returned to ops. Literature, not just aviation memoir. Never out of print since 1942.",
+   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1853267090"}]},
+  {title:"Spitfire!",author:"Brian Lane DFC",year:1942,stars:4,colour:"#2a3a20",
+   desc:"19 Squadron CO's memoir, published pseudonymously in wartime. Most tactically informative first-person account of early Spitfire operations from Duxford.",
+   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1906502145"}]},
+ ],
+ "Modelling Reference":[
+  {title:"Spitfire Mk I/II (Osprey Modelling 1)",author:"Jerry Scutts",year:2002,stars:5,colour:"#8a3a10",
+   desc:"Core modelling guide: kits, markings, colour schemes, step-by-step techniques. The essential starting point for any Spitfire modeller.",
+   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1841763624"}]},
+  {title:"Supermarine Spitfire Mk.I/II — Comprehensive Guide for the Modeller",author:"Richard A. Franks",year:1997,stars:5,colour:"#6a2010",
+   desc:"Every kit, decal sheet and aftermarket item reviewed and compared. SAM Publications. The definitive modelling reference — essential.",
+   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/0953346530"}]},
+  {title:"Spitfire in Detail (WWP Red Series)",author:"Václav Němeček",year:2001,stars:5,colour:"#5a2a10",
+   desc:"Close-up photography of preserved Spitfires. Cockpit, undercarriage, engine bay in extraordinary detail. The best photo reference available.",
+   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/s?k=spitfire+in+detail+wwp+red+series"}]},
+  {title:"Scale Plans No.68 — Spitfire Mk.I/II",author:"Dariusz Karnas",year:2017,stars:4,colour:"#3a2a10",
+   desc:"Accurate A3 scale plans for the Mk.I and Mk.II at 1:72, 1:48 and 1:32. Precise measurements and rivet positions.",
+   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/s?k=karnas+spitfire+scale+plans+mk1"}]},
+  {title:"Hawker Hurricane & Spitfire (Warpaint 27)",author:"Hall Park Books",year:2000,stars:4,colour:"#2a4820",
+   desc:"Classic Warpaint format — detailed colour profiles, markings and schemes for both aircraft. Excellent coverage of BoB period.",
+   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/s?k=warpaint+27+spitfire+hurricane"}]},
+ ]
+};
+
+const PILOT_STORIES=[
+ {name:"Adolf 'Sailor' Malan DSO & Bar, DFC & Bar",sqn:"74",callsign:"'Sailor'",kills:"27",wiki:"Adolph_Malan",aircraft:"Spitfire Mk.I · ZP-K",story:`Sailor Malan's name in Spitfire history is what Ginger Lacey's is in Hurricane history — the pre-eminent ace. Born in South Africa, he sailed the Cape mail route before joining the RAF. His ten rules of air fighting — 'Wait until you see the whites of his eyes; fire short bursts of one or two seconds' — became the tactical gospel of Fighter Command. He commanded 74 Tiger Squadron and transformed it into the most feared Spitfire unit. His score of 27 destroyed placed him among the very top aces. After the war he became a prominent anti-apartheid campaigner in South Africa. He died in 1963 from Parkinson's disease, aged 52.`},
+ {name:"Geoffrey Wellum DFC",sqn:"92",callsign:"'Boy'",kills:"4",wiki:"Geoffrey_Wellum",aircraft:"Spitfire Mk.I · QJ-B",story:`Geoffrey Wellum joined 92 Squadron at Biggin Hill at eighteen — the youngest pilot in Fighter Command. He called himself 'Boy'. His memoir First Light (written in the 1970s, published 2002) is the finest prose ever written about the Battle of Britain: honest about fear in a way no wartime account could be, precise about the physical sensation of flying a Spitfire, and elegiac about friends who didn't return. He described the Spitfire as 'the most beautiful thing I had ever seen' — before he had even flown it. He survived the battle, served in Malta, and died on 18 July 2018 aged 96, one of the very last of the Few.`},
+ {name:"Al Deere DSO, DFC & Bar",sqn:"54",callsign:"'Al'",kills:"17",wiki:"Al_Deere",aircraft:"Spitfire Mk.I · KL-B",story:`Al Deere's memoir is called Nine Lives for good reason. In 1940 alone he was shot down, crashed, baled out, had his propeller sliced off in a mid-air collision, was blown up in a bomb crater, and was nearly run over by a landing aircraft after crash-landing at Hornchurch. He survived every one. A New Zealander from Whanganui, Deere flew with 54 Squadron throughout the Channel battles and the main engagement period, building a score of 17 destroyed. Nine Lives remains the most readable and technically precise account of Spitfire combat flying ever written. He rose to Air Commodore after the war.`},
+ {name:"Richard Hillary",sqn:"603",callsign:"—",kills:"5",wiki:"Richard_Hillary",aircraft:"Spitfire Mk.I · XT-M",story:`Richard Hillary flew with 603 City of Edinburgh Squadron and was shot down and badly burned on 3 September 1940 — pulled from the Channel after more than an hour in the sea. He underwent pioneering reconstructive surgery under Archibald McIndoe, whose Guinea Pig Club treated the burned aircrew of the RAF. Hillary wrote The Last Enemy (1942) during his convalescence — the most celebrated literary account of the battle: beautiful, unsentimental, and finally tragic. Against all medical advice he returned to operational flying. He was killed in a training crash in January 1943. He was 23. His book has never been out of print.`},
+ {name:"John Dundas DFC & Bar",sqn:"609",callsign:"'Monkey'",kills:"13",wiki:"John_Charles_Dundas",aircraft:"Spitfire Mk.I · PR-F",story:`John Dundas flew with 609 West Riding Auxiliary Squadron from Middle Wallop and built a score of 13 victories. On 28 November 1940 he shot down Oberstleutnant Helmut Wick — the Luftwaffe's highest-scoring ace with 56 victories. Seconds later, Dundas was himself shot down by Wick's wingman Rudolf Pflanz. His body was never recovered. He was 23. His brother 'Cocky' Dundas flew with 616 Squadron, was shot down twice, and survived to become an Air Marshal. John Dundas's last act was to remove the Luftwaffe's greatest ace — a fitting, terrible symmetry.`},
+];
+
+const BUILD_STEPS=[
+ {n:1,title:"Research & marking choice",icon:"📋",
+  text:"Before opening the box, decide your subject: which squadron, which pilot, which date. For a BoB Mk.I this fixes roundel type (Type A1 fuselage — no yellow ring; Type A upper wing; Type B lower), Sky spinner, code colour and A or B scheme split line. Check whether your aircraft had the three-blade de Havilland metal prop (most BoB Spitfires did) or the early wooden two-blade (rare by 1940).",
+  products:[
+   {name:"Xtradecal X48143 — RAF BoB 1:48 (all 19 Sqns)",url:"https://www.hannants.co.uk/product/X48143"},
+   {name:"Barracuda Spitfire decals — aircraft-specific sheets",url:"https://barracudacals.com/collections/decals-1-48/spitfire"}]},
+ {n:2,title:"Cockpit",icon:"🎛️",
+  text:"Build the cockpit first — must be installed before fuselage halves close. Interior Grey-Green (Humbrol 78 / Tamiya XF-71) throughout. The Spitfire cockpit is notably small — a resin set pays off hugely even at 1:48. The Sutton harness is the most visible detail; Quickboost QB48151 is the easiest drop-fit upgrade. The Eduard ProfiPACK's pre-painted 3D PE set is the quickest route to an excellent interior.",
+  products:[
+   {name:"CMK Spitfire Mk.I Cockpit Set — CMK4369 (1:48)",url:"https://www.hannants.co.uk/search/?keyword_search=cmk+spitfire+cockpit+mk+i&scale_id=955&product_type_id=1819"},
+   {name:"Quickboost Sutton Harness Seat — QB48151 (1:48)",url:"https://www.spruebrothers.com/qb48151/"},
+   {name:"Eduard SPACE 3D Cockpit — ED3DL48005 (1:48)",url:"https://www.hannants.co.uk/product/ED3DL48005"}]},
+ {n:3,title:"Main construction",icon:"🔧",
+  text:"Assemble fuselage, attach wings, deal with seam lines. The Airfix 1:48 Mk.I has excellent fit with minimal filler. The thin elliptical wing is less forgiving than the Hurricane's at the root join — take your time. Mask the canopy early; the Eduard EDEX675 masks are essential. The prominent windscreen arch needs careful masking — it will be the most visible part of the finished model.",
+  products:[
+   {name:"Eduard Spitfire Canopy Masks — EDEX675 (1:48)",url:"https://www.hannants.co.uk/product/EDEX675"},
+   {name:"Barracuda Fabric Control Surfaces — BC48107",url:"https://barracudacals.com/collections/1-48-resin-detail-sets/spitfire"}]},
+ {n:4,title:"Primer & base coat",icon:"🎨",
+  text:"Prime in light grey (Vallejo Surface Primer or Tamiya Fine Surface), then apply Sky underside (Humbrol 90 or Tamiya XF-21) first. Mask the fuselage demarcation and apply Dark Earth and Dark Green upper surfaces. The Spitfire's split line runs at an angle below the cockpit — A-scheme has brown on the starboard nose side. Hard-edge demarcation was standard throughout 1940.",
+  products:[
+   {name:"Humbrol 29 Dark Earth (Matt)",url:"https://uk.humbrol.com/products/no-29-dark-earth-matt"},
+   {name:"Humbrol 30 Dark Green (Matt)",url:"https://uk.humbrol.com/products/no-30-dark-green-matt"},
+   {name:"Humbrol 90 Sky (Beige Green Matt)",url:"https://uk.humbrol.com/products/no-90-beige-green-matt"},
+   {name:"Tamiya XF-52 Flat Earth",url:"https://www.hannants.co.uk/product/TA87152"},
+   {name:"Tamiya XF-61 Dark Green",url:"https://www.hannants.co.uk/product/TA87161"},
+   {name:"Tamiya XF-21 Sky",url:"https://www.hannants.co.uk/product/TA87121"}]},
+ {n:5,title:"Decals",icon:"📄",
+  text:"Apply over a Vallejo Gloss Varnish coat. Use Micro Set then Micro Sol to bed decals into panel lines. The Spitfire's curved fuselage makes roundel decals challenging — slice and overlap on complex curves. BoB roundels: Type A1 fuselage (no yellow outer ring), Type A upper wing, Type B lower. Sky codes ~24 inch height. Seal with satin varnish before weathering.",
+  products:[
+   {name:"Xtradecal X48143 — RAF BoB 1:48",url:"https://www.hannants.co.uk/product/X48143"},
+   {name:"Micro Set decal setting solution",url:"https://www.hannants.co.uk/search/?keyword_search=micro+set+decal"},
+   {name:"Micro Sol decal softener",url:"https://www.hannants.co.uk/search/?keyword_search=micro+sol+decal"},
+   {name:"Vallejo Gloss Varnish",url:"https://www.hannants.co.uk/search/?keyword_search=vallejo+gloss+varnish"}]},
+ {n:6,title:"Weathering",icon:"💨",
+  text:"Key Spitfire weathering: exhaust staining port upper cowling (brown-black oils streaked rearward), eight gun port blast marks each leading edge, port wing root walkway chipping (sponge chip with Humbrol 56 Aluminium), and undercarriage/bay contamination per the Weathering tab's station-specific mud recipes. The pitot tube is on the LEFT wing outer leading edge.",
+  products:[
+   {name:"AK Interactive Exhaust Wash — AK081",url:"https://www.hannants.co.uk/search/?keyword_search=ak+interactive+exhaust+wash+ak081"},
+   {name:"Humbrol 56 Aluminium (chipping)",url:"https://uk.humbrol.com/products/no-56-aluminium-metallic"},
+   {name:"Flory Models Dark Dirt Wash",url:"https://www.hannants.co.uk/search/?keyword_search=flory+models+dark+dirt+wash"},
+   {name:"AK Interactive Earth Effects — AK079",url:"https://www.hannants.co.uk/search/?keyword_search=ak+interactive+earth+effects+ak079"}]},
+ {n:7,title:"Final details & display",icon:"✅",
+  text:"Fit propeller, undercarriage, antenna wire and pitot tube (LEFT wing outer leading edge — confirm from reference). Remove canopy masks last. Seal all weathering with Vallejo Matt Varnish — BoB Spitfire was MAP (Medium Aircraft Paint), a genuine flat finish. A grass dispersal base with station-specific mud suits the subject. Gamers Grass summer tufts with AK groundwork texture are excellent.",
+  products:[
+   {name:"Vallejo Matt Varnish — 70.520",url:"https://www.hannants.co.uk/search/?keyword_search=vallejo+matt+varnish+70520"},
+   {name:"Gamers Grass Summer Tufts",url:"https://www.hannants.co.uk/search/?keyword_search=gamers+grass+summer+tufts"},
+   {name:"AK Interactive Groundwork Texture",url:"https://www.hannants.co.uk/search/?keyword_search=ak+interactive+groundwork+texture"},
+   {name:"Master Model Browning .303 Barrels — AM48108",url:"https://www.spruebrothers.com/am48108/"}]},
+];
+
+const COLOUR_COMPARE=[
+ {name:"Dark Earth",raf:"#8B6B35",humbrol:"#8E6B3A",tamiya:"#8A6939",vallejo:"#9B7342",ak:"#937043",humCode:"29",tamCode:"XF-52",valCode:"70.819",akCode:"AK11171"},
+ {name:"Dark Green",raf:"#3D5229",humbrol:"#40542B",tamiya:"#3B5228",vallejo:"#395228",ak:"#3C5429",humCode:"30",tamCode:"XF-61",valCode:"70.893",akCode:"AK11149"},
+ {name:"Sky",raf:"#8DB9A0",humbrol:"#85B099",tamiya:"#93B8A5",vallejo:"#8AB6A0",ak:"#88B49E",humCode:"90",tamCode:"XF-21",valCode:"71.124",akCode:"AK11182"},
+ {name:"Night / Black",raf:"#1C1C1C",humbrol:"#191919",tamiya:"#1A1A1A",vallejo:"#000000",ak:"#141414",humCode:"21",tamCode:"XF-1",valCode:"70.950",akCode:"AK11018"},
+];
+
+const MEDIA_ITEMS=[
+ {type:"video",title:"BBMF Spitfire & Hurricane flypast — Duxford",thumb:"🎬",url:"https://www.youtube.com/results?search_query=BBMF+Spitfire+Hurricane+flypast+Duxford",desc:"Watch the Battle of Britain Memorial Flight in action at Duxford airshows."},
+ {type:"video",title:"Building the Eduard Spitfire Mk.I ProfiPACK 1:48",thumb:"🎬",url:"https://www.youtube.com/results?search_query=Eduard+Spitfire+Mk+I+ProfiPACK+1:48+build",desc:"Full build video of the Eduard ProfiPACK — recommended viewing before starting."},
+ {type:"video",title:"Airfix Spitfire Mk.Ia 1:48 — full build walkthrough",thumb:"🎬",url:"https://www.youtube.com/results?search_query=Airfix+Spitfire+Mk+Ia+1:48+full+build",desc:"Complete construction video for the Airfix AX05126A."},
+ {type:"video",title:"Sailor Malan — Tiger Squadron documentary",thumb:"🎬",url:"https://www.youtube.com/results?search_query=Sailor+Malan+74+Squadron+Battle+Britain",desc:"Documentary on Malan and 74 Tiger Squadron's role in the Battle."},
+ {type:"audio",title:"Geoffrey Wellum — Desert Island Discs BBC",thumb:"🎙️",url:"https://www.bbc.co.uk/programmes/b00f03y1",desc:"Wellum's BBC interview. Describes flying the Spitfire at nineteen and the loss of friends."},
+ {type:"audio",title:"IWM Sound Archive — Spitfire pilots",thumb:"🎙️",url:"https://www.iwm.org.uk/collections/search?query=spitfire+pilot+1940&filters=type%3ASound",desc:"Recorded interviews with BoB Spitfire pilots in the IWM Sound Archive."},
+ {type:"archive",title:"IWM Photograph Archive — Spitfire 1940",thumb:"📷",url:"https://www.iwm.org.uk/collections/search?query=Spitfire+1940&filters=category%3APhotograph",desc:"Hundreds of period photographs. Essential reference for modellers."},
+ {type:"archive",title:"Shuttleworth — AR501 Spitfire records",thumb:"📁",url:"https://www.shuttleworth.org/aircraft/spitfire/",desc:"History and documentation of the oldest flying Spitfire Mk.Ia — AR501."},
+];
+
+const BOB_EVENTS=[
+ {md:"07-10",text:"Battle of Britain officially begins. Kanalkampf opens. Spitfires of 74 Sqn in early Channel engagements."},
+ {md:"08-13",text:"Adlertag — Eagle Day. Spitfires engaged all along south coast."},
+ {md:"08-15",text:"'Black Thursday'. All four Luftflotten attack. Massive Spitfire engagements."},
+ {md:"08-18",text:"The 'Hardest Day'. Stukas withdrawn after severe losses to Spitfires and Hurricanes."},
+ {md:"08-20",text:"Churchill delivers 'Never was so much owed by so many to so few' speech."},
+ {md:"08-31",text:"Worst day for Fighter Command. 39 pilots killed; 59 aircraft destroyed."},
+ {md:"09-07",text:"Göring shifts to bombing London. Spitfires engaging escort fighters at height over Thames."},
+ {md:"09-15",text:"Battle of Britain Day. Two massive raids decisively repulsed."},
+ {md:"09-17",text:"Hitler postpones Sea Lion indefinitely."},
+ {md:"10-31",text:"Official end of the Battle of Britain."},
+];
+
+// ═══ STATE ═══
+let activeFilter='all',activeSort='num',activeId=null,activeTab='squadrons';
+
+// ═══ FILTER/SORT/GRID ═══
+function setFilter(g,el){activeFilter=g;document.querySelectorAll('.fb.gf').forEach(b=>b.classList.remove('on'));el.classList.add('on');closeDetail();renderGrid();}
+function setSort(s,el){activeSort=s;document.querySelectorAll('.fb.sf').forEach(b=>b.classList.remove('on'));el.classList.add('on');renderGrid();}
+function renderGrid(){
+  const grid=document.getElementById('grid');
+  let list=activeFilter==='all'?[...SQ]:SQ.filter(s=>s.group===activeFilter);
+  if(activeSort==='kills')list.sort((a,b)=>b.kills-a.kills);
+  else if(activeSort==='killrate')list.sort((a,b)=>(b.kills/b.sorties)-(a.kills/a.sorties));
+  else if(activeSort==='base')list.sort((a,b)=>a.base.localeCompare(b.base));
+  else list.sort((a,b)=>parseInt(a.num)-parseInt(b.num));
+  document.getElementById('sq-count').textContent=`${list.length} squadron${list.length!==1?'s':''}`;
+  grid.innerHTML=list.map(sq=>`
+    <div class="sq-card" id="card-${sq.num}" onclick="selectSq('${sq.num}')">
+      <div class="card-hd"><div class="card-circle">${sq.num}</div>
+        <div><div class="card-name">No.${sq.num} Sqn — ${sq.codes}</div>
+        <div class="card-base">${sq.base} &nbsp;·&nbsp; ${sq.group} Group</div></div>
+      </div>
+      <div class="card-body">
+        <div class="card-stats">
+          <div class="stat"><div class="stat-val">${sq.kills}</div><div class="stat-lbl">Claims</div></div>
+          <div class="stat"><div class="stat-val">${sq.sorties}</div><div class="stat-lbl">Sorties</div></div>
+          <div class="stat"><div class="stat-val">${(sq.kills/sq.sorties*100).toFixed(1)}%</div><div class="stat-lbl">Kill %</div></div>
+        </div>
+        <div class="card-tags">${sq.tags.map((t,i)=>`<span class="tag ${t}">${sq.tagTxt[i]}</span>`).join('')}</div>
+        <div style="margin-top:.5rem;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)">Click to expand — pilots · photos · decals · kits</div>
+      </div>
+    </div>
+  `).join('')+'<div id="detail-panel" class="detail-panel"></div>';
+}
+
+// ═══ TABS ═══
+function switchTab(id,el){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  el.classList.add('active');
+  document.getElementById('sqn-bar').style.display=id==='squadrons'?'flex':'none';
+  activeTab=id;
+  if(id==='build'){if(!document.querySelector('.kit-card'))renderKits();if(!document.querySelector('.paint-card'))renderPaint();if(!document.querySelector('.am-card'))renderAftermarket();if(!document.querySelector('.weather-card'))renderWeathering();renderStepByStep();renderColourCompare();}
+  if(id==='reference'){if(!document.querySelector('.survivor-card'))renderSurvivors();if(!document.querySelector('.book-card'))renderBooks();renderMap();}
+  if(id==='stories'){renderPilotStories();renderThisWeek();}
+  if(id==='media'){renderMedia();}
+}
+function setBuildSub(sub,el){document.querySelectorAll('.btf').forEach(b=>b.classList.remove('on'));el.classList.add('on');['kits','aftermarket','paint','stepbystep','weathering'].forEach(s=>{const e2=document.getElementById('bsub-'+s);if(e2)e2.style.display=s===sub?'':''[s=sub?0:1];});}
+function setBuildSub(sub,el){document.querySelectorAll('.btf').forEach(b=>b.classList.remove('on'));el.classList.add('on');['kits','aftermarket','paint','stepbystep','weathering'].forEach(s=>{const e2=document.getElementById('bsub-'+s);if(e2)e2.style.display=s===sub?'':'none';});}
+function setRefSub(sub,el){document.querySelectorAll('.rtf').forEach(b=>b.classList.remove('on'));el.classList.add('on');['map','timeline','compare','survivors','books'].forEach(s=>{const e2=document.getElementById('rsub-'+s);if(e2)e2.style.display=s===sub?'':'none';});if(sub==='timeline'){updateTimeline(document.getElementById('tl-slider').value||0);}if(sub==='map'){renderMap();}if(sub==='compare'){initCompare();}}
+
+// ═══ SQUAD DETAIL ═══
+function selectSq(num){if(activeId===num){closeDetail();return;}activeId=num;document.querySelectorAll('.sq-card').forEach(c=>c.classList.remove('active'));const card=document.getElementById('card-'+num);if(card)card.classList.add('active');showDetail(num);setTimeout(()=>{const p=document.getElementById('detail-panel');if(p)p.scrollIntoView({behavior:'smooth',block:'nearest'});},50);}
+function closeDetail(){activeId=null;document.querySelectorAll('.sq-card').forEach(c=>c.classList.remove('active'));const p=document.getElementById('detail-panel');if(p){p.classList.remove('open');p.innerHTML='';}}
+
+function showDetail(num){
+  const sq=SQ.find(s=>s.num===num);
+  const panel=document.getElementById('detail-panel');
+  const sqDecals=SQ_DECALS[num]||[];
+  panel.innerHTML=`
+    <div class="dp-top">
+      <div><div class="dp-title">No. ${sq.num} Squadron RAF — ${sq.codes}</div>
+      <div class="dp-meta">Base: ${sq.base} &nbsp;·&nbsp; ${sq.group} Group &nbsp;·&nbsp; ${sq.pilots.length} pilots &nbsp;·&nbsp; ${sq.kills} claims / ${sq.sorties} sorties &nbsp;·&nbsp; ${(sq.kills/sq.sorties*100).toFixed(1)}% kill rate</div></div>
+      <button class="close-btn" onclick="closeDetail()">Close ✕</button>
+    </div>
+    <div style="padding:1rem 1.2rem 1.4rem">
+      <div class="sec-label">Operations</div>
+      <div class="ops-text" style="margin-bottom:1.2rem">${sq.ops}</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.2rem">
+        <div>
+          <div class="sec-label">All Pilots</div>
+          <div class="pilot-grid" style="grid-template-columns:1fr">
+            ${sq.pilots.map(p=>`
+              <div class="pilot-card" onclick="openPM('${p.n.replace(/'/g,"\\'")}')">
+                <span class="pkills">${p.k}</span>
+                <div class="pname">${p.n}</div>
+                <div class="pnote">${p.note}</div>
+                ${p.awards&&p.awards!=='—'?`<div style="font-size:13px;color:var(--gold2);margin-top:2px">${p.awards}</div>`:''}
+                <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.05em;color:var(--ink3);margin-top:2px">${p.fate}</div>
+              </div>`).join('')}
+          </div>
+        </div>
+        <div>
+          <div class="sec-label">Photographs</div>
+          <div class="photo-grid" id="photos-${sq.num}"><div class="photo-loading">Loading…</div></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:.5rem">
+            <a href="https://www.iwm.org.uk/collections/search?query=No+${sq.num}+Squadron+Spitfire+1940&filters=category%3APhotograph" target="_blank" rel="noopener" style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass);text-decoration:none;padding:3px 8px;border:1px solid rgba(184,144,42,.3);border-radius:2px">IWM Archive ↗</a>
+            <a href="https://commons.wikimedia.org/w/index.php?search=No+${sq.num}+Squadron+RAF+Spitfire&ns6=1" target="_blank" rel="noopener" style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--raf-sky);text-decoration:none;padding:3px 8px;border:1px solid rgba(74,127,165,.3);border-radius:2px">Wikimedia ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="sec-label">Marking Reference — ${sq.decalRef.codes} (${sq.decalRef.serial})</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-bottom:1.2rem">
+        ${Object.entries({'Code letters':sq.decalRef.codes,'Serial':sq.decalRef.serial,'Code colour':sq.decalRef.codeColour,'Upper roundel':sq.decalRef.roundelUpper,'Fuselage roundel':sq.decalRef.roundelFuselage,'Lower roundel':sq.decalRef.roundelLower,'Spinner':sq.decalRef.spinner,'Fin flash':sq.decalRef.finFlash,...(sq.decalRef.special?{'Special note':sq.decalRef.special}:{})}).map(([k,v])=>`
+          <div style="background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1);border-radius:2px;padding:5px 8px">
+            <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4)">${k}</div>
+            <div style="font-size:13px;color:rgba(255,255,255,.85);margin-top:1px">${v}</div>
+          </div>`).join('')}
+      </div>
+      <div class="sec-label">Specific Decal Sheets</div>
+      ${sqDecals.length?`<div style="display:flex;flex-direction:column;gap:5px;margin-bottom:1rem">${sqDecals.map(d=>`<a href="${d.url}" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--brass);border-radius:2px;padding:6px 10px;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,.05)'" onmouseout="this.style.background='rgba(0,0,0,.2)'"><span style="font-size:12px">↗</span><span style="font-size:13px;color:rgba(255,255,255,.8)">${d.name}</span></a>`).join('')}</div>`:`<div style="font-size:13px;color:rgba(255,255,255,.4);margin-bottom:1rem">Search Hannants or Barracuda for this squadron.</div>`}
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <a href="https://www.hannants.co.uk/search/index.php?keyword_search=${sq.num}+squadron+spitfire&product_type_id=all_decals" target="_blank" rel="noopener" class="shop-btn hb-brass" style="font-size:13px">Hannants: all ${sq.num} Sqn decals ↗</a>
+        <a href="https://barracudacals.com/collections/decals-1-48/spitfire" target="_blank" rel="noopener" class="shop-btn hb-outline" style="font-size:13px">Barracuda Spitfire decals ↗</a>
+      </div>
+    </div>`;
+  panel.classList.add('open');
+  let photosLoaded=0;
+  const photoGrid=document.getElementById('photos-'+num);
+  // After 3s, if still Loading show fallback
+  setTimeout(()=>{
+    const g=document.getElementById('photos-'+num);
+    if(g&&g.querySelector('.photo-loading')){
+      g.innerHTML='<div style="grid-column:1/-1;font-size:13px;color:rgba(255,255,255,.35);line-height:1.6;padding:.5rem 0">No photos loaded.<br>Try the IWM and Wikimedia links above.</div>';
+    }
+  },4000);
+  sq.pilots.forEach(p=>{
+    const wikiName=p.wiki||(p.n.replace(/^(Sqn Ldr|Flt Lt|Plt Off|Sub Lt|Sgt|Flg Off)\s+/,'').replace(/\s+/g,'_'));
+    fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(wikiName))
+      .then(r=>r.json()).then(d=>{
+        const img=d.thumbnail&&d.thumbnail.source;if(!img)return;
+        const grid=document.getElementById('photos-'+num);if(!grid)return;
+        if(grid.querySelector('.photo-loading'))grid.innerHTML='';
+        const div=document.createElement('div');
+        div.style.cssText='overflow:hidden;border-radius:2px;border:1px solid rgba(255,255,255,.1);cursor:pointer;';
+        div.innerHTML=`<img src="${img}" alt="${p.n}" style="width:100%;height:90px;object-fit:cover;object-position:top center" onclick="openLB('${img}','${p.n}')">`;
+        grid.appendChild(div);
+        photosLoaded++;
+      }).catch(()=>{});
+  });
+}
+
+// ═══ PILOT MODAL ═══
+function openPM(name){
+  const bio=BIOS[name];if(!bio)return;
+  document.getElementById('pm-name').textContent=name;
+  document.getElementById('pm-rank').textContent=`${bio.kills} victories · ${bio.fate}`;
+  document.getElementById('pm-kills').textContent=bio.kills;
+  document.getElementById('pm-sorties').textContent=bio.sorties||'—';
+  document.getElementById('pm-fate-short').textContent=bio.fate.split(' — ')[0].split(',')[0];
+  document.getElementById('pm-bio').innerHTML=bio.bio;
+  document.getElementById('pm-awards').innerHTML=(bio.awards||[]).map(a=>`<span class="award">${a}</span>`).join('');
+  const surname=name.split(' ').slice(-1)[0];
+  const pl=document.getElementById('pm-h-pilot');
+  pl.href=`https://www.iwm.org.uk/collections/search?query=${encodeURIComponent(surname)}+spitfire+1940&filters=type%3ASound`;
+  pl.textContent=`IWM: ${surname} archive ↗`;
+  const sqnFP=SQ.find(s=>s.pilots.some(p=>p.n===name));
+  const sl=document.getElementById('pm-h-sqn');
+  if(sqnFP){sl.href=`https://www.hannants.co.uk/search/index.php?keyword_search=${sqnFP.num}+squadron+spitfire&product_type_id=all_decals`;sl.textContent=`Hannants: No.${sqnFP.num} Sqn decals ↗`;sl.style.display='';}else{sl.style.display='none';}
+  document.getElementById('pm-overlay').classList.add('open');
+}
+function closePM(){document.getElementById('pm-overlay').classList.remove('open');}
+function openLB(src,cap){document.getElementById('lb-img').src=src;document.getElementById('lb-cap').textContent=cap;document.getElementById('lightbox').classList.add('open');}
+function closeLB(){document.getElementById('lightbox').classList.remove('open');}
+
+// ═══ PAINT ═══
+function renderPaint(){
+  document.getElementById('paint-grid').innerHTML=PAINTS.map(p=>`
+    <div class="paint-card">
+      <div class="paint-swatch" style="background:${p.hex}"><span style="font-size:12px;opacity:.6;margin-top:auto">${p.bs}</span></div>
+      <div class="paint-info">
+        <div class="paint-name">${p.name}</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:.5rem;line-height:1.4">${p.notes}</div>
+        <div>${p.brands.map(b=>`<a href="${b.url}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;margin:0 4px 4px 0;padding:3px 8px;border-radius:2px;background:rgba(30,58,92,.7);border:1px solid rgba(255,255,255,.12)" onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='rgba(255,255,255,.12)'"><span style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass2)">${b.brand}</span><span style="font-size:12px;color:rgba(255,255,255,.85)">${b.code}</span><span style="font-size:12px;color:rgba(255,255,255,.3)">↗</span></a>`).join('')}</div>
+      </div>
+    </div>`).join('');
+}
+
+// ═══ KITS ═══
+function renderKits(){
+  document.getElementById('kit-grid').innerHTML=KITS.map(k=>`
+    <div class="kit-card">
+      <div class="kit-brand">${k.brand}</div><div class="kit-name">${k.name}</div>
+      <div class="kit-scale">${k.scale}</div>
+      <div class="kit-stars">${'★'.repeat(k.stars)}${'☆'.repeat(5-k.stars)}</div>
+      <div class="kit-note">${k.accuracy}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:3px;margin-bottom:.5rem">${k.markings.map(m=>`<span class="kit-tag">${m}</span>`).join('')}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:.5rem">${k.shops.map(s=>`<a href="${s.url}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;padding:4px 10px;border-radius:2px;background:rgba(30,58,92,.7);border:1px solid rgba(255,255,255,.12)" onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='rgba(255,255,255,.12)'"><span style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass2)">${s.label}</span><span style="font-size:13px;color:rgba(255,255,255,.3)">↗</span></a>`).join('')}</div>
+    </div>`).join('');
+}
+
+// ═══ AFTERMARKET ═══
+function renderAftermarket(){
+  document.getElementById('aftermarket-grid').innerHTML=Object.entries(AFTERMARKET).map(([cat,items])=>`
+    <div class="aftermarket-section">
+      <div class="aftermarket-section-title">${cat}</div>
+      <div class="am-grid">${items.map(item=>`
+        <div class="am-card">
+          <div class="am-type">${item.type}</div><div class="am-name">${item.name}</div>
+          <div class="am-maker">${item.maker}</div>
+          <div class="am-scales">${item.scales.map(s=>`<span class="am-scale">${s}</span>`).join('')}</div>
+          <div class="am-desc">${item.desc}</div>
+          <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:.4rem">
+          <a href="${item.url}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;padding:4px 10px;border-radius:2px;background:rgba(30,58,92,.7);border:1px solid rgba(255,255,255,.12)" onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='rgba(255,255,255,.12)'">
+            <span style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass2)">${(()=>{try{const h=new URL(item.url).hostname.replace('www.','');return h.includes('genessis')?'Genessis Models UK':h.includes('spruebro')?'Sprue Brothers':h.includes('barracuda')?'Barracuda Studios':h.includes('hannants')?'Hannants':h}catch(e){return'Buy'}})()}</span>
+            <span style="font-size:13px;color:rgba(255,255,255,.3)">↗</span>
+          </a>
+          ${item.urlEduard?`<a href="${item.urlEduard}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;padding:4px 10px;border-radius:2px;background:rgba(30,58,92,.7);border:1px solid rgba(255,255,255,.12)" onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='rgba(255,255,255,.12)'"><span style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass2)">Eduard direct</span><span style="font-size:13px;color:rgba(255,255,255,.3)">↗</span></a>`:''}
+          </div>
+        </div>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+// ═══ WEATHERING ═══
+function renderWeathering(){
+  document.getElementById('weather-grid').innerHTML=WEATHER.map(w=>`
+    <div class="weather-card">
+      <div class="weather-hd"><div class="weather-base">${w.base}</div><div class="weather-group">${w.group} Group · ${w.sqns.join(', ')}</div></div>
+      <div class="weather-body">
+        ${w.rows.map(r=>`<div class="weather-row"><span class="wr-label">${r.l}</span><span>${r.v}</span></div>`).join('')}
+        ${w.mudColour?`<div style="margin-top:.75rem;display:flex;align-items:center;gap:8px"><div style="width:40px;height:40px;border-radius:1px;background:${w.mudColour};border:1px solid rgba(0,0,0,.2);flex-shrink:0"></div><div style="font-family:'Courier Prime',monospace;font-size:11px;color:rgba(255,255,255,.4)"><div style="font-family:'Oswald',sans-serif;font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)">Mud / dust tone</div><div>${w.mudNote}</div><div style="margin-top:2px">Mix: ${w.mudMix}</div></div></div>`:''}
+      </div>
+    </div>`).join('');
+  document.getElementById('weathering-techniques').innerHTML=`
+    <div class="sec-label">Step-by-Step Technique Guide</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px">
+      ${TECHNIQUES.map((t,i)=>`
+        <div style="background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:1px;padding:.9rem;border-left:3px solid ${t.colour}">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:.4rem">
+            <div style="width:24px;height:24px;border-radius:50%;background:${t.colour};display:flex;align-items:center;justify-content:center;font-family:'Special Elite',cursive;font-size:12px;color:#e8dfc0;flex-shrink:0">${i+1}</div>
+            <div style="font-family:'Special Elite',cursive;font-size:13px;color:rgba(255,255,255,.85)">${t.name}</div>
+          </div>
+          <div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:.5rem">${t.desc}</div>
+          ${t.products?`<div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass2);margin-bottom:.5rem">${t.products}</div>`:''}
+          ${t.links&&t.links.length?`<div style="display:flex;flex-direction:column;gap:3px">${t.links.map(l=>`<a href="${l.url}" target="_blank" style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--raf-sky);text-decoration:none;padding:3px 6px;background:rgba(26,46,74,.06);border-radius:1px;border-left:2px solid var(--raf-sky)" onmouseover="this.style.background='rgba(26,46,74,.12)'" onmouseout="this.style.background='rgba(26,46,74,.06)'"><span style="font-size:11px">▶</span><span>${l.label}</span></a>`).join('')}</div>`:''}
+        </div>`).join('')}
+    </div>
+    <div style="margin-top:1.2rem;background:var(--raf-dark);color:#e8dfc0;padding:1rem 1.2rem;border-radius:1px;border:1px solid rgba(255,255,255,.1)">
+      <div style="font-family:'Special Elite',cursive;font-size:15px;margin-bottom:.5rem">Quick Reference — Spitfire Mk.I Universal Notes</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;font-family:'Courier Prime',monospace;font-size:11px;line-height:1.7;opacity:.9">
+        <div>· Exhaust stain: port upper cowling, 6–10" rearward<br>· Eight gun port blast marks each leading edge<br>· Prop tips: yellow last 48 inches, crisp edge<br>· Antenna: mast (fwd of cockpit) to fin tip<br>· Pitot tube: LEFT wing outer leading edge</div>
+        <div>· Walkway: port wing root — chipping evidence<br>· Cockpit sill: significant paint chipping<br>· Serial: black, small, rear fuselage port side<br>· Roundels: clean — groundcrew maintained these<br>· Control surfaces: fabric texture on ailerons, rudder, elevator</div>
+      </div>
+    </div>`;
+}
+
+// ═══ STEP BY STEP ═══
+function renderStepByStep(){
+  const el=document.getElementById('stepbystep-content');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';
+  el.innerHTML=BUILD_STEPS.map(s=>`
+    <div style="background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;margin-bottom:10px">
+      <div style="background:rgba(0,0,0,.3);padding:.65rem 1rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid rgba(255,255,255,.07)">
+        <div style="background:var(--brass);color:var(--raf-dark);font-family:'Special Elite',cursive;font-size:1.1rem;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">${s.n}</div>
+        <div style="font-family:'Special Elite',cursive;font-size:1.15rem;color:#fff">${s.icon} ${s.title}</div>
+      </div>
+      <div style="padding:.9rem 1rem">
+        <div style="font-size:16px;color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:.75rem;font-family:'Source Serif 4',Georgia,serif">${s.text}</div>
+        ${s.products.length?`<div style="display:flex;flex-wrap:wrap;gap:6px">${s.products.map(p=>`<a href="${p.url}" target="_blank" rel="noopener" class="shop-btn hb-outline" style="font-size:12px">${p.name} ↗</a>`).join('')}</div>`:''}
+      </div>
+    </div>`).join('');
+}
+
+// ═══ COLOUR COMPARE ═══
+function renderColourCompare(){
+  const el=document.getElementById('colour-compare-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';
+  el.innerHTML=COLOUR_COMPARE.map(c=>`
+    <div style="margin-bottom:1rem">
+      <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.4rem">${c.name}</div>
+      <div style="display:flex;gap:3px;align-items:stretch">
+        ${[{label:'Target',col:c.raf},{label:`Humbrol ${c.humCode}`,col:c.humbrol},{label:`Tamiya ${c.tamCode}`,col:c.tamiya},{label:`Vallejo ${c.valCode}`,col:c.vallejo},{label:`AK ${c.akCode}`,col:c.ak}].map(sw=>`
+          <div style="flex:1;min-width:0">
+            <div style="height:32px;background:${sw.col};border-radius:1px;border:1px solid rgba(0,0,0,.2)"></div>
+            <div style="font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:2px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${sw.label}</div>
+          </div>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+// ═══ COMPARE ═══
+function initCompare(){
+  const opts=SQ.map(s=>`<option value="${s.num}">No.${s.num} Sqn — ${s.base}</option>`).join('');
+  document.getElementById('cmp-a').innerHTML=opts;
+  document.getElementById('cmp-b').innerHTML=opts;
+  document.getElementById('cmp-b').value='92';
+  renderCompare();
+}
+function renderCompare(){
+  const na=document.getElementById('cmp-a').value,nb=document.getElementById('cmp-b').value;
+  const a=SQ.find(s=>s.num===na),b=SQ.find(s=>s.num===nb);if(!a||!b)return;
+  const maxK=Math.max(...SQ.map(s=>s.kills)),maxS=Math.max(...SQ.map(s=>s.sorties)),maxKR=Math.max(...SQ.map(s=>s.kills/s.sorties)),maxP=Math.max(...SQ.map(s=>s.pilots.length));
+  function norm(v,m){return Math.min(100,Math.round(v/m*100));}
+  const axes=[{label:"Claims",a:norm(a.kills,maxK),b:norm(b.kills,maxK)},{label:"Sorties",a:norm(a.sorties,maxS),b:norm(b.sorties,maxS)},{label:"Kill Rate",a:norm(a.kills/a.sorties,maxKR),b:norm(b.kills/b.sorties,maxKR)},{label:"Pilots",a:norm(a.pilots.length,maxP),b:norm(b.pilots.length,maxP)},{label:"Group",a:a.group==='11'?100:a.group==='10'?75:50,b:b.group==='11'?100:b.group==='10'?75:50}];
+  const N=axes.length,cx=200,cy=200,r=150,aS=(Math.PI*2)/N;
+  function pp(i,val,rad){const angle=i*aS-Math.PI/2;const d=rad*val/100;return[cx+d*Math.cos(angle),cy+d*Math.sin(angle)];}
+  let wr='';[20,40,60,80,100].forEach(p=>{wr+=`<polygon points="${axes.map((_,i)=>pp(i,p,r).join(',')).join(' ')}" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="${p===100?1.5:.8}"/>`;});
+  let al='',lab='';axes.forEach((ax,i)=>{const[x2,y2]=pp(i,100,r);al+=`<line x1="${cx}" y1="${cy}" x2="${x2}" y2="${y2}" stroke="rgba(255,255,255,.15)" stroke-width="1"/>`;const[lx,ly]=pp(i,100,r+22);lab+=`<text x="${lx}" y="${ly}" text-anchor="middle" dominant-baseline="middle" style="font-family:sans-serif;font-size:11px;fill:rgba(255,255,255,.7)">${ax.label.toUpperCase()}</text>`;});
+  const pA=axes.map((_,i)=>pp(i,axes[i].a,r).join(',')).join(' ');
+  const pB=axes.map((_,i)=>pp(i,axes[i].b,r).join(',')).join(' ');
+  let dA='',dB='';axes.forEach((ax,i)=>{const[x1,y1]=pp(i,ax.a,r);const[x2,y2]=pp(i,ax.b,r);dA+=`<circle cx="${x1}" cy="${y1}" r="4" fill="rgba(74,127,165,.9)" stroke="#fff" stroke-width="1.5"/>`;dB+=`<circle cx="${x2}" cy="${y2}" r="4" fill="rgba(184,144,42,.9)" stroke="#fff" stroke-width="1.5"/>`;});
+  const kr_a=(a.kills/a.sorties).toFixed(2),kr_b=(b.kills/b.sorties).toFixed(2);
+  const top3_a=a.pilots.slice().sort((x,y)=>y.k-x.k).slice(0,3).map(p=>p.n.split(' ').pop()+'('+p.k+')').join(', ');
+  const top3_b=b.pilots.slice().sort((x,y)=>y.k-x.k).slice(0,3).map(p=>p.n.split(' ').pop()+'('+p.k+')').join(', ');
+  const row=(label,va,vb,col)=>'<tr><td style="color:rgba(255,255,255,.42);padding:2px 0;font-size:13px">'+label+'</td><td style="color:'+(col||'#fff')+';text-align:right;font-size:13px">'+va+'</td><td style="color:'+(col||'#fff')+';text-align:right;font-size:13px">'+vb+'</td></tr>';
+  document.getElementById('compare-output').innerHTML=`<div style="background:rgba(21,39,68,.8);border:2px solid rgba(255,255,255,.1);border-radius:1px;padding:1rem"><div style="display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem;flex-wrap:wrap"><div style="display:flex;align-items:center;gap:8px"><div style="width:16px;height:3px;background:rgba(74,127,165,.9);border-radius:1px"></div><span style="font-family:'Special Elite',cursive;font-size:14px;color:#7ab8e8">No.${a.num} Sqn — ${a.base}</span></div><div style="display:flex;align-items:center;gap:8px"><div style="width:16px;height:3px;background:rgba(184,144,42,.9);border-radius:1px"></div><span style="font-family:'Special Elite',cursive;font-size:14px;color:var(--brass2)">No.${b.num} Sqn — ${b.base}</span></div></div><div style="display:flex;justify-content:center"><svg viewBox="0 0 400 430" style="width:100%;max-width:420px"><g transform="translate(0,10)">${wr}${al}<polygon points="${pA}" fill="rgba(74,127,165,.2)" stroke="rgba(74,127,165,.9)" stroke-width="2" stroke-linejoin="round"/><polygon points="${pB}" fill="rgba(184,144,42,.15)" stroke="rgba(184,144,42,.9)" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6,3"/>${dA}${dB}${lab}</g></svg></div><div style="font-family:'Courier Prime',monospace;font-size:11px;color:rgba(255,255,255,.4);margin-top:.5rem">Values normalised to 0–100 relative to all 19 Spitfire BoB squadrons. Solid = No.${a.num}, dashed = No.${b.num}.</div></div>`+
+  '<div style="margin-top:1.2rem;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1rem;overflow-x:auto"><table style="width:100%;border-collapse:collapse"><tr style="border-bottom:1px solid rgba(255,255,255,.08)"><th style="text-align:left;font-family:Oswald,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);padding-bottom:.5rem">Stat</th><th style="text-align:right;font-family:Oswald,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass2);padding-bottom:.5rem">No.'+na+' — '+a.base+'</th><th style="text-align:right;font-family:Oswald,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--raf-sky);padding-bottom:.5rem">No.'+nb+' — '+b.base+'</th></tr>'+row('Group',a.group+' Group',b.group+' Group')+row('Nationality',a.nat||'British',b.nat||'British')+row('Marks',a.marks||'Mk.I',b.marks||'Mk.I')+row('First action',a.firstOp||'Jul 1940',b.firstOp||'Jul 1940')+row('Last action',a.lastOp||'Oct 1940',b.lastOp||'Oct 1940')+row('Claims',a.kills,b.kills,'var(--brass2)')+row('Sorties',a.sorties,b.sorties)+row('Kill rate/sortie',kr_a,kr_b)+row('Aircraft lost',a.losses||'—',b.losses||'—','rgba(255,120,100,.8)')+row('Named pilots',a.pilots.length,b.pilots.length)+row('Top scorers',top3_a,top3_b)+'</table></div>';
+}
+
+// ═══ TIMELINE ═══
+const TL_START=new Date('1940-07-10');
+function getPhase(day){return PHASES.find(p=>day>=p.start&&day<=p.end)||PHASES[3];}
+function dayToDate(d){const dt=new Date(TL_START);dt.setDate(dt.getDate()+d);return dt.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});}
+function getSqStatus(num,day){const periods=TL[num]||[];const p=periods.find(x=>day>=x.s&&day<=x.e);return p?p.st:'rest';}
+function updateTimeline(val){
+  const day=parseInt(val);
+  const phase=getPhase(day);
+  const exactEvent=EVENTS.find(e=>e[0]===day);
+  const prev=EVENTS.filter(e=>e[0]<=day).pop();
+  const next=EVENTS.find(e=>e[0]>day);
+  const stColors={front:'#9ab840',reserve:'#d4a83a',rest:'rgba(255,255,255,.35)'};
+  const stLabels={front:'Front line',reserve:'Reserve',rest:'Resting'};
+  const stBgs={front:'rgba(100,130,30,.18)',reserve:'rgba(184,144,42,.13)',rest:'rgba(255,255,255,.04)'};
+  document.getElementById('tl-date').textContent=dayToDate(day);
+  let eventHtml='';
+  if(exactEvent){eventHtml=`<div style="background:${phase.colour};color:#e8dfc0;border-radius:1px;padding:.75rem 1rem;margin:.75rem 0;border-left:4px solid var(--gold3)"><div style="font-family:'Special Elite',cursive;font-size:15px;margin-bottom:.3rem">${exactEvent[1]}</div><div style="font-family:'Courier Prime',monospace;font-size:13px">${exactEvent[2]}</div>${exactEvent[3]>0?`<div style="margin-top:.4rem;font-size:11px;opacity:.8">RAF losses: <b>${exactEvent[3]}</b> &nbsp;·&nbsp; Luftwaffe: <b>${exactEvent[4]}</b></div>`:''}</div>`;}
+  else if(prev){eventHtml=`<div style="background:rgba(21,39,68,.7);border-radius:1px;padding:.6rem 1rem;margin:.75rem 0;font-family:'Courier Prime',monospace;font-size:11px;color:var(--brass2);border-left:3px solid var(--khaki)">Last event: <b style="color:rgba(255,255,255,.85)">${prev[1]}</b>${next?`<br>Next: <b style="color:rgba(255,255,255,.85)">${next[1]}</b> (${dayToDate(next[0])})`:''}</div>`;}
+  document.getElementById('tl-event-detail').innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:.75rem"><div style="background:${phase.colour};color:#e8dfc0;padding:.6rem .9rem;border-radius:1px"><div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:3px">Current Phase</div><div style="font-family:'Special Elite',cursive;font-size:13px">${phase.name}</div><div style="font-family:'Courier Prime',monospace;font-size:13px;margin-top:4px;opacity:.8;line-height:1.4">${phase.desc}</div></div><div style="background:rgba(21,39,68,.7);padding:.6rem .9rem;border-radius:1px;border:1px solid rgba(255,255,255,.1)"><div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass2);margin-bottom:3px">Day ${day+1} of 114</div><div style="font-family:'Courier Prime',monospace;font-size:12px;color:rgba(255,255,255,.85)"><span style="color:#9ab840;font-weight:700">${SQ.filter(s=>getSqStatus(s.num,day)==='front').length}</span> sqns front &nbsp;<span style="color:var(--gold);font-weight:700">${SQ.filter(s=>getSqStatus(s.num,day)==='reserve').length}</span> reserve &nbsp;<span style="color:var(--brass2);font-weight:700">${SQ.filter(s=>getSqStatus(s.num,day)==='rest').length}</span> resting</div></div></div>${eventHtml}`;
+  document.getElementById('tl-sqns').innerHTML=SQ.map(sq=>{const st=getSqStatus(sq.num,day);return`<div class="tl-sqn ${st==='front'?'active-tl':''}" style="border-left-color:${stColors[st]};background:${stBgs[st]}"><div class="tl-sqn-num" style="color:${stColors[st]}">No.${sq.num} Sqn</div><div class="tl-sqn-status">${sq.base}</div><div style="font-size:13px;font-family:'Oswald',sans-serif;letter-spacing:.05em;color:${stColors[st]};margin-top:2px;text-transform:uppercase">${stLabels[st]}</div></div>`;}).join('');
+}
+
+// ═══ MAP ═══
+const GROUP_COLOURS={'11':'#e05555','10':'#4caf7d','12':'#5b9bd5','13':'#b07fd5'};
+const JITTER={
+  'hornchurch':{dx:16,dy:0,lx:10,ly:-6,la:'start'},
+  'biggin':{dx:8,dy:8,lx:10,ly:4,la:'start'},
+  'kenley':{dx:-8,dy:8,lx:-10,ly:4,la:'end'},
+  'westhampnett':{dx:0,dy:0,lx:8,ly:-8,la:'start'},
+  'drem':{dx:-8,dy:-4,lx:-10,ly:-4,la:'end'},
+  'turnhouse':{dx:8,dy:4,lx:10,ly:4,la:'start'},
+};
+let mapRendered=false;
+function renderMap(){
+  if(mapRendered)return;mapRendered=true;
+  const svg=document.getElementById('map-svg');
+  const ns='http://www.w3.org/2000/svg';
+  const landPath=['M88,640','L114,648','L191,630','L250,610','L270,606','L278,595','L332,595','L384,594','L420,582','L439,566','L443,549','L416,545','L418,533','L417,522','L449,500','L458,473','L436,442','L381,439','L389,431','L388,427','L377,397','L375,359','L401,333','L303,304','L301,297','L286,256','L273,244','L265,235','L241,223','L243,217','L244,190','L269,149','L272,111','L221,45','L205,43','L124,46','L64,178','L86,276','L125,323','L212,360','L220,380','L214,408','L142,415','L134,454','L119,529','L164,536','L214,543','L224,538','L147,574','L147,588','L122,607','L88,640','Z'].join(' ');
+  const seaRect=document.createElementNS(ns,'rect');seaRect.setAttribute('x','0');seaRect.setAttribute('y','0');seaRect.setAttribute('width','520');seaRect.setAttribute('height','700');seaRect.setAttribute('fill','#0d1e35');svg.insertBefore(seaRect,svg.firstChild);
+  [[50.5,612],[51.5,542],[52.5,473],[53.5,403],[54.5,333],[55.5,263],[56.5,194],[57.5,124]].forEach(([lat,y])=>{
+    const line=document.createElementNS(ns,'line');line.setAttribute('x1','25');line.setAttribute('y1',y);line.setAttribute('x2','495');line.setAttribute('y2',y);line.setAttribute('stroke','rgba(74,143,206,0.07)');line.setAttribute('stroke-width','0.5');svg.insertBefore(line,svg.firstChild);
+    const lbl=document.createElementNS(ns,'text');lbl.setAttribute('x','28');lbl.setAttribute('y',y-2);lbl.setAttribute('fill','rgba(74,143,206,0.25)');lbl.setAttribute('font-size','7');lbl.setAttribute('font-family','monospace');lbl.textContent=lat+'°N';svg.appendChild(lbl);
+  });
+  const irPath=['M25,320','L30,310','L35,295','L42,278','L50,262','L55,248','L60,238','L65,232','L72,228','L75,235','L70,248','L65,262','L60,280','L58,300','L55,320','L52,340','L48,360','L44,380','L40,400','L35,420','L30,435','L25,445','Z'].join(' ');
+  const ireland=document.createElementNS(ns,'path');ireland.setAttribute('d',irPath);ireland.setAttribute('fill','#0f2235');ireland.setAttribute('stroke','rgba(184,144,42,0.15)');ireland.setAttribute('stroke-width','0.8');svg.insertBefore(ireland,svg.firstChild);
+  const land=document.createElementNS(ns,'path');land.setAttribute('d',landPath);land.setAttribute('fill','#152840');land.setAttribute('stroke','rgba(184,144,42,0.45)');land.setAttribute('stroke-width','1.4');svg.insertBefore(land,svg.firstChild);svg.insertBefore(seaRect,land);
+  const chTxt=document.createElementNS(ns,'text');chTxt.setAttribute('x','330');chTxt.setAttribute('y','682');chTxt.setAttribute('text-anchor','middle');chTxt.setAttribute('fill','rgba(74,143,206,0.45)');chTxt.setAttribute('font-size','9');chTxt.setAttribute('font-family','Oswald,sans-serif');chTxt.setAttribute('letter-spacing','3');chTxt.textContent='ENGLISH CHANNEL';svg.appendChild(chTxt);
+  const nsTxt=document.createElementNS(ns,'text');nsTxt.setAttribute('x','475');nsTxt.setAttribute('y','480');nsTxt.setAttribute('text-anchor','middle');nsTxt.setAttribute('fill','rgba(74,143,206,0.3)');nsTxt.setAttribute('font-size','8');nsTxt.setAttribute('font-family','Oswald,sans-serif');nsTxt.setAttribute('letter-spacing','2');nsTxt.setAttribute('transform','rotate(90 475 480)');nsTxt.textContent='NORTH SEA';svg.appendChild(nsTxt);
+  STATIONS.forEach(st=>{
+    const g=document.createElementNS(ns,'g');g.setAttribute('class','station-g');g.setAttribute('data-group',st.group);g.style.cursor='pointer';g.onclick=()=>showMapStation(st);
+    const isSector=st.type==='sector';const r=isSector?7:5;const col=GROUP_COLOURS[st.group]||'#888';
+    const j=JITTER[st.id]||{dx:0,dy:0,lx:0,ly:0,la:'start'};const cx=st.x+j.dx,cy=st.y+j.dy;
+    if(j.dx!==0||j.dy!==0){const conn=document.createElementNS(ns,'line');conn.setAttribute('x1',st.x);conn.setAttribute('y1',st.y);conn.setAttribute('x2',cx);conn.setAttribute('y2',cy);conn.setAttribute('stroke',col);conn.setAttribute('stroke-width','0.6');conn.setAttribute('stroke-dasharray','2 2');conn.setAttribute('opacity','0.4');g.appendChild(conn);}
+    if(isSector){const ring=document.createElementNS(ns,'circle');ring.setAttribute('cx',cx);ring.setAttribute('cy',cy);ring.setAttribute('r',r+4);ring.setAttribute('fill','none');ring.setAttribute('stroke',col);ring.setAttribute('stroke-width','1');ring.setAttribute('opacity','0.3');g.appendChild(ring);}
+    const circle=document.createElementNS(ns,'circle');circle.setAttribute('cx',cx);circle.setAttribute('cy',cy);circle.setAttribute('r',r);circle.setAttribute('fill',col);circle.setAttribute('stroke','rgba(232,223,192,0.9)');circle.setAttribute('stroke-width',isSector?'1.8':'1.2');circle.setAttribute('opacity',st.type==='forward'?'0.75':'1');g.appendChild(circle);
+    const labelX=cx+(j.lx||(cx>420?-(r+5):r+5));const labelY=cy+(j.ly!==undefined?j.ly:4);const labelAnchor=j.la||(cx>420?'end':'start');
+    const text=document.createElementNS(ns,'text');text.setAttribute('x',labelX);text.setAttribute('y',labelY);text.setAttribute('text-anchor',labelAnchor);text.setAttribute('font-family','Oswald,sans-serif');text.setAttribute('font-size',isSector?'10':'9');text.setAttribute('fill',isSector?'rgba(232,223,192,0.85)':'rgba(232,223,192,0.55)');text.setAttribute('letter-spacing','0.5');text.textContent=st.name;g.appendChild(text);
+    g.addEventListener('mouseenter',()=>{circle.setAttribute('r',r+2);text.setAttribute('fill','rgba(232,223,192,1)');});
+    g.addEventListener('mouseleave',()=>{circle.setAttribute('r',r);text.setAttribute('fill',isSector?'rgba(232,223,192,0.85)':'rgba(232,223,192,0.55)');});
+    svg.appendChild(g);
+  });
+}
+function showMapStation(st){
+  const gc=GROUP_COLOURS[st.group]||'#666';const typeLabel=st.type==='sector'?'Sector Station':st.type==='forward'?'Forward Airfield':'Satellite';
+  document.getElementById('map-sqn-list').innerHTML=`
+    <div style="margin-bottom:.75rem;padding-bottom:.75rem;border-bottom:2px solid var(--bs)">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:.4rem">
+        <div style="width:12px;height:12px;border-radius:50%;background:${gc};flex-shrink:0"></div>
+        <span style="font-family:'Special Elite',cursive;font-size:16px;color:rgba(255,255,255,.85)">${st.name}</span>
+        <span style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2)">${st.group} Group · ${typeLabel}</span>
+      </div>
+      ${st.info?`<div style="font-family:'Source Serif 4',Georgia,serif;font-size:13px;color:rgba(255,255,255,.78);line-height:1.65;margin-bottom:.5rem">${st.info}</div>`:''}
+    </div>
+    <div style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2);margin-bottom:.4rem">Squadrons</div>
+    ${st.sqns.map(n=>{const sq=SQ.find(s=>s.num===n.replace(' fwd',''));const clickHandler=sq?`selectSq('${sq.num}');document.querySelector('.nav-tab').click()`:'';return`<div class="map-sqn-chip" onclick="${clickHandler}" style="${sq?'cursor:pointer':''}"><b>No.${n} Sqn</b>${sq?`<div style="font-size:11px;color:rgba(255,255,255,.65)">${sq.kills} claims · ${sq.sorties} sorties</div>`:''}</div>`;}).join('')}
+    ${st.sqns.length===0?'<div class="map-sqn-chip" style="color:var(--brass2)">No squadron data</div>':''}`;
+}
+function filterMapGroup(group,btn){
+  document.querySelectorAll('.map-filter-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
+  document.querySelectorAll('#map-svg .station-g').forEach(g=>{g.style.display=(group==='all'||g.getAttribute('data-group')===group)?'':'none';});
+}
+
+// ═══ SURVIVORS ═══
+function renderSurvivors(){
+  document.getElementById('survivors-grid').innerHTML=`<div class="survivor-grid">${SURVIVORS.map(s=>`
+    <div class="survivor-card">
+      <div class="survivor-hd">
+        <div><div class="survivor-serial">${s.serial}</div><div class="survivor-name">${s.location}</div></div>
+        <span class="survivor-status status-${s.status}">${s.status==='fly'?'✈ Flying':s.status==='restore'?'🔧 Restoring':'🏛 Static'}</span>
+      </div>
+      <div class="survivor-body">
+        <div class="survivor-row"><span class="survivor-key">Markings</span><span>${s.markings}</span></div>
+        <div class="survivor-row"><span class="survivor-key">History</span><span>${s.history}</span></div>
+        <div style="margin-top:.6rem;font-size:11px;color:var(--brass2);font-style:italic;border-top:1px solid rgba(255,255,255,.06);padding-top:.5rem">${s.note}</div>
+        ${s.link?`<a href="${s.link}" target="_blank" rel="noopener" class="shop-btn hb-raf" style="margin-top:.75rem;font-size:13px">Visit website ↗</a>`:''}
+      </div>
+    </div>`).join('')}</div>`;
+}
+
+// ═══ BOOKS ═══
+function renderBooks(){
+  document.getElementById('books-grid').innerHTML=Object.entries(BOOKS).map(([cat,books])=>`
+    <div class="books-section">
+      <div class="books-section-title">${cat}</div>
+      <div class="books-grid">${books.map(b=>`
+        <div class="book-card">
+          <div class="book-spine" style="background:${b.colour}"></div>
+          <div class="book-info">
+            <div class="book-title">${b.title}</div>
+            <div class="book-author">${b.author} · ${b.year}</div>
+            <div class="book-rating">${'★'.repeat(b.stars)}${'☆'.repeat(5-b.stars)}</div>
+            <div class="book-desc">${b.desc}</div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:.4rem">${(b.shops||[]).map(s=>`<a class="shop-btn hb-gold" href="${s.url}" target="_blank" style="font-size:12px;padding:4px 10px">${s.label} ↗</a>`).join('')}</div>
+          </div>
+        </div>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+// ═══ PILOT STORIES ═══
+function renderPilotStories(){
+  const el=document.getElementById('pilot-stories-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';
+  el.innerHTML=PILOT_STORIES.map((p,i)=>`
+    <div style="background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--brass);border-radius:3px;padding:1.4rem;margin-bottom:1.5rem">
+      <div style="display:flex;gap:1.2rem;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap">
+        <div id="story-photo-${i}" style="width:80px;height:100px;flex-shrink:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:2px;display:flex;align-items:center;justify-content:center;overflow:hidden"><div style="font-size:2rem;opacity:.2">✈</div></div>
+        <div style="flex:1;min-width:200px">
+          <div style="font-family:'Special Elite',cursive;font-size:1.4rem;color:#fff;margin-bottom:.3rem">${p.name}</div>
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">No.${p.sqn} Squadron &nbsp;·&nbsp; ${p.kills} victories</div>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+            ${p.callsign!=='—'?`<span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:rgba(184,144,42,.15);color:var(--brass2);padding:2px 8px;border:1px solid rgba(184,144,42,.3);border-radius:2px">"${p.callsign}"</span>`:''}
+            <span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:2px 8px;border:1px solid rgba(255,255,255,.1);border-radius:2px">${p.aircraft||'Spitfire Mk.I'}</span>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:16px;color:rgba(255,255,255,.82);line-height:1.85;font-family:'Source Serif 4',Georgia,serif;border-top:1px solid rgba(255,255,255,.07);padding-top:1rem">${p.story}</div>
+    </div>`).join('');
+  PILOT_STORIES.forEach(function(p,i){
+    if(!p.wiki)return;
+    fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(p.wiki)).then(function(r){return r.json();}).then(function(d){const img=d.thumbnail&&d.thumbnail.source;if(!img)return;const box=document.getElementById('story-photo-'+i);if(box)box.innerHTML='<img src="'+img+'" alt="'+p.name+'" style="width:100%;height:100%;object-fit:cover;object-position:top center">';}).catch(function(){});
+  });
+}
+
+// ═══ THIS WEEK IN BoB ═══
+function renderThisWeek(){
+  const el=document.getElementById('this-week-bob');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';
+  const now=new Date();const m=now.getMonth()+1,d=now.getDate();
+  const md=(m<10?'0':'')+m+'-'+(d<10?'0':'')+d;
+  const best=BOB_EVENTS.find(e=>e.md===md)||BOB_EVENTS[Math.floor(Math.random()*BOB_EVENTS.length)];
+  const [bm,bd]=best.md.split('-');const date1940=new Date(1940,parseInt(bm)-1,parseInt(bd));
+  el.innerHTML=`<div style="background:rgba(21,39,68,.8);border:2px solid var(--brass);border-radius:4px;overflow:hidden"><div style="background:rgba(0,0,0,.35);padding:.75rem 1.2rem;display:flex;align-items:center;gap:1rem;border-bottom:1px solid rgba(184,144,42,.3)"><div style="text-align:center;background:var(--brass);color:var(--raf-dark);padding:.4rem .6rem;border-radius:2px;flex-shrink:0"><div style="font-family:'Special Elite',cursive;font-size:1.8rem;line-height:1">${bd}</div><div style="font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase">${date1940.toLocaleString('en-GB',{month:'short'})} 1940</div></div><div><div style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--brass);margin-bottom:.3rem">This week in the BoB</div><div style="font-family:'Special Elite',cursive;font-size:1.2rem;color:#fff">86 years ago today</div></div></div><div style="padding:1rem 1.2rem;font-size:17px;color:rgba(255,255,255,.85);line-height:1.75">${best.text}</div></div>`;
+}
+
+// ═══ MEDIA ═══
+function renderMedia(){
+  const el=document.getElementById('media-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';
+  const cats=[{k:'video',label:'Video',col:'var(--raf-sky)'},{k:'audio',label:'Audio',col:'var(--brass)'},{k:'archive',label:'Archive',col:'var(--olive)'}];
+  cats.forEach(cat=>{
+    const items=MEDIA_ITEMS.filter(i=>i.type===cat.k);if(!items.length)return;
+    const sec=document.createElement('div');
+    sec.innerHTML=`<div class="section-label" style="color:${cat.col}">${cat.label}</div>`;
+    items.forEach(item=>{
+      const div=document.createElement('a');div.href=item.url;div.target='_blank';div.rel='noopener';
+      div.style.cssText='display:flex;gap:.9rem;background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:.9rem 1rem;margin-bottom:8px;text-decoration:none;transition:background .15s;align-items:flex-start';
+      div.onmouseover=()=>div.style.background='rgba(255,255,255,.04)';div.onmouseout=()=>div.style.background='rgba(21,39,68,.7)';
+      div.innerHTML=`<div style="font-size:1.8rem;flex-shrink:0;line-height:1;padding-top:.1rem">${item.thumb}</div><div><div style="font-family:'Special Elite',cursive;font-size:1.05rem;color:#fff;margin-bottom:.25rem">${item.title}</div><div style="font-size:15px;color:rgba(255,255,255,.6);line-height:1.55">${item.desc}</div><div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:${cat.col};margin-top:.4rem">Open ↗</div></div>`;
+      sec.appendChild(div);
+    });
+    el.appendChild(sec);
+  });
+}
+
+// ═══ KEYBOARD + INIT ═══
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLB();closePM();}});
+document.addEventListener('DOMContentLoaded',function(){
+  renderGrid();
+  try{const params=new URLSearchParams(window.location.search);const tab=params.get('tab');if(tab){const btn=document.querySelector('.nav-tab[onclick*="'+tab+'"]');if(btn)btn.click();}}catch(e){}
+});
+</script>
+
+<!-- COOKIE CONSENT -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(10,22,40,.97);border-top:2px solid var(--brass);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:.04em;color:rgba(255,255,255,.8);box-shadow:0 -4px 24px rgba(0,0,0,.5)">
+  <div style="flex:1;min-width:260px">This site uses cookies and may display advertising via Google AdSense. By continuing you agree to our use of cookies. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--brass);text-decoration:none;margin-left:.5rem">Privacy ↗</a></div>
+  <button onclick="acceptCookies()" style="font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--brass);color:var(--raf-dark);border:none;padding:.6rem 1.5rem;border-radius:2px;cursor:pointer;flex-shrink:0">Accept</button>
+</div>
+<script>
+function acceptCookies(){try{localStorage.setItem('cookiesAccepted','1');}catch(e){}document.getElementById('cookie-banner').style.display='none';}
+(function(){try{if(!localStorage.getItem('cookiesAccepted'))document.getElementById('cookie-banner').style.display='flex';}catch(e){document.getElementById('cookie-banner').style.display='flex';}})();
+</script>
+
+<div style="background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.06);padding:1.5rem 2rem;text-align:center;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;color:rgba(255,255,255,.25)">
+  <a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none">WW2 Modeller Hub</a>
+  &nbsp;·&nbsp;
+  <a href="hurricane_paradise.html" style="color:rgba(255,255,255,.35);text-decoration:none">Hurricane</a>
+  &nbsp;·&nbsp;
+  <a href="articles.html" style="color:rgba(255,255,255,.35);text-decoration:none">Articles</a>
+  &nbsp;·&nbsp;
+  <a href="about.html" style="color:rgba(255,255,255,.35);text-decoration:none">About</a>
+  &nbsp;·&nbsp;
+  <a href="privacy.html" style="color:rgba(255,255,255,.35);text-decoration:none">Privacy</a>
+</div>
+</body>
+</html>
