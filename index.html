@@ -328,47 +328,7 @@ body {
 }
 
 /* Big stat blocks */
-.stat-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: .75rem;
-}
-.stat-card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  padding: .9rem 1rem;
-  position: relative;
-  overflow: hidden;
-  transition: border-color .2s;
-}
-.stat-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--brass), transparent);
-}
-.stat-card:hover { border-color: rgba(201,168,76,.3); }
-.stat-n {
-  font-family: 'Oswald', sans-serif;
-  font-size: 2.4rem;
-  font-weight: 600;
-  line-height: 1;
-  color: var(--brass);
-  letter-spacing: -.02em;
-  margin-bottom: .2rem;
-}
 .stat-n sup { font-size: 1.2rem; vertical-align: super; }
-.stat-lbl {
-  font-family: 'Oswald', sans-serif;
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
 /* Live aircraft quick-access */
 .hero-aircraft {
   display: grid;
@@ -396,25 +356,6 @@ body {
 }
 .ha-card:hover { border-color: rgba(201,168,76,.4); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.4); }
 .ha-card:hover::after { opacity: 1; }
-.ha-live {
-  display: inline-flex;
-  align-items: center;
-  gap: .3rem;
-  font-family: 'Oswald', sans-serif;
-  font-size: 8px;
-  font-weight: 600;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--live);
-  margin-bottom: .4rem;
-}
-.ha-live::before {
-  content: '';
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--live);
-  animation: pulse 2s ease infinite;
-}
 .ha-name {
   font-family: 'Special Elite', cursive;
   font-size: 1.1rem;
@@ -581,31 +522,6 @@ body {
   flex-direction: column;
   position: relative;
   z-index: 2;
-}
-
-.feat-live {
-  display: inline-flex;
-  align-items: center;
-  gap: .35rem;
-  font-family: 'Oswald', sans-serif;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--live);
-  background: rgba(46,204,113,.1);
-  border: 1px solid rgba(46,204,113,.25);
-  padding: .2rem .6rem;
-  border-radius: 2px;
-  width: fit-content;
-  margin-bottom: .9rem;
-}
-.feat-live::before {
-  content: '';
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--live);
-  animation: pulse 2s ease infinite;
 }
 
 .feat-title {
@@ -1094,14 +1010,12 @@ footer a:hover { color: var(--brass); }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-left { padding: 4rem 2rem 2rem; }
   .hero-right { padding: 0 2rem 4rem; }
-  .stat-cards { grid-template-columns: repeat(4, 1fr); }
-    .main { grid-template-columns: 1fr; }
+  .main { grid-template-columns: 1fr; }
   .sidebar { display: none; }
 }
 @media (max-width: 700px) {
   .hero-left { padding: 3rem 1.2rem 1.5rem; }
   .hero-right { padding: 0 1.2rem 3rem; }
-  .stat-cards { grid-template-columns: 1fr 1fr; }
   .hero-aircraft { grid-template-columns: 1fr 1fr; }
   .featured-grid { grid-template-columns: 1fr; }
         .show-card { grid-template-columns: 60px 1fr; }
@@ -1135,8 +1049,8 @@ footer a:hover { color: var(--brass); }
   </div>
 
   <div class="nav-links">
-    <a href="hurricane_paradise.html" class="nav-link live">Hurricane</a>
-    <a href="spitfire_paradise.html" class="nav-link live">Spitfire</a>
+    <a href="hurricane_paradise.html" class="nav-link">Hurricane</a>
+    <a href="spitfire_paradise.html" class="nav-link">Spitfire</a>
     <a href="articles.html" class="nav-link">Articles</a>
   </div>
   <a href="hurricane_paradise.html" class="nav-cta">Open Reference →</a>
@@ -1178,36 +1092,45 @@ footer a:hover { color: var(--brass); }
   <!-- RIGHT -->
   <div class="hero-right">
 
-    <!-- Stats grid -->
-    <div class="stat-cards">
-      <div class="stat-card">
-        <div class="stat-n">41</div>
-        <div class="stat-lbl">BoB Squadrons</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-n">380<sup>+</sup></div>
-        <div class="stat-lbl">Pilot profiles</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-n">14</div>
-        <div class="stat-lbl">Build articles</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-n">4</div>
-        <div class="stat-lbl">Paint brands</div>
-      </div>
+    <!-- Hero content cards -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+
+      <!-- Kit of the Month -->
+      <a href="hurricane_paradise.html?tab=build" style="text-decoration:none;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:all .2s" onmouseover="this.style.borderColor='rgba(201,168,76,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+        <div style="height:3px;background:linear-gradient(90deg,var(--brass),var(--brass2))"></div>
+        <div style="padding:.85rem 1rem;flex:1">
+          <div style="font-family:'Oswald',sans-serif;font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:.55rem">Kit of the Month</div>
+          <div style="font-family:'Special Elite',cursive;font-size:1.15rem;color:#fff;line-height:1.15;margin-bottom:.3rem">Airfix Hurricane Mk.I</div>
+          <div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--sky);margin-bottom:.55rem">1:48 · A05127A</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.6">The go-to beginner's kit. Excellent fit, crisp panel lines, BoB markings for two aircraft. Highly recommended.</div>
+          <div style="display:flex;align-items:center;gap:.5rem;margin-top:.65rem">
+            <span style="color:var(--brass);font-size:13px;letter-spacing:1px">★★★★★</span>
+            <span style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.08em;color:var(--brass)">Full kit guide →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- WW2 Pilot Story -->
+      <a href="hurricane_paradise.html?tab=stories" style="text-decoration:none;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:all .2s;position:relative" onmouseover="this.style.borderColor='rgba(201,168,76,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
+        <div style="height:3px;background:linear-gradient(90deg,#1e3a5c,#4a7fa5)"></div>
+        <div style="padding:.85rem 1rem;flex:1">
+          <div style="font-family:'Oswald',sans-serif;font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(74,127,165,.9);margin-bottom:.55rem">Pilot Story</div>
+          <div style="font-family:'Special Elite',cursive;font-size:1.05rem;color:#fff;line-height:1.2;margin-bottom:.5rem">"I was nineteen. I had never fired my guns in anger."</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.6">Geoffrey Wellum, 92 Squadron. The youngest Spitfire pilot in the Battle of Britain flew his first combat sortie on 10 July 1940.</div>
+          <div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.08em;color:var(--sky);margin-top:.65rem">Read pilot profiles →</div>
+        </div>
+      </a>
+
     </div>
 
     <!-- Aircraft quick access -->
     <div class="hero-aircraft">
       <a href="hurricane_paradise.html" class="ha-card">
-        <div class="ha-live">Live</div>
         <div class="ha-name">Hawker Hurricane</div>
         <div class="ha-meta">22 sqns · 200+ pilots</div>
         <div class="ha-arrow">→</div>
       </a>
       <a href="spitfire_paradise.html" class="ha-card">
-        <div class="ha-live">Live</div>
         <div class="ha-name">Supermarine Spitfire</div>
         <div class="ha-meta">19 sqns · 180+ pilots</div>
         <div class="ha-arrow">→</div>
@@ -1236,19 +1159,7 @@ footer a:hover { color: var(--brass); }
       <p><strong>10 July – 31 October 1940.</strong> Fighter Command flew 113 days of continuous combat. Hurricanes destroyed more enemy aircraft than all other defences combined — 55% of all RAF claims during the Battle.</p>
       <a href="hurricane_paradise.html?tab=build">Full reference →</a>
     </div>
-    <div class="kit-spot">
-      <div class="kit-spot-hd">Kit of the month</div>
-      <div class="kit-spot-name">Airfix Hurricane Mk.I</div>
-      <div class="kit-spot-code">Airfix · 1:48 · A05127A</div>
-      <div class="kit-spot-desc">Excellent fit, crisp panel lines, good cockpit detail. BoB markings for two aircraft. The obvious starting point for any BoB build.</div>
-      <div class="kit-spot-row">
-        <span class="stars">★★★★★</span>
-        <a href="https://www.hannants.co.uk/product/A05127A" target="_blank" rel="noopener" class="kit-btn">Hannants ↗</a>
-        <a href="hurricane_paradise.html?tab=build" class="kit-link">Full kit guide →</a>
-      </div>
-    </div>
-  </div>
-
+    
   <!-- Live aircraft -->
   <div class="sec" id="aircraft">Live aircraft references</div>
   <div class="featured-grid">
@@ -1257,7 +1168,6 @@ footer a:hover { color: var(--brass); }
       <div class="feat-card-top" style="background:linear-gradient(90deg,#c9a84c,#4a5220,transparent)"></div>
       <div class="feat-silhouette">✈</div>
       <div class="feat-body">
-        <div class="feat-live">Live now</div>
         <div class="feat-title">Hawker Hurricane</div>
         <div class="feat-sub">Mk.I / Mk.II · Battle of Britain 1940</div>
         <div class="feat-desc">22 squadrons, 200+ pilot profiles, complete paint codes for all four brands, kit comparison, decal sheets, weathering by airfield, interactive maps and BoB timeline.</div>
@@ -1279,7 +1189,6 @@ footer a:hover { color: var(--brass); }
       <div class="feat-card-top" style="background:linear-gradient(90deg,#1e3a5c,#4a7fa5,transparent)"></div>
       <div class="feat-silhouette">✈</div>
       <div class="feat-body">
-        <div class="feat-live">Live now</div>
         <div class="feat-title">Supermarine Spitfire</div>
         <div class="feat-sub">Mk.I / Mk.II · Fighter Command 1940</div>
         <div class="feat-desc">19 squadrons, 180+ pilot profiles, full paint codes, kit reviews, Xtradecal sheet guide, weathering by station, maps and surviving aircraft including P7350.</div>
