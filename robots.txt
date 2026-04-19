@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Priority pages for crawlers
+Allow: /spitfire_paradise.html
+Allow: /hurricane_paradise.html
+Allow: /articles.html
+Allow: /article-*.html
+
+# Sitemap
+Sitemap: https://www.ww2modellerhub.co.uk/sitemap.xml
