@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.svg">
   <!-- SEO -->
   <title>Supermarine Spitfire Scale Modelling Reference — 19 BoB Squadrons, Paint Codes, Kits & Decals</title>
   <meta name="description" content="Complete 1:48 and 1:72 Spitfire Mk.I modelling reference. 19 Battle of Britain squadrons, 180+ pilots including Sailor Malan and Stanford Tuck, exact paint codes, kit reviews, Xtradecal sheets, weathering guides and surviving aircraft.">
@@ -353,11 +355,10 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
       <button onclick="filterMapGroup('12',this)" class="map-filter-btn" style="border-color:#5b9bd5;color:#7db8ea">12 Group</button>
       <button onclick="filterMapGroup('13',this)" class="map-filter-btn" style="border-color:#b07fd5;color:#c89de8">13 Group</button>
     </div>
-    <div style="display:grid;grid-template-columns:1fr minmax(200px,260px);gap:0;background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden">
-      <div style="overflow:hidden">
-        <svg id="map-svg" viewBox="0 0 520 700" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg"></svg>
-      </div>
-      <div class="map-sqn-list" id="map-sqn-list">
+    <div style="display:flex;gap:.75rem;flex-wrap:wrap;align-items:flex-start">
+      <svg id="map-svg" viewBox="0 0 520 700" xmlns="http://www.w3.org/2000/svg"
+           style="flex:1 1 380px;min-width:280px;max-width:520px;height:auto;border-radius:3px;border:1px solid rgba(255,255,255,.12);background:rgba(10,22,40,.8);cursor:default"></svg>
+      <div class="map-sqn-list" id="map-sqn-list" style="flex:0 0 220px;min-width:180px">
         <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">Station Info</div>
         <div style="font-size:13px;color:rgba(255,255,255,.45)">Click a station dot on the map to see squadrons and notes.</div>
         <div style="margin-top:1.2rem">
@@ -715,11 +716,11 @@ const WEATHER=[
 ];
 
 const TECHNIQUES=[
- {name:"Pre-shading",colour:"#2a3a60",desc:"Before base colours, spray dark grey along panel line recesses at low pressure. When base coat follows, recesses stay darker — subtle natural depth. The Spitfire's elliptical wings and curved fuselage benefit particularly from this technique.",products:"Tamiya XF-1 + XF-2 (4:1 pre-shade)",links:[{label:"YouTube: preshading Spitfire 1:48 technique",url:"https://www.youtube.com/results?search_query=pre-shading+spitfire+1:48+technique"},{label:"YouTube: modulation preshading RAF aircraft",url:"https://www.youtube.com/results?search_query=modulation+preshading+RAF+aircraft+airbrush"}]},
- {name:"Exhaust staining",colour:"#5a3010",desc:"All BoB Spitfires showed heavy exhaust staining on port upper cowling, streaking 6–10 inches rearward. Use brown-black oils (Lamp Black + Raw Umber) streaked with a fan brush dampened with Odourless Thinner. Build gradually. Burnt Sienna adds rust tones at stack exits.",products:"AK Interactive Exhaust Wash AK081 · Abteilung 502 Lamp Black",links:[{label:"YouTube: exhaust staining Spitfire scale model",url:"https://www.youtube.com/results?search_query=exhaust+staining+spitfire+scale+model+oils"},{label:"YouTube: oil streaking WW2 aircraft model",url:"https://www.youtube.com/results?search_query=oil+streaking+technique+ww2+aircraft+model"}]},
- {name:"Chipping & walkway wear",colour:"#3a2810",desc:"BoB Spitfires show wear at the port wing root walkway (painted on all Spitfires), cockpit sill, and leading edges. Use Aluminium (Humbrol 56) or a silver pencil for leading edge wear. Sponge chipping with foam at the walkway — the Spitfire's thin metal skin chips crisply.",products:"Humbrol 56 Aluminium · Tamiya X-11 Chrome Silver · Prismacolor silver pencil",links:[{label:"YouTube: chipping wear Spitfire wing walkway",url:"https://www.youtube.com/results?search_query=chipping+wear+spitfire+wing+leading+edge+scale+model"},{label:"YouTube: salt chipping technique RAF fighter",url:"https://www.youtube.com/results?search_query=salt+chipping+technique+raf+spitfire+model"}]},
- {name:"Panel washing",colour:"#1a3a50",desc:"Flory Models Dark Dirt or AK Panel Line Wash with Odourless Thinner. Capillary action draws wash into lines. Remove excess wiping towards trailing edges — always in direction of airflow. Flush rivets give cleaner lines than the Hurricane's.",products:"Flory Models Dark Dirt · AK Interactive Panel Line Wash Dark Brown",links:[{label:"YouTube: panel wash Spitfire Airfix 1:48",url:"https://www.youtube.com/results?search_query=panel+line+wash+spitfire+airfix+1:48+tutorial"},{label:"YouTube: Flory Models washes aircraft",url:"https://www.youtube.com/results?search_query=flory+models+wash+aircraft+scale+model+tutorial"}]},
- {name:"Final sealing",colour:"#5a3a20",desc:"Matt varnish overall to unify weathering. Oil dot filtering — Yellow Ochre, Raw Sienna, Titanium White on upper surfaces — blend with thinner for warm fade. Satin on canopy framing and metal fittings. BoB Spitfire was MAP (flat). Keep final coat very flat.",products:"Vallejo Matt Varnish · Abteilung 502 oils · Tamiya X-35 Satin for canopy framing",links:[{label:"YouTube: oil dot filter technique aircraft model",url:"https://www.youtube.com/results?search_query=oil+dot+filter+technique+aircraft+model"},{label:"YouTube: final varnish matt coat scale model",url:"https://www.youtube.com/results?search_query=final+varnish+matt+coat+scale+model+aircraft+tutorial"}]},
+ {name:"Pre-shading",colour:"#2a3a60",desc:"Before base colours, spray dark grey along panel line recesses at low pressure. When base coat follows, recesses stay darker — subtle natural depth. The Spitfire's elliptical wings and curved fuselage benefit particularly from this technique.",products:"Tamiya XF-1 + XF-2 (4:1 pre-shade)",links:[{label:"YouTube: preshading Spitfire 1:48 technique",url:"https://www.youtube.com/watch?v=j5AGR6W7ouo"},{label:"YouTube: modulation preshading RAF aircraft",url:"https://www.youtube.com/watch?v=j5AGR6W7ouo"}]},
+ {name:"Exhaust staining",colour:"#5a3010",desc:"All BoB Spitfires showed heavy exhaust staining on port upper cowling, streaking 6–10 inches rearward. Use brown-black oils (Lamp Black + Raw Umber) streaked with a fan brush dampened with Odourless Thinner. Build gradually. Burnt Sienna adds rust tones at stack exits.",products:"AK Interactive Exhaust Wash AK081 · Abteilung 502 Lamp Black",links:[{label:"YouTube: exhaust staining Spitfire scale model",url:"https://www.youtube.com/watch?v=K27dH0d4Bik"},{label:"YouTube: oil streaking WW2 aircraft model",url:"https://www.youtube.com/watch?v=K27dH0d4Bik"}]},
+ {name:"Chipping & walkway wear",colour:"#3a2810",desc:"BoB Spitfires show wear at the port wing root walkway (painted on all Spitfires), cockpit sill, and leading edges. Use Aluminium (Humbrol 56) or a silver pencil for leading edge wear. Sponge chipping with foam at the walkway — the Spitfire's thin metal skin chips crisply.",products:"Humbrol 56 Aluminium · Tamiya X-11 Chrome Silver · Prismacolor silver pencil",links:[{label:"YouTube: chipping wear Spitfire wing walkway",url:"https://www.youtube.com/watch?v=nOvKFMBp1Uc"},{label:"YouTube: salt chipping technique RAF fighter",url:"https://www.youtube.com/watch?v=nOvKFMBp1Uc"}]},
+ {name:"Panel washing",colour:"#1a3a50",desc:"Flory Models Dark Dirt or AK Panel Line Wash with Odourless Thinner. Capillary action draws wash into lines. Remove excess wiping towards trailing edges — always in direction of airflow. Flush rivets give cleaner lines than the Hurricane's.",products:"Flory Models Dark Dirt · AK Interactive Panel Line Wash Dark Brown",links:[{label:"YouTube: panel wash Spitfire Airfix 1:48",url:"https://www.youtube.com/watch?v=7N9n_6MKPYU"},{label:"YouTube: Flory Models washes aircraft",url:"https://www.youtube.com/watch?v=7N9n_6MKPYU"}]},
+ {name:"Final sealing",colour:"#5a3a20",desc:"Matt varnish overall to unify weathering. Oil dot filtering — Yellow Ochre, Raw Sienna, Titanium White on upper surfaces — blend with thinner for warm fade. Satin on canopy framing and metal fittings. BoB Spitfire was MAP (flat). Keep final coat very flat.",products:"Vallejo Matt Varnish · Abteilung 502 oils · Tamiya X-35 Satin for canopy framing",links:[{label:"YouTube: oil dot filter technique aircraft model",url:"https://www.youtube.com/watch?v=K27dH0d4Bik"},{label:"YouTube: final varnish matt coat scale model",url:"https://www.youtube.com/watch?v=7N9n_6MKPYU"}]},
 ];
 
 const STATIONS=[
@@ -922,14 +923,36 @@ const COLOUR_COMPARE=[
 ];
 
 const MEDIA_ITEMS=[
- {type:"video",title:"BBMF Spitfire & Hurricane flypast — Duxford",thumb:"🎬",url:"https://www.youtube.com/results?search_query=BBMF+Spitfire+Hurricane+flypast+Duxford",desc:"Watch the Battle of Britain Memorial Flight in action at Duxford airshows."},
- {type:"video",title:"Building the Eduard Spitfire Mk.I ProfiPACK 1:48",thumb:"🎬",url:"https://www.youtube.com/results?search_query=Eduard+Spitfire+Mk+I+ProfiPACK+1:48+build",desc:"Full build video of the Eduard ProfiPACK — recommended viewing before starting."},
- {type:"video",title:"Airfix Spitfire Mk.Ia 1:48 — full build walkthrough",thumb:"🎬",url:"https://www.youtube.com/results?search_query=Airfix+Spitfire+Mk+Ia+1:48+full+build",desc:"Complete construction video for the Airfix AX05126A."},
- {type:"video",title:"Sailor Malan — Tiger Squadron documentary",thumb:"🎬",url:"https://www.youtube.com/results?search_query=Sailor+Malan+74+Squadron+Battle+Britain",desc:"Documentary on Malan and 74 Tiger Squadron's role in the Battle."},
- {type:"audio",title:"Geoffrey Wellum — Desert Island Discs BBC",thumb:"🎙️",url:"https://www.bbc.co.uk/programmes/b00f03y1",desc:"Wellum's BBC interview. Describes flying the Spitfire at nineteen and the loss of friends."},
- {type:"audio",title:"IWM Sound Archive — Spitfire pilots",thumb:"🎙️",url:"https://www.iwm.org.uk/collections/search?query=spitfire+pilot+1940&filters=type%3ASound",desc:"Recorded interviews with BoB Spitfire pilots in the IWM Sound Archive."},
- {type:"archive",title:"IWM Photograph Archive — Spitfire 1940",thumb:"📷",url:"https://www.iwm.org.uk/collections/search?query=Spitfire+1940&filters=category%3APhotograph",desc:"Hundreds of period photographs. Essential reference for modellers."},
- {type:"archive",title:"Shuttleworth — AR501 Spitfire records",thumb:"📁",url:"https://www.shuttleworth.org/aircraft/spitfire/",desc:"History and documentation of the oldest flying Spitfire Mk.Ia — AR501."},
+ {type:"video",title:"BBMF — Lancaster, Spitfire & Hurricane over RAF Coningsby 2023",thumb:"🎬",
+  url:"https://www.youtube.com/watch?v=ussUR9fxNdg",
+  desc:"The Battle of Britain Memorial Flight's Lancaster (PA474), Spitfire P7350 and Hurricane LF363 displaying over their home base. Essential colour reference for BoB markings."},
+ {type:"video",title:"BBMF Hurricane & Spitfire Dogfight Demo — PDA Day 2024",thumb:"🎬",
+  url:"https://www.youtube.com/watch?v=SF_dQiQm6RY",
+  desc:"Hurricane LF363 and Spitfire TE311 perform a close-quarters dogfight demonstration at RAF Coningsby — stunning reference for aerial formations and paint fade."},
+ {type:"video",title:"Airfix Spitfire Mk.Ia 1:48 — Complete Beginner's Build",thumb:"🎬",
+  url:"https://www.youtube.com/watch?v=3HT7Rkq5cew",
+  desc:"Full supercut build of the Airfix AX05126A from sprue to finished model. Excellent beginner guide covering cockpit, camouflage and decals."},
+ {type:"video",title:"Freedom Flyer — Sailor Malan Documentary",thumb:"🎬",
+  url:"https://www.youtube.com/watch?v=C4jvpZA1GI4",
+  desc:"Documentary on Sailor Malan — the pre-eminent Spitfire ace of the Battle of Britain. Covers his South African upbringing, 74 Tiger Squadron and his ten rules of air fighting."},
+ {type:"video",title:"Geoffrey Wellum — Battle of Britain pilot interview",thumb:"🎬",
+  url:"https://www.youtube.com/watch?v=9gqlgr3Ejfo",
+  desc:"The youngest Spitfire pilot in the Battle of Britain, interviewed in 2014. Author of First Light — describes flying with 92 Squadron and the loss of friends."},
+ {type:"video",title:"BBMF Scramble! P7350 — the only BoB Spitfire still flying",thumb:"🎬",
+  url:"https://www.youtube.com/watch?v=psF83M3QOeM",
+  desc:"Spitfire P7350 (Mk IIa) and Hurricane take off together at Coningsby. P7350 is the oldest airworthy Spitfire and the only one to have flown in the actual Battle of Britain."},
+ {type:"audio",title:"Geoffrey Wellum — Desert Island Discs BBC",thumb:"🎙️",
+  url:"https://www.bbc.co.uk/programmes/b00f03y1",
+  desc:"Wellum's BBC interview. He describes flying the Spitfire at nineteen, the bond of the squadron and the loss of friends over the Channel."},
+ {type:"audio",title:"IWM Sound Archive — Spitfire pilot recordings",thumb:"🎙️",
+  url:"https://www.iwm.org.uk/collections/search?query=spitfire+pilot+1940&filters=type%3ASound",
+  desc:"Recorded first-hand interviews with BoB Spitfire pilots in the IWM Sound Archive. Covers all 19 squadrons — searchable by pilot name."},
+ {type:"archive",title:"IWM Photograph Archive — Spitfire 1940",thumb:"📷",
+  url:"https://www.iwm.org.uk/collections/search?query=Spitfire+1940&filters=category%3APhotograph",
+  desc:"Hundreds of period photographs. Essential reference for markings, staining, wear patterns and groundcrew equipment."},
+ {type:"archive",title:"P7350 — the BoB Spitfire still flying",thumb:"📁",
+  url:"https://www.raf.mod.uk/our-organisation/units/royal-air-force-battle-of-britain-memorial-flight/aircraft/",
+  desc:"BBMF official page for P7350 — built at Castle Bromwich 1940, flew with 266 and 603 Squadrons. The most historically significant Spitfire for modellers."},
 ];
 
 const BOB_EVENTS=[
