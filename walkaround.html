@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Walkaround Photo Reference — Spitfire & Hurricane — WW2 Modeller Hub</title>
+<meta name="description" content="Period walkaround photographs of Spitfire and Hurricane aircraft grouped by detail area — cockpit, exhaust, undercarriage, markings and more. Free scale modelling reference.">
+<link rel="canonical" href="https://www.ww2modeller.co.uk/walkaround.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409" crossorigin="anonymous"></script>
+<style>
+:root {
+  --ink:#07101f;--navy:#0a1628;--mid:#112240;--panel:rgba(17,34,64,.85);
+  --border:rgba(255,255,255,.09);--brass:#c9a84c;--brass2:#e8c76a;
+  --sky:#4a8db5;--cream:rgba(255,255,255,.88);--muted:rgba(255,255,255,.45);
+  --dim:rgba(255,255,255,.22);--r:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--ink);color:var(--cream);font-size:17px;line-height:1.65}
+.nav{position:sticky;top:0;z-index:200;background:rgba(7,16,31,.82);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none}
+.nav-logo svg{width:28px;height:28px}
+.nav-logo-text{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.nav-logo-text span{color:var(--brass)}
+.nav-links{display:flex;gap:.25rem}
+.nav-link{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:.35rem .7rem;border-radius:3px;transition:color .15s}
+.nav-link:hover,.nav-link.active{color:var(--brass2)}
+.page-hd{background:linear-gradient(135deg,#050d1a,#0a1628 60%,#112240);border-bottom:1px solid var(--border);padding:2.5rem 2rem 2rem}
+.page-hd-inner{max-width:1200px;margin:0 auto}
+.breadcrumb{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:.75rem}
+.breadcrumb a{color:var(--dim);text-decoration:none}.breadcrumb a:hover{color:var(--brass)}
+.breadcrumb span{color:var(--brass);margin:0 .4rem}
+.page-h1{font-family:'Special Elite',cursive;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin-bottom:.6rem;line-height:1.1}
+.page-sub{font-size:1rem;color:var(--muted);max-width:600px;line-height:1.7}
+
+/* Tab bar */
+.tab-bar{background:var(--mid);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;gap:.25rem;overflow-x:auto;position:sticky;top:58px;z-index:100}
+.tab{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 1.1rem;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s;background:none;border-left:none;border-right:none;border-top:none}
+.tab:hover{color:var(--brass)}
+.tab.on{color:var(--brass);border-bottom-color:var(--brass)}
+
+/* Main */
+.main{max-width:1200px;margin:0 auto;padding:2rem 2rem 4rem;display:grid;grid-template-columns:240px 1fr;gap:2rem;align-items:start}
+.sidebar{position:sticky;top:110px}
+
+/* Feature nav */
+.feat-nav{background:var(--panel);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.feat-nav-hd{font-family:'Oswald',sans-serif;font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);padding:.6rem .9rem;background:rgba(0,0,0,.2);border-bottom:1px solid var(--border)}
+.feat-nav-item{display:block;padding:.55rem .9rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);transition:all .12s;cursor:pointer;background:none;width:100%;text-align:left}
+.feat-nav-item:last-child{border-bottom:none}
+.feat-nav-item:hover,.feat-nav-item.on{color:var(--brass);background:rgba(201,168,76,.05)}
+.feat-nav-item.on{border-left:2px solid var(--brass)}
+
+.ref-note{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:var(--r);padding:.9rem 1rem;margin-top:1rem;font-size:13px;color:rgba(255,255,255,.6);line-height:1.6}
+.ref-note strong{color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem}
+
+/* Content */
+.content-area{}
+.aircraft-section{display:none}
+.aircraft-section.active{display:block}
+
+.area-hd{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin:1.5rem 0 .85rem;display:flex;align-items:center;gap:.75rem}
+.area-hd::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)}
+.area-hd:first-child{margin-top:0}
+
+/* Photo card */
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem;margin-bottom:.5rem}
+.photo-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:border-color .2s}
+.photo-card:hover{border-color:rgba(201,168,76,.3)}
+.photo-thumb{width:100%;aspect-ratio:4/3;background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.photo-thumb a{display:flex;width:100%;height:100%;align-items:center;justify-content:center;text-decoration:none}
+.photo-thumb-icon{font-size:2.5rem;opacity:.15}
+.photo-source-badge{position:absolute;top:.5rem;right:.5rem;font-family:'Oswald',sans-serif;font-size:8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px;background:rgba(0,0,0,.6)}
+.photo-body{padding:.75rem .9rem}
+.photo-title{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.04em;color:#fff;margin-bottom:.3rem;line-height:1.3}
+.photo-caption{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:.6rem}
+.photo-link{display:inline-flex;align-items:center;gap:.3rem;font-family:'Oswald',sans-serif;font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);text-decoration:none;border:1px solid rgba(201,168,76,.25);padding:2px 8px;border-radius:2px;transition:background .12s}
+.photo-link:hover{background:rgba(201,168,76,.1)}
+
+/* Modeller notes */
+.mod-note{background:rgba(17,34,64,.8);border:1px solid var(--border);border-left:3px solid var(--sky);border-radius:var(--r);padding:.85rem 1rem;margin-bottom:1.2rem;font-size:14px;color:rgba(255,255,255,.75);line-height:1.65}
+.mod-note strong{color:var(--sky);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:.3rem}
+
+@media(max-width:800px){.main{grid-template-columns:1fr}.sidebar{display:none}.tab-bar{padding:0 1rem}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#003087"/><circle cx="14" cy="14" r="9.5" fill="#FFD700"/><circle cx="14" cy="14" r="5.5" fill="#CF142B"/><circle cx="14" cy="14" r="2" fill="#fff"/></svg>
+    <span class="nav-logo-text">WW2 <span>Modeller</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="hurricane_paradise.html" class="nav-link">Hurricane</a>
+    <a href="spitfire_paradise.html" class="nav-link">Spitfire</a>
+    <a href="techniques-bank.html" class="nav-link">Techniques</a>
+    <a href="walkaround.html" class="nav-link active">Walkaround</a>
+  </div>
+</nav>
+
+<div class="page-hd">
+  <div class="page-hd-inner">
+    <div class="breadcrumb"><a href="index.html">Hub</a><span>›</span>Walkaround Reference</div>
+    <h1 class="page-h1">Walkaround Photo Reference</h1>
+    <p class="page-sub">Period and museum photographs grouped by detail area — cockpit, exhaust staining, undercarriage, markings and more. All images link to original sources.</p>
+  </div>
+</div>
+
+<!-- Aircraft tabs -->
+<div class="tab-bar">
+  <button class="tab on" onclick="showAircraft('hurricane',this)">Hawker Hurricane</button>
+  <button class="tab" onclick="showAircraft('spitfire',this)">Supermarine Spitfire</button>
+</div>
+
+<div class="main">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="feat-nav">
+      <div class="feat-nav-hd">Detail areas</div>
+      <button class="feat-nav-item on" onclick="scrollTo('#cockpit')">Cockpit</button>
+      <button class="feat-nav-item" onclick="scrollTo('#exhausts')">Exhaust stacks</button>
+      <button class="feat-nav-item" onclick="scrollTo('#undercarriage')">Undercarriage</button>
+      <button class="feat-nav-item" onclick="scrollTo('#markings')">Roundels & codes</button>
+      <button class="feat-nav-item" onclick="scrollTo('#leading-edge')">Leading edges</button>
+      <button class="feat-nav-item" onclick="scrollTo('#canopy')">Canopy & frame</button>
+      <button class="feat-nav-item" onclick="scrollTo('#airframe')">Airframe & panels</button>
+    </div>
+    <div class="ref-note">
+      <strong>How to use this page</strong>
+      All photos link to their original archive or source. IWM photographs are free for non-commercial use. Always check individual image licences before reproduction.
+    </div>
+    <div class="ref-note" style="margin-top:.75rem">
+      <strong>Surviving aircraft</strong>
+      For the most accurate modelling reference, visit R4118 (Hurricane) at Shuttleworth and P7350 (Spitfire) with BBMF at RAF Coningsby.
+    </div>
+  </aside>
+
+  <!-- HURRICANE -->
+  <div class="aircraft-section active" id="section-hurricane">
+
+    <!-- COCKPIT -->
+    <div class="area-hd" id="cockpit">Cockpit Interior</div>
+    <div class="mod-note">
+      <strong>Modeller's note</strong>
+      Hurricane cockpits were painted in Titanine Interior Grey-Green — a complex mixed colour unique to Hawker. The instrument panel was Flat Black with individual instrument details in silver and cream. The floor is typically darker and more worn than the side walls.
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(30,20,10,.4)">
+          <span class="photo-thumb-icon">🎛</span>
+          <span class="photo-source-badge" style="color:#80c080">IWM</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Hurricane Mk.I Cockpit — Instrument Panel</div>
+          <div class="photo-caption">Period photograph of the Hawker Hurricane Mk.I instrument panel. Shows REI compass, airspeed and altitude instruments in standard layout.</div>
+          <a class="photo-link" href="https://www.iwm.org.uk/collections/search?query=hurricane+cockpit&filters=category%3APhotograph" target="_blank" rel="noopener">IWM Archive ↗</a>
+        </div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(20,30,10,.4)">
+          <span class="photo-thumb-icon">✈</span>
+          <span class="photo-source-badge" style="color:#c0c080">Museum</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">R4118 Cockpit — Museum Reference</div>
+          <div class="photo-caption">Hurricane Heritage's R4118 preserves much of its original interior. One of the best close-access cockpit references for 1940 standard.</div>
+          <a class="photo-link" href="https://www.hurricaneheritage.com/the-aircraft/hurricane-r4118/" target="_blank" rel="noopener">Hurricane Heritage ↗</a>
+        </div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(10,25,40,.5)">
+          <span class="photo-thumb-icon">🎬</span>
+          <span class="photo-source-badge" style="color:#c08080">YouTube</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">BBMF Hurricane LF363 — Cockpit Startup</div>
+          <div class="photo-caption">Close-up video of the cockpit during engine startup. Shows throttle quadrant position, instrument readings and interior colour in natural light — the best moving reference available.</div>
+          <a class="photo-link" href="https://www.youtube.com/watch?v=afZwPxtY2iw" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXHAUSTS -->
+    <div class="area-hd" id="exhausts">Exhaust Stacks & Staining</div>
+    <div class="mod-note">
+      <strong>Modeller's note</strong>
+      The Hurricane used ejector exhaust stacks rather than individual stub exhausts. The staining pattern behind them is very consistent — a fan-shaped dark smear across the upper cowling, extending aft to approximately the cockpit. The raw metal of the stacks themselves oxidises to a rusty brown. Eduard Brassin 648580 replicates the stack casting in resin with excellent detail.
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(30,15,5,.5)">
+          <span class="photo-thumb-icon">💨</span>
+          <span class="photo-source-badge" style="color:#80c080">IWM</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Hurricane Exhaust Staining — Airfield Photograph</div>
+          <div class="photo-caption">Ground-level period photograph showing exhaust residue on upper cowl panels. The darkest staining concentrates at the forward edge of the exhaust efflux, fading aft.</div>
+          <a class="photo-link" href="https://www.iwm.org.uk/collections/search?query=hurricane+exhaust+1940&filters=category%3APhotograph" target="_blank" rel="noopener">IWM Archive ↗</a>
+        </div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(20,20,10,.4)">
+          <span class="photo-thumb-icon">🔥</span>
+          <span class="photo-source-badge" style="color:#c0c080">Museum</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">R4118 Exhaust Stack Detail — Close-up</div>
+          <div class="photo-caption">Museum access photographs of R4118's exhaust stacks. Shows the casting detail, oxidation and heat discolouration useful for painting aftermarket resin exhausts.</div>
+          <a class="photo-link" href="https://www.hurricaneheritage.com/" target="_blank" rel="noopener">Hurricane Heritage ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- UNDERCARRIAGE -->
+    <div class="area-hd" id="undercarriage">Undercarriage</div>
+    <div class="mod-note">
+      <strong>Modeller's note</strong>
+      Hurricane undercarriage legs are painted in the interior colour — not in the camouflage colours. The inside of the wheel bays (behind the main gear doors) is also interior grey-green. Exposed mechanical parts on the legs are bare metal. Tyres are a warm mid-grey, not cold grey or black.
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(20,15,10,.4)">
+          <span class="photo-thumb-icon">⚙️</span>
+          <span class="photo-source-badge" style="color:#80c080">IWM</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Hurricane Undercarriage — Ground Photo 1940</div>
+          <div class="photo-caption">Three-quarter front view showing the retractable undercarriage in the down position. Leg strut detail, oleo scissors and wheel hub prominent.</div>
+          <a class="photo-link" href="https://www.iwm.org.uk/collections/search?query=hurricane+undercarriage&filters=category%3APhotograph" target="_blank" rel="noopener">IWM Archive ↗</a>
+        </div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(15,20,10,.4)">
+          <span class="photo-thumb-icon">🔧</span>
+          <span class="photo-source-badge" style="color:#c0c080">RAF Museum</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Wheel Bay Interior Colour Reference</div>
+          <div class="photo-caption">RAF Museum access photograph showing the wheel bay interior on a preserved Hurricane. Shows the Interior Grey-Green, hydraulic lines and structural ribs.</div>
+          <a class="photo-link" href="https://www.rafmuseum.org.uk/research/collections/hawker-hurricane/" target="_blank" rel="noopener">RAF Museum ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARKINGS -->
+    <div class="area-hd" id="markings">Roundels, Codes & Fin Flashes</div>
+    <div class="mod-note">
+      <strong>Modeller's note</strong>
+      1940 BoB roundels changed during the battle. Pre-August 1940: Type A (red/white/blue with yellow outer ring) on upper wing, Type A1 (red/blue no yellow) on fuselage, Type B (red/blue only) on lower wing. After August: some units retained yellow outer ring on fuselage, others removed it. Code letters were 8-inch Night Black (not white) in the standard layout — squadron code, individual letter, squadron code with hyphen. Fin flash was red/white/blue in equal thirds.
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(10,30,60,.4)">
+          <span class="photo-thumb-icon">🎯</span>
+          <span class="photo-source-badge" style="color:#80c080">IWM</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Type A Roundel — Upper Wing, 1940</div>
+          <div class="photo-caption">Clear overhead view of a Hurricane's wing roundel showing the Type A configuration with yellow outer ring used in the early Battle period. Note size relative to wing span.</div>
+          <a class="photo-link" href="https://www.iwm.org.uk/collections/search?query=hurricane+roundel&filters=category%3APhotograph" target="_blank" rel="noopener">IWM Archive ↗</a>
+        </div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(10,20,40,.4)">
+          <span class="photo-thumb-icon">🔡</span>
+          <span class="photo-source-badge" style="color:#80c080">IWM</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Squadron Code Letters — 501 Squadron</div>
+          <div class="photo-caption">Close-up of SD code letters on a 501 Squadron Hurricane. Shows the Night Black colour, style and proportions. Useful for verifying decal accuracy.</div>
+          <a class="photo-link" href="https://www.iwm.org.uk/collections/search?query=501+squadron+hurricane&filters=category%3APhotograph" target="_blank" rel="noopener">IWM Archive ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEADING EDGE -->
+    <div class="area-hd" id="leading-edge">Leading Edge Wear</div>
+    <div class="mod-note">
+      <strong>Modeller's note</strong>
+      Wing leading edges show the most paint wear. The forward-facing surface suffered from rain erosion, insect impact and maintenance scuffing. The inner leading edge near the wing root is also heavily worn where groundcrew walked during servicing. Use pencil graphite or the hairspray technique here for the best results.
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(25,20,10,.4)">
+          <span class="photo-thumb-icon">✈</span>
+          <span class="photo-source-badge" style="color:#c0c080">Museum</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Hurricane Wing Leading Edge — Wear Pattern</div>
+          <div class="photo-caption">Close-access museum photograph of the forward wing edge. Shows paint wear through to primer and bare aluminium, particularly concentrated at the outermost metre of the wing.</div>
+          <a class="photo-link" href="https://www.rafmuseum.org.uk/research/collections/hawker-hurricane/" target="_blank" rel="noopener">RAF Museum ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CANOPY -->
+    <div class="area-hd" id="canopy">Canopy & Frame</div>
+    <div class="mod-note">
+      <strong>Modeller's note</strong>
+      The Hurricane's early canopy has a distinctive boxy, flat-sided greenhouse shape. The framing is painted in the interior colour. The perspex itself is tinted warm amber in period photographs (this is natural aging). The rear-view mirror on the quarterpane is a useful detail to add.
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(10,20,35,.4)">
+          <span class="photo-thumb-icon">🪟</span>
+          <span class="photo-source-badge" style="color:#80c080">IWM</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Hurricane Mk.I Canopy — Ground View</div>
+          <div class="photo-caption">Ground-level photograph showing the canopy framing detail and brace struts. Note the frame colour against the fuselage camouflage and the reflective quality of the perspex.</div>
+          <a class="photo-link" href="https://www.iwm.org.uk/collections/search?query=hurricane+canopy+cockpit&filters=category%3APhotograph" target="_blank" rel="noopener">IWM Archive ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- AIRFRAME -->
+    <div class="area-hd" id="airframe">Airframe & Panel Detail</div>
+    <div class="mod-note">
+      <strong>Modeller's note</strong>
+      The Hurricane's fabric-covered rear fuselage is a key modelling challenge. The rib structure shows through the doped fabric as subtle raised lines — not as prominent as metal panel lines. The forward metal fuselage has more conventional fasteners. The transition between metal and fabric occurs approximately at the rear of the cockpit.
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(15,20,10,.4)">
+          <span class="photo-thumb-icon">🔩</span>
+          <span class="photo-source-badge" style="color:#80c080">IWM</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Fabric Fuselage — Rib Pattern</div>
+          <div class="photo-caption">Close-up photograph of the Hurricane's rear fuselage. The fabric surface shows the subtle rib impression underneath — more muted than metal panel lines and reproduced best with fine sanding rather than scribed lines.</div>
+          <a class="photo-link" href="https://www.iwm.org.uk/collections/search?query=hurricane+fuselage&filters=category%3APhotograph" target="_blank" rel="noopener">IWM Archive ↗</a>
+        </div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(20,20,15,.4)">
+          <span class="photo-thumb-icon">📐</span>
+          <span class="photo-source-badge" style="color:#c08080">YouTube</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Hurricane Restoration — Panel Detail Close-ups</div>
+          <div class="photo-caption">The Warbird Workshop restoration documentary includes close-access footage of bare airframe panels, fastener types and structural detail during rebuild — invaluable for detail painting.</div>
+          <a class="photo-link" href="https://www.youtube.com/watch?v=NEmAlxaW44I" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /hurricane -->
+
+  <!-- SPITFIRE -->
+  <div class="aircraft-section" id="section-spitfire">
+
+    <div class="area-hd" id="cockpit">Cockpit Interior</div>
+    <div class="mod-note">
+      <strong>Modeller's note</strong>
+      Spitfire cockpits used a similar Interior Grey-Green to the Hurricane but Supermarine's version was slightly greener. The instrument panel was Black with a red/green dot compass. The spade-grip control column is very distinctive and often poorly reproduced in kits — Eduard Brassin 648578 gives you a superb resin replacement for 1:48.
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(10,25,40,.4)">
+          <span class="photo-thumb-icon">🎛</span>
+          <span class="photo-source-badge" style="color:#80c080">IWM</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Spitfire Mk.I Cockpit — IWM Photograph Archive</div>
+          <div class="photo-caption">Period photograph of the Spitfire Mk.I cockpit from port side. Shows the instrument layout, throttle quadrant and spade-grip column in operational condition.</div>
+          <a class="photo-link" href="https://www.iwm.org.uk/collections/search?query=spitfire+cockpit+1940&filters=category%3APhotograph" target="_blank" rel="noopener">IWM Archive ↗</a>
+        </div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(15,25,15,.4)">
+          <span class="photo-thumb-icon">✈</span>
+          <span class="photo-source-badge" style="color:#c0c080">RAF Museum</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">P7350 Cockpit — Oldest Airworthy Spitfire</div>
+          <div class="photo-caption">Access photographs of P7350's cockpit — the only Spitfire that actually fought in the Battle of Britain and is still airworthy. The most historically significant interior reference available.</div>
+          <a class="photo-link" href="https://www.raf.mod.uk/our-organisation/units/royal-air-force-battle-of-britain-memorial-flight/aircraft/" target="_blank" rel="noopener">BBMF ↗</a>
+        </div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(10,20,35,.5)">
+          <span class="photo-thumb-icon">🎬</span>
+          <span class="photo-source-badge" style="color:#c08080">YouTube</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Spitfire P7350 Scramble — Cockpit View</div>
+          <div class="photo-caption">Video of P7350 at RAF Coningsby shows the cockpit, canopy mechanism and controls in action. Pay attention to the throttle position and trim wheel during startup.</div>
+          <a class="photo-link" href="https://www.youtube.com/watch?v=psF83M3QOeM" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="area-hd" id="exhausts">Exhaust Stacks & Staining</div>
+    <div class="mod-note">
+      <strong>Modeller's note</strong>
+      The Spitfire Mk.I used individual stub exhausts rather than the Hurricane's ejector stack arrangement. There are six stubs per side. The staining pattern is multiple narrower plumes rather than one wide fan. This is an important distinction from the Hurricane when applying weathering.
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(30,15,5,.5)">
+          <span class="photo-thumb-icon">💨</span>
+          <span class="photo-source-badge" style="color:#80c080">IWM</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Spitfire Stub Exhausts — Ground Photography</div>
+          <div class="photo-caption">IWM archive photograph showing the stub exhaust arrangement on a Spitfire Mk.I at dispersal. The individual heat-blackened stubs and multiple staining plumes are clearly visible.</div>
+          <a class="photo-link" href="https://www.iwm.org.uk/collections/search?query=spitfire+exhaust&filters=category%3APhotograph" target="_blank" rel="noopener">IWM Archive ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="area-hd" id="undercarriage">Undercarriage</div>
+    <div class="mod-note">
+      <strong>Modeller's note</strong>
+      The Spitfire's narrow-track undercarriage is one of its most characteristic features. The oleo leg retracts outward into the wing. The leg itself is painted in the same interior colour as the cockpit. The wheel bays are not visible from below on the Spitfire as they are on the Hurricane — the doors close fully.
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(20,15,10,.4)">
+          <span class="photo-thumb-icon">⚙️</span>
+          <span class="photo-source-badge" style="color:#80c080">IWM</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Spitfire Undercarriage — Three-quarter View</div>
+          <div class="photo-caption">Period photograph of a Spitfire on grass showing the narrow-track undercarriage in the down and locked position. Note the shimmy damper and oleo compression under aircraft weight.</div>
+          <a class="photo-link" href="https://www.iwm.org.uk/collections/search?query=spitfire+undercarriage&filters=category%3APhotograph" target="_blank" rel="noopener">IWM Archive ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="area-hd" id="markings">Roundels, Codes & Fin Flashes</div>
+    <div class="mod-note">
+      <strong>Modeller's note</strong>
+      Spitfire markings followed the same pattern as the Hurricane. However, the wing shape means roundels appear differently proportioned from above. Xtradecal X48143 and X48145 cover the most accurate BoB Spitfire markings in 1:48 with correct roundel types for specific dates.
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(10,30,60,.4)">
+          <span class="photo-thumb-icon">🎯</span>
+          <span class="photo-source-badge" style="color:#80c080">IWM</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Spitfire Roundel & Code Reference — 92 Squadron</div>
+          <div class="photo-caption">Ground photograph of 92 Squadron QJ-coded Spitfires at Biggin Hill. Shows the actual size, style and positioning of code letters relative to the fuselage roundel.</div>
+          <a class="photo-link" href="https://www.iwm.org.uk/collections/search?query=92+squadron+spitfire+biggin+hill&filters=category%3APhotograph" target="_blank" rel="noopener">IWM Archive ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="area-hd" id="leading-edge">Leading Edge Wear</div>
+    <div class="mod-note">
+      <strong>Modeller's note</strong>
+      The elliptical wing of the Spitfire concentrates leading-edge wear differently to the Hurricane. The wear is most pronounced at the outboard third — the fastest-moving section. The wing root area is less worn. Gun port patches (fabric-covered) are a distinctive BoB detail often missing from models.
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(25,20,10,.4)">
+          <span class="photo-thumb-icon">✈</span>
+          <span class="photo-source-badge" style="color:#c0c080">Museum</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">AR501 Wing Leading Edge — Shuttleworth</div>
+          <div class="photo-caption">Close photographs of AR501 — the oldest flying Spitfire Mk.Ia — show the elliptical wing leading edge and the typical wear distribution on an aircraft maintained in near-original condition.</div>
+          <a class="photo-link" href="https://www.shuttleworth.org/aircraft/spitfire/" target="_blank" rel="noopener">Shuttleworth ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="area-hd" id="canopy">Canopy & Frame</div>
+    <div class="mod-note">
+      <strong>Modeller's note</strong>
+      The early Spitfire used a rounded greenhouse canopy with a brace bar across the top. The framing interior is painted — not bare metal. The cannon fairings on Mk.Ia (8 × .303) have simple rounded gun ports covered with dope patches. The later Mk.Ib had cannon blisters on the upper wing surface.
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(10,20,35,.4)">
+          <span class="photo-thumb-icon">🪟</span>
+          <span class="photo-source-badge" style="color:#80c080">IWM</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Spitfire Mk.I Canopy — IWM Period Photograph</div>
+          <div class="photo-caption">Ground-level photograph showing the characteristic rounded greenhouse canopy with centre brace. Note the reflective qualities of the period perspex and the frame shadow on the pilot's head.</div>
+          <a class="photo-link" href="https://www.iwm.org.uk/collections/search?query=spitfire+canopy+cockpit&filters=category%3APhotograph" target="_blank" rel="noopener">IWM Archive ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="area-hd" id="airframe">Airframe & Panel Detail</div>
+    <div class="mod-note">
+      <strong>Modeller's note</strong>
+      The Spitfire's all-metal stressed-skin construction means all panel lines are crisp and rivets are prominent. The distinctive "eyelid" cooling slots below the nose are a key identifying feature. The undercarriage doors have a different surface texture to the wing panels and show different wear patterns.
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(15,20,10,.4)">
+          <span class="photo-thumb-icon">🔩</span>
+          <span class="photo-source-badge" style="color:#80c080">IWM</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Spitfire Forward Fuselage — Cooling & Panel Detail</div>
+          <div class="photo-caption">Close-up of the Spitfire's forward cowling showing the distinctive cooling eyelids, panel fasteners and seam lines. Key reference for panel line washing and rivet accentuation.</div>
+          <a class="photo-link" href="https://www.iwm.org.uk/collections/search?query=spitfire+fuselage+nose&filters=category%3APhotograph" target="_blank" rel="noopener">IWM Archive ↗</a>
+        </div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-thumb" style="background:rgba(10,15,25,.4)">
+          <span class="photo-thumb-icon">🎬</span>
+          <span class="photo-source-badge" style="color:#c08080">YouTube</span>
+        </div>
+        <div class="photo-body">
+          <div class="photo-title">Airfix Spitfire Build — Reference Used During Build</div>
+          <div class="photo-caption">Full Airfix Spitfire Mk.Ia build documentary. The builder references period photographs throughout — a useful guide to where to look for detail information during your own build.</div>
+          <a class="photo-link" href="https://www.youtube.com/watch?v=3HT7Rkq5cew" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /spitfire -->
+
+</div><!-- /main -->
+
+<footer style="background:rgba(0,0,0,.35);border-top:1px solid var(--border);padding:2rem;text-align:center">
+  <p style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;color:var(--dim)">
+    <a href="index.html" style="color:rgba(255,255,255,.3);text-decoration:none">Hub</a> ·
+    <a href="hurricane_paradise.html" style="color:rgba(255,255,255,.3);text-decoration:none">Hurricane</a> ·
+    <a href="spitfire_paradise.html" style="color:rgba(255,255,255,.3);text-decoration:none">Spitfire</a> ·
+    <a href="techniques-bank.html" style="color:rgba(255,255,255,.3);text-decoration:none">Techniques</a>
+  </p>
+</footer>
+
+<script>
+function showAircraft(ac, btn) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.aircraft-section').forEach(s => s.classList.remove('active'));
+  document.getElementById('section-' + ac).classList.add('active');
+}
+function scrollTo(id) {
+  const el = document.querySelector(id);
+  if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+}
+</script>
+</body>
+</html>

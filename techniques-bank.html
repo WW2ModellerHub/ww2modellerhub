@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Weathering & Painting Techniques Bank — WW2 Modeller Hub</title>
+<meta name="description" content="Free searchable techniques bank for WW2 aircraft scale modellers. Pre-shading, oil washes, chipping, pigments, panel lines — step by step guides for every method.">
+<link rel="canonical" href="https://www.ww2modeller.co.uk/techniques-bank.html">
+<meta property="og:title" content="Techniques Bank — WW2 Aircraft Scale Modelling">
+<meta property="og:description" content="Searchable painting & weathering techniques for RAF WW2 aircraft modellers. Pre-shading, oil streaking, chipping, pigments and more.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409" crossorigin="anonymous"></script>
+<style>
+:root {
+  --ink:#07101f; --navy:#0a1628; --mid:#112240; --panel:rgba(17,34,64,.85);
+  --border:rgba(255,255,255,.09); --brass:#c9a84c; --brass2:#e8c76a;
+  --sky:#4a8db5; --cream:rgba(255,255,255,.88); --muted:rgba(255,255,255,.45);
+  --dim:rgba(255,255,255,.22); --r:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--ink);color:var(--cream);font-size:17px;line-height:1.65}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(7,16,31,.82);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;flex-shrink:0}
+.nav-logo svg{width:28px;height:28px}
+.nav-logo-text{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.nav-logo-text span{color:var(--brass)}
+.nav-links{display:flex;align-items:center;gap:.25rem}
+.nav-link{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:.35rem .7rem;border-radius:3px;transition:color .15s,background .15s}
+.nav-link:hover,.nav-link.active{color:var(--brass2)}
+.breadcrumb{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.breadcrumb a{color:var(--dim);text-decoration:none}.breadcrumb a:hover{color:var(--brass)}
+.breadcrumb span{color:var(--brass);margin:0 .4rem}
+
+/* PAGE HEADER */
+.page-hd{background:linear-gradient(135deg,#050d1a,#0a1628 50%,#112240);border-bottom:1px solid var(--border);padding:2.5rem 2rem 2rem}
+.page-hd-inner{max-width:1100px;margin:0 auto}
+.page-kicker{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem}
+.page-h1{font-family:'Special Elite',cursive;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin-bottom:.6rem;line-height:1.1}
+.page-sub{font-size:1rem;color:var(--muted);max-width:560px;line-height:1.7}
+
+/* FILTER BAR */
+.filter-bar{background:var(--mid);border-bottom:1px solid var(--border);padding:.85rem 2rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;position:sticky;top:58px;z-index:100}
+.filter-btn{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1rem;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all .15s}
+.filter-btn:hover{border-color:rgba(201,168,76,.4);color:var(--brass)}
+.filter-btn.on{background:var(--brass);color:var(--ink);border-color:var(--brass)}
+.filter-search{margin-left:auto;position:relative}
+.filter-search input{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.04em;padding:.4rem .75rem .4rem 2rem;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:3px;color:#fff;outline:none;width:200px;transition:border-color .15s}
+.filter-search input:focus{border-color:rgba(201,168,76,.4)}
+.filter-search input::placeholder{color:var(--dim)}
+.filter-search-icon{position:absolute;left:.6rem;top:50%;transform:translateY(-50%);color:var(--dim);font-size:12px}
+
+/* MAIN */
+.main{max-width:1100px;margin:0 auto;padding:2rem 2rem 4rem}
+
+/* TECHNIQUE CATEGORY */
+.cat-hd{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin:2rem 0 1rem;display:flex;align-items:center;gap:.75rem}
+.cat-hd::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)}
+
+/* TECHNIQUE CARD */
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-bottom:.5rem}
+.tech-card{background:var(--panel);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:all .2s}
+.tech-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.4)}
+.tech-top{height:3px}
+.tech-body{padding:1.1rem 1.2rem}
+.tech-cat-badge{display:inline-block;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-bottom:.65rem}
+.tech-title{font-family:'Special Elite',cursive;font-size:1.15rem;color:#fff;margin-bottom:.5rem;line-height:1.2}
+.tech-diff{display:flex;gap:3px;margin-bottom:.65rem}
+.diff-dot{width:7px;height:7px;border-radius:50%;background:var(--border)}
+.diff-dot.fill{background:var(--brass)}
+.diff-lbl{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.08em;color:var(--dim);margin-left:.3rem;align-self:center}
+.tech-desc{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:.9rem}
+.tech-steps{list-style:none;counter-reset:steps;margin-bottom:.9rem}
+.tech-steps li{counter-increment:steps;font-size:13px;color:rgba(255,255,255,.7);padding:.3rem 0 .3rem 1.6rem;position:relative;border-bottom:1px solid rgba(255,255,255,.04);line-height:1.5}
+.tech-steps li:last-child{border-bottom:none}
+.tech-steps li::before{content:counter(steps);position:absolute;left:0;top:.3rem;font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;color:var(--brass);width:1.2rem;text-align:center}
+.tech-tips{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.6rem .85rem;font-size:12px;color:rgba(255,255,255,.6);line-height:1.55;margin-bottom:.75rem}
+.tech-tips strong{color:var(--brass);font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.tech-video{display:inline-flex;align-items:center;gap:.4rem;font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);text-decoration:none;border:1px solid rgba(201,168,76,.3);padding:.3rem .85rem;border-radius:2px;transition:background .15s}
+.tech-video:hover{background:rgba(201,168,76,.1)}
+.tech-products{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.04em;color:var(--dim);margin-top:.5rem}
+.tech-products strong{color:rgba(255,255,255,.45)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#003087"/><circle cx="14" cy="14" r="9.5" fill="#FFD700"/><circle cx="14" cy="14" r="5.5" fill="#CF142B"/><circle cx="14" cy="14" r="2" fill="#fff"/></svg>
+    <span class="nav-logo-text">WW2 <span>Modeller</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="hurricane_paradise.html" class="nav-link">Hurricane</a>
+    <a href="spitfire_paradise.html" class="nav-link">Spitfire</a>
+    <a href="techniques-bank.html" class="nav-link active">Techniques</a>
+    <a href="articles.html" class="nav-link">Articles</a>
+  </div>
+</nav>
+
+<div class="page-hd">
+  <div class="page-hd-inner">
+    <div class="breadcrumb"><a href="index.html">Hub</a><span>›</span>Techniques Bank</div>
+    <div class="page-kicker" style="margin-top:.6rem">Free · No paywall · Updated 2025</div>
+    <h1 class="page-h1">Painting & Weathering<br>Techniques Bank</h1>
+    <p class="page-sub">Every major technique for WW2 RAF aircraft — step-by-step, organised by method. From first coat to final varnish.</p>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn on" onclick="filterCat('all',this)">All</button>
+  <button class="filter-btn" onclick="filterCat('base',this)">Base coating</button>
+  <button class="filter-btn" onclick="filterCat('preshade',this)">Pre-shading</button>
+  <button class="filter-btn" onclick="filterCat('wash',this)">Washes</button>
+  <button class="filter-btn" onclick="filterCat('chip',this)">Chipping</button>
+  <button class="filter-btn" onclick="filterCat('oil',this)">Oils</button>
+  <button class="filter-btn" onclick="filterCat('pigment',this)">Pigments</button>
+  <button class="filter-btn" onclick="filterCat('decal',this)">Decals</button>
+  <button class="filter-btn" onclick="filterCat('varnish',this)">Varnish</button>
+  <div class="filter-search">
+    <span class="filter-search-icon">🔍</span>
+    <input type="text" placeholder="Search techniques…" oninput="filterSearch(this.value)">
+  </div>
+</div>
+
+<div class="main" id="main">
+
+<!-- ══ BASE COATING ══ -->
+<div class="cat-hd" data-cat="base">Base Coating</div>
+<div class="tech-grid" data-cat="base">
+
+  <div class="tech-card" data-cat="base" data-title="airbrushing raf dark earth dark green sky camouflage">
+    <div class="tech-top" style="background:linear-gradient(90deg,#6b4a20,#3d5a1e,#4a7a5a)"></div>
+    <div class="tech-body">
+      <div class="tech-cat-badge" style="background:rgba(107,74,32,.3);color:#c8a060;border:1px solid rgba(107,74,32,.4)">Base Coating</div>
+      <div class="tech-title">Airbrushing the BoB Scheme — Dark Earth, Dark Green & Sky</div>
+      <div class="tech-diff"><span class="diff-dot fill"></span><span class="diff-dot fill"></span><span class="diff-dot"></span><span class="diff-lbl">Intermediate</span></div>
+      <p class="tech-desc">The standard 1940 RAF camouflage uses two uppers (Dark Earth + Dark Green) in an asymmetric soft-edge pattern over Sky undersides. Getting clean demarcation without masking is the key skill.</p>
+      <ol class="tech-steps">
+        <li>Prime with grey primer, check for sink marks and fill with putty</li>
+        <li>Apply Sky (Humbrol 90 / Tamiya XF-21) to all undersides first — it's the lightest colour</li>
+        <li>Thin Dark Earth to milk consistency (PSI 15–18), apply freehand with slow elliptical sweeps</li>
+        <li>Apply Dark Green second — the soft edge between the two uppers is airbrushed freehand at distance 8–10cm</li>
+        <li>Seal with gloss varnish before any decals or panel washes</li>
+      </ol>
+      <div class="tech-tips"><strong>Tip</strong> — Real demarcation lines were painted by hand with a brush in the factory. They're softer than masking tape gives you. Work 10–12cm away with reduced pressure for the boundary passes.</div>
+      <div class="tech-products"><strong>Recommended paints:</strong> Humbrol 29 (Dark Earth), Humbrol 30 (Dark Green), Humbrol 90 (Sky) · Tamiya XF-49, XF-61, XF-21</div>
+    </div>
+  </div>
+
+  <div class="tech-card" data-cat="base" data-title="brush painting cockpit interior grey green">
+    <div class="tech-top" style="background:linear-gradient(90deg,#2a4a3a,#4a6a5a)"></div>
+    <div class="tech-body">
+      <div class="tech-cat-badge" style="background:rgba(42,74,58,.3);color:#80b090;border:1px solid rgba(42,74,58,.4)">Base Coating</div>
+      <div class="tech-title">Cockpit Interior — Brush-Painting Interior Grey-Green</div>
+      <div class="tech-diff"><span class="diff-dot fill"></span><span class="diff-dot"></span><span class="diff-dot"></span><span class="diff-lbl">Beginner</span></div>
+      <p class="tech-desc">RAF cockpits in 1940 were painted in a mixed Interior Grey-Green — a complex non-standard colour that varied by manufacturer. The closest modern matches and how to apply them by brush.</p>
+      <ol class="tech-steps">
+        <li>Mix Humbrol 78 (Cockpit Green) with a touch of Humbrol 75 (Bronze Green) — 3:1 ratio</li>
+        <li>Apply two thin coats to all cockpit parts before assembly — allow to fully dry between coats</li>
+        <li>Drybrush a lighter mix (add 10% white) over raised detail to pick up instrument bezels and levers</li>
+        <li>Wash with dark brown oil diluted in white spirit to deepen recesses</li>
+        <li>Paint instrument faces Flat Black, then add tiny dot of gloss for instrument glass</li>
+      </ol>
+      <div class="tech-tips"><strong>Tip</strong> — Vallejo 71.323 is the best single-bottle match for Supermarine Interior Grey-Green. Hawker's was slightly darker.</div>
+      <div class="tech-products"><strong>Recommended paints:</strong> Humbrol 78 · Vallejo 71.323 (Interior Green) · AK RC257</div>
+    </div>
+  </div>
+
+</div><!-- /base grid -->
+
+<!-- ══ PRE-SHADING ══ -->
+<div class="cat-hd" data-cat="preshade">Pre-Shading</div>
+<div class="tech-grid" data-cat="preshade">
+
+  <div class="tech-card" data-cat="preshade" data-title="pre-shading black panel lines airbrush">
+    <div class="tech-top" style="background:linear-gradient(90deg,#1a1a1a,#3a3a2a)"></div>
+    <div class="tech-body">
+      <div class="tech-cat-badge" style="background:rgba(50,50,30,.4);color:#a0a070;border:1px solid rgba(80,80,40,.4)">Pre-Shading</div>
+      <div class="tech-title">Black Panel Line Pre-shade</div>
+      <div class="tech-diff"><span class="diff-dot fill"></span><span class="diff-dot fill"></span><span class="diff-dot"></span><span class="diff-lbl">Intermediate</span></div>
+      <p class="tech-desc">Spraying a dark pre-shade over panel lines before the main colour adds depth and tonal variation that breaks up the uniform look of a fresh topcoat. Subtle is the key word — over-done pre-shading looks artificial.</p>
+      <ol class="tech-steps">
+        <li>Prime as normal. Let cure fully (24 hours for lacquer primer)</li>
+        <li>Reduce Flat Black 1:3 with thinner — much thinner than normal airbrushing</li>
+        <li>Drop PSI to 10–12 and reduce needle opening. Spray hairline passes directly along panel lines</li>
+        <li>Apply topcoat semi-transparently — thin 1:2 — in multiple passes. The pre-shade bleeds through subtly</li>
+        <li>If too visible, add another pass of topcoat. Always easier to add than to remove</li>
+      </ol>
+      <div class="tech-tips"><strong>Tip</strong> — For RAF Dark Earth and Dark Green, pre-shade in dark brown rather than black. Pure black through warm earth tones reads as grey and looks wrong.</div>
+      <div class="tech-products"><strong>Products used:</strong> Tamiya XF-1 Flat Black · AK Real Colors RC-239 (Dark Brown pre-shade)</div>
+      <a class="tech-video" href="https://www.youtube.com/watch?v=j5AGR6W7ouo" target="_blank" rel="noopener">▶ Watch technique</a>
+    </div>
+  </div>
+
+  <div class="tech-card" data-cat="preshade" data-title="modulation lighter centre panels tonal variation">
+    <div class="tech-top" style="background:linear-gradient(90deg,#2a3a1a,#4a5a2a)"></div>
+    <div class="tech-body">
+      <div class="tech-cat-badge" style="background:rgba(50,50,30,.4);color:#a0a070;border:1px solid rgba(80,80,40,.4)">Pre-Shading</div>
+      <div class="tech-title">Colour Modulation — Lighter Panel Centres</div>
+      <div class="tech-diff"><span class="diff-dot fill"></span><span class="diff-dot fill"></span><span class="diff-dot fill"></span><span class="diff-lbl">Advanced</span></div>
+      <p class="tech-desc">Real aircraft fade unevenly — panels exposed to more sun bleach faster. Modulation mimics this by painting each panel slightly lighter at its centre, making the model look like a real aircraft rather than a plastic toy.</p>
+      <ol class="tech-steps">
+        <li>Apply base colour normally</li>
+        <li>Mix base colour + 15–20% white for the highlight mix</li>
+        <li>At PSI 8–10, spray tight ellipses at the centre of major panels, avoiding the edges</li>
+        <li>Work panel by panel — fuselage, then wings, then control surfaces</li>
+        <li>Unify with a very thin filter (oil paint diluted heavily in white spirit) to blend transitions</li>
+      </ol>
+      <div class="tech-tips"><strong>Tip</strong> — Look at period photographs of Hurricanes on grass airfields in summer. The upper wing root panels are almost always bleached to near-khaki. The wingtips stay darker, protected by shadow.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ WASHES ══ -->
+<div class="cat-hd" data-cat="wash">Panel Line Washes</div>
+<div class="tech-grid" data-cat="wash">
+
+  <div class="tech-card" data-cat="wash" data-title="oil wash panel lines dark brown enamel">
+    <div class="tech-top" style="background:linear-gradient(90deg,#3a2010,#5a3820)"></div>
+    <div class="tech-body">
+      <div class="tech-cat-badge" style="background:rgba(80,40,20,.3);color:#c08050;border:1px solid rgba(80,40,20,.4)">Washes</div>
+      <div class="tech-title">Dark Brown Enamel Panel Wash — RAF Uppers</div>
+      <div class="tech-diff"><span class="diff-dot fill"></span><span class="diff-dot"></span><span class="diff-dot"></span><span class="diff-lbl">Beginner</span></div>
+      <p class="tech-desc">A dark brown wash is ideal for the earth-toned RAF upper scheme — black reads too stark. The enamel formula allows clean removal with white spirit and cotton buds for sharp results.</p>
+      <ol class="tech-steps">
+        <li>Apply a gloss varnish coat first — washes flow better on gloss and are easier to clean up</li>
+        <li>Mix dark brown oil paint (Raw Umber) in white spirit 1:8 — water-consistency</li>
+        <li>Load a fine brush and touch the panel lines — capillary action does the work, do not scrub</li>
+        <li>Let sit 15–20 min until tacky. Use cotton buds dampened with white spirit to wipe flat surfaces</li>
+        <li>Always wipe in one direction (forward, as if the aircraft is moving) — this creates realistic streaking</li>
+      </ol>
+      <div class="tech-tips"><strong>Tip</strong> — Flory Models Dark Dirt wash works straight from the bottle on Dark Earth panels and requires no mixing. Ideal for beginners.</div>
+      <div class="tech-products"><strong>Products:</strong> Flory Models Dark Dirt · AK Panel Line Wash Dark Brown (AK045) · W&N Burnt Umber oil</div>
+      <a class="tech-video" href="https://www.youtube.com/watch?v=7N9n_6MKPYU" target="_blank" rel="noopener">▶ Watch technique</a>
+    </div>
+  </div>
+
+  <div class="tech-card" data-cat="wash" data-title="blue grey wash sky undersides aluminium">
+    <div class="tech-top" style="background:linear-gradient(90deg,#1a3a5a,#3a5a7a)"></div>
+    <div class="tech-body">
+      <div class="tech-cat-badge" style="background:rgba(20,40,80,.3);color:#608ab0;border:1px solid rgba(20,40,80,.4)">Washes</div>
+      <div class="tech-title">Blue-Grey Wash for Sky Undersides</div>
+      <div class="tech-diff"><span class="diff-dot fill"></span><span class="diff-dot fill"></span><span class="diff-dot"></span><span class="diff-lbl">Intermediate</span></div>
+      <p class="tech-desc">Sky-coloured undersides need a cooler wash — dark brown reads wrong on a pale blue-grey. A thin mix of Payne's Grey oil gives the right cool shadow without looking dirty.</p>
+      <ol class="tech-steps">
+        <li>Gloss varnish the undersides before washing</li>
+        <li>Mix Payne's Grey oil paint in white spirit 1:10 — very thin</li>
+        <li>Flow into all panel lines and rivet rows on the underside</li>
+        <li>Clean up excess with white spirit on a flat brush, wiping forward</li>
+        <li>Pay attention to the wheel bay edges — these collect more grime and can be darker</li>
+      </ol>
+      <div class="tech-tips"><strong>Tip</strong> — AK Interactive Light Grey Panel Line Wash (AK068) is a ready-to-use alternative that works well on Sky colours.</div>
+      <div class="tech-products"><strong>Products:</strong> W&N Payne's Grey oil · AK068 Light Grey wash · White spirit</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ CHIPPING ══ -->
+<div class="cat-hd" data-cat="chip">Chipping & Wear</div>
+<div class="tech-grid" data-cat="chip">
+
+  <div class="tech-card" data-cat="chip" data-title="hairspray technique chipping worn paint raf">
+    <div class="tech-top" style="background:linear-gradient(90deg,#4a3010,#6a5020)"></div>
+    <div class="tech-body">
+      <div class="tech-cat-badge" style="background:rgba(100,70,20,.3);color:#c09040;border:1px solid rgba(100,70,20,.4)">Chipping</div>
+      <div class="tech-title">Hairspray Technique — Realistic Paint Chipping</div>
+      <div class="tech-diff"><span class="diff-dot fill"></span><span class="diff-dot fill"></span><span class="diff-dot fill"></span><span class="diff-lbl">Advanced</span></div>
+      <p class="tech-desc">The hairspray technique creates chips and scratches that reveal the aluminium airframe beneath. Ideal for heavily used BoB aircraft that would have been patched, repainted and worn through months of operation.</p>
+      <ol class="tech-steps">
+        <li>Apply base in silver/aluminium — this represents the bare metal underneath</li>
+        <li>Coat with ordinary cheap hairspray (water soluble is key) — 2–3 light passes</li>
+        <li>Apply camouflage colours as normal over the hairspray layer</li>
+        <li>Once fully dry, use a stiff damp brush or cocktail stick to scrape chips from high-wear areas</li>
+        <li>Focus on wing leading edges, walkway areas, canopy rails and panel fasteners</li>
+      </ol>
+      <div class="tech-tips"><strong>Tip</strong> — BoB aircraft were repaired frequently. Patches of new paint over worn patches are authentic. Vary the chip size: tiny scratches on flat surfaces, larger chips on edges.</div>
+      <div class="tech-products"><strong>Products:</strong> Cheap supermarket hairspray · Tamiya X-11 Chrome Silver underneath · Stiff hog-hair brush</div>
+      <a class="tech-video" href="https://www.youtube.com/watch?v=nOvKFMBp1Uc" target="_blank" rel="noopener">▶ Watch technique</a>
+    </div>
+  </div>
+
+  <div class="tech-card" data-cat="chip" data-title="pencil graphite chipping scratches metal shine leading edge">
+    <div class="tech-top" style="background:linear-gradient(90deg,#303030,#505050)"></div>
+    <div class="tech-body">
+      <div class="tech-cat-badge" style="background:rgba(60,60,60,.3);color:#909090;border:1px solid rgba(60,60,60,.4)">Chipping</div>
+      <div class="tech-title">Pencil Graphite — Metal Shine on Worn Edges</div>
+      <div class="tech-diff"><span class="diff-dot fill"></span><span class="diff-dot"></span><span class="diff-dot"></span><span class="diff-lbl">Beginner</span></div>
+      <p class="tech-desc">The easiest way to add metallic sheen to worn edges. A soft graphite pencil rubbed along the leading edges and wing-walk areas mimics polished bare metal exposed by paint wear.</p>
+      <ol class="tech-steps">
+        <li>Complete all painting and apply a semi-matte varnish</li>
+        <li>Use a 4B–6B soft graphite pencil (Prismacolor Silver is even better)</li>
+        <li>Rub lightly along the leading edges of wings, tailplane and fin</li>
+        <li>Apply to the cockpit rail where pilots' gloves would wear the paint</li>
+        <li>Blend with a fingertip for a subtle shine effect</li>
+      </ol>
+      <div class="tech-tips"><strong>Tip</strong> — Prismacolor Silver pencils give a more metallic finish than graphite. Available from art shops. One pencil does dozens of models.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ OILS ══ -->
+<div class="cat-hd" data-cat="oil">Oil Paint Techniques</div>
+<div class="tech-grid" data-cat="oil">
+
+  <div class="tech-card" data-cat="oil" data-title="oil streaking exhaust stain vertical streaks rain marks">
+    <div class="tech-top" style="background:linear-gradient(90deg,#2a1a0a,#4a3010)"></div>
+    <div class="tech-body">
+      <div class="tech-cat-badge" style="background:rgba(60,40,10,.3);color:#b08040;border:1px solid rgba(60,40,10,.4)">Oil Paints</div>
+      <div class="tech-title">Oil Streaking — Exhaust Staining & Rain Marks</div>
+      <div class="tech-diff"><span class="diff-dot fill"></span><span class="diff-dot fill"></span><span class="diff-dot"></span><span class="diff-lbl">Intermediate</span></div>
+      <p class="tech-desc">Merlin engines produced heavy exhaust residue that stained the upper wing and fuselage surfaces aft of the exhausts. Rain and humidity created vertical streaks below panel joints. Both effects use thinned oil paints.</p>
+      <ol class="tech-steps">
+        <li>Apply a matte or semi-matte varnish — streaks need tooth to grip</li>
+        <li>For exhaust staining: mix Raw Umber + Lamp Black in white spirit and stipple aft of the exhausts</li>
+        <li>Streak downward and backward with a flat brush dampened in clean white spirit</li>
+        <li>For rain marks: thin Payne's Grey to near-invisible and draw thin vertical lines from panel joints</li>
+        <li>Blend immediately with a dry brush — streaks should whisper, not shout</li>
+      </ol>
+      <div class="tech-tips"><strong>Tip</strong> — Reference period photographs of grounded Hurricanes before applying streaks. The staining pattern from the Merlin is very consistent and very distinctive.</div>
+      <div class="tech-products"><strong>Products:</strong> W&N Raw Umber oil · W&N Lamp Black · White spirit · AK Streaking Grime (AK012)</div>
+      <a class="tech-video" href="https://www.youtube.com/watch?v=K27dH0d4Bik" target="_blank" rel="noopener">▶ Watch technique</a>
+    </div>
+  </div>
+
+  <div class="tech-card" data-cat="oil" data-title="dot filter colour variation subtle tonal oil dots">
+    <div class="tech-top" style="background:linear-gradient(90deg,#1a2a3a,#2a3a4a)"></div>
+    <div class="tech-body">
+      <div class="tech-cat-badge" style="background:rgba(20,40,80,.3);color:#608ab0;border:1px solid rgba(20,40,80,.4)">Oil Paints</div>
+      <div class="tech-title">Dot Filtering — Colour Variation Across Panels</div>
+      <div class="tech-diff"><span class="diff-dot fill"></span><span class="diff-dot fill"></span><span class="diff-dot fill"></span><span class="diff-lbl">Advanced</span></div>
+      <p class="tech-desc">Dot filtering adds subtle tonal variation that gives large surfaces life and complexity. Small dots of different oil colours are applied randomly then blended to create a look of uneven wear and fading.</p>
+      <ol class="tech-steps">
+        <li>Apply gloss varnish — this is essential for blending</li>
+        <li>Place tiny dots of 3–4 oil colours across panels: Raw Umber, Yellow Ochre, Burnt Sienna, White</li>
+        <li>Wait 10 minutes for the oil to begin to tack slightly</li>
+        <li>Use a flat brush moistened with white spirit to blend the dots in one direction</li>
+        <li>Work panel by panel. Allow 24h to cure before any further work</li>
+      </ol>
+      <div class="tech-tips"><strong>Tip</strong> — Keep dots small — 1–2mm. The instinct is to use too much oil. Three tiny dots per panel are enough on 1:48 scale. More reads as muddy.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ PIGMENTS ══ -->
+<div class="cat-hd" data-cat="pigment">Pigments & Pastels</div>
+<div class="tech-grid" data-cat="pigment">
+
+  <div class="tech-card" data-cat="pigment" data-title="pigments mud dust undercarriage airfield grass">
+    <div class="tech-top" style="background:linear-gradient(90deg,#3a2a1a,#5a4a2a)"></div>
+    <div class="tech-body">
+      <div class="tech-cat-badge" style="background:rgba(80,60,20,.3);color:#b09040;border:1px solid rgba(80,60,20,.4)">Pigments</div>
+      <div class="tech-title">Mud & Dust — Undercarriage and Airfield Grime</div>
+      <div class="tech-diff"><span class="diff-dot fill"></span><span class="diff-dot"></span><span class="diff-dot"></span><span class="diff-lbl">Beginner</span></div>
+      <p class="tech-desc">BoB airfields were grass fields — muddy in wet weather, dusty in summer. The undercarriage legs, wheel bays and lower fuselage of operational Hurricanes and Spitfires would have been caked in earth. Pigments are the quickest way to reproduce this.</p>
+      <ol class="tech-steps">
+        <li>Apply a final matte varnish to the undercarriage area</li>
+        <li>Brush dry pigment powder onto the undercarriage legs and wheel hubs with a flat brush</li>
+        <li>Build up in layers — light earth first, then a touch of dark brown in the recesses</li>
+        <li>Fix by misting isopropyl alcohol from 30cm — do not brush after fixing</li>
+        <li>For wet mud effect: mix pigment with a tiny amount of PVA and stipple on</li>
+      </ol>
+      <div class="tech-tips"><strong>Tip</strong> — MIG Productions Earth pigment set includes the three tones you need for British summer grass airfields: light sand, medium earth and dark umber.</div>
+      <div class="tech-products"><strong>Products:</strong> MIG P025 (Light Dust) · MIG P028 (Dried Mud) · Isopropyl alcohol fixative</div>
+      <a class="tech-video" href="https://www.youtube.com/watch?v=K27dH0d4Bik" target="_blank" rel="noopener">▶ Watch technique</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ DECALS ══ -->
+<div class="cat-hd" data-cat="decal">Decal Application</div>
+<div class="tech-grid" data-cat="decal">
+
+  <div class="tech-card" data-cat="decal" data-title="decal microsol microset roundels codes setting solution">
+    <div class="tech-top" style="background:linear-gradient(90deg,#1a3a6a,#2a4a8a)"></div>
+    <div class="tech-body">
+      <div class="tech-cat-badge" style="background:rgba(20,50,100,.3);color:#6090c0;border:1px solid rgba(20,50,100,.4)">Decals</div>
+      <div class="tech-title">Applying RAF Roundels & Code Letters — Flat Surface</div>
+      <div class="tech-diff"><span class="diff-dot fill"></span><span class="diff-dot"></span><span class="diff-dot"></span><span class="diff-lbl">Beginner</span></div>
+      <p class="tech-desc">Large roundels and code letters need careful handling. The decal film must be softened to conform to the panel surface without silvering. Gloss surface + setting solutions = invisible decals.</p>
+      <ol class="tech-steps">
+        <li>Always apply decals over a gloss surface — matte surfaces trap air and cause silvering</li>
+        <li>Apply Micro Set to the model surface — this is the adhesion step</li>
+        <li>Float decal off backing paper, slide into position, absorb excess water with tissue</li>
+        <li>Apply Micro Sol over the placed decal — this softens and snuggles it into surface detail</li>
+        <li>Once dry (12h), seal with another gloss coat before any weathering</li>
+      </ol>
+      <div class="tech-tips"><strong>Tip</strong> — Aftermarket decals (Xtradecal, Techmod) are significantly thinner than kit decals. For 1940 Hurricanes and Spitfires, Xtradecal X48143 covers six BoB aircraft in 1:48 with authentic roundel types.</div>
+      <div class="tech-products"><strong>Products:</strong> Micro Set · Micro Sol · Xtradecal X48143 · Johnson's Klear for gloss coat</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ VARNISH ══ -->
+<div class="cat-hd" data-cat="varnish">Varnish & Final Finish</div>
+<div class="tech-grid" data-cat="varnish">
+
+  <div class="tech-card" data-cat="varnish" data-title="matte varnish final coat flat finish sheen scale effect">
+    <div class="tech-top" style="background:linear-gradient(90deg,#2a3a2a,#3a4a3a)"></div>
+    <div class="tech-body">
+      <div class="tech-cat-badge" style="background:rgba(40,60,40,.3);color:#70a070;border:1px solid rgba(40,60,40,.4)">Varnish</div>
+      <div class="tech-title">Final Matte Coat — Getting the Right Sheen for 1940 RAF</div>
+      <div class="tech-diff"><span class="diff-dot fill"></span><span class="diff-dot"></span><span class="diff-dot"></span><span class="diff-lbl">Beginner</span></div>
+      <p class="tech-desc">1940 RAF aircraft were painted with a camouflage finish that was not completely flat — it had a slight eggshell sheen. Dead flat looks wrong and dusty. The right varnish makes the difference between a toy and a convincing model.</p>
+      <ol class="tech-steps">
+        <li>Apply a gloss varnish over the completed weathering — this unifies everything</li>
+        <li>For final coat: mix Tamiya X-21 Flat Base into X-22 Clear Gloss — 2:8 ratio</li>
+        <li>This gives a satin/eggshell finish that matches the original RAF cellulose paint sheen</li>
+        <li>Apply in thin coats at low PSI — avoid going too thick which creates a milky haze</li>
+        <li>Canopy frames get a slightly glossier coat — polished perspex reflected light</li>
+      </ol>
+      <div class="tech-tips"><strong>Tip</strong> — Vallejo Satin Varnish airbrushed straight from the bottle gives an excellent ready-made eggshell finish. One coat is usually enough.</div>
+      <div class="tech-products"><strong>Products:</strong> Tamiya X-21 Flat Base + X-22 Clear · Vallejo Satin Varnish (702.522) · Mr Color GX114</div>
+      <a class="tech-video" href="https://www.youtube.com/watch?v=7N9n_6MKPYU" target="_blank" rel="noopener">▶ Watch technique</a>
+    </div>
+  </div>
+
+</div>
+
+</div><!-- /main -->
+
+<footer style="background:rgba(0,0,0,.35);border-top:1px solid var(--border);padding:2rem;text-align:center">
+  <p style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;color:var(--dim)">
+    <a href="index.html" style="color:rgba(255,255,255,.3);text-decoration:none">Hub</a> ·
+    <a href="hurricane_paradise.html" style="color:rgba(255,255,255,.3);text-decoration:none">Hurricane</a> ·
+    <a href="spitfire_paradise.html" style="color:rgba(255,255,255,.3);text-decoration:none">Spitfire</a> ·
+    <a href="articles.html" style="color:rgba(255,255,255,.3);text-decoration:none">Articles</a>
+  </p>
+</footer>
+
+<script>
+function filterCat(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.cat-hd, .tech-grid').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else {
+      el.style.display = (el.dataset.cat === cat) ? '' : 'none';
+    }
+  });
+}
+
+function filterSearch(q) {
+  const ql = q.toLowerCase().trim();
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
+  document.querySelectorAll('.tech-card').forEach(card => {
+    const text = (card.dataset.title + ' ' + card.textContent).toLowerCase();
+    card.style.display = (!ql || text.includes(ql)) ? '' : 'none';
+  });
+  // Show all category headers when searching
+  document.querySelectorAll('.cat-hd, .tech-grid').forEach(el => el.style.display = '');
+  if (!ql) document.querySelector('.filter-btn').classList.add('on');
+}
+</script>
+</body>
+</html>
