@@ -95,29 +95,26 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--ink);color:var(
     <a href="articles.html" class="site-nav-link">Articles</a>
   </div>
   <a href="hurricane_paradise.html" class="site-nav-cta">Open Reference →</a>
-</nav>font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;padding:.35rem .75rem;border-radius:3px;transition:color .15s,background .15s;white-space:nowrap;}
+</nav>
+
 .site-nav-link:hover{color:#e8c76a;background:rgba(255,255,255,.04);}
 .site-nav-link.active{color:#c9a84c;}
 .site-nav-cta{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#07101f;background:#c9a84c;text-decoration:none;padding:.42rem 1.1rem;border-radius:3px;transition:background .15s;flex-shrink:0;white-space:nowrap;}
 .site-nav-cta:hover{background:#e8c76a;}
 @media(max-width:700px){.site-nav-links{gap:0;}.site-nav-link{padding:.35rem .5rem;font-size:10px;}.site-nav-cta{display:none;}}
 @media(max-width:480px){.site-nav-link{display:none;}.site-nav-link.keep{display:block;}}
+
+.site-nav{position:sticky;top:0;z-index:200;background:rgba(7,16,31,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.09);padding:0 2rem;height:58px;display:flex;align-items:center;gap:1.5rem;}
+.site-nav-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;flex-shrink:0;}
+.site-nav-logo svg{width:26px;height:26px;}
+.site-nav-logo-text{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;}
+.site-nav-logo-text span{color:var(--brass);}
+.site-nav-links{display:flex;align-items:center;gap:.15rem;flex:1;}
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <a href="index.html" class="nav-logo">
-    <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#003087"/><circle cx="14" cy="14" r="9.5" fill="#FFD700"/><circle cx="14" cy="14" r="5.5" fill="#CF142B"/><circle cx="14" cy="14" r="2" fill="#fff"/></svg>
-    <span class="nav-logo-text">WW2 <span>Modeller</span></span>
-  </a>
-  <div class="nav-links">
-    <a href="hurricane_paradise.html" class="nav-link">Hurricane</a>
-    <a href="spitfire_paradise.html" class="nav-link">Spitfire</a>
-    <a href="techniques-bank.html" class="nav-link active">Techniques</a>
-    <a href="articles.html" class="nav-link">Articles</a>
-  </div>
-</nav>
+
 
 <div class="page-hd">
   <div class="page-hd-inner">
