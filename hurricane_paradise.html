@@ -646,6 +646,8 @@ body{
       <span class="current">Hawker Hurricane</span>
     </div>
     <a href="spitfire_paradise.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.12);border-radius:2px;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.5)'">Spitfire</a>
+    <a href="techniques-bank.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.12);border-radius:2px;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.5)'">Techniques</a>
+    <a href="walkaround.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.12);border-radius:2px;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.5)'">Walkaround</a>
     <a href="articles.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);text-decoration:none;padding:.35rem .8rem;border:1px solid rgba(184,144,42,.3);border-radius:2px;transition:background .15s" onmouseover="this.style.background='rgba(184,144,42,.1)'" onmouseout="this.style.background='transparent'">Articles</a>
   </div>
   <!-- Tab navigation — full width below logo row -->
@@ -655,6 +657,7 @@ body{
     <button class="nav-tab" onclick="switchTab('reference',this)">Reference</button>
     <button class="nav-tab" onclick="switchTab('stories',this)">Stories</button>
     <button class="nav-tab" onclick="switchTab('media',this)">Media</button>
+    <button class="nav-tab" onclick="switchTab('walkaround',this)">Walkaround</button>
   </nav>
 </header>
 
@@ -865,6 +868,222 @@ body{
   <div class="info-box">Curated Hurricane footage, Merlin engine recordings, IWM interviews and documentary clips. All links open on YouTube or the IWM website.</div>
   <div id="media-grid"></div>
 </div>
+
+<div class="tab-panel" id="tab-walkaround">
+  <div class="info-box">Period and museum photographs grouped by aircraft detail area — use these as direct reference while building. All images link to their original source.</div>
+
+  <!-- Feature nav -->
+  <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
+    <a href="#wa-cockpit" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Cockpit</a>
+    <a href="#wa-exhaust" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Exhausts</a>
+    <a href="#wa-undercart" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Undercarriage</a>
+    <a href="#wa-markings" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Markings</a>
+    <a href="#wa-airframe" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Airframe</a>
+  </div>
+
+  <!-- COCKPIT -->
+  <div id="wa-cockpit" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Cockpit <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+    <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
+      <strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
+      Interior is Titanine Interior Grey-Green — slightly warmer and greener than Spitfire. Instrument panel Flat Black. The ejector exhaust handles on the right side of the cockpit are a distinctive detail. Floor is darker and more worn than side walls. R4118 (Hurricane Heritage) has the most accessible authentic cockpit of any surviving example.
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.youtube.com/watch?v=afZwPxtY2iw" target="_blank" rel="noopener" style="display:block;position:relative">
+          <img src="https://img.youtube.com/vi/afZwPxtY2iw/mqdefault.jpg" alt="BBMF Hurricane LF363 cockpit startup" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover">
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">BBMF Hurricane LF363 — Cockpit Startup</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Close-up cockpit video during engine startup at RAF Coningsby. Shows throttle quadrant, instrument readings and interior colour in natural light.</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.youtube.com/watch?v=NEmAlxaW44I" target="_blank" rel="noopener" style="display:block;position:relative">
+          <img src="https://img.youtube.com/vi/NEmAlxaW44I/mqdefault.jpg" alt="Hurricane restoration cockpit detail" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover">
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Hurricane Restoration — Interior Detail</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Warbird Workshop documentary. Close-access footage of cockpit interior, instrument fitment and structural detail during rebuild.</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.iwm.org.uk/collections/item/object/205193430" target="_blank" rel="noopener" style="display:block;background:#0a1628;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative">
+          <div style="text-align:center;padding:1rem">
+            <div style="font-size:2.5rem;opacity:.3;margin-bottom:.5rem">📷</div>
+            <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(201,168,76,.7)">IWM Archive</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:.3rem">Click to view photograph</div>
+          </div>
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(0,100,50,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">IWM</div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">IWM — Hurricane Cockpit Photographs</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Period photographs of Hurricane cockpits from the IWM collection. Search "Hurricane cockpit" for the full catalogue of operational images.</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /cockpit -->
+
+  <!-- EXHAUSTS -->
+  <div id="wa-exhaust" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Exhaust Stacks & Staining <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+    <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
+      <strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
+      The Hurricane uses ejector exhaust stacks — one long casting per side, not individual stubs. The staining pattern is a single wide fan aft of the exhaust outlet, extending back to roughly the cockpit position. The stacks oxidise to a rusty brown-orange. Eduard Brassin 648580 gives you resin stacks with excellent casting detail for 1:48.
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.youtube.com/watch?v=Q2uDlTH86NU" target="_blank" rel="noopener" style="display:block;position:relative">
+          <img src="https://img.youtube.com/vi/Q2uDlTH86NU/mqdefault.jpg" alt="R4118 Hurricane exhaust detail Duxford" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover">
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">R4118 — Walk-around at Duxford 2023</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Full walk-around of R4118. The exhaust stacks and staining pattern are clearly visible during the engine startup sequence. Best available video reference.</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.youtube.com/watch?v=afZwPxtY2iw" target="_blank" rel="noopener" style="display:block;position:relative">
+          <img src="https://img.youtube.com/vi/afZwPxtY2iw/mqdefault.jpg" alt="Merlin startup exhaust smoke BBMF" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover">
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Merlin Startup — Blue Smoke Plume</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Cold-start sequence of LF363. The blue smoke from the ejector stacks and the resulting staining pattern is clearly visible — essential exhaust weathering reference.</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /exhaust -->
+
+  <!-- UNDERCARRIAGE -->
+  <div id="wa-undercart" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Undercarriage <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+    <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
+      <strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
+      Undercarriage legs are Interior Grey-Green — not camouflage colour. Wheel bay interior also grey-green. Mechanical parts on legs are bare aluminium. Tyres are warm mid-grey, not cold grey or black. The wheel bays are open when gear is down — they were frequently mud-spattered on BoB grass airfields.
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.youtube.com/watch?v=NEmAlxaW44I" target="_blank" rel="noopener" style="display:block;position:relative">
+          <img src="https://img.youtube.com/vi/NEmAlxaW44I/mqdefault.jpg" alt="Hurricane restoration undercarriage detail" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover">
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Restoration — Undercarriage Bay Detail</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Warbird Workshop restoration includes close-access footage of the wheel bay and leg assembly during strip-down. Shows leg colour, hydraulics and structural detail.</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://collections.rafmuseum.org.uk/objects/search#/search?q=hurricane+undercarriage" target="_blank" rel="noopener" style="display:block;background:#0a1628;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative">
+          <div style="text-align:center;padding:1rem">
+            <div style="font-size:2.5rem;opacity:.3;margin-bottom:.5rem">✈</div>
+            <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(100,160,255,.7)">RAF Museum</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:.3rem">Undercarriage reference photos</div>
+          </div>
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(30,60,120,.9);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">RAF Museum</div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">RAF Museum — Hurricane Technical Reference</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">The RAF Museum Cosford houses a Hurricane with good undercarriage access. The online collection includes technical photographs of the leg assembly.</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /undercarriage -->
+
+  <!-- MARKINGS -->
+  <div id="wa-markings" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Roundels, Codes & Markings <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+    <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
+      <strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
+      Roundel types changed during the Battle. Before ~Aug 1940: Type A (red/white/blue/yellow outer) on upper wings, Type A1 (no yellow) on fuselage, Type B (red/blue only) on lower wings. Code letters were Night Black 8" — not white. Fin flash was red/white/blue equal thirds. Spinners matched Sky colour. See the Reference tab for exact roundel dimensions by scale.
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.iwm.org.uk/collections/search?query=hurricane+battle+of+britain+markings&filters=category%3APhotograph" target="_blank" rel="noopener" style="display:block;background:#0a1628;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative">
+          <div style="text-align:center;padding:1rem">
+            <div style="font-size:2.5rem;opacity:.3;margin-bottom:.5rem">🎯</div>
+            <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(201,168,76,.7)">IWM Collection</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:.3rem">Search Hurricane markings photos</div>
+          </div>
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(0,100,50,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">IWM</div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">IWM — Hurricane Markings, 1940</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">IWM photograph archive with hundreds of period images. Filter by "Hurricane" + "1940" + "Photograph" to find roundel and code reference photos.</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.youtube.com/watch?v=Q2uDlTH86NU" target="_blank" rel="noopener" style="display:block;position:relative">
+          <img src="https://img.youtube.com/vi/Q2uDlTH86NU/mqdefault.jpg" alt="R4118 original 605 Squadron markings" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover">
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">R4118 — Original 605 Squadron UP-W Markings</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">R4118 flies in her original period markings — 605 Squadron UP-W. The actual size, style and positioning of code letters is clearly visible in the walk-around footage.</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /markings -->
+
+  <!-- AIRFRAME -->
+  <div id="wa-airframe" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Airframe — Fabric Fuselage & Panel Detail <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+    <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
+      <strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
+      The Hurricane's rear fuselage is fabric over a tubular steel frame — not metal. The ribs show through the doped fabric as subtle raised lines, much more muted than metal panel lines. Do not scribe heavy panel lines on the rear fuselage. The transition from metal (forward of cockpit) to fabric occurs approximately at the cockpit rear.
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.youtube.com/watch?v=1B_2D1zYdFc" target="_blank" rel="noopener" style="display:block;position:relative">
+          <img src="https://img.youtube.com/vi/1B_2D1zYdFc/mqdefault.jpg" alt="Lost Hurricane restoration airframe" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover">
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">The Lost Hurricane — India Restoration</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Peter Vacher's restoration of a Hurricane found in India. The bare airframe footage shows the fabric structure, frame ribs and metal/fabric junction in exceptional detail.</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.youtube.com/watch?v=SuBHJ5pqWeE" target="_blank" rel="noopener" style="display:block;position:relative">
+          <img src="https://img.youtube.com/vi/SuBHJ5pqWeE/mqdefault.jpg" alt="Hurricane P3351 restoration documentary" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover">
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Hurricane P3351 — Rare Restoration Documentary</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Remastered 1990s documentary of Hurricane P3351 restoration. Shows the full airframe before fabric application — essential reference for rivet patterns and panel construction.</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /airframe -->
+
+</div><!-- /tab-walkaround -->
+
 
 </div><!-- /main-content -->
 
@@ -3213,16 +3432,20 @@ function renderBobThisWeek() {
   const now = new Date();
   const md = String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
   // find nearest event
-  const todayNum = now.getMonth()*100 + now.getDate();
-  let best = BOB_EVENTS[0], bestDiff = 999;
+  // Find nearest BoB event by day-of-year, wrapping around year end
+  const todayDoy = now.getMonth()*100 + now.getDate();
+  let best = BOB_EVENTS[0], bestDiff = 9999;
   BOB_EVENTS.forEach(ev => {
     const [m,d] = ev.md.split('-').map(Number);
-    const diff = Math.abs((m*100+d) - todayNum);
+    const evDoy = m*100 + d;
+    const diff = Math.min(Math.abs(evDoy - todayDoy), 1200 - Math.abs(evDoy - todayDoy));
     if (diff < bestDiff) { bestDiff = diff; best = ev; }
   });
   const [m,d] = best.md.split('-').map(Number);
   const date1940 = new Date(1940, m-1, d);
-  const opts = {day:'numeric',month:'long'};
+  const yearsAgo = now.getFullYear() - 1940;
+  // Only show during BoB season (July-Oct) or within 3 weeks of season
+  const inSeason = (todayDoy >= 620 && todayDoy <= 1103);
   el.innerHTML = `
     <div style="background:rgba(21,39,68,.8);border:2px solid var(--brass);border-radius:4px;overflow:hidden">
       <div style="background:rgba(0,0,0,.35);padding:.75rem 1.2rem;display:flex;align-items:center;gap:1rem;border-bottom:1px solid rgba(184,144,42,.3)">
@@ -3231,8 +3454,8 @@ function renderBobThisWeek() {
           <div style="font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase">${date1940.toLocaleString('en-GB',{month:'short'})} 1940</div>
         </div>
         <div>
-          <div style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--brass);margin-bottom:.3rem">This week in the BoB</div>
-          <div style="font-family:'Special Elite',cursive;font-size:1.2rem;color:#fff">86 years ago today</div>
+          <div style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--brass);margin-bottom:.3rem">${inSeason ? 'This week in the BoB' : 'On this date in the BoB'}</div>
+          <div style="font-family:'Special Elite',cursive;font-size:1.2rem;color:#fff">${yearsAgo} years ago</div>
         </div>
       </div>
       <div style="padding:1rem 1.2rem;font-size:17px;color:rgba(255,255,255,.85);line-height:1.75">${best.text}</div>

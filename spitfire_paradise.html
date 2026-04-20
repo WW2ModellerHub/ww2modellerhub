@@ -245,6 +245,8 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
       <span class="current">Supermarine Spitfire</span>
     </div>
     <a href="hurricane_paradise.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.12);border-radius:2px;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.5)'">Hurricane</a>
+    <a href="techniques-bank.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.12);border-radius:2px;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.5)'">Techniques</a>
+    <a href="walkaround.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.12);border-radius:2px;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.5)'">Walkaround</a>
     <a href="articles.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);text-decoration:none;padding:.35rem .8rem;border:1px solid rgba(184,144,42,.3);border-radius:2px;margin-left:auto" onmouseover="this.style.background='rgba(184,144,42,.1)'" onmouseout="this.style.background='transparent'">Articles</a>
   </div>
   <nav class="nav-tabs" style="border-top:1px solid rgba(255,255,255,.07);padding:0 1.5rem">
@@ -253,6 +255,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <button class="nav-tab" onclick="switchTab('reference',this)">Reference</button>
     <button class="nav-tab" onclick="switchTab('stories',this)">Stories</button>
     <button class="nav-tab" onclick="switchTab('media',this)">Media</button>
+    <button class="nav-tab" onclick="switchTab('walkaround',this)">Walkaround</button>
   </nav>
 </header>
 
@@ -421,6 +424,199 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 </div>
 
 </div>
+
+<div class="tab-panel" id="tab-walkaround">
+  <div class="info-box">Period and museum photographs grouped by aircraft detail area — use these as direct reference while building. All images link to their original source.</div>
+
+  <!-- Feature nav -->
+  <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
+    <a href="#sp-cockpit" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Cockpit</a>
+    <a href="#sp-exhaust" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Exhausts</a>
+    <a href="#sp-undercart" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Undercarriage</a>
+    <a href="#sp-markings" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Markings</a>
+    <a href="#sp-airframe" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Airframe</a>
+  </div>
+
+  <!-- COCKPIT -->
+  <div id="sp-cockpit" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Cockpit <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+    <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
+      <strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
+      Interior is Interior Grey-Green — slightly greener than the Hurricane version. Instrument panel is Flat Black. The spade-grip control column is very distinctive — Eduard Brassin 648578 gives you an accurate resin replacement for 1:48. The compass (Type P8) sits on the right of the instrument panel. P7350 (BBMF) has the most accessible authentic cockpit of any surviving BoB Spitfire.
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.youtube.com/watch?v=psF83M3QOeM" target="_blank" rel="noopener" style="display:block;position:relative">
+          <img src="https://img.youtube.com/vi/psF83M3QOeM/mqdefault.jpg" alt="P7350 BoB Spitfire scramble cockpit" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover">
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">P7350 — Scramble Sequence at Coningsby</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">The only Spitfire to have fought in the actual Battle of Britain. The startup sequence shows cockpit interior, canopy operation and instrument positions in natural light.</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.youtube.com/watch?v=SF_dQiQm6RY" target="_blank" rel="noopener" style="display:block;position:relative">
+          <img src="https://img.youtube.com/vi/SF_dQiQm6RY/mqdefault.jpg" alt="BBMF Spitfire Hurricane dogfight demo 2024" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover">
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">BBMF Spitfire TE311 — PDA Day 2024</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Ground and aerial footage at RAF Coningsby. Good reference for Spitfire upper surface colour and exhaust staining in current condition.</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.iwm.org.uk/collections/search?query=spitfire+cockpit+1940&filters=category%3APhotograph" target="_blank" rel="noopener" style="display:block;background:#0a1628;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative">
+          <div style="text-align:center;padding:1rem">
+            <div style="font-size:2.5rem;opacity:.3;margin-bottom:.5rem">📷</div>
+            <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(201,168,76,.7)">IWM Archive</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:.3rem">Period cockpit photographs</div>
+          </div>
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(0,100,50,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">IWM</div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">IWM — Spitfire Cockpit Photographs 1940</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">IWM archive search for period Spitfire cockpit photographs. Filter by "Spitfire" + "cockpit" + "1940" for the most relevant operational-condition images.</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /cockpit -->
+
+  <!-- EXHAUSTS -->
+  <div id="sp-exhaust" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Exhaust Stacks & Staining <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+    <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
+      <strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
+      The Spitfire Mk.I uses six individual stub exhausts per side — not the ejector stack of the Hurricane. This produces six separate narrow staining plumes rather than one wide fan. Each plume traces a slightly different path aft. The stubs oxidise to a dark rust-brown and show heat bluing at the tips. Eduard Brassin 648580 gives resin exhausts for 1:48.
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.youtube.com/watch?v=ussUR9fxNdg" target="_blank" rel="noopener" style="display:block;position:relative">
+          <img src="https://img.youtube.com/vi/ussUR9fxNdg/mqdefault.jpg" alt="BBMF Lancaster Spitfire Hurricane Coningsby 2023" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover">
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">BBMF Spitfire — Close Startup Sequence</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">BBMF display at Coningsby 2023. The individual stub exhausts and their staining pattern are visible during the startup and display sequence — compare with Hurricane for the key difference.</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /exhaust -->
+
+  <!-- UNDERCARRIAGE -->
+  <div id="sp-undercart" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Undercarriage <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+    <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
+      <strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
+      The Spitfire's narrow-track undercarriage retracts outward into the wing. The leg is Interior Grey-Green. Unlike the Hurricane, the Spitfire's wheel bay doors close fully — you cannot see inside from below. Tyre colour is a warm grey, not black. The shimmy damper on the oleo is a distinctive detail often missing from kits.
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.youtube.com/watch?v=3HT7Rkq5cew" target="_blank" rel="noopener" style="display:block;position:relative">
+          <img src="https://img.youtube.com/vi/3HT7Rkq5cew/mqdefault.jpg" alt="Airfix Spitfire full build undercarriage" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover">
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Airfix Spitfire — Undercarriage Walkthrough</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Full Airfix Mk.Ia build includes detailed undercarriage assembly and painting. Good reference for the leg colour, wheel colour and bay interior as applied on a 1:48 model.</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /undercarriage -->
+
+  <!-- MARKINGS -->
+  <div id="sp-markings" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Roundels, Codes & Markings <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+    <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
+      <strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
+      Same roundel evolution as Hurricane — see Reference tab for exact types by date. The elliptical Spitfire wing means upper-wing roundels look quite different proportionally from above compared to the Hurricane's straight wing. Code letters: Night Black 8-inch. Spinner: Sky colour. See the Decals tab for recommended Xtradecal sheets with correct roundel types.
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.youtube.com/watch?v=C4jvpZA1GI4" target="_blank" rel="noopener" style="display:block;position:relative">
+          <img src="https://img.youtube.com/vi/C4jvpZA1GI4/mqdefault.jpg" alt="Sailor Malan 74 Squadron Spitfire markings" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover">
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Sailor Malan Documentary — 74 Squadron Markings</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Contains period photography and recreations of 74 Tiger Squadron ZP-coded Spitfires. Good source for the actual size and positioning of code letters relative to roundels.</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.iwm.org.uk/collections/search?query=spitfire+squadron+1940&filters=category%3APhotograph" target="_blank" rel="noopener" style="display:block;background:#0a1628;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative">
+          <div style="text-align:center;padding:1rem">
+            <div style="font-size:2.5rem;opacity:.3;margin-bottom:.5rem">🎯</div>
+            <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(201,168,76,.7)">IWM Archive</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:.3rem">Period markings photographs</div>
+          </div>
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(0,100,50,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">IWM</div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">IWM — Spitfire Squadron Photographs 1940</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Hundreds of period photographs showing Spitfires on dispersal, at readiness and in flight. Filter by squadron code to find specific markings references.</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /markings -->
+
+  <!-- AIRFRAME -->
+  <div id="sp-airframe" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Airframe & Panel Detail <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+    <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
+      <strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
+      All-metal stressed-skin construction — panel lines are crisp throughout, unlike the Hurricane's fabric rear. The distinctive "eyelid" cooling vents below the nose are a key identifier. The distinctive oval cross-section fuselage produces interesting shadow lines. Gun port patches on the Mk.Ia wing leading edge (doped fabric circles) are frequently missing from models.
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.youtube.com/watch?v=9gqlgr3Ejfo" target="_blank" rel="noopener" style="display:block;position:relative">
+          <img src="https://img.youtube.com/vi/9gqlgr3Ejfo/mqdefault.jpg" alt="Geoffrey Wellum Spitfire pilot interview" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover">
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Geoffrey Wellum — Period Spitfire Footage</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Interview with the youngest BoB Spitfire pilot. Contains period photographs and archive footage of 92 Squadron Spitfires showing authentic airframe and panel detail.</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+        <a href="https://www.shuttleworth.org/aircraft/spitfire/" target="_blank" rel="noopener" style="display:block;background:#0a1628;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative">
+          <div style="text-align:center;padding:1rem">
+            <div style="font-size:2.5rem;opacity:.3;margin-bottom:.5rem">✈</div>
+            <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(100,160,200,.7)">Shuttleworth</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:.3rem">AR501 — oldest flying Spitfire</div>
+          </div>
+          <div style="position:absolute;top:.5rem;right:.5rem;background:rgba(30,60,120,.9);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">Shuttleworth</div>
+        </a>
+        <div style="padding:.75rem .9rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">AR501 — Shuttleworth Collection</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">AR501 is the oldest flying Spitfire Mk.Ia. Shuttleworth gives ground-level access at shows — excellent opportunity to photograph panel detail, fasteners and airframe construction.</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /airframe -->
+
+</div><!-- /tab-walkaround -->
+
+
 <aside class="sidebar">
   <div class="sidebar-block">
     <div class="sidebar-hd">Advertisement</div>
@@ -1415,7 +1611,7 @@ function renderThisWeek(){
   const md=(m<10?'0':'')+m+'-'+(d<10?'0':'')+d;
   const best=BOB_EVENTS.find(e=>e.md===md)||BOB_EVENTS[Math.floor(Math.random()*BOB_EVENTS.length)];
   const [bm,bd]=best.md.split('-');const date1940=new Date(1940,parseInt(bm)-1,parseInt(bd));
-  el.innerHTML=`<div style="background:rgba(21,39,68,.8);border:2px solid var(--brass);border-radius:4px;overflow:hidden"><div style="background:rgba(0,0,0,.35);padding:.75rem 1.2rem;display:flex;align-items:center;gap:1rem;border-bottom:1px solid rgba(184,144,42,.3)"><div style="text-align:center;background:var(--brass);color:var(--raf-dark);padding:.4rem .6rem;border-radius:2px;flex-shrink:0"><div style="font-family:'Special Elite',cursive;font-size:1.8rem;line-height:1">${bd}</div><div style="font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase">${date1940.toLocaleString('en-GB',{month:'short'})} 1940</div></div><div><div style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--brass);margin-bottom:.3rem">This week in the BoB</div><div style="font-family:'Special Elite',cursive;font-size:1.2rem;color:#fff">86 years ago today</div></div></div><div style="padding:1rem 1.2rem;font-size:17px;color:rgba(255,255,255,.85);line-height:1.75">${best.text}</div></div>`;
+  el.innerHTML=`<div style="background:rgba(21,39,68,.8);border:2px solid var(--brass);border-radius:4px;overflow:hidden"><div style="background:rgba(0,0,0,.35);padding:.75rem 1.2rem;display:flex;align-items:center;gap:1rem;border-bottom:1px solid rgba(184,144,42,.3)"><div style="text-align:center;background:var(--brass);color:var(--raf-dark);padding:.4rem .6rem;border-radius:2px;flex-shrink:0"><div style="font-family:'Special Elite',cursive;font-size:1.8rem;line-height:1">${bd}</div><div style="font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase">${date1940.toLocaleString('en-GB',{month:'short'})} 1940</div></div><div><div style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--brass);margin-bottom:.3rem">${(now.getMonth()*100 + now.getDate() >= 620 && now.getMonth()*100 + now.getDate() <= 1103) ? 'This week in the BoB' : 'On this date in the BoB'}</div><div style="font-family:'Special Elite',cursive;font-size:1.2rem;color:#fff">${yearsAgo} years ago</div></div></div><div style="padding:1rem 1.2rem;font-size:17px;color:rgba(255,255,255,.85);line-height:1.75">${best.text}</div></div>`;
 }
 
 // ═══ MEDIA ═══
