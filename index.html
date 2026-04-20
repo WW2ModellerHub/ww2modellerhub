@@ -1024,6 +1024,24 @@ footer a:hover { color: var(--brass); }
   .nav-links { display: none; }
   .main { padding: 2rem 1rem 3rem; }
 }
+
+/* ── UNIVERSAL NAV ── */
+.site-nav{position:sticky;t<nav class="site-nav">
+  <a href="index.html" class="site-nav-logo">
+    <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#003087"/><circle cx="14" cy="14" r="9.5" fill="#FFD700"/><circle cx="14" cy="14" r="5.5" fill="#CF142B"/><circle cx="14" cy="14" r="2" fill="#fff"/></svg>
+    <span class="site-nav-logo-text">WW2 <span>Modeller</span></span>
+  </a>
+  <div class="site-nav-links">
+    <a href="hurricane_paradise.html" class="site-nav-link">Hurricane</a>
+    <a href="spitfire_paradise.html" class="site-nav-link">Spitfire</a>
+    <a href="techniques-bank.html" class="site-nav-link">Techniques</a>
+    <a href="articles.html" class="site-nav-link">Articles</a>
+  </div>
+  <a href="hurricane_paradise.html" class="site-nav-cta">Open Reference →</a>
+</nav>weight:600;letter-spacing:.12em;text-transform:uppercase;color:#07101f;background:#c9a84c;text-decoration:none;padding:.42rem 1.1rem;border-radius:3px;transition:background .15s;flex-shrink:0;white-space:nowrap;}
+.site-nav-cta:hover{background:#e8c76a;}
+@media(max-width:700px){.site-nav-links{gap:0;}.site-nav-link{padding:.35rem .5rem;font-size:10px;}.site-nav-cta{display:none;}}
+@media(max-width:480px){.site-nav-link{display:none;}.site-nav-link.keep{display:block;}}
 </style>
 </head>
 <body>
@@ -1052,7 +1070,6 @@ footer a:hover { color: var(--brass); }
     <a href="hurricane_paradise.html" class="nav-link">Hurricane</a>
     <a href="spitfire_paradise.html" class="nav-link">Spitfire</a>
     <a href="techniques-bank.html" class="nav-link">Techniques</a>
-    <a href="walkaround.html" class="nav-link">Walkaround</a>
     <a href="articles.html" class="nav-link">Articles</a>
   </div>
   <a href="hurricane_paradise.html" class="nav-cta">Open Reference →</a>
@@ -1261,12 +1278,7 @@ footer a:hover { color: var(--brass); }
       <div class="art-title">Techniques Bank</div>
       <div class="art-desc">Pre-shading, oil washes, chipping, pigments, varnish — every RAF weathering method step-by-step</div>
     </a>
-    <a href="walkaround.html" class="art-card" style="border-top-color:var(--sky)">
-      <div class="art-tag">Reference · Photos</div>
-      <div class="art-title">Walkaround Reference</div>
-      <div class="art-desc">Period and museum photographs grouped by detail area — cockpit, exhausts, undercarriage and more</div>
-    </a>
-    <a href="articles.html" class="art-all">All articles →<br><span style="font-size:10px;color:var(--muted);text-transform:none;font-family:'Source Serif 4',serif;letter-spacing:0;margin-top:.25rem;display:block">Build guides · Reference · History</span></a>
+<a href="articles.html" class="art-all">All articles →<br><span style="font-size:10px;color:var(--muted);text-transform:none;font-family:'Source Serif 4',serif;letter-spacing:0;margin-top:.25rem;display:block">Build guides · Reference · History</span></a>
   </div>
 
   <!-- Essential Books -->

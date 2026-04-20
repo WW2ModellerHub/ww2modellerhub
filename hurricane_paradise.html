@@ -623,6 +623,21 @@ body{
 .lb-close{position:fixed;top:1.2rem;right:1.2rem;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid var(--brass);color:var(--brass2);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .lb-close:hover{background:rgba(184,144,42,.2)}
 .lb-cap{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.08em;color:rgba(255,255,255,.5);max-width:600px;text-align:center}
+
+/* ── UNIVERSAL NAV ── */
+.site-nav{position:sticky;top:0;z-index:200;background:rgba(7,16,31,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.09);padding:0 2rem;height:58px;display:flex;align-items:center;gap:1.5rem;}
+.site-nav-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;flex-shrink:0;}
+.site-nav-logo svg{width:26px;height:26px;}
+.site-nav-logo-text{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;}
+.site-nav-logo-text span{color:var(--brass);}
+.site-nav-links{display:flex;align-items:center;gap:.15rem;flex:1;}
+.site-nav-link{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;padding:.35rem .75rem;border-radius:3px;transition:color .15s,background .15s;white-space:nowrap;}
+.site-nav-link:hover{color:#e8c76a;background:rgba(255,255,255,.04);}
+.site-nav-link.active{color:#c9a84c;}
+.site-nav-cta{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#07101f;background:#c9a84c;text-decoration:none;padding:.42rem 1.1rem;border-radius:3px;transition:background .15s;flex-shrink:0;white-space:nowrap;}
+.site-nav-cta:hover{background:#e8c76a;}
+@media(max-width:700px){.site-nav-links{gap:0;}.site-nav-link{padding:.35rem .5rem;font-size:10px;}.site-nav-cta{display:none;}}
+@media(max-width:480px){.site-nav-link{display:none;}.site-nav-link.keep{display:block;}}
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409"
      crossorigin="anonymous"></script>
@@ -630,27 +645,20 @@ body{
 <body>
 
 <!-- HEADER -->
-<header class="site-header">
-  <div class="header-inner">
-    <a href="index.html" class="header-logo" style="display:flex;align-items:center;gap:.5rem">
-      <svg width="26" height="26" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
-        <circle cx="18" cy="18" r="18" fill="#003087"/>
-        <circle cx="18" cy="18" r="12" fill="#fff"/>
-        <circle cx="18" cy="18" r="7" fill="#CF142B"/>
-      </svg>
-      WW2 <span style="color:var(--brass2)">Modeller</span>
-    </a>
-    <div class="header-breadcrumb">
-      <a href="index.html" style="color:rgba(255,255,255,.4);text-decoration:none">Hub</a>
-      <span class="sep">›</span>
-      <span class="current">Hawker Hurricane</span>
-    </div>
-    <a href="spitfire_paradise.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.12);border-radius:2px;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.5)'">Spitfire</a>
-    <a href="techniques-bank.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.12);border-radius:2px;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.5)'">Techniques</a>
-    <a href="walkaround.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.12);border-radius:2px;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.5)'">Walkaround</a>
-    <a href="articles.html" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);text-decoration:none;padding:.35rem .8rem;border:1px solid rgba(184,144,42,.3);border-radius:2px;transition:background .15s" onmouseover="this.style.background='rgba(184,144,42,.1)'" onmouseout="this.style.background='transparent'">Articles</a>
+<nav class="site-nav">
+  <a href="index.html" class="site-nav-logo">
+    <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#003087"/><circle cx="14" cy="14" r="9.5" fill="#FFD700"/><circle cx="14" cy="14" r="5.5" fill="#CF142B"/><circle cx="14" cy="14" r="2" fill="#fff"/></svg>
+    <span class="site-nav-logo-text">WW2 <span>Modeller</span></span>
+  </a>
+  <div class="site-nav-links">
+    <a href="hurricane_paradise.html" class="site-nav-link active">Hurricane</a>
+    <a href="spitfire_paradise.html" class="site-nav-link">Spitfire</a>
+    <a href="techniques-bank.html" class="site-nav-link">Techniques</a>
+    <a href="articles.html" class="site-nav-link">Articles</a>
   </div>
-  <!-- Tab navigation — full width below logo row -->
+  <a href="spitfire_paradise.html" class="site-nav-cta">Spitfire →</a>
+</nav>
+<div style="background:rgba(7,16,31,.95);border-bottom:2px solid var(--brass);position:sticky;top:58px;z-index:190;">
   <nav class="nav-tabs" style="border-top:1px solid rgba(255,255,255,.07);padding:0 1.5rem">
     <button class="nav-tab active" onclick="switchTab('squadrons',this)">Squadrons</button>
     <button class="nav-tab" onclick="switchTab('build',this)">Build</button>
@@ -659,7 +667,7 @@ body{
     <button class="nav-tab" onclick="switchTab('media',this)">Media</button>
     <button class="nav-tab" onclick="switchTab('walkaround',this)">Walkaround</button>
   </nav>
-</header>
+</div>
 
 <!-- AIRCRAFT HERO -->
 <div class="aircraft-hero">
