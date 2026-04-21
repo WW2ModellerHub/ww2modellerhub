@@ -4,218 +4,140 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>Scale Modelling Techniques Bank — Pre-shade, Washes, Chipping, Pigments</title>
-<meta property="og:title" content="Scale Modelling Techniques Bank — Pre-shade, Washes, Chipping, Pigments">
-<meta property="og:description" content="Free searchable techniques bank for WW2 aircraft scale modellers. Pre-shading, oil washes, chipping, oil dot filters, pigments, decal application and varnish — each with step-by-step instructions and a recommended video.">
+<meta name="description" content="Free searchable techniques bank for WW2 aircraft scale modellers. Pre-shading, oil washes, chipping, pigments, decal application and varnish — each with step-by-step instructions and a YouTube tutorial.">
+<link rel="canonical" href="https://www.ww2modeller.co.uk/techniques-bank.html">
+<meta property="og:title" content="Techniques Bank — WW2 Aircraft Scale Modelling">
+<meta property="og:description" content="Searchable painting & weathering techniques for RAF WW2 aircraft modellers.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.ww2modeller.co.uk/techniques-bank.html">
 <meta property="og:site_name" content="WW2 Modeller Hub">
-<link rel="alternate" hreflang="en-GB" href="https://www.ww2modeller.co.uk/techniques-bank.html">
-<link rel="alternate" hreflang="x-default" href="https://www.ww2modeller.co.uk/techniques-bank.html">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="author" content="WW2 Modeller Hub">
-<meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Scale Modelling Techniques Bank — Pre-shade, Washes, Chipping, Pigments">
-<meta name="twitter:description" content="Free searchable techniques bank for WW2 aircraft scale modellers. Pre-shading, oil washes, chipping, oil dot filters, pigments, decal application and varnish — each with step-by-step instructions and a recommended video.">
-<meta name="keywords" content="scale model weathering techniques, pre-shading airbrush, hairspray chipping, oil dot filter, aircraft panel line wash, matt varnish tutorial">
-<meta name="description" content="Free searchable techniques bank for WW2 aircraft scale modellers. Pre-shading, oil washes, chipping, oil dot filters, pigments, decal application and varnish — each with step-by-step instructions and a recommended video.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="canonical" href="https://www.ww2modeller.co.uk/techniques-bank.html">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-:root {
-  --ink:#07101f; --navy:#0a1628; --mid:#112240; --panel:rgba(17,34,64,.85);
-  --border:rgba(255,255,255,.09); --brass:#c9a84c; --brass2:#e8c76a;
-  --sky:#4a8db5; --cream:rgba(255,255,255,.88); --muted:rgba(255,255,255,.45);
-  --dim:rgba(255,255,255,.22); --r:4px;
+:root{
+  --ink:#05101f;--navy:#0a1628;--mid:#112240;--deep:#030812;
+  --panel:rgba(17,34,64,.82);--border:rgba(255,255,255,.09);--border2:rgba(255,255,255,.06);
+  --brass:#c9a84c;--brass2:#e8c76a;--brass-dim:rgba(201,168,76,.35);
+  --sky:#4a8db5;--muted:rgba(255,255,255,.5);--dim:rgba(255,255,255,.28);--r:4px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Source Serif 4',Georgia,serif;background:var(--ink);color:var(--cream);font-size:17px;line-height:1.65}
+body{font-family:'Source Serif 4',Georgia,serif;background:linear-gradient(180deg,#030812,#071428 30%,#0a1628 100%);color:rgba(255,255,255,.88);font-size:17px;line-height:1.65;min-height:100vh}
 
-/* NAV */
-.nav{position:sticky;top:0;z-index:200;background:rgba(7,16,31,.82);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.nav-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;flex-shrink:0}
-.nav-logo svg{width:28px;height:28px}
-.nav-logo-text{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+/* NAV (matches index) */
+.nav{position:sticky;top:0;z-index:200;background:rgba(5,16,31,.72);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border-bottom:1px solid var(--border);padding:0 2rem;height:62px;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:background .3s}
+.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;flex-shrink:0}
+.nav-logo svg{width:30px;height:30px}
+.nav-logo-text{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#fff}
 .nav-logo-text span{color:var(--brass)}
-.nav-links{display:flex;align-items:center;gap:.25rem}
-.nav-link{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:.35rem .7rem;border-radius:3px;transition:color .15s,background .15s}
-.nav-link:hover,.nav-link.active{color:var(--brass2)}
-.breadcrumb{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
-.breadcrumb a{color:var(--dim);text-decoration:none}.breadcrumb a:hover{color:var(--brass)}
-.breadcrumb span{color:var(--brass);margin:0 .4rem}
-
-/* PAGE HEADER */
-.page-hd{background:linear-gradient(135deg,#050d1a,#0a1628 50%,#112240);border-bottom:1px solid var(--border);padding:2.5rem 2rem 2rem}
-.page-hd-inner{max-width:1100px;margin:0 auto}
-.page-kicker{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem}
-.page-h1{font-family:'Special Elite',cursive;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin-bottom:.6rem;line-height:1.1}
-.page-sub{font-size:1rem;color:var(--muted);max-width:560px;line-height:1.7}
-
-/* CATEGORY NAV — single bar styled like hurricane page */
-.category-nav-wrap{
-  background:rgba(7,16,31,.95);
-  border-top:1px solid rgba(255,255,255,.05);
-  border-bottom:2px solid var(--brass);
-  position:sticky;
-  top:58px;
-  z-index:120;
-}
-.category-nav{
-  max-width:1100px;
-  margin:0 auto;
-  padding:0 1.25rem;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:0;
-  overflow-x:auto;
-  overflow-y:hidden;
-  scrollbar-width:none;
-}
-.category-nav::-webkit-scrollbar{display:none}
-.cat-tab{
-  font-family:'Oswald',sans-serif;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.48);
-  background:transparent;
-  border:none;
-  border-bottom:3px solid transparent;
-  padding:1rem .95rem .85rem;
-  cursor:pointer;
-  white-space:nowrap;
-  transition:color .15s, background .15s, border-color .15s;
-}
-.cat-tab:hover{color:rgba(255,255,255,.82);background:rgba(255,255,255,.03)}
-.cat-tab.active{
-  color:var(--brass2);
-  border-bottom-color:var(--brass);
-  background:rgba(255,255,255,.02);
-}
-
-.filter-tools{
-  background:rgba(13,28,53,.92);
-  border-bottom:1px solid var(--border);
-  padding:.7rem 2rem;
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-}
-.filter-search{position:relative; width:min(260px, 100%)}
-.filter-search input{
-  font-family:'Oswald',sans-serif;
-  font-size:11px;
-  letter-spacing:.04em;
-  padding:.45rem .75rem .45rem 2rem;
-  background:rgba(255,255,255,.05);
-  border:1px solid var(--border);
-  border-radius:3px;
-  color:#fff;
-  outline:none;
-  width:100%;
-  transition:border-color .15s;
-}
-.filter-search input:focus{border-color:rgba(201,168,76,.4)}
-.filter-search input::placeholder{color:var(--dim)}
-.filter-search-icon{position:absolute;left:.6rem;top:50%;transform:translateY(-50%);color:var(--dim);font-size:12px}
-
-/* MAIN */
-.main{max-width:1100px;margin:0 auto;padding:2rem 2rem 4rem}
-
-/* TECHNIQUE CATEGORY */
-.cat-hd{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin:2rem 0 1rem;display:flex;align-items:center;gap:.75rem}
-.cat-hd::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)}
-
-/* TECHNIQUE CARD */
-.tech-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-bottom:.5rem}
-.tech-card{background:var(--panel);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:all .2s}
-.tech-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.4)}
-.tech-top{height:3px}
-.tech-body{padding:1.1rem 1.2rem}
-.tech-cat-badge{display:inline-block;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-bottom:.65rem}
-.tech-title{font-family:'Special Elite',cursive;font-size:1.15rem;color:#fff;margin-bottom:.5rem;line-height:1.2}
-.tech-diff{display:flex;gap:3px;margin-bottom:.65rem}
-.diff-dot{width:7px;height:7px;border-radius:50%;background:var(--border)}
-.diff-dot.fill{background:var(--brass)}
-.diff-lbl{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.08em;color:var(--dim);margin-left:.3rem;align-self:center}
-.tech-desc{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:.9rem}
-.tech-steps{list-style:none;counter-reset:steps;margin-bottom:.9rem}
-.tech-steps li{counter-increment:steps;font-size:13px;color:rgba(255,255,255,.7);padding:.3rem 0 .3rem 1.6rem;position:relative;border-bottom:1px solid rgba(255,255,255,.04);line-height:1.5}
-.tech-steps li:last-child{border-bottom:none}
-.tech-steps li::before{content:counter(steps);position:absolute;left:0;top:.3rem;font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;color:var(--brass);width:1.2rem;text-align:center}
-.tech-tips{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.6rem .85rem;font-size:12px;color:rgba(255,255,255,.6);line-height:1.55;margin-bottom:.75rem}
-.tech-tips strong{color:var(--brass);font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
-.tech-video{display:inline-flex;align-items:center;gap:.4rem;font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);text-decoration:none;border:1px solid rgba(201,168,76,.3);padding:.3rem .85rem;border-radius:2px;transition:background .15s;cursor:pointer}
-.tech-video:hover{background:rgba(201,168,76,.1)}
-.tech-products{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.04em;color:var(--dim);margin-top:.5rem}
-.tech-products strong{color:rgba(255,255,255,.45)}
-
-/* ── UNIVERSAL NAV ── */
-.site-nav{position:sticky;top:0;z-index:200;background:rgba(7,16,31,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.09);padding:0 2rem;height:58px;display:flex;align-items:center;gap:1.5rem;}
-.site-nav-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;flex-shrink:0;}
-.site-nav-logo svg{width:26px;height:26px;}
-.site-nav-logo-text{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;}
-.site-nav-logo-text span{color:var(--brass);}
-.site-nav-links{display:flex;align-items:center;gap:.15rem;flex:1;}
-.site-nav-link{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;padding:.35rem .75rem;border-radius:3px;transition:color .15s,background .15s;white-space:nowrap;}
-.site-nav-link:hover{color:#e8c76a;background:rgba(255,255,255,.04);}
-.site-nav-link.active,.site-nav-link[aria-current="page"]{color:#c9a84c !important;background:rgba(201,168,76,.08);font-weight:600;}
-.site-nav-cta{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#07101f;background:#c9a84c;text-decoration:none;padding:.42rem 1.1rem;border-radius:3px;transition:background .15s;flex-shrink:0;white-space:nowrap;}
-.site-nav-cta:hover{background:#e8c76a;}
-@media(max-width:700px){.site-nav-links{gap:0;}.site-nav-link{padding:.35rem .5rem;font-size:10px;}.site-nav-cta{display:none;}}
-@media(max-width:480px){.site-nav-link{display:none;}.site-nav-link.keep{display:block;}}
-
-@media(max-width:700px){
-  .category-nav{justify-content:flex-start;-webkit-mask:linear-gradient(to right,black 88%,transparent 100%);mask:linear-gradient(to right,black 88%,transparent 100%)}
-  .filter-tools{padding:.7rem 1rem}
-  .filter-search{width:100%}
-}
-@media(max-width:480px){
-  .cat-tab{padding:.9rem .7rem .8rem;font-size:10px}
-}
-
-
-/* Merged filter/category bar — tabs left, search right */
-.filter-row{background:rgba(13,28,53,.92);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:stretch;gap:1rem;position:sticky;top:58px;z-index:100}
-.filter-row .category-nav{flex:1;min-width:0;display:flex;gap:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
-.filter-row .category-nav::-webkit-scrollbar{display:none}
-.filter-row .filter-search{flex-shrink:0;align-self:center;width:min(260px,100%);margin-left:auto}
-@media(max-width:700px){
-  .filter-row{flex-direction:column;padding:.5rem 1rem;gap:.5rem}
-  .filter-row .filter-search{width:100%;margin-left:0}
-}
-
-
-/* Aircraft dropdown — universal across pages */
+.nav-links{display:flex;align-items:center;gap:.15rem}
+.nav-link{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:.45rem .8rem;border-radius:2px;transition:color .15s;position:relative;white-space:nowrap}
+.nav-link:hover{color:var(--brass2)}
+.nav-link::after{content:'';position:absolute;left:.8rem;right:.8rem;bottom:.25rem;height:1px;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.nav-link:hover::after{transform:scaleX(1)}
+.nav-link.active{color:var(--brass)}.nav-link.active::after{transform:scaleX(1)}
+/* Aircraft dropdown */
 .ac-drop{position:relative;display:inline-block}
-.ac-drop-btn{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);background:none;border:none;cursor:pointer;padding:.45rem .9rem;border-radius:3px;display:inline-flex;align-items:center;gap:.3rem;transition:color .15s,background .15s}
-.ac-drop-btn:hover,.ac-drop.open .ac-drop-btn{color:#e8c76a;background:rgba(255,255,255,.04)}
-.ac-drop-caret{font-size:8px;transition:transform .15s;display:inline-block}
+.ac-drop-btn{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:none;border:none;cursor:pointer;padding:.45rem .8rem;border-radius:2px;display:inline-flex;align-items:center;gap:.3rem;transition:color .15s;white-space:nowrap}
+.ac-drop-btn:hover,.ac-drop.open .ac-drop-btn{color:var(--brass2)}
+.ac-drop-caret{font-size:8px;transition:transform .15s}
 .ac-drop.open .ac-drop-caret{transform:rotate(180deg)}
-.ac-drop-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:240px;background:rgba(10,22,40,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,.18);border-radius:4px;box-shadow:0 12px 40px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(-4px);transition:all .15s;overflow:hidden;z-index:300}
+.ac-drop-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:240px;background:rgba(10,22,40,.98);backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,.18);border-radius:4px;box-shadow:0 12px 40px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(-4px);transition:all .15s;overflow:hidden;z-index:300}
 .ac-drop.open .ac-drop-menu{opacity:1;visibility:visible;transform:translateY(0)}
 .ac-drop-item{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.65rem 1rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05);transition:all .12s}
 .ac-drop-item:last-child{border-bottom:none}
-.ac-drop-item:hover{background:rgba(201,168,76,.08);color:#e8c76a}
+.ac-drop-item:hover{background:rgba(201,168,76,.08);color:var(--brass2)}
 .ac-drop-badge{font-size:8px;font-weight:700;padding:1px 6px;border-radius:2px;letter-spacing:.1em}
 .ac-drop-badge.live{background:rgba(42,92,48,.35);color:#9dc89f;border:1px solid rgba(42,92,48,.5)}
 .ac-drop-badge.soon{background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1)}
+@media(max-width:700px){.nav{padding:0 1rem}.nav-link,.ac-drop-btn{padding:.35rem .5rem;font-size:10px;letter-spacing:.08em}}
 
+/* PAGE HERO */
+.page-hero{position:relative;padding:4rem 2rem 3rem;overflow:hidden;border-bottom:1px solid var(--border)}
+.page-hero::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(ellipse at 70% 0%,rgba(201,168,76,.12),transparent 55%),
+  radial-gradient(ellipse at 0% 80%,rgba(74,141,181,.07),transparent 50%);pointer-events:none}
+.page-hero-scan{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.025) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at 60% 0%,rgba(0,0,0,.5),transparent 65%);pointer-events:none}
+/* contrail accent */
+.page-hero::after{content:'';position:absolute;top:30%;left:-5%;width:55%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35) 40%,rgba(255,255,255,.5) 70%,transparent);transform:rotate(15deg);filter:blur(.4px);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
+.hero-kicker{display:flex;align-items:center;gap:.65rem;font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:.85rem}
+.hero-kicker::before{content:'';width:36px;height:1px;background:var(--brass)}
+.hero-h1{font-family:'Special Elite',cursive;font-size:clamp(2.4rem,5vw,3.8rem);color:#fff;line-height:.95;letter-spacing:-.01em;margin-bottom:.85rem}
+.hero-h1 em{font-style:normal;background:linear-gradient(115deg,var(--brass) 0%,var(--brass2) 50%,var(--brass) 100%);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.65);max-width:560px;line-height:1.65;font-style:italic;margin-bottom:1.5rem}
+.hero-stats{display:flex;gap:1.75rem;flex-wrap:wrap}
+.hstat{display:flex;flex-direction:column;gap:.15rem;padding-left:.9rem;border-left:1px solid var(--border)}
+.hstat-n{font-family:'Special Elite',cursive;font-size:1.9rem;color:#fff;line-height:1}
+.hstat-l{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hero-badge-wrap{flex-shrink:0;display:flex;gap:.5rem;flex-direction:column;align-items:flex-end}
+.hero-badge{font-family:'Oswald',sans-serif;font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;border-radius:2px;display:inline-flex;align-items:center;gap:.5rem}
+.hero-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
+.hero-badge.free{background:rgba(42,92,48,.25);color:#9dc89f;border:1px solid rgba(42,92,48,.4)}
+.hero-badge.updated{background:rgba(201,168,76,.12);color:var(--brass2);border:1px solid var(--brass-dim)}
+
+/* FILTER ROW */
+.filter-row{background:rgba(10,22,40,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:stretch;gap:0;position:sticky;top:62px;z-index:100;overflow-x:auto;scrollbar-width:none}
+.filter-row::-webkit-scrollbar{display:none}
+.category-nav{display:flex;flex:1;min-width:0}
+.cat-tab{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42);background:transparent;border:none;border-bottom:2px solid transparent;padding:.9rem .95rem .8rem;cursor:pointer;white-space:nowrap;transition:color .15s,border-color .15s}
+.cat-tab:hover{color:rgba(255,255,255,.8);background:rgba(255,255,255,.03)}
+.cat-tab.active{color:var(--brass2);border-bottom-color:var(--brass)}
+.filter-search{flex-shrink:0;align-self:center;width:min(240px,100%);margin:0 0 0 auto;padding:.5rem 0 .5rem 1rem;position:relative;border-left:1px solid var(--border)}
+.filter-search input{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.04em;padding:.42rem .75rem .42rem 2rem;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:2px;color:#fff;outline:none;width:100%;transition:border-color .15s}
+.filter-search input:focus{border-color:rgba(201,168,76,.4)}
+.filter-search input::placeholder{color:rgba(255,255,255,.28)}
+.filter-search-icon{position:absolute;left:.4rem;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.28);font-size:12px;padding-left:.55rem}
+@media(max-width:700px){.filter-search{display:none}}
+
+/* MAIN */
+.main{max-width:1200px;margin:0 auto;padding:2.5rem 2rem 5rem}
+
+/* SECTION HEADING */
+.cat-hd{font-family:'Special Elite',cursive;font-size:1.4rem;color:#fff;margin:2.5rem 0 1.2rem;display:flex;align-items:center;gap:1rem;position:relative}
+.cat-hd::before{content:'';width:3px;height:1.2em;background:var(--brass);display:block;flex-shrink:0;border-radius:1px}
+.cat-hd::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.25),transparent)}
+
+/* TECH GRID + CARDS */
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.1rem;margin-bottom:.5rem}
+.tech-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .25s;display:flex;flex-direction:column}
+.tech-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,.45)}
+.tech-top{height:3px}
+.tech-body{padding:1.2rem 1.3rem;display:flex;flex-direction:column;flex:1}
+.tech-cat-badge{display:inline-block;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:2px 8px;border-radius:2px;margin-bottom:.65rem}
+.tech-title{font-family:'Special Elite',cursive;font-size:1.15rem;color:#fff;margin-bottom:.5rem;line-height:1.2}
+.tech-diff{display:flex;gap:3px;margin-bottom:.65rem;align-items:center}
+.diff-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.1)}
+.diff-dot.fill{background:var(--brass)}
+.diff-lbl{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.08em;color:var(--dim);margin-left:.3rem}
+.tech-desc{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:.85rem}
+.tech-steps{list-style:none;counter-reset:steps;margin-bottom:.85rem}
+.tech-steps li{counter-increment:steps;font-size:13px;color:rgba(255,255,255,.7);padding:.3rem 0 .3rem 1.6rem;position:relative;border-bottom:1px solid rgba(255,255,255,.04);line-height:1.55}
+.tech-steps li:last-child{border-bottom:none}
+.tech-steps li::before{content:counter(steps);position:absolute;left:0;top:.32rem;font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;color:var(--brass);width:1.2rem;text-align:center}
+.tech-tips{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.6rem .85rem;font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.55;margin-bottom:.8rem}
+.tech-tips strong{color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+.tech-products{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.04em;color:var(--dim);margin-top:auto;padding-top:.6rem;border-top:1px solid var(--border2);margin-bottom:.6rem}
+.tech-products strong{color:rgba(255,255,255,.45)}
+.tech-video{display:inline-flex;align-items:center;gap:.4rem;font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);text-decoration:none;border:1px solid rgba(201,168,76,.3);padding:.3rem .85rem;border-radius:2px;transition:all .15s;margin-top:.25rem}
+.tech-video:hover{background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.55)}
+
+footer{background:rgba(0,0,0,.4);border-top:1px solid var(--border);padding:2rem;text-align:center;margin-top:3rem}
+footer p{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;color:var(--dim)}
+footer a{color:rgba(255,255,255,.3);text-decoration:none;margin:0 .35rem;transition:color .15s}
+footer a:hover{color:var(--brass)}
 </style>
 </head>
 <body>
-<nav class="site-nav">
-  <a href="index.html" class="site-nav-logo">
-    <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#003087"/><circle cx="14" cy="14" r="9.5" fill="#FFD700"/><circle cx="14" cy="14" r="5.5" fill="#CF142B"/><circle cx="14" cy="14" r="2" fill="#fff"/></svg>
-    <span class="site-nav-logo-text">WW2 <span>Modeller</span></span>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 30 30"><circle cx="15" cy="15" r="15" fill="#003087"/><circle cx="15" cy="15" r="10" fill="#FFD700"/><circle cx="15" cy="15" r="6" fill="#CF142B"/><circle cx="15" cy="15" r="2.2" fill="#fff"/></svg>
+    <span class="nav-logo-text">WW2 <span>Modeller</span></span>
   </a>
-  <div class="site-nav-links">
+  <div class="nav-links">
     <div class="ac-drop" id="acDrop">
       <button type="button" class="ac-drop-btn" onclick="event.stopPropagation();document.getElementById('acDrop').classList.toggle('open')">Aircraft <span class="ac-drop-caret">▼</span></button>
       <div class="ac-drop-menu">
@@ -227,25 +149,35 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--ink);color:var(
         <a href="fw190_paradise.html" class="ac-drop-item">Focke-Wulf Fw 190 <span class="ac-drop-badge soon">Hub</span></a>
       </div>
     </div>
-    <a href="techniques-bank.html" class="site-nav-link active" aria-current="page">Techniques</a>
-    <a href="articles.html" class="site-nav-link">Articles</a>
+    <a href="techniques-bank.html" class="nav-link active">Techniques</a>
+    <a href="articles.html" class="nav-link">Articles</a>
   </div>
-  <a href="hurricane_paradise.html" class="site-nav-cta">Hurricane →</a>
 </nav>
 
-
-
-
-<div class="page-hd">
-  <div class="page-hd-inner">
-    <div class="breadcrumb"><a href="index.html">Hub</a><span>›</span>Techniques Bank</div>
-    <h1 class="page-h1">Painting & Weathering<br>Techniques Bank</h1>
-    <p class="page-sub">Every major technique for WW2 RAF aircraft — step-by-step, organised by method. From first coat to final varnish.</p>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-scan"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-kicker">Scale Modelling Reference</div>
+      <h1 class="hero-h1">Painting &amp; Weathering<br><em>Techniques Bank.</em></h1>
+      <p class="hero-sub">Every major technique for WW2 RAF aircraft — step-by-step, with difficulty ratings, product recommendations and a verified YouTube tutorial for each method.</p>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-n">13</div><div class="hstat-l">Techniques</div></div>
+        <div class="hstat"><div class="hstat-n">8</div><div class="hstat-l">Categories</div></div>
+        <div class="hstat"><div class="hstat-n">Free</div><div class="hstat-l">Always</div></div>
+      </div>
+    </div>
+    <div class="hero-badge-wrap">
+      <span class="hero-badge free">Free resource</span>
+      <span class="hero-badge updated">Updated 2025</span>
+    </div>
   </div>
-</div>
+</section>
 
+<!-- FILTER ROW -->
 <div class="filter-row">
-  <div class="category-nav" aria-label="Technique categories">
+  <nav class="category-nav" aria-label="Technique categories">
     <button class="cat-tab active" onclick="filterCat('all',this)">All</button>
     <button class="cat-tab" onclick="filterCat('base',this)">Base Coating</button>
     <button class="cat-tab" onclick="filterCat('preshade',this)">Pre-Shading</button>
@@ -255,15 +187,14 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--ink);color:var(
     <button class="cat-tab" onclick="filterCat('pigment',this)">Pigments</button>
     <button class="cat-tab" onclick="filterCat('decal',this)">Decals</button>
     <button class="cat-tab" onclick="filterCat('varnish',this)">Varnish</button>
-  </div>
+  </nav>
   <div class="filter-search">
-    <span class="filter-search-icon">🔍</span>
-    <input type="text" placeholder="Search techniques…" oninput="filterSearch(this.value)">
+    <span class="filter-search-icon">⌕</span>
+    <input type="text" placeholder="Search techniques…" oninput="filterSearch(this.value)" aria-label="Search techniques">
   </div>
 </div>
 
 <div class="main" id="main">
-
 <!-- ══ BASE COATING ══ -->
 <div class="cat-hd" data-cat="base">Base Coating</div>
 <div class="tech-grid" data-cat="base">
@@ -577,79 +508,41 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--ink);color:var(
 </div>
 
 </div><!-- /main -->
+</div>
 
-<footer style="background:rgba(0,0,0,.35);border-top:1px solid var(--border);padding:2rem;text-align:center">
-  <p style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;color:var(--dim)">
-    <a href="index.html" style="color:rgba(255,255,255,.3);text-decoration:none">Hub</a> ·
-    <a href="hurricane_paradise.html" style="color:rgba(255,255,255,.3);text-decoration:none">Hurricane</a> ·
-    <a href="spitfire_paradise.html" style="color:rgba(255,255,255,.3);text-decoration:none">Spitfire</a> ·
-    <a href="articles.html" style="color:rgba(255,255,255,.3);text-decoration:none">Articles</a>
+<footer>
+  <p>
+    <a href="index.html">WW2 Modeller Hub</a> ·
+    <a href="hurricane_paradise.html">Hurricane</a> ·
+    <a href="spitfire_paradise.html">Spitfire</a> ·
+    <a href="techniques-bank.html">Techniques</a> ·
+    <a href="articles.html">Articles</a> ·
+    <a href="privacy.html">Privacy</a> ·
+    <a href="about.html">About</a>
   </p>
 </footer>
 
 <script>
-function filterCat(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  document.querySelectorAll('.cat-hd, .tech-grid').forEach(el => {
-    if (cat === 'all') {
-      el.style.display = '';
-    } else {
-      el.style.display = (el.dataset.cat === cat) ? '' : 'none';
-    }
+function filterCat(cat, btn){
+  document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.cat-hd, .tech-grid').forEach(el=>{
+    el.style.display=(cat==='all'||el.dataset.cat===cat)?'':'none';
   });
+  document.querySelector('.filter-search input').value='';
+  document.querySelectorAll('.tech-card').forEach(c=>c.style.display='');
 }
-
-function filterSearch(q) {
-  const ql = q.toLowerCase().trim();
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
-  document.querySelectorAll('.tech-card').forEach(card => {
-    const text = (card.dataset.title + ' ' + card.textContent).toLowerCase();
-    card.style.display = (!ql || text.includes(ql)) ? '' : 'none';
+function filterSearch(q){
+  var ql=q.toLowerCase().trim();
+  document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.cat-hd, .tech-grid').forEach(el=>el.style.display='');
+  document.querySelectorAll('.tech-card').forEach(card=>{
+    var text=(card.dataset.title+' '+card.textContent).toLowerCase();
+    card.style.display=(!ql||text.indexOf(ql)>-1)?'':'none';
   });
-  // Show all category headers when searching
-  document.querySelectorAll('.cat-hd, .tech-grid').forEach(el => el.style.display = '');
-  if (!ql) document.querySelector('.filter-btn').classList.add('on');
+  if(!ql) document.querySelectorAll('.cat-tab')[0].classList.add('active');
 }
+document.addEventListener('click',function(e){var d=document.getElementById('acDrop');if(d&&!d.contains(e.target))d.classList.remove('open')});
 </script>
-
-<script>
-function setActiveTab(btn){
-  document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
-  if(btn) btn.classList.add('active');
-}
-const _origFilterCat = window.filterCat;
-window.filterCat = function(cat, btn){
-  const cards = document.querySelectorAll('.tech-card');
-  const grids = document.querySelectorAll('.tech-grid');
-  const heads = document.querySelectorAll('.cat-hd');
-
-  if(btn) setActiveTab(btn);
-
-  if(cat === 'all'){
-    cards.forEach(c => c.style.display = '');
-    grids.forEach(g => g.style.display = '');
-    heads.forEach(h => h.style.display = '');
-    return;
-  }
-
-  cards.forEach(c => {
-    c.style.display = c.dataset.cat === cat ? '' : 'none';
-  });
-
-  grids.forEach(g => {
-    const visible = Array.from(g.querySelectorAll('.tech-card')).some(c => c.style.display !== 'none');
-    g.style.display = visible ? '' : 'none';
-  });
-
-  heads.forEach(h => {
-    h.style.display = h.dataset.cat === cat ? '' : 'none';
-  });
-};
-</script>
-
-
-<script>document.addEventListener('click',function(e){var d=document.getElementById('acDrop');if(d&&!d.contains(e.target))d.classList.remove('open')});</script>
-
 </body>
 </html>
