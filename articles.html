@@ -61,7 +61,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--ink);color:rgba
 
 
 /* ── BACKGROUND ── */
-body{background:linear-gradient(180deg,#030812,#071428 30%,#0a1628 100%)}
+body{background:#0a1628}
 
 /* ── PAGE HERO ── */
 .page-hero{position:relative;padding:4rem 2rem 3.5rem;overflow:hidden;border-bottom:1px solid var(--border)}
@@ -78,7 +78,8 @@ body{background:linear-gradient(180deg,#030812,#071428 30%,#0a1628 100%)}
 .page-hero-sub{font-size:1.05rem;color:rgba(255,255,255,.65);max-width:600px;line-height:1.65;margin-bottom:2rem;font-style:italic}
 
 /* ── FILTER STRIP ── */
-.filter-strip{background:rgba(10,22,40,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:.65rem 2rem;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;position:sticky;top:62px;z-index:100}
+.filter-strip{background:rgba(10,22,40,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0;display:flex;justify-content:center;flex-wrap:wrap;position:sticky;top:62px;z-index:100}
+.filter-strip-inner{max-width:1200px;width:100%;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;padding:.65rem 2rem}
 .fb{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:.42rem .9rem;border:1px solid var(--border);background:transparent;color:var(--dim);border-radius:2px;cursor:pointer;transition:all .15s;white-space:nowrap}
 .fb:hover{border-color:rgba(201,168,76,.35);color:var(--brass)}
 .fb.on{background:var(--brass);color:var(--ink);border-color:var(--brass);font-weight:700}
@@ -170,12 +171,14 @@ footer a:hover{color:var(--brass)}
 
 <!-- FILTER STRIP -->
 <div class="filter-strip">
+  <div class="filter-strip-inner">
   <button class="fb on" onclick="filterArticles('all',this)">All</button>
   <button class="fb" onclick="filterArticles('build',this)">Build guides</button>
   <button class="fb" onclick="filterArticles('history',this)">History</button>
   <button class="fb" onclick="filterArticles('reference',this)">Reference</button>
   <button class="fb" onclick="filterArticles('hurricane',this)">Hurricane</button>
   <button class="fb" onclick="filterArticles('spitfire',this)">Spitfire</button>
+  </div>
 </div>
 
 <div class="main">
