@@ -5,20 +5,26 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="shortcut icon" href="favicon.svg">
   <!-- SEO -->
-  <title>WW2 Aircraft Scale Modelling Guides & Articles — Kits, Paint, Weathering</title>
-  <meta name="description" content="Practical scale modelling guides for WW2 aircraft. Kit comparisons, paint colour codes, weathering tutorials and historical references for Hurricane, Spitfire and more.">
+  <title>WW2 Aircraft Modelling Articles — Kit Guides, Paint Recipes, Weathering Tutorials</title>
+<meta property="og:title" content="WW2 Aircraft Modelling Articles — Kit Guides, Paint Recipes, Weathering Tutorials">
+<meta property="og:description" content="Practical scale modelling guides for WW2 aircraft: kit comparisons, paint recipes, weathering tutorials and historical deep-dives for Hurricane, Spitfire and more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ww2modeller.co.uk/articles.html">
+<meta property="og:site_name" content="WW2 Modeller Hub">
+<link rel="alternate" hreflang="en-GB" href="https://www.ww2modeller.co.uk/articles.html">
+<link rel="alternate" hreflang="x-default" href="https://www.ww2modeller.co.uk/articles.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="WW2 Modeller Hub">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WW2 Aircraft Modelling Articles — Kit Guides, Paint Recipes, Weathering Tutorials">
+<meta name="twitter:description" content="Practical scale modelling guides for WW2 aircraft: kit comparisons, paint recipes, weathering tutorials and historical deep-dives for Hurricane, Spitfire and more.">
+<meta name="keywords" content="WW2 aircraft modelling guides, Hurricane kit review, Spitfire paint guide, BoB weathering tutorial, aircraft modelling articles">
+  <meta name="description" content="Practical scale modelling guides for WW2 aircraft: kit comparisons, paint recipes, weathering tutorials and historical deep-dives for Hurricane, Spitfire and more.">
   <link rel="canonical" href="https://www.ww2modeller.co.uk/articles.html">
   <!-- Open Graph -->
-  <meta property="og:title" content="WW2 Aircraft Scale Modelling Guides & Articles — Kits, Paint, Weathering">
-  <meta property="og:description" content="Practical scale modelling guides for WW2 aircraft. Kit comparisons, paint colour codes, weathering tutorials and historical references for Hurricane, Spitfire and more.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.ww2modeller.co.uk/articles.html">
-  <meta property="og:site_name" content="WW2 Modeller Hub">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="WW2 Aircraft Scale Modelling Guides & Articles — Kits, Paint, Weathering">
-  <meta name="twitter:description" content="Practical scale modelling guides for WW2 aircraft. Kit comparisons, paint colour codes, weathering tutorials and historical references for Hurricane, Spitfire and more.">
-  <!-- Schema.org -->
+            <!-- Twitter Card -->
+        <!-- Schema.org -->
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"WW2 Modeller Hub","url":"https://www.ww2modeller.co.uk","description":"Practical scale modelling guides for WW2 aircraft. Kit comparisons, paint colour codes, weathering tutorials and historical references for Hurricane, Spitfire and more.","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.ww2modeller.co.uk/articles.html"},"query-input":"required name=search_term_string"}}
 </script>
@@ -69,20 +75,61 @@ footer{background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.06);padd
 footer a{color:rgba(255,255,255,.35);text-decoration:none}
 
 /* ── UNIVERSAL NAV ── */
-.site-nav{position:sticky;top:0;z-index:200;background:rgba(7,16,31,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px<nav class="site-nav">
+.site-nav{position:sticky;top:0;z-index:200;background:rgba(7,16,31,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.09);padding:0 2rem;height:58px;display:flex;align-items:center;gap:1.5rem;}
+.site-nav-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;flex-shrink:0;}
+.site-nav-logo svg{width:26px;height:26px;}
+.site-nav-logo-text{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;}
+.site-nav-logo-text span{color:var(--brass);}
+.site-nav-links{display:flex;align-items:center;gap:.15rem;flex:1;}
+.site-nav-link{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;padding:.35rem .75rem;border-radius:3px;transition:color .15s,background .15s;white-space:nowrap;}
+.site-nav-link:hover{color:#e8c76a;background:rgba(255,255,255,.04);}
+.site-nav-link.active,.site-nav-link[aria-current="page"]{color:#c9a84c !important;background:rgba(201,168,76,.08);font-weight:600;}
+.site-nav-cta{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#07101f;background:#c9a84c;text-decoration:none;padding:.42rem 1.1rem;border-radius:3px;transition:background .15s;flex-shrink:0;white-space:nowrap;}
+.site-nav-cta:hover{background:#e8c76a;}
+@media(max-width:700px){.site-nav-links{gap:0;}.site-nav-link{padding:.35rem .5rem;font-size:10px;}.site-nav-cta{display:none;}}
+@media(max-width:480px){.site-nav-link{display:none;}.site-nav-link.keep{display:block;}}
+
+
+/* Aircraft dropdown — universal across pages */
+.ac-drop{position:relative;display:inline-block}
+.ac-drop-btn{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);background:none;border:none;cursor:pointer;padding:.45rem .9rem;border-radius:3px;display:inline-flex;align-items:center;gap:.3rem;transition:color .15s,background .15s}
+.ac-drop-btn:hover,.ac-drop.open .ac-drop-btn{color:#e8c76a;background:rgba(255,255,255,.04)}
+.ac-drop-caret{font-size:8px;transition:transform .15s;display:inline-block}
+.ac-drop.open .ac-drop-caret{transform:rotate(180deg)}
+.ac-drop-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:240px;background:rgba(10,22,40,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,.18);border-radius:4px;box-shadow:0 12px 40px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(-4px);transition:all .15s;overflow:hidden;z-index:300}
+.ac-drop.open .ac-drop-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.ac-drop-item{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.65rem 1rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05);transition:all .12s}
+.ac-drop-item:last-child{border-bottom:none}
+.ac-drop-item:hover{background:rgba(201,168,76,.08);color:#e8c76a}
+.ac-drop-badge{font-size:8px;font-weight:700;padding:1px 6px;border-radius:2px;letter-spacing:.1em}
+.ac-drop-badge.live{background:rgba(42,92,48,.35);color:#9dc89f;border:1px solid rgba(42,92,48,.5)}
+.ac-drop-badge.soon{background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1)}
+
+</style>
+</head>
+<body>
+<nav class="site-nav">
   <a href="index.html" class="site-nav-logo">
     <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#003087"/><circle cx="14" cy="14" r="9.5" fill="#FFD700"/><circle cx="14" cy="14" r="5.5" fill="#CF142B"/><circle cx="14" cy="14" r="2" fill="#fff"/></svg>
     <span class="site-nav-logo-text">WW2 <span>Modeller</span></span>
   </a>
   <div class="site-nav-links">
-    <a href="hurricane_paradise.html" class="site-nav-link">Hurricane</a>
-    <a href="spitfire_paradise.html" class="site-nav-link">Spitfire</a>
+    <div class="ac-drop" id="acDrop">
+      <button type="button" class="ac-drop-btn" onclick="event.stopPropagation();document.getElementById('acDrop').classList.toggle('open')">Aircraft <span class="ac-drop-caret">▼</span></button>
+      <div class="ac-drop-menu">
+        <a href="hurricane_paradise.html" class="ac-drop-item">Hawker Hurricane <span class="ac-drop-badge live">Live</span></a>
+        <a href="spitfire_paradise.html" class="ac-drop-item">Supermarine Spitfire <span class="ac-drop-badge live">Live</span></a>
+        <a href="lancaster_paradise.html" class="ac-drop-item">Avro Lancaster <span class="ac-drop-badge soon">Hub</span></a>
+        <a href="mosquito_paradise.html" class="ac-drop-item">DH Mosquito <span class="ac-drop-badge soon">Hub</span></a>
+        <a href="bf109_paradise.html" class="ac-drop-item">Messerschmitt Bf 109 <span class="ac-drop-badge soon">Hub</span></a>
+        <a href="fw190_paradise.html" class="ac-drop-item">Focke-Wulf Fw 190 <span class="ac-drop-badge soon">Hub</span></a>
+      </div>
+    </div>
     <a href="techniques-bank.html" class="site-nav-link">Techniques</a>
-    <a href="articles.html" class="site-nav-link active">Articles</a>
+    <a href="articles.html" class="site-nav-link active" aria-current="page">Articles</a>
   </div>
-  <a href="hurricane_paradise.html" class="site-nav-cta">All Aircraft →</a>
+  <a href="hurricane_paradise.html" class="site-nav-cta">Hurricane →</a>
 </nav>
-
 <main>
   <div class="page-eyebrow">Guides · Tutorials · History</div>
   <h1>Articles</h1>
@@ -310,5 +357,8 @@ function filterArticles(cat, btn) {
   if (fc && fc.style.display !== 'none') fc.style.gridColumn = '1/-1';
 }
 </script>
+
+<script>document.addEventListener('click',function(e){var d=document.getElementById('acDrop');if(d&&!d.contains(e.target))d.classList.remove('open')});</script>
+
 </body>
 </html>
