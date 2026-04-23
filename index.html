@@ -18,7 +18,7 @@
 <meta name="twitter:description" content="Free WW2 aircraft modelling hub: squadron histories, paint codes for Humbrol/Tamiya/Vallejo/AK, kit reviews, weathering by airfield, pilot stories and survivors for Hurricane, Spitfire, Lancaster, Mosquito, Bf 109 and Fw 190.">
 <meta name="keywords" content="WW2 scale modelling, Battle of Britain kits, Spitfire model paint codes, Hurricane aircraft reference, RAF squadron markings, aircraft scale model weathering, Airfix Tamiya Eduard kits">
 <link rel="icon" type="image/svg+xml" href="../../assets/roundel.svg">
-<meta name="description" content="Free WW2 aircraft modelling hub: squadron histories, paint codes for Humbrol/Tamiya/Vallejo/AK, kit reviews, weathering by airfield, pilot stories and survivors for Hurricane, Spitfire, Lancaster, Mosquito, Bf 109 and Fw 190."><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free WW2 aircraft modelling hub: squadron histories, paint codes for Humbrol/Tamiya/Vallejo/AK, kit reviews, weathering by airfield, pilot stories and survivors for Hurricane, Spitfire, Lancaster, Mosquito, Bf 109 and Fw 190.">\n<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -56,7 +56,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--deep);color:var
 .nav-cta:hover{background:var(--brass2);box-shadow:0 4px 18px rgba(232,199,106,.35)}
 
 /* ===== HERO — cinematic sky ===== */
-.hero{position:relative;min-height:72vh;overflow:hidden;background:linear-gradient(180deg,#020510 0%,#071428 25%,#0a1828 55%,#0c1d33 100%)}
+.hero{position:relative;min-height:60vh;overflow:hidden;background:linear-gradient(180deg,#020510 0%,#071428 25%,#0a1828 55%,#0c1d33 100%)}
 /* animated star layer */
 .stars{position:absolute;inset:0;background-image:
   radial-gradient(1px 1px at 10% 12%,rgba(255,255,255,.5),transparent 50%),
@@ -317,8 +317,9 @@ footer .copy{font-family:'Source Serif 4',serif;font-size:12px;color:var(--dim);
 
 /* Responsive */
 @media(max-width:1040px){
-  .hero-inner{grid-template-columns:1fr;gap:2rem}
-  .radar-wrap{min-height:340px;max-width:420px;margin:0 auto}
+  .hero-inner{grid-template-columns:1fr;gap:1.5rem}
+  .hero{min-height:auto}
+  .radar-wrap{min-height:240px;max-width:340px;margin:0 auto}
   .featured{grid-template-columns:1fr}
   .articles{grid-template-columns:1fr 1fr}
   .art-feature{grid-row:unset}
@@ -329,7 +330,10 @@ footer .copy{font-family:'Source Serif 4',serif;font-size:12px;color:var(--dim);
 @media(max-width:700px){
   .nav{padding:0 1rem}
   .nav-links{display:none}
-  .hero-inner{padding:2.5rem 1.25rem 3rem}
+  .hero-inner{padding:2rem 1.25rem 2rem}
+  .radar-wrap{display:none}
+  .hero{min-height:auto}
+  .ticker{display:none}
   .feat-stats{grid-template-columns:repeat(2,1fr);gap:.5rem 0;margin:1rem 1.25rem}
   .fstat:nth-child(2){border-right:none}
   .rail-scroll{grid-template-columns:1fr 1fr}
