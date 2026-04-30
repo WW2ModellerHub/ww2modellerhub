@@ -1,11 +1,9 @@
 User-agent: *
 Allow: /
 
-# Google AdSense crawler
 User-agent: Mediapartners-Google
 Allow: /
 
-# Block AI training scrapers that don't contribute anything back
 User-agent: GPTBot
 Disallow: /
 
