@@ -1161,7 +1161,7 @@ body{
       </div>
 
       <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
-        <a href="https://collections.rafmuseum.org.uk/objects/search#/search?q=hurricane+undercarriage" target="_blank" rel="noopener" style="display:block;background:#0a1628;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative">
+        <a href="https://www.rafmuseum.org.uk/research/collections/" target="_blank" rel="noopener" style="display:block;background:#0a1628;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative">
           <div style="text-align:center;padding:1rem">
             <div style="font-size:2.5rem;opacity:.3;margin-bottom:.5rem">✈</div>
             <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(100,160,255,.7)">RAF Museum</div>
@@ -1188,7 +1188,7 @@ body{
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
 
       <div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
-        <a href="https://www.iwm.org.uk/collections/search?query=hurricane+battle+of+britain+markings&filters=category%3APhotograph" target="_blank" rel="noopener" style="display:block;background:#0a1628;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative">
+        <a href="https://www.iwm.org.uk/collections" target="_blank" rel="noopener" style="display:block;background:#0a1628;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative">
           <div style="text-align:center;padding:1rem">
             <div style="font-size:2.5rem;opacity:.3;margin-bottom:.5rem">🎯</div>
             <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(201,168,76,.7)">IWM Collection</div>
@@ -1693,7 +1693,7 @@ const KITS = [
    accuracy:"Recently retooled — much improved over older Airfix releases. Good panel lines, accurate shape. Best budget 1:72 option.",
    markings:["1 Sqn","32 Sqn","242 Sqn","303 Sqn"],
    shops:[
-     {label:"Hannants",url:"https://www.hannants.co.uk/product/A02067A"},
+     {label:"Hannants",url:"https://www.hannants.co.uk/product/AX02067A"},
      {label:"Airfix direct",url:"https://uk.airfix.com/products/hawker-hurricane-mki-a01010b"},
    ]},
   {brand:"Tamiya",name:"Hawker Hurricane Mk.I",scale:"1:48",stars:5,
@@ -1714,13 +1714,13 @@ const KITS = [
    accuracy:"Stunning new-tool 1:72. Photo-etch, metal landing gear, exhausts, canopy masks included. Best 1:72 Hurricane ever produced — the goldmine of Hurricane kits.",
    markings:["Various BoB"],
    shops:[
-     {label:"Hannants",url:"https://www.hannants.co.uk/product/ARM70027"},
+     {label:"Hannants",url:null},
    ]},
   {brand:"Hasegawa",name:"Hawker Hurricane Mk.I",scale:"1:32",stars:3,
    accuracy:"Older tool but accurate shape. Dated surface detail. Excellent canvas for superdetailing at large scale — resin cockpit sets widely available. Niche but high-value purchase.",
    markings:["32 Sqn","242 Sqn"],
    shops:[
-     {label:"Hannants",url:"https://www.hannants.co.uk/product/HST08073"},
+     {label:"Hannants",url:null},
    ]},
   {brand:"Revell",name:"Hawker Hurricane Mk.IIb",scale:"1:32",stars:3,
    accuracy:"Mk.II not Mk.I — different cowling and wings. Cheaper entry to 1:32 than Hasegawa. Good for Mk.II/IV subjects but not accurate for BoB.",
@@ -2208,7 +2208,7 @@ function showDetail(num) {
             <div class="photo-loading">Loading…</div>
           </div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:.5rem">
-            <a href="https://www.iwm.org.uk/collections/search?query=No+${sq.num}+Squadron+Hurricane+1940&filters=category%3APhotograph" target="_blank" rel="noopener"
+            <a href="https://www.iwm.org.uk/collections" target="_blank" rel="noopener"
                style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass);text-decoration:none;padding:3px 8px;border:1px solid rgba(184,144,42,.3);border-radius:2px">IWM Archive ↗</a>
             <a href="https://commons.wikimedia.org/w/index.php?search=No+${sq.num}+Squadron+RAF+Hurricane&ns6=1" target="_blank" rel="noopener"
                style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--raf-sky);text-decoration:none;padding:3px 8px;border:1px solid rgba(74,127,165,.3);border-radius:2px">Wikimedia ↗</a>
@@ -2266,7 +2266,7 @@ function showDetail(num) {
       <!-- EXTERNAL LINKS -->
       <div class="sec-label">More reference</div>
       <div style="display:flex;flex-wrap:wrap;gap:5px">
-        <a class="shop-btn hb-raf" href="https://www.iwm.org.uk/collections/search?query=${sq.num}+Squadron+Hurricane+1940" target="_blank">IWM Photo Archive ↗</a>
+        <a class="shop-btn hb-raf" href="https://www.iwm.org.uk/collections" target="_blank">IWM Photo Archive ↗</a>
         <a class="shop-btn hb-gold" href="https://www.hannants.co.uk/search/index.php?keyword_search=${sq.num}+squadron+hurricane&product_type_id=all_decals" target="_blank">Hannants Decals ↗</a>
         <a class="shop-btn hb-gold" href="articles.html" target="_blank">Build Guides & Articles ↗</a>
         <button class="shop-btn hb-ghost" onclick="closeDetail()">Close ✕</button>
@@ -2408,7 +2408,7 @@ async function fetchPhotos(sqNum, codes) {
   // Final fallback — just show archive links
   grid.innerHTML = `<div style="grid-column:1/-1;padding:.75rem;font-size:12px;color:rgba(255,255,255,.4)">
     No photos found automatically — 
-    <a href="https://www.iwm.org.uk/collections/search?query=Hurricane+${sqNum}+Squadron+1940&filters=category%3APhotograph" target="_blank" style="color:var(--brass)">browse IWM archive ↗</a>
+    <a href="https://www.iwm.org.uk/collections" target="_blank" style="color:var(--brass)">browse IWM archive ↗</a>
   </div>`;
 }
 
@@ -2462,7 +2462,7 @@ function openPM(name) {
   // Links row — useful external sources
   const pilotLink = document.getElementById('pm-h-pilot');
   const sqnLink   = document.getElementById('pm-h-sqn');
-  pilotLink.href  = `https://www.iwm.org.uk/collections/search?query=${encodeURIComponent(nameParts)}&filters=category%3APeople`;
+  pilotLink.href  = `https://www.iwm.org.uk/collections`;
   pilotLink.textContent = `IWM: ${surname} archive ↗`;
   if(sqnFP){
     sqnLink.href = `https://www.hannants.co.uk/search/index.php?keyword_search=${sqnFP.num}+squadron+hurricane&product_type_id=all_decals`;
@@ -3262,8 +3262,8 @@ const AFTERMARKET = {
 // ═══════════════════════════════════════════════════════
 const SURVIVORS = [
   {serial:"R4118",reg:"G-HUPW",status:"fly",location:"Old Flying Machine Company, Duxford, UK",markings:"UP-W / 605 Sqn markings",history:"The only confirmed Battle of Britain veteran still flying. Shot down 28 Oct 1940, rebuilt. Found in Indian storage 2001 — returned to airworthiness 2004 after 62 years. The most historically significant airworthy Hurricane in existence.",note:"Photograph every angle — this IS the aircraft. The surface wear, fabric texture, and rivet detail are authentic.",link:"https://www.oldflyingmachinecompany.com"},
-  {serial:"LF363",reg:"RAF ZA-P",status:"fly",location:"BBMF RAF Coningsby, Lincolnshire",markings:"Varies annually — often GN-F (249 Sqn Tom Neil) or JX-B",history:"Last Hurricane delivered to the RAF (January 1944). Has flown continuously with the BBMF since 1957 — the longest-serving airworthy Hurricane. Painted in different squadron markings each display season.",note:"BBMF announce annual markings each spring. Check raf.mod.uk for current season coding. Often sees GN-F honouring Tom Neil.",link:"https://www.raf.mod.uk/our-organisation/units/royal-air-force-battle-of-britain-memorial-flight/"},
-  {serial:"PZ865",reg:"G-AMAU",status:"fly",location:"BBMF RAF Coningsby, Lincolnshire",markings:"Varies — often SE Asia/tropical markings",history:"The last Hurricane built (July 1944). Originally civil-registered post-war as 'The Last of the Many'. Donated to RAF 1972. Flies in various schemes including tropical colours distinct from BoB markings.",note:"Mk.IIc with four-cannon wings — different cowling and wing profile from BoB Mk.I. Note the differences carefully.",link:"https://www.raf.mod.uk/our-organisation/units/royal-air-force-battle-of-britain-memorial-flight/"},
+  {serial:"LF363",reg:"RAF ZA-P",status:"fly",location:"BBMF RAF Coningsby, Lincolnshire",markings:"Varies annually — often GN-F (249 Sqn Tom Neil) or JX-B",history:"Last Hurricane delivered to the RAF (January 1944). Has flown continuously with the BBMF since 1957 — the longest-serving airworthy Hurricane. Painted in different squadron markings each display season.",note:"BBMF announce annual markings each spring. Check raf.mod.uk for current season coding. Often sees GN-F honouring Tom Neil.",link:"https://www.raf.mod.uk/display-teams/battle-of-britain-memorial-flight/"},
+  {serial:"PZ865",reg:"G-AMAU",status:"fly",location:"BBMF RAF Coningsby, Lincolnshire",markings:"Varies — often SE Asia/tropical markings",history:"The last Hurricane built (July 1944). Originally civil-registered post-war as 'The Last of the Many'. Donated to RAF 1972. Flies in various schemes including tropical colours distinct from BoB markings.",note:"Mk.IIc with four-cannon wings — different cowling and wing profile from BoB Mk.I. Note the differences carefully.",link:"https://www.raf.mod.uk/display-teams/battle-of-britain-memorial-flight/"},
   {serial:"AE977",reg:"G-TWTD",status:"fly",location:"Biggin Hill Heritage Hangar, Kent",markings:"P3886 / No. 32 Squadron GZ codes",history:"Sea Hurricane Mk.X (Canadian-built). Currently painted to represent a 32 Squadron Battle of Britain Mk.I at historic Biggin Hill — direct relevance to Crossley/Brothers research.",note:"Based at the actual Battle of Britain aerodrome. 32 Squadron flew from here throughout the battle. Excellent location context.",link:"https://www.bigginhillheritagehangar.com"},
   {serial:"P2902",reg:"G-ROBT",status:"fly",location:"Hawker Restorations, Sudbury, Suffolk",markings:"DX-R / 245 Sqn",history:"Early production Mk.I — crashed 31 May 1940 during the Battle of France. Recovered wreck restored to airworthiness, returning to flight June 2017. One of the earliest production Mk.Is flying.",note:"Fabric-covered wings on this early example — essential reference for the exact surface texture of BoB-period aircraft.",link:"https://www.hawkerrestorations.co.uk"},
   {serial:"V7497",reg:"G-HRLI",status:"restore",location:"Hawker Restorations, Sudbury, Suffolk",markings:"X-SD / 501 Squadron",history:"Battle of Britain veteran. Shot down 28 Sep 1940 by a Bf 109 over Sussex — pilot Plt Off Everett Rogers baled out safely. Wreck recovered from crash site. Under active restoration to airworthy condition.",note:"When complete, this will be only the second confirmed BoB combat veteran flying alongside R4118.",link:"https://www.hawkerrestorations.co.uk"},
@@ -3492,7 +3492,7 @@ function renderStepByStep() {
       </div>
       <div style="padding:.9rem 1rem">
         <div style="font-size:16px;color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:.75rem;font-family:'Source Serif 4',Georgia,serif">${s.text}</div>
-        ${s.products.length ? `<div style="display:flex;flex-wrap:wrap;gap:6px">${s.products.map(p=>`<a href="${p.url}" target="_blank" rel="noopener" class="shop-btn hb-outline" style="font-size:12px">${p.name} ↗</a>`).join('')}</div>` : ''}
+        ${s.products.length ? `<div style="display:flex;flex-wrap:wrap;gap:6px">${s.products.filter(p=>p.url).map(p=>`<a href="${p.url}" target="_blank" rel="noopener" class="shop-btn hb-outline" style="font-size:12px">${p.name} ↗</a>`).join('')}</div>` : ''}
       </div>
     </div>`).join('');
 }
@@ -3550,10 +3550,10 @@ const MEDIA_ITEMS = [
    url:"https://www.youtube.com/watch?v=afZwPxtY2iw",thumb:"🔊"},
   {type:"archive",title:"IWM — Battle of Britain pilot sound archive",
    desc:"First-hand pilot accounts recorded by the Imperial War Museum. Includes interviews with survivors of all 22 Hurricane squadrons — searchable by name and unit.",
-   url:"https://www.iwm.org.uk/collections/search?query=hurricane+pilot+battle+of+britain&filters=category%3ASound",thumb:"📼"},
+   url:"https://www.iwm.org.uk/collections",thumb:"📼"},
   {type:"archive",title:"IWM Film — Battle of Britain footage",
    desc:"Original period film including Hurricane operations and airfield scenes. Invaluable for weathering, equipment, groundcrew uniform and airfield surface reference.",
-   url:"https://www.iwm.org.uk/collections/search?query=hurricane+battle+of+britain&filters=category%3AFilm",thumb:"📼"},
+   url:"https://www.iwm.org.uk/collections",thumb:"📼"},
   {type:"archive",title:"R4118 — Hurricane Heritage official site",
    desc:"Full history, photographs and restoration notes for R4118, the only surviving BoB Hurricane. 49 combat sorties, five kills, shot down once. The most historically significant Hurricane for modellers.",
    url:"https://www.hurricaneheritage.com/the-aircraft/hurricane-r4118/",thumb:"📁"},
