@@ -906,7 +906,7 @@ body{
     <div style="margin-bottom:1.5rem">
       <div class="section-label" style="margin-bottom:.6rem">Choosing your Hurricane kit</div>
       <p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:.8rem">
-        Nine injection-moulded Hurricane kits are currently available across three scales. For a Battle of Britain build in 1:48, the <strong style="color:var(--cream)">Airfix A05127A</strong> is the recommendation for most builders — excellent accuracy, great fit, and outstanding value. If you want the finest Hurricane kit ever made, the <strong style="color:var(--cream)">Arma Hobby AH40015 Expert Set</strong> is extraordinary. In 1:72, the <strong style="color:var(--cream)">Arma Hobby ARM70027</strong> is in a different league. Star ratings below reflect accuracy, cockpit detail, fit quality and value.
+        Nine injection-moulded Hurricane kits are currently available across three scales. For a Battle of Britain build in 1:48, the <strong style="color:var(--cream)">Airfix A05127A</strong> is the recommendation for most builders — excellent accuracy, great fit, and outstanding value. If you want the finest Hurricane kit ever made, the <strong style="color:var(--cream)">Arma Hobby AH40015 Expert Set</strong> is extraordinary. In 1:72, the <strong style="color:var(--cream)">Arma Hobby 70019 / AH70024</strong> is in a different league. Star ratings below reflect accuracy, cockpit detail, fit quality and value.
       </p>
       <a href="article-hurricane-kits-guide.html" style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);text-decoration:none">Full kit buying guide →</a>
     </div>
@@ -917,7 +917,7 @@ body{
     <div style="margin-bottom:1.2rem">
       <div class="section-label" style="margin-bottom:.5rem">Aftermarket for the Hurricane</div>
       <p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px">
-        The Airfix kit cockpit benefits hugely from the <strong style="color:var(--cream)">CMK CMK4352</strong> resin set — it's the single best upgrade for the money. For gun barrels, the <strong style="color:var(--cream)">Master Model AM-48-172</strong> brass set makes an immediate visible difference. Eduard's pre-cut canopy masks save time and improve results over freehand. Photo-etch is optional on the Airfix kit but nearly mandatory on the older Hasegawa and Eduard plastics. All links below go to confirmed, in-stock Hannants product pages.
+        The Airfix kit cockpit benefits hugely from the <strong style="color:var(--cream)">CMK CMK4352</strong> resin set — it's the single best upgrade for the money. For gun barrels, the <strong style="color:var(--cream)">Master Model AM-48-172</strong> brass set makes an immediate visible difference. Eduard's pre-cut canopy masks save time and improve results over freehand. Photo-etch is optional on the Airfix kit but nearly mandatory on the older Hasegawa and Eduard plastics. Links below use confirmed product pages where available, with search/category fallbacks where stock changes.
       </p>
     </div>
     <div id="aftermarket-grid"></div>
@@ -1715,10 +1715,11 @@ const KITS = [
      {label:"Hannants — AX02067A",url:"https://www.hannants.co.uk/product/AX02067A"},
      {label:"Airfix direct — A02067A",url:"https://uk.airfix.com/products/hawker-hurricane-mki-a02067a"},
    ]},
-  {brand:"Arma Hobby",name:"Hurricane Mk.I Expert Set",scale:"1:72",stars:5,
-   accuracy:"Top-tier 1:72 Hurricane Mk.I option with excellent detail. Best small-scale choice where available.",
-   markings:["Various BoB"],
+  {brand:"Arma Hobby",name:"Hurricane Mk.I Expert Set / Allied Squadrons",scale:"1:72",stars:5,
+   accuracy:"Top-tier 1:72 Hurricane Mk.I options. 70019 is the Battle of Britain Expert Set; AH70024 is the Allied Squadrons Mk.I boxing.",
+   markings:["BoB / Allied Squadron subjects"],
    shops:[
+     {label:"Arma Hobby — 70019",url:"https://www.armahobby.com/70019-hurricane-mk-i-expert-set.html"},
      {label:"Hannants — AH70024",url:"https://www.hannants.co.uk/product/AH70024"},
    ]},
   {brand:"Arma Hobby",name:"Hurricane Mk.I Trop",scale:"1:72",stars:4,
@@ -1736,7 +1737,7 @@ const KITS = [
    accuracy:"Mk.IIb, not Mk.I. Useful for later-war subjects, but not accurate for a Battle of Britain Mk.I without conversion work.",
    markings:["Various later-war subjects"],
    shops:[
-     {label:"Hannants — RV04968",url:"https://www.hannants.co.uk/product/RV04968"},
+     {label:"Hannants — RV4968",url:"https://www.hannants.co.uk/product/RV4968"},
    ]},
 ];
 
@@ -1865,7 +1866,7 @@ const TECHNIQUES = [
     links:[
       {label:"YouTube: painting and weathering aircraft code letters",url:"https://www.youtube.com/watch?v=7N9n_6MKPYU"},
       {label:"YouTube: gun port staining WW2 aircraft model",url:"https://www.youtube.com/watch?v=K27dH0d4Bik"},
-      {label:"Barracuda: RAF roundel and insignia guide",url:"https://www.barracudacast.com"}
+      {label:"Barracuda: RAF roundel and insignia guide",url:"https://barracudacals.com"}
      ]
   },
   {
@@ -2272,7 +2273,7 @@ function showDetail(num) {
       <div class="sec-label">More reference</div>
       <div style="display:flex;flex-wrap:wrap;gap:5px">
         <a class="shop-btn hb-raf" href="https://www.iwm.org.uk/collections" target="_blank">IWM Photo Archive ↗</a>
-        <a class="shop-btn hb-gold" href="https://www.hannants.co.uk/search/?keyword_search=${sq.num}+squadron+hurricane" target="_blank">Hannants Decals ↗</a>
+        <a class="shop-btn hb-gold" href="https://www.hannants.co.uk/search/?keyword_search=Hurricane+RAF+decals" target="_blank" rel="noopener">Hannants Decal Search ↗</a>
         <a class="shop-btn hb-gold" href="articles.html" target="_blank">Build Guides & Articles ↗</a>
         <button class="shop-btn hb-ghost" onclick="closeDetail()">Close ✕</button>
       </div>
@@ -3187,15 +3188,12 @@ const AFTERMARKET = {
     {type:"Resin",name:"Hurricane Mk.I Cockpit Set (1:48 Airfix)",maker:"CMK",scales:["1:48"],
      desc:"Full resin cockpit with seat, IP, sidewalls and control column. Visible even through a closed canopy.",
      url:"https://www.hannants.co.uk/product/CMK4352"},
-    {type:"Resin",name:"Hurricane Mk.I Cockpit Set (1:48 Airfix) — Alt",maker:"CMK",scales:["1:48"],
-     desc:"Alternative comprehensive cockpit set. Full resin tub, seat, IP, sidewalls and control column. Drop-fit for Airfix A05127A.",
-     url:"https://www.hannants.co.uk/product/CMK4352"},
     {type:"Resin",name:"Hurricane Mk.I Seat with Sutton Harness (1:48)",maker:"Quickboost/Eduard",scales:["1:48"],
      desc:"Accurate Sutton Q-type harness seat — single most impactful upgrade. Drop-fit for Airfix, Eduard and Tamiya.",
-     url:"https://www.hannants.co.uk/search/?keyword_search=hurricane+seat&product_type_id=2573&scale_id=955"},
+     url:"https://www.hannants.co.uk/search/?keyword_search=Hurricane+seat+1%2F48"},
     {type:"Resin",name:"Hurricane Mk.I Seat with Sutton Harness (1:72)",maker:"Quickboost/Eduard",scales:["1:72"],
      desc:"1:72 Sutton harness seat. Essential for any serious 1:72 build — kit seats are very basic.",
-     url:"https://www.hannants.co.uk/search/?keyword_search=hurricane+seat&product_type_id=2573&scale_id=953"},
+     url:"https://www.hannants.co.uk/search/?keyword_search=Hurricane+seat+1%2F72"},
   ],
   "Exhausts & Engine":[
     {type:"Resin",name:"Hurricane Mk.I Exhausts — Triple Ejector (1:48 Airfix)",maker:"CMK",scales:["1:48"],
@@ -3245,7 +3243,7 @@ const AFTERMARKET = {
   "Conversion Sets":[
     {type:"Conversion",name:"Hurricane Mk.I Fabric Wing (1:48)",maker:"Barracuda Studios",scales:["1:48"],
      desc:"Resin fabric-wing upper and lower surfaces. Authentic woven texture — all BoB Hurricanes had fabric wings.",
-     url:"https://barracudacals.com/collections/1-48-resin-detail-sets/hawker-hurricane"},
+     url:"https://barracudacals.com/search?q=Hurricane"},
     {type:"Conversion",name:"Hurricane Mk.IIc Cannon Wing (1:48)",maker:"CMK",scales:["1:48"],
      desc:"Four 20mm Hispano cannon wing for Mk.IIc builds. Post-BoB variant.",
      url:"https://www.hannants.co.uk/search/?keyword_search=cmk+hurricane+cannon+wing&product_type_id=1812"},
@@ -3258,7 +3256,7 @@ const AFTERMARKET = {
   "Decals":[
     {type:"Decals",name:"Hurricane BoB Xtradecal Sheets (1:48 & 1:72)",maker:"Xtradecal / Hannants",scales:["1:48","1:72"],
      desc:"Far more accurate markings than kit decals with better print quality. Multiple sheets covering all major BoB squadrons.",
-     url:"https://www.hannants.co.uk/search?q=hurricane+1%2F48+xtradecal"},
+     url:"https://www.hannants.co.uk/search/?keyword_search=Hurricane+Xtradecal"},
   ]
 };
 
@@ -3464,13 +3462,13 @@ const PILOT_STORIES = [
 const BUILD_STEPS = [
   {n:1,title:"Research & marking choice",icon:"📋",
    text:"Before opening the box, decide on your subject — which squadron, which pilot, which date. This fixes your roundel type, code colours, camouflage pattern and weathering tone. The Squadrons tab has marking references for all 22 units. For a 1940 subject, you want Type A1 fuselage roundels, Type A upper wings, Type B lower wings, Sky spinner and codes.",
-   products:[{name:"Xtradecal X48147 (1:48 BoB Hurricane)",url:"https://www.hannants.co.uk/product/X48147"},{name:"Barracuda decals Hurricane",url:"https://barracudacals.com/collections/1-48-resin-detail-sets/hawker-hurricane"}]},
+   products:[{name:"Xtradecal X48147 (1:48 BoB Hurricane)",url:"https://www.hannants.co.uk/product/X48147"},{name:"Barracuda decals Hurricane",url:"https://barracudacals.com/search?q=Hurricane"}]},
   {n:2,title:"Cockpit",icon:"🎛️",
    text:"Build and paint the cockpit first — it must be installed before the fuselage halves close. Interior Grey-Green (Humbrol 78 or Tamiya XF-71) for the main tub. The seat cushion is a dark olive-buff. Instruments are best done with a PE set or Barracuda resin replacement. CMK and Aires both offer excellent drop-in cockpit sets for the 1:48 Airfix kit.",
    products:[{name:"CMK Hurricane 1:48 cockpit",url:"https://www.hannants.co.uk/product/CMK4352"},{name:"Aires Hurricane cockpit resin",url:"https://www.hannants.co.uk/search/?keyword_search=aires+hurricane&product_type_id=1819&scale_id=955"}]},
   {n:3,title:"Main construction",icon:"🔧",
    text:"Assemble the fuselage, fit the wings, and deal with any seam lines before paint. The Airfix 1:48 Mk.I has very good fit. Thin superglue works well for seams. The wing-root join benefits from small amounts of filler. Ensure the undercarriage bays are painted Interior Grey-Green before the wings are closed. Mask the canopy early — the Barracuda masks are excellent.",
-   products:[{name:"Barracuda Hurricane canopy masks",url:"https://barracudacals.com/collections/1-48-resin-detail-sets/hawker-hurricane"},{name:"Eduard masks Hurricane",url:"https://www.hannants.co.uk/product/EDEX712"}]},
+   products:[{name:"Barracuda Hurricane canopy masks",url:"https://barracudacals.com/search?q=Hurricane"},{name:"Eduard masks Hurricane",url:"https://www.hannants.co.uk/product/EDEX712"}]},
   {n:4,title:"Primer & base coat",icon:"🎨",
    text:"Prime in grey — Vallejo Surface Primer or Tamiya Fine Surface primer. Then lay down the Sky underside (Humbrol 90 or Tamiya XF-21). Use the camouflage scheme guide in the Paint tab for the upper surface split. The Hard Edge A scheme has a wavy demarcation line that can be done freehand with a fine brush or Blu-Tack as a mask.",
    products:[{name:"Humbrol Dark Earth (Humbrol 29)",url:"https://uk.humbrol.com/products/no-29-dark-earth-matt"},{name:"Humbrol Dark Green (Humbrol 30)",url:"https://uk.humbrol.com/products/no-30-dark-green-matt"},{name:"Humbrol Sky (Humbrol 90)",url:"https://uk.humbrol.com/products/no-90-beige-green-matt"}]},
