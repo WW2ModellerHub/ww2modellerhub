@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WW2 Model Paint Code Converter — Humbrol, Tamiya, Vallejo & AK</title>
+<meta name="description" content="Free WW2 model paint cross-reference tool. Convert between Humbrol, Tamiya Acrylic, Vallejo Model Color and AK Interactive. RAF, RLM and USAAF colours for Hurricane, Spitfire, Bf 109, Lancaster and more.">
+<link rel="canonical" href="https://www.ww2modeller.co.uk/paint-codes.html">
+<meta property="og:title" content="WW2 Model Paint Code Converter — Humbrol, Tamiya, Vallejo & AK">
+<meta property="og:description" content="Free cross-reference tool for WW2 model paint codes. Convert between Humbrol, Tamiya, Vallejo and AK Interactive for RAF, RLM and USAAF colours.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ww2modeller.co.uk/paint-codes.html">
+<meta property="og:image" content="https://www.ww2modeller.co.uk/assets/social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="WW2 Modeller Hub">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WW2 Model Paint Code Converter">
+<meta name="twitter:description" content="Convert between Humbrol, Tamiya, Vallejo and AK Interactive for RAF, RLM and USAAF colours.">
+<meta name="keywords" content="model paint conversion, Humbrol Tamiya equivalent, Vallejo paint codes, RLM paint codes, RAF paint codes, AK Interactive conversion">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#030810;--navy:#0a1628;--mid:#0e1d36;--panel:rgba(14,29,54,.9);
+  --border:rgba(255,255,255,.08);--brass:#c9a84c;--brass2:#e8c76a;
+  --cream:rgba(255,255,255,.88);--muted:rgba(255,255,255,.45);
+  --raf:#4a7a5a;--rlm:#8e6550;--usaaf:#4a6e8a;--generic:#5a5a7a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Source Serif 4',Georgia,serif;
+  background:var(--ink);
+  color:var(--cream);
+  min-height:100vh;
+  font-size:16px;
+  background-image:
+    radial-gradient(ellipse at 20% 0%,rgba(201,168,76,.06) 0%,transparent 50%),
+    radial-gradient(ellipse at 80% 100%,rgba(74,110,138,.06) 0%,transparent 50%);
+}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:200;background:rgba(3,8,16,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem;height:62px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.nav-logo-text{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#fff}
+.nav-logo-text span{color:var(--brass)}
+.nav-links{display:flex;gap:.15rem}
+.nav-link{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:.45rem .8rem;border-radius:2px;transition:color .15s}
+.nav-link:hover,.nav-link.active{color:var(--brass2)}
+.ac-drop{position:relative;display:inline-block}
+.ac-drop-btn{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:none;border:none;cursor:pointer;padding:.45rem .9rem;border-radius:3px;display:inline-flex;align-items:center;gap:.3rem;transition:color .15s}
+.ac-drop-btn:hover,.ac-drop.open .ac-drop-btn{color:var(--brass2)}
+.ac-drop-caret{font-size:8px;transition:transform .15s;display:inline-block}
+.ac-drop.open .ac-drop-caret{transform:rotate(180deg)}
+.ac-drop-menu{display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:240px;background:rgba(10,22,40,.98);border:1px solid rgba(201,168,76,.18);border-radius:4px;box-shadow:0 12px 40px rgba(0,0,0,.6);z-index:300;overflow:hidden}
+.ac-drop.open .ac-drop-menu{display:block}
+.ac-drop-item{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.65rem 1rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05);transition:all .12s}
+.ac-drop-item:last-child{border-bottom:none}
+.ac-drop-item:hover{background:rgba(201,168,76,.08);color:var(--brass2)}
+.ac-drop-badge{font-size:8px;font-weight:700;padding:1px 6px;border-radius:2px;letter-spacing:.1em}
+.ac-drop-badge.live{background:rgba(42,92,48,.35);color:#9dc89f;border:1px solid rgba(42,92,48,.5)}
+.ac-drop-badge.soon{background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1)}
+
+/* ── HERO ── */
+.hero{padding:3.5rem 2rem 2.5rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:
+  repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.018) 39px,rgba(255,255,255,.018) 40px),
+  repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,.018) 39px,rgba(255,255,255,.018) 40px);pointer-events:none}
+.hero-inner{max-width:900px;margin:0 auto;position:relative}
+.hero-eyebrow{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:.8rem}
+.hero-title{font-family:'Special Elite',cursive;font-size:clamp(2rem,5vw,3.8rem);line-height:.95;color:#fff;margin-bottom:1rem}
+.hero-title em{font-style:normal;color:var(--brass2)}
+.hero-sub{color:rgba(255,255,255,.6);font-size:1rem;max-width:640px;line-height:1.7;margin-bottom:1.8rem}
+.brand-pills{display:flex;gap:.6rem;flex-wrap:wrap}
+.brand-pill{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:2px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.55)}
+.brand-pill.h{border-color:rgba(200,60,60,.3);color:#d47070}
+.brand-pill.t{border-color:rgba(60,120,200,.3);color:#7aA0d4}
+.brand-pill.v{border-color:rgba(60,170,100,.3);color:#7ac496}
+.brand-pill.a{border-color:rgba(200,140,60,.3);color:#d4a870}
+
+/* ── SEARCH & FILTERS ── */
+.controls{background:rgba(10,22,40,.7);border-bottom:1px solid var(--border);padding:1.2rem 2rem;position:sticky;top:62px;z-index:100;backdrop-filter:blur(12px)}
+.controls-inner{max-width:1100px;margin:0 auto;display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.search-wrap{position:relative;flex:1;min-width:200px}
+.search-icon{position:absolute;left:.9rem;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;font-size:14px}
+#search{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:3px;padding:.65rem 1rem .65rem 2.4rem;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.06em;color:#fff;outline:none;transition:border-color .2s}
+#search::placeholder{color:var(--muted)}
+#search:focus{border-color:rgba(201,168,76,.4);background:rgba(255,255,255,.07)}
+.filter-group{display:flex;gap:.4rem;flex-wrap:wrap}
+.filter-btn{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:.45rem .9rem;border:1px solid rgba(255,255,255,.1);border-radius:2px;background:none;color:var(--muted);cursor:pointer;transition:all .15s}
+.filter-btn:hover{color:#fff;border-color:rgba(255,255,255,.25)}
+.filter-btn.active{color:#fff;border-color:var(--brass);background:rgba(201,168,76,.1)}
+.filter-btn.raf.active{border-color:var(--raf);background:rgba(74,122,90,.15);color:#9dc8a8}
+.filter-btn.rlm.active{border-color:var(--rlm);background:rgba(142,101,80,.15);color:#d4a888}
+.filter-btn.usaaf.active{border-color:var(--usaaf);background:rgba(74,110,138,.15);color:#88aac8}
+.results-count{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap;margin-left:auto}
+
+/* ── RESULTS GRID ── */
+.results{max-width:1100px;margin:0 auto;padding:1.5rem 2rem 5rem}
+.results-grid{display:grid;gap:.7rem}
+.colour-row{background:var(--panel);border:1px solid var(--border);border-radius:4px;display:grid;grid-template-columns:52px 1fr;overflow:hidden;transition:border-color .15s,box-shadow .15s}
+.colour-row:hover{border-color:rgba(201,168,76,.2);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.swatch{width:52px;flex-shrink:0;min-height:80px}
+.row-body{padding:.85rem 1rem .85rem 1.1rem;display:grid;grid-template-columns:1fr auto;gap:.4rem .8rem;align-items:start}
+.row-top{grid-column:1/-1;display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;margin-bottom:.5rem}
+.colour-name{font-family:'Special Elite',cursive;font-size:1.05rem;color:#fff;line-height:1.2}
+.cat-badge{font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:2px 7px;border-radius:2px;flex-shrink:0}
+.cat-badge.raf{background:rgba(74,122,90,.25);color:#9dc8a8;border:1px solid rgba(74,122,90,.4)}
+.cat-badge.rlm{background:rgba(142,101,80,.2);color:#d4a888;border:1px solid rgba(142,101,80,.35)}
+.cat-badge.usaaf{background:rgba(74,110,138,.2);color:#88aac8;border:1px solid rgba(74,110,138,.35)}
+.cat-badge.interior{background:rgba(90,90,122,.2);color:#aaaacc;border:1px solid rgba(90,90,122,.35)}
+.ref-num{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.1em;color:var(--muted)}
+.brands{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:.4rem}
+.brand-cell{background:rgba(0,0,0,.2);border-radius:2px;padding:.45rem .6rem;display:flex;flex-direction:column;gap:2px}
+.brand-label{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.brand-code{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.04em;color:var(--brass2);line-height:1.2}
+.brand-name{font-size:12px;color:rgba(255,255,255,.5);line-height:1.3}
+.brand-cell.no-eq .brand-code{color:rgba(255,255,255,.2);font-size:11px}
+
+/* empty state */
+.empty{text-align:center;padding:4rem 2rem;color:var(--muted)}
+.empty-icon{font-size:2.5rem;margin-bottom:1rem;opacity:.4}
+.empty p{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.2)}
+footer a{color:rgba(255,255,255,.35);text-decoration:none}
+footer a:hover{color:var(--brass)}
+footer nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:.6rem}
+
+@media(max-width:700px){
+  .nav{padding:0 1rem}.nav-links{display:none}
+  .hero{padding:2rem 1rem 1.5rem}
+  .controls{padding:1rem}
+  .results{padding:1rem 1rem 3rem}
+  .brands{grid-template-columns:1fr 1fr}
+  .colour-row{grid-template-columns:40px 1fr}
+  .swatch{width:40px}
+}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 28 28" width="28" height="28" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><circle cx="14" cy="14" r="14" fill="#003087"/><circle cx="14" cy="14" r="9.5" fill="#FFD700"/><circle cx="14" cy="14" r="5.5" fill="#CF142B"/><circle cx="14" cy="14" r="2" fill="#fff"/></svg>
+    <span class="nav-logo-text" style="margin-left:.5rem">WW2 <span>Modeller</span></span>
+  </a>
+  <div class="nav-links">
+    <div class="ac-drop" id="acDrop">
+      <button type="button" class="ac-drop-btn" onclick="event.stopPropagation();document.getElementById('acDrop').classList.toggle('open')">Aircraft <span class="ac-drop-caret">▼</span></button>
+      <div class="ac-drop-menu">
+        <a href="hurricane_paradise.html" class="ac-drop-item">Hawker Hurricane <span class="ac-drop-badge live">Live</span></a>
+        <a href="spitfire_paradise.html" class="ac-drop-item">Supermarine Spitfire <span class="ac-drop-badge live">Live</span></a>
+        <a href="p51_paradise.html" class="ac-drop-item">North American P-51 <span class="ac-drop-badge soon">Hub</span></a>
+        <a href="lancaster_paradise.html" class="ac-drop-item">Avro Lancaster <span class="ac-drop-badge soon">Hub</span></a>
+        <a href="mosquito_paradise.html" class="ac-drop-item">DH Mosquito <span class="ac-drop-badge soon">Hub</span></a>
+        <a href="bf109_paradise.html" class="ac-drop-item">Messerschmitt Bf 109 <span class="ac-drop-badge soon">Hub</span></a>
+        <a href="fw190_paradise.html" class="ac-drop-item">Focke-Wulf Fw 190 <span class="ac-drop-badge soon">Hub</span></a>
+      </div>
+    </div>
+    <a href="techniques-bank.html" class="nav-link">Techniques</a>
+    <a href="articles.html" class="nav-link">Articles</a>
+    <a href="paint-codes.html" class="nav-link active">Paint Codes</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Reference Tool</div>
+    <h1 class="hero-title">WW2 Paint<br><em>Code Converter</em></h1>
+    <p class="hero-sub">Cross-reference RAF, RLM and USAAF colours across all four major model paint brands. Search by colour name, reference number or paint code. 70+ colours covered.</p>
+    <div class="brand-pills">
+      <span class="brand-pill h">Humbrol</span>
+      <span class="brand-pill t">Tamiya Acrylic</span>
+      <span class="brand-pill v">Vallejo Model Color</span>
+      <span class="brand-pill a">AK Interactive</span>
+    </div>
+  </div>
+</section>
+
+<div class="controls">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="search" placeholder="Search colour name, code or reference…" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="filter-group">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn raf" data-filter="raf">RAF</button>
+      <button class="filter-btn rlm" data-filter="rlm">RLM</button>
+      <button class="filter-btn usaaf" data-filter="usaaf">USAAF</button>
+      <button class="filter-btn" data-filter="interior">Interior</button>
+    </div>
+    <span class="results-count" id="count"></span>
+  </div>
+</div>
+
+<div class="results">
+  <div class="results-grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">
+    <div class="empty-icon">◎</div>
+    <p>No colours found — try a different search</p>
+  </div>
+</div>
+
+<footer>
+  <div>Codes are best-match equivalents — always test against reference samples before committing to a build.</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="hurricane_paradise.html">Hurricane</a>
+    <a href="spitfire_paradise.html">Spitfire</a>
+    <a href="articles.html">Articles</a>
+    <a href="techniques-bank.html">Techniques</a>
+    <a href="about.html">About</a>
+  </nav>
+</footer>
+
+<script>
+// ── PAINT DATABASE ──────────────────────────────────────────────────────────
+// Each entry: { name, ref, cat, hex, h{code,name}, t{code,name}, v{code,name}, a{code,name} }
+// cat: 'raf' | 'rlm' | 'usaaf' | 'interior'
+// h/t/v/a: null if no close equivalent
+
+const PAINTS = [
+
+  // ── RAF UPPER SURFACES ──
+  { name:'Dark Earth', ref:'MAP Dark Earth', cat:'raf', hex:'#5c3d1e',
+    h:{c:'29',n:'Dark Earth (Matt)'},  t:{c:'XF-52',n:'Flat Earth'},
+    v:{c:'70.871',n:'Leather Brown'},  a:{c:'AK2014',n:'RAF Dark Earth'} },
+
+  { name:'Dark Green', ref:'MAP Dark Green', cat:'raf', hex:'#2d4a1e',
+    h:{c:'30',n:'Dark Green (Matt)'},  t:{c:'XF-61',n:'Dark Green'},
+    v:{c:'70.890',n:'Reflective Green'}, a:{c:'AK2015',n:'RAF Dark Green'} },
+
+  { name:'Sky (Camouflage)', ref:'MAP Sky S.2', cat:'raf', hex:'#a8c8a0',
+    h:{c:'90',n:'Beige Green (Matt)'}, t:{c:'XF-21',n:'Sky'},
+    v:{c:'70.971',n:'Green Grey'},     a:{c:'AK2016',n:'RAF Sky'} },
+
+  { name:'Ocean Grey', ref:'MAP Ocean Grey BS381 638', cat:'raf', hex:'#7a8a80',
+    h:{c:'106',n:'Ocean Grey (Matt)'}, t:{c:'XF-66',n:'Light Grey'},
+    v:{c:'70.870',n:'Medium Sea Grey'}, a:{c:'AK2019',n:'RAF Ocean Grey'} },
+
+  { name:'Medium Sea Grey', ref:'MAP Medium Sea Grey BS381 637', cat:'raf', hex:'#8a9898',
+    h:{c:'165',n:'Medium Sea Grey'},   t:{c:'XF-83',n:'Medium Sea Grey'},
+    v:{c:'70.870',n:'Medium Sea Grey'}, a:{c:'AK2020',n:'RAF Medium Sea Grey'} },
+
+  { name:'Dark Sea Grey', ref:'MAP Dark Sea Grey', cat:'raf', hex:'#5a6468',
+    h:{c:'123',n:'Extra Dark Sea Grey'}, t:{c:'XF-54',n:'Dark Sea Grey'},
+    v:{c:'70.870',n:'Medium Sea Grey (darkened)'}, a:{c:'AK2021',n:'RAF Dark Sea Grey'} },
+
+  { name:'PRU Blue', ref:'MAP PRU Blue', cat:'raf', hex:'#2a4a6a',
+    h:{c:'144',n:'Intermediate Blue'},  t:{c:'XF-18',n:'Medium Blue'},
+    v:{c:'70.906',n:'Pale Blue'},       a:{c:'AK2024',n:'PRU Blue'} },
+
+  { name:'Sky Blue', ref:'MAP Sky Blue BS381 101', cat:'raf', hex:'#7aaac8',
+    h:{c:'65',n:'Aircraft Blue (Matt)'}, t:{c:'XF-23',n:'Light Blue'},
+    v:{c:'70.961',n:'Sky Blue'},         a:{c:'AK2023',n:'RAF Sky Blue'} },
+
+  { name:'Night (Special Night)', ref:'MAP Special Night', cat:'raf', hex:'#0a0a0a',
+    h:{c:'33',n:'Matt Black'},          t:{c:'XF-1',n:'Flat Black'},
+    v:{c:'70.950',n:'Black'},           a:{c:'AK2016',n:'Flat Black'} },
+
+  { name:'Temperate Sea Scheme Grey', ref:'MAP Extra Dark Sea Grey', cat:'raf', hex:'#4a5258',
+    h:{c:'123',n:'Extra Dark Sea Grey'}, t:{c:'XF-54',n:'Dark Sea Grey'},
+    v:{c:'70.862',n:'Black Grey'},      a:{c:'AK2022',n:'Extra Dark Sea Grey'} },
+
+  { name:'Sand (Middle East)', ref:'MAP Sand', cat:'raf', hex:'#c8aa6a',
+    h:{c:'93',n:'Desert Yellow (Matt)'}, t:{c:'XF-59',n:'Desert Yellow'},
+    v:{c:'70.916',n:'Sand Yellow'},     a:{c:'AK2028',n:'RAF Sand'} },
+
+  { name:'Azure Blue (Middle East)', ref:'MAP Azure Blue', cat:'raf', hex:'#6a9ac8',
+    h:{c:'65',n:'Aircraft Blue'},       t:{c:'XF-8',n:'Flat Blue'},
+    v:{c:'70.901',n:'Pastel Blue'},     a:{c:'AK2029',n:'Azure Blue'} },
+
+  // ── RAF INTERIORS ──
+  { name:'Interior Grey-Green (Cockpit)', ref:'DTD 224 Interior Grey-Green', cat:'interior', hex:'#4a6b47',
+    h:{c:'78',n:'Cockpit Green (Matt)'}, t:{c:'XF-71',n:'Cockpit Green (IJN)'},
+    v:{c:'70.886',n:'Green Grey'},       a:{c:'AK2073',n:'RAF Interior Green'} },
+
+  { name:'Night Black (Instruments)', ref:'MAP Night', cat:'interior', hex:'#141414',
+    h:{c:'33',n:'Matt Black'},          t:{c:'XF-1',n:'Flat Black'},
+    v:{c:'70.950',n:'Black'},           a:{c:'AK2016',n:'Flat Black'} },
+
+  { name:'Aluminium (Bare Metal)', ref:'Bare aluminium', cat:'interior', hex:'#a8b0b8',
+    h:{c:'56',n:'Aluminium (Metallic)'}, t:{c:'XF-16',n:'Flat Aluminium'},
+    v:{c:'70.997',n:'Silver'},          a:{c:'AK479',n:'Pale Burnt Metal'} },
+
+  { name:'Dull Aluminium (Worn)', ref:'Worn aluminium', cat:'interior', hex:'#909098',
+    h:{c:'56',n:'Aluminium'},           t:{c:'XF-16',n:'Flat Aluminium'},
+    v:{c:'70.993',n:'White Aluminium'}, a:{c:'AK480',n:'Exhaust Manifold'} },
+
+  // ── RLM COLOURS ──
+  { name:'RLM 02 — Grau', ref:'RLM 02', cat:'rlm', hex:'#7a8060',
+    h:{c:'86',n:'Light Olive (Matt)'},  t:{c:'XF-22',n:'RLM Grey'},
+    v:{c:'70.830',n:'German Field Grey'}, a:{c:'AK2050',n:'RLM 02 Grey'} },
+
+  { name:'RLM 04 — Gelb', ref:'RLM 04', cat:'rlm', hex:'#d4a818',
+    h:{c:'154',n:'Yellow (Matt)'},      t:{c:'XF-3',n:'Flat Yellow'},
+    v:{c:'70.952',n:'Lemon Yellow'},    a:{c:'AK2054',n:'RLM 04 Yellow'} },
+
+  { name:'RLM 21 — Weiß', ref:'RLM 21', cat:'rlm', hex:'#e8e0d0',
+    h:{c:'34',n:'White (Matt)'},        t:{c:'XF-2',n:'Flat White'},
+    v:{c:'70.951',n:'White'},           a:{c:'AK2051',n:'RLM 21 White'} },
+
+  { name:'RLM 22 — Schwarz', ref:'RLM 22', cat:'rlm', hex:'#141414',
+    h:{c:'33',n:'Matt Black'},          t:{c:'XF-1',n:'Flat Black'},
+    v:{c:'70.950',n:'Black'},           a:{c:'AK2052',n:'RLM 22 Black'} },
+
+  { name:'RLM 23 — Rot', ref:'RLM 23', cat:'rlm', hex:'#c03020',
+    h:{c:'60',n:'Scarlet (Matt)'},      t:{c:'XF-7',n:'Flat Red'},
+    v:{c:'70.909',n:'Vermillion'},      a:{c:'AK2053',n:'RLM 23 Red'} },
+
+  { name:'RLM 65 — Hellblau', ref:'RLM 65', cat:'rlm', hex:'#7fa8c4',
+    h:{c:'65',n:'Aircraft Blue (Matt)'}, t:{c:'XF-23',n:'Light Blue'},
+    v:{c:'70.907',n:'Pale Greyblue'},   a:{c:'AK2062',n:'RLM 65 Light Blue'} },
+
+  { name:'RLM 66 — Schwarzgrau', ref:'RLM 66', cat:'rlm', hex:'#282c30',
+    h:{c:'32',n:'Dark Grey (Matt)'},    t:{c:'XF-63',n:'German Grey'},
+    v:{c:'70.862',n:'Black Grey'},      a:{c:'AK2066',n:'RLM 66 Black Grey'} },
+
+  { name:'RLM 70 — Schwarzgrün', ref:'RLM 70', cat:'rlm', hex:'#1a2814',
+    h:{c:'31',n:'Dark Green (Satin)'},  t:{c:'XF-27',n:'Black Green'},
+    v:{c:'70.897',n:'Bronze Green'},    a:{c:'AK2060',n:'RLM 70 Black Green'} },
+
+  { name:'RLM 71 — Dunkelgrün', ref:'RLM 71', cat:'rlm', hex:'#2d3d1f',
+    h:{c:'116',n:'US Dark Green'},      t:{c:'XF-61',n:'Dark Green'},
+    v:{c:'70.890',n:'Reflective Green'}, a:{c:'AK2061',n:'RLM 71 Dark Green'} },
+
+  { name:'RLM 74 — Graugrün', ref:'RLM 74', cat:'rlm', hex:'#3d4a38',
+    h:{c:'155',n:'Olive Drab'},         t:{c:'XF-73',n:'JGSDF Dark Green'},
+    v:{c:'70.867',n:'Dark Bluegrey'},   a:{c:'AK2064',n:'RLM 74 Grey Green'} },
+
+  { name:'RLM 75 — Grauviolett', ref:'RLM 75', cat:'rlm', hex:'#5a5468',
+    h:{c:'140',n:'Grey Violet (mix)'},  t:{c:'XF-19',n:'Sky Grey (lightened)'},
+    v:{c:'70.989',n:'Sky Grey'},        a:{c:'AK2065',n:'RLM 75 Grey Violet'} },
+
+  { name:'RLM 76 — Lichtblau', ref:'RLM 76', cat:'rlm', hex:'#adbfcc',
+    h:{c:'147',n:'Light Grey (Matt)'},  t:{c:'XF-19',n:'Sky Grey'},
+    v:{c:'70.971',n:'Light Grey'},      a:{c:'AK2066',n:'RLM 76 Light Blue'} },
+
+  { name:'RLM 78 — Himmelblau', ref:'RLM 78', cat:'rlm', hex:'#7aacc8',
+    h:{c:'65',n:'Aircraft Blue'},       t:{c:'XF-21',n:'Sky'},
+    v:{c:'70.961',n:'Sky Blue'},        a:{c:'AK2078',n:'RLM 78 Sky Blue'} },
+
+  { name:'RLM 79 — Sandgelb', ref:'RLM 79', cat:'rlm', hex:'#c8a84a',
+    h:{c:'93',n:'Desert Yellow'},       t:{c:'XF-59',n:'Desert Yellow'},
+    v:{c:'70.916',n:'Sand Yellow'},     a:{c:'AK2079',n:'RLM 79 Sand Yellow'} },
+
+  { name:'RLM 80 — Olivgrün', ref:'RLM 80', cat:'rlm', hex:'#4a5830',
+    h:{c:'155',n:'Olive Drab'},         t:{c:'XF-58',n:'Olive Green'},
+    v:{c:'70.888',n:'Olive Grey'},      a:{c:'AK2080',n:'RLM 80 Olive Green'} },
+
+  { name:'RLM 81 — Braunviolett', ref:'RLM 81', cat:'rlm', hex:'#5a4840',
+    h:{c:'98',n:'Chocolate (Matt)'},    t:{c:'XF-64',n:'Red Brown'},
+    v:{c:'70.984',n:'Flat Brown'},      a:{c:'AK2081',n:'RLM 81 Brown Violet'} },
+
+  { name:'RLM 82 — Hellgrün', ref:'RLM 82', cat:'rlm', hex:'#5a7840',
+    h:{c:'116',n:'US Dark Green'},      t:{c:'XF-26',n:'Deep Green'},
+    v:{c:'70.891',n:'Intermediate Green'}, a:{c:'AK2082',n:'RLM 82 Light Green'} },
+
+  { name:'RLM 83 — Dunkelgrün', ref:'RLM 83 late', cat:'rlm', hex:'#2a4020',
+    h:{c:'30',n:'Dark Green'},          t:{c:'XF-61',n:'Dark Green'},
+    v:{c:'70.897',n:'Bronze Green'},    a:{c:'AK2083',n:'RLM 83 Dark Green'} },
+
+  // ── RLM INTERIOR ──
+  { name:'RLM 02 — Cockpit Grey (early)', ref:'RLM 02 interior', cat:'interior', hex:'#7a8060',
+    h:{c:'86',n:'Light Olive'},         t:{c:'XF-22',n:'RLM Grey'},
+    v:{c:'70.830',n:'German Field Grey'}, a:{c:'AK2050',n:'RLM 02 Grey'} },
+
+  { name:'RLM 66 — Cockpit Black Grey (1941+)', ref:'RLM 66 interior', cat:'interior', hex:'#282c30',
+    h:{c:'32',n:'Dark Grey'},           t:{c:'XF-63',n:'German Grey'},
+    v:{c:'70.862',n:'Black Grey'},      a:{c:'AK2066',n:'RLM 66 Black Grey'} },
+
+  // ── USAAF ──
+  { name:'Olive Drab (early)', ref:'ANA 613 Olive Drab', cat:'usaaf', hex:'#4a4820',
+    h:{c:'155',n:'Olive Drab'},         t:{c:'XF-62',n:'Olive Drab'},
+    v:{c:'70.887',n:'Brown Violet'},    a:{c:'AK2030',n:'USAAF Olive Drab'} },
+
+  { name:'Olive Drab (late, faded)', ref:'ANA 613 faded', cat:'usaaf', hex:'#5a5830',
+    h:{c:'155',n:'Olive Drab (lightened)'}, t:{c:'XF-62',n:'Olive Drab (lightened)'},
+    v:{c:'70.921',n:'English Uniform'}, a:{c:'AK2031',n:'USAAF Olive Drab Faded'} },
+
+  { name:'Neutral Grey', ref:'ANA 603 Neutral Grey', cat:'usaaf', hex:'#808080',
+    h:{c:'40',n:'Grey (Matt)'},         t:{c:'XF-20',n:'Medium Grey'},
+    v:{c:'70.990',n:'Light Grey'},      a:{c:'AK2032',n:'USAAF Neutral Grey'} },
+
+  { name:'Azure Blue (USAAF)', ref:'ANA 609 Azure Blue', cat:'usaaf', hex:'#5888b0',
+    h:{c:'144',n:'Intermediate Blue'},  t:{c:'XF-18',n:'Medium Blue'},
+    v:{c:'70.906',n:'Pale Blue'},       a:{c:'AK2033',n:'USAAF Azure Blue'} },
+
+  { name:'Insignia White', ref:'ANA 601 White', cat:'usaaf', hex:'#e8e8e0',
+    h:{c:'34',n:'White (Matt)'},        t:{c:'XF-2',n:'Flat White'},
+    v:{c:'70.951',n:'White'},           a:{c:'AK2034',n:'Insignia White'} },
+
+  { name:'Insignia Red', ref:'ANA 619 Red', cat:'usaaf', hex:'#b82020',
+    h:{c:'60',n:'Scarlet (Matt)'},      t:{c:'XF-7',n:'Flat Red'},
+    v:{c:'70.909',n:'Vermillion'},      a:{c:'AK2035',n:'Insignia Red'} },
+
+  { name:'Insignia Blue', ref:'ANA 605 Blue', cat:'usaaf', hex:'#1a3a6a',
+    h:{c:'15',n:'Midnight Blue (Matt)'}, t:{c:'XF-8',n:'Flat Blue'},
+    v:{c:'70.925',n:'Blue'},            a:{c:'AK2036',n:'Insignia Blue'} },
+
+  { name:'Interior Green (USAAF cockpit)', ref:'ANA 611 Interior Green', cat:'interior', hex:'#4a6038',
+    h:{c:'75',n:'Bronze Green (Matt)'}, t:{c:'XF-26',n:'Deep Green'},
+    v:{c:'70.886',n:'Green Grey'},      a:{c:'AK2037',n:'USAAF Interior Green'} },
+
+  { name:'Natural Metal — Polished', ref:'NMF bright panels', cat:'usaaf', hex:'#c8d0d8',
+    h:{c:'56',n:'Aluminium (Metallic)'}, t:{c:'X-11',n:'Chrome Silver'},
+    v:{c:'70.997',n:'Silver'},          a:{c:'AK479',n:'Pale Burnt Metal'} },
+
+  { name:'Natural Metal — Bare Alloy', ref:'NMF standard panels', cat:'usaaf', hex:'#a0a8b0',
+    h:{c:'56',n:'Aluminium'},           t:{c:'XF-16',n:'Flat Aluminium'},
+    v:{c:'70.993',n:'White Aluminium'}, a:{c:'AK480',n:'NMF Aluminium'} },
+
+  { name:'Natural Metal — Wing Panels', ref:'NMF wing upper', cat:'usaaf', hex:'#888898',
+    h:{c:'191',n:'Chrome (Metallic)'},  t:{c:'XF-16',n:'Flat Aluminium'},
+    v:{c:'70.997',n:'Silver'},          a:{c:'AK481',n:'Dull Aluminium'} },
+
+  // ── ADDITIONAL USEFUL COLOURS ──
+  { name:'Yellow (Training / markings)', ref:'MAP Yellow', cat:'raf', hex:'#d4c020',
+    h:{c:'69',n:'Yellow (Matt)'},       t:{c:'XF-3',n:'Flat Yellow'},
+    v:{c:'70.952',n:'Lemon Yellow'},    a:{c:'AK2042',n:'Yellow'} },
+
+  { name:'Red (Roundel)', ref:'MAP Red BS381 537', cat:'raf', hex:'#b82020',
+    h:{c:'60',n:'Scarlet'},             t:{c:'XF-7',n:'Flat Red'},
+    v:{c:'70.909',n:'Vermillion'},      a:{c:'AK2043',n:'RAF Red'} },
+
+  { name:'Blue (Roundel)', ref:'MAP Blue BS381 110', cat:'raf', hex:'#1a3a8a',
+    h:{c:'15',n:'Midnight Blue'},       t:{c:'XF-8',n:'Flat Blue'},
+    v:{c:'70.925',n:'Blue'},            a:{c:'AK2044',n:'RAF Blue'} },
+
+  { name:'Trainer Yellow (Tiger Moth)', ref:'MAP Chrome Yellow', cat:'raf', hex:'#e0a010',
+    h:{c:'24',n:'Trainer Yellow'},      t:{c:'XF-3',n:'Flat Yellow'},
+    v:{c:'70.915',n:'Deep Yellow'},     a:{c:'AK2045',n:'Chrome Yellow'} },
+
+  { name:'Gun Metal (Weapons)', ref:'Generic gun metal', cat:'interior', hex:'#384048',
+    h:{c:'53',n:'Gun Metal'},           t:{c:'XF-56',n:'Metallic Grey'},
+    v:{c:'70.863',n:'Gunmetal Grey'},   a:{c:'AK482',n:'Gun Metal'} },
+
+  { name:'Exhaust Stain (Brown-Black)', ref:'Exhaust weathering', cat:'interior', hex:'#2a1a0a',
+    h:{c:'33',n:'Matt Black + 98 Chocolate'}, t:{c:'XF-64',n:'Red Brown (darkened)'},
+    v:{c:'70.984',n:'Flat Brown (dark mix)'}, a:{c:'AK2048',n:'Exhaust Stain'} },
+
+  { name:'Mud — Chalk (Biggin Hill)', ref:'Chalk downland', cat:'interior', hex:'#d8d0b8',
+    h:{c:'103',n:'Cream (Matt)'},       t:{c:'XF-57',n:'Buff / XF-2 1:1'},
+    v:{c:'70.986',n:'Deck Tan'},        a:{c:'AK2049',n:'Dry Mud / Dust'} },
+
+  { name:'Mud — Devon Red (Exeter)', ref:'Devon red clay', cat:'interior', hex:'#8a3820',
+    h:{c:'70',n:'Brick Red'},           t:{c:'XF-64',n:'Red Brown + XF-7'},
+    v:{c:'70.981',n:'Orange Brown'},    a:{c:'AK2046',n:'Red Soil Mud'} },
+
+  { name:'Mud — Sussex Clay (Tangmere)', ref:'Sussex clay', cat:'interior', hex:'#6a4020',
+    h:{c:'98',n:'Chocolate'},           t:{c:'XF-64',n:'Red Brown'},
+    v:{c:'70.984',n:'Flat Brown'},      a:{c:'AK2047',n:'European Mud'} },
+
+];
+
+// ── RENDER ──────────────────────────────────────────────────────────────────
+const grid = document.getElementById('grid');
+const countEl = document.getElementById('count');
+const emptyEl = document.getElementById('empty');
+const searchEl = document.getElementById('search');
+let activeFilter = 'all';
+
+function renderBrandCell(label, entry, cls) {
+  if (!entry) return `<div class="brand-cell no-eq"><div class="brand-label">${label}</div><div class="brand-code">No close match</div></div>`;
+  return `<div class="brand-cell ${cls}">
+    <div class="brand-label">${label}</div>
+    <div class="brand-code">${entry.c}</div>
+    <div class="brand-name">${entry.n}</div>
+  </div>`;
+}
+
+function renderRow(p) {
+  return `<div class="colour-row" data-cat="${p.cat}">
+    <div class="swatch" style="background:${p.hex}"></div>
+    <div class="row-body">
+      <div class="row-top">
+        <span class="colour-name">${p.name}</span>
+        <span class="cat-badge ${p.cat}">${p.cat.toUpperCase()}</span>
+        ${p.ref ? `<span class="ref-num">${p.ref}</span>` : ''}
+      </div>
+      <div class="brands">
+        ${renderBrandCell('Humbrol', p.h, 'humbrol')}
+        ${renderBrandCell('Tamiya', p.t, 'tamiya')}
+        ${renderBrandCell('Vallejo MC', p.v, 'vallejo')}
+        ${renderBrandCell('AK Interactive', p.a, 'ak')}
+      </div>
+    </div>
+  </div>`;
+}
+
+function getSearchTerms(p) {
+  return [
+    p.name, p.ref, p.cat,
+    p.h && (p.h.c + ' ' + p.h.n),
+    p.t && (p.t.c + ' ' + p.t.n),
+    p.v && (p.v.c + ' ' + p.v.n),
+    p.a && (p.a.c + ' ' + p.a.n)
+  ].filter(Boolean).join(' ').toLowerCase();
+}
+
+function render() {
+  const q = searchEl.value.trim().toLowerCase();
+  const filtered = PAINTS.filter(p => {
+    const catMatch = activeFilter === 'all' || p.cat === activeFilter;
+    const searchMatch = !q || getSearchTerms(p).includes(q);
+    return catMatch && searchMatch;
+  });
+
+  grid.innerHTML = filtered.map(renderRow).join('');
+  countEl.textContent = filtered.length + ' colour' + (filtered.length !== 1 ? 's' : '');
+  emptyEl.style.display = filtered.length ? 'none' : 'block';
+}
+
+// ── EVENT LISTENERS ──────────────────────────────────────────────────────────
+searchEl.addEventListener('input', render);
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    render();
+  });
+});
+
+document.addEventListener('click', function(e) {
+  const d = document.getElementById('acDrop');
+  if (d && !d.contains(e.target)) d.classList.remove('open');
+});
+
+// Initial render
+render();
+</script>
+</body>
+</html>

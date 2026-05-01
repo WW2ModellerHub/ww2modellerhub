@@ -2,26 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bf 109 Model Kit Reference — RLM Paints & Variants</title>
-<meta property="og:title" content="Messerschmitt Bf 109 Scale Modelling Reference — RLM Paints, Variants, Kits">
-<meta property="og:description" content="Bf 109 scale modelling reference — RLM paint system, E/F/G/K variants, Channel Front and Eastern Front markings, Jagdgeschwader context and kit recommendations.">
+<title>P-51 Mustang Model Kit Reference — NMF, Paint Codes & USAAF Groups</title>
+<meta property="og:title" content="North American P-51 Mustang Scale Modelling Reference — NMF, Paint Codes, Kits & Groups">
+<meta property="og:description" content="P-51 Mustang scale modelling reference — natural metal finish techniques, Olive Drab/Neutral Grey schemes, 8th Air Force fighter group markings, kit recommendations and ace pilot profiles.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.ww2modeller.co.uk/bf109_paradise.html">
-<meta property="og:image" content="https://www.ww2modeller.co.uk/assets/og-bf109.jpg">
+<meta property="og:url" content="https://www.ww2modeller.co.uk/p51_paradise.html">
+<meta property="og:image" content="https://www.ww2modeller.co.uk/assets/og-p51.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="WW2 Modeller Hub">
-<link rel="alternate" hreflang="en-GB" href="https://www.ww2modeller.co.uk/bf109_paradise.html">
-<link rel="alternate" hreflang="x-default" href="https://www.ww2modeller.co.uk/bf109_paradise.html">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="WW2 Modeller Hub">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Messerschmitt Bf 109 Scale Modelling Reference — RLM Paints, Variants, Kits">
-<meta name="twitter:description" content="Bf 109 scale modelling reference — RLM paint system, E/F/G/K variants, Channel Front and Eastern Front markings, Jagdgeschwader context and kit recommendations.">
-<meta name="keywords" content="Bf 109 model, Messerschmitt 109 E kit, RLM 74 75 76, Eduard Bf 109 Gustav, Bf 109 Emil decals">
-<meta name="description" content="Bf 109 modelling reference. RLM paints, E/F/G/K variants, Channel Front and Eastern Front markings, kit recommendations.">
-<link rel="canonical" href="https://www.ww2modeller.co.uk/bf109_paradise.html">
+<meta name="twitter:title" content="P-51 Mustang Scale Modelling Reference — NMF, Paint Codes, Kits & Groups">
+<meta name="twitter:description" content="P-51 Mustang modelling reference — natural metal finish, 8th Air Force markings, Tamiya and Eduard kit guide, ace profiles.">
+<meta name="keywords" content="P-51 Mustang model kit, USAAF P-51D, natural metal finish Mustang, Tamiya P-51, Eduard P-51, 8th Air Force markings">
+<meta name="description" content="P-51 Mustang modelling reference. Natural metal finish techniques, Olive Drab schemes, 8th Air Force fighter group markings, kit recommendations and pilot profiles.">
+<link rel="canonical" href="https://www.ww2modeller.co.uk/p51_paradise.html">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,11 +49,17 @@ h1{font-family:'Special Elite',cursive;font-size:clamp(2.3rem,6vw,4.5rem);line-h
 .list{display:grid;gap:.85rem;margin-top:1rem}
 .item{padding:.85rem 1rem;border:1px solid var(--border);background:rgba(255,255,255,.03);border-radius:3px;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72)}
 .cta{display:inline-flex;margin-top:1.1rem;font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--brass);text-decoration:none;padding:.8rem 1.2rem;border-radius:2px}
+.groups-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.85rem;margin-top:1.1rem}
+.group-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:3px;padding:.9rem 1rem}
+.group-name{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem}
+.group-base{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.4rem}
+.group-mark{font-size:14px;color:rgba(255,255,255,.7);line-height:1.5}
 footer{padding:2rem;text-align:center;border-top:1px solid var(--border);color:var(--muted)}
+footer a{color:rgba(255,255,255,.4);text-decoration:none}
+footer a:hover{color:var(--brass)}
+footer nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-top:.75rem}
 @media(max-width:900px){.grid{grid-template-columns:1fr}}
 @media(max-width:700px){.nav{padding:0 1rem}.nav-links{display:none}.hero{padding:3rem 1.25rem 2rem}.main{padding:2rem 1.25rem 3rem}}
-
-/* Aircraft dropdown — universal across pages */
 .ac-drop{position:relative;display:inline-block}
 .ac-drop-btn{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);background:none;border:none;cursor:pointer;padding:.45rem .9rem;border-radius:3px;display:inline-flex;align-items:center;gap:.3rem;transition:color .15s,background .15s}
 .ac-drop-btn:hover,.ac-drop.open .ac-drop-btn{color:#e8c76a;background:rgba(255,255,255,.04)}
@@ -69,20 +73,18 @@ footer{padding:2rem;text-align:center;border-top:1px solid var(--border);color:v
 .ac-drop-badge{font-size:8px;font-weight:700;padding:1px 6px;border-radius:2px;letter-spacing:.1em}
 .ac-drop-badge.live{background:rgba(42,92,48,.35);color:#9dc89f;border:1px solid rgba(42,92,48,.5)}
 .ac-drop-badge.soon{background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1)}
-
 </style>
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Article",
-  "headline":"Messerschmitt Bf 109 Modelling Reference — RLM Paints, Variants, Kits & Markings",
-  "description":"Bf 109 modelling reference page covering RLM paint colours, variants, kits, markings and weathering for WW2 Luftwaffe scale modellers.",
-  "mainEntityOfPage":"https://www.ww2modeller.co.uk/bf109_paradise.html",
+  "headline":"North American P-51 Mustang Modelling Reference — NMF, Paint Codes, 8th Air Force Groups",
+  "description":"P-51 Mustang modelling reference covering natural metal finish techniques, USAAF colour schemes, 8th Air Force fighter group markings and kit recommendations.",
+  "mainEntityOfPage":"https://www.ww2modeller.co.uk/p51_paradise.html",
   "publisher":{"@type":"Organization","name":"WW2 Modeller Hub","url":"https://www.ww2modeller.co.uk/"}
 }
 </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409"
-     crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="nav">
@@ -96,24 +98,23 @@ footer{padding:2rem;text-align:center;border-top:1px solid var(--border);color:v
       <div class="ac-drop-menu">
         <a href="hurricane_paradise.html" class="ac-drop-item">Hawker Hurricane <span class="ac-drop-badge live">Live</span></a>
         <a href="spitfire_paradise.html" class="ac-drop-item">Supermarine Spitfire <span class="ac-drop-badge live">Live</span></a>
+        <a href="p51_paradise.html" class="ac-drop-item">North American P-51 <span class="ac-drop-badge soon">Hub</span></a>
         <a href="lancaster_paradise.html" class="ac-drop-item">Avro Lancaster <span class="ac-drop-badge soon">Hub</span></a>
         <a href="mosquito_paradise.html" class="ac-drop-item">DH Mosquito <span class="ac-drop-badge soon">Hub</span></a>
-        <a href="p51_paradise.html" class="ac-drop-item">North American P-51 <span class="ac-drop-badge soon">Hub</span></a>
         <a href="bf109_paradise.html" class="ac-drop-item">Messerschmitt Bf 109 <span class="ac-drop-badge soon">Hub</span></a>
         <a href="fw190_paradise.html" class="ac-drop-item">Focke-Wulf Fw 190 <span class="ac-drop-badge soon">Hub</span></a>
       </div>
     </div>
     <a href="techniques-bank.html" class="nav-link">Techniques</a>
     <a href="articles.html" class="nav-link">Articles</a>
-    <a href="paint-codes.html" class="nav-link">Paint Codes</a>
   </div>
 </nav>
 
 <section class="hero">
   <div class="wrap">
-    <div class="eyebrow">Luftwaffe reference</div>
-    <h1>Messerschmitt Bf 109.</h1>
-    <p class="lede">The definitive Luftwaffe fighter of the Second World War — modelling the Bf 109 means navigating the RLM paint system, a bewildering range of variants, and markings that changed with every theatre and season.</p>
+    <div class="eyebrow">USAAF reference</div>
+    <h1>North American P-51 Mustang.</h1>
+    <p class="lede">The long-range escort fighter that gave the 8th Air Force the reach to protect its bombers all the way to Berlin — and in doing so, changed the air war over Europe. For scale modellers, the Mustang means mastering the most demanding surface finish in WW2 modelling: natural metal.</p>
   </div>
 </section>
 
@@ -122,47 +123,86 @@ footer{padding:2rem;text-align:center;border-top:1px solid var(--border);color:v
     <div class="grid">
       <div class="card">
         <h2>What this page covers</h2>
-        <p>A reference framework for Bf 109 modellers covering the RLM paint system, the main production variants from Emil to Kurfürst, theatre-specific markings and practical kit guidance.</p>
+        <p>A reference framework for P-51 modellers covering the two main colour schemes, natural metal finish techniques, 8th Air Force fighter group markings, major kit options and pilot profiles of the leading American aces.</p>
         <div class="list">
-          <div class="item">RLM 70/71/65 and late-war 74/75/76 colour standards</div>
-          <div class="item">E, F, G and K variant identification guide</div>
-          <div class="item">Eastern Front, Channel Front and North Africa markings</div>
-          <div class="item">Eduard, Tamiya and Hasegawa kit starting points</div>
+          <div class="item">Olive Drab/Neutral Grey scheme — early P-51B/C</div>
+          <div class="item">Natural metal finish (NMF) — P-51D standard</div>
+          <div class="item">8th Air Force fighter group nose art and colours</div>
+          <div class="item">Tamiya, Eduard and Airfix kit comparison</div>
+          <div class="item">Aces — Bud Anderson, Don Blakeslee, Chuck Yeager</div>
         </div>
       </div>
       <div class="card">
         <h2>Modeller quick start</h2>
-        <p>New to the Bf 109? The Emil (E-1 to E-7) is the most documented and best-kitted variant for Battle of Britain subjects. Eduard's 1:48 ProfiPACK sets are the benchmark. For the Gustav, Hasegawa's long-running tooling remains competitive.</p>
-        <a class="cta" href="techniques-bank.html">Painting &amp; weathering techniques</a>
+        <p>Tamiya's 1:48 P-51D (61040) is the definitive natural metal finish Mustang kit — it remains the benchmark after more than two decades in production. Eduard's 1:48 ProfiPACK (82101) offers superior cockpit detail and photo-etch. For 1:72, Airfix's A01004 is the accessible entry point.</p>
+        <p style="margin-top:.8rem">The single biggest challenge on the P-51D is the NMF. Polished aluminium panels sit next to unpainted bare metal at different temper states, producing subtle but clearly visible variations in reflectivity. Getting this right requires multiple metallic shades, not a single silver coat.</p>
+        <a class="cta" href="techniques-bank.html">Painting & weathering techniques</a>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:1.25rem">
+      <h2>8th Air Force fighter groups</h2>
+      <p>The Eighth Air Force flew P-51s from bases across East Anglia from late 1943 through VE Day. Each fighter group developed its own distinctive nose markings, cowling colours and tail markings, making them one of the most colourful subjects in USAAF modelling.</p>
+      <div class="groups-grid">
+        <div class="group-card">
+          <div class="group-name">4th Fighter Group</div>
+          <div class="group-base">Debden, Essex</div>
+          <div class="group-mark">Red nose, red/white/blue spinner stripes. The "Eagles" — originally formed from the three RAF Eagle Squadrons. Don Blakeslee's group.</div>
+        </div>
+        <div class="group-card">
+          <div class="group-name">56th Fighter Group</div>
+          <div class="group-base">Boxted, Essex</div>
+          <div class="group-mark">Black/white checkerboard nose. Francis Gabreski's group — highest-scoring USAAF ace in Europe.</div>
+        </div>
+        <div class="group-card">
+          <div class="group-name">352nd Fighter Group</div>
+          <div class="group-base">Bodney, Norfolk</div>
+          <div class="group-mark">Blue nose, white spinner. "The Blue Nosed Bastards of Bodney." George Preddy flew here.</div>
+        </div>
+        <div class="group-card">
+          <div class="group-name">357th Fighter Group</div>
+          <div class="group-base">Leiston, Suffolk</div>
+          <div class="group-mark">Red/yellow chequered nose band. Chuck Yeager flew with the 357th FG before his record-breaking X-1 flights.</div>
+        </div>
+        <div class="group-card">
+          <div class="group-name">361st Fighter Group</div>
+          <div class="group-base">Little Walden, Essex</div>
+          <div class="group-mark">Yellow nose, black chequers. Bud Anderson flew here — 16.25 aerial victories, zero losses.</div>
+        </div>
+        <div class="group-card">
+          <div class="group-name">332nd Fighter Group</div>
+          <div class="group-base">Ramitelli, Italy</div>
+          <div class="group-mark">All-red tail markings — the famous "Red Tails" of the Tuskegee Airmen. One of the most recognised Mustang markings of the war.</div>
+        </div>
       </div>
     </div>
 
     <div class="card" style="margin-top:1.25rem">
       <h2>Related guides</h2>
-      <p>Expand your research with these articles from the WW2 Modeller Hub library — useful context whether you are building the opponent aircraft or looking for technique guidance applicable across Luftwaffe subjects.</p>
+      <p>Technique and reference articles from the WW2 Modeller Hub relevant to USAAF subjects and natural metal finish builds.</p>
       <div class="list" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr))">
-        <a class="item" href="article-bob-squadrons-guide.html" style="text-decoration:none;color:inherit">The 22 Hurricane squadrons of the Battle of Britain</a>
-        <a class="item" href="article-fabric-vs-metal-wings.html" style="text-decoration:none;color:inherit">Hurricane fabric vs metal wings — how to model it</a>
-        <a class="item" href="techniques-bank.html" style="text-decoration:none;color:inherit">Painting &amp; weathering techniques bank</a>
+        <a class="item" href="techniques-bank.html" style="text-decoration:none;color:inherit">Painting & weathering techniques bank</a>
+        <a class="item" href="article-bf109-rlm-paint-codes.html" style="text-decoration:none;color:inherit">Bf 109 RLM paint codes — the Mustang's primary opponent</a>
+        <a class="item" href="article-spitfire-kits-guide.html" style="text-decoration:none;color:inherit">Spitfire kit guide — Allied fighter comparison</a>
         <a class="item" href="articles.html" style="text-decoration:none;color:inherit">Browse all modelling guides</a>
       </div>
     </div>
   </div>
 </section>
 
-<footer style="padding:2rem;text-align:center;border-top:1px solid var(--border);color:var(--muted)">
+<footer>
   <p style="margin-bottom:.75rem">WW2 Modeller Hub</p>
-  <nav style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase">
-    <a href="index.html" style="color:var(--muted);text-decoration:none">Home</a>
-    <a href="hurricane_paradise.html" style="color:var(--muted);text-decoration:none">Hurricane</a>
-    <a href="spitfire_paradise.html" style="color:var(--muted);text-decoration:none">Spitfire</a>
-    <a href="techniques-bank.html" style="color:var(--muted);text-decoration:none">Techniques</a>
-    <a href="articles.html" style="color:var(--muted);text-decoration:none">Articles</a>
-    <a href="about.html" style="color:var(--muted);text-decoration:none">About</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="hurricane_paradise.html">Hurricane</a>
+    <a href="spitfire_paradise.html">Spitfire</a>
+    <a href="lancaster_paradise.html">Lancaster</a>
+    <a href="bf109_paradise.html">Bf 109</a>
+    <a href="techniques-bank.html">Techniques</a>
+    <a href="articles.html">Articles</a>
+    <a href="about.html">About</a>
   </nav>
 </footer>
-
 <script>document.addEventListener('click',function(e){var d=document.getElementById('acDrop');if(d&&!d.contains(e.target))d.classList.remove('open')});</script>
-
 </body>
 </html>
