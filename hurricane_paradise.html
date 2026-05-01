@@ -1694,39 +1694,38 @@ const KITS = [
    markings:["1 Sqn","32 Sqn","242 Sqn","303 Sqn"],
    shops:[
      {label:"Hannants",url:"https://www.hannants.co.uk/product/AX02067A"},
-     {label:"Airfix direct",url:"https://uk.airfix.com/products/hawker-hurricane-mki-a01010b"},
+     {label:"Airfix direct",url:"https://uk.airfix.com/products/hawker-hurricane-mki-a02067a"},
    ]},
   {brand:"Tamiya",name:"Hawker Hurricane Mk.I",scale:"1:48",stars:5,
    accuracy:"The benchmark Hurricane in 1:48. Superb fit, excellent detail, accurate outline. Cockpit needs minimal improvement. The safest recommendation.",
    markings:["85 Sqn","501 Sqn"],
    shops:[
-     {label:"Hannants",url:"https://www.hannants.co.uk/product/TM61040"},
-     {label:"Scale Model Shop",url:"https://www.hannants.co.uk/product/TM61040"},
+     
+     
    ]},
   {brand:"Eduard",name:"Hurricane Mk.I ProfiPACK",scale:"1:72",stars:4,
    accuracy:"Eduard boxing of the Arma Hobby Hurricane Mk.I with photo-etch, masks and multiple marking options. Good premium 1:72 route if available.",
    markings:["Various BoB squadrons"],
    shops:[
-     {label:"Hannants",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+7099+Hurricane+Mk.I"},
+     
    ]},
   
   {brand:"Arma Hobby",name:"Hurricane Mk.I Expert Set",scale:"1:72",stars:5,
    accuracy:"Stunning new-tool 1:72. Photo-etch, metal landing gear, exhausts, canopy masks included. Best 1:72 Hurricane ever produced — the goldmine of Hurricane kits.",
    markings:["Various BoB"],
    shops:[
-     {label:"Hannants",url:null},
+     {label:"Hannants — AH70024",url:"https://www.hannants.co.uk/product/AH70024"},
    ]},
   {brand:"Hasegawa",name:"Hawker Hurricane Mk.I",scale:"1:32",stars:3,
    accuracy:"Older tool but accurate shape. Dated surface detail. Excellent canvas for superdetailing at large scale — resin cockpit sets widely available. Niche but high-value purchase.",
    markings:["32 Sqn","242 Sqn"],
    shops:[
-     {label:"Hannants",url:null},
    ]},
   {brand:"Revell",name:"Hawker Hurricane Mk.IIb",scale:"1:32",stars:3,
    accuracy:"Mk.II not Mk.I — different cowling and wings. Cheaper entry to 1:32 than Hasegawa. Good for Mk.II/IV subjects but not accurate for BoB.",
    markings:["Various"],
    shops:[
-     {label:"Hannants",url:"https://www.hannants.co.uk/product/RV04968"},
+     {label:"Hannants",url:"https://www.hannants.co.uk/product/RV4968"},
    ]},
   {brand:"Alternative kits",name:"Hurricane Mk.I search",scale:"1:48",stars:3,
    accuracy:"Search link only. Use this for current 1:48 Hurricane Mk.I availability rather than linking to a specific kit code that may point to the wrong subject.",
@@ -2109,19 +2108,17 @@ const UK_SHOPS = [
 const KIT_LINKS = [
   {name:"Airfix 1:48 Hurricane Mk.I",code:"AX05127A",shops:[
     {label:"Hannants",url:"https://www.hannants.co.uk/product/AX05127A"},
-    {label:"Airfix direct",url:"https://uk.airfix.com/products/hawker-hurricane-mk1-a05127a"},
-    {label:"Sprue Brothers",url:"https://spruebrothers.com/afx05127a-1-48-airfix-hawker-hurricane-mk-i/"}
+    {label:"Airfix direct",url:"https://uk.airfix.com/products/hawker-hurricane-mk1-a05127a"}
      ]},
   {name:"Airfix 1:72 Hurricane Mk.I",code:"AX01010A",shops:[
     {label:"Hannants",url:"https://www.hannants.co.uk/product/AX01010A"},
-    {label:"Airfix direct",url:"https://uk.airfix.com/products/hawker-hurricane-mki-a01010b"}
+    {label:"Airfix direct",url:"https://uk.airfix.com/products/hawker-hurricane-mki-a02067a"}
      ]},
   {name:"Arma Hobby 1:48 Hurricane Mk.I Expert Set",code:"AH40015",shops:[
-    {label:"Hannants",url:"https://www.hannants.co.uk/product/AH40015"},
-    {label:"Sprue Brothers",url:"https://spruebrothers.com/arm40015-1-48-arma-hobby-hurricane-mk-i/"}
+    {label:"Hannants",url:"https://www.hannants.co.uk/product/AH40015"}
      ]},
   {name:"Eduard 1:72 Hurricane Mk.I ProfiPACK",code:"EDK7099",shops:[
-    {label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+7099+Hurricane+Mk.I"},
+    {label:"Hannants search",url:""},
     {label:"Eduard direct",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-72/hurricane-mk-i-1-72.html"}
      ]}
      ];
@@ -2150,7 +2147,7 @@ function renderShops() {
     <div style="margin-bottom:1.5rem">
       <div style="font-family:'Special Elite',cursive;font-size:15px;color:var(--ink);margin-bottom:.75rem;padding-bottom:.4rem;border-bottom:2px solid var(--border)">${cat.title}</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px">
-        ${cat.shops.map(s => `
+        ${(cat.shops||[]).filter(s=>s&&s.url).map(s => `
           <div class="shop-card">
             <div class="shop-card-name">
               <span style="font-size:20px">${s.flag}</span>
@@ -2257,7 +2254,7 @@ function showDetail(num) {
           <div style="background:rgba(21,39,68,.8);border:1px solid rgba(255,255,255,.12);border-left:3px solid var(--brass);border-radius:2px;padding:7px 10px">
             <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.06em;color:rgba(255,255,255,.85);margin-bottom:5px">${k.name}</div>
             <div style="display:flex;flex-wrap:wrap;gap:4px">
-              ${(k.shops||[{label:"Buy",url:k.url}]).map(s=>`<a href="${s.url}" target="_blank" class="shop-btn hb-ghost" style="font-size:12px;padding:3px 9px">${s.label} ↗</a>`).join('')}
+              ${(k.shops||[{label:"Buy",url:k.url}]).filter(s=>s&&s.url).map(s=>`<a href="${s.url}" target="_blank" class="shop-btn hb-ghost" style="font-size:12px;padding:3px 9px">${s.label} ↗</a>`).join('')}
             </div>
           </div>
         `).join('')}
@@ -2267,7 +2264,7 @@ function showDetail(num) {
       <div class="sec-label">More reference</div>
       <div style="display:flex;flex-wrap:wrap;gap:5px">
         <a class="shop-btn hb-raf" href="https://www.iwm.org.uk/collections" target="_blank">IWM Photo Archive ↗</a>
-        <a class="shop-btn hb-gold" href="https://www.hannants.co.uk/search/index.php?keyword_search=${sq.num}+squadron+hurricane&product_type_id=all_decals" target="_blank">Hannants Decals ↗</a>
+        <a class="shop-btn hb-gold" href="https://www.hannants.co.uk/search/?keyword_search=${sq.num}+squadron+hurricane" target="_blank">Hannants Decals ↗</a>
         <a class="shop-btn hb-gold" href="articles.html" target="_blank">Build Guides & Articles ↗</a>
         <button class="shop-btn hb-ghost" onclick="closeDetail()">Close ✕</button>
       </div>
@@ -2518,7 +2515,7 @@ function renderKits(){
         ${k.markings.map(m=>`<span class="kit-tag">${m}</span>`).join('')}
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:.5rem">
-        ${k.shops.map(s=>`
+        ${(k.shops||[]).filter(s=>s&&s.url).map(s=>`
           <a href="${s.url}" target="_blank" rel="noopener"
              style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;padding:4px 10px;border-radius:2px;background:rgba(30,58,92,.7);border:1px solid rgba(255,255,255,.12);transition:all .15s"
              onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='rgba(255,255,255,.12)'">
