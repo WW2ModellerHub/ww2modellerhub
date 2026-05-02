@@ -1,0 +1,19 @@
+name: IndexNow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Submit URLs to IndexNow
+        uses: bojieyang/indexnow-action@v2.1.0
+        with:
+          key: ${{ secrets.INDEXNOW_KEY }}
+          host: ww2modeller.co.uk
+          urls: |
+            https://ww2modeller.co.uk/
