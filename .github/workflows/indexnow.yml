@@ -15,5 +15,4 @@ jobs:
         with:
           key: ${{ secrets.INDEXNOW_KEY }}
           host: ww2modeller.co.uk
-          urls: |
-            https://ww2modeller.co.uk/
+         urls_from_sitemap: https://ww2modeller.co.uk/sitemap.xml
