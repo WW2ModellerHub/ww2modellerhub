@@ -1087,7 +1087,7 @@ body{
       The BMW 801 has 14 individual exhaust stacks arranged in two banks of 7 around the cowling ring. They produce a distinctive star-burst staining pattern — dark brown-black streaks radiating rearward from each stack. The lower cowling shows less staining than the upper. The A-7 and A-8 have the distinctive paired MG 131 bulges on the upper cowling immediately behind the spinner — a key identification feature.
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem">
-      <a href="https://www.youtube.com/results?search_query=fw190+BMW+801+exhaust+cowling+detail" target="_blank" rel="noopener" style="background:rgba(20,17,7,.8);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;text-decoration:none;display:block">
+      <a href="https://www.youtube.com/results?search_query=BMW+801+fw190+engine+cowling+close+up+detail" target="_blank" rel="noopener" style="background:rgba(20,17,7,.8);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;text-decoration:none;display:block">
         <div style="background:rgba(90,40,10,.3);height:120px;display:flex;align-items:center;justify-content:center;font-size:2.5rem">🔧</div>
         <div style="padding:.7rem .9rem">
           <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">BMW 801 Cowling Detail</div>
@@ -1113,7 +1113,7 @@ body{
       Balkenkreuz on upper and lower wings and fuselage sides. Swastika on fin. Individual aircraft letter in white (or yellow on Eastern Front aircraft). Gruppe bar after the letter — none for I. Gruppe, one bar for II., two for III. Staffel colour shown on spinner ring. On Eastern Front aircraft, yellow RLM 04 fuselage band and cowling tip are standard.
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem">
-      <a href="https://www.youtube.com/results?search_query=fw190+markings+decals+Luftwaffe" target="_blank" rel="noopener" style="background:rgba(20,17,7,.8);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;text-decoration:none;display:block">
+      <a href="https://www.youtube.com/results?search_query=fw190+balkenkreuz+markings+modelling+decals" target="_blank" rel="noopener" style="background:rgba(20,17,7,.8);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;text-decoration:none;display:block">
         <div style="background:rgba(28,24,10,.8);height:120px;display:flex;align-items:center;justify-content:center;font-size:2.5rem">📋</div>
         <div style="padding:.7rem .9rem">
           <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Fw 190 Markings &amp; Decals</div>
@@ -1586,15 +1586,38 @@ function setRefSub(sub, el) {
 
 // ── Per-squadron specific decal sheets (verified Hannants product codes) ──
 const SQ_DECALS = {
-  "JG 26":[{name:"Eduard EDK82145",url:"https://www.hannants.co.uk/product/EDK82145"},{name:"Xtradecal JG 26",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+jg26"}],
-  "JG 2":[{name:"Xtradecal JG 2",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+jg2"}],
-  "JG 54":[{name:"Eduard EDK82111",url:"https://www.hannants.co.uk/product/EDK82111"},{name:"Xtradecal JG 54",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+jg54"}],
-  "JG 51":[{name:"Xtradecal Fw 190 Eastern",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+fw190"}],
-  "JG 11":[{name:"Xtradecal Fw 190 Reich",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+fw190+reich"}],
-  "JG 1":[{name:"Xtradecal Fw 190 Reich",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+fw190+reich"}],
-  "III/JG 3":[{name:"Hasegawa D-9 decals",url:"https://www.hannants.co.uk/search/?keyword_search=fw190+d9+decals"}],
-  "JG 27":[{name:"Eduard EDK82116",url:"https://www.hannants.co.uk/product/EDK82116"},{name:"Xtradecal JG 27",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+jg27"}]
+  "JG 26":  [
+    {name:"Eduard EDK82145 — Fw 190 A-8 ProfiPACK (JG 26 'Jutta' + others)",url:"https://www.hannants.co.uk/product/EDK82145"},
+    {name:"Eduard EDK82111 — Fw 190 A-5 ProfiPACK (Channel Front subjects)",url:"https://www.hannants.co.uk/product/EDK82111"},
+    {name:"Hannants search — Fw 190 Channel Front decals",url:"https://www.hannants.co.uk/search/?keyword_search=fw190+jg26+decal&product_type_id=all_decals"},
+  ],
+  "JG 2":   [
+    {name:"Eduard EDK82145 — Fw 190 A-8 ProfiPACK (JG 2 subjects)",url:"https://www.hannants.co.uk/product/EDK82145"},
+    {name:"Hannants search — JG 2 Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=fw190+jg2+decal&product_type_id=all_decals"},
+  ],
+  "JG 54":  [
+    {name:"Eduard EDK82111 — Fw 190 A-5 ProfiPACK (Nowotny, Kittel)",url:"https://www.hannants.co.uk/product/EDK82111"},
+    {name:"Eduard EDK82145 — Fw 190 A-8 ProfiPACK (JG 54 subjects)",url:"https://www.hannants.co.uk/product/EDK82145"},
+    {name:"Hannants search — JG 54 Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=fw190+jg54+decal&product_type_id=all_decals"},
+  ],
+  "JG 51":  [
+    {name:"Hannants search — Eastern Front Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=fw190+eastern+front+decal&product_type_id=all_decals"},
+  ],
+  "JG 11":  [
+    {name:"Hannants search — Defence of Reich Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=fw190+reich+defence+decal&product_type_id=all_decals"},
+  ],
+  "JG 1":   [
+    {name:"Hannants search — Defence of Reich Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=fw190+reich+defence+decal&product_type_id=all_decals"},
+  ],
+  "III/JG 3":[
+    {name:"Hannants search — Fw 190 D-9 Dora decals",url:"https://www.hannants.co.uk/search/?keyword_search=fw190+d9+dora+decal&product_type_id=all_decals"},
+  ],
+  "JG 27":  [
+    {name:"Eduard EDK82116 — Bf 109 E-7 Trop ProfiPACK (Marseille 'Yellow 14')",url:"https://www.hannants.co.uk/product/EDK82116"},
+    {name:"Hannants search — North Africa Fw 190 / JG 27 decals",url:"https://www.hannants.co.uk/search/?keyword_search=jg27+north+africa+decal&product_type_id=all_decals"},
+  ],
 };
+
 
 // ── Recommended shops (verified UK modelling retailers) ──
 const UK_SHOPS = [
@@ -1788,15 +1811,16 @@ function closeDetail() {
 // ── PHOTOS — Wikimedia Commons category-first approach ────────────────────
 // Category lookup is far more reliable than full-text search for WW2 RAF photos
 const SQ_COMMONS_CATS = {
-  "JG 26":{cat:"Jagdgeschwader_26",label:"JG 26 Wikipedia"},
-  "JG 2":{cat:"Jagdgeschwader_2",label:"JG 2 Wikipedia"},
-  "JG 54":{cat:"Jagdgeschwader_54",label:"JG 54 Wikipedia"},
-  "JG 51":{cat:"Jagdgeschwader_51",label:"JG 51 Wikipedia"},
-  "JG 11":{cat:"Jagdgeschwader_11",label:"JG 11 Wikipedia"},
-  "JG 1":{cat:"Jagdgeschwader_1",label:"JG 1 Wikipedia"},
-  "III/JG 3":{cat:"Jagdgeschwader_3",label:"JG 3 Wikipedia"},
-  "JG 27":{cat:"Jagdgeschwader_27",label:"JG 27 Wikipedia"}
+  "JG 26":  "Focke-Wulf_Fw_190",
+  "JG 2":   "Focke-Wulf_Fw_190",
+  "JG 54":  "Focke-Wulf_Fw_190",
+  "JG 51":  "Focke-Wulf_Fw_190",
+  "JG 11":  "Focke-Wulf_Fw_190",
+  "JG 1":   "Focke-Wulf_Fw_190",
+  "III/JG 3":"Focke-Wulf_Fw_190_D-9",
+  "JG 27":  "Focke-Wulf_Fw_190",
 };
+
 
 async function fetchPhotos(sqNum, codes) {
   const grid = document.getElementById('photos-' + sqNum);
@@ -1805,7 +1829,7 @@ async function fetchPhotos(sqNum, codes) {
   // Words that indicate a modern photo we don't want
   const BLOCKLIST = /eurofighter|typhoon|tornado|f-35|f35|gripen|rafale|airbus|boeing|concorde|chinook|apache|lynx|merlin heli|red arrow|hawk t|display team|2[0-9]{3}|199[5-9]/i;
   // Words that confirm it's a genuine Fw 190 photo
-  const ALLOWLIST = /fw.190|focke.wulf|luftwaffe|battle of britain|194[0-4]|raf|fighter command|squadron/i;
+  const ALLOWLIST = /fw.190|fw_190|focke.wulf|focke_wulf|luftwaffe|jg.26|jg.54|jg.2\b|194[1-5]|wurger|dora|wuerger/i;
 
   async function getInfo(titles) {
     if (!titles.length) return [];
@@ -1825,8 +1849,8 @@ async function fetchPhotos(sqNum, codes) {
     if (!p.imageinfo?.[0]?.thumburl) return false;
     if (!/\.(jpg|jpeg|png)/i.test(url)) return false;
     if (BLOCKLIST.test(combined)) return false;
-    // Must either have hurricane in filename or in description
-    return /hurricane/i.test(title) || ALLOWLIST.test(combined);
+    // Must match Fw 190 related content
+    return ALLOWLIST.test(combined) || /fw.190|fw_190|focke/i.test(title);
   }
 
   function render(pages) {
@@ -1869,16 +1893,16 @@ async function fetchPhotos(sqNum, codes) {
     try {
       const r = await fetch(`https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(q)}&srnamespace=6&srlimit=20&format=json&origin=*`);
       const d = await r.json();
-      const titles = (d.query?.search || []).map(x => x.title).filter(t => /hurricane/i.test(t));
+      const titles = (d.query?.search || []).map(x => x.title).map(x => x.title);
       if (titles.length) { const pages = await getInfo(titles); if (render(pages)) return; }
     } catch(e) {}
   }
 
-  // 3. Fallback: search for Fw 190 + year
+  // 3. Fallback: Fw 190 general search
   try {
-    const r = await fetch(`https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent('Focke-Wulf Fw 190 Luftwaffe')}&srnamespace=6&srlimit=30&format=json&origin=*`);
+    const r = await fetch(`https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent('Focke-Wulf Fw 190 Luftwaffe World War II')}&srnamespace=6&srlimit=30&format=json&origin=*`);
     const d = await r.json();
-    const titles = (d.query?.search || []).map(x => x.title).filter(t => /hurricane/i.test(t));
+    const titles = (d.query?.search || []).map(x => x.title);
     if (titles.length) { const pages = await getInfo(titles); if (render(pages)) return; }
   } catch(e) {}
 
@@ -1902,48 +1926,48 @@ function closeLB(){document.getElementById('lightbox').classList.remove('open');
 
 // ── PILOT MODAL ─────────────────────────────────────────────
 function openPM(name) {
-  const b=BIOS[name];
-  const allP=SQ.flatMap(s=>s.pilots);
-  const pilot=allP.find(p=>p.n===name);
-  const nameParts=name.replace(/^(Sqn Ldr|Wg Cdr|Flt Lt|Plt Off|Sgt|Flg Off|Sub Lt)\s+/,'');
-  const rankPart=name.match(/^(Sqn Ldr|Wg Cdr|Flt Lt|Plt Off|Sgt|Flg Off|Sub Lt)/)?.[0]||'';
-  document.getElementById('pm-name').textContent=nameParts;
-  if(!b){
-    document.getElementById('pm-rank').textContent=rankPart;
-    document.getElementById('pm-stats').innerHTML=`<div class="pm-stat"><div class="v">${pilot?pilot.k:'—'}</div><div class="l">Victories</div></div><div class="pm-stat"><div class="v">—</div><div class="l">Sorties</div></div><div class="pm-stat"><div class="v" style="font-size:13px;padding-top:5px">${pilot?pilot.fate:''}</div><div class="l">Fate</div></div>`;
-    document.getElementById('pm-bio').innerHTML=`<p>${pilot?pilot.note:''}.</p><p style="color:var(--ink3);font-style:italic;margin-top:.4rem">Full biography not yet available.</p>`;
-    document.getElementById('pm-awards').innerHTML='';
-  }else{
-    const sqnForPilot=SQ.find(s=>s.pilots.some(p=>p.n===name));
-    document.getElementById('pm-rank').textContent=`${rankPart}${sqnForPilot?' · No.'+sqnForPilot.num+' Sqn':''}`;
-    document.getElementById('pm-stats').innerHTML=`<div class="pm-stat"><div class="v">${b.kills}</div><div class="l">Victories</div></div><div class="pm-stat"><div class="v" style="font-size:14px">${b.sorties}</div><div class="l">Sorties</div></div><div class="pm-stat"><div class="v" style="font-size:13px;padding-top:4px">${b.fate.split('—')[0].trim()}</div><div class="l">Fate</div></div>`;
-    document.getElementById('pm-bio').innerHTML=b.bio;
-    document.getElementById('pm-awards').innerHTML=b.awards.map(a=>`<span class="award">${a}</span>`).join('');
-  }
-  const surname = nameParts.split(' ').pop();
+  // Find pilot in SQ data
   const sqnFP = SQ.find(s => s.pilots.some(p => p.n === name));
+  const pilot = sqnFP ? sqnFP.pilots.find(p => p.n === name) : null;
 
-  // Specific decal sheets from SQ_DECALS
+  document.getElementById('pm-name').textContent = name;
+  document.getElementById('pm-rank').textContent = sqnFP ? sqnFP.num + ' · ' + (sqnFP.base || '') : '';
+
+  document.getElementById('pm-stats').innerHTML = [
+    `<div class="pm-stat"><div class="v">${pilot ? pilot.k : '—'}</div><div class="l">Victories</div></div>`,
+    `<div class="pm-stat"><div class="v" style="font-size:11px;padding-top:4px">${pilot ? (pilot.fate||'—') : '—'}</div><div class="l">Fate</div></div>`,
+    `<div class="pm-stat"><div class="v" style="font-size:11px;padding-top:4px">${pilot ? (pilot.awards||'—') : '—'}</div><div class="l">Awards</div></div>`,
+  ].join('');
+
+  document.getElementById('pm-bio').innerHTML = pilot
+    ? `<p>${pilot.note}</p>`
+    : '<p style="color:rgba(255,255,255,.4);font-style:italic">No data available.</p>';
+
+  document.getElementById('pm-awards').innerHTML = '';
+
+  // Decal sheets
   const sqDecals = sqnFP ? (SQ_DECALS[sqnFP.num] || []) : [];
   const decalEl = document.getElementById('pm-decal-list');
-  if(decalEl){
-    if(sqDecals.length){
-      decalEl.innerHTML = '<div style="font-family:sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:5px">Decal sheets for this squadron</div>'
-        + sqDecals.map(d => `<a href="${d.url}" target="_blank" rel="noopener" style="display:block;font-size:11px;color:var(--raf-light);text-decoration:none;padding:3px 0;border-bottom:1px solid var(--border);line-height:1.4">${d.name} ↗</a>`).join('');
+  if (decalEl) {
+    if (sqDecals.length) {
+      decalEl.innerHTML = '<div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:6px">Decal sheets</div>'
+        + sqDecals.map(d => `<a href="${d.url}" target="_blank" rel="noopener" style="display:block;font-size:12px;color:rgba(255,255,255,.75);text-decoration:none;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.07);line-height:1.4">${d.name} ↗</a>`).join('');
       decalEl.style.display = 'block';
     } else {
       decalEl.style.display = 'none';
     }
   }
 
-  // Links row — useful external sources
+  // Links
+  const surname = name.split(' ').pop();
   const pilotLink = document.getElementById('pm-h-pilot');
-  const sqnLink   = document.getElementById('pm-h-sqn');
-  pilotLink.href  = `https://www.iwm.org.uk/collections`;
-  pilotLink.textContent = `IWM: ${surname} archive ↗`;
-  if(sqnFP){
-    sqnLink.href = `https://www.hannants.co.uk/search/index.php?keyword_search=${sqnFP.num}+squadron+hurricane&product_type_id=all_decals`;
-    sqnLink.textContent = `Hannants: No.${sqnFP.num} Sqn decals ↗`;
+  const sqnLink = document.getElementById('pm-h-sqn');
+  pilotLink.href = `https://en.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(name)}`;
+  pilotLink.textContent = `Wikipedia: ${surname} ↗`;
+  if (sqnFP) {
+    const decalSearch = SQ_DECALS[sqnFP.num]?.[0]?.url || `https://www.hannants.co.uk/search/?keyword_search=fw190+${encodeURIComponent(sqnFP.num)}+decal`;
+    sqnLink.href = decalSearch;
+    sqnLink.textContent = `Hannants: ${sqnFP.num} decals ↗`;
     sqnLink.style.display = '';
   } else {
     sqnLink.style.display = 'none';
@@ -2599,12 +2623,23 @@ const AFTERMARKET = {
 // SURVIVORS DATA
 // ═══════════════════════════════════════════════════════
 const SURVIVORS = [
-  {name:"Fw 190 A-8",loc:"RAF Museum Cosford",lat:52.640,lng:-2.303,notes:"Complete A-8. Best-preserved Wuerger on public display.",serial:"733682",status:"Static display"},
-  {name:"Fw 190 A-8/R11",loc:"RAF Museum Hendon",lat:51.598,lng:-0.243,notes:"All-weather variant. Unique sub-type on display.",serial:"350177",status:"Static display"},
-  {name:"Fw 190 D-9",loc:"NASM Washington DC",lat:38.888,lng:-77.019,notes:"Most complete surviving D-9 Dora.",serial:"210003",status:"Restoration"},
-  {name:"Fw 190 F-8",loc:"Technikmuseum Speyer",lat:49.317,lng:8.445,notes:"Ground attack F-8 variant.",serial:"584219",status:"Static display"},
-  {name:"Fw 190 A-5",loc:"Museo del Aire Madrid",lat:40.375,lng:-3.778,notes:"Post-war Spanish CASA 1.131.",serial:"",status:"Static display"}
+  {name:"Fw 190 A-8 (Werk Nr. 733682)",loc:"RAF Museum Cosford",lat:52.640,lng:-2.303,
+   notes:"Captured at Schleswig 1945. One of the best-preserved Würgers in the world. Accessible cockpit area — excellent close-up reference for RLM 66 interior, BMW 801 cowling detail and instrument panel.",
+   serial:"733682",status:"Static display",link:"https://www.rafmuseum.org.uk/cosford/collections/aircraft/focke-wulf-fw-190/"},
+  {name:"Fw 190 A-8/R11 (Werk Nr. 350177)",loc:"RAF Museum Hendon, London",lat:51.598,lng:-0.243,
+   notes:"All-weather night fighter variant with FuG 125 Hermine radio compass. One of only two surviving A-8/R11s. Distinctive antenna array on the fuselage makes it immediately identifiable.",
+   serial:"350177",status:"Static display",link:"https://www.rafmuseum.org.uk/london/collections/aircraft/focke-wulf-fw-190-a-8-r11/"},
+  {name:"Fw 190 D-9 (Werk Nr. 210003)",loc:"National Air & Space Museum, Washington DC",lat:38.888,lng:-77.019,
+   notes:"One of the most complete surviving D-9 Doras. Jumo 213A engine intact. The distinctive annular radiator and long nose profile clearly visible. On display in the Steven F. Udvar-Hazy Center.",
+   serial:"210003",status:"Long-term restoration",link:"https://airandspace.si.edu/collection-objects/focke-wulf-fw-190-d-9/nasm_A19600308000"},
+  {name:"Fw 190 F-8 (Werk Nr. 584219)",loc:"Technikmuseum Speyer, Germany",lat:49.317,lng:8.445,
+   notes:"Ground attack F-series variant. Centreline bomb rack attachment points and reinforced undercarriage visible. One of the few F-series examples on public display.",
+   serial:"584219",status:"Static display",link:"https://technik-museum.de/"},
+  {name:"Fw 190 A-5/U3 replica",loc:"Luftwaffenmuseum Berlin-Gatow",lat:52.518,lng:13.203,
+   notes:"The Luftwaffe's own museum at the former RAF Gatow airfield. Extensive Luftwaffe aircraft collection including Fw 190 variants and original wartime equipment.",
+   serial:"—",status:"Static display",link:"https://www.luftwaffenmuseum.de/"},
 ];
+
 
 // ═══════════════════════════════════════════════════════
 // BOOKS DATA
@@ -2673,7 +2708,8 @@ function renderSurvivors() {
         </div>
         <div class="survivor-body">
           <div class="survivor-row"><span class="survivor-key">Aircraft</span><span>${s.name}</span></div>
-          <div style="margin-top:.6rem;font-size:11px;color:var(--brass2);font-style:italic;border-top:1px solid rgba(255,255,255,.06);padding-top:.5rem">${s.notes}</div>
+          <div style="margin-top:.6rem;font-size:13px;color:rgba(255,255,255,.7);line-height:1.65;border-top:1px solid rgba(255,255,255,.06);padding-top:.5rem">${s.notes}</div>
+          ${s.link ? `<a href="${s.link}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;margin-top:.6rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);text-decoration:none">Visit museum ↗</a>` : ''}
         </div>
       </div>
     `).join('')}
@@ -2796,12 +2832,38 @@ function renderColourCompare() {
 // ── Media tab ──────────────────────────────────────────────────────────────
 
 const MEDIA_ITEMS = [
-  {type:"video",thumb:"✈",title:"Fw 190 The Focke-Wulf Wuerger",channel:"Aviation History",url:"https://www.youtube.com/results?search_query=fw+190+focke+wulf+documentary",desc:"Overview of the Fw 190 operational career."},
-  {type:"video",thumb:"🎨",title:"Eduard Fw 190 A-8 ProfiPACK Build",channel:"Scale Modelling",url:"https://www.youtube.com/results?search_query=fw190+a8+profipack+build",desc:"Full 1:48 A-8 ProfiPACK build video."},
-  {type:"video",thumb:"📷",title:"Fw 190 D-9 Dora Walkaround",channel:"Museum",url:"https://www.youtube.com/results?search_query=fw190+d9+dora+walkaround",desc:"Walkaround of surviving D-9 at NASM."},
-  {type:"video",thumb:"🖌️",title:"RLM 74/75/76 Mottling Tutorial",channel:"Modelling Tutorial",url:"https://www.youtube.com/results?search_query=rlm+mottling+fw190+airbrush",desc:"Step-by-step airbrushing guide."},
-  {type:"video",thumb:"🎬",title:"JG 26 The Abbeville Boys",channel:"Luftwaffe History",url:"https://www.youtube.com/results?search_query=jg26+abbeville+fw190",desc:"JG 26 Channel Front documentary."}
+  {type:"video",thumb:"✈",
+   title:"Focke-Wulf Fw 190 — The Butcher Bird",
+   channel:"Real Engineering / History Channel",
+   url:"https://www.youtube.com/watch?v=dMam5MmfVkQ",
+   desc:"In-depth look at the Fw 190's development, technical features and operational impact on the Channel Front and Eastern Front. Excellent general reference."},
+  {type:"video",thumb:"🎨",
+   title:"Eduard Fw 190 A-8 ProfiPACK 1:48 Full Build",
+   channel:"Doogs Models",
+   url:"https://www.youtube.com/results?search_query=fw190+a8+profipack+1+48+full+build+doogs",
+   desc:"Complete build of Eduard's 1:48 A-8 ProfiPACK from box to finished model. Covers SPACE PE cockpit, RLM mottling, BMW 801 exhaust weathering and markings."},
+  {type:"video",thumb:"📷",
+   title:"Fw 190 A-8 Cockpit Walkaround — RAF Museum Cosford",
+   channel:"Museum Walkaround",
+   url:"https://www.youtube.com/results?search_query=fw190+a8+cockpit+walkaround+raf+museum+cosford+cosford",
+   desc:"Close-up cockpit photography from the Cosford A-8. RLM 66 instrument panel, seat, structural detail in natural light. Essential modelling reference."},
+  {type:"video",thumb:"🔧",
+   title:"BMW 801 Radial Engine — Startup and Run",
+   channel:"Aviation Engine",
+   url:"https://www.youtube.com/results?search_query=BMW+801+radial+engine+startup+fw190",
+   desc:"BMW 801 engine startup footage showing the distinctive exhaust pattern, sound and smoke characteristics. Reference for exhaust staining weathering."},
+  {type:"video",thumb:"🖌️",
+   title:"RLM 74/75/76 Mottling Tutorial — Fw 190 G Scheme",
+   channel:"Modelling Tutorial",
+   url:"https://www.youtube.com/results?search_query=RLM+74+75+76+mottling+fw190+airbrush+tutorial",
+   desc:"Step-by-step airbrushing guide for the Fw 190 fuselage mottling. PSI settings, thinning ratios, layering and edge softening technique."},
+  {type:"video",thumb:"🎬",
+   title:"JG 26 — The Abbeville Boys Documentary",
+   channel:"Luftwaffe History",
+   url:"https://www.youtube.com/results?search_query=JG26+abbeville+boys+fw190+channel+front+documentary",
+   desc:"Documentary on JG 26 Schlageter's Channel Front operations. Priller interview footage, period photography and combat film."},
 ];
+
 
 
 // Suppress unhandled promise rejections (Wikimedia fetch, etc.) from showing as Script error on iOS
