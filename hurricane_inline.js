@@ -1530,6 +1530,10 @@ let leafletMap=null;
 let leafletMarkers={};
 let leafletZones={};
 let selectedStationId=null;
+let rafMapInitialFitDone=false;
+let rafMapInitTimer=null;
+let rafMapUserInteracted=false;
+let rafMapHomeFitTimer=null;
 
 function xyToLatLng(st){
   // Prefer verified WGS84 coordinates where supplied. The old x/y values remain as a fallback only.
@@ -1551,17 +1555,32 @@ function rafMapContainerReady(){
 }
 
 function stabiliseRAFMap(){
-  if(!leafletMap) return;
-  const steps = [0, 80, 180, 360, 700, 1100];
-  steps.forEach(ms => setTimeout(() => {
-    if(!leafletMap || !rafMapContainerReady()) return;
-    leafletMap.invalidateSize(false);
-    if(!selectedStationId){
-      leafletMap.fitBounds([[49.5,-7.5],[57.9,2.5]], {padding:[16,16]});
-    }
+  if(!leafletMap || !rafMapContainerReady()) return;
+  [0, 80, 220, 520].forEach(ms => setTimeout(() => {
+    if(leafletMap && rafMapContainerReady()) leafletMap.invalidateSize(false);
   }, ms));
 }
 
+function fitRAFMapHome(){
+  if(!leafletMap || !rafMapContainerReady()) return;
+  if(selectedStationId || rafMapUserInteracted) return;
+  leafletMap.invalidateSize(false);
+  leafletMap.fitBounds([[49.5,-7.5],[57.9,2.5]], {padding:[16,16], maxZoom:6, animate:false});
+  rafMapInitialFitDone = true;
+}
+function scheduleRAFMapHomeFit(){
+  if(rafMapHomeFitTimer) clearTimeout(rafMapHomeFitTimer);
+  rafMapHomeFitTimer = setTimeout(function(){
+    rafMapHomeFitTimer = null;
+    fitRAFMapHome();
+  }, 180);
+}
+
+function scheduleRAFMapInit(){
+  if(rafMapInitTimer) clearTimeout(rafMapInitTimer);
+  ensureRAFMapVisible();
+  [40, 160, 420, 900].forEach(ms => setTimeout(ensureRAFMapVisible, ms));
+}
 function ensureRAFMapVisible(){
   let tries = 0;
   const tick = () => {
@@ -1569,10 +1588,10 @@ function ensureRAFMapVisible(){
     if(rafMapContainerReady()){
       renderMap();
       stabiliseRAFMap();
+      if(leafletMap && !selectedStationId && !rafMapInitialFitDone) scheduleRAFMapHomeFit();
       return;
     }
-    if(tries < 16) requestAnimationFrame(tick);
-    else setTimeout(() => { renderMap(); stabiliseRAFMap(); }, 120);
+    if(tries < 24) requestAnimationFrame(tick);
   };
   requestAnimationFrame(tick);
 }
@@ -1603,6 +1622,9 @@ function renderMap(){
     subdomains:'abcd', maxZoom:10, minZoom:4
   }).addTo(leafletMap);
 
+  // Once the user interacts, never auto-fit back out. This prevents marker-click zoom/pan being overridden.
+  leafletMap.on('dragstart zoomstart click', function(){ rafMapUserInteracted = true; });
+
   const zones = {
     '10': [[50.0,-6.2],[50.5,-5.4],[51.0,-4.4],[51.4,-3.2],[51.7,-2.0],[51.7,-1.0],[50.8,-1.2],[50.0,-2.2],[49.9,-4.2]],
     '11': [[50.3,-1.8],[50.6,-0.8],[51.0,-0.2],[51.6,0.5],[52.1,1.6],[52.0,1.9],[51.3,1.8],[50.6,1.4],[50.2,0.4],[50.1,-0.6]],
@@ -1626,7 +1648,8 @@ function renderMap(){
     marker.bindTooltip(`<span class="raf-leaflet-label">${st.name}</span>`,{permanent:false,direction:'top',offset:[0,-10],opacity:.96,className:''});
     leafletMarkers[st.id]=marker;
   });
-  leafletMap.fitBounds([[49.5,-7.5],[57.9,2.5]], {padding:[16,16]});
+  rafMapInitialFitDone = false;
+  scheduleRAFMapHomeFit();
   stabiliseRAFMap();
   showMapIntro();
 }
@@ -1695,11 +1718,18 @@ function showMapStation(stOrId){
   const box = document.getElementById('map-sqn-list');
   if(!box) return;
   selectedStationId = st.id;
+  rafMapUserInteracted = true;
+  rafMapInitialFitDone = true;
+  if(rafMapHomeFitTimer){ clearTimeout(rafMapHomeFitTimer); rafMapHomeFitTimer = null; }
   Object.entries(leafletMarkers || {}).forEach(([mid,m]) => {
     const el = m.getElement && m.getElement();
     if(el){ const dot = el.querySelector('.raf-leaflet-marker'); if(dot) dot.classList.toggle('selected', mid === st.id); }
   });
-  if(leafletMap && leafletMarkers[st.id]) leafletMap.panTo([st._lat, st._lng], {animate:true, duration:.45});
+  if(leafletMap && leafletMarkers[st.id]) {
+    leafletMap.invalidateSize(false);
+    const targetZoom = Math.max(leafletMap.getZoom() || 5, 7);
+    leafletMap.setView([st._lat, st._lng], targetZoom, {animate:true});
+  }
 
   const unitCards = (st.sqns || []).map(n => {
     const clean = String(n).replace(' fwd','');
@@ -1748,6 +1778,8 @@ function filterMapGroup(group,btn){
     if(el){ const dot = el.querySelector('.raf-leaflet-marker'); if(dot) dot.classList.remove('selected'); }
   });
   selectedStationId=null;
+  rafMapUserInteracted = true;
+  rafMapInitialFitDone = true;
   const shown = STATIONS.filter(st => group==='all' || st.group===group);
   if(leafletMap && shown.length){
     const bounds=L.latLngBounds(shown.map(st => [st._lat, st._lng]));

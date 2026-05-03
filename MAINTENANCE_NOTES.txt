@@ -1,0 +1,23 @@
+WW2 Modeller maintenance pass - 2026-05-03
+
+Hurricane map fixes
+- Removed delayed auto-fit behaviour that could fire after clicking a station marker.
+- Added explicit user-interaction protection so the map does not zoom/pan back out after a marker click.
+- Marker click now cancels any pending home-fit timer and centres on the selected base at a useful zoom.
+- Reference tab and Station Map sub-tab now trigger map initialisation after the panel has become visible, with extra delayed passes to avoid Leaflet rendering into a hidden/zero-width container.
+- Map container and board now have stable dimensions/positioning to reduce first-render blank map issues.
+
+General site fixes
+- Rebuilt sitemap.xml to include all current HTML pages in the ZIP.
+- Rebuilt robots.txt with the current sitemap location.
+- Fixed the homepage favicon path from a missing ../../assets/roundel.svg reference to favicon.svg.
+- Replaced the incorrect Fw 190 USAF article ID link with the working National Museum USAF Fw 190D-9 URL pattern.
+- Ran an internal link scan for local href/src targets and local anchors; no missing local files or anchors remained after fixes.
+- Rechecked inline JavaScript syntax in HTML files and hurricane_inline.js with node --check.
+
+Dropdown/nav fixes
+- Reapplied aircraft dropdown hardening across pages that use the aircraft dropdown.
+- Dropdown menus are forced opaque, above sticky nav/tabs, scrollable, and include the current aircraft list: Hurricane, Spitfire, Fw 190, Bf 109, P-51, Lancaster and Mosquito.
+
+Notes
+- External retail stock/product availability can change at any time. Existing product links should still be treated cautiously, particularly old hard-coded product pages.

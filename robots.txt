@@ -1,19 +1,4 @@
 User-agent: *
 Allow: /
 
-User-agent: AhrefsSiteAudit
-Allow: /
-
-User-agent: AhrefsBot
-Allow: /
-
-User-agent: Mediapartners-Google
-Allow: /
-
-User-agent: GPTBot
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-Sitemap: https://www.ww2modeller.co.uk/sitemap.xml
+Sitemap: https://ww2modeller.co.uk/sitemap.xml

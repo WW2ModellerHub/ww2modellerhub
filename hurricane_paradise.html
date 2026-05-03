@@ -794,7 +794,7 @@ body{
 
 
 /* ===== LEAFLET RAF MAP ===== */
-#leaflet-map{width:100%;height:560px;min-height:560px;background:#0c1722;filter:saturate(.82) contrast(1.04);border-radius:3px}
+#leaflet-map{width:100%;height:560px;min-height:560px;background:#0c1722;filter:saturate(.82) contrast(1.04);border-radius:3px;position:relative;z-index:1}
 #tab-reference.active #rsub-map #leaflet-map{display:block;visibility:visible}
 .leaflet-container{font-family:'Oswald',sans-serif;background:#0c1722}
 .leaflet-control-attribution{font-size:9px;background:rgba(8,12,18,.68)!important;color:rgba(255,255,255,.55)!important}
@@ -805,7 +805,7 @@ body{
 
 /* ===== RAF real-map two-column layout ===== */
 .raf-map-shell{display:grid;grid-template-columns:minmax(360px,1.45fr) minmax(280px,.9fr);gap:.85rem;align-items:start}
-.raf-map-board{background:linear-gradient(160deg,rgba(8,19,31,.92),rgba(17,14,7,.86));border:1px solid rgba(201,168,76,.22);border-radius:5px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.32)}
+.raf-map-board{background:linear-gradient(160deg,rgba(8,19,31,.92),rgba(17,14,7,.86));border:1px solid rgba(201,168,76,.22);border-radius:5px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.32);min-height:560px}
 .raf-map-side{background:linear-gradient(160deg,rgba(21,39,68,.86),rgba(8,8,5,.78));border:1px solid rgba(201,168,76,.18);border-radius:5px;padding:1rem;min-height:560px;box-shadow:0 12px 30px rgba(0,0,0,.25)}
 @media(max-width:860px){.raf-map-shell{grid-template-columns:1fr}.raf-map-side{min-height:auto}}
 
@@ -820,6 +820,42 @@ body{
 .wa-ref-title{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.25rem}
 .wa-ref-desc{font-size:13px;color:rgba(255,255,255,.56);line-height:1.48}
 .wa-ref-link{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-top:.55rem}
+
+
+/* Universal aircraft dropdown hardening: opaque, above sticky tabs, scrollable and full list visible */
+.site-nav{overflow:visible !important;z-index:10000 !important}
+.site-nav-links{overflow:visible !important}
+.ac-drop{position:relative !important;z-index:10001 !important}
+.ac-drop-menu{
+  position:absolute !important;
+  top:calc(100% + 6px) !important;
+  left:0 !important;
+  min-width:290px !important;
+  background:#0d0b05 !important;
+  background:linear-gradient(180deg,rgba(13,11,5,.99),rgba(5,16,31,.98)) !important;
+  border:1px solid rgba(201,168,76,.32) !important;
+  border-radius:6px !important;
+  box-shadow:0 18px 48px rgba(0,0,0,.72) !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+  transform:translateY(-4px) !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  max-height:min(72vh,430px) !important;
+  z-index:10002 !important;
+  backdrop-filter:blur(18px) !important;
+  -webkit-backdrop-filter:blur(18px) !important;
+}
+.ac-drop.open .ac-drop-menu{
+  opacity:1 !important;
+  visibility:visible !important;
+  transform:translateY(0) !important;
+  pointer-events:auto !important;
+}
+.ac-drop-item{white-space:nowrap !important;display:flex !important;align-items:center !important;justify-content:space-between !important;gap:.9rem !important;color:rgba(255,255,255,.84) !important;background:transparent}
+.ac-drop-item:hover,.ac-drop-item.current{background:rgba(201,168,76,.12) !important;color:#e8c76a !important}
+.ac-drop-badge{flex-shrink:0 !important}
+@media(max-width:520px){.ac-drop-menu{position:fixed !important;left:12px !important;right:12px !important;top:54px !important;min-width:0 !important;width:auto !important}}
 
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409"
@@ -2108,7 +2144,9 @@ function switchTab(id, el) {
     if (!document.querySelector('.survivor-card')) renderSurvivors();
     if (!document.querySelector('.book-card')) renderBooks();
     if (!document.querySelector('.am-card')) renderAftermarket();
-    scheduleRAFMapInit();
+    requestAnimationFrame(function(){ requestAnimationFrame(scheduleRAFMapInit); });
+    setTimeout(scheduleRAFMapInit, 250);
+    setTimeout(scheduleRAFMapInit, 750);
   }
   if (id === 'stories') { renderPilotStories(); }
   if (id === 'media') { renderMedia(); }
@@ -2136,7 +2174,8 @@ function setRefSub(sub, el) {
   });
   if (sub === 'timeline') { updateTimeline(document.getElementById('tl-slider').value || 0); }
   if (sub === 'map') {
-    scheduleRAFMapInit();
+    requestAnimationFrame(function(){ requestAnimationFrame(scheduleRAFMapInit); });
+    setTimeout(scheduleRAFMapInit, 250);
   }
   if (sub === 'compare') { initCompare(); }
 }
@@ -2959,6 +2998,8 @@ let leafletZones={};
 let selectedStationId=null;
 let rafMapInitialFitDone=false;
 let rafMapInitTimer=null;
+let rafMapUserInteracted=false;
+let rafMapHomeFitTimer=null;
 
 function xyToLatLng(st){
   // Prefer verified WGS84 coordinates where supplied. The old x/y values remain as a fallback only.
@@ -2990,9 +3031,17 @@ function stabiliseRAFMap(){
 
 function fitRAFMapHome(){
   if(!leafletMap || !rafMapContainerReady()) return;
+  if(selectedStationId || rafMapUserInteracted) return;
   leafletMap.invalidateSize(false);
-  leafletMap.fitBounds([[49.5,-7.5],[57.9,2.5]], {padding:[16,16], maxZoom:6});
+  leafletMap.fitBounds([[49.5,-7.5],[57.9,2.5]], {padding:[16,16], maxZoom:6, animate:false});
   rafMapInitialFitDone = true;
+}
+function scheduleRAFMapHomeFit(){
+  if(rafMapHomeFitTimer) clearTimeout(rafMapHomeFitTimer);
+  rafMapHomeFitTimer = setTimeout(function(){
+    rafMapHomeFitTimer = null;
+    fitRAFMapHome();
+  }, 180);
 }
 
 function scheduleRAFMapInit(){
@@ -3008,7 +3057,7 @@ function ensureRAFMapVisible(){
     if(rafMapContainerReady()){
       renderMap();
       stabiliseRAFMap();
-      if(leafletMap && !selectedStationId && !rafMapInitialFitDone) setTimeout(fitRAFMapHome, 80);
+      if(leafletMap && !selectedStationId && !rafMapInitialFitDone) scheduleRAFMapHomeFit();
       return;
     }
     if(tries < 24) requestAnimationFrame(tick);
@@ -3042,6 +3091,9 @@ function renderMap(){
     subdomains:'abcd', maxZoom:10, minZoom:4
   }).addTo(leafletMap);
 
+  // Once the user interacts, never auto-fit back out. This prevents marker-click zoom/pan being overridden.
+  leafletMap.on('dragstart zoomstart click', function(){ rafMapUserInteracted = true; });
+
   const zones = {
     '10': [[50.0,-6.2],[50.5,-5.4],[51.0,-4.4],[51.4,-3.2],[51.7,-2.0],[51.7,-1.0],[50.8,-1.2],[50.0,-2.2],[49.9,-4.2]],
     '11': [[50.3,-1.8],[50.6,-0.8],[51.0,-0.2],[51.6,0.5],[52.1,1.6],[52.0,1.9],[51.3,1.8],[50.6,1.4],[50.2,0.4],[50.1,-0.6]],
@@ -3066,7 +3118,7 @@ function renderMap(){
     leafletMarkers[st.id]=marker;
   });
   rafMapInitialFitDone = false;
-  setTimeout(fitRAFMapHome, 80);
+  scheduleRAFMapHomeFit();
   stabiliseRAFMap();
   showMapIntro();
 }
@@ -3135,12 +3187,18 @@ function showMapStation(stOrId){
   const box = document.getElementById('map-sqn-list');
   if(!box) return;
   selectedStationId = st.id;
+  rafMapUserInteracted = true;
   rafMapInitialFitDone = true;
+  if(rafMapHomeFitTimer){ clearTimeout(rafMapHomeFitTimer); rafMapHomeFitTimer = null; }
   Object.entries(leafletMarkers || {}).forEach(([mid,m]) => {
     const el = m.getElement && m.getElement();
     if(el){ const dot = el.querySelector('.raf-leaflet-marker'); if(dot) dot.classList.toggle('selected', mid === st.id); }
   });
-  if(leafletMap && leafletMarkers[st.id]) { leafletMap.invalidateSize(false); leafletMap.panTo([st._lat, st._lng], {animate:true, duration:.35}); }
+  if(leafletMap && leafletMarkers[st.id]) {
+    leafletMap.invalidateSize(false);
+    const targetZoom = Math.max(leafletMap.getZoom() || 5, 7);
+    leafletMap.setView([st._lat, st._lng], targetZoom, {animate:true});
+  }
 
   const unitCards = (st.sqns || []).map(n => {
     const clean = String(n).replace(' fwd','');
@@ -3189,6 +3247,7 @@ function filterMapGroup(group,btn){
     if(el){ const dot = el.querySelector('.raf-leaflet-marker'); if(dot) dot.classList.remove('selected'); }
   });
   selectedStationId=null;
+  rafMapUserInteracted = true;
   rafMapInitialFitDone = true;
   const shown = STATIONS.filter(st => group==='all' || st.group===group);
   if(leafletMap && shown.length){
