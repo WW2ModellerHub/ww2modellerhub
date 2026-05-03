@@ -117,7 +117,7 @@ body{
 
 /* ── AIRCRAFT HERO BANNER ─────────────────────────── */
 .aircraft-hero{
-  background:linear-gradient(to right, var(--raf-dark) 0%, rgba(20,17,7),.8) 60%, transparent 100%),
+  background:linear-gradient(to right, var(--raf-dark) 0%, rgba(20,17,7,.8) 60%, transparent 100%),
              linear-gradient(135deg, var(--raf-dark), var(--raf-mid));
   border-bottom:1px solid rgba(255,255,255,.08);
   padding:1.2rem 1.5rem 1rem;
@@ -205,7 +205,7 @@ body{
 /* ── SIDEBAR ──────────────────────────────────────── */
 .sidebar{display:flex;flex-direction:column;gap:1rem}
 .sidebar-block{
-  background:rgba(20,17,7),.7);
+  background:rgba(20,17,7,.7);
   border:1px solid rgba(255,255,255,.09);
   border-radius:3px;overflow:hidden;
 }
@@ -245,7 +245,7 @@ body{
 .section-label:first-child{margin-top:0}
 .section-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.08)}
 .info-box{
-  background:rgba(20,17,7),.6);border:1px solid rgba(255,255,255,.08);
+  background:rgba(20,17,7,.6);border:1px solid rgba(255,255,255,.08);
   border-left:3px solid var(--raf-sky);border-radius:2px;
   padding:.75rem 1rem;margin-bottom:1rem;
   font-size:17px;color:rgba(255,255,255,.65);line-height:1.7;
@@ -254,7 +254,7 @@ body{
 /* ── SQUAD GRID ──────────────────────────────────── */
 .sq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
 .sq-card{
-  background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);
+  background:rgba(20,17,7,.7);border:1px solid rgba(255,255,255,.1);
   border-radius:4px;overflow:hidden;cursor:pointer;
   transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;
   box-shadow:var(--shadow);
@@ -267,7 +267,7 @@ body{
 .sq-card:hover{border-color:var(--brass);box-shadow:var(--shadow2);transform:translateY(-1px)}
 .sq-card.active{border-color:var(--brass);box-shadow:0 0 0 2px rgba(184,144,42,.4)}
 .card-hd{
-  background:linear-gradient(135deg,rgba(13,11,5),.9),rgba(20,17,7),.8));
+  background:linear-gradient(135deg,rgba(13,11,5,.9),rgba(20,17,7,.8));
   padding:.55rem .8rem;display:flex;align-items:center;gap:8px;
   border-bottom:1px solid rgba(255,255,255,.07);
 }
@@ -285,7 +285,7 @@ body{
 .stat-lbl{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35)}
 .card-tags{display:flex;flex-wrap:wrap;gap:3px}
 .tag{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:2px 6px;border-radius:2px;border:1px solid}
-.t-blue{background:rgba(28,24,10),.3);color:#7aA8d8;border-color:rgba(122,168,216,.25)}
+.t-blue{background:rgba(28,24,10,.3);color:#7aA8d8;border-color:rgba(122,168,216,.25)}
 .t-amber{background:rgba(184,144,42,.2);color:var(--brass2);border-color:rgba(184,144,42,.3)}
 .t-green{background:rgba(74,82,32,.3);color:#8aA060;border-color:rgba(74,82,32,.4)}
 .t-coral{background:rgba(140,40,30,.25);color:#e08070;border-color:rgba(140,40,30,.3)}
@@ -294,7 +294,7 @@ body{
 /* ── DETAIL PANEL ────────────────────────────────── */
 .detail-panel{
   display:none;
-  background:rgba(20,17,7),.85);
+  background:rgba(20,17,7,.85);
   backdrop-filter:blur(8px);
   border:2px solid var(--brass);border-radius:4px;
   margin:10px 0 4px;overflow:hidden;
@@ -399,7 +399,7 @@ body{
 /* ── PAINT ───────────────────────────────────────── */
 .paint-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
 .paint-card{
-  background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);
+  background:rgba(20,17,7,.7);border:1px solid rgba(255,255,255,.1);
   border-radius:3px;overflow:hidden;box-shadow:var(--shadow);display:flex;min-height:90px;
 }
 .paint-swatch{
@@ -421,7 +421,7 @@ body{
 /* ── KITS ────────────────────────────────────────── */
 .kit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
 .kit-card{
-  background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);
+  background:rgba(20,17,7,.7);border:1px solid rgba(255,255,255,.1);
   border-radius:4px;padding:1rem 1.1rem;box-shadow:var(--shadow);
   transition:border-color .15s;
 }
@@ -459,7 +459,7 @@ body{
 .add-btn:hover{background:var(--brass2)}
 .build-list{display:grid;gap:6px}
 .build-item{
-  background:rgba(20,17,7),.6);border:1px solid rgba(255,255,255,.08);
+  background:rgba(20,17,7,.6);border:1px solid rgba(255,255,255,.08);
   border-radius:2px;padding:.65rem .9rem;display:flex;align-items:center;gap:10px;
 }
 .build-status{width:10px;height:10px;border-radius:50%;flex-shrink:0}
@@ -490,7 +490,7 @@ body{
 
 /* ── TIMELINE ────────────────────────────────────── */
 .timeline-wrap{
-  background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);
+  background:rgba(20,17,7,.7);border:1px solid rgba(255,255,255,.1);
   border-radius:3px;padding:1.1rem;margin-bottom:1.1rem;box-shadow:var(--shadow);
 }
 .timeline-slider{width:100%;margin:1rem 0 .5rem;accent-color:var(--brass)}
@@ -501,7 +501,7 @@ body{
   background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.07);
   border-left:3px solid rgba(255,255,255,.1);border-radius:2px;padding:5px 8px;
 }
-.tl-sqn.active-tl{background:rgba(28,24,10),.4);border-left-color:var(--raf-sky)}
+.tl-sqn.active-tl{background:rgba(28,24,10,.4);border-left-color:var(--raf-sky)}
 .tl-sqn-num{font-family:'Special Elite',cursive;font-size:14px;color:#fff}
 .tl-sqn-status{font-family:'Oswald',sans-serif;font-size:12px;color:rgba(255,255,255,.35);letter-spacing:.04em}
 .tl-legend{display:flex;gap:12px;margin-bottom:1rem;flex-wrap:wrap;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.05em;color:rgba(255,255,255,.5)}
@@ -509,7 +509,7 @@ body{
 
 /* ── MAP ─────────────────────────────────────────── */
 .map-container{}
-.map-wrap{background:rgba(20,17,7),.7);}
+.map-wrap{background:rgba(20,17,7,.7);}
 .map-filter-btn{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;background:transparent;border:1px solid;border-radius:2px;cursor:pointer;transition:all .15s;opacity:.65}
 .map-filter-btn:hover{opacity:1}
 .map-filter-btn.on{opacity:1;background:rgba(255,255,255,.08)}
@@ -532,7 +532,7 @@ body{
 /* ── WEATHERING ──────────────────────────────────── */
 .weather-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
 .weather-card{
-  background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);
+  background:rgba(20,17,7,.7);border:1px solid rgba(255,255,255,.1);
   border-radius:3px;overflow:hidden;box-shadow:var(--shadow);
 }
 .weather-hd{
@@ -554,7 +554,7 @@ body{
 .aftermarket-section{margin-bottom:1.5rem}
 .aftermarket-section-title{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid rgba(184,144,42,.25)}
 .am-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
-.am-card{background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);border-top:2px solid rgba(184,144,42,.4);border-radius:3px;padding:.85rem;box-shadow:var(--shadow)}
+.am-card{background:rgba(20,17,7,.7);border:1px solid rgba(255,255,255,.1);border-top:2px solid rgba(184,144,42,.4);border-radius:3px;padding:.85rem;box-shadow:var(--shadow)}
 .am-type{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--brass2);margin-bottom:.15rem}
 .am-name{font-family:'Special Elite',cursive;font-size:16px;color:#fff;margin-bottom:.25rem}
 .am-maker{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.45);margin-bottom:.3rem}
@@ -564,7 +564,7 @@ body{
 
 /* ── SURVIVORS ───────────────────────────────────── */
 .survivor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
-.survivor-card{background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;box-shadow:var(--shadow)}
+.survivor-card{background:rgba(20,17,7,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;box-shadow:var(--shadow)}
 .survivor-hd{
   background:rgba(0,0,0,.3);padding:.65rem .9rem;
   display:flex;align-items:center;gap:8px;border-bottom:2px solid var(--brass);
@@ -586,7 +586,7 @@ body{
 }
 .books-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
 .book-card{
-  background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);
+  background:rgba(20,17,7,.7);border:1px solid rgba(255,255,255,.1);
   border-radius:3px;padding:.8rem;box-shadow:var(--shadow);display:flex;gap:10px;
 }
 .book-spine{width:10px;flex-shrink:0;border-radius:1px}
@@ -597,7 +597,7 @@ body{
 
 /* ── SHOPS TAB ───────────────────────────────────── */
 .shop-card{
-  background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);
+  background:rgba(20,17,7,.7);border:1px solid rgba(255,255,255,.1);
   border-left:4px solid var(--brass);border-radius:3px;padding:.9rem;
   box-shadow:var(--shadow);margin-bottom:8px;
 }
@@ -609,7 +609,7 @@ body{
 .pm-overlay{display:none;position:fixed;inset:0;background:rgba(5,10,20,.85);z-index:500;align-items:center;justify-content:center;padding:1.5rem}
 .pm-overlay.open{display:flex}
 .pm-modal{
-  background:rgba(20,17,7),.97);border-radius:4px;max-width:520px;width:100%;overflow:hidden;
+  background:rgba(20,17,7,.97);border-radius:4px;max-width:520px;width:100%;overflow:hidden;
   border:2px solid var(--brass);max-height:88vh;overflow-y:auto;box-shadow:0 8px 48px rgba(0,0,0,.8);
   backdrop-filter:blur(12px);
 }
@@ -657,12 +657,12 @@ body{
 .ac-drop-btn:hover,.ac-drop.open .ac-drop-btn{color:#e8c76a;background:rgba(255,255,255,.04)}
 .ac-drop-caret{font-size:8px;transition:transform .15s;display:inline-block}
 .ac-drop.open .ac-drop-caret{transform:rotate(180deg)}
-.ac-drop-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:240px;background:rgba(13,11,5),.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,.18);border-radius:4px;box-shadow:0 12px 40px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(-4px);transition:all .15s;overflow:hidden;z-index:300}
-.ac-drop.open .ac-drop-menu{opacity:1;visibility:visible;transform:translateY(0)}
-.ac-drop-item{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.65rem 1rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05);transition:all .12s}
+.ac-drop-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:280px;background:#0d0b05;background:linear-gradient(180deg,rgba(13,11,5,.99),rgba(5,16,31,.98));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(201,168,76,.28);border-radius:6px;box-shadow:0 18px 48px rgba(0,0,0,.72);opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .15s,visibility .15s,transform .15s;overflow-y:auto;overflow-x:hidden;max-height:min(72vh,420px);z-index:9999}
+.ac-drop.open .ac-drop-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:280px;background:#0d0b05;background:linear-gradient(180deg,rgba(13,11,5,.99),rgba(5,16,31,.98));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(201,168,76,.28);border-radius:6px;box-shadow:0 18px 48px rgba(0,0,0,.72);opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .15s,visibility .15s,transform .15s;overflow-y:auto;overflow-x:hidden;max-height:min(72vh,420px);z-index:9999}
+.ac-drop-item{display:flex;align-items:center;justify-content:space-between;gap:.9rem;padding:.72rem 1rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.07);transition:background .12s,color .12s;white-space:nowrap}
 .ac-drop-item:last-child{border-bottom:none}
 .ac-drop-item:hover{background:rgba(201,168,76,.08);color:#e8c76a}
-.ac-drop-badge{font-size:8px;font-weight:700;padding:1px 6px;border-radius:2px;letter-spacing:.1em}
+.ac-drop-badge{font-size:8px;font-weight:700;padding:1px 6px;border-radius:2px;letter-spacing:.1em;flex-shrink:0}
 .ac-drop-badge.live{background:rgba(42,92,48,.35);color:#9dc89f;border:1px solid rgba(42,92,48,.5)}
 .ac-drop-badge.soon{background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1)}
 
@@ -674,13 +674,13 @@ body{
 .ac-drop-btn.active{color:#c9a84c}
 .ac-drop-caret{font-size:8px;transition:transform .15s;display:inline-block}
 .ac-drop.open .ac-drop-caret{transform:rotate(180deg)}
-.ac-drop-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:240px;background:rgba(13,11,5),.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,.18);border-radius:4px;box-shadow:0 12px 40px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(-4px);transition:all .15s;overflow:hidden;z-index:300}
-.ac-drop.open .ac-drop-menu{opacity:1;visibility:visible;transform:translateY(0)}
-.ac-drop-item{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.65rem 1rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05);transition:all .12s}
+.ac-drop-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:280px;background:#0d0b05;background:linear-gradient(180deg,rgba(13,11,5,.99),rgba(5,16,31,.98));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(201,168,76,.28);border-radius:6px;box-shadow:0 18px 48px rgba(0,0,0,.72);opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .15s,visibility .15s,transform .15s;overflow-y:auto;overflow-x:hidden;max-height:min(72vh,420px);z-index:9999}
+.ac-drop.open .ac-drop-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:280px;background:#0d0b05;background:linear-gradient(180deg,rgba(13,11,5,.99),rgba(5,16,31,.98));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(201,168,76,.28);border-radius:6px;box-shadow:0 18px 48px rgba(0,0,0,.72);opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .15s,visibility .15s,transform .15s;overflow-y:auto;overflow-x:hidden;max-height:min(72vh,420px);z-index:9999}
+.ac-drop-item{display:flex;align-items:center;justify-content:space-between;gap:.9rem;padding:.72rem 1rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.07);transition:background .12s,color .12s;white-space:nowrap}
 .ac-drop-item:last-child{border-bottom:none}
 .ac-drop-item:hover{background:rgba(201,168,76,.08);color:#e8c76a}
 .ac-drop-item.current{background:rgba(201,168,76,.12);color:#e8c76a}
-.ac-drop-badge{font-size:8px;font-weight:700;padding:1px 6px;border-radius:2px;letter-spacing:.1em}
+.ac-drop-badge{font-size:8px;font-weight:700;padding:1px 6px;border-radius:2px;letter-spacing:.1em;flex-shrink:0}
 .ac-drop-badge.live{background:rgba(42,92,48,.35);color:#9dc89f;border:1px solid rgba(42,92,48,.5)}
 .ac-drop-badge.soon{background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1)}
 
@@ -716,7 +716,7 @@ body{
   background:
     radial-gradient(circle at 82% 20%, rgba(92,158,198,.12), transparent 22%),
     radial-gradient(circle at 70% 70%, rgba(201,168,76,.10), transparent 26%),
-    linear-gradient(to right, rgba(5,16,31,.96) 0%, rgba(13,11,5),.88) 48%, rgba(16,13,6),.72) 100%);
+    linear-gradient(to right, rgba(5,16,31,.96) 0%, rgba(13,11,5,.88) 48%, rgba(16,13,6,.72) 100%);
   box-shadow:inset 0 -30px 80px rgba(0,0,0,.18);
 }
 .aircraft-hero::before{
@@ -771,13 +771,13 @@ body{
 .kit-card,
 .weather-card,
 .am-card{
-  background:linear-gradient(160deg,rgba(16,13,6),.76),rgba(13,11,5),.84));
+  background:linear-gradient(160deg,rgba(16,13,6,.76),rgba(13,11,5,.84));
 }
 
 .card-hd,
 .weather-hd,
 .sidebar-hd{
-  background:linear-gradient(135deg,rgba(5,16,31,.72),rgba(16,13,6),.76));
+  background:linear-gradient(135deg,rgba(5,16,31,.72),rgba(16,13,6,.76));
 }
 
 .sq-card:hover,
@@ -956,6 +956,42 @@ body{
 .wa-ref-desc{font-size:13px;color:rgba(255,255,255,.56);line-height:1.48}
 .wa-ref-link{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-top:.55rem}
 
+
+
+/* Final Fw 190 dropdown hardening: opaque, above sticky tabs, scrollable and full list visible */
+.site-nav{overflow:visible;z-index:10000}
+.site-nav-links{overflow:visible}
+.ac-drop{position:relative;z-index:10001}
+.ac-drop-menu{
+  position:absolute !important;
+  top:calc(100% + 6px) !important;
+  left:0 !important;
+  min-width:290px !important;
+  background:#0d0b05 !important;
+  background:linear-gradient(180deg,rgba(13,11,5,.99),rgba(5,16,31,.98)) !important;
+  border:1px solid rgba(201,168,76,.32) !important;
+  border-radius:6px !important;
+  box-shadow:0 18px 48px rgba(0,0,0,.72) !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+  transform:translateY(-4px) !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  max-height:min(72vh,430px) !important;
+  z-index:10002 !important;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+.ac-drop.open .ac-drop-menu{
+  opacity:1 !important;
+  visibility:visible !important;
+  transform:translateY(0) !important;
+}
+.ac-drop-item{white-space:nowrap !important;display:flex !important;align-items:center !important;justify-content:space-between !important;gap:.9rem !important;color:rgba(255,255,255,.84) !important;background:transparent}
+.ac-drop-item:hover,.ac-drop-item.current{background:rgba(201,168,76,.12) !important;color:#e8c76a !important}
+.ac-drop-badge{flex-shrink:0 !important}
+@media(max-width:520px){.ac-drop-menu{position:fixed !important;left:12px !important;right:12px !important;top:54px !important;min-width:0 !important;width:auto !important}}
+
 </style>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -973,14 +1009,15 @@ body{
   </a>
   <div class="site-nav-links">
     <div class="ac-drop" id="acDrop">
-      <button type="button" class="ac-drop-btn active" onclick="event.stopPropagation();document.getElementById('acDrop').classList.toggle('open')">Aircraft <span class="ac-drop-caret">▼</span></button>
-      <div class="ac-drop-menu">
-        <a href="fw190_paradise.html" class="ac-drop-item current">Focke-Wulf Fw 190 <span class="ac-drop-badge live">Live</span></a>
+      <button type="button" class="ac-drop-btn active" aria-haspopup="true" aria-expanded="false" onclick="event.stopPropagation();var d=document.getElementById('acDrop');d.classList.toggle('open');this.setAttribute('aria-expanded',d.classList.contains('open')?'true':'false')">Aircraft <span class="ac-drop-caret">▼</span></button>
+      <div class="ac-drop-menu" role="menu" aria-label="Aircraft pages">
+        <a href="hurricane_paradise.html" class="ac-drop-item">Hawker Hurricane <span class="ac-drop-badge live">Live</span></a>
         <a href="spitfire_paradise.html" class="ac-drop-item">Supermarine Spitfire <span class="ac-drop-badge live">Live</span></a>
+        <a href="fw190_paradise.html" class="ac-drop-item current" aria-current="page">Focke-Wulf Fw 190 <span class="ac-drop-badge live">Live</span></a>
+        <a href="bf109_paradise.html" class="ac-drop-item">Messerschmitt Bf 109 <span class="ac-drop-badge soon">Hub</span></a>
+        <a href="p51_paradise.html" class="ac-drop-item">North American P-51 <span class="ac-drop-badge soon">Hub</span></a>
         <a href="lancaster_paradise.html" class="ac-drop-item">Avro Lancaster <span class="ac-drop-badge soon">Hub</span></a>
         <a href="mosquito_paradise.html" class="ac-drop-item">DH Mosquito <span class="ac-drop-badge soon">Hub</span></a>
-        <a href="p51_paradise.html" class="ac-drop-item">North American P-51 <span class="ac-drop-badge soon">Hub</span></a>
-        <a href="bf109_paradise.html" class="ac-drop-item">Messerschmitt Bf 109 <span class="ac-drop-badge soon">Hub</span></a>
       </div>
     </div>
     <a href="techniques-bank.html" class="site-nav-link">Techniques</a>
@@ -1099,12 +1136,12 @@ body{
     </div>
     <div class="paint-grid" id="paint-grid"></div>
     <!-- Colour chip comparison -->
-    <div style="margin-top:1.5rem;background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1.2rem">
+    <div style="margin-top:1.5rem;background:rgba(20,17,7,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1.2rem">
       <div class="sec-label">Brand colour comparison</div>
       <div class="info-box" style="margin-bottom:1rem">How Humbrol, Tamiya, Vallejo and AK colours compare visually against the true RAF shade. Swatches rendered from each manufacturer's published hex values.</div>
       <div id="colour-compare-grid"></div>
     </div>
-    <div style="margin-top:1.2rem;background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1rem">
+    <div style="margin-top:1.2rem;background:rgba(20,17,7,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1rem">
       <div class="sec-label">Luftwaffe marking notes</div>
       <div style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.75">
         <p><strong style="color:#fff">July–Aug 1940:</strong> Type A1 roundels (red/white/blue, no yellow ring) on fuselage. Type A upper wings. Type B lower wings (red/blue only). Large fin flash.</p>
@@ -1920,7 +1957,7 @@ function showDetail(num) {
       <div class="sec-label">Recommended Kits</div>
       <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:1rem">
         ${KIT_LINKS.map(k=>`
-          <div style="background:rgba(20,17,7),.8);border:1px solid rgba(255,255,255,.12);border-left:3px solid var(--brass);border-radius:2px;padding:7px 10px">
+          <div style="background:rgba(20,17,7,.8);border:1px solid rgba(255,255,255,.12);border-left:3px solid var(--brass);border-radius:2px;padding:7px 10px">
             <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.06em;color:rgba(255,255,255,.85);margin-bottom:5px">${k.name}</div>
             <div style="display:flex;flex-wrap:wrap;gap:4px">
               ${(k.shops||[{label:"Buy",url:k.url}]).filter(s=>s&&s.url).map(s=>`<a href="${s.url}" target="_blank" rel="noopener" class="shop-btn hb-ghost" style="font-size:12px;padding:3px 9px">${s.label} ↗</a>`).join('')}
@@ -2143,7 +2180,7 @@ function renderPaint(){
         <div class="paint-codes">
           ${p.brands.map(b=>`
             <a href="${b.url}" target="_blank" rel="noopener" title="Buy ${b.brand} ${b.code}"
-               style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;margin:0 4px 4px 0;padding:3px 8px;border-radius:2px;background:rgba(28,24,10),.7);border:1px solid rgba(255,255,255,.12);transition:all .15s"
+               style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;margin:0 4px 4px 0;padding:3px 8px;border-radius:2px;background:rgba(28,24,10,.7);border:1px solid rgba(255,255,255,.12);transition:all .15s"
                onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='rgba(255,255,255,.12)'">
               <span style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass2)">${b.brand}</span>
               <span style="font-size:12px;color:rgba(255,255,255,.85)">${b.code}</span>
@@ -2173,7 +2210,7 @@ function renderKits(){
       <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:.5rem">
         ${(k.shops||[]).filter(s=>s&&s.url).map(s=>`
           <a href="${s.url}" target="_blank" rel="noopener"
-             style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;padding:4px 10px;border-radius:2px;background:rgba(28,24,10),.7);border:1px solid rgba(255,255,255,.12);transition:all .15s"
+             style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;padding:4px 10px;border-radius:2px;background:rgba(28,24,10,.7);border:1px solid rgba(255,255,255,.12);transition:all .15s"
              onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='rgba(255,255,255,.12)'">
             <span style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass2)">${s.label}</span>
             <span style="font-size:13px;color:rgba(255,255,255,.3)">↗</span>
@@ -2316,7 +2353,7 @@ function renderCompare(){
   const row = (label,va,vb,col) => '<tr><td style="color:rgba(255,255,255,.42);padding:2px 0;font-size:13px">'+label+'</td><td style="color:'+(col||'#fff')+';text-align:right;font-size:13px">'+va+'</td><td style="color:'+(col||'#fff')+';text-align:right;font-size:13px">'+vb+'</td></tr>';
 
   document.getElementById('compare-output').innerHTML = `
-    <div style="background:rgba(20,17,7),.8);border:2px solid rgba(255,255,255,.1);border-radius:1px;padding:1rem;box-shadow:var(--shadow)">
+    <div style="background:rgba(20,17,7,.8);border:2px solid rgba(255,255,255,.1);border-radius:1px;padding:1rem;box-shadow:var(--shadow)">
       <div style="display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem;flex-wrap:wrap">
         <div style="display:flex;align-items:center;gap:8px">
           <div style="width:16px;height:3px;background:rgba(74,127,165,.9);border-radius:1px"></div>
@@ -2329,7 +2366,7 @@ function renderCompare(){
       </div>
       <div style="display:flex;justify-content:center">
         <svg viewBox="0 0 ${svgW} ${svgH}" style="width:100%;max-width:420px" xmlns="http://www.w3.org/2000/svg">
-          <rect width="${svgW}" height="${svgH}" fill="rgba(13,11,5),.0)"/>
+          <rect width="${svgW}" height="${svgH}" fill="rgba(13,11,5,.0)"/>
           <g transform="translate(0,10)">
             ${webRings}
             ${axisLines}
@@ -2449,7 +2486,7 @@ function updateTimeline(val) {
       ${exactEvent[3]>0?`<div style="margin-top:.4rem;font-size:11px;opacity:.8">Allied claims: <b>${exactEvent[3]}</b> &nbsp;·&nbsp; Axis losses: <b>${exactEvent[4]}</b></div>`:''}
     </div>`;
   } else if (prev) {
-    eventHtml = `<div style="background:rgba(20,17,7),.7);border-radius:1px;padding:.6rem 1rem;margin:.75rem 0;font-family:'Courier Prime',monospace;font-size:11px;color:var(--brass2);border-left:3px solid var(--khaki)">
+    eventHtml = `<div style="background:rgba(20,17,7,.7);border-radius:1px;padding:.6rem 1rem;margin:.75rem 0;font-family:'Courier Prime',monospace;font-size:11px;color:var(--brass2);border-left:3px solid var(--khaki)">
       Last event: <b style="color:rgba(255,255,255,.85)">${prev[1]}</b>
       ${next?`<br>Next event: <b style="color:rgba(255,255,255,.85)">${next[1]}</b> (${dayToDate(next[0])})`:''}
     </div>`;
@@ -2462,7 +2499,7 @@ function updateTimeline(val) {
         <div style="font-family:'Special Elite',cursive;font-size:13px">${phase.name}</div>
         <div style="font-family:'Courier Prime',monospace;font-size:13px;margin-top:4px;opacity:.8;line-height:1.4">${phase.desc}</div>
       </div>
-      <div style="background:rgba(20,17,7),.7);padding:.6rem .9rem;border-radius:1px;border:1px solid rgba(255,255,255,.1)">
+      <div style="background:rgba(20,17,7,.7);padding:.6rem .9rem;border-radius:1px;border:1px solid rgba(255,255,255,.1)">
         <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass2);margin-bottom:3px">Day ${day+1} of 670</div>
         <div style="font-family:'Courier Prime',monospace;font-size:12px;color:rgba(255,255,255,.85)">
           <span style="color:#9ab840;font-weight:700">${SQ.filter(s=>['front','ops'].includes(getSqStatus(s.num,day))).length}</span> units operational &nbsp;
@@ -2859,6 +2896,28 @@ function renderWeathering() {
   `;
 }
 
+
+// Aircraft dropdown: close on outside click / Escape so the menu does not stick open
+document.addEventListener('click', function(e){
+  const d = document.getElementById('acDrop');
+  if (!d) return;
+  if (!d.contains(e.target)) {
+    d.classList.remove('open');
+    const b = d.querySelector('.ac-drop-btn');
+    if (b) b.setAttribute('aria-expanded','false');
+  }
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') {
+    const d = document.getElementById('acDrop');
+    if (d) {
+      d.classList.remove('open');
+      const b = d.querySelector('.ac-drop-btn');
+      if (b) b.setAttribute('aria-expanded','false');
+    }
+  }
+});
+
 // ═══════════════════════════════════════════════════════
 // KEYBOARD + INIT
 // ═══════════════════════════════════════════════════════
@@ -2957,7 +3016,7 @@ function renderAftermarket() {
             <div class="am-scales"></div>
             <div class="am-desc">${item.note||item.desc||''}</div>
             <a href="${item.url}" target="_blank" rel="noopener"
-               style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;margin-top:.4rem;padding:4px 10px;border-radius:2px;background:rgba(28,24,10),.7);border:1px solid rgba(255,255,255,.12);transition:all .15s"
+               style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;margin-top:.4rem;padding:4px 10px;border-radius:2px;background:rgba(28,24,10,.7);border:1px solid rgba(255,255,255,.12);transition:all .15s"
                onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='rgba(255,255,255,.12)'">
               <span style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass2)">${new URL(item.url).hostname.replace('www.','')}</span>
               <span style="font-size:13px;color:rgba(255,255,255,.3)">↗</span>
@@ -3160,7 +3219,7 @@ function renderStepByStep() {
   if (!el || el.dataset.rendered) return;
   el.dataset.rendered = '1';
   el.innerHTML = BUILD_STEPS.map(s => `
-    <div style="background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;margin-bottom:10px">
+    <div style="background:rgba(20,17,7,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;margin-bottom:10px">
       <div style="background:rgba(0,0,0,.3);padding:.65rem 1rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid rgba(255,255,255,.07)">
         <div style="background:var(--brass);color:var(--raf-dark);font-family:'Special Elite',cursive;font-size:1.1rem;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">${s.n}</div>
         <div style="font-family:'Special Elite',cursive;font-size:1.15rem;color:#fff">${s.icon} ${s.title}</div>
@@ -3292,7 +3351,7 @@ function renderBobThisWeek() {
   // Only show during BoB season (July-Oct) or within 3 weeks of season
   const inSeason = (todayDoy >= 620 && todayDoy <= 1103);
   el.innerHTML = `
-    <div style="background:rgba(20,17,7),.8);border:2px solid var(--brass);border-radius:4px;overflow:hidden">
+    <div style="background:rgba(20,17,7,.8);border:2px solid var(--brass);border-radius:4px;overflow:hidden">
       <div style="background:rgba(0,0,0,.35);padding:.75rem 1.2rem;display:flex;align-items:center;gap:1rem;border-bottom:1px solid rgba(184,144,42,.3)">
         <div style="text-align:center;background:var(--brass);color:var(--raf-dark);padding:.4rem .6rem;border-radius:2px;flex-shrink:0">
           <div style="font-family:'Special Elite',cursive;font-size:1.8rem;line-height:1">${d}</div>
@@ -3371,9 +3430,9 @@ function renderMedia() {
     items.forEach(item => {
       const div = document.createElement('a');
       div.href = item.url; div.target = '_blank'; div.rel = 'noopener';
-      div.style.cssText = 'display:flex;gap:.9rem;background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:.9rem 1rem;margin-bottom:8px;text-decoration:none;transition:background .15s;align-items:flex-start';
+      div.style.cssText = 'display:flex;gap:.9rem;background:rgba(20,17,7,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:.9rem 1rem;margin-bottom:8px;text-decoration:none;transition:background .15s;align-items:flex-start';
       div.onmouseover = () => div.style.background = 'rgba(255,255,255,.04)';
-      div.onmouseout = () => div.style.background = 'rgba(20,17,7),.7)';
+      div.onmouseout = () => div.style.background = 'rgba(20,17,7,.7)';
       div.innerHTML = `
         <div style="font-size:1.8rem;flex-shrink:0;line-height:1;padding-top:.1rem">${item.thumb}</div>
         <div>
@@ -3403,7 +3462,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- ── COOKIE CONSENT BANNER ─────────────────────────────────────────────── -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;
-  background:rgba(13,11,5),.97);border-top:2px solid var(--brass);padding:1rem 1.5rem;
+  background:rgba(13,11,5,.97);border-top:2px solid var(--brass);padding:1rem 1.5rem;
   display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
   font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:.04em;color:rgba(255,255,255,.8);
   box-shadow:0 -4px 24px rgba(0,0,0,.5)">
