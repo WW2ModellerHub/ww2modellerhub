@@ -1,0 +1,15 @@
+Full-site bugfix pass — May 2026
+
+Key fixes made:
+- Hurricane Reference map rebuilt as a mobile-safe static RAF station map rather than relying on Leaflet tile rendering. This fixes the blank map container on mobile/Safari and removes the zoom-in/zoom-out behaviour after clicking a base.
+- Hurricane map group filters now work against the static map markers and station list.
+- Hurricane station clicks now update the right-hand station/squadron panel and highlight the selected marker without auto-fitting back out.
+- Aircraft dropdown menus normalised across the site with a complete aircraft list: Hurricane, Spitfire, Fw 190, Bf 109, Lancaster, Mosquito and P-51 Mustang.
+- Aircraft dropdown styling hardened: opaque background, higher z-index, scrollable list and mobile-safe fixed positioning.
+- Sitemap regenerated from the actual HTML files in the package.
+- robots.txt updated to point to the www sitemap URL.
+- JavaScript syntax checked across page scripts.
+- Internal file-link scan completed; no missing static HTML/CSS/JS files found, ignoring template-literal placeholders used by runtime-generated cards.
+
+Caution:
+- External retailer/product URLs were not live-tested from this environment. Product links should still be treated cautiously and replaced with manufacturer/category/search links where exact product confidence is low.

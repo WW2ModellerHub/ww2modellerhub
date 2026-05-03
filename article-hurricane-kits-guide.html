@@ -156,6 +156,38 @@ footer a{color:rgba(255,255,255,.35);text-decoration:none}
 .ac-drop-menu{display:none;position:absolute;right:0;top:calc(100% + 8px);min-width:285px;max-height:min(72vh,520px);overflow-y:auto;background:#081522!important;border:1px solid rgba(201,168,76,.38);border-radius:6px;box-shadow:0 18px 50px rgba(0,0,0,.72);padding:.45rem;z-index:10001!important}.ac-drop.open .ac-drop-menu{display:block}.ac-drop-item{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.65rem .75rem;border-radius:4px;color:rgba(255,255,255,.84);text-decoration:none;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase}.ac-drop-item:hover{background:rgba(201,168,76,.1);color:#fff}.ac-drop-badge{font-size:9px;letter-spacing:.08em;padding:2px 6px;border-radius:2px;border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.62)}.ac-drop-badge.live{color:#7fcf9b;border-color:rgba(127,207,155,.35)}.ac-drop-badge.hub{color:#c9a84c;border-color:rgba(201,168,76,.35)}
 @media(max-width:760px){.site-nav-inner{padding:.7rem 1rem;gap:.75rem;flex-wrap:wrap}.site-nav-links{width:100%;margin-left:0;gap:.75rem;justify-content:space-between}.site-nav-link{font-size:10px}.ac-drop{flex:1}.ac-drop-btn{width:100%;text-align:left}.ac-drop-menu{left:0;right:auto;min-width:min(92vw,330px)}}
 
+
+/* Final global aircraft dropdown fix: opaque, complete, scrollable, mobile-safe */
+.site-nav,.site-nav-links{overflow:visible!important}
+.site-nav{z-index:10000!important}
+.ac-drop{position:relative!important;z-index:10001!important}
+.ac-drop-btn{background:rgba(18,31,52,.96)!important}
+.ac-drop-menu{position:absolute!important;top:calc(100% + 8px)!important;right:0!important;left:auto!important;min-width:310px!important;max-height:min(74vh,460px)!important;overflow-y:auto!important;overflow-x:hidden!important;background:linear-gradient(180deg,#0e1522 0%,#090d15 100%)!important;border:1px solid rgba(201,168,76,.42)!important;border-radius:8px!important;box-shadow:0 24px 60px rgba(0,0,0,.78)!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(-6px)!important;z-index:10002!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.ac-drop.open .ac-drop-menu{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:translateY(0)!important}
+.ac-drop-item{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:.9rem!important;padding:.72rem .9rem!important;background:transparent!important;color:rgba(255,255,255,.88)!important;text-decoration:none!important;white-space:normal!important}
+.ac-drop-item:hover,.ac-drop-item.current{background:rgba(201,168,76,.14)!important;color:#f1d073!important}
+.ac-drop-badge{flex-shrink:0!important}
+@media(max-width:640px){.ac-drop-menu{position:fixed!important;left:14px!important;right:14px!important;top:86px!important;min-width:0!important;width:auto!important;max-height:calc(100vh - 130px)!important}.site-nav-links{position:relative!important}}
+
+
+/* Smooth grouped aircraft navigation */
+.site-nav{overflow:visible!important;z-index:10000!important;position:sticky;top:0}
+.site-nav-inner,.site-nav-links{overflow:visible!important}
+.ac-drop{position:relative!important;z-index:10001!important}
+.ac-drop-btn{background:rgba(12,20,34,.92)!important;border:1px solid rgba(201,168,76,.26)!important;border-radius:999px!important;padding:.45rem .78rem!important;color:rgba(255,255,255,.86)!important;line-height:1!important}
+.ac-drop-btn:hover{color:#f1d073!important;border-color:rgba(201,168,76,.5)!important;background:rgba(18,31,52,.98)!important}
+.ac-drop-caret{font-size:8px;transition:transform .18s ease}.ac-drop.open .ac-drop-caret{transform:rotate(180deg)}
+.ac-drop-menu{display:block!important;position:absolute!important;top:calc(100% + 10px)!important;right:0!important;left:auto!important;width:min(820px,calc(100vw - 28px))!important;max-height:min(78vh,560px)!important;overflow:auto!important;background:linear-gradient(180deg,#101827 0%,#090e17 100%)!important;border:1px solid rgba(201,168,76,.42)!important;border-radius:12px!important;box-shadow:0 26px 70px rgba(0,0,0,.82)!important;padding:1rem!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(-8px)!important;transition:opacity .16s ease, transform .16s ease, visibility .16s ease!important;z-index:10002!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.ac-drop.open .ac-drop-menu{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:translateY(0)!important}
+.ac-drop-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:.85rem!important}
+.ac-drop-section{background:rgba(255,255,255,.035)!important;border:1px solid rgba(255,255,255,.08)!important;border-radius:8px!important;padding:.72rem!important;min-width:0!important}
+.ac-drop-heading{font-family:'Oswald',sans-serif!important;font-size:10px!important;letter-spacing:.18em!important;text-transform:uppercase!important;color:#c9a84c!important;margin:0 0 .45rem!important;padding-bottom:.35rem!important;border-bottom:1px solid rgba(201,168,76,.18)!important}
+.ac-drop-item{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:.75rem!important;padding:.52rem .55rem!important;border-radius:6px!important;background:transparent!important;color:rgba(255,255,255,.86)!important;text-decoration:none!important;white-space:normal!important;font-family:'Oswald',sans-serif!important;font-size:11px!important;letter-spacing:.08em!important;text-transform:uppercase!important;line-height:1.25!important}
+.ac-drop-item:hover,.ac-drop-item.current{background:rgba(201,168,76,.14)!important;color:#f1d073!important}
+.ac-drop-disabled{cursor:default!important;color:rgba(255,255,255,.46)!important}.ac-drop-disabled:hover{background:transparent!important;color:rgba(255,255,255,.46)!important}
+.ac-drop-badge{flex-shrink:0!important;font-size:8px!important;padding:2px 6px!important;border-radius:999px!important;letter-spacing:.08em!important;text-transform:uppercase!important}.ac-drop-badge.live{background:rgba(74,143,206,.22)!important;color:#9fd3ff!important;border:1px solid rgba(74,143,206,.36)!important}.ac-drop-badge.soon{background:rgba(184,144,42,.12)!important;color:#d9b965!important;border:1px solid rgba(184,144,42,.28)!important}.ac-drop-badge.plan{background:rgba(255,255,255,.06)!important;color:rgba(255,255,255,.52)!important;border:1px solid rgba(255,255,255,.12)!important}
+@media(max-width:760px){.site-nav-inner{gap:.75rem!important}.site-nav-links{gap:.55rem!important}.ac-drop{position:static!important}.ac-drop-menu{position:fixed!important;left:12px!important;right:12px!important;top:72px!important;width:auto!important;max-height:calc(100vh - 92px)!important;padding:.8rem!important}.ac-drop-grid{grid-template-columns:1fr!important;gap:.65rem!important}.ac-drop-section{padding:.65rem!important}.ac-drop-item{padding:.6rem .55rem!important}}
+
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409"
      crossorigin="anonymous"></script>
@@ -169,15 +201,54 @@ footer a{color:rgba(255,255,255,.35);text-decoration:none}
     </a>
     <div class="site-nav-links">
       <div class="ac-drop" id="acDrop">
-        <button type="button" class="ac-drop-btn" onclick="event.stopPropagation();document.getElementById('acDrop').classList.toggle('open')">Aircraft <span class="ac-drop-caret">▼</span></button>
-        <div class="ac-drop-menu">
-          <a class="ac-drop-item" href="hurricane_paradise.html">Hawker Hurricane <span class="ac-drop-badge live">Live</span></a>
-          <a class="ac-drop-item" href="spitfire_paradise.html">Supermarine Spitfire <span class="ac-drop-badge live">Live</span></a>
-          <a class="ac-drop-item" href="fw190_paradise.html">Focke-Wulf Fw 190 <span class="ac-drop-badge live">Live</span></a>
-          <a class="ac-drop-item" href="bf109_paradise.html">Messerschmitt Bf 109 <span class="ac-drop-badge hub">Hub</span></a>
-          <a class="ac-drop-item" href="lancaster_paradise.html">Avro Lancaster <span class="ac-drop-badge hub">Hub</span></a>
-          <a class="ac-drop-item" href="mosquito_paradise.html">de Havilland Mosquito <span class="ac-drop-badge hub">Hub</span></a>
-          <a class="ac-drop-item" href="p51_paradise.html">North American P-51 <span class="ac-drop-badge hub">Hub</span></a>
+        <button type="button" class="ac-drop-btn" aria-haspopup="true" aria-expanded="false" onclick="event.stopPropagation();this.closest('.ac-drop').classList.toggle('open');this.setAttribute('aria-expanded', this.closest('.ac-drop').classList.contains('open') ? 'true' : 'false')">Aircraft <span class="ac-drop-caret">▼</span></button>
+        <div class="ac-drop-menu" role="menu" aria-label="Aircraft navigation">
+          <div class="ac-drop-grid">
+            <div class="ac-drop-section">
+              <div class="ac-drop-heading">Allied fighters</div>
+              <a href="hurricane_paradise.html" class="ac-drop-item">Hawker Hurricane <span class="ac-drop-badge live">Live</span></a>
+              <a href="spitfire_paradise.html" class="ac-drop-item">Supermarine Spitfire <span class="ac-drop-badge live">Live</span></a>
+              <a href="p51_paradise.html" class="ac-drop-item">P-51 Mustang <span class="ac-drop-badge soon">Hub</span></a>
+              <span class="ac-drop-item ac-drop-disabled">P-47 Thunderbolt <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">P-38 Lightning <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">Hawker Typhoon <span class="ac-drop-badge plan">Planned</span></span>
+            </div>
+            <div class="ac-drop-section">
+              <div class="ac-drop-heading">Allied bombers</div>
+              <a href="lancaster_paradise.html" class="ac-drop-item">Avro Lancaster <span class="ac-drop-badge soon">Hub</span></a>
+              <a href="mosquito_paradise.html" class="ac-drop-item">DH Mosquito <span class="ac-drop-badge soon">Hub</span></a>
+              <span class="ac-drop-item ac-drop-disabled">B-17 Flying Fortress <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">B-25 Mitchell <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">B-24 Liberator <span class="ac-drop-badge plan">Planned</span></span>
+            </div>
+            <div class="ac-drop-section">
+              <div class="ac-drop-heading">Axis fighters</div>
+              <a href="bf109_paradise.html" class="ac-drop-item">Messerschmitt Bf 109 <span class="ac-drop-badge soon">Hub</span></a>
+              <a href="fw190_paradise.html" class="ac-drop-item">Focke-Wulf Fw 190 <span class="ac-drop-badge live">Live</span></a>
+              <span class="ac-drop-item ac-drop-disabled">A6M Zero <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">Macchi C.202 <span class="ac-drop-badge plan">Planned</span></span>
+            </div>
+            <div class="ac-drop-section">
+              <div class="ac-drop-heading">Axis bombers / attack</div>
+              <span class="ac-drop-item ac-drop-disabled">Ju 87 Stuka <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">Ju 88 <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">He 111 <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">Do 17 <span class="ac-drop-badge plan">Planned</span></span>
+            </div>
+            <div class="ac-drop-section">
+              <div class="ac-drop-heading">Specialist aircraft</div>
+              <a href="mosquito_paradise.html" class="ac-drop-item">Mosquito Night Fighter <span class="ac-drop-badge soon">Hub</span></a>
+              <span class="ac-drop-item ac-drop-disabled">Beaufighter <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">Catalina <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">Sunderland <span class="ac-drop-badge plan">Planned</span></span>
+            </div>
+            <div class="ac-drop-section ac-drop-section-tools">
+              <div class="ac-drop-heading">Research tools</div>
+              <a href="paint-codes.html" class="ac-drop-item">Paint Codes <span class="ac-drop-badge live">Guide</span></a>
+              <a href="techniques-bank.html" class="ac-drop-item">Techniques Bank <span class="ac-drop-badge live">Guide</span></a>
+              <a href="articles.html" class="ac-drop-item">Articles Library <span class="ac-drop-badge live">Read</span></a>
+            </div>
+          </div>
         </div>
       </div>
       <a href="techniques-bank.html" class="site-nav-link">Techniques</a>
@@ -406,6 +477,32 @@ document.addEventListener('click', function(e){
 document.addEventListener('keydown', function(e){
   if(e.key === 'Escape') { var d = document.getElementById('acDrop'); if(d) d.classList.remove('open'); }
 });
+</script>
+
+
+<script>
+(function(){
+  if(window.__ww2GroupedNavReady) return;
+  window.__ww2GroupedNavReady = true;
+  document.addEventListener('click', function(e){
+    document.querySelectorAll('.ac-drop.open').forEach(function(drop){
+      if(!drop.contains(e.target)){
+        drop.classList.remove('open');
+        var btn = drop.querySelector('.ac-drop-btn');
+        if(btn) btn.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.ac-drop.open').forEach(function(drop){
+        drop.classList.remove('open');
+        var btn = drop.querySelector('.ac-drop-btn');
+        if(btn) btn.setAttribute('aria-expanded','false');
+      });
+    }
+  });
+})();
 </script>
 
 </body>

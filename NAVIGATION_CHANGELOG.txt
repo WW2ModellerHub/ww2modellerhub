@@ -1,0 +1,23 @@
+Navigation update
+=================
+
+Changed the site-wide Aircraft dropdown into grouped sections:
+- Allied fighters
+- Allied bombers
+- Axis fighters
+- Axis bombers / attack
+- Specialist aircraft
+- Research tools
+
+Live/current pages remain real links. Future aircraft such as B-17, B-25, P-47, P-38, Hawker Typhoon, Ju 87 and others are shown as Planned but are deliberately not clickable yet, avoiding broken links until their pages exist.
+
+Also clarified that Hawker Typhoon means the WW2 RAF fighter-bomber, not the Eurofighter Typhoon.
+
+Technical fixes included:
+- Solid, non-transparent dropdown background.
+- Wider desktop grouped dropdown.
+- Mobile/Safari safe fixed dropdown panel.
+- Click-outside and Escape-to-close behaviour.
+- ARIA expanded state on the Aircraft button.
+
+Files updated: about.html, article-92-sqn-biggin.html, article-bf109-e7-trop.html, article-bf109-emil-vs-friedrich.html, article-bf109-mottle-guide.html, article-bf109-rlm-paint-codes.html, article-bob-squadrons-guide.html, article-fabric-vs-metal-wings.html, article-hurricane-aftermarket.html, article-hurricane-bob-colours.html, article-hurricane-kits-guide.html, article-hurricane-weathering.html, article-lancaster-kits-guide.html, articles.html, article-sailor-malan.html, article-spitfire-bob-colours.html, article-spitfire-cockpit-guide.html, article-spitfire-kits-guide.html, article-spitfire-mk1-vs-mk2.html, article-spitfire-pitot-tube.html, article-spitfire-weathering.html, bf109_paradise.html, fw190_paradise.html, hurricane_paradise.html, index.html, lancaster_paradise.html, mosquito_paradise.html, p51_paradise.html, paint-codes.html, spitfire_paradise.html, techniques-bank.html

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ww2modeller.co.uk/sitemap.xml
+Sitemap: https://www.ww2modeller.co.uk/sitemap.xml
