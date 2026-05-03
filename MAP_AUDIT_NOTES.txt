@@ -1,0 +1,12 @@
+Map/base audit applied.
+
+Changed:
+- Hurricane and Spitfire RAF map markers now prefer verified WGS84 lat/lng coordinates instead of the older hand-plotted x/y positions.
+- Old x/y values remain as fallback data only.
+- Hawkinge corrected to the former RAF Hawkinge airfield / Kent Battle of Britain Museum area rather than a rough visual map placement.
+- Updated RAF station coordinates across the Hurricane and Spitfire maps, including Biggin Hill, Kenley, Tangmere, Northolt, North Weald, Debden, Hornchurch, Croydon, Exeter, Middle Wallop, Warmwell, Duxford, Coltishall, Church Fenton, Drem, Usworth, Turnhouse, Westhampnett, Wittering, Digby and Acklington.
+- Fw 190 map duplicate Kairouan marker ID fixed so both Tunisia/context markers can render independently.
+
+Notes:
+- The RAF coordinate pass used published Battle of Britain airfield grid references as the basis and converted them to WGS84 lat/lng.
+- Squadron basing is still intentionally simplified for modelling/navigation purposes; some squadrons moved frequently during the Battle of Britain.

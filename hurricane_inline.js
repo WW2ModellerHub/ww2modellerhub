@@ -541,41 +541,41 @@ const TECHNIQUES = [
 // Station coordinates — real geographic projection matching map SVG
 // proj: lon -7→2.5 = x 25→495; lat 59→49.5 = y 20→680
 const STATIONS = [
-  {id:"biggin",    name:"Biggin Hill",   x:371,y:554,group:"11",sqns:["32","79","92"],type:"sector",
+  {id:"biggin",lat:51.330466,lng:0.031087,    name:"Biggin Hill",   x:371,y:554,group:"11",sqns:["32","79","92"],type:"sector",
    info:"Bombed 6 times in 3 days Aug 1940. WAAF operators stayed at posts under fire. Ops room moved to a local butcher's shop. Never ceased operations. Chalk/flint dust — pale buff on undercarriages."},
-  {id:"kenley",   name:"Kenley",         x:366,y:554,group:"11",sqns:["3","501"],type:"sector",
+  {id:"kenley",lat:51.304705,lng:-0.094867,   name:"Kenley",         x:366,y:554,group:"11",sqns:["3","501"],type:"sector",
    info:"18 Aug 1940: Do 17s of 9/KG76 attacked at low level destroying all 10 hangars. Ops room moved to a Caterham butcher's shop. Surrey clay-chalk mix — medium brown-grey mud."},
-  {id:"tangmere", name:"Tangmere",       x:337,y:590,group:"11",sqns:["43","213","601"],type:"sector",
+  {id:"tangmere",lat:50.846383,lng:-0.710210, name:"Tangmere",       x:337,y:590,group:"11",sqns:["43","213","601"],type:"sector",
    info:"Bombed 16 Aug 1940 by Ju 87 Stukas. Closest sector to France. 601 Sqn lightning bolt aircraft based here. Sussex clay — dark rich brown mud, distinctive weathering opportunity."},
-  {id:"northolt", name:"Northolt",       x:352,y:541,group:"11",sqns:["1","229","303"],type:"sector",
+  {id:"northolt",lat:51.553224,lng:-0.419150, name:"Northolt",       x:352,y:541,group:"11",sqns:["1","229","303"],type:"sector",
    info:"303 (Polish) Squadron — highest-scoring by kill rate — was based here from Aug 1940. Middlesex gravel gives light grey-brown dust."},
-  {id:"northweald",name:"North Weald",   x:376,y:527,group:"11",sqns:["56","151"],type:"sector",
+  {id:"northweald",lat:51.721280,lng:0.152801,name:"North Weald",   x:376,y:527,group:"11",sqns:["56","151"],type:"sector",
    info:"Bombed 24 Aug 1940 by Do 17s. Essex clay gives dark brown mud — very visible on undercarriages by September."},
-  {id:"debden",   name:"Debden",         x:381,y:506,group:"11",sqns:["17","73","85"],type:"sector",
+  {id:"debden",lat:51.991480,lng:0.273527,   name:"Debden",         x:381,y:506,group:"11",sqns:["17","73","85"],type:"sector",
    info:"85 Squadron (Townsend) was based here in early battle. Good defensive position for northern London approaches."},
-  {id:"hornchurch",name:"Hornchurch",    x:381,y:541,group:"11",sqns:["41","54"],type:"sector",
+  {id:"hornchurch",lat:51.539506,lng:0.207663,name:"Hornchurch",    x:381,y:541,group:"11",sqns:["41","54"],type:"sector",
    info:"Thames Estuary sector — primarily Spitfire station but Hurricane units rotated through. Essex marshland dust."},
-  {id:"croydon",  name:"Croydon",        x:362,y:554,group:"11",sqns:["85","111"],type:"satellite",
+  {id:"croydon",lat:51.356370,lng:-0.120014,  name:"Croydon",        x:362,y:554,group:"11",sqns:["85","111"],type:"satellite",
    info:"Bombed 15 Aug 1940 — one of the first raids on London's outer airfields. Pre-war civil airport also damaged."},
-  {id:"hawkinge", name:"Hawkinge",       x:426,y:569,group:"11",sqns:["32 fwd","79 fwd"],type:"forward",
+  {id:"hawkinge",lat:51.112115,lng:1.157423, name:"Hawkinge",       x:426,y:569,group:"11",sqns:["32 fwd","79 fwd"],type:"forward",
    info:"Only 22 miles from France. Front-line refuelling point — turnaround in minutes. Chalk downland: palest white dust. Bombed repeatedly throughout the battle."},
-  {id:"exeter",   name:"Exeter",         x:198,y:597,group:"10",sqns:["87","238"],type:"sector",
+  {id:"exeter",lat:50.734304,lng:-3.415559,   name:"Exeter",         x:198,y:597,group:"10",sqns:["87","238"],type:"sector",
    info:"10 Group westernmost. 87 Sqn's Gleed flew LK-A from here. Devon red clay is the ONLY red mud weathering in the entire BoB — unique modelling opportunity."},
-  {id:"wallop",   name:"M. Wallop",      x:297,y:569,group:"10",sqns:["238","609","604"],type:"sector",
+  {id:"wallop",lat:51.144944,lng:-1.563940,   name:"M. Wallop",      x:297,y:569,group:"10",sqns:["238","609","604"],type:"sector",
    info:"10 Group's main sector station. Hampshire chalk downland — palest dust of any BoB station. Almost white-grey contamination on aircraft undersurfaces."},
-  {id:"warmwell", name:"Warmwell",       x:243,y:597,group:"10",sqns:["152","609 fwd"],type:"sector",
+  {id:"warmwell",lat:50.697419,lng:-2.346841, name:"Warmwell",       x:243,y:597,group:"10",sqns:["152","609 fwd"],type:"sector",
    info:"Forward station for Portland naval base defence. Dorset limestone: pale grey-buff dust, lighter than chalk."},
-  {id:"duxford",  name:"Duxford",        x:376,y:499,group:"12",sqns:["19","310","312"],type:"sector",
+  {id:"duxford",lat:52.093134,lng:0.126862,  name:"Duxford",        x:376,y:499,group:"12",sqns:["19","310","312"],type:"sector",
    info:"Home of 12 Group's controversial 'Big Wing'. Bader led multi-squadron formations from here. 310 (Czech) Sqn formed July 1940. Dark Cambridgeshire clay mud."},
-  {id:"coltishall",name:"Coltishall",    x:436,y:458,group:"12",sqns:["242","66"],type:"sector",
+  {id:"coltishall",lat:52.752394,lng:1.362255,name:"Coltishall",    x:436,y:458,group:"12",sqns:["242","66"],type:"sector",
    info:"242 (Canadian) Sqn under Bader. Norfolk sandy loam gives light buff dust — noticeably lighter than London-area clay stations. Good contrast on undersurfaces."},
-  {id:"churchfenton",name:"Ch. Fenton", x:312,y:381,group:"12",sqns:["249","73"],type:"sector",
+  {id:"churchfenton",lat:53.835553,lng:-1.196121,name:"Ch. Fenton", x:312,y:381,group:"12",sqns:["249","73"],type:"sector",
    info:"Yorkshire — guarded the industrial north. 249 Sqn formed here. Yorkshire coal dust adds dark contamination to mud."},
-  {id:"drem",     name:"Drem",           x:233,y:228,group:"13",sqns:["605","603"],type:"sector",
+  {id:"drem",lat:56.019338,lng:-2.795641,     name:"Drem",           x:233,y:228,group:"13",sqns:["605","603"],type:"sector",
    info:"East Lothian — 13 Group's main East Scotland base. Targeted 15 Aug when Luftflotte 5 launched its disastrous Norway raid. Scottish rain gives wetter, darker mud."},
-  {id:"usworth",  name:"Usworth",        x:297,y:305,group:"13",sqns:["607"],type:"sector",
+  {id:"usworth",lat:54.920038,lng:-1.471086,  name:"Usworth",        x:297,y:305,group:"13",sqns:["607"],type:"sector",
    info:"607 (County of Durham) AAF near Sunderland. Industrial northeast — coal dust and heavy Northumbrian clay give dark contamination."},
-  {id:"turnhouse",name:"Turnhouse",      x:213,y:235,group:"13",sqns:["253","245"],type:"sector",
+  {id:"turnhouse",lat:55.946192,lng:-3.352968,name:"Turnhouse",      x:213,y:235,group:"13",sqns:["253","245"],type:"sector",
    info:"Edinburgh's station — 13 Group central Scotland. Targeted 15 Aug 1940 by Luftflotte 5 from Norway."}
      ];
 
@@ -1532,6 +1532,8 @@ let leafletZones={};
 let selectedStationId=null;
 
 function xyToLatLng(st){
+  // Prefer verified WGS84 coordinates where supplied. The old x/y values remain as a fallback only.
+  if(typeof st.lat === 'number' && typeof st.lng === 'number') return [st.lat, st.lng];
   const lon = -7 + ((st.x - 25) / 470) * 9.5;
   const lat = 59 - ((st.y - 20) / 660) * 9.5;
   return [lat, lon];
