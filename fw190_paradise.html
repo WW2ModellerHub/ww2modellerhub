@@ -31,7 +31,7 @@
             <!-- Twitter Card -->
         <!-- Schema.org -->
   <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Focke-Wulf Fw 190 Scale Modelling Reference — Variants, Pilots, RLM Paint Codes & Kits","description":"Complete Focke-Wulf Fw 190 modelling reference. 8 Jagdgeschwaderritain squadrons, Ginger Lacey, Douglas Bader, exact Humbrol/Tamiya/Vallejo paint codes, kit reviews, Xtradecal sheets and airfield weathering guides.","url":"https://www.ww2modeller.co.uk/fw190_paradise.html","publisher":{"@type":"Organization","name":"WW2 Modeller Hub","url":"https://www.ww2modeller.co.uk"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.ww2modeller.co.uk/fw190_paradise.html"},"articleSection":"Scale Modelling","keywords":"scale model,WW2 aircraft,Battle of Britain,hurricane_paradise"}
+{"@context":"https://schema.org","@type":"Article","headline":"Focke-Wulf Fw 190 Scale Modelling Reference — Variants, Pilots, RLM Paint Codes & Kits","description":"Complete Focke-Wulf Fw 190 modelling reference: Jagdgeschwader units, Experten profiles, RLM paint codes, kit notes, airfield map and modelling weathering guides.","url":"https://www.ww2modeller.co.uk/fw190_paradise.html","publisher":{"@type":"Organization","name":"WW2 Modeller Hub","url":"https://www.ww2modeller.co.uk"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.ww2modeller.co.uk/fw190_paradise.html"},"articleSection":"Scale Modelling","keywords":"scale model,WW2 aircraft,Fw 190,Focke-Wulf,Jagdgeschwader,RLM paint codes,Luftwaffe modelling"}
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -944,6 +944,18 @@ body{
 #map-svg .station-g.selected .station-dot{r:8.5;stroke-width:2.5;filter:url(#fwGlow)}
 @media(max-width:860px){.fw-map-shell{grid-template-columns:1fr}.fw-map-side{min-height:auto}}
 
+
+/* Walkaround reference photo cards */
+.wa-ref-strip{margin:0 0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.85rem}
+.wa-ref-card{background:rgba(17,34,64,.82);border:1px solid rgba(255,255,255,.10);border-radius:5px;overflow:hidden;text-decoration:none;display:block;box-shadow:0 10px 24px rgba(0,0,0,.22);transition:transform .15s,border-color .15s}
+.wa-ref-card:hover{transform:translateY(-2px);border-color:rgba(201,168,76,.50)}
+.wa-ref-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#0a1628}
+.wa-ref-body{padding:.75rem .9rem}
+.wa-ref-kicker{font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.25rem}
+.wa-ref-title{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.25rem}
+.wa-ref-desc{font-size:13px;color:rgba(255,255,255,.56);line-height:1.48}
+.wa-ref-link{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-top:.55rem}
+
 </style>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -998,7 +1010,7 @@ body{
     <div class="hero-stat"><div class="hero-stat-val">8</div><div class="hero-stat-lbl">JG Units</div></div>
     <div class="hero-stat"><div class="hero-stat-val">10+</div><div class="hero-stat-lbl">Variants</div></div>
     <div class="hero-stat"><div class="hero-stat-val">8</div><div class="hero-stat-lbl">Paint codes</div></div>
-    <div class="hero-stat"><div class="hero-stat-val">6</div><div class="hero-stat-lbl">Experten</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">8</div><div class="hero-stat-lbl">Experten</div></div>
   </div>
 </div>
 
@@ -1194,10 +1206,11 @@ body{
 <!-- TAB: STORIES — Pilot narratives -->
 <div class="tab-panel" id="tab-stories">
   <div style="margin-bottom:1.5rem">
-    <div class="section-label" style="margin-bottom:.5rem">Pilot Profiles · Battle of Britain 1940</div>
-    <p style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.75;max-width:720px">
-      Six Fw 190 Experten profiles — the pilots who defined what it meant to fly in the Battle of Britain. Their tactics, their character, their aircraft markings, and what became of them.
+    <div class="section-label" style="margin-bottom:.5rem">Pilot Profiles · Experten and Modelling Subjects</div>
+    <p style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.75;max-width:780px">
+      Eight Fw 190 Experten profiles with the modeller in mind: who they were, where they flew, why their aircraft matter, what markings to look for, and how the theatre should affect paint, weathering and display choices.
     </p>
+    <div class="info-box" style="max-width:900px">Use these as starting points for historically grounded builds. Luftwaffe victory totals are claims from wartime records and should be treated as context, not celebration. The useful modelling angle is the aircraft, unit, theatre, camouflage and operational wear.</div>
   </div>
   <div id="pilot-stories-grid"></div>
 </div>
@@ -1210,6 +1223,36 @@ body{
 
 <div class="tab-panel" id="tab-walkaround">
   <div class="info-box">Specific Fw 190 walkaround videos and modelling reference links — no generic YouTube results pages. Use these for cockpit, cowling, undercarriage, wing-root wear and Dora-specific details.</div>
+  <div class="wa-ref-strip">
+    <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:Focke-Wulf_Fw_190D-9_USAF.jpg" target="_blank" rel="noopener">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Focke-Wulf_Fw_190D-9_USAF.jpg/1280px-Focke-Wulf_Fw_190D-9_USAF.jpg" alt="Focke-Wulf Fw 190D-9 at National Museum of the USAF" loading="lazy">
+      <div class="wa-ref-body">
+        <div class="wa-ref-kicker">USAF / Wikimedia</div>
+        <div class="wa-ref-title">Fw 190 D-9 — Museum Reference</div>
+        <div class="wa-ref-desc">Stable public-domain reference for Dora long nose, radiator ring, stance, gear angle and late-war surface finish.</div>
+        <div class="wa-ref-link">Open reference photo ↗</div>
+      </div>
+    </a>
+    <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:Focke-Wulf_Fw_190D-9_outside_USAF.jpg" target="_blank" rel="noopener">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Focke-Wulf_Fw_190D-9_outside_USAF.jpg" alt="Focke-Wulf Fw 190D-9 outside USAF Museum" loading="lazy">
+      <div class="wa-ref-body">
+        <div class="wa-ref-kicker">USAF / Wikimedia</div>
+        <div class="wa-ref-title">Fw 190 D-9 Outdoor View</div>
+        <div class="wa-ref-desc">Good side/profile reference for Dora proportions, tail attitude, undercarriage sit and nose length.</div>
+        <div class="wa-ref-link">Open reference photo ↗</div>
+      </div>
+    </a>
+    <a class="wa-ref-card" href="https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196282/focke-wulf-fw-190d-9/" target="_blank" rel="noopener">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Focke-Wulf_Fw_190D-9_USAF.jpg/1280px-Focke-Wulf_Fw_190D-9_USAF.jpg" alt="Fw 190 D-9 museum reference" loading="lazy">
+      <div class="wa-ref-body">
+        <div class="wa-ref-kicker">National Museum USAF</div>
+        <div class="wa-ref-title">Fw 190D-9 Collection Page</div>
+        <div class="wa-ref-desc">Use as a stable museum source for Dora identity, display context and model detail checking.</div>
+        <div class="wa-ref-link">Open reference photo ↗</div>
+      </div>
+    </a>
+  </div>
+
   <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
     <button onclick="showWaTab('cockpit',this)" class="wa-tab active" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:rgba(201,168,76,.12);border:1px solid var(--brass);color:var(--brass2);border-radius:2px;cursor:pointer">Cockpit</button>
     <button onclick="showWaTab('airframe',this)" class="wa-tab" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Airframe</button>
@@ -1423,15 +1466,15 @@ const SQ = [
     {n:"Hans Dortenmann",k:38,fate:"Survived",awards:"KC",note:"Black 1 D-9 — most documented Dora subject"},
     {n:"Heinz Lange",k:70,fate:"Survived",awards:"KC + Oak Leaves",note:"Experienced D-9 pilot"}
    ]},
-  {num:"JG 27",nat:"German",marks:"Fw 190 E-7 Trop",firstOp:"1942",lastOp:"1943",
-   losses:0,group:"africa",base:"Libya / Egypt",codes:"Yellow African band",kills:158,sorties:2800,
-   tags:["t-amber","t-green"],tagTxt:["North Africa","Desert scheme"],
-   roundel:"Balkenkreuz",spinner:"Desert colours",
-   ops:"JG 27 in North Africa. RLM 79/80/78 desert scheme. Marseille (158 kills, 17 in one day) is the iconic subject.",
-   decalRef:{serial:"JG 27 E-7 Trop Yellow 14",codes:"Yellow 14",roundelUpper:"Balkenkreuz",roundelFuselage:"Balkenkreuz",roundelLower:"Balkenkreuz",spinner:"Desert",finFlash:"Swastika",codeColour:"Yellow"},
+  {num:"II/JG 2 Tunisia",nat:"German",marks:"Fw 190 A-4/Trop",firstOp:"Nov 1942",lastOp:"May 1943",
+   losses:0,group:"africa",base:"Kairouan / Tunisia",codes:"White theatre bands",kills:222,sorties:900,
+   tags:["t-amber","t-green"],tagTxt:["North Africa","Trop Anton"],
+   roundel:"Balkenkreuz",spinner:"Desert / unit colours",
+   ops:"Fw 190s reached North Africa late, mainly in Tunisia from late 1942 into May 1943. The safest modelling angle is II./JG 2 rather than JG 27: A-4/Trop Antons, dusty Tunisian fields, white theatre bands on some aircraft and rapid sun-fading over standard European camouflage or locally adapted finishes.",
+   decalRef:{serial:"II./JG 2 Fw 190 A-4/Trop",codes:"Black/white tactical numbers",roundelUpper:"Balkenkreuz",roundelFuselage:"Balkenkreuz",roundelLower:"Balkenkreuz",spinner:"Unit dependent",finFlash:"Swastika",codeColour:"Black/White"},
    pilots:[
-    {n:"Hans-Joachim Marseille",k:158,fate:"KIA Sep 1942",awards:"KC + Diamonds",note:"158 kills; 17 in one day; killed bailing out aged 22. EDK82116."},
-    {n:"Werner Schroer",k:114,fate:"Survived",awards:"KC + Swords",note:"JG 27 second-highest scorer"}
+    {n:"Erich Rudorffer",k:222,fate:"Survived",awards:"KC + Oak Leaves + Swords",note:"II./JG 2 commander in Tunisia; useful Fw 190 North Africa subject"},
+    {n:"Kurt Buehligen",k:112,fate:"Survived",awards:"KC + Oak Leaves + Swords",note:"JG 2 ace; strong Western Front / Tunisia modelling reference"}
    ]}
 ];
 
@@ -1510,8 +1553,8 @@ const WEATHER = [
    rows:[{l:"Surface",v:"Dark Russian earth. Heavy accumulations in spring/autumn."},{l:"Exhaust",v:"Heavy. Extend streaks well back from all stacks."},{l:"Paint",v:"Extensive chipping. Yellow markings bleach to near-cream."},{l:"Winter",v:"Chalk whitewash over standard scheme."}]},
   {base:"Defence of Reich",group:"reich",sqns:["JG 11","JG 1","III/JG 3"],mudColour:"#6a6858",mudNote:"German clay",mudMix:"XF-64+XF-20",
    rows:[{l:"Surface",v:"German clay soils. XF-64+XF-20 1:1."},{l:"Exhaust",v:"Moderate to heavy. Multiple interception sorties per day."},{l:"Gun blast",v:"Heavy. A-8/R2 shows additional 30mm blast staining."},{l:"Panels",v:"Replacement panels in different RLM batches are accurate."}]},
-  {base:"North Africa",group:"africa",sqns:["JG 27"],mudColour:"#c8a048",mudNote:"Desert sand",mudMix:"XF-59",
-   rows:[{l:"Surface",v:"Fine sand everywhere. Deck Tan dry wash in panel lines."},{l:"Fading",v:"RLM 79 bleaches rapidly. Lighten 15-20% for weathered subjects."},{l:"Edges",v:"Sand erosion severe. Silver on wing leading edges."},{l:"Filter",v:"Vokes filter shows sand staining around intake."}]},
+  {base:"North Africa",group:"africa",sqns:["II/JG 2 Tunisia"],mudColour:"#c8a048",mudNote:"Desert sand",mudMix:"XF-59",
+   rows:[{l:"Surface",v:"Fine sand everywhere. Deck Tan dry wash in panel lines."},{l:"Fading",v:"Sun and dust fade upper colours quickly. Lighten 10-15% for weathered subjects."},{l:"Edges",v:"Sand erosion and boot scuffs on leading edges, wing roots and access panels."},{l:"Cowling",v:"Dust builds around the BMW 801 cowling ring, cowl flaps, wheels and lower fuselage."}]},
   {base:"D-9 Dora",group:"reich",sqns:["III/JG 3"],mudColour:"#585850",mudNote:"Late war",mudMix:"XF-20",
    rows:[{l:"Jumo",v:"Blue-grey cowling shows oil streaking from access panels."},{l:"Band",v:"Yellow-green band fades. Semi-transparent over RLM 76."},{l:"Overall",v:"Hurried production. Rapid wear on all surfaces."},{l:"Exhaust",v:"Jumo 213 single-row exhaust — not star-burst."}]}
 ];
@@ -1708,7 +1751,7 @@ const SQ_DECALS = {
   "III/JG 3":[
     {name:"Hannants search — Fw 190 D-9 Dora decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+D-9+Dora+decal"}
   ],
-  "JG 27":  [
+  "II/JG 2 Tunisia":  [
     {name:"Hannants search — Fw 190 / North Africa Luftwaffe decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+North+Africa+decal"}
   ]
 };
@@ -1913,7 +1956,7 @@ const SQ_COMMONS_CATS = {
   "JG 11":  "Focke-Wulf_Fw_190",
   "JG 1":   "Focke-Wulf_Fw_190",
   "III/JG 3":"Focke-Wulf_Fw_190_D-9",
-  "JG 27":  "Focke-Wulf_Fw_190",
+  "II/JG 2 Tunisia":  "Focke-Wulf_Fw_190",
 };
 
 
@@ -2365,7 +2408,7 @@ function getEvent(day) {
 }
 
 function getSqStatus(num, day) {
-  const TL_FW={"JG 26":[{s:0,e:670,st:"ops"}],"JG 2":[{s:0,e:580,st:"ops"}],"JG 54":[{s:90,e:670,st:"ops"}],"JG 51":[{s:90,e:670,st:"ops"}],"JG 11":[{s:200,e:670,st:"ops"}],"JG 1":[{s:200,e:670,st:"ops"}],"III/JG 3":[{s:450,e:670,st:"ops"}],"JG 27":[{s:90,e:330,st:"ops"}]};
+  const TL_FW={"JG 26":[{s:0,e:670,st:"ops"}],"JG 2":[{s:0,e:580,st:"ops"}],"JG 54":[{s:90,e:670,st:"ops"}],"JG 51":[{s:90,e:670,st:"ops"}],"JG 11":[{s:200,e:670,st:"ops"}],"JG 1":[{s:200,e:670,st:"ops"}],"III/JG 3":[{s:450,e:670,st:"ops"}],"II/JG 2 Tunisia":[{s:90,e:330,st:"ops"}]};
   const periods = TL_FW[num] || [];
   const p = periods.find(x => day >= x.s && day <= x.e);
   return p ? p.st : 'rest';
@@ -2458,7 +2501,7 @@ const STATIONS = [
   {id:'orel',name:'Orel',theatre:'east',lat:52.966,lng:36.083,units:['JG 51'],type:'Eastern Front',period:'1943',notes:'Central Eastern Front operating area. Good for heavy dust, mud, chipped wing roots and operationally tired aircraft.'},
   {id:'bryansk',name:'Bryansk',theatre:'east',lat:53.252,lng:34.371,units:['JG 51'],type:'Eastern Front',period:'1943–44',notes:'Eastern Front field context. Use dusty tyres, lower-surface grime, worn prop blades and uneven yellow recognition markings.'},
 
-  {id:'gambut',name:'Gambut, Libya',theatre:'med',lat:31.757,lng:24.897,units:['JG 27'],type:'North Africa',period:'1942',notes:'Desert operating area. Model cue: sand fading, dust-packed tyres, pale exhaust staining and sun-bleached upper surfaces.'},
+  {id:'kairouan',name:'Kairouan, Tunisia',theatre:'med',lat:35.678,lng:10.096,units:['II/JG 2 Tunisia'],type:'North Africa / Tunisia',period:'1942–43',notes:'Late North Africa Fw 190 operating area. Model cue: dusty tyres, sun-faded upper colours, white theatre bands where photographed, cowling dust and pale exhaust staining.'},
   {id:'kairouan',name:'Kairouan, Tunisia',theatre:'med',lat:35.671,lng:10.101,units:['JG 2','SG units'],type:'Mediterranean',period:'1942–43',notes:'Tunisia theatre context for Fw 190 fighter-bomber operations. Use dusty filters, sand abrasion and hurried field servicing.'}
 ];
 
@@ -2964,12 +3007,110 @@ function renderBooks() {
 
 
 const PILOT_STORIES = [
-  {name:"Josef Priller",unit:"JG 26 Kommodore",aircraft:"Fw 190 A-7 Jutta",intro:"101 victories. His Jutta is the most modelled Fw 190.",story:"Priller was Kommodore of JG 26 for most of the war. Jutta wore a distinctive yellow/black spiral spinner. On D-Day he and Wodarczyk made the sole Luftwaffe attack on the beaches. He survived the war.",mark:"Fw 190 A-7, white 13, yellow/black spiral spinner, JG 26. EDK82145.",awards:["KC","Oak Leaves","Swords"]},
-  {name:"Walter Nowotny",unit:"JG 54 Gruenherz",aircraft:"Fw 190 A-5",intro:"First to 250 victories. Killed at 23.",story:"Nowotny achieved 258 victories on the Eastern Front with JG 54. He became the first to 250 on 19 October 1943. He later commanded the first Me 262 unit and was killed in combat aged 23.",mark:"Fw 190 A-5, white 1, JG 54 green heart, yellow Eastern Front band. EDK82111.",awards:["KC","Oak Leaves","Swords","Diamonds"]},
-  {name:"Otto Kittel",unit:"JG 54 Gruenherz",aircraft:"Fw 190 A-6/A-8",intro:"267 victories. 4th highest ace. Killed aged 23.",story:"Kittel accumulated 267 victories through relentless Eastern Front work. On 16 February 1945 he was hit by Il-2 return fire and killed, aged 23.",mark:"Fw 190 A-6/A-8, heavy Eastern Front mottling, JG 54 green heart, yellow band.",awards:["KC","Oak Leaves","Swords","Diamonds"]},
-  {name:"Egon Mayer",unit:"JG 2 Kommodore",aircraft:"Fw 190 A-4/5",intro:"Invented head-on bomber attack. 26 four-engine kills.",story:"Mayer developed the head-on attack against B-17s, exploiting their weak forward armament. He scored 26 four-engine kills before being shot down by a P-47 on 2 March 1944, aged 26.",mark:"Fw 190 A-4/5, JG 2 Channel Front, yellow/black spiral spinner.",awards:["KC","Oak Leaves","Swords"]},
-  {name:"Hans Dortenmann",unit:"III/JG 3 Udet",aircraft:"Fw 190 D-9 Black 1",intro:"Most documented D-9 pilot. Black 1 is in every reference.",story:"Dortenmann flew D-9 Doras defending Me 262 airfields at Achmer. His Black 1 with blue-grey Jumo cowling, yellow-green rear band and JG 54 green heart is in almost every Fw 190 D-9 reference.",mark:"Fw 190 D-9, black 1, blue-grey Jumo cowling, yellow-green rear band.",awards:["KC"]},
-  {name:"Hans-Joachim Marseille",unit:"I/JG 27",aircraft:"Fw 190 E-7 Trop",intro:"158 victories. 17 in one day. The Star of Africa.",story:"Marseille scored 158 victories over North Africa, 17 in a single day on 1 September 1942. He died bailing out of a smoke-filled cockpit after engine failure on 30 September 1942. He was 22.",mark:"E-7 Trop, yellow 14, JG 27 North Africa desert scheme. EDK82116.",awards:["KC","Oak Leaves","Swords","Diamonds"]}
+  {
+    name:"Josef \"Pips\" Priller",
+    unit:"JG 26 Schlageter · Channel Front",
+    aircraft:"Fw 190 A-5/A-7/A-8",
+    intro:"101 victories. One of the best documented Western Front Fw 190 commanders.",
+    story:"Priller is the classic Western Front Fw 190 subject. JG 26 received the type at Abbeville in 1941 and used it heavily over northern France, the Channel and later Normandy. Priller became closely associated with JG 26, with a reputation for aggressive low-to-medium altitude fighting. His most famous episode was the D-Day beach pass with Heinz Wodarczyk, but for modelling purposes the better angle is the long operational life of his aircraft: Channel Front grime, neat unit markings, spiral spinner, and the contrast between relatively tidy command aircraft and hard-used frontline machines.",
+    why:"Best choice if you want a recognisable, heavily photographed Fw 190 without needing extreme Eastern Front weathering.",
+    tactics:"Fast slashing attacks, low-to-medium altitude interception, and quick disengagement rather than prolonged turning fights. The Fw 190 suited this style because of its roll rate, firepower and robust radial engine.",
+    mark:"Look for JG 26 identifiers, tactical numbers, Gruppe bars and yellow/black spiral spinner options. His well-known personal marking 'Jutta' is useful for a centrepiece display build.",
+    paint:"RLM 74/75/76 with restrained side mottling. Add exhaust staining from the BMW 801, scuffed wing roots, dirty wheels and moderate leading-edge wear. Avoid making it as battered as an Eastern Front aircraft.",
+    build:"Ideal in 1:48 because the spinner, cowling, canopy framing and fuselage mottle can carry the story without needing a large diorama.",
+    awards:["KC","Oak Leaves","Swords"]
+  },
+  {
+    name:"Walter Nowotny",
+    unit:"JG 54 Gruenherz · Eastern Front",
+    aircraft:"Fw 190 A-5",
+    intro:"258 victories. First pilot credited with 250 victories.",
+    story:"Nowotny gives you the archetypal JG 54 Fw 190: Eastern Front, green heart unit emblem, yellow theatre markings and heavy operational use. Although many of his victories were scored before and alongside his Fw 190 period, the modelling value is the JG 54 look. These aircraft often carried denser mottling, theatre bands and a more improvised appearance than the cleaner Channel Front machines. Nowotny later commanded an Me 262 unit and was killed in 1944, but the Fw 190 modelling subject belongs firmly to the 1943 Eastern Front story.",
+    why:"Best choice for a famous ace build with strong unit identity and obvious Eastern Front colour cues.",
+    tactics:"High-tempo front-line interception and free-hunting over a fluid battlefield. Eastern Front fighters often operated from rough fields, so serviceability and rapid turnarounds mattered as much as polish.",
+    mark:"JG 54 green heart badge, yellow Eastern Front band and/or yellow lower cowling depending on the chosen aircraft and date. Check the exact decal sheet before painting recognition markings.",
+    paint:"RLM 74/75/76 base, often with stronger mottling and dustier lower surfaces. Add mud and dry earth on tyres, tailwheel, flaps and lower cowling. Yellow theatre markings should be slightly faded rather than bright toy yellow.",
+    build:"Works well on a small muddy dispersal base with fuel drums, chocks and a winter or autumn ground tone.",
+    awards:["KC","Oak Leaves","Swords","Diamonds"]
+  },
+  {
+    name:"Otto \"Bruno\" Kittel",
+    unit:"JG 54 Gruenherz · Eastern Front",
+    aircraft:"Fw 190 A-6/A-8",
+    intro:"267 victories. One of the highest scoring Fw 190-associated pilots.",
+    story:"Kittel is a brutal Eastern Front modelling subject: long service, rough airfields, heavy sortie rates and constant contact with Soviet ground-attack aircraft. He was killed in February 1945 after being hit by return fire from an Il-2. His aircraft are best approached less as clean parade machines and more as working tools: worn wing roots, stained cowling panels, dusty undersides, chipped access panels and uneven theatre markings.",
+    why:"Best choice if you want a heavily weathered JG 54 aircraft with a darker operational story.",
+    tactics:"Repeated interceptions, close front-line operations and attacks against Soviet aircraft at low to medium altitude. The Fw 190's firepower and radial-engine toughness suited this environment.",
+    mark:"JG 54 green heart, black/white tactical numbers and yellow Eastern Front recognition features. Check whether your subject is A-6 or A-8 before adding antenna, gun bulges and late-war details.",
+    paint:"More grime than Priller: dusty wheels, chipped wing roots, stained cowl flaps, worn propeller leading edges and patchy mottle. Add brown-grey filters over the lower surfaces for field dust.",
+    build:"A strong choice for 1:32 or 1:48 where you can show cockpit wear, open canopy and battered service panels.",
+    awards:["KC","Oak Leaves","Swords","Diamonds"]
+  },
+  {
+    name:"Egon Mayer",
+    unit:"JG 2 Richthofen · Western Front / Reich Defence",
+    aircraft:"Fw 190 A-4/A-5/A-6",
+    intro:"102 victories. Closely linked with head-on bomber interception tactics.",
+    story:"Mayer is one of the most interesting Experten for explaining why the Fw 190 mattered. JG 2 used the aircraft first against RAF fighters over the Channel, then increasingly against USAAF heavy bombers. Mayer is associated with the development and use of head-on attacks against B-17 formations, exploiting the brief firing window before the bomber formation passed. For a model, this points towards a more aggressive anti-bomber fit, heavier staining and a purposeful Reich Defence feel rather than a clean early-war fighter.",
+    why:"Best choice if you want the Fw 190 as a bomber-destroyer rather than just a dogfighter.",
+    tactics:"High closing-speed frontal attacks against bomber boxes, short firing bursts, then rapid break-away. This makes the aircraft's heavy nose and wing armament central to the story.",
+    mark:"JG 2 tactical numbers, Reich/Western Front identification features and A-series armament details. Be careful with exact sub-variant: A-4, A-5 and A-6 have visible differences.",
+    paint:"RLM 74/75/76 with moderate mottling. Add gun staining around wing-root cannon, exhaust streaking behind the BMW 801 and replacement panels for a late-service look.",
+    build:"Display with a simple contrail/bomber interception caption card or a clean black base to emphasise the anti-bomber role.",
+    awards:["KC","Oak Leaves","Swords"]
+  },
+  {
+    name:"Anton \"Toni\" Hackl",
+    unit:"JG 11 / Reichsverteidigung",
+    aircraft:"Fw 190 A-8/R2 Sturmbock",
+    intro:"192 victories. Strong subject for armoured bomber-interceptor Fw 190s.",
+    story:"Hackl is the right Experten profile for the heavy Sturmbock look. By 1944 the Fw 190 was being adapted for close-range attacks on US heavy bombers, trading agility for armour and firepower. The A-8/R2 with 30 mm cannon, added armour and heavy canopy/cowling detail gives a very different modelling feel from Priller or Nowotny. It should look dense, purposeful and slightly overburdened.",
+    why:"Best choice for a chunky, heavily armed A-8/R2 with real visual difference from a standard fighter.",
+    tactics:"Close-range bomber interception. Sturmbock pilots needed to get near enough for heavy cannon fire, often under escort-fighter threat. The aircraft should look like a weaponised specialist, not a lightweight dogfighter.",
+    mark:"Look for Reich Defence bands, armoured glass, outboard MK 108 cannon bulges where appropriate, and heavier gun access panels. Confirm R2 features against the kit instructions before cutting plastic.",
+    paint:"Late-war RLM 74/75/76 or mixed replacement panels. Add heavier gun blast, dirty cannon ports, chipped walkways and uneven repair panels. Keep the finish matt and workmanlike.",
+    build:"Perfect for Eduard/Tamiya A-8 builds with aftermarket gun barrels, cockpit belts and open canopy.",
+    awards:["KC","Oak Leaves","Swords"]
+  },
+  {
+    name:"Hans Dortenmann",
+    unit:"III./JG 54 / JG 26 · Dora operations",
+    aircraft:"Fw 190 D-9 Black 1",
+    intro:"Best known Dora subject. 'Black 1' is a modeller favourite.",
+    story:"Dortenmann is the Dora profile. His Fw 190 D-9 'Black 1' is one of the most frequently modelled long-nose Fw 190s because it combines late-war colours, a striking tactical number, a blue-grey Jumo cowling and strong unit identity. The D-9 was not simply an A-series aircraft with a longer nose: the Jumo installation changed the whole front-end character, the exhaust pattern and the stance of the model.",
+    why:"Best choice if you want to move beyond the radial-engine Anton and build the long-nose Dora properly.",
+    tactics:"Late-war interception and airfield defence, including operations around jet bases. By this point fuel, spares and airfield conditions were as much part of the story as pilot skill.",
+    mark:"Black 1, long Jumo nose, yellow-green rear fuselage band, JG 54 green heart association and late-war national markings. Check tail, aerial and canopy style carefully.",
+    paint:"Late-war RLM 76 with RLM 81/82/83-style upper tones depending on interpretation. Blue-grey cowling, mismatched panels and hurried factory finish are all plausible. Exhaust is a Jumo streak, not the radial starburst of an A-series.",
+    build:"Use a dedicated D-9 kit rather than trying to backdate or convert an A-series unless you are deliberately doing a conversion project.",
+    awards:["KC"]
+  },
+  {
+    name:"Kurt Buehligen",
+    unit:"JG 2 Richthofen · Western Front",
+    aircraft:"Fw 190 A-series",
+    intro:"112 victories. Long-serving Western Front commander.",
+    story:"Buehligen is useful because he keeps the Fw 190 story grounded in the Western Front after the early Channel battles. His career bridges fighter sweeps, bomber defence and the attritional fighting over France. For modellers, this means a JG 2 aircraft can be shown with more wear than an early 1942 machine but less mud and improvisation than a JG 54 Eastern Front subject.",
+    why:"Best choice for a less obvious Western Front ace subject that still has strong unit history.",
+    tactics:"Experienced command flying, interception and defensive fighter operations as Allied pressure increased. Think speed, firepower and survival rather than flamboyant aerobatics.",
+    mark:"JG 2 Richthofen markings, tactical numbers and Western Front camouflage. Confirm whether the aircraft is an A-5, A-6 or A-8 before committing to cowling and armament details.",
+    paint:"RLM 74/75/76 with medium mottling, scuffed walkways, stained gun panels and slightly faded upper surfaces. Normandy-period machines can carry heavier dust and field grime.",
+    build:"Good for a balanced display: recognisable, historically rich and not as overused as Priller's Jutta.",
+    awards:["KC","Oak Leaves","Swords"]
+  },
+  {
+    name:"Erich Rudorffer",
+    unit:"JG 2 / JG 54 · Multiple fronts",
+    aircraft:"Fw 190 A-series",
+    intro:"222 victories. Useful for showing the Fw 190 across theatres.",
+    story:"Rudorffer is valuable for a reference site because he links several Fw 190 themes: Western Front experience, Eastern Front intensity and high claimed scores across a long career. A Rudorffer-inspired build should not be treated as one generic ace aircraft; pick the unit and period first, then let that drive the finish. A JG 2 subject and a JG 54 subject should not weather the same way.",
+    why:"Best choice if you want the page to show how the same aircraft type changes character by theatre.",
+    tactics:"Aggressive fighter operations across different fronts. The modelling lesson is that tactics and terrain affect the finish: Channel Front aircraft, Eastern Front aircraft and Reich Defence aircraft age differently.",
+    mark:"Choose the exact unit first: JG 2 gives Western Front markings; JG 54 gives Eastern Front green heart/yellow theatre cues. Do not mix them unless your reference photo proves it.",
+    paint:"Use the theatre as the rule. West: controlled mottle and exhaust. East: dust, mud, worn yellow markings. Reich Defence: heavier gun staining, replacement panels and late-war inconsistency.",
+    build:"A good candidate for a split display or comparison build: same Fw 190 family, different front, different finish.",
+    awards:["KC","Oak Leaves","Swords"]
+  }
 ];
 
 
@@ -3158,25 +3299,35 @@ function renderPilotStories() {
   if (!el || el.dataset.rendered) return;
   el.dataset.rendered = '1';
   el.innerHTML = PILOT_STORIES.map((p, i) => {
-    const callsignBadge = '';
     const acBadge = `<span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:2px 8px;border:1px solid rgba(255,255,255,.1);border-radius:2px">${p.aircraft || 'Fw 190 A-8'}</span>`;
-    return `<div style="background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--brass);border-radius:3px;padding:1.4rem;margin-bottom:1.5rem">
+    const awardBadges = (p.awards||[]).map(a=>`<span style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2);padding:2px 7px;border:1px solid rgba(201,168,76,.25);background:rgba(201,168,76,.06);border-radius:2px">${a}</span>`).join('');
+    const field = (label, value, tone='') => value ? `<div style="background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.075);border-left:3px solid ${tone||'var(--brass)'};padding:.75rem .85rem;border-radius:2px"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:${tone||'var(--brass2)'};margin-bottom:.25rem">${label}</div><div style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.65">${value}</div></div>` : '';
+    return `<article style="background:rgba(20,17,7,.72);border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--brass);border-radius:3px;padding:1.35rem;margin-bottom:1.5rem;box-shadow:0 8px 24px rgba(0,0,0,.18)">
       <div style="display:flex;gap:1.2rem;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap">
-        <div id="story-photo-${i}" style="width:80px;height:100px;flex-shrink:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:2px;display:flex;align-items:center;justify-content:center;overflow:hidden">
-          <div style="font-size:2rem;opacity:.2">✈</div>
+        <div id="story-photo-${i}" style="width:82px;height:104px;flex-shrink:0;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(0,0,0,.25));border:1px solid rgba(255,255,255,.12);border-radius:2px;display:flex;align-items:center;justify-content:center;overflow:hidden">
+          <div style="font-size:2rem;opacity:.25">✈</div>
         </div>
-        <div style="flex:1;min-width:200px">
-          <div style="font-family:'Special Elite',cursive;font-size:1.4rem;color:#fff;margin-bottom:.3rem">${p.name}</div>
-          <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">${p.unit||''}</div>
-          <div style="display:flex;gap:.5rem;flex-wrap:wrap">${callsignBadge}${acBadge}</div>
+        <div style="flex:1;min-width:220px">
+          <div style="font-family:'Special Elite',cursive;font-size:1.45rem;color:#fff;margin-bottom:.3rem">${p.name}</div>
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:.45rem">${p.unit||''}</div>
+          <div style="font-size:14px;color:rgba(255,255,255,.62);line-height:1.55;margin-bottom:.6rem">${p.intro||''}</div>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap">${acBadge}${awardBadges}</div>
         </div>
       </div>
-      <div style="font-size:16px;color:rgba(255,255,255,.82);line-height:1.85;font-family:'Source Serif 4',Georgia,serif;border-top:1px solid rgba(255,255,255,.07);padding-top:1rem">${p.story}</div>
-      ${p.mark ? `<div style="margin-top:.75rem;padding:.6rem .9rem;background:rgba(201,168,76,.07);border-left:3px solid var(--brass);border-radius:1px;font-size:13px;color:rgba(255,255,255,.7)"><span style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:.2rem">Modelling reference</span>${p.mark}</div>` : ''}
-    </div>`;
+
+      <div style="font-size:16px;color:rgba(255,255,255,.84);line-height:1.85;font-family:'Source Serif 4',Georgia,serif;border-top:1px solid rgba(255,255,255,.07);padding-top:1rem">${p.story}</div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin-top:1rem">
+        ${field('Why this subject matters', p.why, 'var(--brass2)')}
+        ${field('Tactical character', p.tactics, 'var(--raf-sky)')}
+        ${field('Markings to check', p.mark, 'var(--khaki)')}
+        ${field('Paint and weathering cues', p.paint, 'var(--olive)')}
+      </div>
+      ${p.build ? `<div style="margin-top:.85rem;padding:.65rem .9rem;background:rgba(201,168,76,.07);border-left:3px solid var(--brass);border-radius:1px;font-size:13px;color:rgba(255,255,255,.72);line-height:1.6"><span style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:.2rem">Build angle</span>${p.build}</div>` : ''}
+    </article>`;
   }).join('');
 
-  // Fetch portraits from Wikipedia REST API
+  // Optional portrait fetch if a future profile supplies a Wikipedia title.
   PILOT_STORIES.forEach(function(p, i) {
     if (!p.wiki) return;
     fetch('https://en.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(p.wiki))

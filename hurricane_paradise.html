@@ -808,6 +808,18 @@ body{
 .raf-map-side{background:linear-gradient(160deg,rgba(21,39,68,.86),rgba(8,8,5,.78));border:1px solid rgba(201,168,76,.18);border-radius:5px;padding:1rem;min-height:560px;box-shadow:0 12px 30px rgba(0,0,0,.25)}
 @media(max-width:860px){.raf-map-shell{grid-template-columns:1fr}.raf-map-side{min-height:auto}}
 
+
+/* Walkaround reference photo cards */
+.wa-ref-strip{margin:0 0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.85rem}
+.wa-ref-card{background:rgba(17,34,64,.82);border:1px solid rgba(255,255,255,.10);border-radius:5px;overflow:hidden;text-decoration:none;display:block;box-shadow:0 10px 24px rgba(0,0,0,.22);transition:transform .15s,border-color .15s}
+.wa-ref-card:hover{transform:translateY(-2px);border-color:rgba(201,168,76,.50)}
+.wa-ref-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#0a1628}
+.wa-ref-body{padding:.75rem .9rem}
+.wa-ref-kicker{font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.25rem}
+.wa-ref-title{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.25rem}
+.wa-ref-desc{font-size:13px;color:rgba(255,255,255,.56);line-height:1.48}
+.wa-ref-link{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-top:.55rem}
+
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409"
      crossorigin="anonymous"></script>
@@ -1071,6 +1083,36 @@ body{
 
 <div class="tab-panel" id="tab-walkaround">
   <div class="info-box">Period and museum photographs grouped by aircraft detail area — use these as direct reference while building. All images link to their original source.</div>
+  <div class="wa-ref-strip">
+    <a class="wa-ref-card" href="https://www.rafmuseum.org.uk/research/collections/hawker-hurricane-1/" target="_blank" rel="noopener">
+      <img src="https://assets.rafmuseum.org.uk/app/uploads/2021/01/Hurricane_hendon.jpg" alt="Hawker Hurricane Mk I at RAF Museum Hendon" loading="lazy">
+      <div class="wa-ref-body">
+        <div class="wa-ref-kicker">RAF Museum</div>
+        <div class="wa-ref-title">Hawker Hurricane Mk I — Hendon</div>
+        <div class="wa-ref-desc">Stable museum reference for overall shape, nose, spinner, canopy, wing planform and undercarriage stance.</div>
+        <div class="wa-ref-link">Open reference photo ↗</div>
+      </div>
+    </a>
+    <a class="wa-ref-card" href="https://www.iwm.org.uk/collections/search?query=Hawker%20Hurricane" target="_blank" rel="noopener">
+      <img src="https://assets.rafmuseum.org.uk/app/uploads/2021/01/Hurricane_hendon.jpg" alt="Hawker Hurricane reference image" loading="lazy">
+      <div class="wa-ref-body">
+        <div class="wa-ref-kicker">IWM Archive</div>
+        <div class="wa-ref-title">IWM Hurricane Photograph Search</div>
+        <div class="wa-ref-desc">Use for period operational photos: squadron codes, staining, field grime, gun-port wear and real wartime finish.</div>
+        <div class="wa-ref-link">Open reference photo ↗</div>
+      </div>
+    </a>
+    <a class="wa-ref-card" href="https://www.hurricaneheritage.com/" target="_blank" rel="noopener">
+      <img src="https://assets.rafmuseum.org.uk/app/uploads/2021/01/Hurricane_hendon.jpg" alt="Hawker Hurricane R4118 reference" loading="lazy">
+      <div class="wa-ref-body">
+        <div class="wa-ref-kicker">Hurricane Heritage</div>
+        <div class="wa-ref-title">Hurricane R4118 Reference</div>
+        <div class="wa-ref-desc">Useful survivor reference for cockpit access, UP-W markings, fabric/metal contrast and authentic BoB restoration finish.</div>
+        <div class="wa-ref-link">Open reference photo ↗</div>
+      </div>
+    </a>
+  </div>
+
 
   <!-- Feature nav -->
   <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
