@@ -794,6 +794,101 @@ body{
   box-shadow:0 4px 14px rgba(0,0,0,.16);
 }
 
+.fw-map-board{
+  position:relative;
+  background:linear-gradient(160deg,rgba(8,19,31,.92),rgba(17,14,7,.86));
+  border:1px solid rgba(201,168,76,.22);
+  border-radius:5px;
+  overflow:hidden;
+  box-shadow:0 16px 40px rgba(0,0,0,.32);
+}
+.fw-map-board::before{
+  content:'OPERATIONAL BASE MAP';
+  position:absolute;
+  top:.7rem;left:.85rem;
+  z-index:2;
+  font-family:'Oswald',sans-serif;
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(240,234,216,.35);
+  pointer-events:none;
+}
+.fw-map-side{
+  background:linear-gradient(160deg,rgba(20,17,7,.86),rgba(8,8,5,.78));
+  border:1px solid rgba(201,168,76,.18);
+  border-radius:5px;
+  padding:1rem;
+  min-height:360px;
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+.fw-map-side-title{
+  font-family:'Special Elite',cursive;
+  font-size:1.18rem;
+  color:#fff;
+  margin-bottom:.35rem;
+}
+.fw-map-side-kicker{
+  font-family:'Oswald',sans-serif;
+  font-size:11px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:.75rem;
+}
+.fw-unit-chip{
+  display:block;
+  width:100%;
+  text-align:left;
+  margin:.45rem 0 0;
+  padding:.65rem .75rem;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.10);
+  border-left:3px solid var(--brass);
+  border-radius:3px;
+  color:rgba(255,255,255,.82);
+  cursor:pointer;
+  transition:background .15s,border-color .15s,transform .15s;
+}
+.fw-unit-chip:hover{
+  background:rgba(201,168,76,.10);
+  border-color:rgba(201,168,76,.34);
+  transform:translateY(-1px);
+}
+.fw-unit-chip b{
+  font-family:'Special Elite',cursive;
+  color:#fff;
+  font-size:15px;
+}
+.fw-unit-chip .meta{
+  display:block;
+  margin-top:.18rem;
+  font-family:'Oswald',sans-serif;
+  font-size:11px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.45);
+}
+.fw-unit-chip .pilot{
+  display:block;
+  margin-top:.25rem;
+  font-size:12px;
+  line-height:1.45;
+  color:rgba(255,255,255,.64);
+}
+.fw-station-list{
+  max-height:230px;
+  overflow:auto;
+  padding-right:.2rem;
+  margin-top:.7rem;
+}
+.fw-station-list::-webkit-scrollbar{width:6px}.fw-station-list::-webkit-scrollbar-thumb{background:rgba(201,168,76,.28);border-radius:8px}
+#map-svg .station-g .station-hit{fill:transparent;pointer-events:all}
+#map-svg .station-g:hover .station-dot{r:8.5;filter:url(#fwGlow)}
+#map-svg .station-g.selected .station-dot{r:8.5;stroke-width:2.5;filter:url(#fwGlow)}
+@media(max-width:860px){.fw-map-shell{grid-template-columns:1fr}.fw-map-side{min-height:auto}}
+
+
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409"
      crossorigin="anonymous"></script>
@@ -975,11 +1070,11 @@ body{
   <div id="rsub-map">
     <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem">
       <span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-right:.25rem">Filter:</span>
-      <button onclick="filterMapGroup('all',this)" class="map-filter-btn on" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)">All Fronts</button>
-      <button onclick="filterMapGroup('JG26',this)" class="map-filter-btn" style="border-color:#c87848;color:#c87848">Channel Front W</button>
-      <button onclick="filterMapGroup('JG2',this)" class="map-filter-btn" style="border-color:#c8a848;color:#c8a848">Channel Front E</button>
-      <button onclick="filterMapGroup('JG54',this)" class="map-filter-btn" style="border-color:#4a7a5a;color:#4a7a5a">Eastern Front</button>
-      <button onclick="filterMapGroup('JG11',this)" class="map-filter-btn" style="border-color:#c85858;color:#c85858">Def. of Reich</button>
+      <button onclick="filterMapGroup('all',this)" class="map-filter-btn on" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)">All</button>
+      <button onclick="filterMapGroup('channel',this)" class="map-filter-btn" style="border-color:#c87848;color:#c87848">Channel Front</button>
+      <button onclick="filterMapGroup('reich',this)" class="map-filter-btn" style="border-color:#c85858;color:#c85858">Reich / Holland</button>
+      <button onclick="filterMapGroup('east',this)" class="map-filter-btn" style="border-color:#4a7a5a;color:#4a7a5a">Eastern Front</button>
+      <button onclick="filterMapGroup('med',this)" class="map-filter-btn" style="border-color:#c8a028;color:#c8a028">Mediterranean</button>
     </div>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap;align-items:flex-start">
       <svg id="map-svg" viewBox="0 0 520 700" xmlns="http://www.w3.org/2000/svg"
@@ -1437,16 +1532,27 @@ const TECHNIQUES = [
 // Station coordinates — real geographic projection matching map SVG
 // proj: lon -7→2.5 = x 25→495; lat 59→49.5 = y 20→680
 const STATIONS = [
-  {id:"abbeville",name:"Abbeville-Drucat",group:"JG26",lat:50.143,lng:1.832,sqns:["JG 26"],notes:"Primary JG 26 base. Priller Jutta flew from here."},
-  {id:"moorsele",name:"Moorsele",group:"JG26",lat:50.853,lng:3.135,sqns:["JG 26"],notes:"JG 26 Belgian base."},
-  {id:"beaumont",name:"Beaumont-le-Roger",group:"JG2",lat:49.083,lng:0.783,sqns:["JG 2"],notes:"JG 2 primary base."},
-  {id:"triqueville",name:"Triqueville",group:"JG2",lat:49.372,lng:0.373,sqns:["JG 2"],notes:"JG 2 Normandy base."},
-  {id:"siverskaya",name:"Siverskaya",group:"JG54",lat:59.353,lng:30.047,sqns:["JG 54"],notes:"JG 54 primary Eastern Front base."},
-  {id:"husum",name:"Husum",group:"JG11",lat:54.498,lng:9.242,sqns:["JG 11"],notes:"JG 11 Defence of the Reich base."},
-  {id:"wunstorf",name:"Wunstorf",group:"JG11",lat:52.458,lng:9.423,sqns:["JG 11"],notes:"JG 11 interception base."},
-  {id:"deelen",name:"Deelen",group:"JG1",lat:52.060,lng:5.873,sqns:["JG 1"],notes:"JG 1 base in occupied Holland."},
-  {id:"achmer",name:"Achmer",group:"JG3",lat:52.378,lng:7.912,sqns:["III/JG 3"],notes:"D-9 Dora base. Dortenmann Black 1 based here."},
-  {id:"gambut",name:"Gambut Libya",group:"JG27",lat:31.757,lng:24.897,sqns:["JG 27"],notes:"JG 27 North Africa base."}
+  {id:'abbeville',name:'Abbeville-Drucat',theatre:'channel',lat:50.143,lng:1.832,units:['JG 26'],type:'fighter base',period:'1941–44',notes:'Major Channel Front field for JG 26. Good for early A-series subjects: clean tactical markings, moderate grime and coastal weathering.'},
+  {id:'stomer',name:'St. Omer-Arques',theatre:'channel',lat:50.748,lng:2.302,units:['JG 26'],type:'fighter base',period:'1941–43',notes:'Pas-de-Calais operating area. Useful for Fw 190 A-2/A-3 subjects facing Spitfire V units over the Channel.'},
+  {id:'wevelgem',name:'Wevelgem / Moorsele',theatre:'channel',lat:50.853,lng:3.135,units:['JG 26'],type:'fighter base',period:'1941–44',notes:'Belgian base area used by JG 26. Modelling cue: hardstanding dust, exhaust staining and relatively tidy ground handling compared with Eastern Front fields.'},
+  {id:'beaumont',name:'Beaumont-le-Roger',theatre:'channel',lat:49.083,lng:0.783,units:['JG 2'],type:'fighter base',period:'1942–44',notes:'JG 2 Channel Front base in Normandy. Strong choice for A-4/A-5/A-8 subjects with yellow theatre markings and Channel weathering.'},
+  {id:'triqueville',name:'Triqueville',theatre:'channel',lat:49.372,lng:0.373,units:['JG 2'],type:'satellite field',period:'1942–44',notes:'Normandy satellite field for JG 2. More field-worn look: dusty undersides, rougher walkways and patched panels.'},
+  {id:'vannes',name:'Vannes-Meucon',theatre:'channel',lat:47.724,lng:-2.718,units:['JG 2'],type:'western France',period:'1943–44',notes:'Western France operating area. Good for Atlantic coast fading, salt air staining and darker exhaust trails.'},
+
+  {id:'deelen',name:'Deelen',theatre:'reich',lat:52.060,lng:5.873,units:['JG 1'],type:'Reich defence',period:'1943–44',notes:'Occupied Holland Reich-defence field. Good setting for bomber-interception aircraft with heavier exhaust staining and rapidly changed markings.'},
+  {id:'husum',name:'Husum',theatre:'reich',lat:54.498,lng:9.242,units:['JG 11'],type:'Reich defence',period:'1943–44',notes:'Northern Germany interception base. Modelling cue: colder, damp field conditions; subdued RLM 74/75/76 and heavy gun/exhaust staining.'},
+  {id:'wunstorf',name:'Wunstorf',theatre:'reich',lat:52.458,lng:9.423,units:['JG 11'],type:'Reich defence',period:'1943–45',notes:'Central Germany Reich-defence base. Suitable for A-8 bomber-destroyer subjects, patchy field repairs and dirty undersides.'},
+  {id:'achmer',name:'Achmer',theatre:'reich',lat:52.378,lng:7.912,units:['III/JG 3','JV 44 protection'],type:'late-war field',period:'1944–45',notes:'Late-war Dora/airfield-defence context. Model cue: rough late-war paint, heavy staining, worn tyres and improvised servicing.'},
+  {id:'rheine',name:'Rheine-Hopsten',theatre:'reich',lat:52.339,lng:7.541,units:['JG 26','JG 1'],type:'late-war field',period:'1944–45',notes:'North-west Germany base area. Good for late-war Fw 190 A/D subjects with mixed RLM 81/82/76 finishes.'},
+  {id:'parchim',name:'Parchim',theatre:'reich',lat:53.426,lng:11.783,units:['JG 26','JG 301'],type:'late-war field',period:'1944–45',notes:'Late-war northern Germany base. Use rough camouflage demarcation, replacement panels and subdued national markings.'},
+
+  {id:'siverskaya',name:'Siverskaya',theatre:'east',lat:59.353,lng:30.047,units:['JG 54'],type:'Eastern Front',period:'1942–44',notes:'JG 54 Eastern Front base south of Leningrad. Excellent for winter distemper, dirty wheel wells, mud and field-applied camouflage.'},
+  {id:'gatchina',name:'Gatchina / Krasnogvardeysk',theatre:'east',lat:59.568,lng:30.128,units:['JG 54'],type:'Eastern Front',period:'1942–44',notes:'Leningrad sector. Model cue: rough field conditions, temporary whitewash in winter and yellow Eastern Front ID bands.'},
+  {id:'orel',name:'Orel',theatre:'east',lat:52.966,lng:36.083,units:['JG 51'],type:'Eastern Front',period:'1943',notes:'Central Eastern Front operating area. Good for heavy dust, mud, chipped wing roots and operationally tired aircraft.'},
+  {id:'bryansk',name:'Bryansk',theatre:'east',lat:53.252,lng:34.371,units:['JG 51'],type:'Eastern Front',period:'1943–44',notes:'Eastern Front field context. Use dusty tyres, lower-surface grime, worn prop blades and uneven yellow recognition markings.'},
+
+  {id:'gambut',name:'Gambut, Libya',theatre:'med',lat:31.757,lng:24.897,units:['JG 27'],type:'North Africa',period:'1942',notes:'Desert operating area. Model cue: sand fading, dust-packed tyres, pale exhaust staining and sun-bleached upper surfaces.'},
+  {id:'kairouan',name:'Kairouan, Tunisia',theatre:'med',lat:35.671,lng:10.101,units:['JG 2','SG units'],type:'Mediterranean',period:'1942–43',notes:'Tunisia theatre context for Fw 190 fighter-bomber operations. Use dusty filters, sand abrasion and hurried field servicing.'}
 ];
 
 
@@ -2353,175 +2459,249 @@ const JITTER = {
 };
 
 let mapRendered = false;
+function normalizeUnitName(unit){ return (unit||'').replace('III./','III/').replace('III.','III/').trim(); }
+function theatreLabel(key){ return key==='channel'?'Channel Front':key==='reich'?'Defence of the Reich / Holland':key==='east'?'Eastern Front':key==='med'?'Mediterranean / North Africa':'Fw 190 operations'; }
+function getSqForUnit(unit){
+  const clean = normalizeUnitName(unit);
+  return SQ.find(s => s.num === clean) || null;
+}
 function renderMap(){
-  if(mapRendered) return;
-  mapRendered = true;
   const svg = document.getElementById('map-svg');
-  if(!svg) return;
+  if(!svg || mapRendered) return;
+  mapRendered = true;
   const ns = 'http://www.w3.org/2000/svg';
+  svg.innerHTML = '';
 
-  // proj: lon -5→37 = x 25→495; lat 62→25 = y 20→680
-  function latLonToXY(lat,lon){
-    const x = 25 + (lon - (-5)) / (37 - (-5)) * (495 - 25);
-    const y = 20 + (62 - lat) / (62 - 25) * (680 - 20);
-    return {x, y};
+  const defs=document.createElementNS(ns,'defs');
+  defs.innerHTML = `
+    <linearGradient id="fwSea" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1724"/>
+      <stop offset="45%" stop-color="#0f2132"/>
+      <stop offset="100%" stop-color="#1a160d"/>
+    </linearGradient>
+    <linearGradient id="fwLand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#49593a"/>
+      <stop offset="55%" stop-color="#364329"/>
+      <stop offset="100%" stop-color="#2b341f"/>
+    </linearGradient>
+    <linearGradient id="fwLandWarm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6a5b30"/>
+      <stop offset="100%" stop-color="#4d411f"/>
+    </linearGradient>
+    <radialGradient id="fwVignette" cx="50%" cy="45%" r="70%">
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity=".28"/>
+    </radialGradient>
+    <filter id="fwGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fwShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity=".35"/>
+    </filter>
+    <pattern id="fwSeaTexture" patternUnits="userSpaceOnUse" width="28" height="28">
+      <path d="M0 22 C8 18 16 18 28 22" fill="none" stroke="#fff" stroke-opacity=".035" stroke-width="1"/>
+      <path d="M0 10 C8 6 16 6 28 10" fill="none" stroke="#fff" stroke-opacity=".02" stroke-width="1"/>
+    </pattern>`;
+  svg.appendChild(defs);
+
+  function append(tag, attrs, parent=svg){
+    const el=document.createElementNS(ns,tag);
+    for(const [k,v] of Object.entries(attrs||{})) el.setAttribute(k,v);
+    parent.appendChild(el);
+    return el;
+  }
+  function poly(points, attrs){
+    return append('path', Object.assign({d:pathFromLatLng(points)}, attrs||{}));
   }
 
-  // Background
-  const bg = document.createElementNS(ns,'rect');
-  bg.setAttribute('x','0'); bg.setAttribute('y','0');
-  bg.setAttribute('width','520'); bg.setAttribute('height','700');
-  bg.setAttribute('fill','rgba(13,11,5,.9)');
-  svg.appendChild(bg);
+  append('rect',{x:0,y:0,width:760,height:560,fill:'url(#fwSea)'});
+  append('rect',{x:0,y:0,width:760,height:560,fill:'url(#fwSeaTexture)',opacity:.8});
 
-  // Draw simple land masses as polygons
-  const lands = [
-    // Western Europe outline (simplified)
-    [[51.5,-0.1],[51.0,1.4],[50.8,1.6],[49.4,0.1],[47.3,-1.5],[43.3,-1.8],[43.7,3.2],[43.3,5.4],[44.0,6.0],[46.0,6.5],[47.5,7.6],[48.5,9.5],[53.5,14.0],[54.3,10.5],[55.0,8.0],[55.6,8.1],[58.0,7.0],[57.5,5.0],[55.0,1.5],[54.0,0.0],[53.5,-3.0],[52.0,-4.5],[51.5,-4.0],[51.5,-0.1]],
-    // Scandinavia (simplified)
-    [[57.0,8.0],[57.7,10.5],[58.5,10.0],[59.0,11.0],[60.0,11.5],[63.0,14.0],[65.0,14.5],[68.0,16.0],[70.0,18.0],[71.0,25.0],[69.5,30.0],[65.0,25.5],[60.0,24.0],[59.5,23.5],[60.5,22.0],[57.0,8.0]],
-    // Italy (simplified)
-    [[47.0,10.0],[44.5,12.0],[43.5,13.5],[41.0,15.0],[38.0,15.5],[37.5,15.2],[38.5,16.0],[40.0,18.5],[41.5,16.5],[44.0,12.5],[44.0,9.0],[45.5,8.5],[47.0,10.0]],
-    // N Africa coast
-    [[36.0,-5.0],[37.0,10.0],[33.0,12.0],[31.5,24.0],[30.5,28.0],[31.5,34.5],[33.5,36.0],[36.8,36.5],[37.0,10.0],[36.0,-5.0]]
+  // subdued graticule
+  [30,35,40,45,50,55,60].forEach(lat=>{
+    const y=fwProject(lat,0).y;
+    append('line',{x1:42,x2:718,y1:y,y2:y,stroke:'rgba(122,168,216,.10)','stroke-width':'.8','stroke-dasharray':'4 6'});
+    addText(svg,lat+'°N',48,y-4,8,'rgba(140,175,205,.35)');
+  });
+  [-5,5,15,25,35].forEach(lng=>{
+    const x=fwProject(45,lng).x;
+    append('line',{y1:32,y2:514,x1:x,x2:x,stroke:'rgba(122,168,216,.08)','stroke-width':'.8','stroke-dasharray':'4 6'});
+    addText(svg,(lng>=0?lng+'°E':Math.abs(lng)+'°W'),x+4,507,8,'rgba(140,175,205,.30)');
+  });
+
+  // recognisable land masses — simplified, but shaped to read clearly as Europe / western USSR / North Africa
+  const iberia = [[36.0,-9.6],[36.7,-9.1],[37.4,-8.7],[38.5,-8.8],[39.5,-9.1],[40.7,-8.9],[41.8,-8.3],[42.8,-7.8],[43.6,-6.0],[43.8,-3.2],[43.6,-1.2],[43.1,0.8],[42.5,2.1],[41.6,3.1],[40.4,3.1],[39.0,1.0],[37.8,-0.8],[36.8,-2.6],[36.1,-5.0]];
+  const mainEurope = [[43.0,-1.7],[43.4,-0.5],[43.7,1.0],[43.8,2.5],[43.8,4.2],[43.6,5.8],[43.6,7.2],[43.9,8.5],[44.5,9.7],[45.1,11.0],[45.8,12.0],[46.3,13.0],[46.8,14.2],[47.4,15.5],[48.0,16.8],[48.7,18.0],[49.2,19.0],[49.8,20.2],[50.4,21.5],[51.0,22.8],[51.9,24.0],[52.8,24.7],[53.8,24.8],[54.4,23.8],[54.8,22.0],[54.9,20.0],[54.8,18.0],[54.6,16.0],[54.5,14.2],[54.3,12.2],[54.0,10.6],[53.7,9.0],[53.2,7.8],[52.6,6.5],[52.0,5.0],[51.4,3.6],[50.8,2.5],[50.1,1.5],[49.6,0.0],[49.1,-1.0],[48.5,-2.3],[47.8,-3.4],[46.8,-4.2],[45.7,-4.8],[44.7,-4.0],[43.8,-2.8]];
+  const westernUSSR = [[49.8,23.4],[50.8,24.5],[51.8,25.8],[53.0,27.0],[54.2,28.2],[55.2,29.2],[56.1,30.4],[57.0,31.8],[58.0,33.8],[59.0,36.0],[60.0,38.4],[61.0,40.0],[61.0,33.0],[60.8,27.0],[60.3,22.5],[59.4,19.2],[58.0,18.2],[56.8,18.4],[55.8,19.0],[54.9,20.0],[54.0,21.2],[53.2,22.5],[52.4,23.6],[51.4,24.4],[50.6,24.2]];
+  const balkans = [[45.8,13.0],[46.0,14.5],[45.9,16.0],[45.6,17.8],[45.3,19.4],[45.0,21.0],[44.2,22.6],[43.5,24.0],[42.6,25.2],[41.5,25.8],[40.5,25.0],[39.7,23.6],[39.1,22.0],[39.0,20.0],[39.4,18.2],[40.0,16.8],[40.8,15.5],[41.8,14.4],[43.0,13.6],[44.4,13.0]];
+  const scandinavia = [[55.0,5.0],[56.0,6.2],[57.0,7.6],[58.1,9.2],[59.0,10.6],[60.0,12.4],[60.8,14.8],[61.0,17.0],[60.9,19.4],[60.6,22.4],[60.2,25.6],[60.2,28.4],[60.6,31.0],[61.0,34.0],[61.0,38.6],[59.8,37.2],[58.6,35.4],[57.8,33.2],[57.0,30.0],[56.2,26.4],[55.7,22.8],[55.4,18.8],[55.0,15.0],[54.8,10.5]];
+  const italy = [[46.0,8.0],[45.6,9.2],[45.2,10.4],[44.6,11.8],[43.9,12.8],[43.1,13.5],[42.5,14.8],[41.9,16.0],[41.4,17.2],[40.8,18.0],[40.0,18.2],[39.2,17.2],[39.0,16.0],[39.4,14.8],[40.0,13.5],[40.7,12.4],[41.4,11.2],[42.0,10.0],[42.9,9.0],[43.8,8.4],[44.8,8.2]];
+  const sicily = [[38.0,12.0],[38.5,12.8],[38.3,14.3],[37.5,14.9],[37.0,13.4]];
+  const britain = [[50.0,-5.8],[50.5,-4.8],[51.2,-4.2],[52.0,-3.5],[53.0,-3.2],[54.0,-3.0],[55.0,-3.6],[56.0,-4.2],[57.0,-3.8],[58.0,-2.2],[58.5,-0.6],[57.3,1.4],[56.0,0.9],[54.8,0.0],[53.4,-0.1],[52.1,-0.6],[51.0,-0.8],[50.2,-1.6],[50.0,-3.5]];
+  const ireland = [[51.2,-10.3],[52.1,-9.6],[53.0,-9.1],[54.0,-8.8],[55.2,-7.8],[55.4,-6.6],[54.8,-5.8],[53.6,-5.5],[52.2,-6.0],[51.3,-7.1],[51.0,-8.8]];
+  const northAfrica = [[28.0,-6.0],[29.5,-5.5],[31.0,-4.8],[32.2,-3.5],[33.5,-2.0],[34.6,-0.6],[35.5,1.0],[36.2,3.0],[36.8,6.0],[37.0,9.5],[36.6,13.0],[36.0,16.5],[35.4,19.5],[34.8,22.5],[34.0,25.5],[33.2,28.8],[32.2,32.0],[31.2,35.2],[30.2,38.0],[28.0,38.0]];
+
+  ;[
+    [iberia,'url(#fwLand)'],
+    [mainEurope,'url(#fwLand)'],
+    [westernUSSR,'url(#fwLand)'],
+    [balkans,'url(#fwLand)'],
+    [scandinavia,'url(#fwLand)'],
+    [italy,'url(#fwLandWarm)'],
+    [sicily,'url(#fwLandWarm)'],
+    [britain,'rgba(73,87,77,.72)'],
+    [ireland,'rgba(68,82,72,.7)'],
+    [northAfrica,'url(#fwLandWarm)']
+  ].forEach(([pts,fill])=> poly(pts,{fill,stroke:'rgba(235,221,180,.20)','stroke-width':'1.05',class:'fw-land',filter:'url(#fwShadow)'}));
+
+  // islands / coastline accents
+  poly([[41.3,8.1],[41.9,9.4],[41.0,9.8],[40.8,8.6]],{fill:'url(#fwLandWarm)',stroke:'rgba(235,221,180,.20)','stroke-width':'1',class:'fw-land'}); // Corsica
+  poly([[39.1,8.1],[40.6,9.4],[39.3,9.9],[38.8,8.7]],{fill:'url(#fwLandWarm)',stroke:'rgba(235,221,180,.20)','stroke-width':'1',class:'fw-land'}); // Sardinia
+  poly([[35.0,23.0],[35.4,25.8],[34.9,26.3],[34.7,24.6]],{fill:'url(#fwLandWarm)',stroke:'rgba(235,221,180,.18)','stroke-width':'.9',class:'fw-land'}); // Crete
+
+  // subtle theatre overlays
+  const zones = [
+    {id:'channel',d:pathFromLatLng([[47.0,-4.2],[48.3,-1.8],[49.6,0.5],[50.8,2.6],[51.8,4.3],[51.4,5.4],[49.0,5.0],[47.4,2.5],[46.8,-0.8]]),c:GROUP_COLOURS.channel,label:'CHANNEL FRONT',lx:152,ly:272},
+    {id:'reich',d:pathFromLatLng([[50.7,4.2],[52.0,5.5],[53.5,7.3],[54.4,10.5],[54.2,13.5],[52.8,14.8],[51.0,13.8],[50.2,10.2],[50.1,7.0]]),c:GROUP_COLOURS.reich,label:'REICH DEFENCE',lx:268,ly:228},
+    {id:'east',d:pathFromLatLng([[51.0,26.0],[54.0,26.5],[57.0,28.0],[60.5,31.0],[60.7,38.0],[51.2,38.0]]),c:GROUP_COLOURS.east,label:'EASTERN FRONT',lx:575,ly:118},
+    {id:'med',d:pathFromLatLng([[30.0,8.0],[31.0,14.0],[32.5,20.0],[34.0,26.0],[36.8,26.0],[36.8,8.2]]),c:GROUP_COLOURS.med,label:'MEDITERRANEAN',lx:428,ly:465}
   ];
-
-  lands.forEach(poly => {
-    const p = document.createElementNS(ns,'polygon');
-    const pts = poly.map(([lat,lon]) => { const {x,y} = latLonToXY(lat,lon); return x+','+y; }).join(' ');
-    p.setAttribute('points',pts);
-    p.setAttribute('fill','rgba(40,38,25,.8)');
-    p.setAttribute('stroke','rgba(201,168,76,.2)');
-    p.setAttribute('stroke-width','0.5');
-    svg.appendChild(p);
+  zones.forEach(z=>{
+    const p=addPath(svg,z.d,z.c,'none','fw-front-zone');
+    p.setAttribute('data-zone',z.id);
+    p.setAttribute('opacity','.06');
+    p.setAttribute('stroke',z.c);
+    p.setAttribute('stroke-width','1');
+    p.setAttribute('stroke-dasharray','6 6');
+    p.setAttribute('stroke-opacity','.22');
+    addText(svg,z.label,z.lx,z.ly,9,z.c);
   });
 
-  // Region labels
-  const labels = [
-    {text:'CHANNEL FRONT',lat:50.5,lon:2.0},
-    {text:'EASTERN FRONT',lat:55.0,lon:28.0},
-    {text:'GERMANY',lat:51.5,lon:10.5},
-    {text:'FRANCE',lat:46.5,lon:2.5},
-    {text:'N. AFRICA',lat:30.0,lon:15.0},
-  ];
-  labels.forEach(lb => {
-    const {x,y} = latLonToXY(lb.lat,lb.lon);
-    const t = document.createElementNS(ns,'text');
-    t.setAttribute('x',x); t.setAttribute('y',y);
-    t.setAttribute('text-anchor','middle');
-    t.setAttribute('fill','rgba(201,168,76,.2)');
-    t.setAttribute('font-family',"'Oswald',sans-serif");
-    t.setAttribute('font-size','9');
-    t.setAttribute('letter-spacing','2');
-    t.textContent = lb.text;
-    svg.appendChild(t);
+  // labels
+  addText(svg,'NORTH SEA',252,162,10,'rgba(155,190,220,.34)','rotate(-10 252 162)');
+  addText(svg,'ENGLISH CHANNEL',137,314,9,'rgba(155,190,220,.34)','rotate(-11 137 314)');
+  addText(svg,'BALTIC SEA',345,118,9,'rgba(155,190,220,.30)');
+  addText(svg,'MEDITERRANEAN SEA',395,426,10,'rgba(155,190,220,.30)');
+  addText(svg,'FRANCE',175,326,10,'rgba(255,255,255,.24)');
+  addText(svg,'GERMANY',286,274,10,'rgba(255,255,255,.24)');
+  addText(svg,'POLAND',418,243,10,'rgba(255,255,255,.22)');
+  addText(svg,'ITALY',331,360,10,'rgba(255,255,255,.24)','rotate(20 331 360)');
+  addText(svg,'LIBYA',515,500,10,'rgba(255,255,255,.24)');
+  addText(svg,'TUNISIA',370,425,9,'rgba(255,255,255,.22)');
+  addText(svg,'WESTERN USSR',600,182,10,'rgba(255,255,255,.22)');
+  addText(svg,'BALKANS',430,318,9,'rgba(255,255,255,.20)');
+  addText(svg,'SCANDINAVIA',330,74,9,'rgba(255,255,255,.22)');
+
+  // compact in-map legend
+  const legend=append('g',{});
+  append('rect',{x:30,y:468,width:155,height:54,fill:'rgba(8,14,22,.58)',stroke:'rgba(255,255,255,.10)','stroke-width':'1',rx:'4'},legend);
+  addText(legend,'STATION MARKERS',44,484,8,'rgba(240,234,216,.55)');
+  [['Channel Front',GROUP_COLOURS.channel],['Reich / Holland',GROUP_COLOURS.reich],['Eastern Front',GROUP_COLOURS.east],['Mediterranean',GROUP_COLOURS.med]].forEach((it,i)=>{
+    const y=497 + i*11;
+    append('circle',{cx:42,cy:y,r:4,fill:it[1],stroke:'rgba(240,234,216,.9)','stroke-width':'1'},legend);
+    addText(legend,it[0],52,y+3,8,'rgba(240,234,216,.72)');
   });
 
-  // Pre-calculate x,y from lat/lng using the projection
-  STATIONS.forEach(st => {
-    const {x,y} = latLonToXY(st.lat, st.lng);
-    st.x = x; st.y = y;
-  });
+  // frame and vignette
+  append('rect',{x:16,y:16,width:728,height:528,fill:'none',stroke:'rgba(201,168,76,.24)','stroke-width':'1.2','rx':'4'});
+  append('rect',{x:24,y:24,width:712,height:512,fill:'none',stroke:'rgba(255,255,255,.04)','stroke-width':'1','rx':'2'});
+  append('rect',{x:0,y:0,width:760,height:560,fill:'url(#fwVignette)'});
 
-  // Station markers
-  STATIONS.forEach(st => {
-    const g = document.createElementNS(ns,'g');
-    g.setAttribute('class','station-g');
-    g.setAttribute('data-group', st.group);
-    g.style.cursor = 'pointer';
-    g.onclick = () => showMapStation(st);
-
-    const isSector = st.type === 'sector';
-    const r = isSector ? 7 : 5;
-    const col = GROUP_COLOURS[st.group] || '#888';
-    const j = JITTER[st.id] || { dx:0, dy:0, lx:0, ly:0, la:'start' };
-    const cx = st.x + j.dx;
-    const cy = st.y + j.dy;
-
-    // Connector line from jittered dot back to true position (if jittered)
-    if(j.dx !== 0 || j.dy !== 0){
-      const conn = document.createElementNS(ns,'line');
-      conn.setAttribute('x1', st.x); conn.setAttribute('y1', st.y);
-      conn.setAttribute('x2', cx);   conn.setAttribute('y2', cy);
-      conn.setAttribute('stroke', col); conn.setAttribute('stroke-width','0.6');
-      conn.setAttribute('stroke-dasharray','2 2'); conn.setAttribute('opacity','0.4');
-      g.appendChild(conn);
-    }
-
-    // Pulse ring for sector stations
-    if(isSector){
-      const ring = document.createElementNS(ns,'circle');
-      ring.setAttribute('cx', cx); ring.setAttribute('cy', cy);
-      ring.setAttribute('r', r + 4);
-      ring.setAttribute('fill','none');
-      ring.setAttribute('stroke', col);
-      ring.setAttribute('stroke-width','1');
-      ring.setAttribute('opacity','0.3');
-      g.appendChild(ring);
-    }
-
-    const circle = document.createElementNS(ns,'circle');
-    circle.setAttribute('cx', cx); circle.setAttribute('cy', cy);
-    circle.setAttribute('r', r);
-    circle.setAttribute('fill', col);
-    circle.setAttribute('stroke','rgba(232,223,192,0.9)');
-    circle.setAttribute('stroke-width', isSector ? '1.8' : '1.2');
-    circle.setAttribute('opacity', st.type === 'forward' ? '0.75' : '1');
-    g.appendChild(circle);
-
-    // Label position — use jitter offsets if defined, else auto-side
-    const labelX = cx + (j.lx || (cx > 420 ? -(r+5) : r+5));
-    const labelY = cy + (j.ly !== undefined ? j.ly : 4);
-    const labelAnchor = j.la || (cx > 420 ? 'end' : 'start');
-
-    const text = document.createElementNS(ns,'text');
-    text.setAttribute('x', labelX); text.setAttribute('y', labelY);
-    text.setAttribute('text-anchor', labelAnchor);
-    text.setAttribute('font-family','Oswald,sans-serif');
-    text.setAttribute('font-size', isSector ? '10' : '9');
-    text.setAttribute('fill', isSector ? 'rgba(232,223,192,0.85)' : 'rgba(232,223,192,0.55)');
-    text.setAttribute('letter-spacing','0.5');
-    text.textContent = st.name;
-    g.appendChild(text);
-
-    // Hover effect
-    g.addEventListener('mouseenter', () => { circle.setAttribute('r', r + 2); text.setAttribute('fill','rgba(232,223,192,1)'); });
-    g.addEventListener('mouseleave', () => { circle.setAttribute('r', r); text.setAttribute('fill', isSector ? 'rgba(232,223,192,0.85)' : 'rgba(232,223,192,0.55)'); });
-
+  // Station markers.
+  STATIONS.forEach(st=>{
+    const base = fwProject(st.lat, st.lng);
+    const j = JITTER[st.id] || {dx:0,dy:0,lx:9,ly:-9,la:'start'};
+    const x = base.x + j.dx, y = base.y + j.dy;
+    const col = GROUP_COLOURS[st.theatre] || '#c9a84c';
+    const g=document.createElementNS(ns,'g'); g.setAttribute('class','station-g'); g.setAttribute('data-group',st.theatre); g.setAttribute('data-id',st.id); g.addEventListener('click',()=>showMapStation(st.id));
+    if(j.dx || j.dy){ const conn=document.createElementNS(ns,'line'); conn.setAttribute('x1',base.x); conn.setAttribute('y1',base.y); conn.setAttribute('x2',x); conn.setAttribute('y2',y); conn.setAttribute('stroke',col); conn.setAttribute('stroke-width','.8'); conn.setAttribute('stroke-dasharray','2 3'); conn.setAttribute('opacity','.52'); g.appendChild(conn); }
+    const halo=document.createElementNS(ns,'circle'); halo.setAttribute('cx',x); halo.setAttribute('cy',y); halo.setAttribute('r','10'); halo.setAttribute('fill',col); halo.setAttribute('opacity','.10'); g.appendChild(halo);
+    const ring=document.createElementNS(ns,'circle'); ring.setAttribute('cx',x); ring.setAttribute('cy',y); ring.setAttribute('r',st.type.includes('base') || st.type.includes('Reich') ? '9.5' : '8'); ring.setAttribute('fill','none'); ring.setAttribute('stroke',col); ring.setAttribute('stroke-width','1'); ring.setAttribute('opacity','.42'); g.appendChild(ring);
+    const dot=document.createElementNS(ns,'circle'); dot.setAttribute('cx',x); dot.setAttribute('cy',y); dot.setAttribute('r','5'); dot.setAttribute('class','station-dot'); dot.setAttribute('fill',col); dot.setAttribute('stroke','rgba(240,234,216,.95)'); dot.setAttribute('stroke-width','1.5'); g.appendChild(dot);
+    const hit=document.createElementNS(ns,'circle'); hit.setAttribute('class','station-hit'); hit.setAttribute('cx',x); hit.setAttribute('cy',y); hit.setAttribute('r','15'); g.appendChild(hit);
+    const label=document.createElementNS(ns,'text'); label.setAttribute('x',x + j.lx + (j.la==='end'?-3:3)); label.setAttribute('y',y + j.ly + 3); label.setAttribute('text-anchor',j.la); label.setAttribute('class','station-label'); label.setAttribute('fill','rgba(240,234,216,.94)'); label.textContent=st.name; g.appendChild(label);
     svg.appendChild(g);
   });
+
+  showMapIntro();
 }
-function showMapStation(st){
-  const typeLabel = st.type === 'sector' ? 'Sector Station' : st.type === 'forward' ? 'Forward Airfield' : 'Satellite';
-  const groupCol = GROUP_COLOURS[st.group] || '#666';
-  document.getElementById('map-sqn-list').innerHTML = `
-    <div style="grid-column:1/-1;margin-bottom:.75rem;padding-bottom:.75rem;border-bottom:2px solid var(--bs)">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:.4rem">
-        <div style="width:12px;height:12px;border-radius:50%;background:${groupCol};flex-shrink:0"></div>
-        <span style="font-family:'Special Elite',cursive;font-size:16px;color:rgba(255,255,255,.85)">${st.name}</span>
-        <span style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2)">${st.sqns.join(", ")} · ${typeLabel}</span>
+function showMapStation(id){
+  selectedStationId = id;
+  const st = STATIONS.find(s => s.id === id);
+  const box = document.getElementById('map-sqn-list');
+  if(!st || !box) return;
+  const col = GROUP_COLOURS[st.theatre] || '#c9a84c';
+  document.querySelectorAll('#map-svg .station-g').forEach(g => g.classList.toggle('selected', g.getAttribute('data-id') === id));
+
+  const unitCards = st.units.map(u => {
+    const sq = getSqForUnit(u);
+    if(sq){
+      return `<button class="fw-unit-chip" onclick="openMapUnit('${sq.num.replace(/'/g,"\\'")}')">
+        <b>${sq.num}</b>
+        <span class="meta">${sq.marks} · ${sq.base} · ${sq.pilots.length} pilots</span>
+        <span class="pilot">Top pilot: ${topPilotText(sq)}<br>Open squadron card for pilots, markings, decals and kit notes →</span>
+      </button>`;
+    }
+    return `<div class="fw-unit-chip" style="cursor:default;opacity:.72;border-left-color:rgba(255,255,255,.25)">
+      <b>${u}</b>
+      <span class="meta">Context unit — no linked card yet</span>
+      <span class="pilot">This unit is shown for operational context. Add a matching unit card to make it clickable.</span>
+    </div>`;
+  }).join('');
+
+  box.innerHTML = `
+    <div style="margin-bottom:.85rem;padding-bottom:.8rem;border-bottom:2px solid rgba(255,255,255,.12)">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:.4rem;flex-wrap:wrap">
+        <div style="width:12px;height:12px;border-radius:50%;background:${col};flex-shrink:0"></div>
+        <span class="fw-map-side-title" style="margin:0">${st.name}</span>
       </div>
-      ${st.info ? `<div style="font-family:'Source Serif 4',Georgia,serif;font-size:13px;color:rgba(255,255,255,.78);line-height:1.65;margin-bottom:.5rem">${st.info}</div>` : ''}
+      <div class="fw-map-side-kicker" style="color:${col};margin-bottom:.55rem">${theatreLabel(st.theatre)} · ${st.type} · ${st.period}</div>
+      <div style="font-size:14px;color:rgba(255,255,255,.72);line-height:1.65">${st.notes}</div>
+      <div style="margin-top:.7rem;font-size:13px;color:rgba(255,255,255,.65);line-height:1.6"><strong style="color:var(--brass2)">Modelling cue:</strong> ${modellingCue(st)}</div>
     </div>
-    <div style="grid-column:1/-1;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2);margin-bottom:.4rem">Squadrons</div>
-    ${st.sqns.map(n => {
-      const sq = SQ.find(s => s.num === n.replace(' fwd',''));
-      const clickHandler = sq ? `selectSq('${sq.num}');document.querySelector('.nav-tab').click()` : '';
-      return `<div class="map-sqn-chip" onclick="${clickHandler}" style="${sq?'cursor:pointer':''}">
-        <b>No.${n} Sqn</b>${st.type==='forward'?' (fwd dispersal)':''}
-        ${sq ? `<div style="font-size:11px;color:rgba(255,255,255,.65)">${sq.kills} claims · ${sq.sorties} sorties</div>` : ''}
-      </div>`;
-    }).join('')}
-    ${st.sqns.length === 0 ? '<div class="map-sqn-chip" style="color:var(--brass2)">No squadron data</div>' : ''}
-  `;
+    <div style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2);margin-bottom:.45rem">Linked unit cards</div>
+    ${unitCards}
+    <div style="margin-top:.8rem;padding-top:.7rem;border-top:1px solid rgba(255,255,255,.08);font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38)">Lat ${st.lat.toFixed(3)} · Long ${st.lng.toFixed(3)}</div>`;
+}
+
+function showMapIntro(){
+  const box=document.getElementById('map-sqn-list');
+  if(!box) return;
+  const stationCount = STATIONS.length;
+  const linkedUnits = [...new Set(STATIONS.flatMap(st => st.units.map(u => normalizeUnitName(u))).filter(u => getSqForUnit(u)))];
+  const byTheatre = ['channel','reich','east','med'].map(k=>`${theatreLabel(k)}: ${STATIONS.filter(s=>s.theatre===k).length}`).join(' · ');
+  box.innerHTML = `
+    <div class="fw-map-side-title">Fw 190 operational map</div>
+    <div class="fw-map-side-kicker">Clickable stations → linked unit cards</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Hover a marker to reveal the base name, or click it to open the station summary and linked Jagdgeschwader card. The linked squadron card contains the pilot list, markings, decal references and kit suggestions.</p>
+    <div style="margin-top:.75rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)">${stationCount} station markers · ${linkedUnits.length} linked unit cards</div>
+    <div style="margin-top:.45rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38)">${byTheatre}</div>`;
 }
 
 function filterMapGroup(group, btn) {
+  renderMap();
   document.querySelectorAll('.map-filter-btn').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
+  if(btn) btn.classList.add('on');
+  document.querySelectorAll('#map-svg .fw-front-zone').forEach(z => { z.style.opacity = (group === 'all' || z.getAttribute('data-zone') === group) ? '.12' : '.03'; });
   document.querySelectorAll('#map-svg .station-g').forEach(g => {
-    g.style.display = (group === 'all' || g.getAttribute('data-group') === group) ? '' : 'none';
+    const show = group === 'all' || g.getAttribute('data-group') === group;
+    g.classList.toggle('dimmed', !show);
+    g.style.display = show ? '' : 'none';
+    g.classList.remove('selected');
   });
+  selectedStationId = null;
+  const shown = STATIONS.filter(st => group === 'all' || st.theatre === group);
+  const box = document.getElementById('map-sqn-list');
+  if(box){
+    box.innerHTML = `
+      <div class="fw-map-side-title">${group === 'all' ? 'All Fw 190 stations' : theatreLabel(group)}</div>
+      <div class="fw-map-side-kicker">${shown.length} marker${shown.length===1?'':'s'} shown</div>
+      <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Click a visible marker or choose a station below. Linked units open the matching Jagdgeschwader card with pilots and markings.</p>
+      <div class="fw-station-list">
+        ${shown.map(st => `<div class="map-sqn-chip" onclick="showMapStation('${st.id}')" style="margin-top:.45rem"><b>${st.name}</b><div style="font-size:11px;color:rgba(255,255,255,.65)">${st.units.join(' · ')} · ${st.period}</div></div>`).join('')}
+      </div>`;
+  }
 }
 
 // ═══════════════════════════════════════════════════════
