@@ -1,0 +1,7 @@
+Hurricane map final fix
+
+- Replaced the fragile Leaflet/mobile timing path with a dependency-free static RAF station map fallback on hurricane_paradise.html.
+- The map now renders on DOMContentLoaded/load/resize and when the Reference/map tab buttons are clicked.
+- Marker clicks no longer trigger any fitBounds/auto zoom reset. They call showMapStationById and update the right-hand station panel.
+- Added mobile Safari-safe CSS so the map has a fixed visible height and markers remain tappable.
+- This intentionally avoids relying on external map tiles or Leaflet initialisation timing, which was the repeated source of blank map/zoom-back bugs.

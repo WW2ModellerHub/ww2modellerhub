@@ -1,0 +1,44 @@
+Mobile aircraft dropdown fix
+==============================
+
+Issue fixed:
+- On the mobile index page, the Aircraft dropdown was not visible because the legacy mobile CSS hid .nav-links below 700px.
+
+Changes made:
+- Added a final mobile navigation override to HTML pages with the aircraft dropdown.
+- On mobile, the nav now keeps the Aircraft button visible while hiding the extra top-level links to avoid crowding.
+- The dropdown opens as a fixed, opaque, scrollable panel suitable for iPhone/Safari.
+- Added a small JS guard so the dropdown opens/closes consistently on touch devices and Escape closes it on desktop.
+
+Files patched:
+- about.html
+- article-92-sqn-biggin.html
+- article-bf109-e7-trop.html
+- article-bf109-emil-vs-friedrich.html
+- article-bf109-mottle-guide.html
+- article-bf109-rlm-paint-codes.html
+- article-bob-squadrons-guide.html
+- article-fabric-vs-metal-wings.html
+- article-hurricane-aftermarket.html
+- article-hurricane-bob-colours.html
+- article-hurricane-kits-guide.html
+- article-hurricane-weathering.html
+- article-lancaster-kits-guide.html
+- articles.html
+- article-sailor-malan.html
+- article-spitfire-bob-colours.html
+- article-spitfire-cockpit-guide.html
+- article-spitfire-kits-guide.html
+- article-spitfire-mk1-vs-mk2.html
+- article-spitfire-pitot-tube.html
+- article-spitfire-weathering.html
+- bf109_paradise.html
+- fw190_paradise.html
+- hurricane_paradise.html
+- index.html
+- lancaster_paradise.html
+- mosquito_paradise.html
+- p51_paradise.html
+- paint-codes.html
+- spitfire_paradise.html
+- techniques-bank.html

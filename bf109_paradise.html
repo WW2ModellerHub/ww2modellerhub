@@ -138,6 +138,90 @@ footer{padding:2rem;text-align:center;border-top:1px solid var(--border);color:v
 .ac-drop-badge{flex-shrink:0!important;font-size:8px!important;padding:2px 6px!important;border-radius:999px!important;letter-spacing:.08em!important;text-transform:uppercase!important}.ac-drop-badge.live{background:rgba(74,143,206,.22)!important;color:#9fd3ff!important;border:1px solid rgba(74,143,206,.36)!important}.ac-drop-badge.soon{background:rgba(184,144,42,.12)!important;color:#d9b965!important;border:1px solid rgba(184,144,42,.28)!important}.ac-drop-badge.plan{background:rgba(255,255,255,.06)!important;color:rgba(255,255,255,.52)!important;border:1px solid rgba(255,255,255,.12)!important}
 @media(max-width:760px){.site-nav-inner{gap:.75rem!important}.site-nav-links{gap:.55rem!important}.ac-drop{position:static!important}.ac-drop-menu{position:fixed!important;left:12px!important;right:12px!important;top:72px!important;width:auto!important;max-height:calc(100vh - 92px)!important;padding:.8rem!important}.ac-drop-grid{grid-template-columns:1fr!important;gap:.65rem!important}.ac-drop-section{padding:.65rem!important}.ac-drop-item{padding:.6rem .55rem!important}}
 
+
+
+/* MOBILE NAVIGATION FIX — keep Aircraft dropdown visible on small screens */
+@media (max-width: 700px){
+  .nav,
+  .site-nav{
+    overflow: visible !important;
+    z-index: 10000 !important;
+  }
+  .nav-links,
+  .site-nav-links{
+    display: flex !important;
+    align-items: center !important;
+    gap: .45rem !important;
+    overflow: visible !important;
+    flex-shrink: 0 !important;
+  }
+  .nav-links > .nav-link,
+  .site-nav-links > .site-nav-link{
+    display: none !important;
+  }
+  .nav-links > .ac-drop,
+  .site-nav-links > .ac-drop{
+    display: inline-flex !important;
+    position: static !important;
+    z-index: 10001 !important;
+  }
+  .ac-drop-btn{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 36px !important;
+    padding: .5rem .75rem !important;
+    font-size: 10px !important;
+    letter-spacing: .1em !important;
+    white-space: nowrap !important;
+  }
+  .ac-drop-menu{
+    position: fixed !important;
+    left: 10px !important;
+    right: 10px !important;
+    top: 68px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    max-height: calc(100vh - 88px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: .75rem !important;
+    background: #0b111d !important;
+    background: linear-gradient(180deg,#101827 0%,#070b12 100%) !important;
+    border: 1px solid rgba(201,168,76,.48) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 24px 70px rgba(0,0,0,.88) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-8px) !important;
+    z-index: 10002 !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .ac-drop.open .ac-drop-menu{
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+  .ac-drop-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: .65rem !important;
+  }
+  .ac-drop-section{
+    padding: .65rem !important;
+    border-radius: 8px !important;
+  }
+  .ac-drop-item{
+    min-height: 38px !important;
+    padding: .6rem .55rem !important;
+    font-size: 10.5px !important;
+    line-height: 1.25 !important;
+  }
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -293,6 +377,47 @@ footer{padding:2rem;text-align:center;border-top:1px solid var(--border);color:v
         if(btn) btn.setAttribute('aria-expanded','false');
       });
     }
+  });
+})();
+</script>
+
+
+
+<script>
+(function(){
+  if(window.__ww2MobileAircraftNavFix) return;
+  window.__ww2MobileAircraftNavFix = true;
+
+  function closeAll(except){
+    document.querySelectorAll('.ac-drop.open').forEach(function(drop){
+      if(drop !== except){
+        drop.classList.remove('open');
+        var b = drop.querySelector('.ac-drop-btn');
+        if(b) b.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest && e.target.closest('.ac-drop-btn');
+    if(btn){
+      var drop = btn.closest('.ac-drop');
+      if(drop){
+        e.preventDefault();
+        e.stopPropagation();
+        var willOpen = !drop.classList.contains('open');
+        closeAll(drop);
+        drop.classList.toggle('open', willOpen);
+        btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        return;
+      }
+    }
+    var openDrop = e.target.closest && e.target.closest('.ac-drop.open');
+    if(!openDrop) closeAll();
+  }, true);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeAll();
   });
 })();
 </script>
