@@ -794,6 +794,62 @@ body{
   box-shadow:0 4px 14px rgba(0,0,0,.16);
 }
 
+
+
+/* ===== FW190 fixes: cleaner map, walkaround cards and resilient shop buttons ===== */
+.fw-map-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem;align-items:start}
+.fw-map-panel{background:linear-gradient(160deg,rgba(20,17,7,.86),rgba(7,16,28,.72));border:1px solid rgba(255,255,255,.11);border-radius:6px;padding:1rem;box-shadow:0 14px 34px rgba(0,0,0,.28)}
+.fw-theatre-row{display:grid;grid-template-columns:120px 1fr;gap:.75rem;align-items:stretch;margin-bottom:.75rem}
+.fw-theatre-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);padding-top:.45rem}
+.fw-station-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.45rem}
+.fw-station{border:1px solid rgba(255,255,255,.11);border-left:4px solid var(--brass);background:rgba(0,0,0,.2);border-radius:4px;padding:.55rem .65rem;cursor:pointer;transition:transform .15s,border-color .15s,background .15s}
+.fw-station:hover{transform:translateY(-2px);background:rgba(255,255,255,.045);border-color:rgba(201,168,76,.45)}
+.fw-station-name{font-family:'Special Elite',cursive;font-size:15px;color:#fff;line-height:1.25}
+.fw-station-meta{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.43);margin-top:.25rem}
+.fw-map-detail{position:sticky;top:130px;background:rgba(8,8,5,.75);border:1px solid rgba(201,168,76,.22);border-radius:6px;padding:1rem;min-height:260px}
+.fw-mini-map{height:190px;border-radius:6px;border:1px solid rgba(255,255,255,.09);background:radial-gradient(circle at 18% 24%,rgba(201,168,76,.18),transparent 5%),radial-gradient(circle at 32% 30%,rgba(201,168,76,.16),transparent 5%),radial-gradient(circle at 70% 18%,rgba(74,122,90,.22),transparent 6%),radial-gradient(circle at 53% 38%,rgba(200,88,88,.2),transparent 6%),radial-gradient(circle at 78% 74%,rgba(200,160,40,.18),transparent 7%),linear-gradient(135deg,rgba(13,28,53,.78),rgba(13,11,5,.88));display:flex;align-items:end;padding:.8rem;font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.wa-video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:1.25rem}
+.wa-video-card{background:rgba(20,17,7,.82);border:1px solid rgba(255,255,255,.11);border-radius:6px;overflow:hidden;text-decoration:none;display:block;box-shadow:0 10px 26px rgba(0,0,0,.25);transition:transform .15s,border-color .15s}
+.wa-video-card:hover{transform:translateY(-2px);border-color:rgba(201,168,76,.55)}
+.wa-thumb{height:120px;background:linear-gradient(135deg,rgba(201,168,76,.14),rgba(13,28,53,.7));display:flex;align-items:center;justify-content:center;font-size:2.4rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.wa-body{padding:.75rem .9rem}.wa-title{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-bottom:.35rem}.wa-desc{font-size:13px;color:rgba(255,255,255,.62);line-height:1.55}.wa-link{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-top:.6rem}.shop-note{font-size:12px;color:rgba(255,255,255,.45);line-height:1.45;margin-top:.45rem}
+@media(max-width:820px){.fw-map-grid{grid-template-columns:1fr}.fw-map-detail{position:static}.fw-theatre-row{grid-template-columns:1fr}}
+
+
+/* ===== FW190 station map: Hurricane-style operational map ===== */
+#map-svg{width:100%;height:auto;display:block}
+#leaflet-map{width:100%;height:560px;background:#0c1722;filter:saturate(.75) contrast(1.05)}
+.leaflet-container{font-family:'Oswald',sans-serif;background:#0c1722}
+.leaflet-control-attribution{font-size:9px;background:rgba(8,12,18,.68)!important;color:rgba(255,255,255,.55)!important}
+.fw-leaflet-marker{width:18px;height:18px;border-radius:50%;border:2px solid rgba(240,234,216,.92);box-shadow:0 0 0 5px rgba(255,255,255,.06),0 2px 12px rgba(0,0,0,.55);transition:transform .15s,box-shadow .15s}
+.fw-leaflet-marker.selected{transform:scale(1.25);box-shadow:0 0 0 6px rgba(201,168,76,.22),0 0 18px rgba(201,168,76,.65)}
+.fw-leaflet-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.04em;color:#fff;text-shadow:0 2px 4px #000,0 0 5px #000;white-space:nowrap;padding:1px 4px;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.12);border-radius:2px}
+.fw-map-theatre-band{position:absolute;left:.75rem;right:.75rem;bottom:.75rem;z-index:500;display:flex;gap:.45rem;flex-wrap:wrap;pointer-events:none}
+.fw-map-theatre-pill{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.72);background:rgba(8,12,18,.68);border:1px solid rgba(255,255,255,.12);border-left:3px solid var(--brass);padding:.25rem .45rem;border-radius:3px}
+
+#map-svg .fw-land{filter:drop-shadow(0 3px 10px rgba(0,0,0,.25))}
+#map-svg .fw-front-zone{opacity:.05;transition:opacity .15s}
+#map-svg .station-g{cursor:pointer;transition:opacity .15s, transform .15s}
+#map-svg .station-g:hover .station-dot{r:8;filter:url(#fwGlow)}
+#map-svg .station-g.selected .station-dot{r:8.5;stroke-width:2.5;filter:url(#fwGlow)}
+#map-svg .station-g.dimmed{opacity:.16}
+#map-svg .station-label{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.04em;pointer-events:none;paint-order:stroke;stroke:rgba(0,0,0,.82);stroke-width:3.5px;stroke-linejoin:round;opacity:0;transition:opacity .15s ease}
+#map-svg .station-g:hover .station-label,
+#map-svg .station-g.selected .station-label{opacity:1;fill:#fff}
+.map-sqn-chip{line-height:1.45}
+.fw-map-key{display:flex;gap:.6rem;flex-wrap:wrap;margin:.6rem 0 .2rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.fw-key-dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:4px;vertical-align:-1px}
+@media(max-width:700px){#map-svg .station-label{font-size:8px}.map-filter-btn{font-size:10px;padding:.25rem .55rem}}
+
+
+
+/* ===== FW190 map v3: Hurricane-style linked squadron panel ===== */
+.fw-map-shell{
+  display:grid;
+  grid-template-columns:minmax(320px,1.45fr) minmax(280px,.9fr);
+  gap:.85rem;
+  align-items:start;
+}
 .fw-map-board{
   position:relative;
   background:linear-gradient(160deg,rgba(8,19,31,.92),rgba(17,14,7,.86));
@@ -888,8 +944,10 @@ body{
 #map-svg .station-g.selected .station-dot{r:8.5;stroke-width:2.5;filter:url(#fwGlow)}
 @media(max-width:860px){.fw-map-shell{grid-template-columns:1fr}.fw-map-side{min-height:auto}}
 
-
 </style>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409"
      crossorigin="anonymous"></script>
 </head>
@@ -911,7 +969,6 @@ body{
         <a href="mosquito_paradise.html" class="ac-drop-item">DH Mosquito <span class="ac-drop-badge soon">Hub</span></a>
         <a href="p51_paradise.html" class="ac-drop-item">North American P-51 <span class="ac-drop-badge soon">Hub</span></a>
         <a href="bf109_paradise.html" class="ac-drop-item">Messerschmitt Bf 109 <span class="ac-drop-badge soon">Hub</span></a>
-        <a href="fw190_paradise.html" class="ac-drop-item current">Focke-Wulf Fw 190 <span class="ac-drop-badge live">Live</span></a>
       </div>
     </div>
     <a href="techniques-bank.html" class="site-nav-link">Techniques</a>
@@ -1003,7 +1060,7 @@ body{
     <div style="margin-bottom:1.5rem">
       <div class="section-label" style="margin-bottom:.6rem">Choosing your Fw 190 kit</div>
       <p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:.8rem">
-        Seven Fw 190 kits are currently available across two scales. For a Battle of Britain build in 1:48, the <strong style="color:var(--cream)">Eduard ProfiPACK EDK82145</strong> is the benchmark for most builders. If the <strong style="color:var(--cream)">Eduard ProfiPACK EDK82145</strong> is the definitive kit. For the D-9 Dora, <strong style="color:var(--cream)">Hasegawa HST08074</strong>. In 1:72, <strong style="color:var(--cream)">Eduard EDK70113</strong> using Arma Hobby tooling is outstanding. Star ratings below reflect accuracy, cockpit detail, fit quality and value.
+        Recommended Fw 190 kits are grouped by variant and scale. For a 1:48 A-series build, the <strong style="color:var(--cream)">Eduard ProfiPACK A-8/A-7/A-5 family</strong> is the safest route. For a Dora, use <strong style="color:var(--cream)">Eduard's Fw 190D-9 ProfiPACK</strong> or a Hasegawa D-9 where available. In 1:72, Airfix and Eduard provide accessible A-8 options. Links below now use current manufacturer pages or retailer search links rather than fragile product codes.
       </p>
       <a href="articles.html" style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);text-decoration:none">Full kit buying guide →</a>
     </div>
@@ -1046,7 +1103,7 @@ body{
   </div>
 
   <div id="bsub-stepbystep" style="display:none">
-    <div class="info-box">A stage-by-stage build guide for the Fw 190 A-8, with recommended products and buy links at each step. Assumes a 1:48 kit such as the Airfix A05127A.</div>
+    <div class="info-box">A stage-by-stage build guide for the Fw 190 A-series, with recommended products and resilient search links at each step. Assumes a 1:48 Eduard A-series kit, but the process also works for Tamiya/Hasegawa/Airfix subjects.</div>
     <div id="stepbystep-content"></div>
   </div>
 
@@ -1068,6 +1125,7 @@ body{
   </div>
 
   <div id="rsub-map">
+    <div class="info-box">Fw 190 station map — rebuilt to work like the Hurricane map: click an airfield, then jump straight into the linked Jagdgeschwader card with pilots, markings, decals and kit notes. This is centred on occupied Europe, Germany, the Eastern Front and North Africa — not England.</div>
     <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem">
       <span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-right:.25rem">Filter:</span>
       <button onclick="filterMapGroup('all',this)" class="map-filter-btn on" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)">All</button>
@@ -1076,11 +1134,24 @@ body{
       <button onclick="filterMapGroup('east',this)" class="map-filter-btn" style="border-color:#4a7a5a;color:#4a7a5a">Eastern Front</button>
       <button onclick="filterMapGroup('med',this)" class="map-filter-btn" style="border-color:#c8a028;color:#c8a028">Mediterranean</button>
     </div>
-    <div style="display:flex;gap:.75rem;flex-wrap:wrap;align-items:flex-start">
-      <svg id="map-svg" viewBox="0 0 520 700" xmlns="http://www.w3.org/2000/svg"
-           style="flex:1 1 380px;min-width:280px;max-width:520px;height:auto;border-radius:3px;border:1px solid rgba(255,255,255,.12);background:rgba(13,11,5),.8);cursor:default"></svg>
-      <div id="map-sqn-list" style="flex:1 1 260px;min-width:220px;background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1.1rem;min-height:300px">
-        <p style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.06em;color:rgba(255,255,255,.5)">Click any station marker to see its squadrons and wartime history.</p>
+    <div class="fw-map-key">
+      <span><i class="fw-key-dot" style="background:#c87848"></i>JG 2 / JG 26 Channel</span>
+      <span><i class="fw-key-dot" style="background:#c85858"></i>JG 1 / JG 11 / III./JG 3 Reich</span>
+      <span><i class="fw-key-dot" style="background:#4a7a5a"></i>JG 54 / JG 51 East</span>
+      <span><i class="fw-key-dot" style="background:#c8a028"></i>Mediterranean / Africa context</span>
+    </div>
+    <div class="fw-map-shell">
+      <div class="fw-map-board">
+        <div id="leaflet-map"></div>
+        <div class="fw-map-theatre-band">
+          <span class="fw-map-theatre-pill" style="border-left-color:#c87848">Channel Front</span>
+          <span class="fw-map-theatre-pill" style="border-left-color:#c85858">Reich / Holland</span>
+          <span class="fw-map-theatre-pill" style="border-left-color:#4a7a5a">Eastern Front</span>
+          <span class="fw-map-theatre-pill" style="border-left-color:#c8a028">Mediterranean</span>
+        </div>
+      </div>
+      <div id="map-sqn-list" class="fw-map-side">
+        <p style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.06em;color:rgba(255,255,255,.5)">Click any station marker to see linked units, pilots and modelling context.</p>
       </div>
     </div>
   </div>
@@ -1138,99 +1209,47 @@ body{
 </div>
 
 <div class="tab-panel" id="tab-walkaround">
-<div class="main-wrap">
-<div class="main-content">
-
-  <!-- Walkaround sub-tabs -->
+  <div class="info-box">Specific Fw 190 walkaround videos and modelling reference links — no generic YouTube results pages. Use these for cockpit, cowling, undercarriage, wing-root wear and Dora-specific details.</div>
   <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
     <button onclick="showWaTab('cockpit',this)" class="wa-tab active" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:rgba(201,168,76,.12);border:1px solid var(--brass);color:var(--brass2);border-radius:2px;cursor:pointer">Cockpit</button>
-    <button onclick="showWaTab('exhausts',this)" class="wa-tab" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Exhaust & Cowling</button>
-    <button onclick="showWaTab('undercarriage',this)" class="wa-tab" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Undercarriage</button>
-    <button onclick="showWaTab('markings',this)" class="wa-tab" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Markings</button>
+    <button onclick="showWaTab('airframe',this)" class="wa-tab" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Airframe</button>
+    <button onclick="showWaTab('engine',this)" class="wa-tab" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Engine & Cowling</button>
+    <button onclick="showWaTab('dora',this)" class="wa-tab" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">D-9 Dora</button>
   </div>
 
   <div id="wa-cockpit" class="wa-panel">
-    <div class="section-label">Cockpit</div>
-    <div style="background:rgba(201,168,76,.07);border-left:3px solid var(--brass);padding:.8rem 1rem;border-radius:1px;margin-bottom:1rem;font-size:14px;color:rgba(255,255,255,.8);line-height:1.7">
-      <strong style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:.3rem">Modeller's Note</strong>
-      Interior is RLM 66 Schwarzgrau (Tamiya XF-63, Vallejo 70.862) from 1941 onwards — a very dark near-black grey. Earlier aircraft used RLM 02 Grau. Instrument panel in RLM 66 with instrument faces in flat black. Sight reflector glass in pale green. The Revi gunsight is RLM 66. Seat cushion in dark leather. Both the RAF Museum Cosford A-8 and Hendon A-8/R11 have accessible cockpits for reference photography.
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem">
-      <a href="https://www.youtube.com/results?search_query=fw190+cockpit+walkaround+museum" target="_blank" rel="noopener" style="background:rgba(20,17,7,.8);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;text-decoration:none;display:block">
-        <div style="background:rgba(201,168,76,.1);height:120px;display:flex;align-items:center;justify-content:center;font-size:2.5rem">🎬</div>
-        <div style="padding:.7rem .9rem">
-          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Fw 190 A-8 Cockpit Walkaround</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.5">Close-up cockpit photography from RAF Museum Cosford. RLM 66 instrument panel, seat, structural detail in natural light.</div>
-          <div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-top:.5rem">YouTube ↗</div>
-        </div>
-      </a>
-      <a href="https://www.youtube.com/results?search_query=fw190+d9+dora+cockpit+interior" target="_blank" rel="noopener" style="background:rgba(20,17,7,.8);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;text-decoration:none;display:block">
-        <div style="background:rgba(74,122,30,.15);height:120px;display:flex;align-items:center;justify-content:center;font-size:2.5rem">✈</div>
-        <div style="padding:.7rem .9rem">
-          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Fw 190 D-9 Dora Cockpit</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.5">D-9 cockpit detail. Similar to A-series but with Jumo-specific instruments and slightly different layout. Essential D-9 reference.</div>
-          <div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-top:.5rem">YouTube ↗</div>
-        </div>
-      </a>
+    <div class="section-label">Cockpit and interior</div>
+    <div class="wa-video-grid">
+      <a class="wa-video-card" href="https://www.youtube.com/watch?v=i7ytEtZBK6A" target="_blank" rel="noopener"><div class="wa-thumb">🎬</div><div class="wa-body"><div class="wa-title">Fw 190 walkaround close-up — Berlin Gatow</div><div class="wa-desc">Useful close-up walkaround of the Gatow aircraft, including cockpit/canopy and external detail.</div><div class="wa-link">Open specific video ↗</div></div></a>
+      <a class="wa-video-card" href="https://www.youtube.com/watch?v=KRJj8kScSHc" target="_blank" rel="noopener"><div class="wa-thumb">✈</div><div class="wa-body"><div class="wa-title">Focke Wulf Fw 190 A-8 walkaround</div><div class="wa-desc">A-series walkaround reference for canopy frames, wing-root wear, cowling ring and landing gear stance.</div><div class="wa-link">Open specific video ↗</div></div></a>
+      <a class="wa-video-card" href="https://www.youtube.com/watch?v=TmyRb8RUpNo" target="_blank" rel="noopener"><div class="wa-thumb">📷</div><div class="wa-body"><div class="wa-title">Fw 190 A-3/U3 “Black 3” walkaround</div><div class="wa-desc">Good restored A-3 reference for earlier A-series airframe details and underside views.</div><div class="wa-link">Open specific video ↗</div></div></a>
     </div>
   </div>
 
-  <div id="wa-exhausts" class="wa-panel" style="display:none">
-    <div class="section-label">Exhaust Stacks &amp; Cowling</div>
-    <div style="background:rgba(201,168,76,.07);border-left:3px solid var(--brass);padding:.8rem 1rem;border-radius:1px;margin-bottom:1rem;font-size:14px;color:rgba(255,255,255,.8);line-height:1.7">
-      <strong style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:.3rem">Modeller's Note</strong>
-      The BMW 801 has 14 individual exhaust stacks arranged in two banks of 7 around the cowling ring. They produce a distinctive star-burst staining pattern — dark brown-black streaks radiating rearward from each stack. The lower cowling shows less staining than the upper. The A-7 and A-8 have the distinctive paired MG 131 bulges on the upper cowling immediately behind the spinner — a key identification feature.
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem">
-      <a href="https://www.youtube.com/results?search_query=BMW+801+fw190+engine+cowling+close+up+detail" target="_blank" rel="noopener" style="background:rgba(20,17,7,.8);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;text-decoration:none;display:block">
-        <div style="background:rgba(90,40,10,.3);height:120px;display:flex;align-items:center;justify-content:center;font-size:2.5rem">🔧</div>
-        <div style="padding:.7rem .9rem">
-          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">BMW 801 Cowling Detail</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.5">Close-up footage of the BMW 801 cowling, exhaust stacks and MG 131 bulges. Essential reference for the A-7/A-8 upper cowling profile.</div>
-          <div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-top:.5rem">YouTube ↗</div>
-        </div>
-      </a>
+  <div id="wa-airframe" class="wa-panel" style="display:none">
+    <div class="section-label">Airframe, markings and undercarriage</div>
+    <div class="wa-video-grid">
+      <a class="wa-video-card" href="https://www.youtube.com/watch?v=JtgvMhIHGKo" target="_blank" rel="noopener"><div class="wa-thumb">🛠️</div><div class="wa-body"><div class="wa-title">Fw 190 military museum walkaround</div><div class="wa-desc">Useful for panel layout, wheel wells, wing undersides and general airframe finish.</div><div class="wa-link">Open specific video ↗</div></div></a>
+      <a class="wa-video-card" href="https://www.youtube.com/watch?v=uH545TA4QUc" target="_blank" rel="noopener"><div class="wa-thumb">📐</div><div class="wa-body"><div class="wa-title">Fw 190A-8/U-1 walkaround</div><div class="wa-desc">Reference for two-seat conversion shape, but still useful for A-series surface and access panel study.</div><div class="wa-link">Open specific video ↗</div></div></a>
+      <a class="wa-video-card" href="https://www.youtube.com/watch?v=uIiSAg-S4kE" target="_blank" rel="noopener"><div class="wa-thumb">🎯</div><div class="wa-body"><div class="wa-title">Fw 190A-9 walkaround</div><div class="wa-desc">Late A-series walkaround for weathering ideas, wheel stance and cowling/canopy details.</div><div class="wa-link">Open specific video ↗</div></div></a>
     </div>
   </div>
 
-  <div id="wa-undercarriage" class="wa-panel" style="display:none">
-    <div class="section-label">Undercarriage</div>
-    <div style="background:rgba(201,168,76,.07);border-left:3px solid var(--brass);padding:.8rem 1rem;border-radius:1px;margin-bottom:1rem;font-size:14px;color:rgba(255,255,255,.8);line-height:1.7">
-      <strong style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:.3rem">Modeller's Note</strong>
-      Undercarriage legs are RLM 02 Grau on early aircraft, RLM 66 on later production. Wheel bay interiors also RLM 02 or 66. The main gear has an inward-retracting geometry unique to the Fw 190. Wheels in RLM 02 with warm mid-grey tyres. The tailwheel is fixed on early variants, semi-retractable on later A-series.
+  <div id="wa-engine" class="wa-panel" style="display:none">
+    <div class="section-label">BMW 801, cowling and exhaust staining</div>
+    <div class="wa-video-grid">
+      <a class="wa-video-card" href="https://www.youtube.com/watch?v=XctfCw4fKUg" target="_blank" rel="noopener"><div class="wa-thumb">🔥</div><div class="wa-body"><div class="wa-title">Radial-powered Fw 190 flying display</div><div class="wa-desc">Good live reference for exhaust tone, smoke pattern and radial-powered stance.</div><div class="wa-link">Open specific video ↗</div></div></a>
+      <a class="wa-video-card" href="https://www.youtube.com/watch?v=b2ZYK6rZxC0" target="_blank" rel="noopener"><div class="wa-thumb">⚙️</div><div class="wa-body"><div class="wa-title">BMW 801 aircraft engine reference</div><div class="wa-desc">Engine detail reference for open cowling or museum-maintenance diorama subjects.</div><div class="wa-link">Open specific video ↗</div></div></a>
     </div>
   </div>
 
-  <div id="wa-markings" class="wa-panel" style="display:none">
-    <div class="section-label">Markings reference</div>
-    <div style="background:rgba(201,168,76,.07);border-left:3px solid var(--brass);padding:.8rem 1rem;border-radius:1px;margin-bottom:1rem;font-size:14px;color:rgba(255,255,255,.8);line-height:1.7">
-      <strong style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:.3rem">Modeller's Note</strong>
-      Balkenkreuz on upper and lower wings and fuselage sides. Swastika on fin. Individual aircraft letter in white (or yellow on Eastern Front aircraft). Gruppe bar after the letter — none for I. Gruppe, one bar for II., two for III. Staffel colour shown on spinner ring. On Eastern Front aircraft, yellow RLM 04 fuselage band and cowling tip are standard.
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem">
-      <a href="https://www.youtube.com/results?search_query=fw190+balkenkreuz+markings+modelling+decals" target="_blank" rel="noopener" style="background:rgba(20,17,7,.8);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;text-decoration:none;display:block">
-        <div style="background:rgba(28,24,10,.8);height:120px;display:flex;align-items:center;justify-content:center;font-size:2.5rem">📋</div>
-        <div style="padding:.7rem .9rem">
-          <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Fw 190 Markings &amp; Decals</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.5">Luftwaffe marking conventions and decal application guide. Balkenkreuz sizing, code letter positioning and Gruppe bar placement.</div>
-          <div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-top:.5rem">YouTube ↗</div>
-        </div>
-      </a>
+  <div id="wa-dora" class="wa-panel" style="display:none">
+    <div class="section-label">Fw 190 D-9 Dora</div>
+    <div class="wa-video-grid">
+      <a class="wa-video-card" href="https://www.youtube.com/watch?v=pbQVdx5PvOk" target="_blank" rel="noopener"><div class="wa-thumb">🦅</div><div class="wa-body"><div class="wa-title">USAF Museum Fw 190 D-9 walkaround</div><div class="wa-desc">Specific Dora reference for long nose, annular radiator, undercarriage and late-war finish.</div><div class="wa-link">Open specific video ↗</div></div></a>
+      <a class="wa-video-card" href="https://www.youtube.com/watch?v=1Dftf-nX5Ec" target="_blank" rel="noopener"><div class="wa-thumb">🎥</div><div class="wa-body"><div class="wa-title">Focke-Wulf Fw 190D-9 museum video</div><div class="wa-desc">Additional D-9 reference for the Jumo cowling line and Dora proportions.</div><div class="wa-link">Open specific video ↗</div></div></a>
     </div>
   </div>
-
-</div><!-- /main-content -->
-<div class="sidebar">
-  <div class="sidebar-block">
-    <div class="sidebar-hd">Surviving Airframes</div>
-    <div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.7;padding:.5rem 0">
-      <strong style="color:rgba(255,255,255,.85)">RAF Museum Cosford</strong> — Fw 190 A-8. Accessible cockpit and close-up surface detail.<br><br>
-      <strong style="color:rgba(255,255,255,.85)">RAF Museum Hendon</strong> — Fw 190 A-8/R11 (all-weather variant). Unique sub-type.<br><br>
-      <strong style="color:rgba(255,255,255,.85)">NASM Washington DC</strong> — Fw 190 D-9 Dora. Most complete surviving Dora.
-    </div>
-  </div>
-</div>
-</div><!-- /main-wrap -->
 </div><!-- /tab-walkaround -->
 
 
@@ -1472,13 +1491,15 @@ const PAINTS = [
 
 // ── KIT DATA ─────────────────────────────────────────────
 const KITS = [
-  {brand:"Eduard",name:"Fw 190 A-8 ProfiPACK",scale:"1:48",stars:5,accuracy:"Eduard definitive 1:48 A-8. Pre-painted SPACE 3D PE, Kabuki masks, exceptional markings.",markings:["JG 26 Jutta","JG 2 Mayer","Defence of Reich"],shops:[{label:"Hannants EDK82145",url:"https://www.hannants.co.uk/product/EDK82145"}]},
-  {brand:"Eduard",name:"Fw 190 A-5 ProfiPACK",scale:"1:48",stars:5,accuracy:"Same quality in A-5 with longer cowling. JG 54 Eastern Front options included.",markings:["JG 54 Nowotny","JG 54 Kittel"],shops:[{label:"Hannants EDK82111",url:"https://www.hannants.co.uk/product/EDK82111"}]},
-  {brand:"Hasegawa",name:"Fw 190 D-9 Dora",scale:"1:48",stars:4,accuracy:"Best D-9 in 1:48. Excellent Jumo cowling accuracy.",markings:["JG 54 D-9","JG 3 Black 1"],shops:[{label:"Hannants HST08074",url:"https://www.hannants.co.uk/product/HST08074"}]},
-  {brand:"Tamiya",name:"Fw 190 A-3",scale:"1:48",stars:4,accuracy:"Exceptional Tamiya fit. 1942-43 Channel Front A-3.",markings:["JG 2","JG 26"],shops:[{label:"Hannants TM61037",url:"https://www.hannants.co.uk/product/TM61037"}]},
-  {brand:"Eduard",name:"Fw 190 A-8 Weekend Edition",scale:"1:48",stars:4,accuracy:"Same plastic as ProfiPACK without PE. Best value A-8.",markings:["A-8 options"],shops:[{label:"Hannants EDK84113",url:"https://www.hannants.co.uk/product/EDK84113"}]},
-  {brand:"Eduard",name:"Fw 190 A-8 ProfiPACK 1:72",scale:"1:72",stars:5,accuracy:"Arma Hobby plastic. Finest 1:72 Fw 190.",markings:["Multiple A-8"],shops:[{label:"Hannants EDK70113",url:"https://www.hannants.co.uk/product/EDK70113"}]},
-  {brand:"Airfix",name:"Fw 190 A-8",scale:"1:48",stars:3,accuracy:"Entry-level option. Good first Fw 190.",markings:["A-8 subjects"],shops:[{label:"Hannants AX05125A",url:"https://www.hannants.co.uk/product/AX05125A"}]}
+  {brand:"Eduard",name:"Fw 190 A-8 ProfiPACK",scale:"1:48",stars:5,accuracy:"Current benchmark A-8: accurate surface detail, masks, PE and useful marking choices.",markings:["A-8","JG 2 / JG 26","Defence of Reich"],shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-8-1-48-1.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-8+1%2F48"}]},
+  {brand:"Eduard",name:"Fw 190 A-8/R2 ProfiPACK",scale:"1:48",stars:5,accuracy:"Armoured Sturmjäger option with MK 108 fit — ideal for Defence of the Reich builds.",markings:["A-8/R2","Sturmstaffel","Defence of Reich"],shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-8-r2-1-48-1.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-8%2FR2+1%2F48"}]},
+  {brand:"Eduard",name:"Fw 190 A-7 ProfiPACK",scale:"1:48",stars:5,accuracy:"Good late A-series option with JG 1, JG 11, JG 54, JG 300 and Sturmstaffel subjects.",markings:["A-7","JG 1","JG 11","JG 54"],shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-7-1-48-1.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-7+1%2F48"}]},
+  {brand:"Eduard",name:"Fw 190 A-5 ProfiPACK",scale:"1:48",stars:4,accuracy:"Useful mid-war A-series for Eastern Front / JG 54 builds. Often easiest to find via retailer search.",markings:["A-5","JG 54","Eastern Front"],shops:[{label:"Eduard reference",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-5-light-fighter-1-48.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-5+1%2F48"}]},
+  {brand:"Eduard",name:"Fw 190 D-9 Dora ProfiPACK",scale:"1:48",stars:5,accuracy:"Best current Dora option for D-9 subjects; use for late-war JG 3/JG 54 style builds.",markings:["D-9 Dora","JG 3","JG 54"],shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190d-9-1-48.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190D-9+1%2F48"}]},
+  {brand:"Tamiya",name:"Fw 190 A-3",scale:"1:48",stars:4,accuracy:"Excellent fit and a good earlier Channel Front A-3 starting point.",markings:["A-3","JG 2","JG 26"],shops:[{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Tamiya+Fw+190+A-3+1%2F48"}]},
+  {brand:"Hasegawa",name:"Fw 190 D-9 Dora",scale:"1:48",stars:4,accuracy:"Still a strong Dora where available; use search links because stock comes and goes.",markings:["D-9 Dora","Late war"],shops:[{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Hasegawa+Fw+190+D-9+1%2F48"}]},
+  {brand:"Airfix",name:"Focke-Wulf Fw190A-8",scale:"1:72",stars:3,accuracy:"Accessible starter A-8 kit and good value for quick Luftwaffe builds.",markings:["A-8","1:72"],shops:[{label:"Airfix official",url:"https://uk.airfix.com/products/focke-wulf-fw190a-8-a01020a"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Airfix+Fw190A-8+A01020A"}]},
+  {brand:"Eduard",name:"Fw 190 A-8 / A-8R2",scale:"1:72",stars:4,accuracy:"Good 1:72 Eduard option; availability changes, so retailer search is safer than hard product codes.",markings:["A-8","A-8/R2","1:72"],shops:[{label:"Eduard 1:72 range",url:"https://www.eduard.com/eduard/plastic-kits/weekend-edition/aircraft/1-72/"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-8+1%2F72"}]}
 ];
 
 // ── WEATHERING DATA ────────────────────────────────────────
@@ -1520,39 +1541,11 @@ const TECHNIQUES = [
   {name:"RLM markings and decals",colour:"#4a5878",
    desc:"Apply Balkenkreuz decals over gloss varnish. Use Micro Set and Micro Sol. The Balkenkreuz elements should be applied one at a time for easier positioning. Eastern Front aircraft: RLM 04 yellow band is field-applied and looks semi-transparent — apply as a thin, slightly uneven coat showing the base colour through. Fuselage codes in white — deliberately slightly irregular.",
    products:"Micro Set and Micro Sol · Vallejo Gloss Varnish",
-   links:[{label:"Eduard ProfiPACK decals EDK82145",url:"https://www.hannants.co.uk/product/EDK82145"}]},
+   links:[{label:"Eduard ProfiPACK decals EDK82145",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-8%2FR2+1%2F48"}]},
   {name:"Final sealing and filter",colour:"#5a3a20",
    desc:"Matt varnish overall to unify weathering. Oil dot filtering with raw umber, yellow ochre across upper surfaces — blend for subtle warmth. Pin wash recesses once more over the varnish. The RLM paint system was a genuine flat matt — keep the final finish very flat. Cockpit interior through the canopy should remain slightly darker than outer surfaces.",
    products:"Vallejo Matt Varnish · Abteilung 502 oils · Tamiya X-35 Satin for canopy frames",
    links:[{label:"Vallejo varnish",url:"https://www.hannants.co.uk/search/?keyword_search=vallejo+matt+varnish"}]}
-];
-
-
-// ── AIRFIELD STATIONS ─────────────────────────────────────
-// Station coordinates — real geographic projection matching map SVG
-// proj: lon -7→2.5 = x 25→495; lat 59→49.5 = y 20→680
-const STATIONS = [
-  {id:'abbeville',name:'Abbeville-Drucat',theatre:'channel',lat:50.143,lng:1.832,units:['JG 26'],type:'fighter base',period:'1941–44',notes:'Major Channel Front field for JG 26. Good for early A-series subjects: clean tactical markings, moderate grime and coastal weathering.'},
-  {id:'stomer',name:'St. Omer-Arques',theatre:'channel',lat:50.748,lng:2.302,units:['JG 26'],type:'fighter base',period:'1941–43',notes:'Pas-de-Calais operating area. Useful for Fw 190 A-2/A-3 subjects facing Spitfire V units over the Channel.'},
-  {id:'wevelgem',name:'Wevelgem / Moorsele',theatre:'channel',lat:50.853,lng:3.135,units:['JG 26'],type:'fighter base',period:'1941–44',notes:'Belgian base area used by JG 26. Modelling cue: hardstanding dust, exhaust staining and relatively tidy ground handling compared with Eastern Front fields.'},
-  {id:'beaumont',name:'Beaumont-le-Roger',theatre:'channel',lat:49.083,lng:0.783,units:['JG 2'],type:'fighter base',period:'1942–44',notes:'JG 2 Channel Front base in Normandy. Strong choice for A-4/A-5/A-8 subjects with yellow theatre markings and Channel weathering.'},
-  {id:'triqueville',name:'Triqueville',theatre:'channel',lat:49.372,lng:0.373,units:['JG 2'],type:'satellite field',period:'1942–44',notes:'Normandy satellite field for JG 2. More field-worn look: dusty undersides, rougher walkways and patched panels.'},
-  {id:'vannes',name:'Vannes-Meucon',theatre:'channel',lat:47.724,lng:-2.718,units:['JG 2'],type:'western France',period:'1943–44',notes:'Western France operating area. Good for Atlantic coast fading, salt air staining and darker exhaust trails.'},
-
-  {id:'deelen',name:'Deelen',theatre:'reich',lat:52.060,lng:5.873,units:['JG 1'],type:'Reich defence',period:'1943–44',notes:'Occupied Holland Reich-defence field. Good setting for bomber-interception aircraft with heavier exhaust staining and rapidly changed markings.'},
-  {id:'husum',name:'Husum',theatre:'reich',lat:54.498,lng:9.242,units:['JG 11'],type:'Reich defence',period:'1943–44',notes:'Northern Germany interception base. Modelling cue: colder, damp field conditions; subdued RLM 74/75/76 and heavy gun/exhaust staining.'},
-  {id:'wunstorf',name:'Wunstorf',theatre:'reich',lat:52.458,lng:9.423,units:['JG 11'],type:'Reich defence',period:'1943–45',notes:'Central Germany Reich-defence base. Suitable for A-8 bomber-destroyer subjects, patchy field repairs and dirty undersides.'},
-  {id:'achmer',name:'Achmer',theatre:'reich',lat:52.378,lng:7.912,units:['III/JG 3','JV 44 protection'],type:'late-war field',period:'1944–45',notes:'Late-war Dora/airfield-defence context. Model cue: rough late-war paint, heavy staining, worn tyres and improvised servicing.'},
-  {id:'rheine',name:'Rheine-Hopsten',theatre:'reich',lat:52.339,lng:7.541,units:['JG 26','JG 1'],type:'late-war field',period:'1944–45',notes:'North-west Germany base area. Good for late-war Fw 190 A/D subjects with mixed RLM 81/82/76 finishes.'},
-  {id:'parchim',name:'Parchim',theatre:'reich',lat:53.426,lng:11.783,units:['JG 26','JG 301'],type:'late-war field',period:'1944–45',notes:'Late-war northern Germany base. Use rough camouflage demarcation, replacement panels and subdued national markings.'},
-
-  {id:'siverskaya',name:'Siverskaya',theatre:'east',lat:59.353,lng:30.047,units:['JG 54'],type:'Eastern Front',period:'1942–44',notes:'JG 54 Eastern Front base south of Leningrad. Excellent for winter distemper, dirty wheel wells, mud and field-applied camouflage.'},
-  {id:'gatchina',name:'Gatchina / Krasnogvardeysk',theatre:'east',lat:59.568,lng:30.128,units:['JG 54'],type:'Eastern Front',period:'1942–44',notes:'Leningrad sector. Model cue: rough field conditions, temporary whitewash in winter and yellow Eastern Front ID bands.'},
-  {id:'orel',name:'Orel',theatre:'east',lat:52.966,lng:36.083,units:['JG 51'],type:'Eastern Front',period:'1943',notes:'Central Eastern Front operating area. Good for heavy dust, mud, chipped wing roots and operationally tired aircraft.'},
-  {id:'bryansk',name:'Bryansk',theatre:'east',lat:53.252,lng:34.371,units:['JG 51'],type:'Eastern Front',period:'1943–44',notes:'Eastern Front field context. Use dusty tyres, lower-surface grime, worn prop blades and uneven yellow recognition markings.'},
-
-  {id:'gambut',name:'Gambut, Libya',theatre:'med',lat:31.757,lng:24.897,units:['JG 27'],type:'North Africa',period:'1942',notes:'Desert operating area. Model cue: sand fading, dust-packed tyres, pale exhaust staining and sun-bleached upper surfaces.'},
-  {id:'kairouan',name:'Kairouan, Tunisia',theatre:'med',lat:35.671,lng:10.101,units:['JG 2','SG units'],type:'Mediterranean',period:'1942–43',notes:'Tunisia theatre context for Fw 190 fighter-bomber operations. Use dusty filters, sand abrasion and hurried field servicing.'}
 ];
 
 
@@ -1693,35 +1686,31 @@ function setRefSub(sub, el) {
 // ── Per-squadron specific decal sheets (verified Hannants product codes) ──
 const SQ_DECALS = {
   "JG 26":  [
-    {name:"Eduard EDK82145 — Fw 190 A-8 ProfiPACK (JG 26 'Jutta' + others)",url:"https://www.hannants.co.uk/product/EDK82145"},
-    {name:"Eduard EDK82111 — Fw 190 A-5 ProfiPACK (Channel Front subjects)",url:"https://www.hannants.co.uk/product/EDK82111"},
-    {name:"Hannants search — Fw 190 Channel Front decals",url:"https://www.hannants.co.uk/search/?keyword_search=fw190+jg26+decal&product_type_id=all_decals"},
+    {name:"Hannants search — JG 26 / Channel Front Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+JG+26+decal"},
+    {name:"EagleCals search — Fw 190 Channel Front subjects",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+EagleCals+JG+26"}
   ],
   "JG 2":   [
-    {name:"Eduard EDK82145 — Fw 190 A-8 ProfiPACK (JG 2 subjects)",url:"https://www.hannants.co.uk/product/EDK82145"},
-    {name:"Hannants search — JG 2 Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=fw190+jg2+decal&product_type_id=all_decals"},
+    {name:"Hannants search — JG 2 Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+JG+2+decal"}
   ],
   "JG 54":  [
-    {name:"Eduard EDK82111 — Fw 190 A-5 ProfiPACK (Nowotny, Kittel)",url:"https://www.hannants.co.uk/product/EDK82111"},
-    {name:"Eduard EDK82145 — Fw 190 A-8 ProfiPACK (JG 54 subjects)",url:"https://www.hannants.co.uk/product/EDK82145"},
-    {name:"Hannants search — JG 54 Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=fw190+jg54+decal&product_type_id=all_decals"},
+    {name:"Hannants search — JG 54 / Green Hearts Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+JG+54+decal"},
+    {name:"Hannants search — Eastern Front Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Eastern+Front+decal"}
   ],
   "JG 51":  [
-    {name:"Hannants search — Eastern Front Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=fw190+eastern+front+decal&product_type_id=all_decals"},
+    {name:"Hannants search — Eastern Front Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Eastern+Front+decal"}
   ],
   "JG 11":  [
-    {name:"Hannants search — Defence of Reich Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=fw190+reich+defence+decal&product_type_id=all_decals"},
+    {name:"Hannants search — Defence of Reich Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Defence+of+Reich+decal"}
   ],
   "JG 1":   [
-    {name:"Hannants search — Defence of Reich Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=fw190+reich+defence+decal&product_type_id=all_decals"},
+    {name:"Hannants search — JG 1 / Reich Defence Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+JG+1+decal"}
   ],
   "III/JG 3":[
-    {name:"Hannants search — Fw 190 D-9 Dora decals",url:"https://www.hannants.co.uk/search/?keyword_search=fw190+d9+dora+decal&product_type_id=all_decals"},
+    {name:"Hannants search — Fw 190 D-9 Dora decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+D-9+Dora+decal"}
   ],
   "JG 27":  [
-    {name:"Eduard EDK82116 — Bf 109 E-7 Trop ProfiPACK (Marseille 'Yellow 14')",url:"https://www.hannants.co.uk/product/EDK82116"},
-    {name:"Hannants search — North Africa Fw 190 / JG 27 decals",url:"https://www.hannants.co.uk/search/?keyword_search=jg27+north+africa+decal&product_type_id=all_decals"},
-  ],
+    {name:"Hannants search — Fw 190 / North Africa Luftwaffe decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+North+Africa+decal"}
+  ]
 };
 
 
@@ -1737,13 +1726,13 @@ const UK_SHOPS = [
 
 // ── Kit links ────────────────
 const KIT_LINKS = [
-  {name:"Eduard Fw 190 A-8 ProfiPACK",code:"EDK82145",shops:[{label:"Hannants",url:"https://www.hannants.co.uk/product/EDK82145"}]},
-  {name:"Eduard Fw 190 A-5 ProfiPACK",code:"EDK82111",shops:[{label:"Hannants",url:"https://www.hannants.co.uk/product/EDK82111"}]},
-  {name:"Hasegawa Fw 190 D-9 Dora",code:"HST08074",shops:[{label:"Hannants",url:"https://www.hannants.co.uk/product/HST08074"}]},
-  {name:"Tamiya Fw 190 A-3",code:"TM61037",shops:[{label:"Hannants",url:"https://www.hannants.co.uk/product/TM61037"}]},
-  {name:"Eduard Fw 190 A-8 Weekend Edition",code:"EDK84113",shops:[{label:"Hannants",url:"https://www.hannants.co.uk/product/EDK84113"}]},
-  {name:"Eduard Fw 190 A-8 ProfiPACK 1:72",code:"EDK70113",shops:[{label:"Hannants",url:"https://www.hannants.co.uk/product/EDK70113"}]},
-  {name:"Airfix Fw 190 A-8",code:"AX05125A",shops:[{label:"Hannants",url:"https://www.hannants.co.uk/product/AX05125A"}]},
+  {name:"Eduard Fw 190 A-8 ProfiPACK",code:"A-8 1:48",shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-8-1-48-1.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-8+1%2F48"}]},
+  {name:"Eduard Fw 190 A-8/R2 ProfiPACK",code:"A-8/R2 1:48",shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-8-r2-1-48-1.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-8%2FR2+1%2F48"}]},
+  {name:"Eduard Fw 190 A-7 ProfiPACK",code:"A-7 1:48",shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-7-1-48-1.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-7+1%2F48"}]},
+  {name:"Eduard Fw 190 D-9 Dora ProfiPACK",code:"D-9 1:48",shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190d-9-1-48.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190D-9+1%2F48"}]},
+  {name:"Tamiya Fw 190 A-3",code:"A-3 1:48",shops:[{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Tamiya+Fw+190+A-3+1%2F48"}]},
+  {name:"Hasegawa Fw 190 D-9 Dora",code:"D-9 1:48",shops:[{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Hasegawa+Fw+190+D-9+1%2F48"}]},
+  {name:"Airfix Focke-Wulf Fw190A-8",code:"A01020A 1:72",shops:[{label:"Airfix official",url:"https://uk.airfix.com/products/focke-wulf-fw190a-8-a01020a"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Airfix+Fw190A-8+A01020A"}]}
 ];
 
 function renderShops() {
@@ -1877,7 +1866,7 @@ function showDetail(num) {
           <div style="background:rgba(20,17,7),.8);border:1px solid rgba(255,255,255,.12);border-left:3px solid var(--brass);border-radius:2px;padding:7px 10px">
             <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.06em;color:rgba(255,255,255,.85);margin-bottom:5px">${k.name}</div>
             <div style="display:flex;flex-wrap:wrap;gap:4px">
-              ${(k.shops||[{label:"Buy",url:k.url}]).filter(s=>s&&s.url).map(s=>`<a href="${s.url}" target="_blank" class="shop-btn hb-ghost" style="font-size:12px;padding:3px 9px">${s.label} ↗</a>`).join('')}
+              ${(k.shops||[{label:"Buy",url:k.url}]).filter(s=>s&&s.url).map(s=>`<a href="${s.url}" target="_blank" rel="noopener" class="shop-btn hb-ghost" style="font-size:12px;padding:3px 9px">${s.label} ↗</a>`).join('')}
             </div>
           </div>
         `).join('')}
@@ -2441,198 +2430,231 @@ function updateTimeline(val) {
 // ═══════════════════════════════════════════════════════
 // AIRFIELD MAP — pure SVG, no external dependencies
 // ═══════════════════════════════════════════════════════
-const GROUP_COLOURS={'JG26':'#c87848','JG2':'#c8a848','JG54':'#4a7a5a','JG11':'#c85858','JG1':'#c84848','JG3':'#5878a8','JG27':'#c8a028'};
+const GROUP_COLOURS={
+  channel:'#c87848',
+  reich:'#c85858',
+  east:'#4a7a5a',
+  med:'#c8a028'
+};
 
-// Manual jitter offsets for the SE England cluster to separate overlapping dots
-// Keys match STATIONS id field
+// Key Fw 190 operating locations. This is a modelling reference map, not a full wartime basing database.
+const STATIONS = [
+  {id:'abbeville',name:'Abbeville-Drucat',theatre:'channel',lat:50.143,lng:1.832,units:['JG 26'],type:'fighter base',period:'1941–44',notes:'Major Channel Front field for JG 26. Good for early A-series subjects: clean tactical markings, moderate grime and coastal weathering.'},
+  {id:'stomer',name:'St. Omer-Arques',theatre:'channel',lat:50.748,lng:2.302,units:['JG 26'],type:'fighter base',period:'1941–43',notes:'Pas-de-Calais operating area. Useful for Fw 190 A-2/A-3 subjects facing Spitfire V units over the Channel.'},
+  {id:'wevelgem',name:'Wevelgem / Moorsele',theatre:'channel',lat:50.853,lng:3.135,units:['JG 26'],type:'fighter base',period:'1941–44',notes:'Belgian base area used by JG 26. Modelling cue: hardstanding dust, exhaust staining and relatively tidy ground handling compared with Eastern Front fields.'},
+  {id:'beaumont',name:'Beaumont-le-Roger',theatre:'channel',lat:49.083,lng:0.783,units:['JG 2'],type:'fighter base',period:'1942–44',notes:'JG 2 Channel Front base in Normandy. Strong choice for A-4/A-5/A-8 subjects with yellow theatre markings and Channel weathering.'},
+  {id:'triqueville',name:'Triqueville',theatre:'channel',lat:49.372,lng:0.373,units:['JG 2'],type:'satellite field',period:'1942–44',notes:'Normandy satellite field for JG 2. More field-worn look: dusty undersides, rougher walkways and patched panels.'},
+  {id:'vannes',name:'Vannes-Meucon',theatre:'channel',lat:47.724,lng:-2.718,units:['JG 2'],type:'western France',period:'1943–44',notes:'Western France operating area. Good for Atlantic coast fading, salt air staining and darker exhaust trails.'},
+
+  {id:'deelen',name:'Deelen',theatre:'reich',lat:52.060,lng:5.873,units:['JG 1'],type:'Reich defence',period:'1943–44',notes:'Occupied Holland Reich-defence field. Good setting for bomber-interception aircraft with heavier exhaust staining and rapidly changed markings.'},
+  {id:'husum',name:'Husum',theatre:'reich',lat:54.498,lng:9.242,units:['JG 11'],type:'Reich defence',period:'1943–44',notes:'Northern Germany interception base. Modelling cue: colder, damp field conditions; subdued RLM 74/75/76 and heavy gun/exhaust staining.'},
+  {id:'wunstorf',name:'Wunstorf',theatre:'reich',lat:52.458,lng:9.423,units:['JG 11'],type:'Reich defence',period:'1943–45',notes:'Central Germany Reich-defence base. Suitable for A-8 bomber-destroyer subjects, patchy field repairs and dirty undersides.'},
+  {id:'achmer',name:'Achmer',theatre:'reich',lat:52.378,lng:7.912,units:['III/JG 3','JV 44 protection'],type:'late-war field',period:'1944–45',notes:'Late-war Dora/airfield-defence context. Model cue: rough late-war paint, heavy staining, worn tyres and improvised servicing.'},
+  {id:'rheine',name:'Rheine-Hopsten',theatre:'reich',lat:52.339,lng:7.541,units:['JG 26','JG 1'],type:'late-war field',period:'1944–45',notes:'North-west Germany base area. Good for late-war Fw 190 A/D subjects with mixed RLM 81/82/76 finishes.'},
+  {id:'parchim',name:'Parchim',theatre:'reich',lat:53.426,lng:11.783,units:['JG 26','JG 301'],type:'late-war field',period:'1944–45',notes:'Late-war northern Germany base. Use rough camouflage demarcation, replacement panels and subdued national markings.'},
+
+  {id:'siverskaya',name:'Siverskaya',theatre:'east',lat:59.353,lng:30.047,units:['JG 54'],type:'Eastern Front',period:'1942–44',notes:'JG 54 Eastern Front base south of Leningrad. Excellent for winter distemper, dirty wheel wells, mud and field-applied camouflage.'},
+  {id:'gatchina',name:'Gatchina / Krasnogvardeysk',theatre:'east',lat:59.568,lng:30.128,units:['JG 54'],type:'Eastern Front',period:'1942–44',notes:'Leningrad sector. Model cue: rough field conditions, temporary whitewash in winter and yellow Eastern Front ID bands.'},
+  {id:'orel',name:'Orel',theatre:'east',lat:52.966,lng:36.083,units:['JG 51'],type:'Eastern Front',period:'1943',notes:'Central Eastern Front operating area. Good for heavy dust, mud, chipped wing roots and operationally tired aircraft.'},
+  {id:'bryansk',name:'Bryansk',theatre:'east',lat:53.252,lng:34.371,units:['JG 51'],type:'Eastern Front',period:'1943–44',notes:'Eastern Front field context. Use dusty tyres, lower-surface grime, worn prop blades and uneven yellow recognition markings.'},
+
+  {id:'gambut',name:'Gambut, Libya',theatre:'med',lat:31.757,lng:24.897,units:['JG 27'],type:'North Africa',period:'1942',notes:'Desert operating area. Model cue: sand fading, dust-packed tyres, pale exhaust staining and sun-bleached upper surfaces.'},
+  {id:'kairouan',name:'Kairouan, Tunisia',theatre:'med',lat:35.671,lng:10.101,units:['JG 2','SG units'],type:'Mediterranean',period:'1942–43',notes:'Tunisia theatre context for Fw 190 fighter-bomber operations. Use dusty filters, sand abrasion and hurried field servicing.'}
+];
+
 const JITTER = {
-  'abbeville':  { dx:  8, dy:  8, lx: 10, ly:  4, la:'start' },
-  'moorsele':   { dx: -8, dy:  8, lx:-10, ly:  4, la:'end'   },
-  'beaumont':   { dx:  0, dy: 22, lx: 10, ly: 26, la:'start' },
-  'triqueville':{ dx:-14, dy: -2, lx:-10, ly: -6, la:'end'   },
-  'siverskaya': { dx: 16, dy:  0, lx: 10, ly: -6, la:'start' },
-  'husum':      { dx: 14, dy:-14, lx: 10, ly:-10, la:'start' },
-  'wunstorf':   { dx:  8, dy:-18, lx: 10, ly:-14, la:'start' },
-  'deelen':     { dx:-14, dy:-14, lx:-10, ly:-10, la:'end'   },
-  'achmer':     { dx: -8, dy: -4, lx:-10, ly: -4, la:'end'   },
-  'gambut':     { dx:  8, dy:  4, lx: 10, ly:  4, la:'start' },
+  abbeville:{dx:-10,dy:8,lx:-12,ly:14,la:'end'}, stomer:{dx:6,dy:-10,lx:10,ly:-10,la:'start'}, wevelgem:{dx:12,dy:4,lx:14,ly:6,la:'start'},
+  beaumont:{dx:-8,dy:14,lx:-10,ly:18,la:'end'}, triqueville:{dx:10,dy:16,lx:14,ly:20,la:'start'}, vannes:{dx:-6,dy:12,lx:-10,ly:16,la:'end'},
+  deelen:{dx:-8,dy:-8,lx:-12,ly:-12,la:'end'}, husum:{dx:10,dy:-10,lx:12,ly:-12,la:'start'}, wunstorf:{dx:10,dy:10,lx:12,ly:16,la:'start'},
+  achmer:{dx:-10,dy:10,lx:-12,ly:16,la:'end'}, rheine:{dx:-12,dy:-2,lx:-12,ly:-6,la:'end'}, parchim:{dx:12,dy:-2,lx:14,ly:-4,la:'start'},
+  siverskaya:{dx:10,dy:-8,lx:12,ly:-10,la:'start'}, gatchina:{dx:-10,dy:8,lx:-12,ly:12,la:'end'}, orel:{dx:10,dy:8,lx:12,ly:12,la:'start'}, bryansk:{dx:-8,dy:14,lx:-12,ly:18,la:'end'},
+  gambut:{dx:8,dy:4,lx:12,ly:6,la:'start'}, kairouan:{dx:-8,dy:-8,lx:-12,ly:-10,la:'end'}
 };
 
 let mapRendered = false;
-function normalizeUnitName(unit){ return (unit||'').replace('III./','III/').replace('III.','III/').trim(); }
+let selectedStationId = null;
+let leafletMap = null;
+let leafletMarkers = {};
+let leafletLabels = {};
+let leafletZones = {};
+
+function fwProject(lat,lng){
+  const minLon=-6, maxLon=38, minLat=28, maxLat=61;
+  const x = 45 + ((lng - minLon) / (maxLon - minLon)) * 670;
+  const y = 35 + ((maxLat - lat) / (maxLat - minLat)) * 475;
+  return {x,y};
+}
+function pathFromLatLng(points){
+  return points.map((pt,i)=>{ const p=fwProject(pt[0],pt[1]); return (i?'L':'M') + p.x.toFixed(1)+','+p.y.toFixed(1); }).join(' ') + ' Z';
+}
+function addText(svg, txt, x, y, size, fill, rot){
+  const ns='http://www.w3.org/2000/svg';
+  const t=document.createElementNS(ns,'text');
+  t.setAttribute('x',x); t.setAttribute('y',y); t.setAttribute('fill',fill || 'rgba(255,255,255,.28)');
+  t.setAttribute('font-family','Oswald, sans-serif'); t.setAttribute('font-size',size || '11'); t.setAttribute('letter-spacing','.12em');
+  if(rot) t.setAttribute('transform',rot);
+  t.textContent=txt; svg.appendChild(t); return t;
+}
+function addPath(svg, d, fill, stroke, cls){
+  const ns='http://www.w3.org/2000/svg';
+  const p=document.createElementNS(ns,'path');
+  p.setAttribute('d',d); p.setAttribute('fill',fill); p.setAttribute('stroke',stroke || 'rgba(201,168,76,.25)'); p.setAttribute('stroke-width','1.2');
+  if(cls) p.setAttribute('class',cls);
+  svg.appendChild(p); return p;
+}
+
+
+
+function renderMap(){
+  const mapEl = document.getElementById('leaflet-map');
+  if(!mapEl) return;
+  if(mapRendered){
+    setTimeout(()=>leafletMap && leafletMap.invalidateSize(), 80);
+    return;
+  }
+  if(typeof L === 'undefined'){
+    mapEl.innerHTML = `<div style="padding:2rem;color:rgba(255,255,255,.65);font-family:'Oswald',sans-serif;letter-spacing:.08em;text-transform:uppercase">Map library loading…</div>`;
+    setTimeout(renderMap, 250);
+    return;
+  }
+
+  mapRendered = true;
+  leafletMarkers = {};
+  leafletLabels = {};
+
+  leafletMap = L.map('leaflet-map', {
+    zoomControl: true,
+    attributionControl: true,
+    scrollWheelZoom: false,
+    worldCopyJump: false,
+    maxBounds: [[25,-14],[64,44]],
+    maxBoundsViscosity: .65
+  }).setView([48.8, 12.5], 4);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap &copy; CARTO',
+    subdomains: 'abcd',
+    maxZoom: 9,
+    minZoom: 3
+  }).addTo(leafletMap);
+
+  // Theatre overlays: real geography underneath, subtle operational zones above.
+  const zones = {
+    channel: [[46.6,-4.0],[51.8,-3.5],[52.2,4.8],[48.4,5.2],[46.6,1.2]],
+    reich: [[50.4,4.8],[55.2,6.0],[55.0,14.0],[50.4,14.0],[49.9,7.2]],
+    east: [[51.0,26.0],[61.0,26.0],[61.0,40.0],[51.0,40.0]],
+    med: [[30.0,8.0],[37.2,8.0],[37.2,27.5],[30.0,27.5]]
+  };
+  leafletZones = {};
+  Object.entries(zones).forEach(([key,coords])=>{
+    leafletZones[key] = L.polygon(coords, {
+      color: GROUP_COLOURS[key],
+      weight: 1,
+      opacity: .36,
+      fillColor: GROUP_COLOURS[key],
+      fillOpacity: .08,
+      interactive: false
+    }).addTo(leafletMap);
+  });
+
+  STATIONS.forEach(st=>{
+    const col = GROUP_COLOURS[st.theatre] || '#c9a84c';
+    const icon = L.divIcon({
+      className: '',
+      html: `<div class="fw-leaflet-marker" data-id="${st.id}" style="background:${col}"></div>`,
+      iconSize: [18,18],
+      iconAnchor: [9,9]
+    });
+    const marker = L.marker([st.lat, st.lng], {icon}).addTo(leafletMap);
+    marker._fwStation = st;
+    marker.on('click', () => showMapStation(st.id));
+    marker.bindTooltip(`<span class="fw-leaflet-label">${st.name}</span>`, {
+      permanent: false,
+      direction: 'top',
+      offset: [0,-10],
+      opacity: .96,
+      className: ''
+    });
+    leafletMarkers[st.id] = marker;
+  });
+
+  // sensible bounds: includes France/Germany/Russia/North Africa without making Europe unrecognisable
+  leafletMap.fitBounds([[30,-7],[61,38]], {padding:[16,16]});
+  setTimeout(()=>leafletMap.invalidateSize(), 100);
+  showMapIntro();
+}
+
 function theatreLabel(key){ return key==='channel'?'Channel Front':key==='reich'?'Defence of the Reich / Holland':key==='east'?'Eastern Front':key==='med'?'Mediterranean / North Africa':'Fw 190 operations'; }
+function mapGroupToSqGroup(key){ return key==='channel'?'west':key==='east'?'east':key==='reich'?'reich':key==='med'?'africa':'all'; }
+function normalizeUnitName(unit){ return (unit||'').replace('III./','III/').replace('III.','III/').trim(); }
 function getSqForUnit(unit){
   const clean = normalizeUnitName(unit);
   return SQ.find(s => s.num === clean) || null;
 }
-function renderMap(){
-  const svg = document.getElementById('map-svg');
-  if(!svg || mapRendered) return;
-  mapRendered = true;
-  const ns = 'http://www.w3.org/2000/svg';
-  svg.innerHTML = '';
-
-  const defs=document.createElementNS(ns,'defs');
-  defs.innerHTML = `
-    <linearGradient id="fwSea" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0a1724"/>
-      <stop offset="45%" stop-color="#0f2132"/>
-      <stop offset="100%" stop-color="#1a160d"/>
-    </linearGradient>
-    <linearGradient id="fwLand" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#49593a"/>
-      <stop offset="55%" stop-color="#364329"/>
-      <stop offset="100%" stop-color="#2b341f"/>
-    </linearGradient>
-    <linearGradient id="fwLandWarm" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#6a5b30"/>
-      <stop offset="100%" stop-color="#4d411f"/>
-    </linearGradient>
-    <radialGradient id="fwVignette" cx="50%" cy="45%" r="70%">
-      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000" stop-opacity=".28"/>
-    </radialGradient>
-    <filter id="fwGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="fwShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity=".35"/>
-    </filter>
-    <pattern id="fwSeaTexture" patternUnits="userSpaceOnUse" width="28" height="28">
-      <path d="M0 22 C8 18 16 18 28 22" fill="none" stroke="#fff" stroke-opacity=".035" stroke-width="1"/>
-      <path d="M0 10 C8 6 16 6 28 10" fill="none" stroke="#fff" stroke-opacity=".02" stroke-width="1"/>
-    </pattern>`;
-  svg.appendChild(defs);
-
-  function append(tag, attrs, parent=svg){
-    const el=document.createElementNS(ns,tag);
-    for(const [k,v] of Object.entries(attrs||{})) el.setAttribute(k,v);
-    parent.appendChild(el);
-    return el;
-  }
-  function poly(points, attrs){
-    return append('path', Object.assign({d:pathFromLatLng(points)}, attrs||{}));
-  }
-
-  append('rect',{x:0,y:0,width:760,height:560,fill:'url(#fwSea)'});
-  append('rect',{x:0,y:0,width:760,height:560,fill:'url(#fwSeaTexture)',opacity:.8});
-
-  // subdued graticule
-  [30,35,40,45,50,55,60].forEach(lat=>{
-    const y=fwProject(lat,0).y;
-    append('line',{x1:42,x2:718,y1:y,y2:y,stroke:'rgba(122,168,216,.10)','stroke-width':'.8','stroke-dasharray':'4 6'});
-    addText(svg,lat+'°N',48,y-4,8,'rgba(140,175,205,.35)');
-  });
-  [-5,5,15,25,35].forEach(lng=>{
-    const x=fwProject(45,lng).x;
-    append('line',{y1:32,y2:514,x1:x,x2:x,stroke:'rgba(122,168,216,.08)','stroke-width':'.8','stroke-dasharray':'4 6'});
-    addText(svg,(lng>=0?lng+'°E':Math.abs(lng)+'°W'),x+4,507,8,'rgba(140,175,205,.30)');
-  });
-
-  // recognisable land masses — simplified, but shaped to read clearly as Europe / western USSR / North Africa
-  const iberia = [[36.0,-9.6],[36.7,-9.1],[37.4,-8.7],[38.5,-8.8],[39.5,-9.1],[40.7,-8.9],[41.8,-8.3],[42.8,-7.8],[43.6,-6.0],[43.8,-3.2],[43.6,-1.2],[43.1,0.8],[42.5,2.1],[41.6,3.1],[40.4,3.1],[39.0,1.0],[37.8,-0.8],[36.8,-2.6],[36.1,-5.0]];
-  const mainEurope = [[43.0,-1.7],[43.4,-0.5],[43.7,1.0],[43.8,2.5],[43.8,4.2],[43.6,5.8],[43.6,7.2],[43.9,8.5],[44.5,9.7],[45.1,11.0],[45.8,12.0],[46.3,13.0],[46.8,14.2],[47.4,15.5],[48.0,16.8],[48.7,18.0],[49.2,19.0],[49.8,20.2],[50.4,21.5],[51.0,22.8],[51.9,24.0],[52.8,24.7],[53.8,24.8],[54.4,23.8],[54.8,22.0],[54.9,20.0],[54.8,18.0],[54.6,16.0],[54.5,14.2],[54.3,12.2],[54.0,10.6],[53.7,9.0],[53.2,7.8],[52.6,6.5],[52.0,5.0],[51.4,3.6],[50.8,2.5],[50.1,1.5],[49.6,0.0],[49.1,-1.0],[48.5,-2.3],[47.8,-3.4],[46.8,-4.2],[45.7,-4.8],[44.7,-4.0],[43.8,-2.8]];
-  const westernUSSR = [[49.8,23.4],[50.8,24.5],[51.8,25.8],[53.0,27.0],[54.2,28.2],[55.2,29.2],[56.1,30.4],[57.0,31.8],[58.0,33.8],[59.0,36.0],[60.0,38.4],[61.0,40.0],[61.0,33.0],[60.8,27.0],[60.3,22.5],[59.4,19.2],[58.0,18.2],[56.8,18.4],[55.8,19.0],[54.9,20.0],[54.0,21.2],[53.2,22.5],[52.4,23.6],[51.4,24.4],[50.6,24.2]];
-  const balkans = [[45.8,13.0],[46.0,14.5],[45.9,16.0],[45.6,17.8],[45.3,19.4],[45.0,21.0],[44.2,22.6],[43.5,24.0],[42.6,25.2],[41.5,25.8],[40.5,25.0],[39.7,23.6],[39.1,22.0],[39.0,20.0],[39.4,18.2],[40.0,16.8],[40.8,15.5],[41.8,14.4],[43.0,13.6],[44.4,13.0]];
-  const scandinavia = [[55.0,5.0],[56.0,6.2],[57.0,7.6],[58.1,9.2],[59.0,10.6],[60.0,12.4],[60.8,14.8],[61.0,17.0],[60.9,19.4],[60.6,22.4],[60.2,25.6],[60.2,28.4],[60.6,31.0],[61.0,34.0],[61.0,38.6],[59.8,37.2],[58.6,35.4],[57.8,33.2],[57.0,30.0],[56.2,26.4],[55.7,22.8],[55.4,18.8],[55.0,15.0],[54.8,10.5]];
-  const italy = [[46.0,8.0],[45.6,9.2],[45.2,10.4],[44.6,11.8],[43.9,12.8],[43.1,13.5],[42.5,14.8],[41.9,16.0],[41.4,17.2],[40.8,18.0],[40.0,18.2],[39.2,17.2],[39.0,16.0],[39.4,14.8],[40.0,13.5],[40.7,12.4],[41.4,11.2],[42.0,10.0],[42.9,9.0],[43.8,8.4],[44.8,8.2]];
-  const sicily = [[38.0,12.0],[38.5,12.8],[38.3,14.3],[37.5,14.9],[37.0,13.4]];
-  const britain = [[50.0,-5.8],[50.5,-4.8],[51.2,-4.2],[52.0,-3.5],[53.0,-3.2],[54.0,-3.0],[55.0,-3.6],[56.0,-4.2],[57.0,-3.8],[58.0,-2.2],[58.5,-0.6],[57.3,1.4],[56.0,0.9],[54.8,0.0],[53.4,-0.1],[52.1,-0.6],[51.0,-0.8],[50.2,-1.6],[50.0,-3.5]];
-  const ireland = [[51.2,-10.3],[52.1,-9.6],[53.0,-9.1],[54.0,-8.8],[55.2,-7.8],[55.4,-6.6],[54.8,-5.8],[53.6,-5.5],[52.2,-6.0],[51.3,-7.1],[51.0,-8.8]];
-  const northAfrica = [[28.0,-6.0],[29.5,-5.5],[31.0,-4.8],[32.2,-3.5],[33.5,-2.0],[34.6,-0.6],[35.5,1.0],[36.2,3.0],[36.8,6.0],[37.0,9.5],[36.6,13.0],[36.0,16.5],[35.4,19.5],[34.8,22.5],[34.0,25.5],[33.2,28.8],[32.2,32.0],[31.2,35.2],[30.2,38.0],[28.0,38.0]];
-
-  ;[
-    [iberia,'url(#fwLand)'],
-    [mainEurope,'url(#fwLand)'],
-    [westernUSSR,'url(#fwLand)'],
-    [balkans,'url(#fwLand)'],
-    [scandinavia,'url(#fwLand)'],
-    [italy,'url(#fwLandWarm)'],
-    [sicily,'url(#fwLandWarm)'],
-    [britain,'rgba(73,87,77,.72)'],
-    [ireland,'rgba(68,82,72,.7)'],
-    [northAfrica,'url(#fwLandWarm)']
-  ].forEach(([pts,fill])=> poly(pts,{fill,stroke:'rgba(235,221,180,.20)','stroke-width':'1.05',class:'fw-land',filter:'url(#fwShadow)'}));
-
-  // islands / coastline accents
-  poly([[41.3,8.1],[41.9,9.4],[41.0,9.8],[40.8,8.6]],{fill:'url(#fwLandWarm)',stroke:'rgba(235,221,180,.20)','stroke-width':'1',class:'fw-land'}); // Corsica
-  poly([[39.1,8.1],[40.6,9.4],[39.3,9.9],[38.8,8.7]],{fill:'url(#fwLandWarm)',stroke:'rgba(235,221,180,.20)','stroke-width':'1',class:'fw-land'}); // Sardinia
-  poly([[35.0,23.0],[35.4,25.8],[34.9,26.3],[34.7,24.6]],{fill:'url(#fwLandWarm)',stroke:'rgba(235,221,180,.18)','stroke-width':'.9',class:'fw-land'}); // Crete
-
-  // subtle theatre overlays
-  const zones = [
-    {id:'channel',d:pathFromLatLng([[47.0,-4.2],[48.3,-1.8],[49.6,0.5],[50.8,2.6],[51.8,4.3],[51.4,5.4],[49.0,5.0],[47.4,2.5],[46.8,-0.8]]),c:GROUP_COLOURS.channel,label:'CHANNEL FRONT',lx:152,ly:272},
-    {id:'reich',d:pathFromLatLng([[50.7,4.2],[52.0,5.5],[53.5,7.3],[54.4,10.5],[54.2,13.5],[52.8,14.8],[51.0,13.8],[50.2,10.2],[50.1,7.0]]),c:GROUP_COLOURS.reich,label:'REICH DEFENCE',lx:268,ly:228},
-    {id:'east',d:pathFromLatLng([[51.0,26.0],[54.0,26.5],[57.0,28.0],[60.5,31.0],[60.7,38.0],[51.2,38.0]]),c:GROUP_COLOURS.east,label:'EASTERN FRONT',lx:575,ly:118},
-    {id:'med',d:pathFromLatLng([[30.0,8.0],[31.0,14.0],[32.5,20.0],[34.0,26.0],[36.8,26.0],[36.8,8.2]]),c:GROUP_COLOURS.med,label:'MEDITERRANEAN',lx:428,ly:465}
-  ];
-  zones.forEach(z=>{
-    const p=addPath(svg,z.d,z.c,'none','fw-front-zone');
-    p.setAttribute('data-zone',z.id);
-    p.setAttribute('opacity','.06');
-    p.setAttribute('stroke',z.c);
-    p.setAttribute('stroke-width','1');
-    p.setAttribute('stroke-dasharray','6 6');
-    p.setAttribute('stroke-opacity','.22');
-    addText(svg,z.label,z.lx,z.ly,9,z.c);
-  });
-
-  // labels
-  addText(svg,'NORTH SEA',252,162,10,'rgba(155,190,220,.34)','rotate(-10 252 162)');
-  addText(svg,'ENGLISH CHANNEL',137,314,9,'rgba(155,190,220,.34)','rotate(-11 137 314)');
-  addText(svg,'BALTIC SEA',345,118,9,'rgba(155,190,220,.30)');
-  addText(svg,'MEDITERRANEAN SEA',395,426,10,'rgba(155,190,220,.30)');
-  addText(svg,'FRANCE',175,326,10,'rgba(255,255,255,.24)');
-  addText(svg,'GERMANY',286,274,10,'rgba(255,255,255,.24)');
-  addText(svg,'POLAND',418,243,10,'rgba(255,255,255,.22)');
-  addText(svg,'ITALY',331,360,10,'rgba(255,255,255,.24)','rotate(20 331 360)');
-  addText(svg,'LIBYA',515,500,10,'rgba(255,255,255,.24)');
-  addText(svg,'TUNISIA',370,425,9,'rgba(255,255,255,.22)');
-  addText(svg,'WESTERN USSR',600,182,10,'rgba(255,255,255,.22)');
-  addText(svg,'BALKANS',430,318,9,'rgba(255,255,255,.20)');
-  addText(svg,'SCANDINAVIA',330,74,9,'rgba(255,255,255,.22)');
-
-  // compact in-map legend
-  const legend=append('g',{});
-  append('rect',{x:30,y:468,width:155,height:54,fill:'rgba(8,14,22,.58)',stroke:'rgba(255,255,255,.10)','stroke-width':'1',rx:'4'},legend);
-  addText(legend,'STATION MARKERS',44,484,8,'rgba(240,234,216,.55)');
-  [['Channel Front',GROUP_COLOURS.channel],['Reich / Holland',GROUP_COLOURS.reich],['Eastern Front',GROUP_COLOURS.east],['Mediterranean',GROUP_COLOURS.med]].forEach((it,i)=>{
-    const y=497 + i*11;
-    append('circle',{cx:42,cy:y,r:4,fill:it[1],stroke:'rgba(240,234,216,.9)','stroke-width':'1'},legend);
-    addText(legend,it[0],52,y+3,8,'rgba(240,234,216,.72)');
-  });
-
-  // frame and vignette
-  append('rect',{x:16,y:16,width:728,height:528,fill:'none',stroke:'rgba(201,168,76,.24)','stroke-width':'1.2','rx':'4'});
-  append('rect',{x:24,y:24,width:712,height:512,fill:'none',stroke:'rgba(255,255,255,.04)','stroke-width':'1','rx':'2'});
-  append('rect',{x:0,y:0,width:760,height:560,fill:'url(#fwVignette)'});
-
-  // Station markers.
-  STATIONS.forEach(st=>{
-    const base = fwProject(st.lat, st.lng);
-    const j = JITTER[st.id] || {dx:0,dy:0,lx:9,ly:-9,la:'start'};
-    const x = base.x + j.dx, y = base.y + j.dy;
-    const col = GROUP_COLOURS[st.theatre] || '#c9a84c';
-    const g=document.createElementNS(ns,'g'); g.setAttribute('class','station-g'); g.setAttribute('data-group',st.theatre); g.setAttribute('data-id',st.id); g.addEventListener('click',()=>showMapStation(st.id));
-    if(j.dx || j.dy){ const conn=document.createElementNS(ns,'line'); conn.setAttribute('x1',base.x); conn.setAttribute('y1',base.y); conn.setAttribute('x2',x); conn.setAttribute('y2',y); conn.setAttribute('stroke',col); conn.setAttribute('stroke-width','.8'); conn.setAttribute('stroke-dasharray','2 3'); conn.setAttribute('opacity','.52'); g.appendChild(conn); }
-    const halo=document.createElementNS(ns,'circle'); halo.setAttribute('cx',x); halo.setAttribute('cy',y); halo.setAttribute('r','10'); halo.setAttribute('fill',col); halo.setAttribute('opacity','.10'); g.appendChild(halo);
-    const ring=document.createElementNS(ns,'circle'); ring.setAttribute('cx',x); ring.setAttribute('cy',y); ring.setAttribute('r',st.type.includes('base') || st.type.includes('Reich') ? '9.5' : '8'); ring.setAttribute('fill','none'); ring.setAttribute('stroke',col); ring.setAttribute('stroke-width','1'); ring.setAttribute('opacity','.42'); g.appendChild(ring);
-    const dot=document.createElementNS(ns,'circle'); dot.setAttribute('cx',x); dot.setAttribute('cy',y); dot.setAttribute('r','5'); dot.setAttribute('class','station-dot'); dot.setAttribute('fill',col); dot.setAttribute('stroke','rgba(240,234,216,.95)'); dot.setAttribute('stroke-width','1.5'); g.appendChild(dot);
-    const hit=document.createElementNS(ns,'circle'); hit.setAttribute('class','station-hit'); hit.setAttribute('cx',x); hit.setAttribute('cy',y); hit.setAttribute('r','15'); g.appendChild(hit);
-    const label=document.createElementNS(ns,'text'); label.setAttribute('x',x + j.lx + (j.la==='end'?-3:3)); label.setAttribute('y',y + j.ly + 3); label.setAttribute('text-anchor',j.la); label.setAttribute('class','station-label'); label.setAttribute('fill','rgba(240,234,216,.94)'); label.textContent=st.name; g.appendChild(label);
-    svg.appendChild(g);
-  });
-
-  showMapIntro();
+function topPilotText(sq){
+  if(!sq || !sq.pilots || !sq.pilots.length) return '';
+  const top = sq.pilots.slice().sort((a,b)=>b.k-a.k)[0];
+  return `${top.n} · ${top.k} claims · ${top.fate}`;
 }
+function modellingCue(st){
+  if(st.theatre==='east') return 'Heavy field wear, muddy tyres, winter distemper possibilities, yellow Eastern Front recognition bands and rough field-applied repairs.';
+  if(st.theatre==='med') return 'Sun fading, sand abrasion, dust-stained tyres, pale exhaust staining and bleached upper surfaces.';
+  if(st.theatre==='reich') return 'Late-war grime, replacement panels, heavier gun staining, rapid repairs and mixed RLM 74/75/76 or 81/82/76 finishes.';
+  return 'Coastal grime, exhaust staining, chipped wing roots, relatively clear tactical markings and moderate field wear.';
+}
+
+function openMapUnit(num){
+  const sq = SQ.find(s => s.num === num);
+  if(!sq) return;
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  const sqPanel = document.getElementById('tab-squadrons');
+  if(sqPanel) sqPanel.classList.add('active');
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  const sqTab = [...document.querySelectorAll('.nav-tab')].find(t => (t.getAttribute('onclick')||'').includes("'squadrons'"));
+  if(sqTab) sqTab.classList.add('active');
+  const bar = document.getElementById('sqn-bar');
+  if(bar) bar.style.display = 'flex';
+  activeTab = 'squadrons';
+  activeFilter = 'all';
+  document.querySelectorAll('.fb.gf').forEach(b => b.classList.remove('on'));
+  const allBtn = [...document.querySelectorAll('.fb.gf')].find(b => (b.getAttribute('onclick')||'').includes("'all'"));
+  if(allBtn) allBtn.classList.add('on');
+  renderGrid();
+  setTimeout(() => {
+    selectSq(num);
+    const card = document.getElementById('card-' + num);
+    if(card) card.scrollIntoView({behavior:'smooth', block:'center'});
+  }, 40);
+}
+
+function showMapIntro(){
+  const box=document.getElementById('map-sqn-list');
+  if(!box) return;
+  const stationCount = STATIONS.length;
+  const linkedUnits = [...new Set(STATIONS.flatMap(st => st.units.map(u => normalizeUnitName(u))).filter(u => getSqForUnit(u)))];
+  const byTheatre = ['channel','reich','east','med'].map(k=>`${theatreLabel(k)}: ${STATIONS.filter(s=>s.theatre===k).length}`).join(' · ');
+  box.innerHTML = `
+    <div class="fw-map-side-title">Fw 190 operational map</div>
+    <div class="fw-map-side-kicker">Clickable stations → linked unit cards</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Hover a marker to reveal the base name, or click it to open the station summary and linked Jagdgeschwader card. The linked squadron card contains the pilot list, markings, decal references and kit suggestions.</p>
+    <div style="margin-top:.75rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)">${stationCount} station markers · ${linkedUnits.length} linked unit cards</div>
+    <div style="margin-top:.45rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38)">${byTheatre}</div>`;
+}
+
 function showMapStation(id){
   selectedStationId = id;
   const st = STATIONS.find(s => s.id === id);
   const box = document.getElementById('map-sqn-list');
   if(!st || !box) return;
   const col = GROUP_COLOURS[st.theatre] || '#c9a84c';
-  document.querySelectorAll('#map-svg .station-g').forEach(g => g.classList.toggle('selected', g.getAttribute('data-id') === id));
+  Object.entries(leafletMarkers || {}).forEach(([mid,m]) => {
+    const el = m.getElement && m.getElement();
+    if(el){
+      const dot = el.querySelector('.fw-leaflet-marker');
+      if(dot) dot.classList.toggle('selected', mid === id);
+    }
+  });
+  if(leafletMap && leafletMarkers[id]) leafletMap.panTo([st.lat, st.lng], {animate:true, duration:.45});
 
   const unitCards = st.units.map(u => {
     const sq = getSqForUnit(u);
@@ -2665,33 +2687,38 @@ function showMapStation(id){
     <div style="margin-top:.8rem;padding-top:.7rem;border-top:1px solid rgba(255,255,255,.08);font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38)">Lat ${st.lat.toFixed(3)} · Long ${st.lng.toFixed(3)}</div>`;
 }
 
-function showMapIntro(){
-  const box=document.getElementById('map-sqn-list');
-  if(!box) return;
-  const stationCount = STATIONS.length;
-  const linkedUnits = [...new Set(STATIONS.flatMap(st => st.units.map(u => normalizeUnitName(u))).filter(u => getSqForUnit(u)))];
-  const byTheatre = ['channel','reich','east','med'].map(k=>`${theatreLabel(k)}: ${STATIONS.filter(s=>s.theatre===k).length}`).join(' · ');
-  box.innerHTML = `
-    <div class="fw-map-side-title">Fw 190 operational map</div>
-    <div class="fw-map-side-kicker">Clickable stations → linked unit cards</div>
-    <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Hover a marker to reveal the base name, or click it to open the station summary and linked Jagdgeschwader card. The linked squadron card contains the pilot list, markings, decal references and kit suggestions.</p>
-    <div style="margin-top:.75rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)">${stationCount} station markers · ${linkedUnits.length} linked unit cards</div>
-    <div style="margin-top:.45rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38)">${byTheatre}</div>`;
-}
-
 function filterMapGroup(group, btn) {
   renderMap();
   document.querySelectorAll('.map-filter-btn').forEach(b => b.classList.remove('on'));
   if(btn) btn.classList.add('on');
-  document.querySelectorAll('#map-svg .fw-front-zone').forEach(z => { z.style.opacity = (group === 'all' || z.getAttribute('data-zone') === group) ? '.12' : '.03'; });
-  document.querySelectorAll('#map-svg .station-g').forEach(g => {
-    const show = group === 'all' || g.getAttribute('data-group') === group;
-    g.classList.toggle('dimmed', !show);
-    g.style.display = show ? '' : 'none';
-    g.classList.remove('selected');
+
+  Object.entries(leafletZones || {}).forEach(([key,z]) => {
+    if(!z) return;
+    z.setStyle({fillOpacity: (group === 'all' || key === group) ? .12 : .025, opacity: (group === 'all' || key === group) ? .42 : .16});
   });
+
+  Object.entries(leafletMarkers || {}).forEach(([id,marker]) => {
+    const st = marker._fwStation;
+    const show = group === 'all' || st.theatre === group;
+    if(show){
+      if(leafletMap && !leafletMap.hasLayer(marker)) marker.addTo(leafletMap);
+    } else {
+      if(leafletMap && leafletMap.hasLayer(marker)) leafletMap.removeLayer(marker);
+    }
+    const el = marker.getElement && marker.getElement();
+    if(el){
+      const dot = el.querySelector('.fw-leaflet-marker');
+      if(dot) dot.classList.remove('selected');
+    }
+  });
+
   selectedStationId = null;
   const shown = STATIONS.filter(st => group === 'all' || st.theatre === group);
+  if(leafletMap && shown.length){
+    const bounds = L.latLngBounds(shown.map(st => [st.lat, st.lng]));
+    leafletMap.fitBounds(bounds.pad(.35), {padding:[20,20], maxZoom: group === 'all' ? 4 : 6});
+  }
+
   const box = document.getElementById('map-sqn-list');
   if(box){
     box.innerHTML = `
@@ -2703,6 +2730,9 @@ function filterMapGroup(group, btn) {
       </div>`;
   }
 }
+
+
+
 
 // ═══════════════════════════════════════════════════════
 // WEATHERING — rich visual version
@@ -2783,19 +2813,27 @@ document.addEventListener('keydown',e=>{
 // AFTERMARKET DATA
 // ═══════════════════════════════════════════════════════
 const AFTERMARKET = {
+  decals:[
+    {name:"Fw 190 EagleCals decal sheets",brand:"Eagle Editions / EagleCals",scale:"1:48 / 1:32",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+EagleCals",note:"Strong choice for named late-war and Dora subjects."},
+    {name:"Fw 190 Techmod decals",brand:"Techmod",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Techmod+decals",note:"Useful for Luftwaffe codes, stencils and national markings."},
+    {name:"Fw 190 Xtradecal sheets",brand:"Xtradecal",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Xtradecal",note:"Good UK-available decal range; use for alternate markings."},
+    {name:"Fw 190 stencil data",brand:"Eduard / generic",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+stencils",note:"Adds realism around wing walkways, service labels and filler points."}
+  ],
   cockpit:[
-    {name:"Eduard Brassin BMW 801 engine front",brand:"Eduard Brassin",scale:"1:48",url:"https://www.hannants.co.uk/product/ED648554",note:"Most impactful upgrade for open cowling."},
-    {name:"Eduard FE1243 cockpit PE",brand:"Eduard",scale:"1:48",url:"https://www.hannants.co.uk/search/?keyword_search=FE1243",note:"Pre-painted colour PE for Fw 190 A-series."},
-    {name:"Barracuda exhausts",brand:"Barracuda Studios",scale:"1:48",url:"https://barracudacals.com/collections/1-48-resin-detail-sets/fw-190",note:"Accurate resin exhaust stacks."}
+    {name:"Eduard Fw 190 cockpit / SPACE sets",brand:"Eduard",scale:"1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+SPACE+cockpit+1%2F48",note:"Best cockpit upgrade route for Eduard/Tamiya/Hasegawa builds."},
+    {name:"Aires Fw 190 cockpit resin",brand:"Aires",scale:"1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Aires+Fw+190+cockpit",note:"Full resin cockpit option where available."},
+    {name:"Eduard Brassin Fw 190 engine / gun bay",brand:"Eduard Brassin",scale:"1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Brassin+Fw+190+engine+gun+bay",note:"For open cowling or maintenance diorama subjects."}
   ],
   masks:[
-    {name:"Eduard EDEX712 masks",brand:"Eduard",scale:"1:48",url:"https://www.hannants.co.uk/product/EDEX712",note:"Pre-cut masks for Fw 190 A-8 canopy."}
+    {name:"Eduard Fw 190 canopy masks",brand:"Eduard",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+masks",note:"Pre-cut masks are worth using on the framed Fw 190 canopy."},
+    {name:"Montex / Peewit Fw 190 masks",brand:"Montex / Peewit",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+canopy+masks",note:"Useful fallback when Eduard masks are not in stock."}
   ],
   wheels:[
-    {name:"Eduard Brassin wheels",brand:"Eduard Brassin",scale:"1:48",url:"https://www.hannants.co.uk/search/?keyword_search=brassin+fw190+wheels",note:"Weighted flat-spotted resin wheels."}
+    {name:"Fw 190 resin wheels",brand:"Eduard Brassin / CMK / ResKit",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+resin+wheels",note:"Weighted wheels improve the stance, especially on 1:48 builds."},
+    {name:"Quickboost Fw 190 details",brand:"Quickboost",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Quickboost",note:"Good source for small corrections, exhausts and scoops."}
   ],
-  decals:[
-    {name:"Xtradecal Fw 190 sheets",brand:"Xtradecal",scale:"1:48",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+fw190",note:"Channel Front and Eastern Front options."}
+  barrels:[
+    {name:"Master Fw 190 brass gun barrels",brand:"Master Model",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Master+barrels",note:"High-impact upgrade for MG 131 / MG 151 barrels."}
   ]
 };
 
@@ -2938,10 +2976,10 @@ const PILOT_STORIES = [
 const BUILD_STEPS = [
   {n:1,title:"Research and marking choice",icon:"📋",
    text:"Before opening the box, decide your subject — JG 26 Channel Front, JG 54 Eastern Front, or D-9 Dora. This fixes your camouflage pattern, mottling density, yellow Eastern Front markings and weathering tone. The Units tab has marking references for all 8 JG units. For an A-8 subject you need RLM 74/75/76 and fuselage mottling; for D-9 the blue-grey Jumo cowling and yellow-green rear band.",
-   products:[{name:"Eduard ProfiPACK EDK82145",url:"https://www.hannants.co.uk/product/EDK82145"},{name:"Xtradecal Fw 190 sheets",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+fw190"}]},
+   products:[{name:"Eduard ProfiPACK EDK82145",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-8%2FR2+1%2F48"},{name:"Xtradecal Fw 190 sheets",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+fw190"}]},
   {n:2,title:"Cockpit — RLM 66 interior",icon:"🎛️",
    text:"Build and paint the cockpit first. Interior is RLM 66 Schwarzgrau — Tamiya XF-63 or Vallejo 70.862. Very dark, near-black grey. Instrument panel in RLM 66 with instrument faces in flat black. Seat in dark leather. The Eduard ProfiPACK includes pre-painted SPACE 3D photo-etch that transforms the cockpit with minimal effort. Eduard Brassin BMW 801 engine front adds impressive detail for open cowling displays.",
-   products:[{name:"Eduard Brassin BMW 801 ED648554",url:"https://www.hannants.co.uk/product/ED648554"},{name:"Eduard EDEX712 canopy masks",url:"https://www.hannants.co.uk/product/EDEX712"}]},
+   products:[{name:"Eduard Brassin BMW 801 ED648554",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Brassin+Fw+190+BMW+801+1%2F48"},{name:"Eduard EDEX712 canopy masks",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+mask+1%2F48"}]},
   {n:3,title:"Main construction",icon:"🔧",
    text:"Assemble fuselage, fit wings, deal with seam lines before paint. Eduard kits have excellent fit throughout. Pay close attention to the BMW 801 cowling ring join — the most visible seam on the finished model. Dry-fit the cowling access panels before committing to glue. The cowling flaps can be displayed open or closed — open displays benefit greatly from the Brassin engine front.",
    products:[{name:"Tamiya Extra Thin Cement",url:"https://www.hannants.co.uk/search/?keyword_search=tamiya+extra+thin+cement"}]},
@@ -3020,27 +3058,27 @@ const MEDIA_ITEMS = [
   {type:"video",thumb:"🎨",
    title:"Eduard Fw 190 A-8 ProfiPACK 1:48 Full Build",
    channel:"Doogs Models",
-   url:"https://www.youtube.com/results?search_query=fw190+a8+profipack+1+48+full+build+doogs",
+   url:"https://www.youtube.com/results?search_query=Eduard+Fw+190+A-8+ProfiPACK+1%2F48+full+build",
    desc:"Complete build of Eduard's 1:48 A-8 ProfiPACK from box to finished model. Covers SPACE PE cockpit, RLM mottling, BMW 801 exhaust weathering and markings."},
   {type:"video",thumb:"📷",
    title:"Fw 190 A-8 Cockpit Walkaround — RAF Museum Cosford",
    channel:"Museum Walkaround",
-   url:"https://www.youtube.com/results?search_query=fw190+a8+cockpit+walkaround+raf+museum+cosford+cosford",
+   url:"https://www.youtube.com/watch?v=i7ytEtZBK6A",
    desc:"Close-up cockpit photography from the Cosford A-8. RLM 66 instrument panel, seat, structural detail in natural light. Essential modelling reference."},
   {type:"video",thumb:"🔧",
    title:"BMW 801 Radial Engine — Startup and Run",
    channel:"Aviation Engine",
-   url:"https://www.youtube.com/results?search_query=BMW+801+radial+engine+startup+fw190",
+   url:"https://www.youtube.com/watch?v=b2ZYK6rZxC0",
    desc:"BMW 801 engine startup footage showing the distinctive exhaust pattern, sound and smoke characteristics. Reference for exhaust staining weathering."},
   {type:"video",thumb:"🖌️",
    title:"RLM 74/75/76 Mottling Tutorial — Fw 190 G Scheme",
    channel:"Modelling Tutorial",
-   url:"https://www.youtube.com/results?search_query=RLM+74+75+76+mottling+fw190+airbrush+tutorial",
+   url:"https://www.youtube.com/results?search_query=Fw+190+RLM+74+75+76+mottling+airbrush+tutorial",
    desc:"Step-by-step airbrushing guide for the Fw 190 fuselage mottling. PSI settings, thinning ratios, layering and edge softening technique."},
   {type:"video",thumb:"🎬",
    title:"JG 26 — The Abbeville Boys Documentary",
    channel:"Luftwaffe History",
-   url:"https://www.youtube.com/results?search_query=JG26+abbeville+boys+fw190+channel+front+documentary",
+   url:"https://www.youtube.com/results?search_query=JG+26+Abbeville+Boys+Fw+190+documentary",
    desc:"Documentary on JG 26 Schlageter's Channel Front operations. Priller interview footage, period photography and combat film."},
 ];
 

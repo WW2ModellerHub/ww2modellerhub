@@ -792,9 +792,22 @@ body{
   box-shadow:0 4px 14px rgba(0,0,0,.16);
 }
 
+
+/* ===== LEAFLET RAF MAP ===== */
+#leaflet-map{width:100%;height:560px;background:#0c1722;filter:saturate(.82) contrast(1.04);border-radius:3px}
+.leaflet-container{font-family:'Oswald',sans-serif;background:#0c1722}
+.leaflet-control-attribution{font-size:9px;background:rgba(8,12,18,.68)!important;color:rgba(255,255,255,.55)!important}
+.raf-leaflet-marker{width:18px;height:18px;border-radius:50%;border:2px solid rgba(240,234,216,.92);box-shadow:0 0 0 5px rgba(255,255,255,.06),0 2px 12px rgba(0,0,0,.55);transition:transform .15s,box-shadow .15s}
+.raf-leaflet-marker.selected{transform:scale(1.25);box-shadow:0 0 0 6px rgba(201,168,76,.22),0 0 18px rgba(201,168,76,.65)}
+.raf-leaflet-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.04em;color:#fff;text-shadow:0 2px 4px #000,0 0 5px #000;white-space:nowrap;padding:1px 4px;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.12);border-radius:2px}
+
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409"
      crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 </head>
 <body>
 
@@ -980,8 +993,7 @@ body{
       <button onclick="filterMapGroup('13',this)" class="map-filter-btn" style="border-color:#b07fd5;color:#b07fd5">13 Group</button>
     </div>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap;align-items:flex-start">
-      <svg id="map-svg" viewBox="0 0 520 700" xmlns="http://www.w3.org/2000/svg"
-           style="flex:1 1 380px;min-width:280px;max-width:520px;height:auto;border-radius:3px;border:1px solid rgba(255,255,255,.12);background:rgba(10,22,40,.8);cursor:default"></svg>
+      <div id="leaflet-map"></div>
       <div id="map-sqn-list" style="flex:1 1 260px;min-width:220px;background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1.1rem;min-height:300px">
         <p style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.06em;color:rgba(255,255,255,.5)">Click any station marker to see its squadrons and wartime history.</p>
       </div>
@@ -2870,207 +2882,69 @@ const JITTER = {
   'turnhouse':  { dx:  8, dy:  4, lx: 10, ly:  4, la:'start' },
 };
 
-let mapRendered = false;
+
+let mapRendered=false;
+let leafletMap=null;
+let leafletMarkers={};
+let leafletZones={};
+let selectedStationId=null;
+
+function xyToLatLng(st){
+  const lon = -7 + ((st.x - 25) / 470) * 9.5;
+  const lat = 59 - ((st.y - 20) / 660) * 9.5;
+  return [lat, lon];
+}
+function mapGroupLabel(group){
+  return group==='11'?'11 Group':group==='10'?'10 Group':group==='12'?'12 Group':group==='13'?'13 Group':'All Groups';
+}
 function renderMap(){
-  if(mapRendered) return;
-  mapRendered = true;
-  const svg = document.getElementById('map-svg');
-  const ns = 'http://www.w3.org/2000/svg';
+  const mapEl=document.getElementById('leaflet-map');
+  if(!mapEl) return;
+  if(mapRendered){ setTimeout(()=>leafletMap && leafletMap.invalidateSize(), 80); return; }
+  if(typeof L==='undefined'){
+    mapEl.innerHTML = `<div style="padding:2rem;color:rgba(255,255,255,.65);font-family:'Oswald',sans-serif;letter-spacing:.08em;text-transform:uppercase">Map library loading…</div>`;
+    setTimeout(renderMap,250); return;
+  }
+  mapRendered=true;
+  leafletMap = L.map('leaflet-map', {
+    zoomControl:true,
+    attributionControl:true,
+    scrollWheelZoom:false,
+    maxBounds:[[49.2,-8.8],[58.8,4.0]],
+    maxBoundsViscosity:.65
+  }).setView([53.0,-1.6],5);
 
-  // ── Accurate England, Wales & Scotland coastline ──
-  // Coordinates calculated from real lat/lon using the STATIONS projection
-  // proj: lon -7→2.5 = x 25→495; lat 59→49.5 = y 20→680
-  const landPath = [
-    'M88,640',    // Land's End
-    'L114,648',   // Lizard Point
-    'L191,630',   // Start Point
-    'L250,610',   // Portland Bill
-    'L270,606',   // St Alban's Head
-    'L278,595',   // Bournemouth
-    'L332,595',   // Selsey Bill
-    'L384,594',   // Beachy Head
-    'L420,582',   // Dungeness
-    'L439,566',   // S Foreland
-    'L443,549',   // North Foreland
-    'L416,545',   // Thames mouth S
-    'L418,533',   // Thames mouth N
-    'L417,522',   // Mersea
-    'L449,500',   // Orford Ness
-    'L458,473',   // Lowestoft
-    'L436,442',   // Cromer
-    'L381,439',   // The Wash W
-    'L389,431',   // Wash NW
-    'L388,427',   // Skegness
-    'L377,397',   // Spurn Head
-    'L375,359',   // Flamborough Head
-    'L401,333',   // Whitby
-    'L303,304',   // Sunderland
-    'L301,297',   // Tynemouth
-    'L286,256',   // Bamburgh
-    'L273,244',   // Berwick
-    'L265,235',   // St Abb's Head
-    'L241,223',   // Bass Rock area
-    'L243,217',   // Fife Ness
-    'L244,190',   // Arbroath
-    'L269,149',   // Aberdeen
-    'L272,111',   // Fraserburgh
-    'L221,45',    // Duncansby Head
-    'L205,43',    // Dunnet Head
-    'L124,46',    // Cape Wrath
-    'L64,178',    // Ardnamurchan
-    'L86,276',    // Mull of Kintyre
-    'L125,323',   // Galloway
-    'L212,360',   // Barrow
-    'L220,380',   // Blackpool
-    'L214,408',   // Liverpool
-    'L142,415',   // Holyhead (Wales)
-    'L134,454',   // Bardsey
-    'L119,529',   // Pembroke
-    'L164,536',   // Gower
-    'L214,543',   // Cardiff
-    'L224,538',   // Bristol Channel N
-    'L147,574',   // Hartland Point
-    'L147,588',   // Bude
-    'L122,607',   // Trevose Head
-    'L88,640',    // back to Land's End
-    'Z'
-  ].join(' ');
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution:'&copy; OpenStreetMap &copy; CARTO',
+    subdomains:'abcd', maxZoom:10, minZoom:4
+  }).addTo(leafletMap);
 
-  // Sea background
-  const seaRect = document.createElementNS(ns,'rect');
-  seaRect.setAttribute('x','0'); seaRect.setAttribute('y','0');
-  seaRect.setAttribute('width','520'); seaRect.setAttribute('height','700');
-  seaRect.setAttribute('fill','#0d1e35');
-  svg.insertBefore(seaRect, svg.firstChild);
-
-  // Subtle latitude grid lines
-  [[50.5,612],[51.5,542],[52.5,473],[53.5,403],[54.5,333],[55.5,263],[56.5,194],[57.5,124]].forEach(([lat,y])=>{
-    const line = document.createElementNS(ns,'line');
-    line.setAttribute('x1','25'); line.setAttribute('y1',y);
-    line.setAttribute('x2','495'); line.setAttribute('y2',y);
-    line.setAttribute('stroke','rgba(74,143,206,0.07)'); line.setAttribute('stroke-width','0.5');
-    svg.insertBefore(line, svg.firstChild);
-    const lbl = document.createElementNS(ns,'text');
-    lbl.setAttribute('x','28'); lbl.setAttribute('y',y-2);
-    lbl.setAttribute('fill','rgba(74,143,206,0.25)'); lbl.setAttribute('font-size','7');
-    lbl.setAttribute('font-family','monospace'); lbl.textContent = lat+'°N';
-    svg.appendChild(lbl);
+  const zones = {
+    '10': [[50.0,-6.2],[50.5,-5.4],[51.0,-4.4],[51.4,-3.2],[51.7,-2.0],[51.7,-1.0],[50.8,-1.2],[50.0,-2.2],[49.9,-4.2]],
+    '11': [[50.3,-1.8],[50.6,-0.8],[51.0,-0.2],[51.6,0.5],[52.1,1.6],[52.0,1.9],[51.3,1.8],[50.6,1.4],[50.2,0.4],[50.1,-0.6]],
+    '12': [[51.6,-3.0],[52.1,-2.2],[52.8,-1.6],[53.5,-0.4],[53.7,1.2],[53.3,1.8],[52.4,1.8],[51.8,1.4],[51.6,0.0]],
+    '13': [[54.2,-4.2],[55.0,-4.0],[55.9,-3.2],[56.8,-2.0],[57.4,-0.8],[57.0,0.6],[56.0,0.2],[55.0,-0.6],[54.2,-1.8]]
+  };
+  leafletZones={};
+  Object.entries(zones).forEach(([key,coords])=>{
+    leafletZones[key]=L.polygon(coords,{color:GROUP_COLOURS[key],weight:1,opacity:.34,fillColor:GROUP_COLOURS[key],fillOpacity:.08,interactive:false}).addTo(leafletMap);
   });
 
-  // Ireland (partial — west coast visible in viewport)
-  const irelandPath = [
-    'M25,320','L30,310','L35,295','L42,278','L50,262',
-    'L55,248','L60,238','L65,232','L72,228','L75,235',
-    'L70,248','L65,262','L60,280','L58,300','L55,320',
-    'L52,340','L48,360','L44,380','L40,400','L35,420',
-    'L30,435','L25,445','Z'
-  ].join(' ');
-  const ireland = document.createElementNS(ns,'path');
-  ireland.setAttribute('d', irelandPath);
-  ireland.setAttribute('fill','#0f2235');
-  ireland.setAttribute('stroke','rgba(184,144,42,0.15)');
-  ireland.setAttribute('stroke-width','0.8');
-  svg.insertBefore(ireland, svg.firstChild);
-
-  // Land fill
-  const land = document.createElementNS(ns,'path');
-  land.setAttribute('d', landPath);
-  land.setAttribute('fill','#152840');
-  land.setAttribute('stroke','rgba(184,144,42,0.45)');
-  land.setAttribute('stroke-width','1.4');
-  svg.insertBefore(land, svg.firstChild);
-  svg.insertBefore(seaRect, land);
-
-  // Channel label
-  const channelTxt = document.createElementNS(ns,'text');
-  channelTxt.setAttribute('x','330'); channelTxt.setAttribute('y','682');
-  channelTxt.setAttribute('text-anchor','middle');
-  channelTxt.setAttribute('fill','rgba(74,143,206,0.45)');
-  channelTxt.setAttribute('font-size','9');
-  channelTxt.setAttribute('font-family','Oswald,sans-serif');
-  channelTxt.setAttribute('letter-spacing','3');
-  channelTxt.textContent = 'ENGLISH CHANNEL';
-  svg.appendChild(channelTxt);
-
-  // North Sea label
-  const northSeaTxt = document.createElementNS(ns,'text');
-  northSeaTxt.setAttribute('x','475'); northSeaTxt.setAttribute('y','480');
-  northSeaTxt.setAttribute('text-anchor','middle');
-  northSeaTxt.setAttribute('fill','rgba(74,143,206,0.3)');
-  northSeaTxt.setAttribute('font-size','8');
-  northSeaTxt.setAttribute('font-family','Oswald,sans-serif');
-  northSeaTxt.setAttribute('letter-spacing','2');
-  northSeaTxt.setAttribute('transform','rotate(90 475 480)');
-  northSeaTxt.textContent = 'NORTH SEA';
-  svg.appendChild(northSeaTxt);
-
-  // ── Station markers ──
-  STATIONS.forEach(st => {
-    const g = document.createElementNS(ns,'g');
-    g.setAttribute('class','station-g');
-    g.setAttribute('data-group', st.group);
-    g.style.cursor = 'pointer';
-    g.onclick = () => showMapStation(st);
-
-    const isSector = st.type === 'sector';
-    const r = isSector ? 7 : 5;
-    const col = GROUP_COLOURS[st.group] || '#888';
-    const j = JITTER[st.id] || { dx:0, dy:0, lx:0, ly:0, la:'start' };
-    const cx = st.x + j.dx;
-    const cy = st.y + j.dy;
-
-    // Connector line from jittered dot back to true position (if jittered)
-    if(j.dx !== 0 || j.dy !== 0){
-      const conn = document.createElementNS(ns,'line');
-      conn.setAttribute('x1', st.x); conn.setAttribute('y1', st.y);
-      conn.setAttribute('x2', cx);   conn.setAttribute('y2', cy);
-      conn.setAttribute('stroke', col); conn.setAttribute('stroke-width','0.6');
-      conn.setAttribute('stroke-dasharray','2 2'); conn.setAttribute('opacity','0.4');
-      g.appendChild(conn);
-    }
-
-    // Pulse ring for sector stations
-    if(isSector){
-      const ring = document.createElementNS(ns,'circle');
-      ring.setAttribute('cx', cx); ring.setAttribute('cy', cy);
-      ring.setAttribute('r', r + 4);
-      ring.setAttribute('fill','none');
-      ring.setAttribute('stroke', col);
-      ring.setAttribute('stroke-width','1');
-      ring.setAttribute('opacity','0.3');
-      g.appendChild(ring);
-    }
-
-    const circle = document.createElementNS(ns,'circle');
-    circle.setAttribute('cx', cx); circle.setAttribute('cy', cy);
-    circle.setAttribute('r', r);
-    circle.setAttribute('fill', col);
-    circle.setAttribute('stroke','rgba(232,223,192,0.9)');
-    circle.setAttribute('stroke-width', isSector ? '1.8' : '1.2');
-    circle.setAttribute('opacity', st.type === 'forward' ? '0.75' : '1');
-    g.appendChild(circle);
-
-    // Label position — use jitter offsets if defined, else auto-side
-    const labelX = cx + (j.lx || (cx > 420 ? -(r+5) : r+5));
-    const labelY = cy + (j.ly !== undefined ? j.ly : 4);
-    const labelAnchor = j.la || (cx > 420 ? 'end' : 'start');
-
-    const text = document.createElementNS(ns,'text');
-    text.setAttribute('x', labelX); text.setAttribute('y', labelY);
-    text.setAttribute('text-anchor', labelAnchor);
-    text.setAttribute('font-family','Oswald,sans-serif');
-    text.setAttribute('font-size', isSector ? '10' : '9');
-    text.setAttribute('fill', isSector ? 'rgba(232,223,192,0.85)' : 'rgba(232,223,192,0.55)');
-    text.setAttribute('letter-spacing','0.5');
-    text.textContent = st.name;
-    g.appendChild(text);
-
-    // Hover effect
-    g.addEventListener('mouseenter', () => { circle.setAttribute('r', r + 2); text.setAttribute('fill','rgba(232,223,192,1)'); });
-    g.addEventListener('mouseleave', () => { circle.setAttribute('r', r); text.setAttribute('fill', isSector ? 'rgba(232,223,192,0.85)' : 'rgba(232,223,192,0.55)'); });
-
-    svg.appendChild(g);
+  leafletMarkers={};
+  STATIONS.forEach(st=>{
+    const [lat,lng] = xyToLatLng(st);
+    st._lat = lat; st._lng = lng;
+    const col = GROUP_COLOURS[st.group] || '#999';
+    const icon=L.divIcon({className:'',html:`<div class="raf-leaflet-marker" data-id="${st.id}" style="background:${col}"></div>`,iconSize:[18,18],iconAnchor:[9,9]});
+    const marker=L.marker([lat,lng],{icon}).addTo(leafletMap);
+    marker._rafStation = st;
+    marker.on('click',()=>showMapStation(st));
+    marker.bindTooltip(`<span class="raf-leaflet-label">${st.name}</span>`,{permanent:false,direction:'top',offset:[0,-10],opacity:.96,className:''});
+    leafletMarkers[st.id]=marker;
   });
+  leafletMap.fitBounds([[49.5,-7.5],[57.9,2.5]], {padding:[16,16]});
+  setTimeout(()=>leafletMap.invalidateSize(),100);
+  showMapIntro();
 }
 
 function rafMapTypeLabel(st){
@@ -3116,14 +2990,32 @@ function rafOpenMapUnit(num){
     if(card) card.scrollIntoView({behavior:'smooth', block:'center'});
   }, 40);
 }
-function showMapStation(st){
+function showMapIntro(){
+  const box=document.getElementById('map-sqn-list');
+  if(!box) return;
+  const stationCount = STATIONS.length;
+  const linkedUnits = [...new Set(STATIONS.flatMap(st => (st.sqns||[]).map(n => String(n).replace(' fwd',''))).filter(n => SQ.find(s => s.num === n)))];
+  const byGroup = ['11','10','12','13'].map(g => `${mapGroupLabel(g)}: ${STATIONS.filter(s=>s.group===g).length}`).join(' · ');
+  box.innerHTML = `
+    <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">Battle of Britain airfield map</div>
+    <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem">Clickable stations → linked squadron cards</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Hover a marker to reveal the base name, or click it to open the station summary and linked squadron cards. The linked squadron card contains the pilot list, markings, decals and kit notes.</p>
+    <div style="margin-top:.75rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)">${stationCount} station markers · ${linkedUnits.length} linked squadron cards</div>
+    <div style="margin-top:.45rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38)">${byGroup}</div>`;
+}
+function showMapStation(stOrId){
+  const st = typeof stOrId === 'string' ? STATIONS.find(s => s.id === stOrId) : stOrId;
+  if(!st) return;
   const groupCol = GROUP_COLOURS[st.group] || '#666';
   const typeLabel = rafMapTypeLabel(st);
   const box = document.getElementById('map-sqn-list');
   if(!box) return;
-  document.querySelectorAll('#map-svg .station-g').forEach(g => g.classList.remove('selected'));
-  const selected = document.querySelector(`#map-svg .station-g[data-id="${st.id}"]`);
-  if(selected) selected.classList.add('selected');
+  selectedStationId = st.id;
+  Object.entries(leafletMarkers || {}).forEach(([mid,m]) => {
+    const el = m.getElement && m.getElement();
+    if(el){ const dot = el.querySelector('.raf-leaflet-marker'); if(dot) dot.classList.toggle('selected', mid === st.id); }
+  });
+  if(leafletMap && leafletMarkers[st.id]) leafletMap.panTo([st._lat, st._lng], {animate:true, duration:.45});
 
   const unitCards = (st.sqns || []).map(n => {
     const clean = String(n).replace(' fwd','');
@@ -3155,171 +3047,41 @@ function showMapStation(st){
     ${unitCards || '<div class="map-sqn-chip" style="color:var(--brass2)">No squadron data</div>'}
   `;
 }
-
-function filterMapGroup(group, btn) {
-  document.querySelectorAll('.map-filter-btn').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  document.querySelectorAll('#map-svg .station-g').forEach(g => {
-    g.style.display = (group === 'all' || g.getAttribute('data-group') === group) ? '' : 'none';
+function filterMapGroup(group,btn){
+  renderMap();
+  document.querySelectorAll('.map-filter-btn').forEach(b=>b.classList.remove('on'));
+  if(btn) btn.classList.add('on');
+  Object.entries(leafletZones || {}).forEach(([key,z]) => {
+    if(!z) return;
+    z.setStyle({fillOpacity:(group==='all'||key===group)?.12:.025, opacity:(group==='all'||key===group)?.42:.16});
   });
+  Object.entries(leafletMarkers || {}).forEach(([id,marker]) => {
+    const st = marker._rafStation;
+    const show = group==='all' || st.group===group;
+    if(show){ if(leafletMap && !leafletMap.hasLayer(marker)) marker.addTo(leafletMap); }
+    else { if(leafletMap && leafletMap.hasLayer(marker)) leafletMap.removeLayer(marker); }
+    const el = marker.getElement && marker.getElement();
+    if(el){ const dot = el.querySelector('.raf-leaflet-marker'); if(dot) dot.classList.remove('selected'); }
+  });
+  selectedStationId=null;
+  const shown = STATIONS.filter(st => group==='all' || st.group===group);
+  if(leafletMap && shown.length){
+    const bounds=L.latLngBounds(shown.map(st => [st._lat, st._lng]));
+    leafletMap.fitBounds(bounds.pad(.35), {padding:[20,20], maxZoom: group==='all' ? 6 : 7});
+  }
+  const box=document.getElementById('map-sqn-list');
+  if(box){
+    box.innerHTML = `
+      <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">${group==='all' ? 'All Battle of Britain stations' : mapGroupLabel(group)}</div>
+      <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem">${shown.length} marker${shown.length===1?'':'s'} shown</div>
+      <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Click a visible marker or choose a station below. Linked squadrons open the matching squadron card with pilots and markings.</p>
+      <div style="max-height:230px;overflow:auto;padding-right:.2rem;margin-top:.7rem">
+        ${shown.map(st => `<div class="map-sqn-chip" onclick="showMapStation('${st.id}')" style="margin-top:.45rem;cursor:pointer"><b>${st.name}</b><div style="font-size:11px;color:rgba(255,255,255,.65)">${(st.sqns||[]).join(' · ')} · ${rafMapTypeLabel(st)}</div></div>`).join('')}
+      </div>`;
+  }
 }
 
-// ═══════════════════════════════════════════════════════
-// WEATHERING — rich visual version
-// ═══════════════════════════════════════════════════════
-function renderWeathering() {
-  const grid = document.getElementById('weather-grid');
-  grid.innerHTML = WEATHER.map(w => `
-    <div class="weather-card">
-      <div class="weather-hd">
-        <div class="weather-base">${w.base}</div>
-        <div class="weather-group">${w.group} Group · ${w.sqns.join(', ')}</div>
-      </div>
-      <div class="weather-body">
-        ${w.rows.map(r => `<div class="weather-row"><span class="wr-label">${r.l}</span><span>${r.v}</span></div>`).join('')}
-        ${w.mudColour?`<div style="margin-top:.75rem;display:flex;align-items:center;gap:8px">
-          <div style="width:40px;height:40px;border-radius:1px;background:${w.mudColour};border:1px solid rgba(0,0,0,.2);flex-shrink:0"></div>
-          <div style="font-family:'Courier Prime',monospace;font-size:11px;color:rgba(255,255,255,.4)">
-            <div style="font-family:'Oswald',sans-serif;font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)">Mud / dust tone</div>
-            <div>${w.mudNote}</div>
-            <div style="margin-top:2px">Mix: ${w.mudMix}</div>
-          </div>
-        </div>`:''}
-      </div>
-    </div>
-  `).join('');
 
-  // Add technique steps section
-  document.getElementById('weathering-techniques').innerHTML = `
-    <div class="sec-label">Step-by-Step Technique Guide</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px">
-      ${TECHNIQUES.map((t,i) => `
-        <div style="background:var(--canvas2);border:1px solid rgba(255,255,255,.1);border-radius:1px;padding:.9rem;border-left:3px solid ${t.colour}">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:.4rem">
-            <div style="width:24px;height:24px;border-radius:50%;background:${t.colour};display:flex;align-items:center;justify-content:center;font-family:'Special Elite',cursive;font-size:12px;color:#e8dfc0;flex-shrink:0">${i+1}</div>
-            <div style="font-family:'Special Elite',cursive;font-size:13px;color:rgba(255,255,255,.85)">${t.name}</div>
-          </div>
-          <div style="font-family:'Courier Prime',monospace;font-size:12px;color:var(--ink2);line-height:1.6;margin-bottom:.5rem">${t.desc}</div>
-          ${t.products?`<div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--gold2);margin-bottom:.5rem">${t.products}</div>`:''}
-          ${t.links&&t.links.length?`<div style="display:flex;flex-direction:column;gap:3px">${t.links.map(l=>`
-            <a href="${l.url}" target="_blank" style="display:flex;align-items:center;gap:6px;font-family:'Courier Prime',monospace;font-size:13px;color:var(--raf);text-decoration:none;padding:3px 6px;background:rgba(26,46,74,.06);border-radius:1px;border-left:2px solid var(--raf)" onmouseover="this.style.background='rgba(26,46,74,.12)'" onmouseout="this.style.background='rgba(26,46,74,.06)'">
-              <span style="font-size:11px">▶</span>
-              <span>${l.label}</span>
-            </a>
-          `).join('')}</div>`:''}
-        </div>
-      `).join('')}
-    </div>
-    <div style="margin-top:1.2rem;background:var(--raf3);color:#e8dfc0;padding:1rem 1.2rem;border-radius:1px">
-      <div style="font-family:'Special Elite',cursive;font-size:15px;margin-bottom:.5rem">Quick Reference — Hurricane Mk I Universal Notes</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;font-family:'Courier Prime',monospace;font-size:11px;line-height:1.7;opacity:.9">
-        <div>
-          · Exhaust stain: port upper cowling, 8–12" rearward<br>
-          · Gun port blast scoring on all 8 × .303 ports<br>
-          · Prop tips: yellow last 48 inches, crisp edge<br>
-          · Antenna wire: mast to tail fin, slightly slack<br>
-          · Tyre marks: grey-black on undercarriage doors
-        </div>
-        <div>
-          · Leading edges: bare metal wear (silver pencil)<br>
-          · Cockpit sill: significant chipping<br>
-          · Serial: black, small, rear fuselage port side<br>
-          · Roundels: clean — groundcrews maintained these<br>
-          · Code letters: often retouched, may vary in tone
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-// ═══════════════════════════════════════════════════════
-// KEYBOARD + INIT
-// ═══════════════════════════════════════════════════════
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'){closeLB();closePM();}
-});
-
-// ═══════════════════════════════════════════════════════
-// AFTERMARKET DATA
-// ═══════════════════════════════════════════════════════
-const AFTERMARKET = {
-  "Resin Cockpits & Interiors":[
-    {type:"Resin",name:"Hurricane Mk.I Cockpit Set (1:48 Airfix)",maker:"CMK",scales:["1:48"],
-     desc:"Full resin cockpit with seat, IP, sidewalls and control column. Visible even through a closed canopy.",
-     url:"https://www.hannants.co.uk/product/CMK4352"},
-    {type:"Resin",name:"Hurricane Mk.I Seat with Sutton Harness (1:48)",maker:"Quickboost/Eduard",scales:["1:48"],
-     desc:"Accurate Sutton Q-type harness seat — single most impactful upgrade. Drop-fit for Airfix, Eduard and Tamiya.",
-     url:"https://www.hannants.co.uk/search/?keyword_search=Hurricane+seat+1%2F48"},
-    {type:"Resin",name:"Hurricane Mk.I Seat with Sutton Harness (1:72)",maker:"Quickboost/Eduard",scales:["1:72"],
-     desc:"1:72 Sutton harness seat. Essential for any serious 1:72 build — kit seats are very basic.",
-     url:"https://www.hannants.co.uk/search/?keyword_search=Hurricane+seat+1%2F72"},
-  ],
-  "Exhausts & Engine":[
-    {type:"Resin",name:"Hurricane Mk.I Exhausts — Triple Ejector (1:48 Airfix)",maker:"CMK",scales:["1:48"],
-     desc:"Correct triple ejector exhaust stacks for Merlin III. Kit exhausts are far too simplified — this is the fix.",
-     url:"https://www.hannants.co.uk/product/CMK4356"},
-    {type:"Resin",name:"Hurricane Mk.I Early Exhaust QB48510 (1:48)",maker:"Quickboost/Eduard",scales:["1:48"],
-     desc:"Early ejector exhaust for Airfix 1:48. Drop-fit, immediate improvement.",
-     url:"https://www.hannants.co.uk/product/QB48510"},
-    {type:"Resin",name:"Hurricane Mk.IIc Fishtail Exhaust QB72310 (1:72)",maker:"Quickboost/Eduard",scales:["1:72"],
-     desc:"Fishtail exhausts for 1:72 Airfix. Note: fishtail = Mk.II; for BoB Mk.I use ejector type.",
-     url:"https://www.hannants.co.uk/product/QB72310"},
-    {type:"Resin",name:"Hurricane Mk.I Wheels — Four Spoke (1:32 Revell)",maker:"CMK",scales:["1:32"],
-     desc:"Four-spoke hub wheels with weighted tyres for Revell 1:32.",
-     url:"https://www.hannants.co.uk/product/CMK4366"},
-    {type:"Resin",name:"Eduard Brassin Wheels (1:48) — 648229",maker:"Eduard Brassin",scales:["1:48"],
-     desc:"Resin wheels massively improve realism vs kit plastic. Weighted, flat-spotted. Huge visual gain.",
-     url:"https://www.hannants.co.uk/product/ED648229"},
-    {type:"Resin",name:"Eduard Brassin Exhaust Stacks (1:48) — 648230",maker:"Eduard Brassin",scales:["1:48"],
-     desc:"Cleaner hollowed exhaust ends — big visual gain over kit stacks.",
-     url:"https://www.hannants.co.uk/product/ED648230"},
-  ],
-  "Photo-Etch":[
-    {type:"Photo-etch",name:"Hurricane Mk.I SPACE 3D Interior (1:48)",maker:"Eduard",scales:["1:48"],
-     desc:"Pre-painted 3D photo-etch cockpit interior. Single biggest visual improvement for an Eduard build.",
-     url:"https://www.hannants.co.uk/product/ED49726"},
-    {type:"Photo-etch",name:"Hurricane Mk.I PE Exterior (1:48)",maker:"Eduard",scales:["1:48"],
-     desc:"Exterior detail set — flap actuators, gun bay doors, antenna details.",
-     url:"https://www.hannants.co.uk/search/?keyword_search=hurricane+exterior&manufacturer_id=362&product_type_id=2722&scale_id=955"},
-    {type:"Photo-etch",name:"Big Ed Bundle — PE + Masks (1:48)",maker:"Eduard",scales:["1:48"],
-     desc:"Everything in one go: interior PE, exterior PE and canopy masks. Best value complete upgrade.",
-     url:"https://www.hannants.co.uk/search/?keyword_search=hurricane+big+ed&manufacturer_id=3213&product_type_id=2722&scale_id=955"},
-    {type:"Photo-etch",name:"RAF WWII Sutton Harness (fabric/card)",maker:"Airscale",scales:["1:24","1:32","1:48"],
-     desc:"Laser-cut actual fabric and card Sutton Q harness. Most realistic representation in any scale.",
-     url:"https://www.hannants.co.uk/product/HGW148605"},
-    {type:"Photo-etch",name:"Hurricane Instrument Panel Decal",maker:"Airscale",scales:["1:24","1:48"],
-     desc:"One-piece IP decal with optically clear glass. Readable instrument detail at scale.",
-     url:"https://www.hannants.co.uk/search/?keyword_search=airscale+hurricane"},
-  ],
-  "Masks & Canopies":[
-    {type:"Mask",name:"Hurricane Mk.I Canopy & Wheel Masks EX712 (1:48)",maker:"Eduard",scales:["1:48"],
-     desc:"Pre-cut Kabuki tape masks for all canopy panes and wheel hubs. Essential for razor-sharp lines.",
-     url:"https://www.hannants.co.uk/product/EDEX712"},
-    {type:"Mask",name:"Hurricane Mk.I Canopy Masks (1:72)",maker:"Eduard",scales:["1:72"],
-     desc:"1:72 canopy masks. The Hurricane's many panes make hand-masking very difficult — saves hours.",
-     url:"https://www.hannants.co.uk/search/?keyword_search=hurricane+mask&manufacturer_id=362&scale_id=956&product_type_id=2724"},
-  ],
-  "Conversion Sets":[
-    {type:"Conversion",name:"Hurricane Mk.I Fabric Wing (1:48)",maker:"Barracuda Studios",scales:["1:48"],
-     desc:"Resin fabric-wing upper and lower surfaces. Authentic woven texture — all BoB Hurricanes had fabric wings.",
-     url:"https://barracudacals.com/search?q=Hurricane"},
-    {type:"Conversion",name:"Hurricane Mk.IIc Cannon Wing (1:48)",maker:"CMK",scales:["1:48"],
-     desc:"Four 20mm Hispano cannon wing for Mk.IIc builds. Post-BoB variant.",
-     url:"https://www.hannants.co.uk/search/?keyword_search=cmk+hurricane+cannon+wing&product_type_id=1812"},
-  ],
-  "Gun Barrels & Armament":[
-    {type:"Metal",name:"Browning .303 Gun Barrels (1:48)",maker:"Master Model",scales:["1:48"],
-     desc:"Turned metal Browning .303 barrels — transforms the wing armament. Huge upgrade over plastic stubs. AM-48 range.",
-     url:"https://www.hannants.co.uk/product/AM-48-172"},
-  ],
-  "Decals":[
-    {type:"Decals",name:"Hurricane BoB Xtradecal Sheets (1:48 & 1:72)",maker:"Xtradecal / Hannants",scales:["1:48","1:72"],
-     desc:"Far more accurate markings than kit decals with better print quality. Multiple sheets covering all major BoB squadrons.",
-     url:"https://www.hannants.co.uk/search/?keyword_search=Hurricane+Xtradecal"},
-  ]
-};
-
-// ═══════════════════════════════════════════════════════
 // SURVIVORS DATA
 // ═══════════════════════════════════════════════════════
 const SURVIVORS = [
