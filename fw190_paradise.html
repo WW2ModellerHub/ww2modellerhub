@@ -1280,10 +1280,12 @@ body{
 <div class="tab-panel" id="tab-stories">
   <div style="margin-bottom:1.5rem">
     <div class="section-label" style="margin-bottom:.5rem">Pilot Profiles · Experten and Modelling Subjects</div>
-    <p style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.75;max-width:780px">
-      Eight Fw 190 Experten profiles with the modeller in mind: who they were, where they flew, why their aircraft matter, what markings to look for, and how the theatre should affect paint, weathering and display choices.
+    <p style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.75;max-width:720px">
+      Long-form profiles of eight Fw 190 pilots and modelling subjects — who they were, where they flew, what aircraft and markings matter, and how theatre, camouflage and operational wear should shape the build.
     </p>
-    <div class="info-box" style="max-width:900px">Use these as starting points for historically grounded builds. Luftwaffe victory totals are claims from wartime records and should be treated as context, not celebration. The useful modelling angle is the aircraft, unit, theatre, camouflage and operational wear.</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.5);line-height:1.75;max-width:720px;margin-top:.7rem">
+      Use these as historically grounded starting points. Victory totals are wartime claims and are included as context; the modelling value is in the aircraft, unit, theatre, camouflage and operational wear.
+    </p>
   </div>
   <div id="pilot-stories-grid"></div>
 </div>
@@ -3410,21 +3412,22 @@ function renderPilotStories() {
   el.innerHTML = PILOT_STORIES.map((p, i) => {
     const acBadge = `<span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:2px 8px;border:1px solid rgba(255,255,255,.1);border-radius:2px">${p.aircraft || 'Fw 190 A-8'}</span>`;
     const awardBadges = (p.awards||[]).map(a=>`<span style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2);padding:2px 7px;border:1px solid rgba(201,168,76,.25);background:rgba(201,168,76,.06);border-radius:2px">${a}</span>`).join('');
-    const field = (label, value, tone='') => value ? `<div style="background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.075);border-left:3px solid ${tone||'var(--brass)'};padding:.75rem .85rem;border-radius:2px"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:${tone||'var(--brass2)'};margin-bottom:.25rem">${label}</div><div style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.65">${value}</div></div>` : '';
-    return `<article style="background:rgba(20,17,7,.72);border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--brass);border-radius:3px;padding:1.35rem;margin-bottom:1.5rem;box-shadow:0 8px 24px rgba(0,0,0,.18)">
+    const field = (label, value, tone='') => value ? `<div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.075);border-left:3px solid ${tone||'var(--brass)'};padding:.75rem .85rem;border-radius:2px"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:${tone||'var(--brass2)'};margin-bottom:.25rem">${label}</div><div style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.65">${value}</div></div>` : '';
+    const unitLine = [p.unit, p.kills ? (p.kills + ' victories') : ''].filter(Boolean).join(' &nbsp;·&nbsp; ');
+    return `<article style="background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--brass);border-radius:3px;padding:1.4rem;margin-bottom:1.5rem">
       <div style="display:flex;gap:1.2rem;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap">
-        <div id="story-photo-${i}" style="width:82px;height:104px;flex-shrink:0;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(0,0,0,.25));border:1px solid rgba(255,255,255,.12);border-radius:2px;display:flex;align-items:center;justify-content:center;overflow:hidden">
-          <div style="font-size:2rem;opacity:.25">✈</div>
+        <div id="story-photo-${i}" style="width:80px;height:100px;flex-shrink:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:2px;display:flex;align-items:center;justify-content:center;overflow:hidden">
+          <div style="font-size:2rem;opacity:.2">✈</div>
         </div>
         <div style="flex:1;min-width:220px">
-          <div style="font-family:'Special Elite',cursive;font-size:1.45rem;color:#fff;margin-bottom:.3rem">${p.name}</div>
-          <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:.45rem">${p.unit||''}</div>
-          <div style="font-size:14px;color:rgba(255,255,255,.62);line-height:1.55;margin-bottom:.6rem">${p.intro||''}</div>
+          <div style="font-family:'Special Elite',cursive;font-size:1.4rem;color:#fff;margin-bottom:.3rem">${p.name}</div>
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">${unitLine}</div>
+          ${p.intro ? `<div style="font-size:14px;color:rgba(255,255,255,.62);line-height:1.55;margin-bottom:.6rem">${p.intro}</div>` : ''}
           <div style="display:flex;gap:.5rem;flex-wrap:wrap">${acBadge}${awardBadges}</div>
         </div>
       </div>
 
-      <div style="font-size:16px;color:rgba(255,255,255,.84);line-height:1.85;font-family:'Source Serif 4',Georgia,serif;border-top:1px solid rgba(255,255,255,.07);padding-top:1rem">${p.story}</div>
+      <div style="font-size:16px;color:rgba(255,255,255,.82);line-height:1.85;font-family:'Source Serif 4',Georgia,serif;border-top:1px solid rgba(255,255,255,.07);padding-top:1rem">${p.story}</div>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin-top:1rem">
         ${field('Why this subject matters', p.why, 'var(--brass2)')}
@@ -3432,7 +3435,7 @@ function renderPilotStories() {
         ${field('Markings to check', p.mark, 'var(--khaki)')}
         ${field('Paint and weathering cues', p.paint, 'var(--olive)')}
       </div>
-      ${p.build ? `<div style="margin-top:.85rem;padding:.65rem .9rem;background:rgba(201,168,76,.07);border-left:3px solid var(--brass);border-radius:1px;font-size:13px;color:rgba(255,255,255,.72);line-height:1.6"><span style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:.2rem">Build angle</span>${p.build}</div>` : ''}
+      ${p.build ? `<div style="margin-top:.85rem;padding:.7rem .9rem;background:rgba(201,168,76,.07);border-left:3px solid var(--brass);border-radius:1px;font-size:13px;color:rgba(255,255,255,.72);line-height:1.6"><span style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:.2rem">Build angle</span>${p.build}</div>` : ''}
     </article>`;
   }).join('');
 
