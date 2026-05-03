@@ -994,15 +994,25 @@ body{
     <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem">
       <span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-right:.25rem">Filter:</span>
       <button onclick="filterMapGroup('all',this)" class="map-filter-btn on" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)">All Groups</button>
-      <button onclick="filterMapGroup('11',this)" class="map-filter-btn" style="border-color:#e05555;color:#e05555">11 Group</button>
-      <button onclick="filterMapGroup('10',this)" class="map-filter-btn" style="border-color:#4caf7d;color:#4caf7d">10 Group</button>
-      <button onclick="filterMapGroup('12',this)" class="map-filter-btn" style="border-color:#5b9bd5;color:#5b9bd5">12 Group</button>
-      <button onclick="filterMapGroup('13',this)" class="map-filter-btn" style="border-color:#b07fd5;color:#b07fd5">13 Group</button>
+      <button onclick="filterMapGroup('11',this)" class="map-filter-btn" style="border-color:#e05555;color:#e07777">11 Group</button>
+      <button onclick="filterMapGroup('10',this)" class="map-filter-btn" style="border-color:#4caf7d;color:#6ccc9a">10 Group</button>
+      <button onclick="filterMapGroup('12',this)" class="map-filter-btn" style="border-color:#5b9bd5;color:#7db8ea">12 Group</button>
+      <button onclick="filterMapGroup('13',this)" class="map-filter-btn" style="border-color:#b07fd5;color:#c89de8">13 Group</button>
     </div>
     <div class="raf-map-shell">
       <div class="raf-map-board"><div id="leaflet-map"></div></div>
-      <div id="map-sqn-list" class="raf-map-side">
-        <p style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.06em;color:rgba(255,255,255,.5)">Click any station marker to see its squadrons and wartime history.</p>
+      <div class="map-sqn-list raf-map-side" id="map-sqn-list">
+        <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">Station Info</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.45)">Click a station dot on the map to see squadrons and notes.</div>
+        <div style="margin-top:1.2rem">
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.5rem">Group colours</div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:12px;color:rgba(255,255,255,.55)"><b style="color:#e07777">●</b> 11 Group — main south-east battle area</span>
+            <span style="font-size:12px;color:rgba(255,255,255,.55)"><b style="color:#6ccc9a">●</b> 10 Group — western approaches</span>
+            <span style="font-size:12px;color:rgba(255,255,255,.55)"><b style="color:#7db8ea">●</b> 12 Group — Midlands / Big Wing bases</span>
+            <span style="font-size:12px;color:rgba(255,255,255,.55)"><b style="color:#c89de8">●</b> 13 Group — northern coverage</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -2047,6 +2057,7 @@ function switchTab(id, el) {
     if (!document.querySelector('.book-card')) renderBooks();
     if (!document.querySelector('.am-card')) renderAftermarket();
     renderMap();
+    setTimeout(() => leafletMap && leafletMap.invalidateSize(), 150);
   }
   if (id === 'stories') { renderPilotStories(); }
   if (id === 'media') { renderMedia(); }
