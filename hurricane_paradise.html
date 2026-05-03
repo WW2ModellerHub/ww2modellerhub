@@ -868,6 +868,16 @@ body{
 .ac-drop-badge{flex-shrink:0 !important}
 @media(max-width:520px){.ac-drop-menu{position:fixed !important;left:12px !important;right:12px !important;top:54px !important;min-width:0 !important;width:auto !important}}
 
+
+/* ===== HARDENED HURRICANE STATIC MAP — visible before JS and Safari-safe ===== */
+.raf-map-board{position:relative;min-height:560px;background:#07121c!important}
+#leaflet-map.static-raf-map-ready{display:block!important;visibility:visible!important;width:100%!important;height:560px!important;min-height:560px!important;position:relative!important;overflow:hidden!important;background:linear-gradient(160deg,#071018,#0c1722 58%,#060b10)!important;filter:none!important;z-index:1!important}
+#hurricane-static-map.static-raf-map,.static-raf-map{display:block!important;position:relative!important;width:100%!important;height:100%!important;min-height:560px!important;overflow:hidden!important}
+.static-raf-map svg{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;opacity:.68!important;z-index:1!important}
+.static-raf-marker{appearance:none;-webkit-appearance:none;position:absolute!important;transform:translate(-50%,-50%)!important;width:24px!important;height:24px!important;border-radius:50%!important;border:2px solid rgba(255,255,255,.94)!important;box-shadow:0 0 0 5px rgba(255,255,255,.08),0 0 18px rgba(0,0,0,.85)!important;cursor:pointer!important;z-index:7!important;padding:0!important;margin:0!important}
+.static-raf-marker.selected{transform:translate(-50%,-50%) scale(1.28)!important;box-shadow:0 0 0 6px rgba(201,168,76,.24),0 0 22px rgba(201,168,76,.75)!important;z-index:8!important}
+@media(max-width:600px){#leaflet-map.static-raf-map-ready{height:520px!important;min-height:520px!important}.static-raf-map{min-height:520px!important}.static-raf-marker{width:26px!important;height:26px!important}.static-raf-marker::after{display:none!important}}
+
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409"
      crossorigin="anonymous"></script>
@@ -1060,7 +1070,24 @@ body{
       <button onclick="filterMapGroup('13',this)" class="map-filter-btn" style="border-color:#b07fd5;color:#c89de8">13 Group</button>
     </div>
     <div class="raf-map-shell">
-      <div class="raf-map-board"><div id="leaflet-map"></div></div>
+      <div class="raf-map-board"><div id="leaflet-map" class="static-raf-map-ready">
+  <div class="static-raf-map" id="hurricane-static-map">
+    <svg viewBox="0 0 1000 720" aria-hidden="true" focusable="false">
+  <defs><linearGradient id="hmSea" x1="0" x2="1"><stop offset="0" stop-color="#081a28"/><stop offset="1" stop-color="#112b3e"/></linearGradient><linearGradient id="hmLand" x1="0" x2="1"><stop offset="0" stop-color="#263b2e"/><stop offset="1" stop-color="#4d5d43"/></linearGradient></defs>
+  <rect width="1000" height="720" fill="url(#hmSea)"/>
+  <path d="M430 80 C475 100 505 140 497 183 C530 211 520 260 492 288 C522 330 510 378 548 421 C584 462 565 520 518 548 C470 576 455 628 398 641 C350 652 317 618 335 565 C302 540 297 494 320 455 C292 424 302 382 332 354 C300 310 320 265 358 239 C350 199 370 160 405 140 C392 111 404 90 430 80 Z" fill="url(#hmLand)" stroke="rgba(240,234,216,.35)" stroke-width="3"/>
+  <path d="M570 316 C630 308 690 332 724 372 C764 418 768 469 733 504 C700 538 642 528 609 490 C584 458 565 411 544 376 C525 345 538 323 570 316 Z" fill="#374b35" stroke="rgba(240,234,216,.25)" stroke-width="2" opacity=".88"/>
+  <path d="M360 500 C336 546 306 582 260 590 C222 598 195 575 206 541 C219 500 256 475 303 458 C331 448 372 465 360 500 Z" fill="#334832" stroke="rgba(240,234,216,.20)" stroke-width="2" opacity=".75"/>
+  <path d="M654 535 C700 550 745 576 781 613" stroke="rgba(201,168,76,.24)" stroke-width="2" stroke-dasharray="6 8" fill="none"/>
+  <text x="720" y="610" fill="rgba(255,255,255,.26)" font-family="Oswald, sans-serif" font-size="18" letter-spacing="3">FRANCE</text>
+  <text x="420" y="350" fill="rgba(255,255,255,.22)" font-family="Oswald, sans-serif" font-size="18" letter-spacing="3" transform="rotate(-18 420 350)">ENGLAND</text>
+  <text x="250" y="640" fill="rgba(255,255,255,.20)" font-family="Oswald, sans-serif" font-size="16" letter-spacing="3">WALES</text>
+  <text x="300" y="160" fill="rgba(255,255,255,.18)" font-family="Oswald, sans-serif" font-size="16" letter-spacing="3">SCOTLAND</text>
+</svg>
+    <button type="button" class="static-raf-marker" data-group="11" data-station-id="biggin" data-label="Biggin Hill" aria-label="Biggin Hill" title="Biggin Hill" onclick="showMapStation('biggin')" style="left:70.52%;top:83.11%;background:#e05555"></button><button type="button" class="static-raf-marker" data-group="11" data-station-id="kenley" data-label="Kenley" aria-label="Kenley" title="Kenley" onclick="showMapStation('kenley')" style="left:68.42%;top:83.53%;background:#e05555"></button><button type="button" class="static-raf-marker" data-group="11" data-station-id="tangmere" data-label="Tangmere" aria-label="Tangmere" title="Tangmere" onclick="showMapStation('tangmere')" style="left:58.16%;top:91.04%;background:#e05555"></button><button type="button" class="static-raf-marker" data-group="11" data-station-id="northolt" data-label="Northolt" aria-label="Northolt" title="Northolt" onclick="showMapStation('northolt')" style="left:63.01%;top:79.46%;background:#e05555"></button><button type="button" class="static-raf-marker" data-group="11" data-station-id="northweald" data-label="North Weald" aria-label="North Weald" title="North Weald" onclick="showMapStation('northweald')" style="left:72.55%;top:76.70%;background:#e05555"></button><button type="button" class="static-raf-marker" data-group="11" data-station-id="debden" data-label="Debden" aria-label="Debden" title="Debden" onclick="showMapStation('debden')" style="left:74.56%;top:72.27%;background:#e05555"></button><button type="button" class="static-raf-marker" data-group="11" data-station-id="hornchurch" data-label="Hornchurch" aria-label="Hornchurch" title="Hornchurch" onclick="showMapStation('hornchurch')" style="left:73.46%;top:79.68%;background:#e05555"></button><button type="button" class="static-raf-marker" data-group="11" data-station-id="croydon" data-label="Croydon" aria-label="Croydon" title="Croydon" onclick="showMapStation('croydon')" style="left:68.00%;top:82.68%;background:#e05555"></button><button type="button" class="static-raf-marker" data-group="11" data-station-id="hawkinge" data-label="Hawkinge" aria-label="Hawkinge" title="Hawkinge" onclick="showMapStation('hawkinge')" style="left:89.29%;top:86.69%;background:#e05555"></button><button type="button" class="static-raf-marker" data-group="10" data-station-id="exeter" data-label="Exeter" aria-label="Exeter" title="Exeter" onclick="showMapStation('exeter')" style="left:13.07%;top:92.88%;background:#4caf7d"></button><button type="button" class="static-raf-marker" data-group="10" data-station-id="wallop" data-label="M. Wallop" aria-label="M. Wallop" title="M. Wallop" onclick="showMapStation('wallop')" style="left:43.93%;top:86.15%;background:#4caf7d"></button><button type="button" class="static-raf-marker" data-group="10" data-station-id="warmwell" data-label="Warmwell" aria-label="Warmwell" title="Warmwell" onclick="showMapStation('warmwell')" style="left:30.89%;top:93.48%;background:#4caf7d"></button><button type="button" class="static-raf-marker" data-group="12" data-station-id="duxford" data-label="Duxford" aria-label="Duxford" title="Duxford" onclick="showMapStation('duxford')" style="left:72.11%;top:70.60%;background:#5b9bd5"></button><button type="button" class="static-raf-marker" data-group="12" data-station-id="coltishall" data-label="Coltishall" aria-label="Coltishall" title="Coltishall" onclick="showMapStation('coltishall')" style="left:92.70%;top:59.80%;background:#5b9bd5"></button><button type="button" class="static-raf-marker" data-group="12" data-station-id="churchfenton" data-label="Ch. Fenton" aria-label="Ch. Fenton" title="Ch. Fenton" onclick="showMapStation('churchfenton')" style="left:50.06%;top:42.04%;background:#5b9bd5"></button><button type="button" class="static-raf-marker" data-group="13" data-station-id="drem" data-label="Drem" aria-label="Drem" title="Drem" onclick="showMapStation('drem')" style="left:23.41%;top:6.24%;background:#b07fd5"></button><button type="button" class="static-raf-marker" data-group="13" data-station-id="usworth" data-label="Usworth" aria-label="Usworth" title="Usworth" onclick="showMapStation('usworth')" style="left:45.48%;top:24.26%;background:#b07fd5"></button><button type="button" class="static-raf-marker" data-group="13" data-station-id="turnhouse" data-label="Turnhouse" aria-label="Turnhouse" title="Turnhouse" onclick="showMapStation('turnhouse')" style="left:14.12%;top:7.44%;background:#b07fd5"></button>
+    <div class="static-raf-map-note">RAF Battle of Britain station map · tap a station dot to view linked squadrons</div>
+  </div>
+</div></div>
       <div class="map-sqn-list raf-map-side" id="map-sqn-list">
         <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">Station Info</div>
         <div style="font-size:13px;color:rgba(255,255,255,.45)">Click a station dot on the map to see squadrons and notes.</div>
@@ -3923,5 +3950,66 @@ function acceptCookies() {
   &nbsp;·&nbsp;
   <a href="privacy.html" style="color:rgba(255,255,255,.35);text-decoration:none">Privacy</a>
 </div>
+
+<script>
+(function(){
+  const STATIC_STATIONS = [('biggin', 51.330466, 0.031087, 'Biggin Hill', '11'), ('kenley', 51.304705, -0.094867, 'Kenley', '11'), ('tangmere', 50.846383, -0.71021, 'Tangmere', '11'), ('northolt', 51.553224, -0.41915, 'Northolt', '11'), ('northweald', 51.72128, 0.152801, 'North Weald', '11'), ('debden', 51.99148, 0.273527, 'Debden', '11'), ('hornchurch', 51.539506, 0.207663, 'Hornchurch', '11'), ('croydon', 51.35637, -0.120014, 'Croydon', '11'), ('hawkinge', 51.112115, 1.157423, 'Hawkinge', '11'), ('exeter', 50.734304, -3.415559, 'Exeter', '10'), ('wallop', 51.144944, -1.56394, 'M. Wallop', '10'), ('warmwell', 50.697419, -2.346841, 'Warmwell', '10'), ('duxford', 52.093134, 0.126862, 'Duxford', '12'), ('coltishall', 52.752394, 1.362255, 'Coltishall', '12'), ('churchfenton', 53.835553, -1.196121, 'Ch. Fenton', '12'), ('drem', 56.019338, -2.795641, 'Drem', '13'), ('usworth', 54.920038, -1.471086, 'Usworth', '13'), ('turnhouse', 55.946192, -3.352968, 'Turnhouse', '13')];
+  const STATIC_COLS = {'11':'#e05555','10':'#4caf7d','12':'#5b9bd5','13':'#b07fd5'};
+  const B = {latMin:50.3,latMax:56.4,lngMin:-4.2,lngMax:1.8};
+  function project(lat,lng){
+    const left=Math.max(3,Math.min(97,((lng-B.lngMin)/(B.lngMax-B.lngMin))*100));
+    const top=Math.max(3,Math.min(97,((B.latMax-lat)/(B.latMax-B.latMin))*100));
+    return [left,top];
+  }
+  function ensureStaticMap(){
+    const mapEl=document.getElementById('leaflet-map');
+    if(!mapEl) return;
+    mapEl.classList.add('static-raf-map-ready');
+    let inner=document.getElementById('hurricane-static-map');
+    if(!inner){
+      mapEl.innerHTML = `<svg viewBox="0 0 1000 720" aria-hidden="true" focusable="false">
+  <defs><linearGradient id="hmSea" x1="0" x2="1"><stop offset="0" stop-color="#081a28"/><stop offset="1" stop-color="#112b3e"/></linearGradient><linearGradient id="hmLand" x1="0" x2="1"><stop offset="0" stop-color="#263b2e"/><stop offset="1" stop-color="#4d5d43"/></linearGradient></defs>
+  <rect width="1000" height="720" fill="url(#hmSea)"/>
+  <path d="M430 80 C475 100 505 140 497 183 C530 211 520 260 492 288 C522 330 510 378 548 421 C584 462 565 520 518 548 C470 576 455 628 398 641 C350 652 317 618 335 565 C302 540 297 494 320 455 C292 424 302 382 332 354 C300 310 320 265 358 239 C350 199 370 160 405 140 C392 111 404 90 430 80 Z" fill="url(#hmLand)" stroke="rgba(240,234,216,.35)" stroke-width="3"/>
+  <path d="M570 316 C630 308 690 332 724 372 C764 418 768 469 733 504 C700 538 642 528 609 490 C584 458 565 411 544 376 C525 345 538 323 570 316 Z" fill="#374b35" stroke="rgba(240,234,216,.25)" stroke-width="2" opacity=".88"/>
+  <path d="M360 500 C336 546 306 582 260 590 C222 598 195 575 206 541 C219 500 256 475 303 458 C331 448 372 465 360 500 Z" fill="#334832" stroke="rgba(240,234,216,.20)" stroke-width="2" opacity=".75"/>
+  <path d="M654 535 C700 550 745 576 781 613" stroke="rgba(201,168,76,.24)" stroke-width="2" stroke-dasharray="6 8" fill="none"/>
+  <text x="720" y="610" fill="rgba(255,255,255,.26)" font-family="Oswald, sans-serif" font-size="18" letter-spacing="3">FRANCE</text>
+  <text x="420" y="350" fill="rgba(255,255,255,.22)" font-family="Oswald, sans-serif" font-size="18" letter-spacing="3" transform="rotate(-18 420 350)">ENGLAND</text>
+  <text x="250" y="640" fill="rgba(255,255,255,.20)" font-family="Oswald, sans-serif" font-size="16" letter-spacing="3">WALES</text>
+  <text x="300" y="160" fill="rgba(255,255,255,.18)" font-family="Oswald, sans-serif" font-size="16" letter-spacing="3">SCOTLAND</text>
+</svg>` + '<div class="static-raf-map-note">RAF Battle of Britain station map · tap a station dot to view linked squadrons</div>';
+      inner=document.createElement('div');
+      inner.id='hurricane-static-map'; inner.className='static-raf-map';
+      inner.innerHTML=mapEl.innerHTML; mapEl.innerHTML=''; mapEl.appendChild(inner);
+    }
+    STATIC_STATIONS.forEach(function(s){
+      const id=s[0], lat=s[1], lng=s[2], name=s[3], group=s[4];
+      let btn=inner.querySelector('[data-station-id="'+id+'"]');
+      if(!btn){
+        const p=project(lat,lng);
+        btn=document.createElement('button');
+        btn.type='button'; btn.className='static-raf-marker'; btn.dataset.stationId=id; btn.dataset.group=group; btn.dataset.label=name; btn.title=name; btn.setAttribute('aria-label',name);
+        btn.style.left=p[0].toFixed(2)+'%'; btn.style.top=p[1].toFixed(2)+'%'; btn.style.background=STATIC_COLS[group]||'#c9a84c';
+        btn.addEventListener('click',function(){ if(typeof window.showMapStation==='function') window.showMapStation(id); });
+        inner.appendChild(btn);
+      }
+    });
+    if(typeof window.showMapIntro==='function') window.showMapIntro();
+  }
+  window.renderMap = ensureStaticMap;
+  window.scheduleRAFMapInit = function(){ ensureStaticMap(); };
+  window.stabiliseRAFMap = function(){ ensureStaticMap(); };
+  window.fitRAFMapHome = function(){};
+  window.scheduleRAFMapHomeFit = function(){};
+  document.addEventListener('DOMContentLoaded', ensureStaticMap);
+  window.addEventListener('load', ensureStaticMap);
+  document.addEventListener('click', function(e){
+    const t=e.target;
+    if(t && (t.textContent||'').trim().toLowerCase()==='reference') setTimeout(ensureStaticMap,40);
+  });
+})();
+</script>
+
 </body>
 </html>
