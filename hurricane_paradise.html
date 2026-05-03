@@ -1011,6 +1011,15 @@ body{
 .static-raf-map-note{position:absolute!important;left:12px!important;bottom:10px!important;z-index:6!important;font-family:'Oswald',sans-serif!important;font-size:10px!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:rgba(255,255,255,.55)!important;background:rgba(0,0,0,.38)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:3px!important;padding:5px 8px!important}
 @media(max-width:600px){#leaflet-map,#hurricane-static-map{min-height:520px!important;height:520px!important}.static-raf-marker{width:26px!important;height:26px!important}.static-raf-label{display:none!important}.static-raf-map-note{font-size:9px!important;right:8px!important;left:8px!important;text-align:center!important}}
 
+
+/* Restored aircraft page tab bar */
+.plane-tab-bar{background:rgba(7,16,31,.95);border-bottom:2px solid var(--brass,#c9a84c);position:sticky;top:62px;z-index:190;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.plane-tab-bar .nav-tabs{display:flex!important;align-items:stretch!important;justify-content:flex-start!important;gap:0!important;overflow-x:auto!important;scrollbar-width:none!important;background:rgba(0,0,0,.25)!important;padding:0 1.5rem!important;min-height:44px!important;white-space:nowrap!important}
+.plane-tab-bar .nav-tabs::-webkit-scrollbar{display:none!important}
+.plane-tab-bar .nav-tab{display:inline-flex!important;align-items:center!important;justify-content:center!important;font-family:'Oswald',sans-serif!important;font-size:14px!important;font-weight:600!important;letter-spacing:.07em!important;text-transform:uppercase!important;padding:.72rem 1rem!important;border:none!important;background:transparent!important;color:rgba(255,255,255,.52)!important;cursor:pointer!important;white-space:nowrap!important;flex:0 0 auto!important;border-bottom:3px solid transparent!important;border-radius:0!important;line-height:1!important}
+.plane-tab-bar .nav-tab:hover{color:rgba(255,255,255,.9)!important;background:rgba(255,255,255,.045)!important}
+.plane-tab-bar .nav-tab.active{color:var(--brass2,#e8c76a)!important;border-bottom-color:var(--brass,#c9a84c)!important;background:rgba(201,168,76,.06)!important}
+@media(max-width:760px){.plane-tab-bar{top:56px}.plane-tab-bar .nav-tabs{padding:0 .75rem!important}.plane-tab-bar .nav-tab{font-size:12px!important;padding:.68rem .8rem!important}}
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409"
      crossorigin="anonymous"></script>
@@ -1137,6 +1146,17 @@ body{
 </nav>
 <div style="background:rgba(7,16,31,.95);border-bottom:2px solid var(--brass);position:sticky;top:58px;z-index:190;">
   
+</div>
+
+<div class="plane-tab-bar">
+  <nav class="nav-tabs" aria-label="Aircraft page sections">
+    <button class="nav-tab active" onclick="switchTab('squadrons',this)">Squadrons</button>
+    <button class="nav-tab" onclick="switchTab('build',this)">Build</button>
+    <button class="nav-tab" onclick="switchTab('reference',this)">Reference</button>
+    <button class="nav-tab" onclick="switchTab('stories',this)">Stories</button>
+    <button class="nav-tab" onclick="switchTab('media',this)">Media</button>
+    <button class="nav-tab" onclick="switchTab('walkaround',this)">Walkaround</button>
+  </nav>
 </div>
 
 <!-- AIRCRAFT HERO -->

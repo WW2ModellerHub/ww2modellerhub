@@ -1,0 +1,1 @@
+Restored the missing aircraft section tab navigation on Hurricane, Spitfire, Fw 190 and Lancaster pages. The restored tab bar includes Squadrons, Build, Reference, Stories, Media and Walkaround and is styled as a full-width horizontal aircraft page tab bar, separate from the main site navigation.
