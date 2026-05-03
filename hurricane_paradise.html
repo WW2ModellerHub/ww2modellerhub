@@ -802,6 +802,17 @@ body{
 .raf-leaflet-marker.selected{transform:scale(1.25);box-shadow:0 0 0 6px rgba(201,168,76,.22),0 0 18px rgba(201,168,76,.65)}
 .raf-leaflet-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.04em;color:#fff;text-shadow:0 2px 4px #000,0 0 5px #000;white-space:nowrap;padding:1px 4px;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.12);border-radius:2px}
 
+/* ===== MOBILE-SAFE STATIC RAF MAP FALLBACK ===== */
+#leaflet-map.static-raf-map-ready{background:radial-gradient(circle at 48% 40%,rgba(49,83,118,.22),transparent 36%),linear-gradient(160deg,#071018,#0c1722 58%,#060b10);overflow:hidden;touch-action:manipulation}
+.static-raf-map{position:relative;width:100%;height:100%;min-height:560px;overflow:hidden}
+.static-raf-map svg{position:absolute;inset:0;width:100%;height:100%;opacity:.62;filter:drop-shadow(0 12px 24px rgba(0,0,0,.45))}
+.static-raf-marker{position:absolute;transform:translate(-50%,-50%);width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,.9);box-shadow:0 0 0 5px rgba(255,255,255,.06),0 0 16px rgba(0,0,0,.75);cursor:pointer;z-index:5;background:#c9a84c}
+.static-raf-marker::after{content:attr(data-label);position:absolute;left:24px;top:50%;transform:translateY(-50%);font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.05em;color:#fff;background:rgba(0,0,0,.54);border:1px solid rgba(255,255,255,.12);border-radius:2px;padding:1px 5px;white-space:nowrap;opacity:.0;pointer-events:none;transition:opacity .15s}
+.static-raf-marker:hover::after,.static-raf-marker.selected::after{opacity:1}
+.static-raf-marker.selected{transform:translate(-50%,-50%) scale(1.28);box-shadow:0 0 0 6px rgba(201,168,76,.24),0 0 22px rgba(201,168,76,.75);z-index:8}
+.static-raf-map-note{position:absolute;left:10px;bottom:10px;right:10px;font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.44);background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.08);border-radius:3px;padding:6px 8px;z-index:3}
+@media(max-width:600px){#leaflet-map{height:520px;min-height:520px}.static-raf-map{min-height:520px}.static-raf-marker{width:24px;height:24px}.static-raf-marker::after{display:none}}
+
 
 /* ===== RAF real-map two-column layout ===== */
 .raf-map-shell{display:grid;grid-template-columns:minmax(360px,1.45fr) minmax(280px,.9fr);gap:.85rem;align-items:start}
@@ -2147,6 +2158,7 @@ function switchTab(id, el) {
     requestAnimationFrame(function(){ requestAnimationFrame(scheduleRAFMapInit); });
     setTimeout(scheduleRAFMapInit, 250);
     setTimeout(scheduleRAFMapInit, 750);
+    setTimeout(scheduleRAFMapInit, 1400);
   }
   if (id === 'stories') { renderPilotStories(); }
   if (id === 'media') { renderMedia(); }
@@ -3708,6 +3720,113 @@ function renderMedia() {
   });
 }
 
+
+
+
+/* ===== STATIC RAF MAP OVERRIDE — reliable on mobile Safari and when external map tiles fail ===== */
+let rafStaticMapGroup = 'all';
+const RAF_STATIC_BOUNDS = {latMin:49.45, latMax:58.35, lngMin:-7.75, lngMax:2.45};
+function rafStaticProject(lat,lng){
+  const b = RAF_STATIC_BOUNDS;
+  const left = Math.max(2, Math.min(98, ((lng - b.lngMin) / (b.lngMax - b.lngMin)) * 100));
+  const top = Math.max(2, Math.min(98, ((b.latMax - lat) / (b.latMax - b.latMin)) * 100));
+  return {left, top};
+}
+function rafStaticGroupVisible(st){ return rafStaticMapGroup === 'all' || st.group === rafStaticMapGroup; }
+function rafStaticMapSvg(){
+  return `<svg viewBox="0 0 1000 720" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="rafSea" x1="0" x2="1"><stop offset="0" stop-color="#0b1d2b"/><stop offset="1" stop-color="#10273a"/></linearGradient>
+      <linearGradient id="rafLand" x1="0" x2="1"><stop offset="0" stop-color="#27362c"/><stop offset="1" stop-color="#44543d"/></linearGradient>
+    </defs>
+    <rect width="1000" height="720" fill="url(#rafSea)" opacity=".72"/>
+    <path d="M470 70 C520 110 545 150 535 195 C565 220 560 265 535 295 C565 345 545 385 580 425 C615 465 600 515 555 545 C510 575 485 630 430 640 C380 648 350 610 365 565 C325 540 315 495 335 455 C305 430 305 388 330 360 C300 320 320 275 355 248 C345 205 365 170 400 145 C395 110 425 82 470 70 Z" fill="url(#rafLand)" stroke="rgba(240,234,216,.28)" stroke-width="3"/>
+    <path d="M575 315 C630 305 690 330 725 370 C765 415 770 470 735 505 C700 540 640 528 610 490 C585 457 565 410 545 375 C528 345 540 325 575 315 Z" fill="#354533" stroke="rgba(240,234,216,.22)" stroke-width="2" opacity=".8"/>
+    <path d="M360 500 C335 545 305 582 258 590 C222 596 195 575 205 542 C218 500 255 475 302 458 C330 448 372 465 360 500 Z" fill="#33452f" stroke="rgba(240,234,216,.18)" stroke-width="2" opacity=".72"/>
+    <path d="M210 105 C255 112 285 155 282 210 C278 265 238 310 190 298 C145 286 128 235 142 185 C155 140 172 103 210 105 Z" fill="#2f402d" stroke="rgba(240,234,216,.15)" stroke-width="2" opacity=".52"/>
+    <path d="M656 534 C700 550 745 576 780 612" stroke="rgba(201,168,76,.24)" stroke-width="2" stroke-dasharray="6 8" fill="none"/>
+    <text x="720" y="610" fill="rgba(255,255,255,.24)" font-family="Oswald" font-size="18" letter-spacing="3">FRANCE</text>
+    <text x="425" y="350" fill="rgba(255,255,255,.20)" font-family="Oswald" font-size="18" letter-spacing="3" transform="rotate(-18 425 350)">ENGLAND</text>
+    <text x="250" y="640" fill="rgba(255,255,255,.20)" font-family="Oswald" font-size="16" letter-spacing="3">WALES</text>
+    <text x="300" y="160" fill="rgba(255,255,255,.16)" font-family="Oswald" font-size="16" letter-spacing="3">SCOTLAND</text>
+  </svg>`;
+}
+function renderMap(){
+  const mapEl=document.getElementById('leaflet-map');
+  if(!mapEl) return;
+  if(!rafMapContainerReady()){ setTimeout(ensureRAFMapVisible,120); return; }
+  mapRendered=true;
+  leafletMap=null;
+  leafletMarkers={};
+  STATIONS.forEach(st=>{ const ll=xyToLatLng(st); st._lat=ll[0]; st._lng=ll[1]; });
+  const markers = STATIONS.filter(rafStaticGroupVisible).map(st=>{
+    const p=rafStaticProject(st._lat,st._lng);
+    const col=GROUP_COLOURS[st.group] || '#c9a84c';
+    const safeName=String(st.name).replace(/"/g,'&quot;');
+    return `<button class="static-raf-marker${selectedStationId===st.id?' selected':''}" data-label="${safeName}" aria-label="${safeName}" title="${safeName}" onclick="showMapStation('${st.id}')" style="left:${p.left.toFixed(2)}%;top:${p.top.toFixed(2)}%;background:${col}"></button>`;
+  }).join('');
+  mapEl.classList.add('static-raf-map-ready');
+  mapEl.innerHTML = `<div class="static-raf-map">${rafStaticMapSvg()}${markers}<div class="static-raf-map-note">Mobile-safe RAF station map · tap a station dot to view linked squadrons</div></div>`;
+  if(!selectedStationId) showMapIntro();
+}
+function stabiliseRAFMap(){
+  const mapEl=document.getElementById('leaflet-map');
+  if(mapEl && rafMapContainerReady() && !mapEl.querySelector('.static-raf-map')) renderMap();
+}
+function scheduleRAFMapHomeFit(){ /* disabled: prevents click-then-zoom-out behaviour */ }
+function fitRAFMapHome(){ /* disabled: static map does not auto-zoom */ }
+function showMapStation(stOrId){
+  const st = typeof stOrId === 'string' ? STATIONS.find(s => s.id === stOrId) : stOrId;
+  if(!st) return;
+  selectedStationId = st.id;
+  rafMapUserInteracted = true;
+  rafMapInitialFitDone = true;
+  const groupCol = GROUP_COLOURS[st.group] || '#666';
+  const typeLabel = rafMapTypeLabel(st);
+  const box = document.getElementById('map-sqn-list');
+  if(!box) return;
+  renderMap();
+  const unitCards = (st.sqns || []).map(n => {
+    const clean = String(n).replace(' fwd','');
+    const sq = SQ.find(s => s.num === clean);
+    if(sq){
+      return `<button class="map-sqn-chip" onclick="rafOpenMapUnit('${sq.num.replace(/'/g,"\\'")}')" style="display:block;width:100%;text-align:left;border-left:3px solid var(--brass);padding:.65rem .8rem;margin-bottom:.45rem;background:rgba(255,255,255,.045);cursor:pointer">
+        <b>No.${n} Sqn</b>${String(n).includes('fwd') ? ' <span style="color:rgba(255,255,255,.45)">(fwd dispersal)</span>' : ''}
+        <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:2px">${sq.marks || ''} · ${sq.base || st.name} · ${sq.pilots ? sq.pilots.length : 0} pilots</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.76);line-height:1.45;margin-top:4px">Top pilot: ${rafTopPilotText(sq)}<br>Open squadron card for pilots, markings, decals and kit notes →</div>
+      </button>`;
+    }
+    return `<div class="map-sqn-chip" style="border-left:3px solid rgba(255,255,255,.25);opacity:.72;cursor:default;padding:.65rem .8rem;margin-bottom:.45rem"><b>No.${n} Sqn</b><div style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.45;margin-top:4px">Context unit — no linked squadron card on this page.</div></div>`;
+  }).join('');
+  box.innerHTML = `
+    <div style="margin-bottom:.85rem;padding-bottom:.85rem;border-bottom:2px solid rgba(255,255,255,.12)">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:.45rem;flex-wrap:wrap"><div style="width:12px;height:12px;border-radius:50%;background:${groupCol};flex-shrink:0"></div><span style="font-family:'Special Elite',cursive;font-size:18px;color:rgba(255,255,255,.92)">${st.name}</span></div>
+      <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass2);margin-bottom:.7rem">${st.group} Group · ${typeLabel}</div>
+      ${st.info ? `<div style="font-family:'Source Serif 4',Georgia,serif;font-size:14px;color:rgba(255,255,255,.82);line-height:1.65;margin-bottom:.65rem">${st.info}</div>` : ''}
+      <div style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.6"><strong style="color:var(--brass2)">Modelling cue:</strong> ${rafStationModellingCue(st)}</div>
+    </div>
+    <div style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2);margin-bottom:.5rem">Linked squadron cards</div>
+    ${unitCards || '<div class="map-sqn-chip" style="color:var(--brass2)">No squadron data</div>'}`;
+}
+function filterMapGroup(group,btn){
+  rafStaticMapGroup = group || 'all';
+  selectedStationId=null;
+  rafMapUserInteracted = true;
+  document.querySelectorAll('.map-filter-btn').forEach(b=>b.classList.remove('on'));
+  if(btn) btn.classList.add('on');
+  renderMap();
+  const shown = STATIONS.filter(st => rafStaticMapGroup==='all' || st.group===rafStaticMapGroup);
+  const box=document.getElementById('map-sqn-list');
+  if(box){
+    box.innerHTML = `
+      <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">${rafStaticMapGroup==='all' ? 'All Battle of Britain stations' : mapGroupLabel(rafStaticMapGroup)}</div>
+      <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem">${shown.length} marker${shown.length===1?'':'s'} shown</div>
+      <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Tap a station dot on the map, or choose a station below. Linked squadrons open the matching squadron card with pilots and markings.</p>
+      <div style="max-height:230px;overflow:auto;padding-right:.2rem;margin-top:.7rem">
+        ${shown.map(st => `<div class="map-sqn-chip" onclick="showMapStation('${st.id}')" style="margin-top:.45rem;cursor:pointer"><b>${st.name}</b><div style="font-size:11px;color:rgba(255,255,255,.65)">${(st.sqns||[]).join(' · ')} · ${rafMapTypeLabel(st)}</div></div>`).join('')}
+      </div>`;
+  }
+}
 
 // Keep Leaflet healthy when tabs, fonts, images or browser resizing alter the map container.
 window.addEventListener('resize', function(){ if(mapRendered) stabiliseRAFMap(); });
