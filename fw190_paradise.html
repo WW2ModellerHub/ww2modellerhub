@@ -1950,7 +1950,7 @@ function openPM(name) {
   const decalEl = document.getElementById('pm-decal-list');
   if (decalEl) {
     if (sqDecals.length) {
-      decalEl.innerHTML = '<div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:6px">Decal sheets</div>'
+      decalEl.innerHTML = '<div style="font-family:Oswald,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:6px">Decal sheets</div>'
         + sqDecals.map(d => `<a href="${d.url}" target="_blank" rel="noopener" style="display:block;font-size:12px;color:rgba(255,255,255,.75);text-decoration:none;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.07);line-height:1.4">${d.name} ↗</a>`).join('');
       decalEl.style.display = 'block';
     } else {
