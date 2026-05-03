@@ -1,0 +1,1 @@
+Lancaster page walkaround replaced with category buttons and dynamic cards. Added category-specific reference photo cards and specific video cards. Updated/standardised kit and decal links, fixed Spitfire wording in Lancaster decal searches, corrected Airfix Dambusters URL inconsistency, and removed the incorrect Shuttleworth Lancaster quick-link wording.

@@ -1173,58 +1173,16 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 </div>
 
 <div class="tab-panel" id="tab-walkaround">
-  <div class="info-box">Lancaster walkaround references grouped by detail area. Use these as direct modelling checks for cockpit layout, turrets, Merlin nacelles, undercarriage, bomb bay, markings and weathering. All links open external reference material.</div>
-
-  <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
-    <a href="#la-cockpit" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none">Cockpit & crew positions</a>
-    <a href="#la-engines" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none">Engines & exhaust</a>
-    <a href="#la-undercarriage" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none">Undercarriage</a>
-    <a href="#la-markings" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none">Markings</a>
-    <a href="#la-airframe" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none">Airframe & bomb bay</a>
+  <div class="info-box">Lancaster walkaround references grouped by detail area. Each category mixes specific working video references with direct photo-reference cards. Use these for cockpit glazing, turrets, Merlin nacelles, undercarriage stance, bomb bay detail, markings and overall weathering.</div>
+  <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem">
+    <button class="waf" onclick="setWalkCat('cockpit',this)" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:rgba(201,168,76,.12);border:1px solid var(--brass);color:var(--brass2);border-radius:2px;cursor:pointer">Cockpit & Crew</button>
+    <button class="waf" onclick="setWalkCat('exhaust',this)" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Engines & Exhaust</button>
+    <button class="waf" onclick="setWalkCat('undercarriage',this)" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Undercarriage</button>
+    <button class="waf" onclick="setWalkCat('markings',this)" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Markings</button>
+    <button class="waf" onclick="setWalkCat('airframe',this)" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Airframe & Bomb Bay</button>
+    <button class="waf" onclick="setWalkCat('survivors',this)" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Survivors</button>
   </div>
-
-  <div id="la-cockpit" style="margin-bottom:2rem">
-    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Cockpit & Crew Positions <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
-    <div class="info-box">Lancaster cockpit references are vital because the canopy is large and the cockpit remains visible even in 1:72. Check the pilot seat, engineer’s position, throttle bank, navigator table and black instrument panel before closing the fuselage.</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
-      <a class="wa-ref-card" href="https://www.lincsaviation.co.uk/" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/5hHztgK6dYQ/mqdefault.jpg" alt="Lancaster Just Jane cockpit and interior reference" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Lincolnshire Aviation Heritage Centre</div><div class="wa-ref-title">NX611 Just Jane — interior reference</div><div class="wa-ref-desc">Best accessible Lancaster interior reference: cockpit, bomb aimer’s station, navigator, wireless operator, bomb bay and turrets.</div><div class="wa-ref-link">Open reference ↗</div></div></a>
-      <a class="wa-ref-card" href="https://www.raf.mod.uk/display-teams/battle-of-britain-memorial-flight/aircraft/avro-lancaster-pa474/" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/Vp7cVh4-1jQ/mqdefault.jpg" alt="BBMF Lancaster PA474 reference" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">BBMF</div><div class="wa-ref-title">PA474 — flying Lancaster reference</div><div class="wa-ref-desc">Use PA474 for real airframe stance, panel sheen, turret appearance and how the aircraft looks in natural daylight.</div><div class="wa-ref-link">Open reference ↗</div></div></a>
-    </div>
-  </div>
-
-  <div id="la-engines" style="margin-bottom:2rem">
-    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Merlins, Nacelles & Exhaust Staining <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
-    <div class="info-box">Lancaster weathering is led by four Merlin engines. Each nacelle creates a strong brown-black exhaust fan across the upper wing, with the inner engines staining the fuselage side and wing root area.</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
-      <a class="wa-ref-card" href="https://www.youtube.com/watch?v=QqiVTLBl3FQ" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/3KpQk_9uZ8g/mqdefault.jpg" alt="Lancaster Merlin engine exhaust reference" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Specific video</div><div class="wa-ref-title">PA474 Merlin engine/display reference</div><div class="wa-ref-desc">Useful for nacelle shape, propeller finish, spinner wear and the distinctive four-engine exhaust pattern.</div><div class="wa-ref-link">Open reference ↗</div></div></a>
-      <a class="wa-ref-card" href="https://www.youtube.com/watch?v=H9PAdeiUQ84" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/H9PAdeiUQ84/mqdefault.jpg" alt="Just Jane Lancaster taxi run exhaust reference" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Taxi run</div><div class="wa-ref-title">Just Jane — Merlin exhaust and nacelle grime</div><div class="wa-ref-desc">Close ground-level footage is useful for staining intensity, oil marks, radiator faces and nacelle underside dirt.</div><div class="wa-ref-link">Open reference ↗</div></div></a>
-    </div>
-  </div>
-
-  <div id="la-undercarriage" style="margin-bottom:2rem">
-    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Undercarriage & Tyres <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
-    <div class="info-box">The Lancaster’s undercarriage is large and exposed. Weather it according to base: Lincolnshire chalk and clay can be pale buff-grey, while Fen stations can show much darker peat mud.</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
-      <a class="wa-ref-card" href="https://www.lincsaviation.co.uk/" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/1hpXFdVwJwY/mqdefault.jpg" alt="Lancaster undercarriage reference" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">East Kirkby</div><div class="wa-ref-title">Just Jane undercarriage and taxi stance</div><div class="wa-ref-desc">Good reference for main-wheel size, leg angle, tyre flattening, wheel door shape and mud deposits.</div><div class="wa-ref-link">Open reference ↗</div></div></a>
-    </div>
-  </div>
-
-  <div id="la-markings" style="margin-bottom:2rem">
-    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Markings, Codes & Mission Tallies <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
-    <div class="info-box">Lancaster markings vary heavily by squadron and date. Check code colour, H2S fit, nose art, bomb tallies and whether the aircraft is a standard bomber, Pathfinder, Dams Raid or Tallboy/Grand Slam machine.</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
-      <a class="wa-ref-card" href="https://www.iwm.org.uk/collections/search?query=Lancaster%20bomber" target="_blank" rel="noopener"><img src="https://media.iwm.org.uk/ciim5/36/482/large_000000.jpg" alt="IWM Lancaster markings reference" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">IWM Archive</div><div class="wa-ref-title">Period Lancaster photographs</div><div class="wa-ref-desc">Use for real wartime codes, mission tallies, nose art, roundel placement and operational grime rather than restored-aircraft assumptions.</div><div class="wa-ref-link">Open archive ↗</div></div></a>
-      <a class="wa-ref-card" href="https://www.hannants.co.uk/search/?keyword_search=lancaster+decal" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/3KpQk_9uZ8g/mqdefault.jpg" alt="Lancaster decals and markings" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Decal research</div><div class="wa-ref-title">Lancaster decal search</div><div class="wa-ref-desc">Quick route to Xtradecal, Kits-World and other Lancaster sheets. Use stable search/category links rather than risky product pages.</div><div class="wa-ref-link">Open decals ↗</div></div></a>
-    </div>
-  </div>
-
-  <div id="la-airframe" style="margin-bottom:2rem">
-    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Airframe, Turrets & Bomb Bay <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
-    <div class="info-box">Do not treat the Lancaster like a single-seat fighter. The defining features are its long bomb bay, Frazer-Nash turrets, large canopy, deep fuselage sides, four nacelles and heavy operational finish.</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
-      <a class="wa-ref-card" href="https://www.rafmuseum.org.uk/research/collections/avro-lancaster-b1/" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/Vp7cVh4-1jQ/mqdefault.jpg" alt="Lancaster airframe and bomb bay reference" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Museum reference</div><div class="wa-ref-title">R5868 S-Sugar and preserved Lancasters</div><div class="wa-ref-desc">Use surviving museum aircraft for bomb bay, turret frames, canopy glazing, panel layout and Night Black surface ageing.</div><div class="wa-ref-link">Open reference ↗</div></div></a>
-    </div>
-  </div>
+  <div id="wa-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.85rem"></div>
 </div><!-- /tab-walkaround -->
 </div><!-- /main-content -->
 
@@ -1251,9 +1209,9 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
       <span style="font-size:14px">🦈</span>
       <div><div class="shop-name">Barracuda Studios</div><div class="shop-cats">Resin · Decals · Masks</div></div>
     </a>
-    <a class="shop-link" href="https://www.shuttleworth.org" target="_blank" rel="noopener">
+    <a class="shop-link" href="https://www.warplane.com/aircraft/collection/details.aspx?aircraftId=4" target="_blank" rel="noopener">
       <span style="font-size:14px">✈</span>
-      <div><div class="shop-name">Shuttleworth</div><div class="shop-cats">Oldest flying Lancaster</div></div>
+      <div><div class="shop-name">Canadian Warplane Heritage</div><div class="shop-cats">Airworthy Lancaster Mk.X</div></div>
     </a>
   </div>
 </aside>
@@ -1351,7 +1309,7 @@ const SQ_DECALS={
  "44": [{name:"Xtradecal — Lancaster sheets",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+lancaster"},{name:"Hannants — 44 Sqn Lancaster decals",url:"https://www.hannants.co.uk/search/?keyword_search=lancaster+44+squadron+decal&product_type_id=all_decals"}],
  "61": [{name:"Hannants — 61 Sqn Lancaster decals",url:"https://www.hannants.co.uk/search/?keyword_search=lancaster+61+squadron+decal&product_type_id=all_decals"}],
  "101":[{name:"Hannants — 101 Sqn ABC Lancaster decals",url:"https://www.hannants.co.uk/search/?keyword_search=lancaster+101+squadron+decal&product_type_id=all_decals"}],
- "617":[{name:"Airfix Dambusters kit decals — A09007",url:"https://uk.airfix.com/products/avro-lancaster-dambusters-a09007"},{name:"Xtradecal 617 Sqn sheets",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+617+squadron"},{name:"Hannants — 617 Sqn decals",url:"https://www.hannants.co.uk/search/?keyword_search=lancaster+617+squadron+decal&product_type_id=all_decals"}],
+ "617":[{name:"Airfix Dambusters kit decals — A09007",url:"https://uk.airfix.com/products/avro-lancaster-biii-the-special-dambusters-a09007"},{name:"Xtradecal 617 Sqn sheets",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+617+squadron"},{name:"Hannants — 617 Sqn decals",url:"https://www.hannants.co.uk/search/?keyword_search=lancaster+617+squadron+decal&product_type_id=all_decals"}],
  "50": [{name:"Hannants — 50 Sqn Lancaster decals",url:"https://www.hannants.co.uk/search/?keyword_search=lancaster+50+squadron+decal&product_type_id=all_decals"}],
  "83": [{name:"Hannants — 83 Sqn Pathfinder decals",url:"https://www.hannants.co.uk/search/?keyword_search=lancaster+83+squadron+pathfinder&product_type_id=all_decals"}],
  "460":[{name:"Hannants — 460 Sqn RAAF Lancaster decals",url:"https://www.hannants.co.uk/search/?keyword_search=lancaster+460+raaf+decal&product_type_id=all_decals"}],
@@ -1505,7 +1463,7 @@ const PILOT_STORIES=[
 const BUILD_STEPS=[
  {n:1,title:"Research and marking choice",icon:"📋",
   text:"Decide your subject before opening the box: squadron, aircraft letter, date. This determines whether your aircraft has H2S (ventral radome — most from 1943 onwards), the exact roundel types, code letter colour (white early war, yellow from mid-1943), and any special features like 617 Sqn's modified bomb bay or 101 Sqn's ABC dorsal fairing. For Dams Raid subjects, the Airfix Dambusters kit (A09007) is the definitive choice.",
-  products:[{name:"Airfix Dambusters A09007",url:"https://uk.airfix.com/products/avro-lancaster-dambusters-a09007"},{name:"Xtradecal Lancaster sheets",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+lancaster"}]},
+  products:[{name:"Airfix Dambusters A09007",url:"https://uk.airfix.com/products/avro-lancaster-biii-the-special-dambusters-a09007"},{name:"Xtradecal Lancaster sheets",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+lancaster"}]},
  {n:2,title:"Cockpit and interior",icon:"🎛️",
   text:"Interior Green (Humbrol 78) throughout cockpit, all crew positions and bomb bay structural members. The Lancaster cockpit is complex — throttle quadrant, dual control columns, instrument panel. Eduard PE set transforms the Tamiya 1:48 cockpit. The bomb aimer's nose position is visible — worth detailing. Black instrument faces with white markings. Bomb bay interior in Interior Green with dark brown hydraulic staining on rack mechanism.",
   products:[{name:"Eduard PE 49802 (Tamiya 1:48)",url:"https://www.hannants.co.uk/search/?keyword_search=eduard+49802+lancaster"},{name:"Humbrol 78 Interior Green",url:"https://www.hannants.co.uk/search/?keyword_search=humbrol+78"}]},
@@ -1647,8 +1605,8 @@ function showDetail(num){
       <div class="sec-label">Specific Decal Sheets</div>
       ${sqDecals.length?`<div style="display:flex;flex-direction:column;gap:5px;margin-bottom:1rem">${sqDecals.filter(d=>d.url).map(d=>`<a href="${d.url}" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--brass);border-radius:2px;padding:6px 10px;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,.05)'" onmouseout="this.style.background='rgba(0,0,0,.2)'" rel="noopener"><span style="font-size:12px">↗</span><span style="font-size:13px;color:rgba(255,255,255,.8)">${d.name}</span></a>`).join('')}</div>`:`<div style="font-size:13px;color:rgba(255,255,255,.4);margin-bottom:1rem">Search Hannants or Barracuda for this squadron.</div>`}
       <div style="display:flex;gap:6px;flex-wrap:wrap">
-        <a href="https://www.hannants.co.uk/search/?keyword_search=${sq.num}+squadron+spitfire" target="_blank" rel="noopener" class="shop-btn hb-brass" style="font-size:13px">Hannants: all ${sq.num} Sqn decals ↗</a>
-        <a href="https://www.hannants.co.uk/search/?keyword_search=lancaster+aftermarket" target="_blank" rel="noopener" class="shop-btn hb-outline" style="font-size:13px">Barracuda Lancaster decals ↗</a>
+        <a href="https://www.hannants.co.uk/search/?keyword_search=${sq.num}+squadron+lancaster+decal&product_type_id=all_decals" target="_blank" rel="noopener" class="shop-btn hb-brass" style="font-size:13px">Hannants: No.${sq.num} Sqn Lancaster decals ↗</a>
+        <a href="https://www.hannants.co.uk/search/?keyword_search=lancaster+aftermarket" target="_blank" rel="noopener" class="shop-btn hb-outline" style="font-size:13px">Lancaster aftermarket search ↗</a>
       </div>
     </div>`;
   panel.classList.add('open');
@@ -1693,7 +1651,7 @@ function openPM(name){
   pl.textContent=`IWM: ${surname} archive ↗`;
   const sqnFP=SQ.find(s=>s.pilots.some(p=>p.n===name));
   const sl=document.getElementById('pm-h-sqn');
-  if(sqnFP){sl.href=`https://www.hannants.co.uk/search/?keyword_search=${sqnFP.num}+squadron+spitfire`;sl.textContent=`Hannants: No.${sqnFP.num} Sqn decals ↗`;sl.style.display='';}else{sl.style.display='none';}
+  if(sqnFP){sl.href=`https://www.hannants.co.uk/search/?keyword_search=${sqnFP.num}+squadron+lancaster+decal&product_type_id=all_decals`;sl.textContent=`Hannants: No.${sqnFP.num} Sqn Lancaster decals ↗`;sl.style.display='';}else{sl.style.display='none';}
   document.getElementById('pm-overlay').classList.add('open');
 }
 function closePM(){document.getElementById('pm-overlay').classList.remove('open');}
@@ -2278,28 +2236,35 @@ function acceptCookies(){try{localStorage.setItem('cookiesAccepted','1');}catch(
 
 const WALK_CATS = {
   cockpit: [
-    {title:"Classic Cockpits — Avro Lancaster Bomber",url:"https://www.youtube.com/watch?v=Gul2P22MTZA",img:"https://img.youtube.com/vi/Gul2P22MTZA/mqdefault.jpg",note:"Cockpit-focused Lancaster film. Check instrument panel layout, dual controls, throttle quadrant and the cramped crew-position relationship."},
-    {title:"Interior Tour of Avro Lancaster NX611 'Just Jane'",url:"https://www.youtube.com/watch?v=f9Y546imIJM",img:"https://img.youtube.com/vi/f9Y546imIJM/mqdefault.jpg",note:"Specific Just Jane interior tour. Good for cockpit, wireless operator, navigator, bomb aimer and fuselage interior access."},
-    {title:"Detailed tour through an Avro Lancaster",url:"https://www.youtube.com/watch?v=5gk6hEJ0vO0",img:"https://img.youtube.com/vi/5gk6hEJ0vO0/mqdefault.jpg",note:"Detailed interior/exterior video for modelling the cockpit opening, crew hatches and interior colour breaks."},
+    {kind:"photo",title:"RAF Museum R5868 — cockpit/crew-position reference",url:"https://www.rafmuseum.org.uk/research/collections/avro-lancaster-b-mk-i/",img:"https://media.iwm.org.uk/ciim5/38/302/large_000000.jpg",note:"Use the preserved R5868/S-Sugar references for cockpit glazing, nose section, crew access and the visible interior behind the canopy. Good for checking what can still be seen once the fuselage is closed."},
+    {kind:"video",title:"Classic Cockpits — Avro Lancaster Bomber",url:"https://www.youtube.com/watch?v=Gul2P22MTZA",img:"https://img.youtube.com/vi/Gul2P22MTZA/mqdefault.jpg",note:"Cockpit-focused film. Check instrument panel layout, throttle bank, pilot seat, flight engineer position and the cramped relationship between crew stations."},
+    {kind:"video",title:"Detailed Lancaster interior/exterior tour",url:"https://www.youtube.com/watch?v=5gk6hEJ0vO0",img:"https://img.youtube.com/vi/5gk6hEJ0vO0/mqdefault.jpg",note:"Useful for bomb aimer, navigator, wireless operator, cockpit access and the overall interior sequence."}
   ],
   exhaust: [
-    {title:"Just Jane Lancaster taxi/run-up — four Merlins",url:"https://www.youtube.com/watch?v=H9PAdeiUQ84",img:"https://img.youtube.com/vi/H9PAdeiUQ84/mqdefault.jpg",note:"Use the running engines and nacelles to judge exhaust tone, Merlin staining direction and how the staining builds around each engine."},
-    {title:"Lancaster Run Up — Canadian Warplane Heritage",url:"https://www.youtube.com/watch?v=NFstHnq6akA",img:"https://img.youtube.com/vi/NFstHnq6akA/mqdefault.jpg",note:"Specific run-up reference for Merlin exhaust/smoke behaviour and nacelle grime around a live Lancaster."},
+    {kind:"photo",title:"PA474 BBMF — Merlin nacelles and exhaust staining",url:"https://www.raf.mod.uk/display-teams/battle-of-britain-memorial-flight/aircraft/avro-lancaster-pa474/",img:"https://www.ww2modeller.co.uk/assets/og-lancaster.jpg",note:"Use PA474 as the safest live-aircraft reference for nacelle shapes, propellers, exhaust stain direction and the way weathering reads in daylight."},
+    {kind:"video",title:"Just Jane taxi/run-up — four Merlins",url:"https://www.youtube.com/watch?v=H9PAdeiUQ84",img:"https://img.youtube.com/vi/H9PAdeiUQ84/mqdefault.jpg",note:"Ground-level run-up reference for exhaust smoke, nacelle grime, radiator faces and oil staining around live Merlins."},
+    {kind:"video",title:"Canadian Warplane Heritage Lancaster run-up",url:"https://www.youtube.com/watch?v=NFstHnq6akA",img:"https://img.youtube.com/vi/NFstHnq6akA/mqdefault.jpg",note:"Specific running-aircraft reference for exhaust tone and nacelle staining on an airworthy Lancaster."}
   ],
   undercarriage: [
-    {title:"Avro Lancaster 'Just Jane' — Walkaround & Restoration",url:"https://www.youtube.com/watch?v=1pQpjvu5gDc",img:"https://img.youtube.com/vi/1pQpjvu5gDc/mqdefault.jpg",note:"Good ground-level reference for undercarriage stance, wheel size, bay doors and main-leg geometry."},
-    {title:"Lancaster NX611 Tail-Up Taxi Video",url:"https://www.youtube.com/watch?v=PlC1HtbtRTM",img:"https://img.youtube.com/vi/PlC1HtbtRTM/mqdefault.jpg",note:"Useful for wheel/tyre stance, gear compression and undercarriage grime in motion."},
+    {kind:"photo",title:"NX611 Just Jane — undercarriage and taxi stance",url:"https://www.lincsaviation.co.uk/lots-to-see/aircraft/lancaster",img:"https://www.lincsaviation.co.uk/media/aircraft/lancaster/lancaster.jpg",note:"Use East Kirkby’s NX611 for the main gear stance, wheel size, tyre compression, mud/dust deposits and wheel-door geometry."},
+    {kind:"video",title:"Just Jane walkaround/restoration",url:"https://www.youtube.com/watch?v=1pQpjvu5gDc",img:"https://img.youtube.com/vi/1pQpjvu5gDc/mqdefault.jpg",note:"Ground-level reference for undercarriage legs, main wheels, bomb bay doors and lower airframe weathering."},
+    {kind:"video",title:"NX611 tail-up taxi reference",url:"https://www.youtube.com/watch?v=PlC1HtbtRTM",img:"https://img.youtube.com/vi/PlC1HtbtRTM/mqdefault.jpg",note:"Useful for the aircraft’s parked/running stance, gear compression and tyre contact patch."}
   ],
   markings: [
-    {title:"Just Jane NX611 close walkaround",url:"https://www.youtube.com/watch?v=7R_ETmtxFZY",img:"https://img.youtube.com/vi/7R_ETmtxFZY/mqdefault.jpg",note:"Check nose art, squadron codes, Type C1 roundels, fin flash and Night Black finish around markings."},
-    {title:"Canadian Warplane Heritage Lancaster feature",url:"https://www.youtube.com/watch?v=bflB3eAktHk",img:"https://img.youtube.com/vi/bflB3eAktHk/mqdefault.jpg",note:"Good for RCAF Mk.X markings and Canadian Lancaster finish differences."},
-    {title:"RAF Museum R5868 S-Sugar",url:"https://www.rafmuseum.org.uk/research/collections/avro-lancaster-b-mk-i/",img:"https://media.iwm.org.uk/ciim5/38/302/large_000000.jpg",note:"Use R5868 for S-Sugar mission tallies, preserved Night Black finish and long-service weathering cues."},
+    {kind:"photo",title:"IWM Lancaster photo archive — wartime markings",url:"https://www.iwm.org.uk/collections/search?query=Lancaster%20bomber",img:"https://media.iwm.org.uk/ciim5/36/482/large_000000.jpg",note:"Period images for squadron codes, nose art, mission tallies, roundel placement and operational grime. Use these before trusting restored-aircraft markings."},
+    {kind:"photo",title:"RAF Museum R5868 S-Sugar — mission tallies",url:"https://www.rafmuseum.org.uk/research/collections/avro-lancaster-b-mk-i/",img:"https://media.iwm.org.uk/ciim5/38/302/large_000000.jpg",note:"Excellent for PO-S/S-Sugar style mission tallies, preserved Night finish and high-sortie Lancaster wear."},
+    {kind:"video",title:"Just Jane close walkaround — codes and finish",url:"https://www.youtube.com/watch?v=7R_ETmtxFZY",img:"https://img.youtube.com/vi/7R_ETmtxFZY/mqdefault.jpg",note:"Check squadron codes, Type C1 roundels, fin flash proportions and the look of Night Black around markings."}
+  ],
+  airframe: [
+    {kind:"photo",title:"RAF Museum Lancaster B.I R5868 — full airframe",url:"https://www.rafmuseum.org.uk/research/collections/avro-lancaster-b-mk-i/",img:"https://media.iwm.org.uk/ciim5/38/302/large_000000.jpg",note:"Use for overall airframe proportions, turret framing, fuselage depth, canopy shape and the long bomb-bay line."},
+    {kind:"photo",title:"NX611 Just Jane — bomb bay and turrets",url:"https://www.lincsaviation.co.uk/lots-to-see/aircraft/lancaster",img:"https://www.lincsaviation.co.uk/media/aircraft/lancaster/lancaster.jpg",note:"Best public-access survivor for bomb bay, turret frames, hatches and restoration-state structural detail."},
+    {kind:"video",title:"Detailed tour through an Avro Lancaster",url:"https://www.youtube.com/watch?v=5gk6hEJ0vO0",img:"https://img.youtube.com/vi/5gk6hEJ0vO0/mqdefault.jpg",note:"Covers interior/exterior transitions, crew stations, nose, bomb bay and airframe walkaround detail."}
   ],
   survivors: [
-    {title:"BBMF PA474 Lancaster display",url:"https://www.youtube.com/watch?v=QqiVTLBl3FQ",img:"https://img.youtube.com/vi/QqiVTLBl3FQ/mqdefault.jpg",note:"Specific PA474 flight reference for overall camouflage, planform and upper/lower surface contrast in daylight."},
-    {title:"Air-to-Air Lancaster Flight — CWHM",url:"https://www.youtube.com/watch?v=QXwd52T04Gs",img:"https://img.youtube.com/vi/QXwd52T04Gs/mqdefault.jpg",note:"Air-to-air view of the Canadian Lancaster. Good for RCAF Mk.X look and in-flight upper-surface weathering."},
-    {title:"Lincolnshire Aviation Heritage Centre — NX611",url:"https://www.lincsaviation.co.uk/lots-to-see/aircraft/lancaster",img:"https://www.lincsaviation.co.uk/media/aircraft/lancaster/lancaster.jpg",note:"Official Just Jane aircraft page. Use for current restoration state, public access and photo reference planning."},
-  ],
+    {kind:"photo",title:"BBMF PA474 — airworthy UK Lancaster",url:"https://www.raf.mod.uk/display-teams/battle-of-britain-memorial-flight/aircraft/avro-lancaster-pa474/",img:"https://www.ww2modeller.co.uk/assets/og-lancaster.jpg",note:"Current flying RAF Lancaster reference. Use for display-condition paint, panel sheen, turret appearance and in-flight stance."},
+    {kind:"photo",title:"Canadian Warplane Heritage Lancaster Mk.X",url:"https://www.warplane.com/aircraft/collection/details.aspx?aircraftId=4",img:"https://www.ww2modeller.co.uk/assets/og-lancaster.jpg",note:"Reference for RCAF Mk.X subjects, Canadian markings and the second airworthy Lancaster."},
+    {kind:"video",title:"Air-to-air Lancaster flight — CWHM",url:"https://www.youtube.com/watch?v=QXwd52T04Gs",img:"https://img.youtube.com/vi/QXwd52T04Gs/mqdefault.jpg",note:"Air-to-air view for upper-surface camouflage, planform, prop blur and real-world weathering visibility."}
+  ]
 };
 
 function setWalkCat(cat, btn) {
@@ -2320,7 +2285,7 @@ function setWalkCat(cat, btn) {
     <a href="${w.url}" target="_blank" rel="noopener" style="display:block;background:rgba(20,17,7,.82);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 10px 26px rgba(0,0,0,.25)">
       ${w.img ? `<img src="${w.img}" alt="${w.title}" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;background:#08111d" onerror="this.style.display='none'">` : ''}
       <div style="padding:.85rem .9rem">
-        <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-bottom:.25rem">Specific reference</div>
+        <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-bottom:.25rem">${w.kind==='photo'?'Reference photo':'Specific video'}</div>
         <div style="font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;color:#fff;margin-bottom:.35rem">${w.title}</div>
         <div style="font-size:13px;color:rgba(255,255,255,.68);line-height:1.6">${w.note}</div>
         <div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-top:.55rem">Open specific page/video ↗</div>
