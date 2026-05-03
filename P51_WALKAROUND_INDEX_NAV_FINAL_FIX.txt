@@ -1,0 +1,1 @@
+Fixed P-51 walkaround so preview images are local non-breaking SVG assets, each category has its own picture/card and stable source link. Updated index page to move Mustang from coming soon to live aircraft. Normalised navigation label to North American P-51 Mustang and Live.
