@@ -1,0 +1,3 @@
+Created Lancaster page using the Spitfire page pattern: tabbed hub, squadron finder, Leaflet base map, paint/weathering section, kit/decal links using stable manufacturer/search URLs, book/archive links, survivor references and walkaround section. Updated Lancaster navigation badge to live and refreshed sitemap entry.
+
+Note: product links are intentionally stable manufacturer/search/category links rather than fragile deep links unless the product match is unambiguous.
