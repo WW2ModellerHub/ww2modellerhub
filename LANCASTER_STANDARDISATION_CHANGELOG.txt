@@ -1,0 +1,1 @@
+Lancaster page rebuilt to match Hurricane/Spitfire Paradise structure. Added full Build sub-tab system, improved Reference timeline/map/compare/survivors/books, expanded Stories, Media and Walkaround sections, and aligned page navigation/tab flow.
