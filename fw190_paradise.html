@@ -6,8 +6,8 @@
   <link rel="shortcut icon" href="favicon.svg">
   <!-- SEO -->
   <title>Focke-Wulf Fw 190 Modelling Reference — Variants, Pilots, RLM Paint &amp; Kits</title>
-<meta property="og:title" content="Hawker Hurricane Modelling Reference — Battle of Britain Squadrons, Paint, Kits">
-<meta property="og:description" content="Complete Hawker Hurricane Mk.I/II scale modelling reference: 22 BoB squadrons, 200+ pilot profiles, paint cross-reference (Humbrol, Tamiya, Vallejo, AK), kit guide, decals, weathering by station, pilot stories.">
+<meta property="og:title" content="Focke-Wulf Fw 190 Scale Modelling Reference — Variants, Pilots, RLM Paint Codes &amp; Kits">
+<meta property="og:description" content="Complete Fw 190 modelling reference: 8 Jagdgeschwader, RLM 74/75/76, A-series and D-9 Dora, kit reviews and weathering.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.ww2modeller.co.uk/fw190_paradise.html">
 <meta property="og:image" content="https://www.ww2modeller.co.uk/assets/og-fw190.jpg">
@@ -20,10 +20,10 @@
 <meta name="author" content="WW2 Modeller Hub">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hawker Hurricane Modelling Reference — Battle of Britain Squadrons, Paint, Kits">
-<meta name="twitter:description" content="Complete Hawker Hurricane Mk.I/II scale modelling reference: 22 BoB squadrons, 200+ pilot profiles, paint cross-reference (Humbrol, Tamiya, Vallejo, AK), kit guide, decals, weathering by station, pilot stories.">
-<meta name="keywords" content="Focke-Wulf Fw 190 model, Eduard ProfiPACK, Battle of Britain Hurricane, Dark Earth Dark Green paint codes, Airfix Hurricane A05127A, Xtradecal Hurricane, Hurricane weathering">
-  <meta name="description" content="Best Hawker Hurricane model kits in 1/48 and 1/72. Paint codes, BoB squadrons, weathering by airfield. 22 squadrons, 200+ pilots.">
+<meta name="twitter:title" content="Focke-Wulf Fw 190 Scale Modelling Reference">
+<meta name="twitter:description" content="Complete Fw 190 modelling reference: RLM paint codes, 8 JG units, A-series to D-9 Dora.">
+<meta name="keywords" content="Focke-Wulf Fw 190 model, Eduard ProfiPACK EDK82145, RLM 74 75 76 paint codes, Fw 190 A-8, D-9 Dora, JG 26, Luftwaffe modelling">
+  <meta name="description" content="Complete Fw 190 scale modelling reference: 8 Jagdgeschwader, RLM paint codes, kit guide and weathering.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="canonical" href="https://www.ww2modeller.co.uk/fw190_paradise.html">
@@ -31,7 +31,7 @@
             <!-- Twitter Card -->
         <!-- Schema.org -->
   <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Focke-Wulf Fw 190 Scale Modelling Reference — Variants, Pilots, RLM Paint Codes & Kits","description":"Complete Hawker Hurricane Mk.I modelling reference. 22 Battle of Britain squadrons, Ginger Lacey, Douglas Bader, exact Humbrol/Tamiya/Vallejo paint codes, kit reviews, Xtradecal sheets and airfield weathering guides.","url":"https://www.ww2modeller.co.uk/fw190_paradise.html","publisher":{"@type":"Organization","name":"WW2 Modeller Hub","url":"https://www.ww2modeller.co.uk"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.ww2modeller.co.uk/fw190_paradise.html"},"articleSection":"Scale Modelling","keywords":"scale model,WW2 aircraft,Battle of Britain,hurricane_paradise"}
+{"@context":"https://schema.org","@type":"Article","headline":"Focke-Wulf Fw 190 Scale Modelling Reference — Variants, Pilots, RLM Paint Codes & Kits","description":"Complete Focke-Wulf Fw 190 modelling reference. 8 Jagdgeschwaderritain squadrons, Ginger Lacey, Douglas Bader, exact Humbrol/Tamiya/Vallejo paint codes, kit reviews, Xtradecal sheets and airfield weathering guides.","url":"https://www.ww2modeller.co.uk/fw190_paradise.html","publisher":{"@type":"Organization","name":"WW2 Modeller Hub","url":"https://www.ww2modeller.co.uk"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.ww2modeller.co.uk/fw190_paradise.html"},"articleSection":"Scale Modelling","keywords":"scale model,WW2 aircraft,Battle of Britain,hurricane_paradise"}
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -135,13 +135,15 @@ body{
 }
 .hero-roundel{
   width:52px;height:52px;flex-shrink:0;
-  border-radius:50%;position:relative;overflow:hidden;
-  border:2px solid rgba(255,255,255,.25);
-  box-shadow:0 0 16px rgba(201,168,76,.25);
+  border-radius:50%;position:relative;overflow:visible;
+  border:2px solid rgba(201,168,76,.5);
+  background:#111108;
+  box-shadow:0 0 16px rgba(201,168,76,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;color:rgba(201,168,76,.9);
 }
 .hero-roundel::before{
-  content:'';position:absolute;inset:0;border-radius:50%;
-  background:radial-gradient(circle at 50% 50%, #1a1a14 0%, #1a1a14 35%, rgba(201,168,76,.4) 35%, rgba(201,168,76,.4) 45%, #1a1a14 45%);
+  content:'';
 }
 .hero-text{}
 .hero-eyebrow{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.2rem}
@@ -808,7 +810,7 @@ body{
     <div class="ac-drop" id="acDrop">
       <button type="button" class="ac-drop-btn active" onclick="event.stopPropagation();document.getElementById('acDrop').classList.toggle('open')">Aircraft <span class="ac-drop-caret">▼</span></button>
       <div class="ac-drop-menu">
-        <a href="fw190_paradise.html" class="ac-drop-item current">Hawker Hurricane <span class="ac-drop-badge live">Live</span></a>
+        <a href="fw190_paradise.html" class="ac-drop-item current">Focke-Wulf Fw 190 <span class="ac-drop-badge live">Live</span></a>
         <a href="spitfire_paradise.html" class="ac-drop-item">Supermarine Spitfire <span class="ac-drop-badge live">Live</span></a>
         <a href="lancaster_paradise.html" class="ac-drop-item">Avro Lancaster <span class="ac-drop-badge soon">Hub</span></a>
         <a href="mosquito_paradise.html" class="ac-drop-item">DH Mosquito <span class="ac-drop-badge soon">Hub</span></a>
@@ -834,7 +836,7 @@ body{
 
 <!-- AIRCRAFT HERO -->
 <div class="aircraft-hero">
-  <div class="hero-roundel" style="display:flex;align-items:center;justify-content:center;font-size:28px;color:rgba(255,255,255,.65)">✠</div>
+  <div class="hero-roundel">✠</div>
   <div class="hero-text">
     <div class="hero-eyebrow">Luftwaffe · Channel Front · Eastern Front · 1941–45</div>
     <h1 class="hero-title">Focke-Wulf Fw 190</h1>
@@ -906,7 +908,7 @@ body{
     <div style="margin-bottom:1.5rem">
       <div class="section-label" style="margin-bottom:.6rem">Choosing your Fw 190 kit</div>
       <p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:.8rem">
-        Nine injection-moulded Hurricane kits are currently available across three scales. For a Battle of Britain build in 1:48, the <strong style="color:var(--cream)">Airfix A05127A</strong> is the recommendation for most builders — excellent accuracy, great fit, and outstanding value. If you want the finest Hurricane kit ever made, the <strong style="color:var(--cream)">Arma Hobby AH40015 Expert Set</strong> is extraordinary. In 1:72, the <strong style="color:var(--cream)">Arma Hobby 70019 / AH70024</strong> is in a different league. Star ratings below reflect accuracy, cockpit detail, fit quality and value.
+        Seven Fw 190 kits are currently available across two scales. For a Battle of Britain build in 1:48, the <strong style="color:var(--cream)">Eduard ProfiPACK EDK82145</strong> is the benchmark for most builders. If the <strong style="color:var(--cream)">Eduard ProfiPACK EDK82145</strong> is the definitive kit. For the D-9 Dora, <strong style="color:var(--cream)">Hasegawa HST08074</strong>. In 1:72, <strong style="color:var(--cream)">Eduard EDK70113</strong> using Arma Hobby tooling is outstanding. Star ratings below reflect accuracy, cockpit detail, fit quality and value.
       </p>
       <a href="articles.html" style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);text-decoration:none">Full kit buying guide →</a>
     </div>
@@ -927,7 +929,7 @@ body{
     <div style="margin-bottom:1.5rem">
       <div class="section-label" style="margin-bottom:.5rem">Battle of Britain paint colours</div>
       <p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:.8rem">
-        Every Hurricane in the Battle of Britain wore the same three-colour MAP scheme: <strong style="color:var(--cream)">Dark Earth</strong> and <strong style="color:var(--cream)">Dark Green</strong> on the upper surfaces in a disruptive splinter pattern, and <strong style="color:var(--cream)">Sky (Type S)</strong> on the undersides, spinner and fuselage band. The table below gives matched codes across all four major paint brands. Humbrol 29/30/90 are the classic references; Tamiya XF-52/XF-61/XF-21 are good for airbrush users; Vallejo offers superior coverage for brush painters. The cockpit, wheel bays and gear legs were Interior Green (Humbrol 78).
+        The Fw 190 wore the RLM system throughout its operational life: <strong style="color:var(--cream)">RLM 74 Graugrün</strong> and <strong style="color:var(--cream)">RLM 75 Grauviolett</strong> on upper surfaces, <strong style="color:var(--cream)">RLM 76 Lichtblau</strong> on undersurfaces and as fuselage mottling base. Cockpit in <strong style="color:var(--cream)">RLM 66 Schwarzgrau</strong>. Eastern Front aircraft add <strong style="color:var(--cream)">RLM 04 Gelb</strong> markings. Lighten upper surfaces 10–15% for 1:48, 15–20% for 1:72.
       </p>
       <a href="article-bf109-rlm-paint-codes.html" style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);text-decoration:none">Full paint guide with application tips →</a>
     </div>
@@ -949,7 +951,7 @@ body{
   </div>
 
   <div id="bsub-stepbystep" style="display:none">
-    <div class="info-box">A stage-by-stage build guide for the Hurricane, with recommended products and buy links at each step. Assumes a 1:48 kit such as the Airfix A05127A.</div>
+    <div class="info-box">A stage-by-stage build guide for the Fw 190 A-8, with recommended products and buy links at each step. Assumes a 1:48 kit such as the Airfix A05127A.</div>
     <div id="stepbystep-content"></div>
   </div>
 
@@ -1013,7 +1015,7 @@ body{
   </div>
 
   <div id="rsub-survivors" style="display:none">
-    <div class="info-box">Airworthy and preserved Hawker Hurricane Mk.I survivors worldwide. These are the real aircraft you can photograph for reference at shows and museums.</div>
+    <div class="info-box">Five surviving Focke-Wulf Fw 190 airframes you can visit — real aircraft for modelling reference. </div>
     <div id="survivors-grid"></div>
   </div>
 
@@ -1036,7 +1038,7 @@ body{
 
 <!-- TAB: MEDIA — YouTube, sounds, footage -->
 <div class="tab-panel" id="tab-media">
-  <div class="info-box">Curated Hurricane footage, Merlin engine recordings, IWM interviews and documentary clips. All links open on YouTube or the IWM website.</div>
+  <div class="info-box">Fw 190 footage, BMW 801 recordings, modelling tutorials and documentary clips. All links open YouTube. </div>
   <div id="media-grid"></div>
 </div>
 
@@ -1151,7 +1153,7 @@ body{
       <span class="shop-flag">📋</span>
       <div class="shop-info">
         <div class="shop-name">Kit Buying Guide</div>
-        <div class="shop-cats">All 9 Hurricane kits compared</div>
+        <div class="shop-cats">All 7 Fw 190 kits reviewed</div>
       </div>
     </a>
     <a class="shop-link" href="article-bf109-rlm-paint-codes.html" style="text-decoration:none">
@@ -1320,26 +1322,6 @@ const SQ = [
 ];
 
 // ── PILOT BIOS ──────────────────────────────────────────
-const BIOS = {
-  "Sqn Ldr M.N. Crossley":{kills:22,sorties:"~200+",fate:"Survived — died 1987",awards:["DSO","DFC"],bio:`<p>Michael Crossley joined the RAF in 1935 after Eton, posted to 32 Squadron at Biggin Hill. He led 'Red Section' — earning the nickname <em>Red Knight</em>. He scored six victories during Dunkirk; his DFC was presented by King George VI at Biggin Hill on 21 June 1940.</p><p>Promoted to squadron leader on 16 August, his first day in command he destroyed three aircraft in a single day — a Bf 109 near Folkestone, a Ju 88 over Sevenoaks, and a Bf 110. Shot down on The Hardest Day (18 Aug), his DSO was gazetted two days later. His 22 victories made him the top-scoring Hurricane pilot of 1940. He emigrated to South Africa after the war and died in 1987.</p>`},
-  "Flt Lt P.M. Brothers":{kills:16,sorties:"~180+",fate:"Survived — died 2008",awards:["DFC"],bio:`<p>Peter Brothers flew throughout the entire battle with 32 Squadron, his Hurricane coded GZ-L (P2921). His 16 victories placed him among the top Hurricane aces. He later commanded 457 Squadron RAAF and rose to Group Captain. He became one of the most frequently interviewed and reliable oral sources on Fighter Command in 1940, and died in January 2008 — one of the very last of the Few.</p>`},
-  "Plt Off K.R. Gillman":{kills:5,sorties:"~60",fate:"KIA 25 Aug 1940, age 22",awards:[],bio:`<p>Keith Gillman appears in the famous IWM photograph taken at Hawkinge on 29 July 1940 — B Flight relaxing in front of GZ-V (P3522). His face was used on RAF recruitment posters and became one of the most reproduced images of the battle.</p><p>He was posted missing on 25 August 1940, shot down over the Channel near Dover. He was 22. His body was never recovered. Of the seven pilots in that photograph, he was the only one who did not survive the war.</p>`},
-  "Sqn Ldr P.W. Townsend":{kills:11,sorties:"~150+",fate:"Survived — died 1995",awards:["DSO","DFC"],bio:`<p>Peter Townsend led 85 Squadron through the battle from Croydon and Debden. Wounded in the foot on 31 August, he returned to flying within weeks. After the war he became equerry to King George VI then Queen Elizabeth II; his romance with Princess Margaret defined 1950s tabloid coverage.</p><p>He wrote <em>Duel of Eagles</em> (1970) — one of the finest accounts of the air war. He died in June 1995.</p>`},
-  "Flt Lt R.H.A. Lee":{kills:13,sorties:"~100+",fate:"KIA 18 Aug 1940, age 26",awards:["DFC"],bio:`<p>'Dickie' Lee was the top-scoring pilot in 85 Squadron at the time of his death and one of the highest-scoring pilots in all of Fighter Command. He was shot down on 18 August 1940 — The Hardest Day — a severe blow to 85 Squadron's morale. He was 26 and is buried in Belgium.</p>`},
-  "Plt Off A.G. Lewis":{kills:10,sorties:"~120+",fate:"Survived",awards:["DFC"],bio:`<p>'Zulu' Lewis was a South African who scored 10 victories with 85 Squadron. His Hurricane P2923 coded VY-R is featured on Xtradecal's Battle of Britain 70th Anniversary decal sheet. One of the highest-scoring Commonwealth pilots of the battle, he survived the war.</p>`},
-  "Sqn Ldr D.R.S. Bader":{kills:22,sorties:"~200+",fate:"POW 1941–45 — died 1982",awards:["DSO Bar","DFC Bar"],bio:`<p>Douglas Bader lost both legs in a 1931 flying accident yet returned to operational flying. Posted to 242 Squadron in June 1940, he transformed a demoralised Canadian unit into one of Fighter Command's most aggressive. He was the principal advocate of the 12 Group 'Big Wing' — five squadrons massed for a single interception — bringing him into direct conflict with AVM Keith Park. Shot down over France in August 1941, he became a POW notorious for escape attempts. His story: Paul Brickhill's <em>Reach for the Sky</em> (1954). He died September 1982.</p>`},
-  "Flt Lt W.L. McKnight":{kills:17,sorties:"~150+",fate:"KIA 12 Jan 1941, age 23",awards:["DFC Bar"],bio:`<p>Willie McKnight was Bader's wingman and closest friend — one of the finest Canadian fighter pilots of the war. His 17 victories were the second-highest in 242 Squadron. Aggressive and an exceptional marksman, he was killed on 12 January 1941 during an offensive sweep over France. His body was never found. He was 23.</p>`},
-  "Flt Lt J.H. Lacey":{kills:18,sorties:"~200+",fate:"Survived — died 1989",awards:["DFM","DFM Bar"],bio:`<p>James 'Ginger' Lacey was the highest-scoring Hurricane pilot of the entire Battle of Britain with 18 confirmed victories. He began as a sergeant pilot — an NCO — making his achievement remarkable in the class-conscious RAF of 1940. Shot down or force-landed nine times, he always returned. Cool and methodical in combat, his tally remains the definitive Hurricane score for the battle. He died May 1989.</p>`},
-  "Flt Lt I.R. Gleed":{kills:13,sorties:"~130+",fate:"KIA Tunisia 16 Apr 1943",awards:["DSO","DFC"],bio:`<p>Ian 'Widge' Gleed flew throughout the battle from Exeter and wrote <em>Arise to Conquer</em> (1942) — regarded as the most vivid and honest first-person Hurricane pilot account: the fear, boredom, friendships, and sudden violence. He was shot down and killed over Tunisia on 16 April 1943 commanding 244 Wing.</p>`},
-  "Plt Off T.F. Neil":{kills:12,sorties:"~140+",fate:"Survived",awards:["DFC Bar"],bio:`<p>Tom 'Ginger' Neil flew with 249 Squadron and wrote what many consider the most detailed Hurricane pilot memoir. <em>Gun Button to Fire</em> and <em>A Fighter in My Sights</em> chart daily life on a fighter station — the dispersal huts, waiting, scrambles, friendships cut short. His 12 victories earned DFC and Bar.</p>`},
-  "Flt Lt E.J.B. Nicholson":{kills:6,sorties:"~80+",fate:"KIA Burma May 1945",awards:["VC","DFC"],bio:`<p>Eric Nicholson is the only Fighter Command pilot to be awarded the Victoria Cross during the Battle of Britain. On 16 August 1940, his Hurricane ablaze, he stayed in the cockpit to shoot down a Bf 110 before baling out — severely burned. He was awarded the VC for this act. He was later killed in Burma on 2 May 1945, just days before VE Day.</p>`},
-  "Flt Lt W.H. Rhodes-Moorhouse":{kills:8,sorties:"~90+",fate:"KIA 6 Sep 1940, age 26",awards:["DFC"],bio:`<p>William Rhodes-Moorhouse was the son of William Barnard Rhodes-Moorhouse VC — the first aviator ever awarded the Victoria Cross, April 1915. He flew with 601 Squadron (the 'Millionaires') and was killed on 6 September 1940 near Tunbridge Wells, aged 26. His death was mourned widely in London society.</p>`},
-  "Flt Lt A.A. McKellar":{kills:21,sorties:"~180+",fate:"KIA 1 Nov 1940, age 26",awards:["DSO","DFC Bar"],bio:`<p>Archie McKellar was Scotland's greatest fighter ace and arguably the most underappreciated pilot of the Battle of Britain. His 21 victories place him among the elite scorers, yet he remains far less known than Bader or Lacey. Flying with 605 Squadron, he was known for aggressive instinctive combat and exceptional marksmanship. He was shot down near Mayfield, Kent on 1 November 1940 — weeks after the formal battle period closed. He was 26.</p>`},
-  "Flt Lt P.W.O. Mould":{kills:8,sorties:"~100+",fate:"KIA Libya 1 Oct 1941",awards:["DFC"],bio:`<p>'Boy' Mould has a unique place in RAF history: on 30 October 1939 over France, he shot down a Dornier Do 17 — the first aerial victory ever achieved by an RAF Hurricane in the Second World War. He was 22. He fought through France and the BoB before being killed in Libya on 1 October 1941.</p>`},
-  "Plt Off S. Fejfar":{kills:7,sorties:"~90+",fate:"KIA Tunisia 17 May 1942",awards:["DFM"],bio:`<p>Štěpán Fejfar was the highest-scoring Czech pilot of the Battle of Britain. Already combat-experienced from France, he brought determination and skill to 310 Squadron at Duxford. His 7 victories in the battle marked him as one of the Duxford Wing's most capable pilots. He was killed in Tunisia on 17 May 1942.</p>`},
-  "Sqn Ldr E.M. Donaldson":{kills:7,sorties:"~100+",fate:"Survived",awards:["DSO","DFC"],bio:`<p>Teddy Donaldson commanded 151 Squadron at North Weald. After the war he became famous for a completely different achievement: on 7 September 1946 he set the world absolute air speed record in a Gloster Meteor at 616 mph — a record that stood for nearly a year. He rose to Air Commodore.</p>`},
-  "Sgt J.H. Lacey":{kills:15,sorties:"~180+",fate:"Survived — died 1989",awards:["DFM","DFM Bar"],bio:`<p>'Ginger' Lacey flew with 501 Squadron before transferring to 151. His total of 18 battle victories (15 with 501) make him the top Hurricane scorer of the battle. As a sergeant pilot he represented the outstanding NCO pilots who formed the backbone of Fighter Command in 1940.</p>`}
-};
 
 // ── PAINT DATA ────────────────────────────────────────────
 const PAINTS = [
@@ -1420,84 +1402,35 @@ const WEATHER = [
 
 // ── WEATHERING TECHNIQUES ────────────────────────────────
 const TECHNIQUES = [
-  {
-    name:"Base coat & pre-shading",
-    colour:"#4a5020",
-    desc:"Apply Dark Earth / Dark Green over a black pre-shade. The black visible through thin colour coats creates natural panel depth. Use an airbrush at 15–20 PSI, thin coats. Work from panel centre outward, leaving edges slightly darker.",
-    products:"Tamiya X-20A thinner · Ratio 1:1.5 paint to thinner",
-    links:[
-      {label:"Pre-shading aircraft — Scale Modelling Now (video)",url:"https://www.scalemodellingnow.com/model-finishing"},
-      {label:"YouTube: RAF WW2 camo panel shading technique",url:"https://www.youtube.com/watch?v=j5AGR6W7ouo"},
-      {label:"Finescale Modeler: aircraft pre-shading guide",url:"https://finescale.com/how-to/online-extras/2021/09/top-5-weathering-techniques"}
-     ]
-  },
-  {
-    name:"Exhaust staining",
-    colour:"#3a2a10",
-    desc:"Heavy exhaust staining on the PORT upper cowling aft of the stub exhaust stacks — running 8–12 scale inches rearward. The Hurricane's 6-stack ejector exhausts produced very visible sooting. Mix burnt umber + lamp black oil paint thinned with white spirit. Draw rearward with a flat brush, then blend. Can also airbrush thin coats of Tamiya XF-64 + NATO black. Note: fabric rear fuselage is LESS susceptible to staining than metal nose.",
-    products:"Abteilung 502 Burnt Umber + Lamp Black · AK Interactive Exhaust Soot pigment",
-    links:[
-      {label:"Scale Modelling Now: Hurricane exhaust staining — 4 video demos",url:"https://www.scalemodellingnow.com/model-finishing"},
-      {label:"YouTube: aircraft exhaust staining tutorial (oil paints + airbrush)",url:"https://www.youtube.com/watch?v=K27dH0d4Bik"},
-      {label:"YouTube: WW2 RAF Hurricane weathering build",url:"https://www.youtube.com/watch?v=NEmAlxaW44I"}
-     ]
-  },
-  {
-    name:"Panel line wash",
-    colour:"#2a3a20",
-    desc:"Diluted dark brown wash into all recessed panel lines. Wipe away excess from raised surfaces while still wet, working in direction of airflow. The Hurricane has relatively FEW recessed panel lines compared to Spitfire — don't over-do it. The fabric-covered rear fuselage has visible rib stitching lines, not panel lines: treat these with a much lighter wash.",
-    products:"AK Interactive Brown for Yellow Schemes · Flory Models dark grey wash · Vallejo Model Wash dark brown",
-    links:[
-      {label:"YouTube: panel line wash for aircraft models (oil technique)",url:"https://www.youtube.com/watch?v=7N9n_6MKPYU"},
-      {label:"YouTube: AMMO panel line wash tutorial",url:"https://www.youtube.com/watch?v=7N9n_6MKPYU"},
-      {label:"Finescale: panel wash technique guide",url:"https://finescale.com/how-to/online-extras/2021/09/top-5-weathering-techniques"}
-     ]
-  },
-  {
-    name:"Chipping & paint wear",
-    colour:"#8a6a30",
-    desc:"Silver pencil technique on wing leading edges, propeller spinner and cockpit sill. Press lightly — groundcrews maintained operational aircraft well and chipping was limited. KEY WARNING for Hurricane: the rear fuselage and tail are fabric-covered — NO bare metal chips here, only fabric tears. The aluminium forward section and wings chip naturally. Chip most at: cockpit sill entry step, wing root, prop blade leading edges, and radiator bath underside.",
-    products:"Prismacolor Silver pencil · Vallejo Liquid Mask hairspray technique · Scale75 White Aluminium for chips",
-    links:[
-      {label:"YouTube: Prismacolor silver pencil chipping technique",url:"https://www.youtube.com/watch?v=nOvKFMBp1Uc"},
-      {label:"YouTube: hairspray technique aircraft chipping",url:"https://www.youtube.com/watch?v=nOvKFMBp1Uc"},
-      {label:"Scale Modelling Now: heavy scratch & chipping technique",url:"https://www.scalemodellingnow.com/model-finishing"}
-     ]
-  },
-  {
-    name:"Mud & ground contamination",
-    colour:"#6a4820",
-    desc:"Use the specific mud colour for your station (see airfield cards above — Devon red, chalk white, Sussex brown). Apply with an old stiff brush stippled onto undercarriage legs, tailwheel, lower wheel covers and lower aft fuselage. Build up in layers. For wet mud: add Vallejo Water Effects or AK Wet Effects as a top coat. For dry dust: MIG pigments fixed with Ammo fixer. The tailwheel carries most mud — concentrate effort here.",
-    products:"MIG pigments (Earth, Dust) · Vallejo Still Water · AK Wet Effects · Ammo Pigment Fixer",
-    links:[
-      {label:"YouTube: scale model mud effects on aircraft undercarriage",url:"https://www.youtube.com/watch?v=K27dH0d4Bik"},
-      {label:"YouTube: MIG pigments tutorial — dust and mud",url:"https://www.youtube.com/watch?v=K27dH0d4Bik"},
-      {label:"YouTube: AK interactive wet effects tutorial",url:"https://www.youtube.com/watch?v=K27dH0d4Bik"}
-     ]
-  },
-  {
-    name:"Code letters & markings",
-    colour:"#1a3a5c",
-    desc:"Sky BS381C-216 code letters were applied by groundcrew using standard stencils — not always perfectly aligned and spacing varied. After months of ops they faded. Mix slightly whiter (add 15% XF-2) for a weathered appearance. Gun port tape: yellow doped fabric — paint XF-64 lightened with XF-2. After 'firing', show blast scoring with lamp black oil streaking rearward from each port. Serials in black, small, rear fuselage port side only.",
-    products:"Tamiya XF-21 Sky · Humbrol 90 Beige Green · lightened 10–15% with Tamiya XF-2",
-    links:[
-      {label:"YouTube: painting and weathering aircraft code letters",url:"https://www.youtube.com/watch?v=7N9n_6MKPYU"},
-      {label:"YouTube: gun port staining WW2 aircraft model",url:"https://www.youtube.com/watch?v=K27dH0d4Bik"},
-      {label:"Barracuda: RAF roundel and insignia guide",url:"https://barracudacals.com"}
-     ]
-  },
-  {
-    name:"Final sealing & filter",
-    colour:"#5a3a20",
-    desc:"Matt varnish overall to unify all weathering. Then oil dot filtering: apply tiny dots of yellow ochre, raw sienna, and titanium white across upper surfaces — blend with thinner for a subtle warm fade. Pin-wash recesses once more over the varnish for crispness. Satin final coat on canopy framing and metal fittings. Matte on fabric and painted surfaces. The paint surface on BoB Hurricanes was MAP (Medium Aircraft Paint) — a genuine flat matt, so keep the final finish very flat.",
-    products:"Vallejo Matt Varnish · Abteilung 502 oils (Yellow Ochre, Raw Sienna) · Tamiya X-35 satin for canopy frames",
-    links:[
-      {label:"YouTube: oil dot filter technique aircraft model",url:"https://www.youtube.com/watch?v=K27dH0d4Bik"},
-      {label:"YouTube: final varnish matt satin scale model aircraft",url:"https://www.youtube.com/watch?v=7N9n_6MKPYU"},
-      {label:"Scale Modelling Now: oil filter and varnish guide",url:"https://www.scalemodellingnow.com/model-finishing"}
-     ]
-  }
-     ];
+  {name:"RLM base coats",colour:"#3d4a38",
+   desc:"Apply RLM 76 Lichtblau to the entire airframe first — undersurfaces and fuselage sides. Then apply RLM 74 and 75 to the upper surfaces in the soft-edged irregular pattern. Thin 50:50 with appropriate thinner. Work at 15 PSI. The demarcation is not a hard line — use the airbrush held at a shallow angle for a soft irregular edge.",
+   products:"Vallejo 70.971 RLM 76 · AK AK2064 RLM 74 · AK AK2065 RLM 75",
+   links:[{label:"RLM colour guide",url:"https://www.hannants.co.uk/search/?keyword_search=RLM+luftwaffe"}]},
+  {name:"Fuselage mottling",colour:"#5a5468",
+   desc:"The defining feature of the Fw 190 G variant scheme. Reduce air pressure to 8-12 PSI, thin paint to 50:50, needle almost closed, airbrush 15-20mm from surface. Apply RLM 74 first in small circular patches, widely spaced. Then RLM 75 in the gaps. Step back and assess — real aircraft had fewer mottles than most models show. Resist adding more.",
+   products:"AK AK2064 RLM 74 · AK AK2065 RLM 75 · Tamiya X-20A thinner",
+   links:[{label:"Mottling technique guide",url:"article-bf109-mottle-guide.html"}]},
+  {name:"BMW 801 exhaust staining",colour:"#2a1a08",
+   desc:"The radial engine produces a star-burst staining pattern — dark streaks from each of the 14 stacks radiating rearward from the cowling ring. Apply dark brown-black (Tamiya XF-64 + XF-1, 70:30) behind all stacks. Then a lighter grey-black post-shade for depth. Streaks extend 20-30mm on a 1:48 model, thinning and lightening rearward. Lower cowling staining is lighter than upper.",
+   products:"Tamiya XF-64 Red Brown · AK Interactive Exhaust Soot · Vallejo 70.822",
+   links:[{label:"AK exhaust products",url:"https://www.hannants.co.uk/search/?keyword_search=AK+exhaust+soot"}]},
+  {name:"Panel line wash",colour:"#2a3a20",
+   desc:"Apply diluted dark brown wash (AK Interactive Brown for Dark Green Schemes or Flory Models dark wash) into all recessed panel lines. The Fw 190 has a full metal stressed-skin structure with closely spaced panel lines — use a fine brush and capillary action. Wipe away excess from raised surfaces while still wet, working in direction of airflow.",
+   products:"Flory Models dark grey wash · AK Interactive Panel Line Wash · Vallejo Model Wash",
+   links:[{label:"Flory wash",url:"https://www.hannants.co.uk/search/?keyword_search=flory+models+wash"}]},
+  {name:"Chipping and paint wear",colour:"#8a6a30",
+   desc:"Silver pencil or hairspray technique on wing leading edges, cowling access panel edges, walkways and gun port surrounds. The Fw 190 is all-metal — chips anywhere are historically valid. Focus on: wing leading edges, the curved cowling access panel edges, footstep area, propeller spinner, and the BMW 801 cowling ring. Eastern Front aircraft show much heavier chipping than Channel Front.",
+   products:"Prismacolor Silver pencil · Vallejo Liquid Mask · Scale75 White Aluminium",
+   links:[{label:"Chipping technique",url:"https://www.hannants.co.uk/search/?keyword_search=scale75+aluminium"}]},
+  {name:"RLM markings and decals",colour:"#4a5878",
+   desc:"Apply Balkenkreuz decals over gloss varnish. Use Micro Set and Micro Sol. The Balkenkreuz elements should be applied one at a time for easier positioning. Eastern Front aircraft: RLM 04 yellow band is field-applied and looks semi-transparent — apply as a thin, slightly uneven coat showing the base colour through. Fuselage codes in white — deliberately slightly irregular.",
+   products:"Micro Set and Micro Sol · Vallejo Gloss Varnish",
+   links:[{label:"Eduard ProfiPACK decals EDK82145",url:"https://www.hannants.co.uk/product/EDK82145"}]},
+  {name:"Final sealing and filter",colour:"#5a3a20",
+   desc:"Matt varnish overall to unify weathering. Oil dot filtering with raw umber, yellow ochre across upper surfaces — blend for subtle warmth. Pin wash recesses once more over the varnish. The RLM paint system was a genuine flat matt — keep the final finish very flat. Cockpit interior through the canopy should remain slightly darker than outer surfaces.",
+   products:"Vallejo Matt Varnish · Abteilung 502 oils · Tamiya X-35 Satin for canopy frames",
+   links:[{label:"Vallejo varnish",url:"https://www.hannants.co.uk/search/?keyword_search=vallejo+matt+varnish"}]}
+];
 
 
 // ── AIRFIELD STATIONS ─────────────────────────────────────
@@ -1733,7 +1666,7 @@ function showDetail(num) {
     <div class="dp-top">
       <div>
         <div class="dp-title">No. ${sq.num} Squadron RAF — ${sq.codes}</div>
-        <div class="dp-meta">Base: ${sq.base} &nbsp;·&nbsp; ${sq.group} Group &nbsp;·&nbsp; ${sq.pilots.length} pilots &nbsp;·&nbsp; ${sq.kills} claims / ${sq.sorties} sorties &nbsp;·&nbsp; ${(sq.kills/sq.sorties*100).toFixed(1)}% kill rate</div>
+        <div class="dp-meta">Base: ${sq.base} &nbsp;·&nbsp; ${sq.group==="west"?"Channel Front":sq.group==="east"?"Eastern Front":sq.group==="reich"?"Defence of Reich":"North Africa"} &nbsp;·&nbsp; ${sq.pilots.length} pilots &nbsp;·&nbsp; ${sq.kills} top ace kills · est. ${sq.sorties} sorties</div>
       </div>
       <button class="close-btn" onclick="closeDetail()">Close ✕</button>
     </div>
@@ -1768,7 +1701,7 @@ function showDetail(num) {
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:.5rem">
             <a href="https://www.iwm.org.uk/collections" target="_blank" rel="noopener"
                style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass);text-decoration:none;padding:3px 8px;border:1px solid rgba(184,144,42,.3);border-radius:2px">IWM Archive ↗</a>
-            <a href="https://commons.wikimedia.org/w/index.php?search=No+${sq.num}+Squadron+RAF+Hurricane&ns6=1" target="_blank" rel="noopener"
+            <a href="https://commons.wikimedia.org/w/index.php?search=Focke-Wulf+Fw+190+Luftwaffe+${sq.num}&ns6=1" target="_blank" rel="noopener"
                style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--raf-sky);text-decoration:none;padding:3px 8px;border:1px solid rgba(74,127,165,.3);border-radius:2px">Wikimedia ↗</a>
           </div>
         </div>
@@ -1825,7 +1758,7 @@ function showDetail(num) {
       <div class="sec-label">More reference</div>
       <div style="display:flex;flex-wrap:wrap;gap:5px">
         <a class="shop-btn hb-raf" href="https://www.iwm.org.uk/collections" target="_blank">IWM Photo Archive ↗</a>
-        <a class="shop-btn hb-gold" href="https://www.hannants.co.uk/search/?keyword_search=Hurricane+RAF+decals" target="_blank" rel="noopener">Hannants Decal Search ↗</a>
+        <a class="shop-btn hb-gold" href="https://www.hannants.co.uk/search/?keyword_search=fw190+luftwaffe+decals" target="_blank" rel="noopener">Hannants Decal Search ↗</a>
         <a class="shop-btn hb-gold" href="articles.html" target="_blank">Build Guides & Articles ↗</a>
         <button class="shop-btn hb-ghost" onclick="closeDetail()">Close ✕</button>
       </div>
@@ -1871,8 +1804,8 @@ async function fetchPhotos(sqNum, codes) {
 
   // Words that indicate a modern photo we don't want
   const BLOCKLIST = /eurofighter|typhoon|tornado|f-35|f35|gripen|rafale|airbus|boeing|concorde|chinook|apache|lynx|merlin heli|red arrow|hawk t|display team|2[0-9]{3}|199[5-9]/i;
-  // Words that confirm it's a genuine WW2 Hurricane photo
-  const ALLOWLIST = /hurricane|hawker|battle of britain|194[0-4]|raf|fighter command|squadron/i;
+  // Words that confirm it's a genuine Fw 190 photo
+  const ALLOWLIST = /fw.190|focke.wulf|luftwaffe|battle of britain|194[0-4]|raf|fighter command|squadron/i;
 
   async function getInfo(titles) {
     if (!titles.length) return [];
@@ -1924,12 +1857,12 @@ async function fetchPhotos(sqNum, codes) {
     } catch(e) {}
   }
 
-  // 2. Search for Hurricane + squadron code letters (e.g. "JX Hurricane 1940")
-  const codeSearch = codes ? `"${codes}" Hurricane 1940 RAF` : null;
+  // 2. Search for Fw 190 + unit code
+  const codeSearch = codes ? `"${codes}" Fw 190 Luftwaffe` : null;
   const queries = [
     codeSearch,
-    `Hurricane "No. ${sqNum} Squadron" 1940`,
-    `Hawker Hurricane ${sqNum} Squadron RAF 1940`,
+    `Fw 190 "${sqNum}" Luftwaffe Channel Front`,
+    `Focke-Wulf Fw 190 "${sqNum}" 1942 1943 1944`,
   ].filter(Boolean);
 
   for (const q of queries) {
@@ -1941,9 +1874,9 @@ async function fetchPhotos(sqNum, codes) {
     } catch(e) {}
   }
 
-  // 3. Fallback: search for Hurricane + year only — no generic category
+  // 3. Fallback: search for Fw 190 + year
   try {
-    const r = await fetch(`https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent('Hawker Hurricane RAF 1940 Battle of Britain')}&srnamespace=6&srlimit=30&format=json&origin=*`);
+    const r = await fetch(`https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent('Focke-Wulf Fw 190 Luftwaffe')}&srnamespace=6&srlimit=30&format=json&origin=*`);
     const d = await r.json();
     const titles = (d.query?.search || []).map(x => x.title).filter(t => /hurricane/i.test(t));
     if (titles.length) { const pages = await getInfo(titles); if (render(pages)) return; }
@@ -2570,7 +2503,7 @@ function renderWeathering() {
     <div class="weather-card">
       <div class="weather-hd">
         <div class="weather-base">${w.base}</div>
-        <div class="weather-group">${w.group} Group · ${w.sqns.join(', ')}</div>
+        <div class="weather-group">${w.group==="west"?"Channel Front":w.group==="east"?"Eastern Front":w.group==="africa"?"North Africa":"Defence of the Reich"} · ${w.sqns.join(', ')}</div>
       </div>
       <div class="weather-body">
         ${w.rows.map(r => `<div class="weather-row"><span class="wr-label">${r.l}</span><span>${r.v}</span></div>`).join('')}
@@ -2702,11 +2635,11 @@ function renderAftermarket() {
       <div class="am-grid">
         ${items.map(item => `
           <div class="am-card">
-            <div class="am-type">${item.type}</div>
+            <div class="am-type">${item.scale||item.scales||''}</div>
             <div class="am-name">${item.name}</div>
-            <div class="am-maker">${item.maker}</div>
-            <div class="am-scales">${item.scales.map(s=>`<span class="am-scale">${s}</span>`).join('')}</div>
-            <div class="am-desc">${item.desc}</div>
+            <div class="am-maker">${item.brand||item.maker||''}</div>
+            <div class="am-scales"></div>
+            <div class="am-desc">${item.note||item.desc||''}</div>
             <a href="${item.url}" target="_blank" rel="noopener"
                style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;margin-top:.4rem;padding:4px 10px;border-radius:2px;background:rgba(28,24,10),.7);border:1px solid rgba(255,255,255,.12);transition:all .15s"
                onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='rgba(255,255,255,.12)'">
@@ -2727,16 +2660,14 @@ function renderSurvivors() {
       <div class="survivor-card">
         <div class="survivor-hd">
           <div>
-            <div class="survivor-serial">${s.serial}</div>
-            <div class="survivor-name">${s.location}</div>
+            <div class="survivor-serial">${s.serial||'—'}</div>
+            <div class="survivor-name">${s.loc}</div>
           </div>
-          <span class="survivor-status status-${s.status}">${s.status==='fly'?'✈ Flying':s.status==='restore'?'🔧 Restoring':'🏛 Static'}</span>
+          <span class="survivor-status status-static">🏛 ${s.status}</span>
         </div>
         <div class="survivor-body">
-          <div class="survivor-row"><span class="survivor-key">Markings</span><span>${s.markings}</span></div>
-          <div class="survivor-row"><span class="survivor-key">History</span><span>${s.history}</span></div>
-          <div style="margin-top:.6rem;font-size:11px;color:var(--brass2);font-style:italic;border-top:1px solid rgba(255,255,255,.06);padding-top:.5rem">${s.note}</div>
-          ${s.link ? `<a href="${s.link}" target="_blank" rel="noopener" class="shop-btn hb-raf" style="margin-top:.75rem;font-size:13px">Visit website ↗</a>` : ''}
+          <div class="survivor-row"><span class="survivor-key">Aircraft</span><span>${s.name}</span></div>
+          <div style="margin-top:.6rem;font-size:11px;color:var(--brass2);font-style:italic;border-top:1px solid rgba(255,255,255,.06);padding-top:.5rem">${s.notes}</div>
         </div>
       </div>
     `).join('')}
@@ -2751,15 +2682,14 @@ function renderBooks() {
       <div class="books-grid">
         ${books.map(b => `
           <div class="book-card">
-            <div class="book-spine" style="background:${b.colour}"></div>
+            <div class="book-spine" style="background:#4a5020"></div>
             <div class="book-info">
-              <div class="book-title">${b.title}</div>
-              <div class="book-author">${b.author} · ${b.year}</div>
-              <div class="book-rating">${'★'.repeat(b.stars)}${'☆'.repeat(5-b.stars)}</div>
-              <div class="book-desc">${b.desc}</div>
+              <div class="book-title">${b.t||b.title}</div>
+              <div class="book-author">${b.a||b.author} · ${b.y||b.year}</div>
+              <div class="book-rating">${'★'.repeat(b.r||b.stars||3)}${'☆'.repeat(5-(b.r||b.stars||3))}</div>
+              <div class="book-desc">${b.note||b.desc||''}</div>
               <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:.4rem">
-                ${(b.shops||[]).map(s => `<a class="shop-btn hb-gold" href="${s.url}" target="_blank" style="font-size:12px;padding:4px 10px">${s.label} ↗</a>`).join('')}
-                ${b.url ? `<a class="shop-btn hb-gold" href="${b.url}" target="_blank" style="font-size:12px;padding:4px 10px">Buy ↗</a>` : ''}
+                <a class="shop-btn hb-gold" href="https://www.amazon.co.uk/s?k=${encodeURIComponent((b.t||b.title)+' '+(b.a||b.author))}" target="_blank" style="font-size:12px;padding:4px 10px">Amazon UK ↗</a>
               </div>
             </div>
           </div>
@@ -2771,28 +2701,6 @@ function renderBooks() {
 
 // ═══════════════════════════════════════════════════════
 // ── DATA: defined early so all render functions can access them ──────────────
-const BOB_EVENTS = [
-  {md:"07-10",text:"Battle of Britain officially begins. Kanalkampf phase opens with Luftwaffe attacks on Channel convoys. 11 Group scrambles for the first major engagements."},
-  {md:"07-16",text:"Hitler issues Directive No. 16 — Operation Sea Lion invasion preparations ordered."},
-  {md:"07-19",text:"Hitler offers peace terms to Britain in the Reichstag. Churchill refuses."},
-  {md:"08-01",text:"Göring issues Directive for intensified air war against England. Adlertag preparations begin."},
-  {md:"08-08",text:"Heavy convoy attacks. One of the largest single days of combat. 'Peewit' convoy convoy heavily attacked — 20 ships sunk or damaged."},
-  {md:"08-12",text:"Adlerangriff opens. Radar stations hit for the first time. Ventnor radar put out of action."},
-  {md:"08-13",text:"Adlertag — Eagle Day. Luftwaffe flies 1,485 sorties. Poor coordination blunts the attack."},
-  {md:"08-15",text:"'Black Thursday' for the Luftwaffe. All four Luftflotten attack simultaneously. Luftflotte 5 attacks from Norway and suffers catastrophic losses."},
-  {md:"08-18",text:"The 'Hardest Day'. Highest single-day losses on both sides. RAF loses 71 aircraft; Luftwaffe 69."},
-  {md:"08-20",text:"Churchill delivers 'Never was so much owed by so many to so few' speech in the Commons."},
-  {md:"08-24",text:"Luftwaffe accidentally bombs central London. RAF retaliates with first raid on Berlin."},
-  {md:"08-31",text:"Worst day for Fighter Command. 39 pilots killed or missing; 59 aircraft destroyed."},
-  {md:"09-07",text:"Göring shifts to mass bombing of London — the Blitz begins. Fighter Command given breathing space to recover. Invasion Alert No. 1 issued."},
-  {md:"09-09",text:"Major daylight raid on London. 28 German aircraft destroyed for 19 RAF."},
-  {md:"09-11",text:"Hitler postpones Sea Lion by three days. Invasion barges in Channel ports attacked by Bomber Command."},
-  {md:"09-15",text:"Battle of Britain Day. Two massive raids on London decisively repulsed. Churchill visits 11 Group HQ. Claimed 185 German aircraft; actual ~61. Decisive turning point."},
-  {md:"09-17",text:"Hitler postpones Operation Sea Lion indefinitely."},
-  {md:"09-27",text:"Last major daylight attack on London and Bristol. Bombers escorted by massed fighters."},
-  {md:"10-12",text:"Operation Sea Lion postponed until spring 1941 (effectively cancelled)."},
-  {md:"10-31",text:"Official end of the Battle of Britain."},
-];
 
 
 const PILOT_STORIES = [
@@ -2806,27 +2714,30 @@ const PILOT_STORIES = [
 
 
 const BUILD_STEPS = [
-  {n:1,title:"Research & marking choice",icon:"📋",
-   text:"Before opening the box, decide on your subject — which squadron, which pilot, which date. This fixes your roundel type, code colours, camouflage pattern and weathering tone. The Squadrons tab has marking references for all 22 units. For a 1940 subject, you want Type A1 fuselage roundels, Type A upper wings, Type B lower wings, Sky spinner and codes.",
-   products:[{name:"Xtradecal X48147 (1:48 BoB Hurricane)",url:"https://www.hannants.co.uk/product/X48147"},{name:"Barracuda decals Hurricane",url:"https://barracudacals.com/search?q=Hurricane"}]},
-  {n:2,title:"Cockpit",icon:"🎛️",
-   text:"Build and paint the cockpit first — it must be installed before the fuselage halves close. Interior Grey-Green (Humbrol 78 or Tamiya XF-71) for the main tub. The seat cushion is a dark olive-buff. Instruments are best done with a PE set or Barracuda resin replacement. CMK and Aires both offer excellent drop-in cockpit sets for the 1:48 Airfix kit.",
-   products:[{name:"CMK Hurricane 1:48 cockpit",url:"https://www.hannants.co.uk/product/CMK4352"},{name:"Aires Hurricane cockpit resin",url:"https://www.hannants.co.uk/search/?keyword_search=aires+hurricane&product_type_id=1819&scale_id=955"}]},
+  {n:1,title:"Research and marking choice",icon:"📋",
+   text:"Before opening the box, decide your subject — JG 26 Channel Front, JG 54 Eastern Front, or D-9 Dora. This fixes your camouflage pattern, mottling density, yellow Eastern Front markings and weathering tone. The Units tab has marking references for all 8 JG units. For an A-8 subject you need RLM 74/75/76 and fuselage mottling; for D-9 the blue-grey Jumo cowling and yellow-green rear band.",
+   products:[{name:"Eduard ProfiPACK EDK82145",url:"https://www.hannants.co.uk/product/EDK82145"},{name:"Xtradecal Fw 190 sheets",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+fw190"}]},
+  {n:2,title:"Cockpit — RLM 66 interior",icon:"🎛️",
+   text:"Build and paint the cockpit first. Interior is RLM 66 Schwarzgrau — Tamiya XF-63 or Vallejo 70.862. Very dark, near-black grey. Instrument panel in RLM 66 with instrument faces in flat black. Seat in dark leather. The Eduard ProfiPACK includes pre-painted SPACE 3D photo-etch that transforms the cockpit with minimal effort. Eduard Brassin BMW 801 engine front adds impressive detail for open cowling displays.",
+   products:[{name:"Eduard Brassin BMW 801 ED648554",url:"https://www.hannants.co.uk/product/ED648554"},{name:"Eduard EDEX712 canopy masks",url:"https://www.hannants.co.uk/product/EDEX712"}]},
   {n:3,title:"Main construction",icon:"🔧",
-   text:"Assemble the fuselage, fit the wings, and deal with any seam lines before paint. The Airfix 1:48 Mk.I has very good fit. Thin superglue works well for seams. The wing-root join benefits from small amounts of filler. Ensure the undercarriage bays are painted Interior Grey-Green before the wings are closed. Mask the canopy early — the Barracuda masks are excellent.",
-   products:[{name:"Barracuda Hurricane canopy masks",url:"https://barracudacals.com/search?q=Hurricane"},{name:"Eduard masks Hurricane",url:"https://www.hannants.co.uk/product/EDEX712"}]},
-  {n:4,title:"Primer & base coat",icon:"🎨",
-   text:"Prime in grey — Vallejo Surface Primer or Tamiya Fine Surface primer. Then lay down the Sky underside (Humbrol 90 or Tamiya XF-21). Use the camouflage scheme guide in the Paint tab for the upper surface split. The Hard Edge A scheme has a wavy demarcation line that can be done freehand with a fine brush or Blu-Tack as a mask.",
-   products:[{name:"Humbrol Dark Earth (Humbrol 29)",url:"https://uk.humbrol.com/products/no-29-dark-earth-matt"},{name:"Humbrol Dark Green (Humbrol 30)",url:"https://uk.humbrol.com/products/no-30-dark-green-matt"},{name:"Humbrol Sky (Humbrol 90)",url:"https://uk.humbrol.com/products/no-90-beige-green-matt"}]},
-  {n:5,title:"Decals",icon:"📄",
-   text:"Apply decals over a gloss varnish coat — Vallejo Gloss Varnish or Mr Hobby. Use Micro Set and Micro Sol to bed them into panel lines. For 1940 Hurricanes the roundels sit very close to the surface — check your reference for exact positioning. Once dry, seal with a satin coat before weathering.",
-   products:[{name:"Micro Set & Micro Sol",url:"https://www.hannants.co.uk/search/?keyword_search=micro+sol&product_type_id=all_decals"},{name:"AK Interactive decal softener",url:"https://ak-interactive.com/product/decal-fix/"}]},
-  {n:6,title:"Weathering",icon:"💨",
-   text:"The key Hurricane weathering features: exhaust staining on the port cowling (brown-black Tamiya panel liner or oils), gun port blast marks (carbon black), wheel well mud, leading edge wear (aluminium dry-brush). Use the Weathering tab for airfield-specific mud colours and Tamiya mix recipes. Pin wash panel lines with Flory Models dark wash or AK Interactive.",
-   products:[{name:"AK Interactive Hurricane weathering set",url:"https://www.hannants.co.uk/search/?keyword_search=ak+interactive+hurricane&product_type_id=all"},{name:"Flory Models dark wash",url:"https://www.hannants.co.uk/search/?keyword_search=flory+models+wash"}]},
-  {n:7,title:"Final details & base",icon:"✅",
-   text:"Fit the propeller, undercarriage, antennas and pitot tube last. The antenna mast is often broken in combat photos — a historically accurate choice. A blast-pen or scramble base suits a BoB subject — grass airfield with mud from the Weathering tab's colour palette. Dry grass tufts from Gamers Grass look excellent.",
-   products:[{name:"Gamers Grass tufts",url:"https://www.hannants.co.uk/search/?keyword_search=gamers+grass+tufts"},{name:"AK Interactive groundwork",url:"https://ak-interactive.com/product-category/groundwork-solutions/"}]},
+   text:"Assemble fuselage, fit wings, deal with seam lines before paint. Eduard kits have excellent fit throughout. Pay close attention to the BMW 801 cowling ring join — the most visible seam on the finished model. Dry-fit the cowling access panels before committing to glue. The cowling flaps can be displayed open or closed — open displays benefit greatly from the Brassin engine front.",
+   products:[{name:"Tamiya Extra Thin Cement",url:"https://www.hannants.co.uk/search/?keyword_search=tamiya+extra+thin+cement"}]},
+  {n:4,title:"RLM 76 base coat",icon:"🎨",
+   text:"Apply RLM 76 Lichtblau to the entire airframe — this is both the undersurface colour and the mottling base on fuselage sides. Thin 50:50 with appropriate thinner, apply at 15 PSI in multiple thin coats. This must be fully cured before mottling — 24 hours for lacquer-based paints, 4-6 hours for acrylics. Then apply RLM 74 and 75 to upper surfaces in the irregular demarcation pattern.",
+   products:[{name:"Vallejo 70.971 RLM 76",url:"https://www.hannants.co.uk/search/?keyword_search=vallejo+70971"},{name:"AK AK2064 RLM 74",url:"https://www.hannants.co.uk/search/?keyword_search=AK2064"},{name:"AK AK2065 RLM 75",url:"https://www.hannants.co.uk/search/?keyword_search=AK2065"}]},
+  {n:5,title:"Fuselage mottling",icon:"🔷",
+   text:"Reduce air pressure to 8-12 PSI. Thin paint 50:50. Needle almost closed. Hold airbrush 15-20mm from surface and apply small irregular patches with circular movements. Apply RLM 74 first, widely spaced — then RLM 75 in the gaps. Step back and assess. Apply half as many mottles as your instinct suggests. Less is more — real aircraft were far more sparsely mottled than most models.",
+   products:[{name:"Mottling technique article",url:"article-bf109-mottle-guide.html"}]},
+  {n:6,title:"Decals",icon:"📄",
+   text:"Apply over gloss varnish. Use Micro Set and Micro Sol. Apply Balkenkreuz elements one at a time. For Eastern Front aircraft, the RLM 04 yellow band should be painted on, not decal — apply as a slightly transparent, field-applied looking coat. Fuselage code numbers in white, deliberately slightly irregular. Seal all decals before weathering.",
+   products:[{name:"Micro Set and Micro Sol",url:"https://www.hannants.co.uk/search/?keyword_search=micro+sol"}]},
+  {n:7,title:"Weathering",icon:"💨",
+   text:"BMW 801 star-burst exhaust pattern (dark brown-black Tamiya XF-64 + XF-1 behind all 14 stacks). Gun port blast staining from all wing cannon positions. Chipping on leading edges and walkways. Use the Weathering tab for theatre-specific mud colours. Eastern Front aircraft: much heavier overall weathering, chalk whitewash possible. Channel Front: moderate, well-maintained appearance.",
+   products:[{name:"AK exhaust soot",url:"https://www.hannants.co.uk/search/?keyword_search=AK+exhaust"},{name:"Flory Models wash",url:"https://www.hannants.co.uk/search/?keyword_search=flory+models+wash"}]},
+  {n:8,title:"Final details",icon:"✅",
+   text:"Fit the propeller, undercarriage, antenna and pitot tube last. Matt varnish overall to unify weathering. Oil dot filter for warmth on upper surfaces. The Fw 190 A-8 cowling access panels, if displayed open, should show the BMW 801 engine detail. A simple airfield base — packed earth or PSC grass mat — suits most Channel Front and Eastern Front subjects.",
+   products:[{name:"Vallejo Matt Varnish",url:"https://www.hannants.co.uk/search/?keyword_search=vallejo+matt+varnish"}]},
 ];
 
 function renderStepByStep() {
@@ -2848,10 +2759,10 @@ function renderStepByStep() {
 
 // ── Colour comparison ──────────────────────────────────────────────────────
 const COLOUR_COMPARE = [
-  {name:"Dark Earth",raf:"#8B6B35",humbrol:"#8E6B3A",tamiya:"#8A6939",vallejo:"#9B7342",ak:"#937043",humCode:"29",tamCode:"XF-52",valCode:"70.819",akCode:"AK11171"},
-  {name:"Dark Green",raf:"#3D5229",humbrol:"#40542B",tamiya:"#3B5228",vallejo:"#395228",ak:"#3C5429",humCode:"30",tamCode:"XF-61",valCode:"70.893",akCode:"AK11149"},
-  {name:"Sky",raf:"#8DB9A0",humbrol:"#85B099",tamiya:"#93B8A5",vallejo:"#8AB6A0",ak:"#88B49E",humCode:"90",tamCode:"XF-21",valCode:"71.124",akCode:"AK11182"},
-  {name:"Night / Black",raf:"#1C1C1C",humbrol:"#191919",tamiya:"#1A1A1A",vallejo:"#000000",ak:"#141414",humCode:"21",tamCode:"XF-1",valCode:"70.950",akCode:"AK11018"},
+  {name:"RLM 74 Graugruen",raf:"#3d4a38",humbrol:"#3e4b39",tamiya:"#3c4938",vallejo:"#3f4c38",ak:"#3d4a38",humCode:"155",tamCode:"XF-73",valCode:"70.867",akCode:"AK2064"},
+  {name:"RLM 75 Grauviolett",raf:"#5a5468",humbrol:"#585268",tamiya:"#595368",vallejo:"#585268",ak:"#5a5468",humCode:"140",tamCode:"XF-19",valCode:"70.989",akCode:"AK2065"},
+  {name:"RLM 76 Lichtblau",raf:"#adbfcc",humbrol:"#a8bcc8",tamiya:"#aabece",vallejo:"#aabece",ak:"#adbfcc",humCode:"147",tamCode:"XF-19",valCode:"70.971",akCode:"AK2066"},
+  {name:"RLM 66 Schwarzgrau",raf:"#282c30",humbrol:"#272b2f",tamiya:"#282c30",vallejo:"#272b2e",ak:"#282c30",humCode:"32",tamCode:"XF-63",valCode:"70.862",akCode:"AK2066"},
 ];
 
 function renderColourCompare() {
@@ -2964,7 +2875,7 @@ function renderPilotStories() {
     const callsignBadge = p.callsign !== '\u2014'
       ? `<span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:rgba(184,144,42,.15);color:var(--brass2);padding:2px 8px;border:1px solid rgba(184,144,42,.3);border-radius:2px">"${p.callsign}"</span>`
       : '';
-    const acBadge = `<span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:2px 8px;border:1px solid rgba(255,255,255,.1);border-radius:2px">${p.aircraft || 'Hurricane Mk.I'}</span>`;
+    const acBadge = `<span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:2px 8px;border:1px solid rgba(255,255,255,.1);border-radius:2px">${p.aircraft || 'Fw 190 A-8'}</span>`;
     return `<div style="background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--brass);border-radius:3px;padding:1.4rem;margin-bottom:1.5rem">
       <div style="display:flex;gap:1.2rem;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap">
         <div id="story-photo-${i}" style="width:80px;height:100px;flex-shrink:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:2px;display:flex;align-items:center;justify-content:center;overflow:hidden">
