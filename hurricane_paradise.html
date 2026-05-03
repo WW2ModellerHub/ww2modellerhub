@@ -1046,7 +1046,7 @@ body{
           <div class="ac-drop-grid">
             <div class="ac-drop-section">
               <div class="ac-drop-heading">Allied fighters</div>
-              <a href="hurricane_paradise.html" class="ac-drop-item">Hawker Hurricane <span class="ac-drop-badge live">Live</span></a>
+              <a href="hurricane_paradise.html" class="ac-drop-item current">Hawker Hurricane <span class="ac-drop-badge live">Live</span></a>
               <a href="spitfire_paradise.html" class="ac-drop-item">Supermarine Spitfire <span class="ac-drop-badge live">Live</span></a>
               <a href="p51_paradise.html" class="ac-drop-item">P-51 Mustang <span class="ac-drop-badge soon">Hub</span></a>
               <span class="ac-drop-item ac-drop-disabled">P-47 Thunderbolt <span class="ac-drop-badge plan">Planned</span></span>
@@ -1055,7 +1055,7 @@ body{
             </div>
             <div class="ac-drop-section">
               <div class="ac-drop-heading">Allied bombers</div>
-              <a href="lancaster_paradise.html" class="ac-drop-item">Avro Lancaster <span class="ac-drop-badge live">Hub</span></a>
+              <a href="lancaster_paradise.html" class="ac-drop-item">Avro Lancaster <span class="ac-drop-badge live">Live</span></a>
               <a href="mosquito_paradise.html" class="ac-drop-item">DH Mosquito <span class="ac-drop-badge soon">Hub</span></a>
               <span class="ac-drop-item ac-drop-disabled">B-17 Flying Fortress <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">B-25 Mitchell <span class="ac-drop-badge plan">Planned</span></span>
@@ -1088,6 +1088,8 @@ body{
               <a href="techniques-bank.html" class="ac-drop-item">Techniques Bank <span class="ac-drop-badge live">Guide</span></a>
               <a href="articles.html" class="ac-drop-item">Articles Library <span class="ac-drop-badge live">Read</span></a>
             </div>
+          </div>
+        </div></div>
           </div>
         </div>
       </div>
@@ -3552,6 +3554,78 @@ const BOOKS = {
 // ═══════════════════════════════════════════════════════
 // RENDER FUNCTIONS — NEW TABS
 // ═══════════════════════════════════════════════════════
+const AFTERMARKET={
+ "Cockpit & Interior":[
+  {type:"Resin",name:"Hurricane Mk.I Cockpit 1:48 — Eduard Brassin 648018",maker:"Eduard Brassin",scales:["1:48"],
+   desc:"Full resin cockpit replacement — seat, IP, sidewalls, throttle quadrant. Most impactful single upgrade for Airfix or Eduard 1:48 Hurricane.",
+   url:"https://www.hannants.co.uk/search/?keyword_search=648018+hurricane"},
+  {type:"PE",name:"Hurricane Mk.I PE Cockpit 1:48 — Eduard 48948",maker:"Eduard",scales:["1:48"],
+   desc:"Photo-etch instrument panel and harness for Airfix or Eduard 1:48 kit.",
+   url:"https://www.hannants.co.uk/search/?keyword_search=48948+hurricane"},
+  {type:"PE",name:"Hurricane Mk.I PE Cockpit 1:72 — Eduard 73561",maker:"Eduard",scales:["1:72"],
+   desc:"Photo-etch cockpit detail for Airfix 1:72 Hurricane.",
+   url:"https://www.hannants.co.uk/search/?keyword_search=73561+hurricane"},
+ ],
+ "Exhausts & Undercarriage":[
+  {type:"Resin",name:"Hurricane Mk.I exhaust stacks 1:48 — Barracuda",maker:"Barracuda Studios",scales:["1:48"],
+   desc:"Resin replacement exhaust stacks with correct cross-section profile.",
+   url:"https://barracudacals.com/collections/1-48-resin-detail-sets"},
+  {type:"Resin",name:"Hurricane Mk.I wheels 1:48 — Barracuda",maker:"Barracuda Studios",scales:["1:48"],
+   desc:"Weighted flat-spotted Dunlop wheels with correct tread.",
+   url:"https://barracudacals.com/collections/1-48-resin-detail-sets"},
+ ],
+ "Masks":[
+  {type:"Masks",name:"Hurricane Mk.I canopy masks 1:48 — Eduard EX419",maker:"Eduard",scales:["1:48"],
+   desc:"Pre-cut Kabuki tape masks for Airfix and Eduard 1:48 Hurricane canopy frames.",
+   url:"https://www.hannants.co.uk/search/?keyword_search=EX419+hurricane"},
+  {type:"Masks",name:"Hurricane canopy masks 1:72 — Eduard EX777",maker:"Eduard",scales:["1:72"],
+   desc:"Pre-cut Kabuki tape masks for 1:72 Hurricane canopy.",
+   url:"https://www.hannants.co.uk/search/?keyword_search=EX777+hurricane"},
+ ],
+ "Decals":[
+  {type:"Decals",name:"Xtradecal X48143 — RAF BoB 1:48 (all 19 Sqns)",maker:"Xtradecal",scales:["1:48"],
+   desc:"Comprehensive BoB sheet covering all 19 Hurricane and Spitfire BoB squadrons in 1:48. Essential.",
+   url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+X48143"},
+  {type:"Decals",name:"Xtradecal X72296 — RAF BoB 1:72",maker:"Xtradecal",scales:["1:72"],
+   desc:"1:72 Battle of Britain markings sheet for Hurricane and Spitfire squadrons.",
+   url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+X72296"},
+ ],
+};
+
+function renderWeathering(){
+  const wg=document.getElementById('weather-grid');
+  const wt=document.getElementById('weathering-techniques');
+  if(!wg||!wt) return;
+  wg.innerHTML=WEATHER.map(w=>`
+    <div class="weather-card">
+      <div class="weather-hd"><div class="weather-base">${w.base}</div><div class="weather-group">${w.group} Group · ${w.sqns.join(', ')}</div></div>
+      <div class="weather-body">
+        ${w.rows.map(r=>`<div class="weather-row"><span class="wr-label">${r.l}</span><span>${r.v}</span></div>`).join('')}
+        ${w.mudColour?`<div style="margin-top:.75rem;display:flex;align-items:center;gap:8px"><div style="width:40px;height:40px;border-radius:1px;background:${w.mudColour};border:1px solid rgba(0,0,0,.2);flex-shrink:0"></div><div><div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)">${w.mudNote}</div><div style="font-family:'Courier Prime',monospace;font-size:11px;color:rgba(255,255,255,.4);margin-top:2px">Mix: ${w.mudMix}</div></div></div>`:''}
+      </div>
+    </div>`).join('');
+  wt.innerHTML=`<div class="sec-label">Step-by-Step Technique Guide</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px">
+      ${TECHNIQUES.map((t,i)=>`
+        <div style="background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:1px;padding:.9rem;border-left:3px solid ${t.colour}">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:.4rem">
+            <div style="width:24px;height:24px;border-radius:50%;background:${t.colour};display:flex;align-items:center;justify-content:center;font-size:12px;color:#e8dfc0;flex-shrink:0">${i+1}</div>
+            <div style="font-family:'Special Elite',cursive;font-size:13px;color:rgba(255,255,255,.85)">${t.name}</div>
+          </div>
+          <div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:.5rem">${t.desc}</div>
+          ${t.products?`<div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass2);margin-bottom:.5rem">${t.products}</div>`:''}
+          ${t.links&&t.links.length?`<div style="display:flex;flex-direction:column;gap:3px">${t.links.filter(l=>l.url).map(l=>`<a href="${l.url}" target="_blank" rel="noopener" style="font-size:13px;color:var(--raf-sky);text-decoration:none;padding:3px 6px;background:rgba(26,46,74,.06);border-radius:1px;border-left:2px solid var(--raf-sky);display:block">▶ ${l.label}</a>`).join('')}</div>`:''}
+        </div>`).join('')}
+    </div>
+    <div style="margin-top:1.2rem;background:var(--raf-dark);color:#e8dfc0;padding:1rem 1.2rem;border-radius:1px;border:1px solid rgba(255,255,255,.1)">
+      <div style="font-family:'Special Elite',cursive;font-size:15px;margin-bottom:.5rem">Quick Reference — Hurricane Mk.I</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;font-family:'Courier Prime',monospace;font-size:11px;line-height:1.7;opacity:.9">
+        <div>· Exhaust stain: port &amp; starboard upper cowling, 8–12" rearward<br>· Gun port blast marks: 4 per wing leading edge<br>· No prop tip colour (unlike Spitfire)<br>· Antenna: mast forward of cockpit to fin tip<br>· Tail wheel: fixed — mud build-up more than Spitfire</div>
+        <div>· Walkway: yellow strip port wing root, chipping evidence<br>· Cockpit sill: significant chipping at access<br>· Serial: black, small, rear fuselage port side<br>· Roundels: maintained clean by groundcrew<br>· Fabric surfaces: ailerons, rudder, elevator — slight texture</div>
+      </div>
+    </div>`;
+}
+
 function renderAftermarket() {
   document.getElementById('aftermarket-grid').innerHTML = Object.entries(AFTERMARKET).map(([cat, items]) => `
     <div class="aftermarket-section">
