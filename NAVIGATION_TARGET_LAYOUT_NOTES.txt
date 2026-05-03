@@ -1,0 +1,1 @@
+Applied final site-wide top navigation override to match target screenshot: WW2 Modeller logo left; Aircraft, Paint Codes, Techniques and Articles aligned right with consistent spacing. Also added robust aircraft dropdown toggle script.
