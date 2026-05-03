@@ -362,6 +362,23 @@ footer .copy{font-family:'Source Serif 4',serif;font-size:12px;color:var(--dim);
 .ac-tile.ac-mosq{border-top-color:#7a9070}
 .ac-tile.ac-bf109{border-top-color:#8e6550}
 .ac-tile.ac-fw190{border-top-color:#9a6555}
+.ac-tile.ac-live .ac-tag{background:rgba(42,92,48,.25);color:#9dc89f;border:1px solid rgba(42,92,48,.4)}
+.ac-tile.ac-coming{opacity:.86;border-top-color:rgba(201,168,76,.45);cursor:default}
+.ac-tile.ac-coming:hover{transform:none;box-shadow:none;border-color:var(--border)}
+.ac-tile.ac-coming .ac-tag{background:rgba(255,255,255,.055);color:rgba(255,255,255,.58);border:1px solid rgba(255,255,255,.09)}
+.ac-tile.ac-clickable{cursor:pointer}
+.ac-tile.ac-p47{border-top-color:#7f8fa6}
+.ac-tile.ac-b17{border-top-color:#9a8060}
+.ac-tile.ac-b25{border-top-color:#8f8a64}
+.ac-tile.ac-p38{border-top-color:#7a9ca8}
+.ac-tile.ac-typhoon{border-top-color:#637b52}
+.ac-tile.ac-beau{border-top-color:#546a7f}
+.ac-tile.ac-ju87{border-top-color:#8b6a4e}
+.ac-tile.ac-bf109{border-top-color:#8e6550}
+.ac-tile.ac-mosq{border-top-color:#7a9070}
+.ac-tile.ac-p51{border-top-color:#7f91a3}
+.live-note{display:inline-flex;align-items:center;gap:.45rem;font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:.75rem}
+.live-note::before{content:'';width:7px;height:7px;border-radius:50%;background:#9dc89f;box-shadow:0 0 10px rgba(157,200,159,.75)}
 .ac-tile .ac-era{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);margin-bottom:.45rem}
 .ac-tile .ac-name{font-family:'Special Elite',cursive;font-size:1.45rem;color:#fff;line-height:1.15;margin-bottom:.4rem}
 .ac-tile .ac-tag{display:inline-block;font-family:'Oswald',sans-serif;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:2px 8px;border-radius:2px;background:rgba(201,168,76,.1);color:var(--brass2);margin-bottom:.8rem;align-self:flex-start}
@@ -994,65 +1011,141 @@ footer .copy{font-family:'Source Serif 4',serif;font-size:12px;color:var(--dim);
 <section class="main">
 <div class="wrap">
 
-  <!-- Aircraft directory — six equal tiles -->
+  <!-- Aircraft directory — live and coming soon -->
   <header class="sec-hd reveal">
     <div class="sec-hd-l">
-      <h2 class="sec-h2">Six aircraft, fully covered.</h2>
+      <div class="sec-kick">Aircraft field manuals</div>
+      <h2 class="sec-h2">Live aircraft.</h2>
+      <div class="live-note">Ready to use now</div>
     </div>
-    <div class="sec-hd-r">Each section presents squadrons, paint codes, kit picks, weathering recipes and survivors for one aircraft. Hurricane and Spitfire are deep-reference pages; the rest are live overview hubs being expanded.</div>
+    <div class="sec-hd-r">These are the aircraft pages currently live on the site. The deeper pages include squadrons, bases, markings, paint codes, kits, decals, books, survivors, walkarounds and modelling notes.</div>
   </header>
 
   <div class="aircraft-grid reveal">
-    <a href="hurricane_paradise.html" class="ac-tile ac-hurri">
+    <a href="hurricane_paradise.html" class="ac-tile ac-hurri ac-live ac-clickable">
       <div class="ac-era">Fighter Command · 1940</div>
       <div class="ac-name">Hawker Hurricane</div>
       <div class="ac-tag">Live · Deep reference</div>
-      <div class="ac-desc">22 squadrons. 200+ pilot profiles. Full paint codes for four brands, nine kits compared, weathering by airfield, interactive map, pilot modals.</div>
-      <div class="ac-stats"><span>22 squadrons</span><span>200+ pilots</span><span>R4118 flying</span></div>
+      <div class="ac-desc">Battle of Britain Hurricane reference with squadrons, bases, pilot stories, paint codes, kits, decals, survivor notes, walkaround material and station map.</div>
+      <div class="ac-stats"><span>RAF fighter</span><span>BoB focus</span><span>Map + squadrons</span></div>
       <span class="ac-cta">Open Hurricane reference →</span>
     </a>
-    <a href="spitfire_paradise.html" class="ac-tile ac-spit">
+    <a href="spitfire_paradise.html" class="ac-tile ac-spit ac-live ac-clickable">
       <div class="ac-era">Fighter Command · 1940</div>
       <div class="ac-name">Supermarine Spitfire</div>
       <div class="ac-tag">Live · Deep reference</div>
-      <div class="ac-desc">19 squadrons. 180+ pilot profiles. Full paint cross-reference, Airfix vs Eduard kit comparison, Xtradecal guide, station weathering, survivor list.</div>
-      <div class="ac-stats"><span>19 squadrons</span><span>180+ pilots</span><span>P7350 flying</span></div>
+      <div class="ac-desc">Spitfire Mk.I/II modelling reference with station map, squadron cards, paint cross-reference, kit comparisons, decals, books, survivors and walkaround references.</div>
+      <div class="ac-stats"><span>RAF fighter</span><span>BoB focus</span><span>Deep page</span></div>
       <span class="ac-cta">Open Spitfire reference →</span>
     </a>
-    <a href="lancaster_paradise.html" class="ac-tile ac-lanc">
+    <a href="lancaster_paradise.html" class="ac-tile ac-lanc ac-live ac-clickable">
       <div class="ac-era">Bomber Command · 1942–45</div>
       <div class="ac-name">Avro Lancaster</div>
-      <div class="ac-tag">Overview hub · Growing</div>
-      <div class="ac-desc">Camouflage and night bomber finish, 1:72 and 1:48 kit starting points, squadron codes, nose art direction and weathering for operational heavies.</div>
-      <div class="ac-stats"><span>Camouflage</span><span>Kit picks</span><span>PA474 flying</span></div>
+      <div class="ac-tag">Live · Being expanded</div>
+      <div class="ac-desc">Lancaster modelling hub covering Bomber Command finish, squadron markings, kit and decal links, books, survivor references and walkaround material.</div>
+      <div class="ac-stats"><span>RAF bomber</span><span>Night finish</span><span>PA474 / Just Jane</span></div>
       <span class="ac-cta">Open Lancaster page →</span>
     </a>
-    <a href="mosquito_paradise.html" class="ac-tile ac-mosq">
-      <div class="ac-era">Multi-role · 1941–45</div>
-      <div class="ac-name">de Havilland Mosquito</div>
-      <div class="ac-tag">Overview hub · Growing</div>
-      <div class="ac-desc">Wood-airframe finish, night fighter and FB.VI schemes, PR Mosquito variants, kit choices across every scale, markings guidance.</div>
-      <div class="ac-stats"><span>Wood finish</span><span>Night fighter</span><span>FB.VI</span></div>
-      <span class="ac-cta">Open Mosquito page →</span>
-    </a>
-    <a href="bf109_paradise.html" class="ac-tile ac-bf109">
-      <div class="ac-era">Luftwaffe · 1939–45</div>
-      <div class="ac-name">Messerschmitt Bf 109</div>
-      <div class="ac-tag">Overview hub · Growing</div>
-      <div class="ac-desc">RLM paint system, E/F/G/K variants, Channel Front and Eastern Front markings, Jagdgeschwader context, kit recommendations.</div>
-      <div class="ac-stats"><span>RLM paints</span><span>E–K variants</span><span>Eduard kits</span></div>
-      <span class="ac-cta">Open Bf 109 page →</span>
-    </a>
-    <a href="fw190_paradise.html" class="ac-tile ac-fw190">
+    <a href="fw190_paradise.html" class="ac-tile ac-fw190 ac-live ac-clickable">
       <div class="ac-era">Luftwaffe · 1941–45</div>
       <div class="ac-name">Focke-Wulf Fw 190</div>
-      <div class="ac-tag">Overview hub · Growing</div>
-      <div class="ac-desc">A-series Würger and D-9 Dora, Schlachtgeschwader and Jagdgeschwader markings, late-war camouflage, kit options by scale.</div>
-      <div class="ac-stats"><span>A-series</span><span>D-9 Dora</span><span>Eduard / Tamiya</span></div>
+      <div class="ac-tag">Live · Being expanded</div>
+      <div class="ac-desc">Fw 190 A-series and D-9 Dora reference with Experten, unit context, RLM colours, kit guidance, walkaround references and Luftwaffe modelling cues.</div>
+      <div class="ac-stats"><span>Axis fighter</span><span>A-series</span><span>D-9 Dora</span></div>
       <span class="ac-cta">Open Fw 190 page →</span>
     </a>
   </div>
 
+  <header class="sec-hd reveal">
+    <div class="sec-hd-l">
+      <div class="sec-kick">Coming to the field manual</div>
+      <h2 class="sec-h2">Aircraft planned next.</h2>
+    </div>
+    <div class="sec-hd-r">These are the aircraft planned for fuller treatment. They are shown separately so visitors can see what is live now and what is being built next.</div>
+  </header>
+
+  <div class="aircraft-grid reveal">
+    <a href="mosquito_paradise.html" class="ac-tile ac-mosq ac-clickable">
+      <div class="ac-era">Allied specialist · 1941–45</div>
+      <div class="ac-name">de Havilland Mosquito</div>
+      <div class="ac-tag">Coming soon · Page shell live</div>
+      <div class="ac-desc">Wooden Wonder: fighter-bomber, night fighter, PR aircraft, intruder and pathfinder subjects.</div>
+      <div class="ac-stats"><span>RAF specialist</span><span>FB.VI</span><span>Night fighter</span></div>
+      <span class="ac-cta">Open current hub →</span>
+    </a>
+    <a href="p51_paradise.html" class="ac-tile ac-p51 ac-clickable">
+      <div class="ac-era">USAAF fighter · 1943–45</div>
+      <div class="ac-name">P-51 Mustang</div>
+      <div class="ac-tag">Coming soon · Page shell live</div>
+      <div class="ac-desc">Escort fighter markings, natural metal finishes, Eighth Air Force groups and kit comparisons.</div>
+      <div class="ac-stats"><span>USAAF fighter</span><span>NMF finish</span><span>8th AF</span></div>
+      <span class="ac-cta">Open current hub →</span>
+    </a>
+    <a href="bf109_paradise.html" class="ac-tile ac-bf109 ac-clickable">
+      <div class="ac-era">Axis fighter · 1939–45</div>
+      <div class="ac-name">Messerschmitt Bf 109</div>
+      <div class="ac-tag">Coming soon · Page shell live</div>
+      <div class="ac-desc">E/F/G/K variants, RLM paint system, Jagdgeschwader markings and theatre-specific mottle.</div>
+      <div class="ac-stats"><span>Axis fighter</span><span>RLM colours</span><span>E–K variants</span></div>
+      <span class="ac-cta">Open current hub →</span>
+    </a>
+    <div class="ac-tile ac-b17 ac-coming">
+      <div class="ac-era">USAAF bomber · 1942–45</div>
+      <div class="ac-name">B-17 Flying Fortress</div>
+      <div class="ac-tag">Planned</div>
+      <div class="ac-desc">Heavy bomber groups, English bases, nose art, natural metal and olive drab finishes, interiors and weathering.</div>
+      <div class="ac-stats"><span>US bomber</span><span>Nose art</span><span>8th AF</span></div>
+      <span class="ac-cta">Planned field manual</span>
+    </div>
+    <div class="ac-tile ac-b25 ac-coming">
+      <div class="ac-era">USAAF medium bomber · 1942–45</div>
+      <div class="ac-name">B-25 Mitchell</div>
+      <div class="ac-tag">Planned</div>
+      <div class="ac-desc">Doolittle Raid aircraft, glass nose and gun nose variants, Pacific and Mediterranean markings.</div>
+      <div class="ac-stats"><span>Medium bomber</span><span>Doolittle</span><span>PTO / MTO</span></div>
+      <span class="ac-cta">Planned field manual</span>
+    </div>
+    <div class="ac-tile ac-p47 ac-coming">
+      <div class="ac-era">USAAF fighter-bomber · 1943–45</div>
+      <div class="ac-name">P-47 Thunderbolt</div>
+      <div class="ac-tag">Planned</div>
+      <div class="ac-desc">Razorback and bubbletop subjects, invasion stripes, weathered metal, bombs, rockets and drop tanks.</div>
+      <div class="ac-stats"><span>US fighter</span><span>Razorback</span><span>Bubbletop</span></div>
+      <span class="ac-cta">Planned field manual</span>
+    </div>
+    <div class="ac-tile ac-p38 ac-coming">
+      <div class="ac-era">USAAF fighter · 1942–45</div>
+      <div class="ac-name">P-38 Lightning</div>
+      <div class="ac-tag">Planned</div>
+      <div class="ac-desc">Twin-boom fighter subjects, Pacific aces, natural metal finish and weathering around turbo-superchargers.</div>
+      <div class="ac-stats"><span>Twin boom</span><span>Pacific</span><span>Aces</span></div>
+      <span class="ac-cta">Planned field manual</span>
+    </div>
+    <div class="ac-tile ac-typhoon ac-coming">
+      <div class="ac-era">RAF fighter-bomber · 1941–45</div>
+      <div class="ac-name">Hawker Typhoon</div>
+      <div class="ac-tag">Planned</div>
+      <div class="ac-desc">WW2 Hawker Typhoon — not Eurofighter — with rockets, invasion stripes, Normandy dust and 2nd TAF markings.</div>
+      <div class="ac-stats"><span>RAF strike</span><span>Rockets</span><span>2nd TAF</span></div>
+      <span class="ac-cta">Planned field manual</span>
+    </div>
+    <div class="ac-tile ac-beau ac-coming">
+      <div class="ac-era">RAF specialist · 1940–45</div>
+      <div class="ac-name">Bristol Beaufighter</div>
+      <div class="ac-tag">Planned</div>
+      <div class="ac-desc">Night fighter, coastal strike and torpedo subjects with worn black finishes, rockets and theatre markings.</div>
+      <div class="ac-stats"><span>Night fighter</span><span>Coastal</span><span>Strike</span></div>
+      <span class="ac-cta">Planned field manual</span>
+    </div>
+    <div class="ac-tile ac-ju87 ac-coming">
+      <div class="ac-era">Axis attack aircraft · 1939–45</div>
+      <div class="ac-name">Ju 87 Stuka</div>
+      <div class="ac-tag">Planned</div>
+      <div class="ac-desc">Dive-bomber variants, sirens, Eastern Front finishes, desert schemes and weathered Luftwaffe theatre markings.</div>
+      <div class="ac-stats"><span>Axis attack</span><span>RLM paints</span><span>Desert / Eastern</span></div>
+      <span class="ac-cta">Planned field manual</span>
+    </div>
+  </div>
 
   <!-- ARTICLES -->
   <header class="sec-hd reveal">
