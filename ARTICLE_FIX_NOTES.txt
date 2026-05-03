@@ -1,0 +1,9 @@
+Article repair pass
+
+- Standardised all article pages to the same robust site navigation.
+- Added full Aircraft dropdown to every article page: Hurricane, Spitfire, Fw 190, Bf 109, Lancaster, Mosquito and P-51.
+- Hardened dropdown styling so it is opaque, above page content, scrollable and mobile-safe.
+- Added dropdown close behaviour for outside-click and Escape key.
+- Checked internal HTML links and local image references.
+- Fixed obvious misleading article link labels where Kingkit links were labelled as Hannants/Eduard direct.
+- Regenerated sitemap.xml to include all current HTML pages and article pages.

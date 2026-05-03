@@ -107,32 +107,45 @@ footer a{color:rgba(255,255,255,.35);text-decoration:none}
 .ac-drop-badge{flex-shrink:0 !important}
 @media(max-width:520px){.ac-drop-menu{position:fixed !important;left:12px !important;right:12px !important;top:54px !important;min-width:0 !important;width:auto !important}}
 
+
+/* Unified article navigation + robust aircraft dropdown */
+.site-nav{position:sticky;top:0;z-index:10000;background:rgba(7,16,31,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(201,168,76,.28);box-shadow:0 8px 28px rgba(0,0,0,.45);overflow:visible!important}
+.site-nav-inner{max-width:1200px;margin:0 auto;padding:.75rem 2rem;display:flex;align-items:center;gap:1.3rem;min-height:54px}
+.site-nav-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;flex-shrink:0}
+.site-nav-logo svg{width:28px;height:28px;flex-shrink:0}.site-nav-logo-text{font-family:'Special Elite',cursive;font-size:1.12rem;color:#fff;white-space:nowrap}.site-nav-logo-text span{color:var(--brass2,var(--brass,#c9a84c))}
+.site-nav-links{display:flex;align-items:center;gap:1.1rem;margin-left:auto;overflow:visible!important}.site-nav-link{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.58);text-decoration:none;transition:color .18s}.site-nav-link:hover,.site-nav-link.active{color:var(--brass2,var(--brass,#c9a84c))}
+.ac-drop{position:relative;overflow:visible!important}.ac-drop-btn{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.72);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:.55rem .8rem;cursor:pointer}.ac-drop-caret{color:var(--brass2,var(--brass,#c9a84c));margin-left:.25rem}
+.ac-drop-menu{display:none;position:absolute;right:0;top:calc(100% + 8px);min-width:285px;max-height:min(72vh,520px);overflow-y:auto;background:#081522!important;border:1px solid rgba(201,168,76,.38);border-radius:6px;box-shadow:0 18px 50px rgba(0,0,0,.72);padding:.45rem;z-index:10001!important}.ac-drop.open .ac-drop-menu{display:block}.ac-drop-item{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.65rem .75rem;border-radius:4px;color:rgba(255,255,255,.84);text-decoration:none;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase}.ac-drop-item:hover{background:rgba(201,168,76,.1);color:#fff}.ac-drop-badge{font-size:9px;letter-spacing:.08em;padding:2px 6px;border-radius:2px;border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.62)}.ac-drop-badge.live{color:#7fcf9b;border-color:rgba(127,207,155,.35)}.ac-drop-badge.hub{color:#c9a84c;border-color:rgba(201,168,76,.35)}
+@media(max-width:760px){.site-nav-inner{padding:.7rem 1rem;gap:.75rem;flex-wrap:wrap}.site-nav-links{width:100%;margin-left:0;gap:.75rem;justify-content:space-between}.site-nav-link{font-size:10px}.ac-drop{flex:1}.ac-drop-btn{width:100%;text-align:left}.ac-drop-menu{left:0;right:auto;min-width:min(92vw,330px)}}
+
 </style>
 </head>
 <body>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409"
      crossorigin="anonymous"></script>
 <nav class="site-nav">
-  <a href="index.html" class="site-nav-logo">
-    <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#003087"/><circle cx="14" cy="14" r="9.5" fill="#FFD700"/><circle cx="14" cy="14" r="5.5" fill="#CF142B"/><circle cx="14" cy="14" r="2" fill="#fff"/></svg>
-    <span class="site-nav-logo-text">WW2 <span>Modeller</span></span>
-  </a>
-  <div class="site-nav-links">
-    <div class="ac-drop" id="acDrop">
-      <button type="button" class="ac-drop-btn" onclick="event.stopPropagation();document.getElementById('acDrop').classList.toggle('open')">Aircraft <span class="ac-drop-caret">▼</span></button>
-            <div class="ac-drop-menu">
-        <a href="hurricane_paradise.html" class="ac-drop-item">Hawker Hurricane <span class="ac-drop-badge live">Live</span></a>
-        <a href="spitfire_paradise.html" class="ac-drop-item">Supermarine Spitfire <span class="ac-drop-badge live">Live</span></a>
-        <a href="fw190_paradise.html" class="ac-drop-item">Focke-Wulf Fw 190 <span class="ac-drop-badge live">Live</span></a>
-        <a href="bf109_paradise.html" class="ac-drop-item">Messerschmitt Bf 109 <span class="ac-drop-badge soon">Hub</span></a>
-        <a href="p51_paradise.html" class="ac-drop-item">North American P-51 <span class="ac-drop-badge soon">Hub</span></a>
-        <a href="lancaster_paradise.html" class="ac-drop-item">Avro Lancaster <span class="ac-drop-badge soon">Hub</span></a>
-        <a href="mosquito_paradise.html" class="ac-drop-item">DH Mosquito <span class="ac-drop-badge soon">Hub</span></a>
+  <div class="site-nav-inner">
+    <a href="index.html" class="site-nav-logo" aria-label="WW2 Modeller home">
+      <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="14" cy="14" r="14" fill="#003087"/><circle cx="14" cy="14" r="9.5" fill="#FFD700"/><circle cx="14" cy="14" r="5.5" fill="#CF142B"/><circle cx="14" cy="14" r="2" fill="#fff"/></svg>
+      <span class="site-nav-logo-text">WW2 <span>Modeller</span></span>
+    </a>
+    <div class="site-nav-links">
+      <div class="ac-drop" id="acDrop">
+        <button type="button" class="ac-drop-btn" onclick="event.stopPropagation();document.getElementById('acDrop').classList.toggle('open')">Aircraft <span class="ac-drop-caret">▼</span></button>
+        <div class="ac-drop-menu">
+          <a class="ac-drop-item" href="hurricane_paradise.html">Hawker Hurricane <span class="ac-drop-badge live">Live</span></a>
+          <a class="ac-drop-item" href="spitfire_paradise.html">Supermarine Spitfire <span class="ac-drop-badge live">Live</span></a>
+          <a class="ac-drop-item" href="fw190_paradise.html">Focke-Wulf Fw 190 <span class="ac-drop-badge live">Live</span></a>
+          <a class="ac-drop-item" href="bf109_paradise.html">Messerschmitt Bf 109 <span class="ac-drop-badge hub">Hub</span></a>
+          <a class="ac-drop-item" href="lancaster_paradise.html">Avro Lancaster <span class="ac-drop-badge hub">Hub</span></a>
+          <a class="ac-drop-item" href="mosquito_paradise.html">de Havilland Mosquito <span class="ac-drop-badge hub">Hub</span></a>
+          <a class="ac-drop-item" href="p51_paradise.html">North American P-51 <span class="ac-drop-badge hub">Hub</span></a>
+        </div>
       </div>
-    </div>
-    <a href="techniques-bank.html" class="site-nav-link">Techniques</a>
-    <a href="articles.html" class="site-nav-link active">Articles</a>
+      <a href="techniques-bank.html" class="site-nav-link">Techniques</a>
+      <a href="articles.html" class="site-nav-link active">Articles</a>
       <a href="paint-codes.html" class="site-nav-link">Paint Codes</a>
+    </div>
   </div>
 </nav>
 
@@ -241,6 +254,17 @@ The Spitfire's split line curves under the cockpit at a diagonal — it is not a
 </footer>
 
 <script>document.addEventListener('click',function(e){var d=document.getElementById('acDrop');if(d&&!d.contains(e.target))d.classList.remove('open')});</script>
+
+
+<script>
+document.addEventListener('click', function(e){
+  var d = document.getElementById('acDrop');
+  if(d && !d.contains(e.target)) d.classList.remove('open');
+});
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') { var d = document.getElementById('acDrop'); if(d) d.classList.remove('open'); }
+});
+</script>
 
 </body>
 </html>
