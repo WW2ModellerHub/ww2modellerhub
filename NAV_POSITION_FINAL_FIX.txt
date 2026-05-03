@@ -1,0 +1,1 @@
+Fixed site-wide top navigation positioning so links sit beside the logo rather than being pushed to the far right. Preserved aircraft page tab bars and kept Paint Codes visible in navigation.

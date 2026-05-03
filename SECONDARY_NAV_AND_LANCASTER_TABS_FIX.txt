@@ -1,0 +1,1 @@
+Fixed aircraft-page secondary tab alignment so tabs are centred on desktop and horizontally scrollable from the left on mobile. Fixed Lancaster JavaScript data syntax errors caused by duplicate commas, which were stopping tab click handlers/rendering from working.
