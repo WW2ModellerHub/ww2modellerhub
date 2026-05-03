@@ -1,0 +1,1 @@
+Fixed top navigation dropdowns across HTML files. Added final override CSS and click/tap-safe JS. Navigation target: logo left; Aircraft, Paint Codes, Techniques, Articles aligned right. Dropdown now opens on click/tap, focus-within, and hover fallback. No web research used.
