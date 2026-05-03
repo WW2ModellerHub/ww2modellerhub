@@ -1510,10 +1510,10 @@ function renderGrid() {
   grid.innerHTML = list.map(sq => `
     <div class="sq-card" id="card-${sq.num}" onclick="selectSq('${sq.num}')">
       <div class="card-hd">
-        <div class="card-circle">${sq.num}</div>
+        <div class="card-circle" style="font-size:${sq.num.length>5?'8px':'10px'}">${sq.num.replace('III/','III/')}</div>
         <div>
           <div class="card-name">${sq.num} — ${sq.codes}</div>
-          <div class="card-base">${sq.base} &nbsp;·&nbsp; ${sq.group} Group</div>
+          <div class="card-base">${sq.base} &nbsp;·&nbsp; ${sq.group==="west"?"Channel Front":sq.group==="east"?"Eastern Front":sq.group==="reich"?"Def. of Reich":"N. Africa"}</div>
         </div>
       </div>
       <div class="card-body">
@@ -1665,7 +1665,7 @@ function showDetail(num) {
   panel.innerHTML = `
     <div class="dp-top">
       <div>
-        <div class="dp-title">No. ${sq.num} Squadron RAF — ${sq.codes}</div>
+        <div class="dp-title">${sq.num} — ${sq.marks}</div>
         <div class="dp-meta">Base: ${sq.base} &nbsp;·&nbsp; ${sq.group==="west"?"Channel Front":sq.group==="east"?"Eastern Front":sq.group==="reich"?"Defence of Reich":"North Africa"} &nbsp;·&nbsp; ${sq.pilots.length} pilots &nbsp;·&nbsp; ${sq.kills} top ace kills · est. ${sq.sorties} sorties</div>
       </div>
       <button class="close-btn" onclick="closeDetail()">Close ✕</button>
@@ -2194,7 +2194,7 @@ function renderCompare(){
   '</tr>' +
   row('Group', a.group + ' Group', b.group + ' Group') +
   row('Nationality', a.nat || 'British', b.nat || 'British') +
-  row('Marks flown', a.marks || 'Mk.I', b.marks || 'Mk.I') +
+  row('Variant', a.marks || '—', b.marks || '—') +
   row('First action', a.firstOp || 'Jul 1940', b.firstOp || 'Jul 1940') +
   row('Last action', a.lastOp || 'Oct 1940', b.lastOp || 'Oct 1940') +
   row('Claims', a.kills, b.kills, 'var(--brass2)') +
@@ -2393,6 +2393,12 @@ function renderMap(){
     svg.appendChild(t);
   });
 
+  // Pre-calculate x,y from lat/lng using the projection
+  STATIONS.forEach(st => {
+    const {x,y} = latLonToXY(st.lat, st.lng);
+    st.x = x; st.y = y;
+  });
+
   // Station markers
   STATIONS.forEach(st => {
     const g = document.createElementNS(ns,'g');
@@ -2469,7 +2475,7 @@ function showMapStation(st){
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:.4rem">
         <div style="width:12px;height:12px;border-radius:50%;background:${groupCol};flex-shrink:0"></div>
         <span style="font-family:'Special Elite',cursive;font-size:16px;color:rgba(255,255,255,.85)">${st.name}</span>
-        <span style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2)">${st.group} Group · ${typeLabel}</span>
+        <span style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2)">${st.sqns.join(", ")} · ${typeLabel}</span>
       </div>
       ${st.info ? `<div style="font-family:'Source Serif 4',Georgia,serif;font-size:13px;color:rgba(255,255,255,.78);line-height:1.65;margin-bottom:.5rem">${st.info}</div>` : ''}
     </div>
@@ -2872,9 +2878,7 @@ function renderPilotStories() {
   if (!el || el.dataset.rendered) return;
   el.dataset.rendered = '1';
   el.innerHTML = PILOT_STORIES.map((p, i) => {
-    const callsignBadge = p.callsign !== '\u2014'
-      ? `<span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:rgba(184,144,42,.15);color:var(--brass2);padding:2px 8px;border:1px solid rgba(184,144,42,.3);border-radius:2px">"${p.callsign}"</span>`
-      : '';
+    const callsignBadge = '';
     const acBadge = `<span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:2px 8px;border:1px solid rgba(255,255,255,.1);border-radius:2px">${p.aircraft || 'Fw 190 A-8'}</span>`;
     return `<div style="background:rgba(20,17,7),.7);border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--brass);border-radius:3px;padding:1.4rem;margin-bottom:1.5rem">
       <div style="display:flex;gap:1.2rem;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap">
@@ -2883,11 +2887,12 @@ function renderPilotStories() {
         </div>
         <div style="flex:1;min-width:200px">
           <div style="font-family:'Special Elite',cursive;font-size:1.4rem;color:#fff;margin-bottom:.3rem">${p.name}</div>
-          <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">No.${p.sqn} Squadron &nbsp;·&nbsp; ${p.kills} victories</div>
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">${p.unit||''}</div>
           <div style="display:flex;gap:.5rem;flex-wrap:wrap">${callsignBadge}${acBadge}</div>
         </div>
       </div>
       <div style="font-size:16px;color:rgba(255,255,255,.82);line-height:1.85;font-family:'Source Serif 4',Georgia,serif;border-top:1px solid rgba(255,255,255,.07);padding-top:1rem">${p.story}</div>
+      ${p.mark ? `<div style="margin-top:.75rem;padding:.6rem .9rem;background:rgba(201,168,76,.07);border-left:3px solid var(--brass);border-radius:1px;font-size:13px;color:rgba(255,255,255,.7)"><span style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:.2rem">Modelling reference</span>${p.mark}</div>` : ''}
     </div>`;
   }).join('');
 
