@@ -3072,28 +3072,87 @@ function renderMap(){
     svg.appendChild(g);
   });
 }
+
+function rafMapTypeLabel(st){
+  return st.type === 'sector' ? 'Sector Station' : st.type === 'forward' ? 'Forward Airfield' : 'Satellite';
+}
+function rafTopPilotText(sq){
+  if(!sq || !sq.pilots || !sq.pilots.length) return '';
+  const top = sq.pilots.slice().sort((a,b)=>(b.k||0)-(a.k||0))[0];
+  return `${top.n} · ${top.k || 0} claims · ${top.fate || ''}`;
+}
+function rafStationModellingCue(st){
+  const info = (st.info || '').toLowerCase();
+  if(info.includes('chalk')) return 'Pale chalk or flint dust on tyres, undercarriage legs and lower wing roots. Keep exhaust and gun staining visible but avoid over-mudding.';
+  if(info.includes('clay')) return 'Brown-grey clay staining around wheels, tailwheel and undersides. Add darker damp mud on dispersal-heavy aircraft.';
+  if(info.includes('red clay')) return 'Warm reddish-brown dust and mud around undercarriage and wing-root walkways; good contrast against Sky undersides.';
+  if(info.includes('gravel')) return 'Light grey-brown dust on tyres and lower surfaces. Use restrained staining; aircraft often look dusty rather than muddy.';
+  if(info.includes('coastal') || info.includes('naval') || info.includes('portland')) return 'Coastal grime, salt air fading, pale dust and stronger exhaust staining from frequent scrambles.';
+  if(st.group === '13') return 'Northern station conditions: damp grass, cooler tones, restrained dust and slightly dirtier tyres.';
+  if(st.group === '10') return 'West Country conditions: pale dust on hard summer days, heavier mud after rain and strong exhaust staining from repeated patrols.';
+  return 'Battle of Britain field wear: exhaust staining, chipped wing roots, dusty tyres, taped gun ports and matt MAP paint rather than a glossy finish.';
+}
+function rafOpenMapUnit(num){
+  const clean = String(num).replace(' fwd','');
+  const sq = SQ.find(s => s.num === clean);
+  if(!sq) return;
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  const sqPanel = document.getElementById('tab-squadrons');
+  if(sqPanel) sqPanel.classList.add('active');
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  const sqTab = [...document.querySelectorAll('.nav-tab')].find(t => (t.getAttribute('onclick')||'').includes("'squadrons'"));
+  if(sqTab) sqTab.classList.add('active');
+  const bar = document.getElementById('sqn-bar');
+  if(bar) bar.style.display = 'flex';
+  if(typeof activeTab !== 'undefined') activeTab = 'squadrons';
+  if(typeof activeFilter !== 'undefined') activeFilter = 'all';
+  document.querySelectorAll('.fb.gf').forEach(b => b.classList.remove('on'));
+  const allBtn = [...document.querySelectorAll('.fb.gf')].find(b => (b.getAttribute('onclick')||'').includes("'all'"));
+  if(allBtn) allBtn.classList.add('on');
+  if(typeof renderGrid === 'function') renderGrid();
+  setTimeout(() => {
+    if(typeof selectSq === 'function') selectSq(clean);
+    const card = document.getElementById('card-' + clean);
+    if(card) card.scrollIntoView({behavior:'smooth', block:'center'});
+  }, 40);
+}
 function showMapStation(st){
-  const typeLabel = st.type === 'sector' ? 'Sector Station' : st.type === 'forward' ? 'Forward Airfield' : 'Satellite';
   const groupCol = GROUP_COLOURS[st.group] || '#666';
-  document.getElementById('map-sqn-list').innerHTML = `
-    <div style="grid-column:1/-1;margin-bottom:.75rem;padding-bottom:.75rem;border-bottom:2px solid var(--bs)">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:.4rem">
+  const typeLabel = rafMapTypeLabel(st);
+  const box = document.getElementById('map-sqn-list');
+  if(!box) return;
+  document.querySelectorAll('#map-svg .station-g').forEach(g => g.classList.remove('selected'));
+  const selected = document.querySelector(`#map-svg .station-g[data-id="${st.id}"]`);
+  if(selected) selected.classList.add('selected');
+
+  const unitCards = (st.sqns || []).map(n => {
+    const clean = String(n).replace(' fwd','');
+    const sq = SQ.find(s => s.num === clean);
+    if(sq){
+      return `<button class="map-sqn-chip" onclick="rafOpenMapUnit('${sq.num.replace(/'/g,"\\'")}')" style="display:block;width:100%;text-align:left;border-left:3px solid var(--brass);padding:.65rem .8rem;margin-bottom:.45rem;background:rgba(255,255,255,.045);cursor:pointer">
+        <b>No.${n} Sqn</b>${String(n).includes('fwd') ? ' <span style="color:rgba(255,255,255,.45)">(fwd dispersal)</span>' : ''}
+        <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:2px">${sq.marks || ''} · ${sq.base || st.name} · ${sq.pilots ? sq.pilots.length : 0} pilots</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.76);line-height:1.45;margin-top:4px">Top pilot: ${rafTopPilotText(sq)}<br>Open squadron card for pilots, markings, decals and kit notes →</div>
+      </button>`;
+    }
+    return `<div class="map-sqn-chip" style="border-left:3px solid rgba(255,255,255,.25);opacity:.72;cursor:default;padding:.65rem .8rem;margin-bottom:.45rem">
+      <b>No.${n} Sqn</b>
+      <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.45;margin-top:4px">Context unit — no linked squadron card on this page.</div>
+    </div>`;
+  }).join('');
+
+  box.innerHTML = `
+    <div style="margin-bottom:.85rem;padding-bottom:.85rem;border-bottom:2px solid rgba(255,255,255,.12)">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:.45rem;flex-wrap:wrap">
         <div style="width:12px;height:12px;border-radius:50%;background:${groupCol};flex-shrink:0"></div>
-        <span style="font-family:'Special Elite',cursive;font-size:16px;color:rgba(255,255,255,.85)">${st.name}</span>
-        <span style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2)">${st.group} Group · ${typeLabel}</span>
+        <span style="font-family:'Special Elite',cursive;font-size:18px;color:rgba(255,255,255,.92)">${st.name}</span>
       </div>
-      ${st.info ? `<div style="font-family:'Source Serif 4',Georgia,serif;font-size:13px;color:rgba(255,255,255,.78);line-height:1.65;margin-bottom:.5rem">${st.info}</div>` : ''}
+      <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass2);margin-bottom:.7rem">${st.group} Group · ${typeLabel}</div>
+      ${st.info ? `<div style="font-family:'Source Serif 4',Georgia,serif;font-size:14px;color:rgba(255,255,255,.82);line-height:1.65;margin-bottom:.65rem">${st.info}</div>` : ''}
+      <div style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.6"><strong style="color:var(--brass2)">Modelling cue:</strong> ${rafStationModellingCue(st)}</div>
     </div>
-    <div style="grid-column:1/-1;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2);margin-bottom:.4rem">Squadrons</div>
-    ${st.sqns.map(n => {
-      const sq = SQ.find(s => s.num === n.replace(' fwd',''));
-      const clickHandler = sq ? `selectSq('${sq.num}');document.querySelector('.nav-tab').click()` : '';
-      return `<div class="map-sqn-chip" onclick="${clickHandler}" style="${sq?'cursor:pointer':''}">
-        <b>No.${n} Sqn</b>${st.type==='forward'?' (fwd dispersal)':''}
-        ${sq ? `<div style="font-size:11px;color:rgba(255,255,255,.65)">${sq.kills} claims · ${sq.sorties} sorties</div>` : ''}
-      </div>`;
-    }).join('')}
-    ${st.sqns.length === 0 ? '<div class="map-sqn-chip" style="color:var(--brass2)">No squadron data</div>' : ''}
+    <div style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2);margin-bottom:.5rem">Linked squadron cards</div>
+    ${unitCards || '<div class="map-sqn-chip" style="color:var(--brass2)">No squadron data</div>'}
   `;
 }
 
