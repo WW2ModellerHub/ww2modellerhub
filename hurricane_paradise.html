@@ -4076,5 +4076,21 @@ function acceptCookies() {
 })();
 </script>
 
+
+<script>
+/* HURRICANE_BUILD_TAB_HARDENING: ensure all Build sub-tabs remain available after navigation updates. */
+document.addEventListener('DOMContentLoaded', function(){
+  var buildPanel = document.getElementById('tab-build');
+  if(!buildPanel) return;
+  ['kits','aftermarket','paint','stepbystep','weathering'].forEach(function(s){
+    var el = document.getElementById('bsub-' + s);
+    if(el && s !== 'kits' && !el.style.display) el.style.display = 'none';
+  });
+  try { if(typeof renderKits === 'function') renderKits(); } catch(e){}
+  try { if(typeof renderAftermarket === 'function') renderAftermarket(); } catch(e){}
+  try { if(typeof renderWeathering === 'function') renderWeathering(); } catch(e){}
+  try { if(typeof renderStepByStep === 'function') renderStepByStep(); } catch(e){}
+});
+</script>
 </body>
 </html>
