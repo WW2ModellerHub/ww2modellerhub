@@ -253,21 +253,36 @@ footer a{color:rgba(255,255,255,.35);text-decoration:none}
 @media(max-width:860px){.site-nav{padding:0 .65rem!important}.site-nav-links{gap:.1rem!important}.site-nav-link,.ac-drop-btn{font-size:9px!important;padding:.35rem .38rem!important}.site-nav-logo-text{font-size:12px!important}.ac-drop-menu{position:fixed!important;left:10px!important;right:10px!important;top:64px!important;width:auto!important;max-height:calc(100vh - 84px)!important;overflow:auto!important}}
 @media(max-width:520px){.site-nav-logo-text{font-size:11px!important}.site-nav-link:not(.keep){display:none!important}.ac-drop-btn{display:inline-flex!important}.nav-tabs{justify-content:flex-start!important}}
 </style>
+
+<style id="ww2-unified-nav-fix">
+.site-nav{position:sticky;top:0;z-index:10000;background:rgba(5,16,31,.88);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid rgba(255,255,255,.08);overflow:visible!important}
+.site-nav-inner{max-width:1180px!important;margin:0 auto!important;padding:.65rem 1rem!important;display:flex!important;align-items:center!important;gap:.8rem!important;min-height:54px!important;overflow:visible!important}
+.site-nav-logo{display:flex!important;align-items:center!important;gap:.55rem!important;text-decoration:none!important;flex:0 0 auto!important;min-width:0!important}
+.site-nav-logo svg{width:28px!important;height:28px!important;flex:0 0 auto!important}
+.site-nav-logo-text{font-family:'Oswald','Special Elite',sans-serif!important;font-size:13px!important;font-weight:600!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:#fff!important;white-space:nowrap!important}
+.site-nav-logo-text span{color:var(--brass,#c9a84c)!important}
+.site-nav-links{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:.25rem!important;margin-left:auto!important;flex-wrap:nowrap!important;min-width:0!important;overflow:visible!important}
+.site-nav-link,.ac-drop-btn{font-family:'Oswald',sans-serif!important;font-size:10px!important;font-weight:600!important;letter-spacing:.09em!important;text-transform:uppercase!important;color:rgba(255,255,255,.58)!important;text-decoration:none!important;padding:.38rem .55rem!important;border-radius:999px!important;line-height:1.1!important;white-space:nowrap!important;background:transparent!important;border:1px solid transparent!important;cursor:pointer!important}
+.site-nav-link:hover,.site-nav-link.active,.site-nav-link[aria-current="page"],.ac-drop-btn:hover{color:var(--brass2,#e8c76a)!important;background:rgba(201,168,76,.08)!important;border-color:rgba(201,168,76,.18)!important}
+.ac-drop{position:relative!important;display:inline-flex!important;overflow:visible!important;flex:0 0 auto!important}.ac-drop-caret{font-size:.8em;opacity:.75;margin-left:.2rem}.ac-drop-menu{display:none;position:absolute;top:calc(100% + 10px);left:0;z-index:10050;width:min(92vw,820px);max-height:calc(100vh - 90px);overflow:auto;background:rgba(7,16,29,.98);border:1px solid rgba(201,168,76,.25);box-shadow:0 24px 80px rgba(0,0,0,.55);border-radius:8px;padding:1rem;backdrop-filter:blur(18px)}.ac-drop.open .ac-drop-menu{display:block!important}.ac-drop-grid{display:grid;grid-template-columns:repeat(3,minmax(180px,1fr));gap:.75rem}.ac-drop-section{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:.75rem}.ac-drop-heading{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass2,#e8c76a);margin-bottom:.45rem}.ac-drop-item{display:flex;align-items:center;justify-content:space-between;gap:.5rem;text-decoration:none;color:rgba(255,255,255,.82);font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.04em;padding:.45rem .35rem;border-radius:4px}.ac-drop-item:hover{background:rgba(201,168,76,.09);color:#fff}.ac-drop-disabled{opacity:.5;cursor:default}.ac-drop-badge{font-size:9px;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:.08rem .35rem;color:rgba(255,255,255,.55)}.ac-drop-badge.live{color:#7fd39a;border-color:rgba(127,211,154,.35)}.ac-drop-badge.soon,.ac-drop-badge.plan{color:#d7b65d;border-color:rgba(215,182,93,.35)}
+@media(max-width:760px){.site-nav-inner{padding:.6rem .75rem!important;gap:.55rem!important}.site-nav-logo-text{font-size:11px!important;letter-spacing:.1em!important}.site-nav-links{gap:.12rem!important}.site-nav-link,.ac-drop-btn{font-size:9px!important;padding:.35rem .42rem!important}.ac-drop{position:static!important}.ac-drop-menu{position:fixed!important;left:10px!important;right:10px!important;top:64px!important;width:auto!important;max-height:calc(100vh - 84px)!important;padding:.8rem!important}.ac-drop-grid{grid-template-columns:1fr!important;gap:.55rem!important}.ac-drop-section{padding:.65rem!important}}
+@media(max-width:520px){.site-nav-link{display:none!important}.site-nav-link.keep-mobile,.site-nav-link.paint-nav-link{display:inline-flex!important}.site-nav-logo-text{font-size:10px!important}.site-nav-logo svg{width:24px!important;height:24px!important}}
+</style>
+
 </head>
 <body>
 <nav class="site-nav">
   <div class="site-nav-inner">
     <a href="index.html" class="site-nav-logo" aria-label="WW2 Modeller home">
-      <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="14" cy="14" r="14" fill="#003087"/><circle cx="14" cy="14" r="9.5" fill="#FFD700"/><circle cx="14" cy="14" r="5.5" fill="#CF142B"/><circle cx="14" cy="14" r="2" fill="#fff"/></svg>
+      <svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#003087"/><circle cx="15" cy="15" r="10" fill="#FFD700"/><circle cx="15" cy="15" r="6" fill="#CF142B"/><circle cx="15" cy="15" r="2.2" fill="#fff"/></svg>
       <span class="site-nav-logo-text">WW2 <span>Modeller</span></span>
     </a>
     <div class="site-nav-links">
       <div class="ac-drop" id="acDrop">
-        <button type="button" class="ac-drop-btn" aria-haspopup="true" aria-expanded="false" onclick="event.stopPropagation();this.closest('.ac-drop').classList.toggle('open');this.setAttribute('aria-expanded', this.closest('.ac-drop').classList.contains('open') ? 'true' : 'false')">Aircraft <span class="ac-drop-caret">▼</span></button>
+        <button type="button" class="ac-drop-btn" aria-haspopup="true" aria-expanded="false">Aircraft <span class="ac-drop-caret">▼</span></button>
         <div class="ac-drop-menu" role="menu" aria-label="Aircraft navigation">
           <div class="ac-drop-grid">
-            <div class="ac-drop-section">
-              <div class="ac-drop-heading">Allied fighters</div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Allied fighters</div>
               <a href="hurricane_paradise.html" class="ac-drop-item">Hawker Hurricane <span class="ac-drop-badge live">Live</span></a>
               <a href="spitfire_paradise.html" class="ac-drop-item">Supermarine Spitfire <span class="ac-drop-badge live">Live</span></a>
               <a href="p51_paradise.html" class="ac-drop-item">P-51 Mustang <span class="ac-drop-badge soon">Hub</span></a>
@@ -275,49 +290,42 @@ footer a{color:rgba(255,255,255,.35);text-decoration:none}
               <span class="ac-drop-item ac-drop-disabled">P-38 Lightning <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">Hawker Typhoon <span class="ac-drop-badge plan">Planned</span></span>
             </div>
-            <div class="ac-drop-section">
-              <div class="ac-drop-heading">Allied bombers</div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Allied bombers</div>
               <a href="lancaster_paradise.html" class="ac-drop-item">Avro Lancaster <span class="ac-drop-badge live">Live</span></a>
               <a href="mosquito_paradise.html" class="ac-drop-item">DH Mosquito <span class="ac-drop-badge soon">Hub</span></a>
               <span class="ac-drop-item ac-drop-disabled">B-17 Flying Fortress <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">B-25 Mitchell <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">B-24 Liberator <span class="ac-drop-badge plan">Planned</span></span>
             </div>
-            <div class="ac-drop-section">
-              <div class="ac-drop-heading">Axis fighters</div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Axis fighters</div>
               <a href="bf109_paradise.html" class="ac-drop-item">Messerschmitt Bf 109 <span class="ac-drop-badge soon">Hub</span></a>
               <a href="fw190_paradise.html" class="ac-drop-item">Focke-Wulf Fw 190 <span class="ac-drop-badge live">Live</span></a>
               <span class="ac-drop-item ac-drop-disabled">A6M Zero <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">Macchi C.202 <span class="ac-drop-badge plan">Planned</span></span>
             </div>
-            <div class="ac-drop-section">
-              <div class="ac-drop-heading">Axis bombers / attack</div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Axis bombers / attack</div>
               <span class="ac-drop-item ac-drop-disabled">Ju 87 Stuka <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">Ju 88 <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">He 111 <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">Do 17 <span class="ac-drop-badge plan">Planned</span></span>
             </div>
-            <div class="ac-drop-section">
-              <div class="ac-drop-heading">Specialist aircraft</div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Specialist aircraft</div>
               <a href="mosquito_paradise.html" class="ac-drop-item">Mosquito Night Fighter <span class="ac-drop-badge soon">Hub</span></a>
               <span class="ac-drop-item ac-drop-disabled">Beaufighter <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">Catalina <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">Sunderland <span class="ac-drop-badge plan">Planned</span></span>
             </div>
-            <div class="ac-drop-section ac-drop-section-tools">
-              <div class="ac-drop-heading">Research tools</div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Research tools</div>
               <a href="paint-codes.html" class="ac-drop-item">Paint Codes <span class="ac-drop-badge live">Guide</span></a>
               <a href="techniques-bank.html" class="ac-drop-item">Techniques Bank <span class="ac-drop-badge live">Guide</span></a>
               <a href="articles.html" class="ac-drop-item">Articles Library <span class="ac-drop-badge live">Read</span></a>
             </div>
           </div>
-        </div></div>
-          </div>
         </div>
       </div>
+      <a href="paint-codes.html" class="site-nav-link paint-nav-link keep-mobile">Paint Codes</a>
       <a href="techniques-bank.html" class="site-nav-link">Techniques</a>
-      <a href="articles.html" class="site-nav-link active">Articles</a>
-      <a href="paint-codes.html" class="site-nav-link paint-nav-link">Paint Codes</a>
+      <a href="articles.html" class="site-nav-link">Articles</a>
     </div>
   </div>
 </nav>
@@ -467,6 +475,20 @@ document.addEventListener('keydown', function(e){
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape') closeAll();
   });
+})();
+</script>
+
+
+<script id="ww2-unified-nav-script">
+(function(){
+  if(window.__ww2UnifiedNav) return; window.__ww2UnifiedNav = true;
+  function closeAll(except){document.querySelectorAll('.ac-drop.open').forEach(function(d){if(d!==except){d.classList.remove('open');var b=d.querySelector('.ac-drop-btn');if(b)b.setAttribute('aria-expanded','false');}})}
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest && e.target.closest('.ac-drop-btn');
+    if(btn){e.preventDefault();e.stopPropagation();var drop=btn.closest('.ac-drop');var open=!drop.classList.contains('open');closeAll(drop);drop.classList.toggle('open',open);btn.setAttribute('aria-expanded',open?'true':'false');return;}
+    if(!(e.target.closest && e.target.closest('.ac-drop.open'))) closeAll();
+  });
+  document.addEventListener('keydown', function(e){if(e.key==='Escape') closeAll();});
 })();
 </script>
 

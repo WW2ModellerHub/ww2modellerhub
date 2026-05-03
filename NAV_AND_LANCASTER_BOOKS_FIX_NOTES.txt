@@ -1,0 +1,1 @@
+Fixed site-wide navigation: replaced inconsistent/spread-out nav blocks with one compact unified nav across HTML pages. Paint Codes is now a top-level nav item on homepage, aircraft pages and article pages. Added robust Lancaster Books rendering/fallback so the Books tab is populated.

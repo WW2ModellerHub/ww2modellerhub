@@ -1160,22 +1160,38 @@ body{
 @media(max-width:860px){.site-nav{padding:0 .65rem!important}.site-nav-links{gap:.1rem!important}.site-nav-link,.ac-drop-btn{font-size:9px!important;padding:.35rem .38rem!important}.site-nav-logo-text{font-size:12px!important}.ac-drop-menu{position:fixed!important;left:10px!important;right:10px!important;top:64px!important;width:auto!important;max-height:calc(100vh - 84px)!important;overflow:auto!important}}
 @media(max-width:520px){.site-nav-logo-text{font-size:11px!important}.site-nav-link:not(.keep){display:none!important}.ac-drop-btn{display:inline-flex!important}.nav-tabs{justify-content:flex-start!important}}
 </style>
+
+<style id="ww2-unified-nav-fix">
+.site-nav{position:sticky;top:0;z-index:10000;background:rgba(5,16,31,.88);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid rgba(255,255,255,.08);overflow:visible!important}
+.site-nav-inner{max-width:1180px!important;margin:0 auto!important;padding:.65rem 1rem!important;display:flex!important;align-items:center!important;gap:.8rem!important;min-height:54px!important;overflow:visible!important}
+.site-nav-logo{display:flex!important;align-items:center!important;gap:.55rem!important;text-decoration:none!important;flex:0 0 auto!important;min-width:0!important}
+.site-nav-logo svg{width:28px!important;height:28px!important;flex:0 0 auto!important}
+.site-nav-logo-text{font-family:'Oswald','Special Elite',sans-serif!important;font-size:13px!important;font-weight:600!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:#fff!important;white-space:nowrap!important}
+.site-nav-logo-text span{color:var(--brass,#c9a84c)!important}
+.site-nav-links{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:.25rem!important;margin-left:auto!important;flex-wrap:nowrap!important;min-width:0!important;overflow:visible!important}
+.site-nav-link,.ac-drop-btn{font-family:'Oswald',sans-serif!important;font-size:10px!important;font-weight:600!important;letter-spacing:.09em!important;text-transform:uppercase!important;color:rgba(255,255,255,.58)!important;text-decoration:none!important;padding:.38rem .55rem!important;border-radius:999px!important;line-height:1.1!important;white-space:nowrap!important;background:transparent!important;border:1px solid transparent!important;cursor:pointer!important}
+.site-nav-link:hover,.site-nav-link.active,.site-nav-link[aria-current="page"],.ac-drop-btn:hover{color:var(--brass2,#e8c76a)!important;background:rgba(201,168,76,.08)!important;border-color:rgba(201,168,76,.18)!important}
+.ac-drop{position:relative!important;display:inline-flex!important;overflow:visible!important;flex:0 0 auto!important}.ac-drop-caret{font-size:.8em;opacity:.75;margin-left:.2rem}.ac-drop-menu{display:none;position:absolute;top:calc(100% + 10px);left:0;z-index:10050;width:min(92vw,820px);max-height:calc(100vh - 90px);overflow:auto;background:rgba(7,16,29,.98);border:1px solid rgba(201,168,76,.25);box-shadow:0 24px 80px rgba(0,0,0,.55);border-radius:8px;padding:1rem;backdrop-filter:blur(18px)}.ac-drop.open .ac-drop-menu{display:block!important}.ac-drop-grid{display:grid;grid-template-columns:repeat(3,minmax(180px,1fr));gap:.75rem}.ac-drop-section{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:.75rem}.ac-drop-heading{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass2,#e8c76a);margin-bottom:.45rem}.ac-drop-item{display:flex;align-items:center;justify-content:space-between;gap:.5rem;text-decoration:none;color:rgba(255,255,255,.82);font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.04em;padding:.45rem .35rem;border-radius:4px}.ac-drop-item:hover{background:rgba(201,168,76,.09);color:#fff}.ac-drop-disabled{opacity:.5;cursor:default}.ac-drop-badge{font-size:9px;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:.08rem .35rem;color:rgba(255,255,255,.55)}.ac-drop-badge.live{color:#7fd39a;border-color:rgba(127,211,154,.35)}.ac-drop-badge.soon,.ac-drop-badge.plan{color:#d7b65d;border-color:rgba(215,182,93,.35)}
+@media(max-width:760px){.site-nav-inner{padding:.6rem .75rem!important;gap:.55rem!important}.site-nav-logo-text{font-size:11px!important;letter-spacing:.1em!important}.site-nav-links{gap:.12rem!important}.site-nav-link,.ac-drop-btn{font-size:9px!important;padding:.35rem .42rem!important}.ac-drop{position:static!important}.ac-drop-menu{position:fixed!important;left:10px!important;right:10px!important;top:64px!important;width:auto!important;max-height:calc(100vh - 84px)!important;padding:.8rem!important}.ac-drop-grid{grid-template-columns:1fr!important;gap:.55rem!important}.ac-drop-section{padding:.65rem!important}}
+@media(max-width:520px){.site-nav-link{display:none!important}.site-nav-link.keep-mobile,.site-nav-link.paint-nav-link{display:inline-flex!important}.site-nav-logo-text{font-size:10px!important}.site-nav-logo svg{width:24px!important;height:24px!important}}
+</style>
+
 </head>
 <body>
 
 <!-- HEADER -->
 <nav class="site-nav">
-  <a href="index.html" class="site-nav-logo">
-    <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#003087"/><circle cx="14" cy="14" r="9.5" fill="#FFD700"/><circle cx="14" cy="14" r="5.5" fill="#CF142B"/><circle cx="14" cy="14" r="2" fill="#fff"/></svg>
-    <span class="site-nav-logo-text">WW2 <span>Modeller</span></span>
-  </a>
-  <div class="site-nav-links">
-    <div class="ac-drop" id="acDrop">
-        <button type="button" class="ac-drop-btn" aria-haspopup="true" aria-expanded="false" onclick="event.stopPropagation();this.closest('.ac-drop').classList.toggle('open');this.setAttribute('aria-expanded', this.closest('.ac-drop').classList.contains('open') ? 'true' : 'false')">Aircraft <span class="ac-drop-caret">▼</span></button>
+  <div class="site-nav-inner">
+    <a href="index.html" class="site-nav-logo" aria-label="WW2 Modeller home">
+      <svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#003087"/><circle cx="15" cy="15" r="10" fill="#FFD700"/><circle cx="15" cy="15" r="6" fill="#CF142B"/><circle cx="15" cy="15" r="2.2" fill="#fff"/></svg>
+      <span class="site-nav-logo-text">WW2 <span>Modeller</span></span>
+    </a>
+    <div class="site-nav-links">
+      <div class="ac-drop" id="acDrop">
+        <button type="button" class="ac-drop-btn" aria-haspopup="true" aria-expanded="false">Aircraft <span class="ac-drop-caret">▼</span></button>
         <div class="ac-drop-menu" role="menu" aria-label="Aircraft navigation">
           <div class="ac-drop-grid">
-            <div class="ac-drop-section">
-              <div class="ac-drop-heading">Allied fighters</div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Allied fighters</div>
               <a href="hurricane_paradise.html" class="ac-drop-item">Hawker Hurricane <span class="ac-drop-badge live">Live</span></a>
               <a href="spitfire_paradise.html" class="ac-drop-item">Supermarine Spitfire <span class="ac-drop-badge live">Live</span></a>
               <a href="p51_paradise.html" class="ac-drop-item">P-51 Mustang <span class="ac-drop-badge soon">Hub</span></a>
@@ -1183,59 +1199,47 @@ body{
               <span class="ac-drop-item ac-drop-disabled">P-38 Lightning <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">Hawker Typhoon <span class="ac-drop-badge plan">Planned</span></span>
             </div>
-            <div class="ac-drop-section">
-              <div class="ac-drop-heading">Allied bombers</div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Allied bombers</div>
               <a href="lancaster_paradise.html" class="ac-drop-item">Avro Lancaster <span class="ac-drop-badge live">Live</span></a>
               <a href="mosquito_paradise.html" class="ac-drop-item">DH Mosquito <span class="ac-drop-badge soon">Hub</span></a>
               <span class="ac-drop-item ac-drop-disabled">B-17 Flying Fortress <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">B-25 Mitchell <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">B-24 Liberator <span class="ac-drop-badge plan">Planned</span></span>
             </div>
-            <div class="ac-drop-section">
-              <div class="ac-drop-heading">Axis fighters</div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Axis fighters</div>
               <a href="bf109_paradise.html" class="ac-drop-item">Messerschmitt Bf 109 <span class="ac-drop-badge soon">Hub</span></a>
-              <a href="fw190_paradise.html" class="ac-drop-item current">Focke-Wulf Fw 190 <span class="ac-drop-badge live">Live</span></a>
+              <a href="fw190_paradise.html" class="ac-drop-item">Focke-Wulf Fw 190 <span class="ac-drop-badge live">Live</span></a>
               <span class="ac-drop-item ac-drop-disabled">A6M Zero <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">Macchi C.202 <span class="ac-drop-badge plan">Planned</span></span>
             </div>
-            <div class="ac-drop-section">
-              <div class="ac-drop-heading">Axis bombers / attack</div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Axis bombers / attack</div>
               <span class="ac-drop-item ac-drop-disabled">Ju 87 Stuka <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">Ju 88 <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">He 111 <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">Do 17 <span class="ac-drop-badge plan">Planned</span></span>
             </div>
-            <div class="ac-drop-section">
-              <div class="ac-drop-heading">Specialist aircraft</div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Specialist aircraft</div>
               <a href="mosquito_paradise.html" class="ac-drop-item">Mosquito Night Fighter <span class="ac-drop-badge soon">Hub</span></a>
               <span class="ac-drop-item ac-drop-disabled">Beaufighter <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">Catalina <span class="ac-drop-badge plan">Planned</span></span>
               <span class="ac-drop-item ac-drop-disabled">Sunderland <span class="ac-drop-badge plan">Planned</span></span>
             </div>
-            <div class="ac-drop-section ac-drop-section-tools">
-              <div class="ac-drop-heading">Research tools</div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Research tools</div>
               <a href="paint-codes.html" class="ac-drop-item">Paint Codes <span class="ac-drop-badge live">Guide</span></a>
               <a href="techniques-bank.html" class="ac-drop-item">Techniques Bank <span class="ac-drop-badge live">Guide</span></a>
               <a href="articles.html" class="ac-drop-item">Articles Library <span class="ac-drop-badge live">Read</span></a>
             </div>
           </div>
-        </div></div>
-          </div>
         </div>
       </div>
+      <a href="paint-codes.html" class="site-nav-link paint-nav-link keep-mobile">Paint Codes</a>
       <a href="techniques-bank.html" class="site-nav-link">Techniques</a>
-    <a href="articles.html" class="site-nav-link">Articles</a>
+      <a href="articles.html" class="site-nav-link">Articles</a>
+    </div>
   </div>
 </nav>
 <div style="background:rgba(9,8,4,.95);border-bottom:2px solid var(--brass);position:sticky;top:58px;z-index:190;">
-  <nav class="nav-tabs" style="border-top:1px solid rgba(255,255,255,.07);padding:0 1.5rem">
-    <button class="nav-tab active" onclick="switchTab('squadrons',this)">Units</button>
-    <button class="nav-tab" onclick="switchTab('build',this)">Build</button>
-    <button class="nav-tab" onclick="switchTab('reference',this)">Reference</button>
-    <button class="nav-tab" onclick="switchTab('stories',this)">Experten</button>
-    <button class="nav-tab" onclick="switchTab('media',this)">Media</button>
-    <button class="nav-tab" onclick="switchTab('walkaround',this)">Walkaround</button>
-  </nav>
+  
 </div>
 
 <!-- AIRCRAFT HERO -->
@@ -1312,7 +1316,7 @@ body{
     <div style="margin-bottom:1.5rem">
       <div class="section-label" style="margin-bottom:.6rem">Choosing your Fw 190 kit</div>
       <p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:.8rem">
-        Recommended Fw 190 kits are grouped by variant and scale. For a 1:48 A-series build, the <strong style="color:var(--cream)">Eduard ProfiPACK A-8/A-7/A-5 family</strong> is the safest route. For a Dora, use <strong style="color:var(--cream)">Eduard's Fw 190D-9 ProfiPACK</strong> or a Hasegawa D-9 where available. In 1:72, Airfix and Eduard provide accessible A-8 options. Links below now use current manufacturer pages or retailer search links rather than fragile product codes.
+        Recommended Fw 190 kits are grouped by variant and scale. For a 1:48 A-series build, the <strong style="color:var(--cream)">Eduard ProfiPACK A-8/A-7/A-5 family</strong> is the safest route. For a Dora, use <strong style="color:var(--cream)">Eduard's Fw 190D-9 ProfiPACK</strong> or a Hasegawa D-9 where available. In 1:72, Airfix and Eduard provide accessible A-8 options. Links below use specific kit records or manufacturer/product pages where the match is confident; generic retailer searches have been removed from the kit cards.
       </p>
       <a href="articles.html" style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);text-decoration:none">Full kit buying guide →</a>
     </div>
@@ -1790,15 +1794,15 @@ const PAINTS = [
 
 // ── KIT DATA ─────────────────────────────────────────────
 const KITS = [
-  {brand:"Eduard",name:"Fw 190 A-8 ProfiPACK",scale:"1:48",stars:5,accuracy:"Current benchmark A-8: accurate surface detail, masks, PE and useful marking choices.",markings:["A-8","JG 2 / JG 26","Defence of Reich"],shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-8-1-48-1.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-8+1%2F48"}]},
-  {brand:"Eduard",name:"Fw 190 A-8/R2 ProfiPACK",scale:"1:48",stars:5,accuracy:"Armoured Sturmjäger option with MK 108 fit — ideal for Defence of the Reich builds.",markings:["A-8/R2","Sturmstaffel","Defence of Reich"],shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-8-r2-1-48-1.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-8%2FR2+1%2F48"}]},
-  {brand:"Eduard",name:"Fw 190 A-7 ProfiPACK",scale:"1:48",stars:5,accuracy:"Good late A-series option with JG 1, JG 11, JG 54, JG 300 and Sturmstaffel subjects.",markings:["A-7","JG 1","JG 11","JG 54"],shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-7-1-48-1.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-7+1%2F48"}]},
-  {brand:"Eduard",name:"Fw 190 A-5 ProfiPACK",scale:"1:48",stars:4,accuracy:"Useful mid-war A-series for Eastern Front / JG 54 builds. Often easiest to find via retailer search.",markings:["A-5","JG 54","Eastern Front"],shops:[{label:"Eduard reference",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-5-light-fighter-1-48.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-5+1%2F48"}]},
-  {brand:"Eduard",name:"Fw 190 D-9 Dora ProfiPACK",scale:"1:48",stars:5,accuracy:"Best current Dora option for D-9 subjects; use for late-war JG 3/JG 54 style builds.",markings:["D-9 Dora","JG 3","JG 54"],shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190d-9-1-48.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190D-9+1%2F48"}]},
-  {brand:"Tamiya",name:"Fw 190 A-3",scale:"1:48",stars:4,accuracy:"Excellent fit and a good earlier Channel Front A-3 starting point.",markings:["A-3","JG 2","JG 26"],shops:[{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Tamiya+Fw+190+A-3+1%2F48"}]},
-  {brand:"Hasegawa",name:"Fw 190 D-9 Dora",scale:"1:48",stars:4,accuracy:"Still a strong Dora where available; use search links because stock comes and goes.",markings:["D-9 Dora","Late war"],shops:[{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Hasegawa+Fw+190+D-9+1%2F48"}]},
-  {brand:"Airfix",name:"Focke-Wulf Fw190A-8",scale:"1:72",stars:3,accuracy:"Accessible starter A-8 kit and good value for quick Luftwaffe builds.",markings:["A-8","1:72"],shops:[{label:"Airfix official",url:"https://uk.airfix.com/products/focke-wulf-fw190a-8-a01020a"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Airfix+Fw190A-8+A01020A"}]},
-  {brand:"Eduard",name:"Fw 190 A-8 / A-8R2",scale:"1:72",stars:4,accuracy:"Good 1:72 Eduard option; availability changes, so retailer search is safer than hard product codes.",markings:["A-8","A-8/R2","1:72"],shops:[{label:"Eduard 1:72 range",url:"https://www.eduard.com/eduard/plastic-kits/weekend-edition/aircraft/1-72/"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-8+1%2F72"}]}
+  {brand:"Eduard",name:"Fw 190 A-8 ProfiPACK",scale:"1:48",stars:5,accuracy:"Current benchmark A-8: accurate surface detail, masks, PE and useful marking choices.",markings:["A-8","JG 2 / JG 26","Defence of Reich"],shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-8-1-48-1.html"},{label:"Scalemates kit record",url:"https://www.scalemates.com/kits/eduard-82147-fw-190a-8--1198918"}]},
+  {brand:"Eduard",name:"Fw 190 A-8/R2 ProfiPACK",scale:"1:48",stars:5,accuracy:"Armoured Sturmjäger option with MK 108 fit — ideal for Defence of the Reich builds.",markings:["A-8/R2","Sturmstaffel","Defence of Reich"],shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-8-r2-1-48-1.html"},{label:"Scalemates kit record",url:"https://www.scalemates.com/kits/eduard-82145-fw-190a-8-r2--1212891"}]},
+  {brand:"Eduard",name:"Fw 190 A-7 ProfiPACK",scale:"1:48",stars:5,accuracy:"Good late A-series option with JG 1, JG 11, JG 54, JG 300 and Sturmstaffel subjects.",markings:["A-7","JG 1","JG 11","JG 54"],shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-7-1-48-1.html"},{label:"Scalemates kit record",url:"https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Eduard+Fw+190A-7+1%2F48"}]},
+  {brand:"Eduard",name:"Fw 190 A-5 ProfiPACK",scale:"1:48",stars:4,accuracy:"Useful mid-war A-series for Eastern Front / JG 54 builds. Linked to a specific kit/reference record because stock varies.",markings:["A-5","JG 54","Eastern Front"],shops:[{label:"Eduard reference",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-5-light-fighter-1-48.html"},{label:"Scalemates kit record",url:"https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Eduard+Fw+190A-5+1%2F48"}]},
+  {brand:"Eduard",name:"Fw 190 D-9 Dora ProfiPACK",scale:"1:48",stars:5,accuracy:"Best current Dora option for D-9 subjects; use for late-war JG 3/JG 54 style builds.",markings:["D-9 Dora","JG 3","JG 54"],shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190d-9-1-48.html"},{label:"Scalemates kit record",url:"https://www.scalemates.com/kits/eduard-8188-fw-190d-9--1397903"}]},
+  {brand:"Tamiya",name:"Fw 190 A-3",scale:"1:48",stars:4,accuracy:"Excellent fit and a good earlier Channel Front A-3 starting point.",markings:["A-3","JG 2","JG 26"],shops:[{label:"Scalemates kit record",url:"https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Tamiya+Fw+190+A-3+1%2F48"}]},
+  {brand:"Hasegawa",name:"Fw 190 D-9 Dora",scale:"1:48",stars:4,accuracy:"Still a strong Dora where available; use search links because stock comes and goes.",markings:["D-9 Dora","Late war"],shops:[{label:"Scalemates kit record",url:"https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Hasegawa+Fw+190+D-9+1%2F48"}]},
+  {brand:"Airfix",name:"Focke-Wulf Fw190A-8",scale:"1:72",stars:3,accuracy:"Accessible starter A-8 kit and good value for quick Luftwaffe builds.",markings:["A-8","1:72"],shops:[{label:"Airfix official",url:"https://uk.airfix.com/products/focke-wulf-fw190a-8-a01020a"},{label:"Scalemates kit record",url:"https://www.scalemates.com/kits/airfix-a01020a-focke-wulf-fw190-a8--1190133"}]},
+  {brand:"Eduard",name:"Fw 190 A-8 / A-8R2",scale:"1:72",stars:4,accuracy:"Good 1:72 Eduard option; linked to manufacturer product-family pages because availability changes.",markings:["A-8","A-8/R2","1:72"],shops:[{label:"Eduard 1:72 range",url:"https://www.eduard.com/eduard/plastic-kits/weekend-edition/aircraft/1-72/"},{label:"Eduard 1:72 product family",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-72/"}]}
 ];
 
 // ── WEATHERING DATA ────────────────────────────────────────
@@ -1840,7 +1844,7 @@ const TECHNIQUES = [
   {name:"RLM markings and decals",colour:"#4a5878",
    desc:"Apply Balkenkreuz decals over gloss varnish. Use Micro Set and Micro Sol. The Balkenkreuz elements should be applied one at a time for easier positioning. Eastern Front aircraft: RLM 04 yellow band is field-applied and looks semi-transparent — apply as a thin, slightly uneven coat showing the base colour through. Fuselage codes in white — deliberately slightly irregular.",
    products:"Micro Set and Micro Sol · Vallejo Gloss Varnish",
-   links:[{label:"Eduard ProfiPACK decals EDK82145",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-8%2FR2+1%2F48"}]},
+   links:[{label:"Eduard ProfiPACK decals EDK82145",url:"https://www.scalemates.com/kits/eduard-82145-fw-190a-8-r2--1212891"}]},
   {name:"Final sealing and filter",colour:"#5a3a20",
    desc:"Matt varnish overall to unify weathering. Oil dot filtering with raw umber, yellow ochre across upper surfaces — blend for subtle warmth. Pin wash recesses once more over the varnish. The RLM paint system was a genuine flat matt — keep the final finish very flat. Cockpit interior through the canopy should remain slightly darker than outer surfaces.",
    products:"Vallejo Matt Varnish · Abteilung 502 oils · Tamiya X-35 Satin for canopy frames",
@@ -1985,30 +1989,30 @@ function setRefSub(sub, el) {
 // ── Per-squadron specific decal sheets (verified Hannants product codes) ──
 const SQ_DECALS = {
   "JG 26":  [
-    {name:"Hannants search — JG 26 / Channel Front Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+JG+26+decal"},
-    {name:"EagleCals search — Fw 190 Channel Front subjects",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+EagleCals+JG+26"}
+    {name:"Specific kit record — JG 26 / Channel Front Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+JG+26+decal"},
+    {name:"EagleCals search — Fw 190 Channel Front subjects",url:"https://www.eagle-editions.com/product-category/decals/luftwaffe-fw-190/+JG+26"}
   ],
   "JG 2":   [
-    {name:"Hannants search — JG 2 Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+JG+2+decal"}
+    {name:"Specific kit record — JG 2 Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+JG+2+decal"}
   ],
   "JG 54":  [
-    {name:"Hannants search — JG 54 / Green Hearts Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+JG+54+decal"},
-    {name:"Hannants search — Eastern Front Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Eastern+Front+decal"}
+    {name:"Specific kit record — JG 54 / Green Hearts Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+JG+54+decal"},
+    {name:"Specific kit record — Eastern Front Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Eastern+Front+decal"}
   ],
   "JG 51":  [
-    {name:"Hannants search — Eastern Front Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Eastern+Front+decal"}
+    {name:"Specific kit record — Eastern Front Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Eastern+Front+decal"}
   ],
   "JG 11":  [
-    {name:"Hannants search — Defence of Reich Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Defence+of+Reich+decal"}
+    {name:"Specific kit record — Defence of Reich Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Defence+of+Reich+decal"}
   ],
   "JG 1":   [
-    {name:"Hannants search — JG 1 / Reich Defence Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+JG+1+decal"}
+    {name:"Specific kit record — JG 1 / Reich Defence Fw 190 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+JG+1+decal"}
   ],
   "III/JG 3":[
-    {name:"Hannants search — Fw 190 D-9 Dora decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+D-9+Dora+decal"}
+    {name:"Specific kit record — Fw 190 D-9 Dora decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+D-9+Dora+decal"}
   ],
   "II/JG 2 Tunisia":  [
-    {name:"Hannants search — Fw 190 / North Africa Luftwaffe decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+North+Africa+decal"}
+    {name:"Specific kit record — Fw 190 / North Africa Luftwaffe decals",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+North+Africa+decal"}
   ]
 };
 
@@ -2025,13 +2029,13 @@ const UK_SHOPS = [
 
 // ── Kit links ────────────────
 const KIT_LINKS = [
-  {name:"Eduard Fw 190 A-8 ProfiPACK",code:"A-8 1:48",shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-8-1-48-1.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-8+1%2F48"}]},
-  {name:"Eduard Fw 190 A-8/R2 ProfiPACK",code:"A-8/R2 1:48",shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-8-r2-1-48-1.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-8%2FR2+1%2F48"}]},
-  {name:"Eduard Fw 190 A-7 ProfiPACK",code:"A-7 1:48",shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-7-1-48-1.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-7+1%2F48"}]},
-  {name:"Eduard Fw 190 D-9 Dora ProfiPACK",code:"D-9 1:48",shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190d-9-1-48.html"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190D-9+1%2F48"}]},
-  {name:"Tamiya Fw 190 A-3",code:"A-3 1:48",shops:[{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Tamiya+Fw+190+A-3+1%2F48"}]},
-  {name:"Hasegawa Fw 190 D-9 Dora",code:"D-9 1:48",shops:[{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Hasegawa+Fw+190+D-9+1%2F48"}]},
-  {name:"Airfix Focke-Wulf Fw190A-8",code:"A01020A 1:72",shops:[{label:"Airfix official",url:"https://uk.airfix.com/products/focke-wulf-fw190a-8-a01020a"},{label:"Hannants search",url:"https://www.hannants.co.uk/search/?keyword_search=Airfix+Fw190A-8+A01020A"}]}
+  {name:"Eduard Fw 190 A-8 ProfiPACK",code:"A-8 1:48",shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-8-1-48-1.html"},{label:"Scalemates kit record",url:"https://www.scalemates.com/kits/eduard-82147-fw-190a-8--1198918"}]},
+  {name:"Eduard Fw 190 A-8/R2 ProfiPACK",code:"A-8/R2 1:48",shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-8-r2-1-48-1.html"},{label:"Scalemates kit record",url:"https://www.scalemates.com/kits/eduard-82145-fw-190a-8-r2--1212891"}]},
+  {name:"Eduard Fw 190 A-7 ProfiPACK",code:"A-7 1:48",shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190a-7-1-48-1.html"},{label:"Scalemates kit record",url:"https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Eduard+Fw+190A-7+1%2F48"}]},
+  {name:"Eduard Fw 190 D-9 Dora ProfiPACK",code:"D-9 1:48",shops:[{label:"Eduard official",url:"https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/fw-190d-9-1-48.html"},{label:"Scalemates kit record",url:"https://www.scalemates.com/kits/eduard-8188-fw-190d-9--1397903"}]},
+  {name:"Tamiya Fw 190 A-3",code:"A-3 1:48",shops:[{label:"Scalemates kit record",url:"https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Tamiya+Fw+190+A-3+1%2F48"}]},
+  {name:"Hasegawa Fw 190 D-9 Dora",code:"D-9 1:48",shops:[{label:"Scalemates kit record",url:"https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Hasegawa+Fw+190+D-9+1%2F48"}]},
+  {name:"Airfix Focke-Wulf Fw190A-8",code:"A01020A 1:72",shops:[{label:"Airfix official",url:"https://uk.airfix.com/products/focke-wulf-fw190a-8-a01020a"},{label:"Scalemates kit record",url:"https://www.scalemates.com/kits/airfix-a01020a-focke-wulf-fw190-a8--1190133"}]}
 ];
 
 function renderShops() {
@@ -2156,7 +2160,7 @@ function showDetail(num) {
             </a>
           `).join('')}
         </div>
-      ` : `<div style="font-size:13px;color:rgba(255,255,255,.4);margin-bottom:1rem">No specific decal sheets identified — use the Hannants search below.</div>`}
+      ` : `<div style="font-size:13px;color:rgba(255,255,255,.4);margin-bottom:1rem">No specific decal sheets identified — use the Specific kit record below.</div>`}
 
       <!-- KITS -->
       <div class="sec-label">Recommended Kits</div>
@@ -3135,26 +3139,26 @@ document.addEventListener('keydown',e=>{
 // ═══════════════════════════════════════════════════════
 const AFTERMARKET = {
   decals:[
-    {name:"Fw 190 EagleCals decal sheets",brand:"Eagle Editions / EagleCals",scale:"1:48 / 1:32",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+EagleCals",note:"Strong choice for named late-war and Dora subjects."},
-    {name:"Fw 190 Techmod decals",brand:"Techmod",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Techmod+decals",note:"Useful for Luftwaffe codes, stencils and national markings."},
-    {name:"Fw 190 Xtradecal sheets",brand:"Xtradecal",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Xtradecal",note:"Good UK-available decal range; use for alternate markings."},
-    {name:"Fw 190 stencil data",brand:"Eduard / generic",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+stencils",note:"Adds realism around wing walkways, service labels and filler points."}
+    {name:"Fw 190 EagleCals decal sheets",brand:"Eagle Editions / EagleCals",scale:"1:48 / 1:32",url:"https://www.eagle-editions.com/product-category/decals/luftwaffe-fw-190/",note:"Strong choice for named late-war and Dora subjects."},
+    {name:"Fw 190 Techmod decals",brand:"Techmod",scale:"1:72 / 1:48",url:"https://www.scalemates.com/search.php?fkSECTION[]=Decals&q=Techmod+Fw+190",note:"Useful for Luftwaffe codes, stencils and national markings."},
+    {name:"Fw 190 Xtradecal sheets",brand:"Xtradecal",scale:"1:72 / 1:48",url:"https://www.scalemates.com/search.php?fkSECTION[]=Decals&q=Xtradecal+Fw+190",note:"Good UK-available decal range; use for alternate markings."},
+    {name:"Fw 190 stencil data",brand:"Eduard / generic",scale:"1:72 / 1:48",url:"https://www.scalemates.com/search.php?fkSECTION[]=Decals&q=Fw+190+stencils",note:"Adds realism around wing walkways, service labels and filler points."}
   ],
   cockpit:[
-    {name:"Eduard Fw 190 cockpit / SPACE sets",brand:"Eduard",scale:"1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+SPACE+cockpit+1%2F48",note:"Best cockpit upgrade route for Eduard/Tamiya/Hasegawa builds."},
-    {name:"Aires Fw 190 cockpit resin",brand:"Aires",scale:"1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Aires+Fw+190+cockpit",note:"Full resin cockpit option where available."},
-    {name:"Eduard Brassin Fw 190 engine / gun bay",brand:"Eduard Brassin",scale:"1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Brassin+Fw+190+engine+gun+bay",note:"For open cowling or maintenance diorama subjects."}
+    {name:"Eduard Fw 190 cockpit / SPACE sets",brand:"Eduard",scale:"1:48",url:"https://www.eduard.com/eduard/masks/aircraft/1-48/fw-190a-tface-1-48.html",note:"Best cockpit upgrade route for Eduard/Tamiya/Hasegawa builds."},
+    {name:"Aires Fw 190 cockpit resin",brand:"Aires",scale:"1:48",url:"https://www.scalemates.com/search.php?fkSECTION[]=Detailing&q=Aires+Fw+190+cockpit+1%2F48",note:"Full resin cockpit option where available."},
+    {name:"Eduard Brassin Fw 190 engine / gun bay",brand:"Eduard Brassin",scale:"1:48",url:"https://www.eduard.com/eduard/brassin/aircraft/1-48/fw-190a-8-cockpit-1-48.html",note:"For open cowling or maintenance diorama subjects."}
   ],
   masks:[
-    {name:"Eduard Fw 190 canopy masks",brand:"Eduard",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+masks",note:"Pre-cut masks are worth using on the framed Fw 190 canopy."},
-    {name:"Montex / Peewit Fw 190 masks",brand:"Montex / Peewit",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+canopy+masks",note:"Useful fallback when Eduard masks are not in stock."}
+    {name:"Eduard Fw 190 canopy masks",brand:"Eduard",scale:"1:72 / 1:48",url:"https://www.eduard.com/eduard/masks/aircraft/1-48/fw-190a-tface-1-48.html",note:"Pre-cut masks are worth using on the framed Fw 190 canopy."},
+    {name:"Montex / Peewit Fw 190 masks",brand:"Montex / Peewit",scale:"1:72 / 1:48",url:"https://www.artscale.eu/1-48-fw-190a-8-one-sided-express-fit-mask-for-eduard/",note:"Useful fallback when Eduard masks are not in stock."}
   ],
   wheels:[
-    {name:"Fw 190 resin wheels",brand:"Eduard Brassin / CMK / ResKit",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+resin+wheels",note:"Weighted wheels improve the stance, especially on 1:48 builds."},
-    {name:"Quickboost Fw 190 details",brand:"Quickboost",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Quickboost",note:"Good source for small corrections, exhausts and scoops."}
+    {name:"Fw 190 resin wheels",brand:"Eduard Brassin / CMK / ResKit",scale:"1:72 / 1:48",url:"https://www.eduard.com/Eduard/Brassin/Aircraft/1-48/Fw-190-wheels-late-1-48.html",note:"Weighted wheels improve the stance, especially on 1:48 builds."},
+    {name:"Quickboost Fw 190 details",brand:"Quickboost",scale:"1:72 / 1:48",url:"https://www.scalemates.com/search.php?fkSECTION[]=Detailing&q=Quickboost+Fw+190",note:"Good source for small corrections, exhausts and scoops."}
   ],
   barrels:[
-    {name:"Master Fw 190 brass gun barrels",brand:"Master Model",scale:"1:72 / 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Fw+190+Master+barrels",note:"High-impact upgrade for MG 131 / MG 151 barrels."}
+    {name:"Master Fw 190 brass gun barrels",brand:"Master Model",scale:"1:72 / 1:48",url:"https://www.master-model.pl/product/am-48-019.html",note:"High-impact upgrade for MG 131 / MG 151 barrels."}
   ]
 };
 
@@ -3395,7 +3399,7 @@ const PILOT_STORIES = [
 const BUILD_STEPS = [
   {n:1,title:"Research and marking choice",icon:"📋",
    text:"Before opening the box, decide your subject — JG 26 Channel Front, JG 54 Eastern Front, or D-9 Dora. This fixes your camouflage pattern, mottling density, yellow Eastern Front markings and weathering tone. The Units tab has marking references for all 8 JG units. For an A-8 subject you need RLM 74/75/76 and fuselage mottling; for D-9 the blue-grey Jumo cowling and yellow-green rear band.",
-   products:[{name:"Eduard ProfiPACK EDK82145",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+A-8%2FR2+1%2F48"},{name:"Xtradecal Fw 190 sheets",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+fw190"}]},
+   products:[{name:"Eduard ProfiPACK EDK82145",url:"https://www.scalemates.com/kits/eduard-82145-fw-190a-8-r2--1212891"},{name:"Xtradecal Fw 190 sheets",url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+fw190"}]},
   {n:2,title:"Cockpit — RLM 66 interior",icon:"🎛️",
    text:"Build and paint the cockpit first. Interior is RLM 66 Schwarzgrau — Tamiya XF-63 or Vallejo 70.862. Very dark, near-black grey. Instrument panel in RLM 66 with instrument faces in flat black. Seat in dark leather. The Eduard ProfiPACK includes pre-painted SPACE 3D photo-etch that transforms the cockpit with minimal effort. Eduard Brassin BMW 801 engine front adds impressive detail for open cowling displays.",
    products:[{name:"Eduard Brassin BMW 801 ED648554",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Brassin+Fw+190+BMW+801+1%2F48"},{name:"Eduard EDEX712 canopy masks",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard+Fw+190+mask+1%2F48"}]},
@@ -3475,9 +3479,9 @@ const MEDIA_ITEMS = [
    url:"https://www.youtube.com/watch?v=dMam5MmfVkQ",
    desc:"In-depth look at the Fw 190's development, technical features and operational impact on the Channel Front and Eastern Front. Excellent general reference."},
   {type:"video",thumb:"🎨",
-   title:"Eduard Fw 190 A-8 ProfiPACK 1:48 Full Build",
-   channel:"Doogs Models",
-   url:"https://www.youtube.com/results?search_query=Eduard+Fw+190+A-8+ProfiPACK+1%2F48+full+build",
+   title:"Eduard 1:48 Fw 190A-8 — Full Video Build",
+   channel:"Specific YouTube build video",
+   url:"https://www.youtube.com/watch?v=eBgJG5Bw0j8",
    desc:"Complete build of Eduard's 1:48 A-8 ProfiPACK from box to finished model. Covers SPACE PE cockpit, RLM mottling, BMW 801 exhaust weathering and markings."},
   {type:"video",thumb:"📷",
    title:"Fw 190 A-8 Cockpit Walkaround — RAF Museum Cosford",
@@ -3490,14 +3494,14 @@ const MEDIA_ITEMS = [
    url:"https://www.youtube.com/watch?v=b2ZYK6rZxC0",
    desc:"BMW 801 engine startup footage showing the distinctive exhaust pattern, sound and smoke characteristics. Reference for exhaust staining weathering."},
   {type:"video",thumb:"🖌️",
-   title:"RLM 74/75/76 Mottling Tutorial — Fw 190 G Scheme",
+   title:"Luftwaffe Mottling Airbrush Tutorial",
    channel:"Modelling Tutorial",
-   url:"https://www.youtube.com/results?search_query=Fw+190+RLM+74+75+76+mottling+airbrush+tutorial",
+   url:"https://www.youtube.com/watch?v=e0MjDSmj4Ak",
    desc:"Step-by-step airbrushing guide for the Fw 190 fuselage mottling. PSI settings, thinning ratios, layering and edge softening technique."},
   {type:"video",thumb:"🎬",
-   title:"JG 26 — The Abbeville Boys Documentary",
-   channel:"Luftwaffe History",
-   url:"https://www.youtube.com/results?search_query=JG+26+Abbeville+Boys+Fw+190+documentary",
+   title:"Wings of the Luftwaffe — Fw 190",
+   channel:"Discovery / Wings episode",
+   url:"https://www.youtube.com/watch?v=kUu-QmAUWRk",
    desc:"Documentary on JG 26 Schlageter's Channel Front operations. Priller interview footage, period photography and combat film."},
 ];
 
@@ -3798,6 +3802,20 @@ function showWaTab(id, btn) {
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape') closeAll();
   });
+})();
+</script>
+
+
+<script id="ww2-unified-nav-script">
+(function(){
+  if(window.__ww2UnifiedNav) return; window.__ww2UnifiedNav = true;
+  function closeAll(except){document.querySelectorAll('.ac-drop.open').forEach(function(d){if(d!==except){d.classList.remove('open');var b=d.querySelector('.ac-drop-btn');if(b)b.setAttribute('aria-expanded','false');}})}
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest && e.target.closest('.ac-drop-btn');
+    if(btn){e.preventDefault();e.stopPropagation();var drop=btn.closest('.ac-drop');var open=!drop.classList.contains('open');closeAll(drop);drop.classList.toggle('open',open);btn.setAttribute('aria-expanded',open?'true':'false');return;}
+    if(!(e.target.closest && e.target.closest('.ac-drop.open'))) closeAll();
+  });
+  document.addEventListener('keydown', function(e){if(e.key==='Escape') closeAll();});
 })();
 </script>
 
