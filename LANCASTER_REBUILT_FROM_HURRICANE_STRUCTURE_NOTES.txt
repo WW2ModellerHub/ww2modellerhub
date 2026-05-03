@@ -1,0 +1,1 @@
+Lancaster page rebuilt with the same major Hurricane page structure: sticky header, aircraft hero, sidebar filter, six nav tabs, matching Build sub-tabs (Kits, Aftermarket, Paint, Build guide, Weathering), Reference sub-tabs (Station map, Timeline, Compare, Survivors, Books), Stories, Media and Walkaround sections. Lancaster data replaces the Hurricane content.

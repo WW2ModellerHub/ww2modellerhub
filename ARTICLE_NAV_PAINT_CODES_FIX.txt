@@ -1,0 +1,4 @@
+Updated all article pages so the top navigation includes a visible Paint Codes link.
+Added a paint-nav-link class to the Paint Codes nav item and a mobile CSS override so it is not hidden by the small-screen article navigation rules.
+Article pages checked: 19
+Files changed: article-92-sqn-biggin.html, article-bf109-e7-trop.html, article-bf109-emil-vs-friedrich.html, article-bf109-mottle-guide.html, article-bf109-rlm-paint-codes.html, article-bob-squadrons-guide.html, article-fabric-vs-metal-wings.html, article-hurricane-aftermarket.html, article-hurricane-bob-colours.html, article-hurricane-kits-guide.html, article-hurricane-weathering.html, article-lancaster-kits-guide.html, article-sailor-malan.html, article-spitfire-bob-colours.html, article-spitfire-cockpit-guide.html, article-spitfire-kits-guide.html, article-spitfire-mk1-vs-mk2.html, article-spitfire-pitot-tube.html, article-spitfire-weathering.html
