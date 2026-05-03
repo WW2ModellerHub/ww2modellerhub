@@ -585,6 +585,16 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
+
+<style id="ww2-nav-tight-fix">
+.site-nav{padding:0 1rem!important;gap:.75rem!important;height:auto!important;min-height:56px!important;overflow:visible!important}
+.site-nav-logo{min-width:0!important;flex:0 0 auto!important}.site-nav-logo-text{font-size:13px!important;white-space:nowrap!important}
+.site-nav-links{margin-left:auto!important;gap:.2rem!important;display:flex!important;align-items:center!important;justify-content:flex-end!important;flex-wrap:nowrap!important;min-width:0!important;overflow:visible!important}
+.site-nav-link,.ac-drop-btn{font-size:10px!important;letter-spacing:.08em!important;padding:.36rem .48rem!important;white-space:nowrap!important;line-height:1.1!important}
+.ac-drop-menu{z-index:10001!important}
+@media(max-width:860px){.site-nav{padding:0 .65rem!important}.site-nav-links{gap:.1rem!important}.site-nav-link,.ac-drop-btn{font-size:9px!important;padding:.35rem .38rem!important}.site-nav-logo-text{font-size:12px!important}.ac-drop-menu{position:fixed!important;left:10px!important;right:10px!important;top:64px!important;width:auto!important;max-height:calc(100vh - 84px)!important;overflow:auto!important}}
+@media(max-width:520px){.site-nav-logo-text{font-size:11px!important}.site-nav-link:not(.keep){display:none!important}.ac-drop-btn{display:inline-flex!important}.nav-tabs{justify-content:flex-start!important}}
+</style>
 </head><body>
 <nav class="site-nav">
   <a href="index.html" class="site-nav-logo">
@@ -682,12 +692,13 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
   <button class="fb gf" onclick="setFilter('1',this)">1 Group</button>
   <button class="fb gf" onclick="setFilter('3',this)">3 Group</button>
   <button class="fb gf" onclick="setFilter('5',this)">5 Group</button>
-  <button class="fb gf" onclick="setFilter('8',this)">8 Group (PFF)</button>
+  <button class="fb gf" onclick="setFilter('6',this)">6 Group RCAF</button>
+  <button class="fb gf" onclick="setFilter('8',this)">8 Group PFF</button>
   <div class="bar-sep"></div>
   <label>Sort:</label>
   <button class="fb on sf" onclick="setSort('num',this)">Number</button>
-  <button class="fb sf" onclick="setSort('kills',this)">Claims ↓</button>
-  <button class="fb sf" onclick="setSort('killrate',this)">Kill % ↓</button>
+  <button class="fb sf" onclick="setSort('kills',this)">Losses ↓</button>
+  <button class="fb sf" onclick="setSort('killrate',this)">Sortie intensity ↓</button>
   <button class="fb sf" onclick="setSort('base',this)">Base A–Z</button>
   <span class="sq-count" id="sq-count"></span>
 </div>
@@ -697,16 +708,16 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 
 <div class="tab-panel active" id="tab-squadrons">
   <div style="margin-bottom:1.5rem">
-    <div class="section-label" style="margin-bottom:.6rem">Battle of Britain · 10 July – 31 October 1940</div>
-    <p style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.75;max-width:720px">
-      Nineteen RAF Lancaster squadrons fought in the Battle of Britain, claiming approximately 36% of all RAF victories. Directed primarily against the Bf 109E fighter escort while Hurricanes attacked the bombers, theLancastere was the aircraft the Luftwaffe feared most — roughly equal in performance to the Messerschmitt and capable of outturning it. Click any card to see pilots, aircraft codes, decals and photographs.
+    <div class="section-label" style="margin-bottom:.6rem">Bomber Command · Lancaster squadrons · 1942–45</div>
+    <p style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.75;max-width:760px">
+      The Avro Lancaster was Bomber Command’s defining heavy bomber. This page follows the same Paradise format as the Hurricane and Spitfire pages: choose a real squadron or aircraft, understand its base and operational story, then model it accurately using the correct markings, colours, kits, aftermarket and weathering references.
     </p>
     <div style="display:flex;gap:1.2rem;margin-top:.8rem;flex-wrap:wrap;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4)">
-      <span><span style="color:var(--brass2);font-size:14px;font-weight:600">19</span> squadrons</span>
+      <span><span style="color:var(--brass2);font-size:14px;font-weight:600">10</span> featured squadrons</span>
       <span>·</span>
-      <span><span style="color:var(--brass2);font-size:14px;font-weight:600">180+</span> named pilots</span>
+      <span><span style="color:var(--brass2);font-size:14px;font-weight:600">5</span> Bomber Command groups</span>
       <span>·</span>
-      <span><span style="color:var(--brass2);font-size:14px;font-weight:600">4</span> RAF groups</span>
+      <span><span style="color:var(--brass2);font-size:14px;font-weight:600">1942–45</span> operational focus</span>
     </div>
   </div>
   <div class="sq-grid" id="grid"></div>
@@ -720,33 +731,48 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <button class="fb btf" onclick="setBuildSub('stepbystep',this)">Build guide</button>
     <button class="fb btf" onclick="setBuildSub('weathering',this)">Weathering</button>
   </div>
-  <div id="bsub-kits"><div class="section-label">Choosing youLancasterre kit</div><p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">MoLancasterire kits exist than for any other WW2 aircraft. For a BoB Mk.I in 1:48 the <strong style="color:var(--cream)">Airfix AX05126A</strong> is the top recommendation — superb accuracy and value. The <strong style="color:var(--cream)">Eduard 82152 ProfiPACK</strong> adds photo-etch and masks for serious modellers. In 1:72 the <strong style="color:var(--cream)">Airfix AX01071C</strong> retool is the benchmark.</p><div class="kit-grid" id="kit-grid"></div></div>
-  <div id="bsub-aftermarket" style="display:none"><div class="section-label">Aftermarket for the Lancaster Mk.I</div><p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">The Airfix cockpit benefits greatly from Eduard SPACE 3D. <strong style="color:var(--cream)">Master Model AM-48-108</strong> brass Browning barrels transform the wing. Kabuki canopy masks are essential — the Lancaster's many curved panes are very hard to mask freehand.</p><div id="aftermarket-grid"></div></div>
+  <div id="bsub-kits">
+    <div class="section-label">Choosing your Lancaster kit</div>
+    <p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:760px;margin-bottom:1rem">For a serious Lancaster build, choose scale first. In 1:48, the Tamiya Lancaster remains the classic large-scale benchmark. In 1:72, the Airfix new-tool family is the best mainstream route and includes standard bomber and Dambusters options. Pick the aircraft subject before buying decals: standard Bomber Command, 617 Sqn Dambusters, Pathfinder, RCAF Mk.X and late-war Tallboy aircraft all need different details.</p>
+    <div class="kit-grid" id="kit-grid"></div>
+  </div>
+  <div id="bsub-aftermarket" style="display:none">
+    <div class="section-label">Aftermarket for the Lancaster</div>
+    <p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:760px;margin-bottom:1rem">The Lancaster rewards targeted upgrades rather than buying everything. Masks are almost essential because of the greenhouse canopy and turrets. Wheels, exhausts, gun barrels, cockpit photo-etch and bomb-bay details give the biggest visual return.</p>
+    <div id="aftermarket-grid"></div>
+  </div>
   <div id="bsub-paint" style="display:none">
-    <div class="section-label">Battle of Britain paint colours</div>
-    <p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">Every Lancasterfire wore <strong style="color:var(--cream)">Dark Earth</strong> and <strong style="color:var(--cream)">Dark Green</strong> upper surfaces, <strong style="color:var(--cream)">Sky (Type S)</strong> undersides and spinner. The split line on the Lancaster's curved fuselage creates a characteristic wavy demarcation — the A-scheme has brown on the starboard nose side.</p>
+    <div class="section-label">Lancaster paint colours</div>
+    <p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:760px;margin-bottom:1rem">Most wartime Lancasters wore <strong style="color:var(--cream)">Dark Green</strong> and <strong style="color:var(--cream)">Dark Earth</strong> upper surfaces with <strong style="color:var(--cream)">Night Black</strong> undersides and lower fuselage sides. Interiors are mainly RAF Interior Green, with black instrument panels, dark turret interiors and heavy operational staining around engines and bomb bay areas.</p>
     <div class="paint-grid" id="paint-grid"></div>
     <div style="margin-top:1.5rem;background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1.2rem">
       <div class="sec-label">Brand colour comparison</div>
       <div id="colour-compare-grid"></div>
     </div>
     <div style="margin-top:1.2rem;background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1rem">
-      <div class="sec-label">Roundel &amp; marking notes</div>
+      <div class="sec-label">Roundel, code and marking notes</div>
       <div style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.75">
-        <p><strong style="color:#fff">July–Aug 1940:</strong> Type A1 roundels (no yellow ring) on fuselage. Type A upper wings. Type B lower wings. Large fin flash.</p>
-        <p style="margin-top:.5rem"><strong style="color:#fff">Sep–Oct 1940:</strong> Yellow outer ring on fuselage roundels increasingly common by October.</p>
-        <p style="margin-top:.5rem"><strong style="color:#fff">Code letters:</strong> Sky BS381C-216. ~24 inch height. Serial in black rear fuselage port side only. Some Lancasters had a Sky spinner with a narrow black spiral stripe.</p>
+        <p><strong style="color:#fff">Standard bomber scheme:</strong> Dark Green / Dark Earth upper surfaces over Night Black sides and undersides. The black comes high up the fuselage sides, not just the belly.</p>
+        <p style="margin-top:.5rem"><strong style="color:#fff">Codes:</strong> Unit code plus individual aircraft letter. Many mid/late-war Lancasters use dull red or grey-red codes, with some white/yellow theatre-specific variations depending on unit and date. Check your aircraft photo.</p>
+        <p style="margin-top:.5rem"><strong style="color:#fff">Mission tallies and nose art:</strong> Bomber Command aircraft often carried bomb symbols below the port cockpit. These were crew-applied and should not look perfectly printed unless using decals.</p>
       </div>
     </div>
   </div>
-  <div id="bsub-stepbystep" style="display:none"><div class="info-box">Stage-by-stage build guide for the Lancaster. Assumes 1:48, e.g. Airfix AX05126A.</div><div id="stepbystep-content"></div></div>
-  <div id="bsub-weathering" style="display:none"><div class="info-box">Period-accurate weathering by base. All Lancasters showed exhaust staining port upper cowling. Eight gun port blast marks along each leading edge. Port wing root walkway chipping is distinctive.</div><div class="weather-grid" id="weather-grid"></div><div style="margin-top:1.5rem" id="weathering-techniques"></div></div>
+  <div id="bsub-stepbystep" style="display:none">
+    <div class="info-box">Stage-by-stage Lancaster build guide. Works for 1:72 Airfix/Revell and 1:48 Tamiya style builds; adjust detail depth to scale.</div>
+    <div id="stepbystep-content"></div>
+  </div>
+  <div id="bsub-weathering" style="display:none">
+    <div class="info-box">Lancaster weathering is dominated by Merlin exhaust staining, Night Black wear, muddy undercarriage, crew access scuffing, turret grime and bomb-bay staining. Use the base-specific cards below to avoid generic over-weathering.</div>
+    <div class="weather-grid" id="weather-grid"></div>
+    <div style="margin-top:1.5rem" id="weathering-techniques"></div>
+  </div>
 </div>
 
 <div class="tab-panel" id="tab-reference">
   <div style="display:flex;gap:8px;margin-bottom:1.4rem;flex-wrap:wrap">
     <button class="fb on rtf" onclick="setRefSub('map',this)">Station map</button>
-    <button class="fb rtf" onclick="setRefSub('timeline',this)">BoB timeline</button>
+    <button class="fb rtf" onclick="setRefSub('timeline',this)">Lancaster timeline</button>
     <button class="fb rtf" onclick="setRefSub('compare',this)">Compare squadrons</button>
     <button class="fb rtf" onclick="setRefSub('survivors',this)">Survivors</button>
     <button class="fb rtf" onclick="setRefSub('books',this)">Books</button>
@@ -755,23 +781,25 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem">
       <span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-right:.25rem">Filter:</span>
       <button onclick="filterMapGroup('all',this)" class="map-filter-btn on" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)">All Groups</button>
-      <button onclick="filterMapGroup('11',this)" class="map-filter-btn" style="border-color:#e05555;color:#e07777">11 Group</button>
-      <button onclick="filterMapGroup('10',this)" class="map-filter-btn" style="border-color:#4caf7d;color:#6ccc9a">10 Group</button>
-      <button onclick="filterMapGroup('12',this)" class="map-filter-btn" style="border-color:#5b9bd5;color:#7db8ea">12 Group</button>
-      <button onclick="filterMapGroup('13',this)" class="map-filter-btn" style="border-color:#b07fd5;color:#c89de8">13 Group</button>
+      <button onclick="filterMapGroup('1',this)" class="map-filter-btn" style="border-color:#e05555;color:#e07777">1 Group</button>
+      <button onclick="filterMapGroup('3',this)" class="map-filter-btn" style="border-color:#4caf7d;color:#6ccc9a">3 Group</button>
+      <button onclick="filterMapGroup('5',this)" class="map-filter-btn" style="border-color:#5b9bd5;color:#7db8ea">5 Group</button>
+      <button onclick="filterMapGroup('6',this)" class="map-filter-btn" style="border-color:#d4a83a;color:#e8c76a">6 Group RCAF</button>
+      <button onclick="filterMapGroup('8',this)" class="map-filter-btn" style="border-color:#c87848;color:#d99a74">8 Group PFF</button>
     </div>
     <div class="raf-map-shell">
       <div class="raf-map-board"><div id="leaflet-map"></div></div>
       <div class="map-sqn-list raf-map-side" id="map-sqn-list">
         <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">Station Info</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.45)">Click a station dot on the map to see squadrons and notes.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.45)">Click a Bomber Command station dot to see squadrons and modelling notes.</div>
         <div style="margin-top:1.2rem">
           <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.5rem">Group colours</div>
           <div style="display:flex;flex-direction:column;gap:4px">
-            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#e05555"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">11 Group (South)</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#4caf7d"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">10 Group (SW)</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#5b9bd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">12 Group (Midlands)</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#b07fd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">13 Group (North)</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#e05555"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">1 Group</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#4caf7d"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">3 Group</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#5b9bd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">5 Group</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#d4a83a"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">6 Group RCAF</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#c87848"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">8 Group PFF</span></div>
           </div>
         </div>
       </div>
@@ -779,11 +807,11 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
   </div>
   <div id="rsub-timeline" style="display:none">
     <div style="background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1.1rem;margin-bottom:1.1rem">
-      <div class="sec-label" style="margin-bottom:.4rem">Battle of Britain — Interactive Timeline</div>
-      <div style="font-size:14px;color:rgba(255,255,255,.55);margin-bottom:.75rem">Drag the slider through the 113-day battle. See squadron status at each point.</div>
+      <div class="sec-label" style="margin-bottom:.4rem">Lancaster operational timeline</div>
+      <div style="font-size:14px;color:rgba(255,255,255,.55);margin-bottom:.75rem">Drag the slider through the Lancaster war: entry into service, Augsburg, Dams Raid, Berlin, D-Day support, Tirpitz and the final oil campaign.</div>
       <div style="font-family:'Special Elite',cursive;font-size:16px;color:var(--brass2);text-align:center;margin-bottom:.5rem" id="tl-date">10 July 1940</div>
       <input type="range" class="timeline-slider" id="tl-slider" min="0" max="1096" value="0" oninput="updateTimeline(this.value)">
-      <div class="timeline-labels"><span>10 Jul</span><span>15 Aug</span><span>15 Sep</span><span>31 Oct</span></div>
+      <div class="timeline-labels"><span>Mar 1942</span><span>May 1943</span><span>Mar 1944</span><span>May 1945</span></div>
       <div class="tl-legend" style="margin-top:.75rem">
         <span><span class="tl-dot" style="background:#9ab840"></span>Front line</span>
         <span><span class="tl-dot" style="background:#d4a83a"></span>Reserve</span>
@@ -802,18 +830,18 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <div id="compare-output"></div>
   </div>
   <div id="rsub-survivors" style="display:none">
-    <div class="info-box" style="margin-bottom:1rem">More Lancasters survive worldwide than any other WW2 fighter — over 60 airworthy. The most historically significant BoB-period aircraft are listed here.</div>
+    <div class="info-box" style="margin-bottom:1rem">Surviving Lancasters are rare and extremely valuable as modelling references. Use these aircraft for cockpit, turret, bomb-bay, undercarriage and weathering details.</div>
     <div id="survivors-grid"></div>
   </div>
   <div id="rsub-books" style="display:none">
-    <div class="info-box" style="margin-bottom:1rem">Essential readingLancastertfire modellers: the finest pilot memoirs, histories and modelling guides.</div>
+    <div class="info-box" style="margin-bottom:1rem">Essential Lancaster reading for modellers: operational histories, crew memoirs, technical references and modelling guides.</div>
     <div id="books-grid"></div>
   </div>
 </div>
 
 <div class="tab-panel" id="tab-stories">
-  <div class="section-label">Pilot StorLancasteritfire aces of the Battle of Britain</div>
-  <div class="info-box">Five of the most signiLancasterpitfire pilots of 1940, from squadron records and first-person memoirs.</div>
+  <div class="section-label">Lancaster crew stories</div>
+  <div class="info-box">Five significant Lancaster crew stories, from Dams Raid leadership to Bomber Command gallantry and RCAF/RNZAF service.</div>
   <div id="this-week-bob" style="margin-bottom:1.5rem"></div>
   <div id="pilot-stories-grid"></div>
 </div>
@@ -825,29 +853,59 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 </div>
 
 <div class="tab-panel" id="tab-walkaround">
-<div class="main-wrap">
-<div class="main-content">
+  <div class="info-box">Lancaster walkaround references grouped by detail area. Use these as direct modelling checks for cockpit layout, turrets, Merlin nacelles, undercarriage, bomb bay, markings and weathering. All links open external reference material.</div>
+
   <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
-    <button onclick="setWalkCat('cockpit',this)" class="waf on" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:rgba(201,168,76,.12);border:1px solid var(--brass);color:var(--brass2);border-radius:2px;cursor:pointer">Cockpit</button>
-    <button onclick="setWalkCat('exhaust',this)" class="waf" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Exhaust &amp; Engines</button>
-    <button onclick="setWalkCat('undercarriage',this)" class="waf" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Undercarriage</button>
-    <button onclick="setWalkCat('markings',this)" class="waf" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Markings &amp; Codes</button>
-    <button onclick="setWalkCat('survivors',this)" class="waf" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Survivors</button>
+    <a href="#la-cockpit" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none">Cockpit & crew positions</a>
+    <a href="#la-engines" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none">Engines & exhaust</a>
+    <a href="#la-undercarriage" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none">Undercarriage</a>
+    <a href="#la-markings" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none">Markings</a>
+    <a href="#la-airframe" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none">Airframe & bomb bay</a>
   </div>
-  <div id="wa-grid"></div>
-</div>
-<div class="sidebar">
-  <div class="sidebar-block">
-    <div class="sidebar-hd">Key reference points</div>
-    <div style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.7;padding:.5rem 0">
-      <strong style="color:rgba(255,255,255,.85)">PA474 — BBMF Coningsby</strong><br>The only flying European Lancaster. Attend any BBMF display to photograph upper/lower surfaces in daylight.<br><br>
-      <strong style="color:rgba(255,255,255,.85)">Just Jane — East Kirkby</strong><br>Best accessible interior reference — cockpit, bomb bay, all crew positions. Taxi rides available.<br><br>
-      <strong style="color:rgba(255,255,255,.85)">R5868 S-Sugar — Hendon</strong><br>137 mission tallies. Best surviving example of Night Black ageing and surface texture.
+
+  <div id="la-cockpit" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Cockpit & Crew Positions <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+    <div class="info-box">Lancaster cockpit references are vital because the canopy is large and the cockpit remains visible even in 1:72. Check the pilot seat, engineer’s position, throttle bank, navigator table and black instrument panel before closing the fuselage.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+      <a class="wa-ref-card" href="https://www.lincsaviation.co.uk/" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/5hHztgK6dYQ/mqdefault.jpg" alt="Lancaster Just Jane cockpit and interior reference" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Lincolnshire Aviation Heritage Centre</div><div class="wa-ref-title">NX611 Just Jane — interior reference</div><div class="wa-ref-desc">Best accessible Lancaster interior reference: cockpit, bomb aimer’s station, navigator, wireless operator, bomb bay and turrets.</div><div class="wa-ref-link">Open reference ↗</div></div></a>
+      <a class="wa-ref-card" href="https://www.raf.mod.uk/display-teams/battle-of-britain-memorial-flight/aircraft/avro-lancaster-pa474/" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/Vp7cVh4-1jQ/mqdefault.jpg" alt="BBMF Lancaster PA474 reference" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">BBMF</div><div class="wa-ref-title">PA474 — flying Lancaster reference</div><div class="wa-ref-desc">Use PA474 for real airframe stance, panel sheen, turret appearance and how the aircraft looks in natural daylight.</div><div class="wa-ref-link">Open reference ↗</div></div></a>
     </div>
   </div>
-</div>
-</div>
-</div><!-- /tab-walkaround --> -->
+
+  <div id="la-engines" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Merlins, Nacelles & Exhaust Staining <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+    <div class="info-box">Lancaster weathering is led by four Merlin engines. Each nacelle creates a strong brown-black exhaust fan across the upper wing, with the inner engines staining the fuselage side and wing root area.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+      <a class="wa-ref-card" href="https://www.youtube.com/results?search_query=Lancaster+PA474+display+close+up+Merlin+engines" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/3KpQk_9uZ8g/mqdefault.jpg" alt="Lancaster Merlin engine exhaust reference" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Video search</div><div class="wa-ref-title">PA474 Merlin engine close-ups</div><div class="wa-ref-desc">Useful for nacelle shape, propeller finish, spinner wear and the distinctive four-engine exhaust pattern.</div><div class="wa-ref-link">Open reference ↗</div></div></a>
+      <a class="wa-ref-card" href="https://www.youtube.com/results?search_query=Lancaster+Just+Jane+taxi+run+Merlin+exhaust" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/QhJ8x5T9b6A/mqdefault.jpg" alt="Just Jane Lancaster taxi run exhaust reference" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Taxi run</div><div class="wa-ref-title">Just Jane — Merlin exhaust and nacelle grime</div><div class="wa-ref-desc">Close ground-level footage is useful for staining intensity, oil marks, radiator faces and nacelle underside dirt.</div><div class="wa-ref-link">Open reference ↗</div></div></a>
+    </div>
+  </div>
+
+  <div id="la-undercarriage" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Undercarriage & Tyres <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+    <div class="info-box">The Lancaster’s undercarriage is large and exposed. Weather it according to base: Lincolnshire chalk and clay can be pale buff-grey, while Fen stations can show much darker peat mud.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+      <a class="wa-ref-card" href="https://www.lincsaviation.co.uk/" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/1hpXFdVwJwY/mqdefault.jpg" alt="Lancaster undercarriage reference" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">East Kirkby</div><div class="wa-ref-title">Just Jane undercarriage and taxi stance</div><div class="wa-ref-desc">Good reference for main-wheel size, leg angle, tyre flattening, wheel door shape and mud deposits.</div><div class="wa-ref-link">Open reference ↗</div></div></a>
+    </div>
+  </div>
+
+  <div id="la-markings" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Markings, Codes & Mission Tallies <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+    <div class="info-box">Lancaster markings vary heavily by squadron and date. Check code colour, H2S fit, nose art, bomb tallies and whether the aircraft is a standard bomber, Pathfinder, Dams Raid or Tallboy/Grand Slam machine.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+      <a class="wa-ref-card" href="https://www.iwm.org.uk/collections/search?query=Lancaster%20bomber" target="_blank" rel="noopener"><img src="https://media.iwm.org.uk/ciim5/36/482/large_000000.jpg" alt="IWM Lancaster markings reference" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">IWM Archive</div><div class="wa-ref-title">Period Lancaster photographs</div><div class="wa-ref-desc">Use for real wartime codes, mission tallies, nose art, roundel placement and operational grime rather than restored-aircraft assumptions.</div><div class="wa-ref-link">Open archive ↗</div></div></a>
+      <a class="wa-ref-card" href="https://www.hannants.co.uk/search/?keyword_search=lancaster+decal" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/3KpQk_9uZ8g/mqdefault.jpg" alt="Lancaster decals and markings" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Decal research</div><div class="wa-ref-title">Lancaster decal search</div><div class="wa-ref-desc">Quick route to Xtradecal, Kits-World and other Lancaster sheets. Use stable search/category links rather than risky product pages.</div><div class="wa-ref-link">Open decals ↗</div></div></a>
+    </div>
+  </div>
+
+  <div id="la-airframe" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Airframe, Turrets & Bomb Bay <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+    <div class="info-box">Do not treat the Lancaster like a single-seat fighter. The defining features are its long bomb bay, Frazer-Nash turrets, large canopy, deep fuselage sides, four nacelles and heavy operational finish.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+      <a class="wa-ref-card" href="https://www.rafmuseum.org.uk/research/collections/avro-lancaster-b1/" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/Vp7cVh4-1jQ/mqdefault.jpg" alt="Lancaster airframe and bomb bay reference" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Museum reference</div><div class="wa-ref-title">R5868 S-Sugar and preserved Lancasters</div><div class="wa-ref-desc">Use surviving museum aircraft for bomb bay, turret frames, canopy glazing, panel layout and Night Black surface ageing.</div><div class="wa-ref-link">Open reference ↗</div></div></a>
+    </div>
+  </div>
+</div><!-- /tab-walkaround -->
 </div><!-- /main-content -->
 
 <aside class="sidebar">
@@ -857,7 +915,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
   </div>
   <div class="sidebar-block">
     <div class="sidebar-hd">Quick Links</div>
-    <a class="shop-link" href="https://uk.airfix.com/products/supermarine-spitfire-mk1-a05126a" target="_blank" rel="noopener">
+    <a class="shop-link" href="https://www.hannants.co.uk/search/?keyword_search=lancaster+kit" target="_blank" rel="noopener">
       <span style="font-size:14px">🇬🇧</span>
       <div><div class="shop-name">Hannants</div><div class="shop-cats">Kits · Decals · Aftermarket</div></div>
     </a>
@@ -869,7 +927,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
       <span style="font-size:14px">✈</span>
       <div><div class="shop-name">BBMF</div><div class="shop-cats">Airworthy survivors</div></div>
     </a>
-    <a class="shop-link" href="https://barracudacals.com/collections/spitfire" target="_blank" rel="noopener">
+    <a class="shop-link" href="https://www.hannants.co.uk/search/?keyword_search=lancaster+aftermarket" target="_blank" rel="noopener">
       <span style="font-size:14px">🦈</span>
       <div><div class="shop-name">Barracuda Studios</div><div class="shop-cats">Resin · Decals · Masks</div></div>
     </a>
@@ -1145,8 +1203,8 @@ function setSort(s,el){activeSort=s;document.querySelectorAll('.fb.sf').forEach(
 function renderGrid(){
   const grid=document.getElementById('grid');
   let list=activeFilter==='all'?[...SQ]:SQ.filter(s=>s.group===activeFilter);
-  if(activeSort==='kills')list.sort((a,b)=>b.kills-a.kills);
-  else if(activeSort==='killrate')list.sort((a,b)=>(b.kills/b.sorties)-(a.kills/a.sorties));
+  if(activeSort==='kills')list.sort((a,b)=>b.losses-a.losses);
+  else if(activeSort==='killrate')list.sort((a,b)=>(b.losses/b.sorties)-(a.losses/a.sorties));
   else if(activeSort==='base')list.sort((a,b)=>a.base.localeCompare(b.base));
   else list.sort((a,b)=>parseInt(a.num)-parseInt(b.num));
   document.getElementById('sq-count').textContent=`${list.length} squadron${list.length!==1?'s':''}`;
@@ -1158,9 +1216,9 @@ function renderGrid(){
       </div>
       <div class="card-body">
         <div class="card-stats">
-          <div class="stat"><div class="stat-val">${sq.kills}</div><div class="stat-lbl">Claims</div></div>
+          <div class="stat"><div class="stat-val">${sq.losses}</div><div class="stat-lbl">Losses</div></div>
           <div class="stat"><div class="stat-val">${sq.sorties}</div><div class="stat-lbl">Sorties</div></div>
-          <div class="stat"><div class="stat-val">${(sq.kills/sq.sorties*100).toFixed(1)}%</div><div class="stat-lbl">Kill %</div></div>
+          <div class="stat"><div class="stat-val">${(sq.losses/sq.sorties*100).toFixed(1)}%</div><div class="stat-lbl">Loss rate</div></div>
         </div>
         <div class="card-tags">${sq.tags.map((t,i)=>`<span class="tag ${t}">${sq.tagTxt[i]}</span>`).join('')}</div>
         <div style="margin-top:.5rem;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)">Click to expand — pilots · photos · decals · kits</div>
@@ -1238,7 +1296,7 @@ function showDetail(num){
       ${sqDecals.length?`<div style="display:flex;flex-direction:column;gap:5px;margin-bottom:1rem">${sqDecals.filter(d=>d.url).map(d=>`<a href="${d.url}" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--brass);border-radius:2px;padding:6px 10px;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,.05)'" onmouseout="this.style.background='rgba(0,0,0,.2)'" rel="noopener"><span style="font-size:12px">↗</span><span style="font-size:13px;color:rgba(255,255,255,.8)">${d.name}</span></a>`).join('')}</div>`:`<div style="font-size:13px;color:rgba(255,255,255,.4);margin-bottom:1rem">Search Hannants or Barracuda for this squadron.</div>`}
       <div style="display:flex;gap:6px;flex-wrap:wrap">
         <a href="https://www.hannants.co.uk/search/?keyword_search=${sq.num}+squadron+spitfire" target="_blank" rel="noopener" class="shop-btn hb-brass" style="font-size:13px">Hannants: all ${sq.num} Sqn decals ↗</a>
-        <a href="https://barracudacals.com/collections/spitfire" target="_blank" rel="noopener" class="shop-btn hb-outline" style="font-size:13px">Barracuda Lancaster decals ↗</a>
+        <a href="https://www.hannants.co.uk/search/?keyword_search=lancaster+aftermarket" target="_blank" rel="noopener" class="shop-btn hb-outline" style="font-size:13px">Barracuda Lancaster decals ↗</a>
       </div>
     </div>`;
   panel.classList.add('open');
@@ -1318,21 +1376,21 @@ function renderKits(){
 
 // ═══ AFTERMARKET ═══
 function renderAftermarket(){
-  document.getElementById('aftermarket-grid').innerHTML=Object.entries(AFTERMARKET).map(([cat,items])=>`
+  const el=document.getElementById('aftermarket-grid'); if(!el) return;
+  const groups={};
+  (Array.isArray(AFTERMARKET)?AFTERMARKET:[]).forEach(item=>{ const k=item.type||'Aftermarket'; (groups[k]||(groups[k]=[])).push(item); });
+  el.innerHTML=Object.entries(groups).map(([cat,items])=>`
     <div class="aftermarket-section">
       <div class="aftermarket-section-title">${cat}</div>
-      <div class="am-grid">${items.filter(item=>item.url||item.urlEduard).map(item=>`
+      <div class="am-grid">${items.map(item=>`
         <div class="am-card">
-          <div class="am-type">${item.type}</div><div class="am-name">${item.name}</div>
-          <div class="am-maker">${item.maker}</div>
-          <div class="am-scales">${item.scales.map(s=>`<span class="am-scale">${s}</span>`).join('')}</div>
-          <div class="am-desc">${item.desc}</div>
+          <div class="am-type">${item.type||cat}</div><div class="am-name">${item.name}</div>
+          <div class="am-maker">${item.maker||''}</div>
+          <div class="am-scales">${(item.scales||[]).map(s=>`<span class="am-scale">${s}</span>`).join('')}</div>
+          <div class="am-desc">${item.desc||''}</div>
           <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:.4rem">
-          <a href="${item.url}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;padding:4px 10px;border-radius:2px;background:rgba(30,58,92,.7);border:1px solid rgba(255,255,255,.12)" onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='rgba(255,255,255,.12)'">
-            <span style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass2)">${(()=>{try{const h=new URL(item.url).hostname.replace('www.','');return h.includes('genessis')?'Genessis Models UK':h.includes('spruebro')?'Sprue Brothers':h.includes('barracuda')?'Barracuda Studios':h.includes('hannants')?'Hannants':h}catch(e){return'Buy'}})()}</span>
-            <span style="font-size:13px;color:rgba(255,255,255,.3)">↗</span>
-          </a>
-          ${item.urlEduard?`<a href="${item.urlEduard}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;padding:4px 10px;border-radius:2px;background:rgba(30,58,92,.7);border:1px solid rgba(255,255,255,.12)" onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='rgba(255,255,255,.12)'"><span style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass2)">Eduard direct</span><span style="font-size:13px;color:rgba(255,255,255,.3)">↗</span></a>`:''}
+            ${item.url?`<a href="${item.url}" target="_blank" rel="noopener" class="shop-btn hb-outline" style="font-size:12px">Search / source ↗</a>`:''}
+            ${item.urlEduard?`<a href="${item.urlEduard}" target="_blank" rel="noopener" class="shop-btn hb-gold" style="font-size:12px">Eduard direct ↗</a>`:''}
           </div>
         </div>`).join('')}
       </div>
@@ -1485,7 +1543,7 @@ function xyToLatLng(st){
   return [lat, lon];
 }
 function mapGroupLabel(group){
-  return group==='11'?'11 Group':group==='10'?'10 Group':group==='12'?'12 Group':group==='13'?'13 Group':'All Groups';
+  return group==='1'?'1 Group':group==='3'?'3 Group':group==='5'?'5 Group':group==='6'?'6 Group RCAF':group==='8'?'8 Group Pathfinder Force':'All Groups';
 }
 function renderMap(){
   const mapEl=document.getElementById('leaflet-map');
@@ -1510,10 +1568,11 @@ function renderMap(){
   }).addTo(leafletMap);
 
   const zones = {
-    '10': [[50.0,-6.2],[50.5,-5.4],[51.0,-4.4],[51.4,-3.2],[51.7,-2.0],[51.7,-1.0],[50.8,-1.2],[50.0,-2.2],[49.9,-4.2]],
-    '11': [[50.3,-1.8],[50.6,-0.8],[51.0,-0.2],[51.6,0.5],[52.1,1.6],[52.0,1.9],[51.3,1.8],[50.6,1.4],[50.2,0.4],[50.1,-0.6]],
-    '12': [[51.6,-3.0],[52.1,-2.2],[52.8,-1.6],[53.5,-0.4],[53.7,1.2],[53.3,1.8],[52.4,1.8],[51.8,1.4],[51.6,0.0]],
-    '13': [[54.2,-4.2],[55.0,-4.0],[55.9,-3.2],[56.8,-2.0],[57.4,-0.8],[57.0,0.6],[56.0,0.2],[55.0,-0.6],[54.2,-1.8]]
+    '1': [[52.2,-0.7],[52.8,-0.2],[53.7,0.2],[54.0,-0.6],[53.6,-1.2],[52.7,-1.4]],
+    '3': [[51.9,-0.5],[52.5,0.4],[52.8,1.2],[52.1,1.1],[51.7,0.2]],
+    '5': [[52.4,-1.4],[53.6,-1.0],[54.0,-0.2],[53.5,0.4],[52.6,0.1],[52.1,-0.8]],
+    '6': [[54.1,-2.3],[55.2,-1.8],[55.1,-0.7],[54.3,-0.5],[54.0,-1.4]],
+    '8': [[52.0,-0.9],[52.8,-0.8],[52.8,0.0],[52.0,0.2]]
   };
   leafletZones={};
   Object.entries(zones).forEach(([key,coords])=>{
@@ -1554,7 +1613,7 @@ function rafStationModellingCue(st){
   if(info.includes('coastal') || info.includes('naval') || info.includes('portland')) return 'Coastal grime, salt air fading, pale dust and stronger exhaust staining from frequent scrambles.';
   if(st.group === '13') return 'Northern station conditions: damp grass, cooler tones, restrained dust and slightly dirtier tyres.';
   if(st.group === '10') return 'West Country conditions: pale dust on hard summer days, heavier mud after rain and strong exhaust staining from repeated patrols.';
-  return 'Battle of Britain field wear: exhaust staining, chipped wing roots, dusty tyres, taped gun ports and matt MAP paint rather than a glossy finish.';
+  return 'Bomber Command field wear: exhaust staining, chipped wing roots, dusty tyres, taped gun ports and matt MAP paint rather than a glossy finish.';
 }
 function rafOpenMapUnit(num){
   const clean = String(num).replace(' fwd','');
@@ -1587,7 +1646,7 @@ function showMapIntro(){
   const linkedUnits = [...new Set(STATIONS.flatMap(st => (st.sqns||[]).map(n => String(n).replace(' fwd',''))).filter(n => SQ.find(s => s.num === n)))];
   const byGroup = ['11','10','12','13'].map(g => `${mapGroupLabel(g)}: ${STATIONS.filter(s=>s.group===g).length}`).join(' · ');
   box.innerHTML = `
-    <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">Battle of Britain airfield map</div>
+    <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">Bomber Command airfield map</div>
     <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem">Clickable stations → linked squadron cards</div>
     <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Hover a marker to reveal the base name, or click it to open the station summary and linked squadron cards. The linked squadron card contains the pilot list, markings, decals and kit notes.</p>
     <div style="margin-top:.75rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)">${stationCount} station markers · ${linkedUnits.length} linked squadron cards</div>
@@ -1736,11 +1795,17 @@ function renderPilotStories(){
 // ═══ THIS WEEK IN BoB ═══
 function renderThisWeek(){
   const el=document.getElementById('this-week-bob');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';
-  const now=new Date();const m=now.getMonth()+1,d=now.getDate();
-  const md=(m<10?'0':'')+m+'-'+(d<10?'0':'')+d;
-  const best=BOB_EVENTS.find(e=>e.md===md)||BOB_EVENTS[Math.floor(Math.random()*BOB_EVENTS.length)];
-  const [bm,bd]=best.md.split('-');const date1940=new Date(1940,parseInt(bm)-1,parseInt(bd));
-  el.innerHTML=`<div style="background:rgba(21,39,68,.8);border:2px solid var(--brass);border-radius:4px;overflow:hidden"><div style="background:rgba(0,0,0,.35);padding:.75rem 1.2rem;display:flex;align-items:center;gap:1rem;border-bottom:1px solid rgba(184,144,42,.3)"><div style="text-align:center;background:var(--brass);color:var(--raf-dark);padding:.4rem .6rem;border-radius:2px;flex-shrink:0"><div style="font-family:'Special Elite',cursive;font-size:1.8rem;line-height:1">${bd}</div><div style="font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase">${date1940.toLocaleString('en-GB',{month:'short'})} 1940</div></div><div><div style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--brass);margin-bottom:.3rem">${(now.getMonth()*100 + now.getDate() >= 620 && now.getMonth()*100 + now.getDate() <= 1103) ? 'This week in the BoB' : 'On this date in the BoB'}</div><div style="font-family:'Special Elite',cursive;font-size:1.2rem;color:#fff">${yearsAgo} years ago</div></div></div><div style="padding:1rem 1.2rem;font-size:17px;color:rgba(255,255,255,.85);line-height:1.75">${best.text}</div></div>`;
+  const items = EVENTS || [];
+  if(!items.length){ el.innerHTML=''; return; }
+  el.innerHTML=`<div style="background:rgba(21,39,68,.8);border:2px solid var(--brass);border-radius:4px;overflow:hidden">
+    <div style="background:rgba(0,0,0,.35);padding:.75rem 1.2rem;border-bottom:1px solid rgba(184,144,42,.3)">
+      <div style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--brass);margin-bottom:.35rem">Lancaster operational milestones</div>
+      <div style="font-family:'Special Elite',cursive;font-size:1.2rem;color:#fff">From first operations to Dams Raid, Berlin, Tirpitz and final oil campaign</div>
+    </div>
+    <div style="padding:1rem 1.2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.65rem">
+      ${items.slice(0,6).map(e=>`<div style="background:rgba(255,255,255,.04);border-left:3px solid var(--brass);padding:.65rem .75rem"><div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">${e[1]}</div><div style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.55">${e[2]}</div></div>`).join('')}
+    </div>
+  </div>`;
 }
 
 // ═══ MEDIA ═══

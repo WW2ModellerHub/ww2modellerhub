@@ -1,0 +1,1 @@
+Fixed Lancaster page structure issues: removed stray --> marker, rebuilt Walkaround into Spitfire-style anchored sections, filled Build guide/Aftermarket/Weathering render bug, corrected Lancaster-specific intro/reference wording, fixed Bomber Command group map filters/labels, and added a site-wide nav spacing override.
