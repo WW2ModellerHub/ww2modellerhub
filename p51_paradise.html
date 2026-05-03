@@ -917,6 +917,64 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 }
 </style>
 
+
+<style id="p51-usaaf-theme-override">
+:root{
+  --brass:#88aef0;
+  --brass2:#dce8ff;
+  --gold3:#5f86d7;
+  --raf-sky:#88aef0;
+}
+.aircraft-hero{
+  background:linear-gradient(135deg,rgba(7,18,42,.98),rgba(16,36,88,.92))!important;
+  border:1px solid rgba(136,174,240,.22)!important;
+  box-shadow:0 24px 70px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03)!important;
+}
+.aircraft-hero::after{color:rgba(255,255,255,.04)!important;}
+.hero-roundel{
+  width:66px!important;
+  height:44px!important;
+  border-radius:8px!important;
+  overflow:visible!important;
+  border:2px solid rgba(255,255,255,.18)!important;
+  background:#1d4385!important;
+  box-shadow:0 0 18px rgba(29,67,133,.45)!important;
+}
+.hero-roundel::before{
+  content:'★'!important;
+  position:absolute!important;
+  inset:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  font-size:24px!important;
+  line-height:1!important;
+  color:#fff!important;
+  background:none!important;
+  z-index:2!important;
+}
+.hero-roundel::after{
+  content:''!important;
+  position:absolute!important;
+  left:-18px!important;
+  right:-18px!important;
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  height:14px!important;
+  background:linear-gradient(90deg,#fff 0 32%, transparent 32% 40%, transparent 60% 68%, #fff 68% 100%)!important;
+  z-index:1!important;
+}
+.hero-eyebrow,.section-label,.sec-label,.wa-ref-kicker,.wa-ref-link{color:var(--brass2)!important;}
+.wa-ref-card:hover{border-color:rgba(136,174,240,.55)!important;}
+#tab-walkaround [style*="color:var(--brass)"],
+#tab-walkaround [style*="color:var(--brass2)"]{color:var(--brass2)!important;}
+#tab-walkaround [style*="rgba(201,168,76,.3)"]{border-color:rgba(136,174,240,.32)!important;}
+#tab-walkaround [style*="rgba(201,168,76,.08)"]{background:rgba(136,174,240,.08)!important;}
+#tab-walkaround [style*="rgba(201,168,76,.06)"]{background:rgba(136,174,240,.06)!important;}
+#tab-walkaround [style*="rgba(201,168,76,.15)"]{border-color:rgba(136,174,240,.18)!important;}
+.map-filter-btn.on,.fb.on,.nav-tab.active{border-color:rgba(136,174,240,.35)!important; background:rgba(136,174,240,.10)!important; color:#fff!important;}
+</style>
+
 </head><body>
 <nav class="site-nav">
   <div class="site-nav-inner">
@@ -994,25 +1052,25 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 <div class="aircraft-hero">
   <div class="hero-roundel"></div>
   <div class="hero-text">
-    <div class="hero-eyebrow">Royal Air Force · USAAF escort war over Europe 1940</div>
+    <div class="hero-eyebrow">United States Army Air Forces · 8th Air Force escort operations</div>
     <h1 class="hero-title">North American P-51 Mustang</h1>
-    <div class="hero-sub">Mk.I / Mk.II · Fighter Command · 1939–1945</div>
+    <div class="hero-sub">P-51B / P-51C / P-51D · USAAF · 1943–1945</div>
   </div>
   <div class="hero-stats">
-    <div class="hero-stat"><div class="hero-stat-val">19</div><div class="hero-stat-lbl">Squadrons</div></div>
-    <div class="hero-stat"><div class="hero-stat-val">529</div><div class="hero-stat-lbl">Claims</div></div>
-    <div class="hero-stat"><div class="hero-stat-val">36%</div><div class="hero-stat-lbl">BoB Kills</div></div>
-    <div class="hero-stat"><div class="hero-stat-val">113</div><div class="hero-stat-lbl">Days</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">10</div><div class="hero-stat-lbl">Key groups</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">40+</div><div class="hero-stat-lbl">Ace profiles</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">9</div><div class="hero-stat-lbl">USAAF colours</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">4</div><div class="hero-stat-lbl">Reference aircraft</div></div>
   </div>
 </div>
 
 <div class="filter-bar" id="sqn-bar">
   <label>Group:</label>
   <button class="fb on gf" onclick="setFilter('all',this)">All</button>
-  <button class="fb gf" onclick="setFilter('11',this)">11 Group</button>
-  <button class="fb gf" onclick="setFilter('12',this)">12 Group</button>
-  <button class="fb gf" onclick="setFilter('13',this)">13 Group</button>
-  <button class="fb gf" onclick="setFilter('10',this)">10 Group</button>
+  <button class="fb gf" onclick="setFilter('1',this)">1st Air Division</button>
+  <button class="fb gf" onclick="setFilter('2',this)">2nd Air Division</button>
+  <button class="fb gf" onclick="setFilter('3',this)">3rd Air Division</button>
+  <button class="fb gf" onclick="setFilter('4',this)">Special subjects</button>
   <div class="bar-sep"></div>
   <label>Sort:</label>
   <button class="fb on sf" onclick="setSort('num',this)">Number</button>
@@ -1027,16 +1085,16 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 
 <div class="tab-panel active" id="tab-squadrons">
   <div style="margin-bottom:1.5rem">
-    <div class="section-label" style="margin-bottom:.6rem">USAAF escort war over Europe · 10 July – 31 October 1940</div>
+    <div class="section-label" style="margin-bottom:.6rem">USAAF long-range escort campaign · 1944–1945</div>
     <p style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.75;max-width:720px">
-      Nineteen USAAF Mustang squadrons fought in the USAAF escort war over Europe, claiming approximately 36% of all USAAF victories. Directed primarily against the Bf 109E fighter escort while Hurricanes attacked the bombers, the Mustang was the aircraft the Luftwaffe feared most — roughly equal in performance to the Messerschmitt and capable of outturning it. Click any card to see pilots, aircraft codes, decals and photographs.
+      The P-51 Mustang was the long-range escort fighter that helped the USAAF seize daylight air superiority over Europe. Operating mainly with the 8th Air Force from East Anglian bases, Mustang groups escorted bombers to Berlin and beyond, then ranged ahead to attack enemy fighters, airfields and transport. This page focuses on the most model-friendly fighter groups, key pilots, unit colours and markings. Click any card to see pilots, markings, bases and decal-ready subject ideas.
     </p>
     <div style="display:flex;gap:1.2rem;margin-top:.8rem;flex-wrap:wrap;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4)">
-      <span><span style="color:var(--brass2);font-size:14px;font-weight:600">19</span> squadrons</span>
+      <span><span style="color:var(--brass2);font-size:14px;font-weight:600">10</span> key groups</span>
       <span>·</span>
-      <span><span style="color:var(--brass2);font-size:14px;font-weight:600">180+</span> named pilots</span>
+      <span><span style="color:var(--brass2);font-size:14px;font-weight:600">40+</span> ace profiles</span>
       <span>·</span>
-      <span><span style="color:var(--brass2);font-size:14px;font-weight:600">4</span> USAAF groups</span>
+      <span><span style="color:var(--brass2);font-size:14px;font-weight:600">4</span> reference aircraft</span>
     </div>
   </div>
   <div class="sq-grid" id="grid"></div>
@@ -1050,11 +1108,11 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <button class="fb btf" onclick="setBuildSub('stepbystep',this)">Build guide</button>
     <button class="fb btf" onclick="setBuildSub('weathering',this)">Weathering</button>
   </div>
-  <div id="bsub-kits"><div class="section-label">Choosing your Mustang kit</div><p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">More Mustang kits exist than for any other WW2 aircraft. For a BoB Mk.I in 1:48 the <strong style="color:var(--cream)">Airfix AX05126A</strong> is the top recommendation — superb accuracy and value. The <strong style="color:var(--cream)">Eduard 82152 ProfiPACK</strong> adds photo-etch and masks for serious modellers. In 1:72 the <strong style="color:var(--cream)">Airfix AX01071C</strong> retool is the benchmark.</p><div class="kit-grid" id="kit-grid"></div></div>
-  <div id="bsub-aftermarket" style="display:none"><div class="section-label">Aftermarket for the Mustang Mk.I</div><p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">The Airfix cockpit benefits greatly from Eduard SPACE 3D. <strong style="color:var(--cream)">Master Model AM-48-108</strong> brass Browning barrels transform the wing. Kabuki canopy masks are essential — the Mustang's many curved panes are very hard to mask freehand.</p><div id="aftermarket-grid"></div></div>
+  <div id="bsub-kits"><div class="section-label">Choosing your Mustang kit</div><p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">The most useful Mustang kit choice depends on the version you want to build. For a late-war natural-metal P-51D in 1:48, Tamiya remains the safest recommendation, while Eduard offers extra cockpit detail and a stronger out-of-box package. For early Olive Drab P-51B/C subjects, Arma Hobby is a strong option in 1:72.</p><div class="kit-grid" id="kit-grid"></div></div>
+  <div id="bsub-aftermarket" style="display:none"><div class="section-label">Aftermarket for the P-51 Mustang</div><p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">For most Mustang builds the best upgrades are seatbelts, wheels, exhausts and — if you are building a natural-metal subject — a cleaner cockpit and sharper canopy framing. Wheels and exhausts are particularly noticeable on a parked P-51D.</p><div id="aftermarket-grid"></div></div>
   <div id="bsub-paint" style="display:none">
-    <div class="section-label">USAAF escort war over Europe paint colours</div>
-    <p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">Every BoB Mustang wore <strong style="color:var(--cream)">Dark Earth</strong> and <strong style="color:var(--cream)">Dark Green</strong> upper surfaces, <strong style="color:var(--cream)">Sky (Type S)</strong> undersides and spinner. The split line on the Mustang's curved fuselage creates a characteristic wavy demarcation — the A-scheme has brown on the starboard nose side.</p>
+    <div class="section-label">USAAF Mustang paint colours</div>
+    <p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">Mustang colour treatment is dominated by two main looks: early-war <strong style="color:var(--cream)">Olive Drab over Neutral Gray</strong> on P-51B/C aircraft, and the classic late-war <strong style="color:var(--cream)">natural-metal finish</strong> on P-51D/K aircraft. Group colours, anti-glare panels, invasion stripes and tail markings do most of the visual work on a finished model.</p>
     <div class="paint-grid" id="paint-grid"></div>
     <div style="margin-top:1.5rem;background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1.2rem">
       <div class="sec-label">Brand colour comparison</div>
@@ -1063,9 +1121,9 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <div style="margin-top:1.2rem;background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1rem">
       <div class="sec-label">Roundel &amp; marking notes</div>
       <div style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.75">
-        <p><strong style="color:#fff">July–Aug 1940:</strong> Type A1 roundels (no yellow ring) on fuselage. Type A upper wings. Type B lower wings. Large fin flash.</p>
-        <p style="margin-top:.5rem"><strong style="color:#fff">Sep–Oct 1940:</strong> Yellow outer ring on fuselage roundels increasingly common by October.</p>
-        <p style="margin-top:.5rem"><strong style="color:#fff">Code letters:</strong> Sky BS381C-216. ~24 inch height. Serial in black rear fuselage port side only. Some Mustangs had a Sky spinner with a narrow black spiral stripe.</p>
+        <p><strong style="color:#fff">National insignia:</strong> Standard USAAF star-and-bar markings carried on wings and fuselage, with blue outline and red-bar period changes depending on date.</p>
+        <p style="margin-top:.5rem"><strong style="color:#fff">Group colours:</strong> Nose colours, tail markings, checker patterns and squadron codes vary sharply by fighter group — one of the reasons the Mustang is such a strong decal subject.</p>
+        <p style="margin-top:.5rem"><strong style="color:#fff">Common extras:</strong> Olive Drab anti-glare panel, black serials, invasion stripes in mid-1944, and highly visible unit colours on spinner, nose or tail depending on subject.</p>
       </div>
     </div>
   </div>
@@ -1076,8 +1134,8 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 <div class="tab-panel" id="tab-reference">
   <div style="display:flex;gap:8px;margin-bottom:1.4rem;flex-wrap:wrap">
     <button class="fb on rtf" onclick="setRefSub('map',this)">Station map</button>
-    <button class="fb rtf" onclick="setRefSub('timeline',this)">BoB timeline</button>
-    <button class="fb rtf" onclick="setRefSub('compare',this)">Compare squadrons</button>
+    <button class="fb rtf" onclick="setRefSub('timeline',this)">Escort timeline</button>
+    <button class="fb rtf" onclick="setRefSub('compare',this)">Compare groups</button>
     <button class="fb rtf" onclick="setRefSub('survivors',this)">Survivors</button>
     <button class="fb rtf" onclick="setRefSub('books',this)">Books</button>
   </div>
@@ -1155,29 +1213,29 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 </div>
 
 <div class="tab-panel" id="tab-walkaround">
-  <div class="info-box">Period and museum photographs grouped by aircraft detail area — use these as direct reference while building. All images link to their original source.</div>
+  <div class="info-box">Walkaround and reference material grouped by detail area. Use these while building to check cockpit layout, wheel-bay treatment, natural-metal panel tone, anti-glare panel boundaries, unit markings and the Mustang's distinctive radiator scoop and canopy shapes.</div>
 <!-- Feature nav -->
   <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
-    <a href="#sp-cockpit" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Cockpit</a>
-    <a href="#sp-exhaust" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Exhausts</a>
-    <a href="#sp-undercart" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Undercarriage</a>
-    <a href="#sp-markings" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Markings</a>
-    <a href="#sp-airframe" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Airframe</a>
+    <a href="#p51-cockpit" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Cockpit</a>
+    <a href="#p51-exhaust" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Exhausts</a>
+    <a href="#p51-undercarriage" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Undercarriage</a>
+    <a href="#p51-markings" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Markings</a>
+    <a href="#p51-airframe" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.background='transparent'">Airframe</a>
   </div>
 
   <!-- COCKPIT -->
-  <div id="sp-cockpit" style="margin-bottom:2rem">
+  <div id="p51-cockpit" style="margin-bottom:2rem">
     <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Cockpit <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
     <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
       <strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
-      Interior is Interior Grey-Green — slightly greener than the Hurricane version. Instrument panel is Flat Black. The spade-grip control column is very distinctive — Eduard Brassin 648578 gives you an accurate resin replacement for 1:48. The compass (Type P8) sits on the right of the instrument panel. P7350 (BBMF) has the most accessible authentic cockpit of any surviving BoB Mustang.
+      The P-51 cockpit is one of the most visible areas on the finished model because of the large canopy. Focus on the Interior Green structure, black instrument panel, seat and belts, radios behind the pilot and the very characteristic canopy rails. Restorations vary, so use more than one reference before painting the wheel wells or radio area.
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
 
-      <a class="wa-ref-card" href="https://www.rafmuseum.org.uk/midlands/things-to-see-and-do/flight-zone/selfie-in-a-spitfire/" target="_blank" rel="noopener">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/P-51D_cockpit.jpg/800px-P-51D_cockpit.jpg" alt="USAAF Museum Mustang cockpit photo" loading="lazy">
+      <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/Category:North_American_P-51_Mustang" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/P-51D_cockpit.jpg/800px-P-51D_cockpit.jpg" alt="Wikimedia Commons Mustang cockpit photo" loading="lazy">
         <div class="wa-ref-body">
-          <div class="wa-ref-kicker">USAAF Museum</div>
+          <div class="wa-ref-kicker">Wikimedia Commons</div>
           <div class="wa-ref-title">Reference photo — Mustang cockpit</div>
           <div class="wa-ref-desc">Useful for the Mustang cockpit layout, seat and radio shelf relationship, the depth of the floor area and canopy framing. A strong modelling check before adding belts and sidewall detail.</div>
           <div class="wa-ref-link">Open source photo ↗</div>
@@ -1193,7 +1251,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
         </a>
         <div style="padding:.75rem .9rem">
           <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">P7350 — Scramble Sequence at Coningsby</div>
-          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">The only Mustang to have fought in the actual USAAF escort war over Europe. The startup sequence shows cockpit interior, canopy operation and instrument positions in natural light.</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Close-up airworthy Mustang startup footage. Useful for canopy operation, instrument coaming shape, cockpit framing and how the cockpit sits in natural light.</div>
         </div>
       </div>
 
@@ -1205,7 +1263,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
         </a>
         <div style="padding:.75rem .9rem">
           <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">BBMF Mustang TE311 — PDA Day 2024</div>
-          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Ground and aerial footage at USAAF Coningsby. Good reference for Mustang upper surface colour and exhaust staining in current condition.</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Airworthy display footage that is most useful for the overall look of the aircraft in motion — exhaust staining, canopy shape, panel reflections and the sit of the landing gear on the ground.</div>
         </div>
       </div>
 
@@ -1213,16 +1271,16 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
   </div><!-- /cockpit -->
 
   <!-- EXHAUSTS -->
-  <div id="sp-exhaust" style="margin-bottom:2rem">
+  <div id="p51-exhaust" style="margin-bottom:2rem">
     <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Exhaust Stacks & Staining <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
     <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
       <strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
-      The Mustang Mk.I uses six individual stub exhausts per side — not the ejector stack of the Hurricane. This produces six separate narrow staining plumes rather than one wide fan. Each plume traces a slightly different path aft. The stubs oxidise to a dark rust-brown and show heat bluing at the tips. Eduard Brassin 648580 gives resin exhausts for 1:48.
+      The Packard Merlin Mustang shows a tight row of exhaust stacks with staining that usually sweeps back along the upper side of the nose. On natural-metal aircraft this exhaust staining is very visible, and on Olive Drab aircraft it usually fades to a warmer brown-grey. It is worth studying the anti-glare panel edge at the same time because the two features visually meet around the nose.
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
 
-      <a class="wa-ref-card" href="https://en.wikipedia.org/wiki/File:Supermarine_Mustang_Mk_XVI_NR.jpg" target="_blank" rel="noopener">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Supermarine_Mustang_Mk_XVI_NR.jpg" alt="North American P-51 Mustang side view reference" loading="lazy">
+      <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/Category:North_American_P-51_Mustang" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/North_American_P-51D_Mustang.jpg/1280px-North_American_P-51D_Mustang.jpg" alt="North American P-51D Mustang side view reference" loading="lazy">
         <div class="wa-ref-body">
           <div class="wa-ref-kicker">Wikimedia Commons</div>
           <div class="wa-ref-title">Reference photo — Mustang exhaust stacks and nose line</div>
@@ -1240,7 +1298,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
         </a>
         <div style="padding:.75rem .9rem">
           <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">BBMF Mustang — Close Startup Sequence</div>
-          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">BBMF display at Coningsby 2023. The individual stub exhausts and their staining pattern are visible during the startup and display sequence — compare with Hurricane for the key difference.</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Startup and taxi footage that helps with the shape of the nose, the exhaust run and the amount of staining visible against a polished airframe.</div>
         </div>
       </div>
 
@@ -1248,18 +1306,18 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
   </div><!-- /exhaust -->
 
   <!-- UNDERCARRIAGE -->
-  <div id="sp-undercart" style="margin-bottom:2rem">
+  <div id="p51-undercarriage" style="margin-bottom:2rem">
     <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Undercarriage <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
     <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
       <strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
-      The Mustang's narrow-track undercarriage retracts outward into the wing. The leg is Interior Grey-Green. Unlike the Hurricane, the Mustang's wheel bay doors close fully — you cannot see inside from below. Tyre colour is a warm grey, not black. The shimmy damper on the oleo is a distinctive detail often missing from kits.
+      The Mustang's undercarriage is a key stance-defining feature. Pay attention to the inward-retracting main gear, wheel angle, door positions and the slightly nose-high parked attitude. Wheel-bay colours are debated and restorations vary, so use the section mainly for shape, door arrangement and stance rather than blindly copying one museum finish.
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
 
-      <a class="wa-ref-card" href="https://www.rafmuseum.org.uk/research/collections/supermarine-spitfire-vb/" target="_blank" rel="noopener">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/P-51D_Mustang_undercarriage.jpg/1024px-P-51D_Mustang_undercarriage.jpg" alt="USAAF Museum Mustang undercarriage reference" loading="lazy">
+      <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/Category:North_American_P-51_Mustang" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/P-51D_Mustang_undercarriage.jpg/1024px-P-51D_Mustang_undercarriage.jpg" alt="Wikimedia Commons Mustang undercarriage reference" loading="lazy">
         <div class="wa-ref-body">
-          <div class="wa-ref-kicker">USAAF Museum</div>
+          <div class="wa-ref-kicker">Wikimedia Commons</div>
           <div class="wa-ref-title">Reference photo — Mustang undercarriage and sit</div>
           <div class="wa-ref-desc">Useful for the inward-retracting Mustang undercarriage, the characteristic narrow-track stance and the look of the wheels and doors when the aircraft is parked.</div>
           <div class="wa-ref-link">Open source photo ↗</div>
@@ -1275,7 +1333,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
         </a>
         <div style="padding:.75rem .9rem">
           <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Airfix Mustang — Undercarriage Walkthrough</div>
-          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Full Airfix Mk.Ia build includes detailed undercarriage assembly and painting. Good reference for the leg colour, wheel colour and bay interior as applied on a 1:48 model.</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">A practical build-focused video that is useful mainly for stance, wheel-door positioning and how the undercarriage looks on a completed model.</div>
         </div>
       </div>
 
@@ -1283,19 +1341,19 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
   </div><!-- /undercarriage -->
 
   <!-- MARKINGS -->
-  <div id="sp-markings" style="margin-bottom:2rem">
-    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Roundels, Codes & Markings <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+  <div id="p51-markings" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">National Insignia, Group Colours & Markings <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
     <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
       <strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
-      Same roundel evolution as Hurricane — see Reference tab for exact types by date. The elliptical Mustang wing means upper-wing roundels look quite different proportionally from above compared to the Hurricane's straight wing. Code letters: Night Black 8-inch. Spinner: Sky colour. See the Decals tab for recommended Xtradecal sheets with correct roundel types.
+      For the P-51, markings are about far more than the national insignia. Study the US star-and-bar placement, tail numbers, anti-glare panel, invasion stripes and especially the fighter-group colour identity — blue noses, red tails, checkerboards and coloured spinners are what make Mustang subjects visually distinctive.
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
 
-      <a class="wa-ref-card" href="https://en.wikipedia.org/wiki/Supermarine_Mustang" target="_blank" rel="noopener">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/North_American_P-51D_Mustang.jpg/1280px-North_American_P-51D_Mustang.jpg" alt="Mustang in USAAF markings reference photo" loading="lazy">
+      <a class="wa-ref-card" href="https://en.wikipedia.org/wiki/North_American_P-51_Mustang" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/North_American_P-51D_Mustang.jpg/1280px-North_American_P-51D_Mustang.jpg" alt="P-51D Mustang in USAAF markings reference photo" loading="lazy">
         <div class="wa-ref-body">
           <div class="wa-ref-kicker">Wikimedia Commons</div>
-          <div class="wa-ref-title">Reference photo — Star-and-bar and unit markings</div>
+          <div class="wa-ref-title">Reference photo — US star-and-bar and group colours</div>
           <div class="wa-ref-desc">Useful for star-and-bar placement, serial style, anti-glare panel boundaries and how unit colours interact with natural-metal panel variation.</div>
           <div class="wa-ref-link">Open source photo ↗</div>
         </div>
@@ -1310,7 +1368,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
         </a>
         <div style="padding:.75rem .9rem">
           <div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Sailor Malan Documentary — 74 Squadron Markings</div>
-          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Contains period photography and recreations of 74 Tiger Squadron ZP-coded Mustangs. Good source for the actual size and positioning of code letters relative to roundels.</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Useful for seeing how group colours, fuselage codes, anti-glare panels and US insignia balance across the Mustang fuselage.</div>
         </div>
       </div>
 
@@ -1318,18 +1376,18 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
   </div><!-- /markings -->
 
   <!-- AIRFRAME -->
-  <div id="sp-airframe" style="margin-bottom:2rem">
+  <div id="p51-airframe" style="margin-bottom:2rem">
     <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Airframe & Panel Detail <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
     <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
       <strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
-      All-metal stressed-skin construction — panel lines are crisp throughout, unlike the Hurricane's fabric rear. The distinctive "eyelid" cooling vents below the nose are a key identifier. The distinctive oval cross-section fuselage produces interesting shadow lines. Gun port patches on the Mk.Ia wing leading edge (doped fabric circles) are frequently missing from models.
+      The Mustang rewards careful surface treatment. The forward wing on many operational aircraft was filled and smoothed for laminar-flow performance, while the fuselage still showed more visible panel variation. Study the radiator scoop, wing root fairing, canopy line and belly contours closely before committing to weathering or metallic shades.
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
 
-      <a class="wa-ref-card" href="https://collections.rafmuseum.org.uk/collection/object/object-1815/" target="_blank" rel="noopener">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/North_American_P-51D_Mustang.jpg/1280px-North_American_P-51D_Mustang.jpg" alt="USAAF Museum Mustang overall airframe photo" loading="lazy">
+      <a class="wa-ref-card" href="https://en.wikipedia.org/wiki/North_American_P-51_Mustang" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/North_American_P-51D_Mustang.jpg/1280px-North_American_P-51D_Mustang.jpg" alt="Wikimedia Commons Mustang overall airframe photo" loading="lazy">
         <div class="wa-ref-body">
-          <div class="wa-ref-kicker">USAAF Museum</div>
+          <div class="wa-ref-kicker">Wikimedia Commons</div>
           <div class="wa-ref-title">Reference photo — Overall Mustang airframe</div>
           <div class="wa-ref-desc">Useful for wing laminar-flow shape, canopy profile, radiator scoop form and the way the Mustang’s natural-metal skin catches light. A strong final pre-weathering check.</div>
           <div class="wa-ref-link">Open source photo ↗</div>
@@ -1845,12 +1903,12 @@ const COLOUR_COMPARE=[
 ];
 
 const MEDIA_ITEMS=[
- {type:"video",title:"BBMF — Lancaster, Mustang & Hurricane over USAAF Coningsby 2023",thumb:"🎬",
+ {type:"video",title:"BBMF — Lancaster, Mustang & Hurricane over RAF Coningsby 2023",thumb:"🎬",
   url:"https://www.youtube.com/watch?v=ussUR9fxNdg",
-  desc:"The USAAF escort war over Europe Memorial Flight's Lancaster (PA474), Mustang P7350 and Hurricane LF363 displaying over their home base. Essential colour reference for BoB markings."},
+  desc:"Battle of Britain Memorial Flight's Lancaster (PA474), Mustang P7350 and Hurricane LF363 displaying over their home base. Essential colour reference for BoB markings."},
  {type:"video",title:"BBMF Hurricane & Mustang Dogfight Demo — PDA Day 2024",thumb:"🎬",
   url:"https://www.youtube.com/watch?v=SF_dQiQm6RY",
-  desc:"Hurricane LF363 and Mustang TE311 perform a close-quarters dogfight demonstration at USAAF Coningsby — stunning reference for aerial formations and paint fade."},
+  desc:"Hurricane LF363 and Mustang TE311 perform a close-quarters dogfight demonstration at RAF Coningsby — stunning reference for aerial formations and paint fade."},
  {type:"video",title:"Airfix Mustang Mk.Ia 1:48 — Complete Beginner's Build",thumb:"🎬",
   url:"https://www.youtube.com/watch?v=3HT7Rkq5cew",
   desc:"Full supercut build of the Airfix AX05126A from sprue to finished model. Excellent beginner guide covering cockpit, camouflage and decals."},
@@ -1862,7 +1920,7 @@ const MEDIA_ITEMS=[
   desc:"The youngest Mustang pilot in the USAAF escort war over Europe, interviewed in 2014. Author of First Light — describes flying with 92 Squadron and the loss of friends."},
  {type:"video",title:"BBMF Scramble! P7350 — the only BoB Mustang still flying",thumb:"🎬",
   url:"https://www.youtube.com/watch?v=psF83M3QOeM",
-  desc:"Mustang P7350 (Mk IIa) and Hurricane take off together at Coningsby. P7350 is the oldest airworthy Mustang and the only one to have flown in the actual USAAF escort war over Europe."},
+  desc:"Mustang P7350 (Mk IIa) and Hurricane take off together at Coningsby. Use airworthy Mustang footage as a shape and finish reference only — restored aircraft are invaluable, but wartime colours and details should still be cross-checked."},
  {type:"audio",title:"Geoffrey Wellum — Desert Island Discs BBC",thumb:"🎙️",
   url:"https://www.bbc.co.uk/programmes/b00f03y1",
   desc:"Wellum's BBC interview. He describes flying the Mustang at nineteen, the bond of the squadron and the loss of friends over the Channel."},
@@ -2303,7 +2361,7 @@ function rafStationModellingCue(st){
   if(info.includes('coastal') || info.includes('naval') || info.includes('portland')) return 'Coastal grime, salt air fading, pale dust and stronger exhaust staining from frequent scrambles.';
   if(st.group === '13') return 'Northern station conditions: damp grass, cooler tones, restrained dust and slightly dirtier tyres.';
   if(st.group === '10') return 'West Country conditions: pale dust on hard summer days, heavier mud after rain and strong exhaust staining from repeated patrols.';
-  return 'USAAF escort war over Europe field wear: exhaust staining, chipped wing roots, dusty tyres, taped gun ports and matt MAP paint rather than a glossy finish.';
+  return 'Typical Mustang field wear: exhaust staining, dirty tyres, wing-root traffic wear, gun-gas residue near the leading edge and a softer sheen on the anti-glare panel than on the surrounding metal.';
 }
 function rafOpenMapUnit(num){
   const clean = String(num).replace(' fwd','');
@@ -2336,7 +2394,7 @@ function showMapIntro(){
   const linkedUnits = [...new Set(STATIONS.flatMap(st => (st.sqns||[]).map(n => String(n).replace(' fwd',''))).filter(n => SQ.find(s => s.num === n)))];
   const byGroup = ['1','2','3','4'].map(g => `${mapGroupLabel(g)}: ${STATIONS.filter(s=>s.group===g).length}`).join(' · ');
   box.innerHTML = `
-    <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">USAAF escort war over Europe airfield map</div>
+    <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">USAAF Mustang fighter-base map</div>
     <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem">Clickable stations → linked squadron cards</div>
     <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Hover a marker to reveal the base name, or click it to open the station summary and linked squadron cards. The linked squadron card contains the pilot list, markings, decals and kit notes.</p>
     <div style="margin-top:.75rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)">${stationCount} station markers · ${linkedUnits.length} linked squadron cards</div>
@@ -2411,7 +2469,7 @@ function filterMapGroup(group,btn){
   const box=document.getElementById('map-sqn-list');
   if(box){
     box.innerHTML = `
-      <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">${group==='all' ? 'All USAAF escort war over Europe stations' : mapGroupLabel(group)}</div>
+      <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">${group==='all' ? 'All Mustang reference bases' : mapGroupLabel(group)}</div>
       <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem">${shown.length} marker${shown.length===1?'':'s'} shown</div>
       <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Click a visible marker or choose a base below. Linked fighter groups open the matching unit card with pilots and markings.</p>
       <div style="max-height:230px;overflow:auto;padding-right:.2rem;margin-top:.7rem">

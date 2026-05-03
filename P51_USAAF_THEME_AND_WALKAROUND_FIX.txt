@@ -1,0 +1,1 @@
+Patched p51_paradise.html so the page reads as USAAF-themed rather than RAF-themed. Improved walkaround section notes, changed the hero insignia styling, updated visible top-of-page labels/stats/filter buttons, and cleaned several obvious RAF/BoB wording remnants.
