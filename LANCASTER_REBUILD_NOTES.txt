@@ -1,0 +1,1 @@
+Lancaster page rebuilt to match the Spitfire/Hurricane Paradise structure: aircraft hero, nav-tabs, filter bar, main/sidebar layout, squadron cards, Build, Reference with Leaflet map, Stories, Media and Walkaround tabs. Stable manufacturer/search links used for kits/decals/aftermarket. Sitemap already includes lancaster_paradise.html.
