@@ -587,6 +587,36 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 .plane-tab-bar .nav-tab:hover{color:rgba(255,255,255,.9)!important;background:rgba(255,255,255,.045)!important}
 .plane-tab-bar .nav-tab.active{color:var(--brass2,#e8c76a)!important;border-bottom-color:var(--brass,#c9a84c)!important;background:rgba(201,168,76,.06)!important}
 @media(max-width:760px){.plane-tab-bar{top:56px}.plane-tab-bar .nav-tabs{padding:0 .75rem!important}.plane-tab-bar .nav-tab{font-size:12px!important;padding:.68rem .8rem!important}}
+
+
+/* P-51 walkaround image size fix — keep reference photos card-sized, not full-row hero images */
+#tab-walkaround .wa-ref-strip{
+  grid-template-columns:repeat(auto-fill,minmax(220px,280px))!important;
+  justify-content:start!important;
+  align-items:start!important;
+  gap:.85rem!important;
+}
+#tab-walkaround .wa-ref-card{
+  max-width:280px!important;
+  width:100%!important;
+}
+#tab-walkaround .wa-ref-card img{
+  width:100%!important;
+  height:145px!important;
+  min-height:0!important;
+  max-height:145px!important;
+  aspect-ratio:auto!important;
+  object-fit:cover!important;
+}
+@media(max-width:640px){
+  #tab-walkaround .wa-ref-strip{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  #tab-walkaround .wa-ref-card{max-width:none!important;}
+  #tab-walkaround .wa-ref-card img{height:120px!important;max-height:120px!important;}
+}
+@media(max-width:420px){
+  #tab-walkaround .wa-ref-strip{grid-template-columns:1fr!important;}
+  #tab-walkaround .wa-ref-card img{height:155px!important;max-height:155px!important;}
+}
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409"
      crossorigin="anonymous"></script>
@@ -1247,7 +1277,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Cockpit <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(136,174,240,.35),transparent)"></span></div>
     <div style="background:rgba(136,174,240,.06);border:1px solid rgba(136,174,240,.18);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.72);line-height:1.65;margin-bottom:1rem">Focus on the seat and harness, black instrument panel, radio shelf behind the pilot, canopy rails and the cockpit sill. Restored Mustangs vary, so use the photo links for shape and layout rather than blindly copying a single restoration colour.</div>
     <div class="wa-ref-strip">
-      <a class="wa-ref-card" href="https://www.nationalmuseum.af.mil/Upcoming/Photos/igphoto/2001266310/" target="_blank" rel="noopener"><img src="https://media.defense.gov/2015/Aug/03/2001266310/-1/-1/0/150803-F-IO108-001.JPG" alt="P-51 Mustang cockpit reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">USAF Museum</div><div class="wa-ref-title">Seat, panel and canopy rails</div><div class="wa-ref-desc">Use this section to check the cockpit opening, radio shelf and how visible the office remains under the canopy.</div><div class="wa-ref-link">Open cockpit photo ↗</div></div></a>
+      <a class="wa-ref-card" href="https://www.nationalmuseum.af.mil/Upcoming/Photos/igphoto/2001266310/" target="_blank" rel="noopener"><img src="https://media.defense.gov/2015/Aug/03/2001266310/-1/-1/0/150803-F-IO108-001.JPG" alt="P-51 Mustang cockpit reference image" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">USAF Museum</div><div class="wa-ref-title">Seat, panel and canopy rails</div><div class="wa-ref-desc">Use this section to check the cockpit opening, radio shelf and how visible the office remains under the canopy.</div><div class="wa-ref-link">Open cockpit photo ↗</div></div></a>
     </div>
   </div>
 
@@ -1255,7 +1285,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Exhausts & Nose <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(136,174,240,.35),transparent)"></span></div>
     <div style="background:rgba(136,174,240,.06);border:1px solid rgba(136,174,240,.18);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.72);line-height:1.65;margin-bottom:1rem">The Packard Merlin nose, anti-glare panel and exhaust staining are major P-51 visual cues. Natural-metal subjects show exhaust staining clearly, usually sweeping back as a brown-grey stain over metal and the painted anti-glare panel.</div>
     <div class="wa-ref-strip">
-      <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:P-51_Mustang_-_Duxford_(17968176082).jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/P-51%20Mustang%20-%20Duxford%20%2817968176082%29.jpg?width=900" alt="P-51 Mustang exhaust and nose reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Merlin cowling and exhaust run</div><div class="wa-ref-desc">Use for spinner line, anti-glare panel boundary, exhaust position and weathering direction.</div><div class="wa-ref-link">Open source photo ↗</div></div></a>
+      <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:P-51_Mustang_-_Duxford_(17968176082).jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/P-51%20Mustang%20-%20Duxford%20%2817968176082%29.jpg?width=900" alt="P-51 Mustang exhaust and nose reference image" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Merlin cowling and exhaust run</div><div class="wa-ref-desc">Use for spinner line, anti-glare panel boundary, exhaust position and weathering direction.</div><div class="wa-ref-link">Open source photo ↗</div></div></a>
     </div>
   </div>
 
@@ -1263,7 +1293,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Undercarriage <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(136,174,240,.35),transparent)"></span></div>
     <div style="background:rgba(136,174,240,.06);border:1px solid rgba(136,174,240,.18);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.72);line-height:1.65;margin-bottom:1rem">The Mustang's stance is easy to get subtly wrong. Check the main gear angle, wheel-door position, tyre size and the slightly nose-high parked attitude. Wheel-bay colours vary by aircraft and restoration.</div>
     <div class="wa-ref-strip">
-      <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:P-51_Mustang_undercarriage_at_RAF_Museum_London_Flickr_4607707896.jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/P-51%20Mustang%20undercarriage%20at%20RAF%20Museum%20London%20Flickr%204607707896.jpg?width=900" alt="P-51 Mustang undercarriage reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Gear doors, wheels and stance</div><div class="wa-ref-desc">Use for door angles, tailwheel relationship and the aircraft's parked sit.</div><div class="wa-ref-link">Open landing gear photo ↗</div></div></a>
+      <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:P-51_Mustang_undercarriage_at_RAF_Museum_London_Flickr_4607707896.jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/P-51%20Mustang%20undercarriage%20at%20RAF%20Museum%20London%20Flickr%204607707896.jpg?width=900" alt="P-51 Mustang undercarriage reference image" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Gear doors, wheels and stance</div><div class="wa-ref-desc">Use for door angles, tailwheel relationship and the aircraft's parked sit.</div><div class="wa-ref-link">Open landing gear photo ↗</div></div></a>
     </div>
   </div>
 
@@ -1271,7 +1301,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">USAAF Markings <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(136,174,240,.35),transparent)"></span></div>
     <div style="background:rgba(136,174,240,.06);border:1px solid rgba(136,174,240,.18);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.72);line-height:1.65;margin-bottom:1rem">Mustang subjects are driven by group identity: blue noses, red tails, checkers, coloured spinners, black serials, star-and-bar placement and temporary invasion stripes. Pick the exact aircraft before weathering.</div>
     <div class="wa-ref-strip">
-      <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:375th_Fighter_Squadron_North_American_P-51D-5-NA_Mustang_44-13926.jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/375th%20Fighter%20Squadron%20North%20American%20P-51D-5-NA%20Mustang%2044-13926.jpg?width=900" alt="P-51 Mustang USAAF markings reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Star-and-bar and group colours</div><div class="wa-ref-desc">Use for serial placement, unit colour balance and how decals sit on natural metal.</div><div class="wa-ref-link">Open markings photo ↗</div></div></a>
+      <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:375th_Fighter_Squadron_North_American_P-51D-5-NA_Mustang_44-13926.jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/375th%20Fighter%20Squadron%20North%20American%20P-51D-5-NA%20Mustang%2044-13926.jpg?width=900" alt="P-51 Mustang USAAF markings reference image" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Star-and-bar and group colours</div><div class="wa-ref-desc">Use for serial placement, unit colour balance and how decals sit on natural metal.</div><div class="wa-ref-link">Open markings photo ↗</div></div></a>
     </div>
   </div>
 
@@ -1279,7 +1309,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Airframe & Natural Metal <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(136,174,240,.35),transparent)"></span></div>
     <div style="background:rgba(136,174,240,.06);border:1px solid rgba(136,174,240,.18);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.72);line-height:1.65;margin-bottom:1rem">Natural-metal Mustangs need panel variation, not a single silver finish. Keep the laminar-flow wing smoother than the fuselage, study the radiator scoop and avoid over-emphasising every panel line equally.</div>
     <div class="wa-ref-strip">
-      <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:P51_Mustang_-_CHino_Airshow_2014_(14349568311).jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/P51%20Mustang%20-%20CHino%20Airshow%202014%20%2814349568311%29.jpg?width=900" alt="P-51 Mustang airframe reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Laminar wing and radiator scoop</div><div class="wa-ref-desc">Use for the Mustang silhouette, wing root, radiator scoop and metal panel tone planning.</div><div class="wa-ref-link">Open airframe photo ↗</div></div></a>
+      <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:P51_Mustang_-_CHino_Airshow_2014_(14349568311).jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/P51%20Mustang%20-%20CHino%20Airshow%202014%20%2814349568311%29.jpg?width=900" alt="P-51 Mustang airframe reference image" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Laminar wing and radiator scoop</div><div class="wa-ref-desc">Use for the Mustang silhouette, wing root, radiator scoop and metal panel tone planning.</div><div class="wa-ref-link">Open airframe photo ↗</div></div></a>
     </div>
   </div>
 </div><!-- /tab-walkaround -->
