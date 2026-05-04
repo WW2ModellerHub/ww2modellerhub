@@ -1,0 +1,1 @@
+Reduced P-51 walkaround reference photos from full-width/hero-sized images to consistent card-sized thumbnails. Added responsive sizing rules for desktop, tablet and mobile, and changed walkaround image loading to lazy.

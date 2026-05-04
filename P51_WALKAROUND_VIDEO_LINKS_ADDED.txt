@@ -1,0 +1,1 @@
+Added specific Mustang walkaround video cards to p51_paradise.html walkaround tab. Direct YouTube video links only; no generic YouTube searches. Thumbnail images are remote YouTube thumbnails and are sized as cards, not huge page-width images.

@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mitsubishi A6M Zero Paradise | WW2 Modeller</title>
+<meta name="description" content="Complete Mitsubishi A6M Zero modelling reference: IJN carrier and land-based units, Pearl Harbor, Midway, Rabaul, paint colours, kits, decals, walkaround photos and weathering guide.">
+<link rel="canonical" href="https://www.ww2modeller.co.uk/zero_paradise.html">
+<meta property="og:title" content="Mitsubishi A6M Zero Modelling Reference — IJN Units, Paint Colours, Kits & Walkaround">
+<meta property="og:description" content="Full A6M Zero Paradise page for scale modellers: Kokutai units, carrier markings, IJN colours, build guide, weathering and walkaround references.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://www.ww2modeller.co.uk/zero_paradise.html"><meta property="og:site_name" content="WW2 Modeller Hub">
+<meta name="keywords" content="A6M Zero model, Mitsubishi Zero kit, IJN aircraft colours, A6M2 Model 21, A6M5 Zero, Pearl Harbor Zero, Rabaul Zero, Tamiya Zero, Eduard Zero">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root{
+  --raf-dark:#0a1628; --raf-mid:#152744; --raf-light:#1e3a5c; --raf-sky:#4a7fa5;
+  --olive:#4a5220; --brass:#b8902a; --brass2:#d4a83a;
+  --cream:#f0ead8; --cream2:#e8e0c8; --cream3:#ddd5ba;
+  --ink:#1a1408; --ink2:#2e2818; --ink3:rgba(255,255,255,.45);
+  --border:rgba(255,255,255,.1); --shadow:0 2px 12px rgba(0,0,0,.3); --shadow2:0 6px 32px rgba(0,0,0,.5);
+  --paper:var(--cream); --paper2:var(--cream2); --canvas:var(--cream); --canvas2:var(--cream2);
+  --raf:var(--raf-light); --raf2:var(--raf-sky); --raf3:var(--raf-dark);
+  --gold:var(--brass); --gold2:var(--brass); --gold3:var(--brass2);
+  --red:#8a2820; --khaki:#8a7a4a; --green:var(--olive);
+  --bs:rgba(255,255,255,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color:var(--cream);min-height:100vh;font-size:18px}
+.site-header{display:none}
+.header-inner{max-width:1400px;width:100%;margin:0 auto;padding:.7rem 1.5rem;display:flex;align-items:center;gap:1.2rem}
+.header-logo{font-family:'Special Elite',cursive;font-size:1.6rem;color:#fff;text-decoration:none;padding:.65rem 1.5rem .45rem 0;flex-shrink:0;border-right:1px solid rgba(255,255,255,.1)}
+.header-logo span{color:var(--brass2)}
+.header-breadcrumb{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.header-breadcrumb .sep{color:rgba(255,255,255,.2)}
+.header-breadcrumb .current{color:var(--brass)}
+.nav-tabs{display:flex;align-items:stretch;justify-content:center;overflow-x:auto;scrollbar-width:none;background:rgba(0,0,0,.25)}
+.nav-tabs::-webkit-scrollbar{display:none}
+.nav-tab{font-family:'Oswald',sans-serif;font-size:15px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:.7rem 1rem;border:none;background:transparent;color:rgba(255,255,255,.45);cursor:pointer;white-space:nowrap;flex-shrink:0;border-bottom:3px solid transparent;transition:all .15s}
+.nav-tab:hover{color:rgba(255,255,255,.85);background:rgba(255,255,255,.04)}
+.nav-tab.active{color:var(--brass2);border-bottom-color:var(--brass)}
+@media(max-width:860px){.nav-tabs{justify-content:flex-start;-webkit-mask:linear-gradient(to right,black 85%,transparent 100%);mask:linear-gradient(to right,black 85%,transparent 100%)}.header-breadcrumb{display:none}}
+@media(max-width:600px){.header-logo{font-size:1.1rem;padding-right:1rem}}
+.aircraft-hero{background:linear-gradient(to right,var(--raf-dark) 0%,rgba(21,39,68,.8) 60%,transparent 100%),linear-gradient(135deg,var(--raf-dark),var(--raf-mid));border-bottom:1px solid rgba(255,255,255,.08);padding:1.2rem 1.5rem 1rem;display:flex;align-items:center;gap:1.5rem;overflow:hidden;position:relative}
+.aircraft-hero::after{content:'IJN';position:absolute;right:2rem;top:50%;transform:translateY(-50%);font-family:'Special Elite',cursive;font-size:8rem;color:rgba(255,255,255,.025);letter-spacing:.1em;pointer-events:none;white-space:nowrap}
+.hero-roundel{width:52px;height:52px;flex-shrink:0;border-radius:50%;position:relative;overflow:hidden;border:2px solid rgba(255,255,255,.25);box-shadow:0 0 16px rgba(0,48,135,.5)}
+.hero-roundel::before{content:'';position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 50%,#cf142b 0%,#cf142b 28%,#fff 28%,#fff 52%,#003087 52%)}
+.hero-eyebrow{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.2rem}
+.hero-title{font-family:'Special Elite',cursive;font-size:clamp(1.4rem,4vw,2.2rem);color:#fff;line-height:1.05;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.hero-sub{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.05em;color:rgba(255,255,255,.45);margin-top:.3rem}
+.hero-stats{margin-left:auto;flex-shrink:0;display:flex;gap:1.2rem;align-items:center}
+.hero-stat{text-align:center}
+.hero-stat-val{font-family:'Special Elite',cursive;font-size:1.9rem;color:var(--brass2);line-height:1}
+.hero-stat-lbl{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:2px}
+@media(max-width:600px){.hero-stats{display:none}.aircraft-hero{padding:.9rem 1rem .8rem}}
+.filter-bar{background:rgba(0,0,0,.25);backdrop-filter:blur(4px);border-bottom:1px solid rgba(255,255,255,.07);padding:.4rem 1.5rem;display:flex;align-items:center;gap:5px;flex-wrap:wrap;position:sticky;top:64px;z-index:50}
+.filter-bar label{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.bar-sep{width:1px;height:14px;background:rgba(255,255,255,.1);margin:0 4px}
+.fb{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:2px;border:1px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.4);cursor:pointer;transition:all .15s;white-space:nowrap}
+.fb:hover{background:rgba(255,255,255,.07);color:rgba(255,255,255,.8)}
+.fb.on{background:var(--brass);color:var(--raf-dark);border-color:var(--brass);font-weight:600}
+.sq-count{margin-left:auto;font-family:'Oswald',sans-serif;font-size:12px;color:rgba(255,255,255,.25);letter-spacing:.05em;white-space:nowrap}
+.main-wrap{max-width:1400px;margin:0 auto;padding:1.2rem 1.5rem 4rem;display:grid;grid-template-columns:1fr 220px;gap:1.5rem}
+.main-content{min-width:0}
+.tab-panel{display:none}.tab-panel.active{display:block}
+@media(max-width:960px){.main-wrap{grid-template-columns:1fr}.sidebar{display:none}}
+@media(max-width:600px){.main-wrap{padding:.75rem .75rem 3rem}}
+.sidebar{display:flex;flex-direction:column;gap:1rem}
+.sidebar-block{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.09);border-radius:3px;overflow:hidden}
+.sidebar-hd{background:rgba(0,0,0,.3);padding:.55rem .9rem;font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brass);border-bottom:1px solid rgba(255,255,255,.06)}
+.sidebar-ad-slot{width:100%;height:240px;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.15);background:rgba(0,0,0,.2)}
+.shop-link{display:flex;align-items:center;gap:8px;padding:.5rem .9rem;border-bottom:1px solid rgba(255,255,255,.05);text-decoration:none;transition:background .15s}
+.shop-link:last-child{border-bottom:none}
+.shop-link:hover{background:rgba(255,255,255,.04)}
+.shop-name{font-family:'Special Elite',cursive;font-size:15px;color:#fff}
+.shop-cats{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:1px}
+.section-label,.sec-label{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:1rem;margin-top:1rem;display:flex;align-items:center;gap:.75rem}
+.section-label:first-child,.sec-label:first-child{margin-top:0}
+.section-label::after,.sec-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.08)}
+.info-box{background:rgba(21,39,68,.6);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--raf-sky);border-radius:2px;padding:.75rem 1rem;margin-bottom:1rem;font-size:17px;color:rgba(255,255,255,.65);line-height:1.7}
+.sq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.sq-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden;cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s;box-shadow:var(--shadow)}
+.sq-card:hover,.sq-card.active{border-color:var(--brass);box-shadow:var(--shadow2);transform:translateY(-1px)}
+.card-hd{background:linear-gradient(135deg,rgba(10,22,40,.92),rgba(21,39,68,.84));padding:.62rem .8rem;display:flex;align-items:flex-start;gap:10px;border-bottom:1px solid rgba(255,255,255,.07)}
+.card-circle{min-width:58px;width:auto;height:30px;padding:0 10px;border-radius:999px;border:1px solid var(--brass);background:rgba(255,255,255,.04);box-shadow:inset 0 1px 0 rgba(255,255,255,.03);display:inline-flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:12px;line-height:1;letter-spacing:.05em;text-transform:uppercase;color:var(--brass2);flex-shrink:0;white-space:nowrap}
+.card-name{font-family:'Special Elite',cursive;font-size:17px;color:#fff}
+.card-base{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.4);margin-top:1px}
+.card-body{padding:.6rem .8rem}
+.card-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-bottom:.5rem}
+.stat{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.07);border-radius:2px;padding:4px 5px;text-align:center}
+.stat-val{font-family:'Special Elite',cursive;font-size:18px;color:var(--brass2)}
+.stat-lbl{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.card-tags{display:flex;flex-wrap:wrap;gap:3px}
+.tag{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:2px 6px;border-radius:2px;border:1px solid}
+.t-blue{background:rgba(30,58,92,.3);color:#7aA8d8;border-color:rgba(122,168,216,.25)}
+.t-amber{background:rgba(184,144,42,.2);color:var(--brass2);border-color:rgba(184,144,42,.3)}
+.t-green{background:rgba(74,82,32,.3);color:#8aA060;border-color:rgba(74,82,32,.4)}
+.t-coral{background:rgba(140,40,30,.25);color:#e08070;border-color:rgba(140,40,30,.3)}
+.detail-panel{display:none;background:rgba(21,39,68,.85);backdrop-filter:blur(8px);border:2px solid var(--brass);border-radius:4px;margin:10px 0 4px;overflow:hidden;grid-column:1/-1;box-shadow:var(--shadow2)}
+.detail-panel.open{display:block}
+.dp-top{background:rgba(0,0,0,.4);padding:.8rem 1.2rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;border-bottom:2px solid var(--brass)}
+.dp-title{font-family:'Special Elite',cursive;font-size:1.4rem;color:#fff}
+.dp-meta{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.4);margin-top:3px}
+.close-btn{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--brass);background:transparent;color:var(--brass2);cursor:pointer;border-radius:2px;flex-shrink:0}
+.close-btn:hover{background:rgba(184,144,42,.15)}
+.ops-text{font-size:15px;color:rgba(255,255,255,.75);line-height:1.75}
+.pilot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-bottom:1rem}
+.pilot-card{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1);border-radius:2px;padding:6px 8px;cursor:pointer;transition:border-color .15s}
+.pilot-card:hover{border-color:var(--brass)}
+.pkills{float:right;font-family:'Special Elite',cursive;font-size:20px;color:var(--brass2)}
+.pname{font-size:14px;color:#fff}
+.pnote{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.4);margin-top:2px}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.photo-loading{grid-column:1/-1;text-align:center;font-family:'Oswald',sans-serif;font-size:12px;color:rgba(255,255,255,.3);padding:2rem 0}
+.shop-btn{display:inline-flex;align-items:center;font-family:'Oswald',sans-serif;font-size:13px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;padding:5px 12px;border-radius:2px;text-decoration:none;transition:all .15s;cursor:pointer;border:1px solid;white-space:nowrap}
+.hb-brass{background:var(--brass);color:var(--raf-dark);border-color:var(--brass)}
+.hb-brass:hover{background:var(--brass2)}
+.hb-outline{background:transparent;color:var(--brass2);border-color:rgba(184,144,42,.3)}
+.hb-outline:hover{background:rgba(184,144,42,.1);border-color:var(--brass)}
+.hb-raf{background:rgba(21,39,68,.8);color:var(--raf-sky);border-color:rgba(74,127,165,.3)}
+.hb-raf:hover{background:rgba(74,127,165,.15)}
+.hb-gold{background:rgba(184,144,42,.12);color:var(--brass2);border-color:rgba(184,144,42,.25)}
+.hb-gold:hover{background:rgba(184,144,42,.2)}
+.paint-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:.5rem}
+.paint-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;display:flex;box-shadow:var(--shadow)}
+.paint-swatch{width:56px;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-end;padding:5px;font-size:11px;color:rgba(255,255,255,.4);font-family:monospace}
+.paint-info{flex:1;padding:.6rem .75rem}
+.paint-name{font-family:'Special Elite',cursive;font-size:16px;color:#fff;margin-bottom:.2rem}
+.kit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.kit-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:.85rem;box-shadow:var(--shadow)}
+.kit-brand{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:.2rem}
+.kit-name{font-family:'Special Elite',cursive;font-size:17px;color:#fff;margin-bottom:.2rem}
+.kit-scale{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-bottom:.3rem}
+.kit-stars{font-size:16px;color:var(--brass);margin-bottom:.3rem}
+.kit-note{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5;margin-bottom:.5rem}
+.kit-tag{font-family:'Oswald',sans-serif;font-size:11px;padding:1px 5px;border-radius:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4)}
+.map-filter-btn{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;background:transparent;border:1px solid;border-radius:2px;cursor:pointer;transition:all .15s;opacity:.65}
+.map-filter-btn:hover{opacity:1}
+.map-filter-btn.on{opacity:1;background:rgba(255,255,255,.08)}
+.map-sqn-list{padding:1rem;background:rgba(0,0,0,.25);border-left:1px solid rgba(255,255,255,.08);min-height:300px}
+.map-sqn-chip{font-size:15px;padding:6px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:2px;color:rgba(255,255,255,.75);margin-bottom:5px;cursor:pointer;transition:background .15s}
+.map-sqn-chip:hover{background:rgba(255,255,255,.09)}
+.map-sqn-chip b{font-family:'Special Elite',cursive;color:var(--brass2);font-size:15px}
+.weather-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.weather-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;box-shadow:var(--shadow)}
+.weather-hd{padding:.6rem .9rem;background:rgba(0,0,0,.25);display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid rgba(255,255,255,.08)}
+.weather-base{font-family:'Special Elite',cursive;font-size:17px;color:#fff}
+.weather-group{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.weather-body{padding:.7rem .9rem}
+.weather-row{font-size:13px;color:rgba(255,255,255,.7);padding:3px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;gap:8px;line-height:1.4}
+.weather-row:last-child{border-bottom:none}
+.wr-label{flex-shrink:0;width:72px;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.aftermarket-section{margin-bottom:1.5rem}
+.aftermarket-section-title{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid rgba(184,144,42,.25)}
+.am-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.am-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-top:2px solid rgba(184,144,42,.4);border-radius:3px;padding:.85rem;box-shadow:var(--shadow)}
+.am-type{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--brass2);margin-bottom:.15rem}
+.am-name{font-family:'Special Elite',cursive;font-size:16px;color:#fff;margin-bottom:.25rem}
+.am-maker{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.45);margin-bottom:.3rem}
+.am-desc{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5;margin-bottom:.4rem}
+.am-scales{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:.4rem}
+.am-scale{font-family:'Oswald',sans-serif;font-size:11px;padding:1px 5px;border-radius:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4)}
+.survivor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+.survivor-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;box-shadow:var(--shadow)}
+.survivor-hd{background:rgba(0,0,0,.3);padding:.65rem .9rem;display:flex;align-items:center;gap:8px;border-bottom:2px solid var(--brass)}
+.survivor-serial{font-family:'Special Elite',cursive;font-size:18px;color:var(--brass2)}
+.survivor-name{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.4)}
+.survivor-status{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:1px;margin-left:auto;flex-shrink:0}
+.status-fly{background:var(--olive);color:#e8dfc0}.status-static{background:var(--raf-light);color:#fff}.status-restore{background:#8a2820;color:#fff}
+.survivor-body{padding:.75rem .9rem}
+.survivor-row{font-size:15px;display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.survivor-row:last-child{border-bottom:none}
+.survivor-key{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.3);flex-shrink:0;width:72px}
+.books-section{margin-bottom:1.5rem}
+.books-section-title{font-family:'Special Elite',cursive;font-size:18px;color:#fff;margin-bottom:.75rem;padding-bottom:.4rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.books-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+.book-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:.8rem;box-shadow:var(--shadow);display:flex;gap:10px}
+.book-spine{width:10px;flex-shrink:0;border-radius:1px}
+.book-info{flex:1}
+.book-title{font-family:'Special Elite',cursive;font-size:17px;color:#fff;line-height:1.3;margin-bottom:.2rem}
+.book-author{font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:.05em;color:rgba(255,255,255,.35);margin-bottom:.3rem}
+.book-rating{color:var(--brass);font-size:15px;margin-bottom:.4rem}
+.book-desc{font-size:16px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:.5rem}
+.shop-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-left:4px solid var(--brass);border-radius:3px;padding:.9rem;box-shadow:var(--shadow);margin-bottom:8px}
+.shop-card-name{font-family:'Special Elite',cursive;font-size:15px;color:#fff;margin-bottom:.2rem;display:flex;align-items:center;gap:8px}
+.shop-card-cats{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:.3rem}
+.shop-card-desc{font-size:12px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:.5rem}
+.pm-overlay{display:none;position:fixed;inset:0;background:rgba(5,10,20,.85);z-index:500;align-items:center;justify-content:center;padding:1.5rem}
+.pm-overlay.open{display:flex}
+.pm-modal{background:rgba(21,39,68,.97);border-radius:4px;max-width:520px;width:100%;overflow:hidden;border:2px solid var(--brass);max-height:88vh;overflow-y:auto;box-shadow:0 8px 48px rgba(0,0,0,.8)}
+.pm-hd{background:rgba(0,0,0,.4);padding:.9rem 1.1rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;border-bottom:2px solid var(--brass)}
+.pm-name{font-family:'Special Elite',cursive;font-size:1.2rem;color:#fff}
+.pm-rank{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-top:3px}
+.pm-close{background:rgba(255,255,255,.08);border:1px solid var(--brass);color:var(--brass2);width:26px;height:26px;border-radius:50%;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pm-body{padding:.9rem 1.1rem}
+.pm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:.8rem}
+.pm-stat{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.08);border-radius:2px;padding:5px 7px;text-align:center}
+.pm-stat .v{font-family:'Special Elite',cursive;font-size:17px;color:var(--brass2)}
+.pm-stat .l{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.pm-bio{font-size:14px;color:rgba(255,255,255,.7);line-height:1.75}
+.pm-bio p{margin-bottom:.5rem}
+.pm-awards{display:flex;flex-wrap:wrap;gap:4px;margin-top:.6rem}
+.award{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;padding:2px 7px;border-radius:2px;background:rgba(184,144,42,.15);color:var(--brass2);border:1px solid rgba(184,144,42,.3)}
+.pm-links{display:flex;gap:5px;flex-wrap:wrap;margin-top:.8rem;padding-top:.7rem;border-top:1px solid rgba(255,255,255,.08)}
+.timeline-slider{width:100%;margin:1rem 0 .5rem;accent-color:var(--brass)}
+.timeline-labels{display:flex;justify-content:space-between;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.3)}
+.tl-sqn{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.07);border-left:3px solid rgba(255,255,255,.1);border-radius:2px;padding:5px 8px}
+.tl-sqn.active-tl{background:rgba(30,58,92,.4);border-left-color:var(--raf-sky)}
+.tl-sqn-num{font-family:'Special Elite',cursive;font-size:14px;color:#fff}
+.tl-sqn-status{font-family:'Oswald',sans-serif;font-size:12px;color:rgba(255,255,255,.35);letter-spacing:.04em}
+.tl-legend{display:flex;gap:12px;margin-bottom:1rem;flex-wrap:wrap;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.05em;color:rgba(255,255,255,.5)}
+.tl-dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:4px}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(5,10,20,.97);z-index:999;align-items:center;justify-content:center;padding:2rem}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:82vh;object-fit:contain;border-radius:2px;border:1px solid rgba(255,255,255,.1)}
+.lb-close{position:fixed;top:1.2rem;right:1.2rem;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid var(--brass);color:var(--brass2);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+
+/* ── UNIVERSAL NAV ── */
+.site-nav{position:sticky;top:0;z-index:200;background:rgba(7,16,31,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.09);padding:0 2rem;height:58px;display:flex;align-items:center;gap:1.5rem;}
+.site-nav-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;flex-shrink:0;}
+.site-nav-logo svg{width:26px;height:26px;}
+.site-nav-logo-text{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;}
+.site-nav-logo-text span{color:var(--brass);}
+.site-nav-links{display:flex;align-items:center;gap:.15rem;margin-left:auto;}
+.site-nav-link{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;padding:.35rem .75rem;border-radius:3px;transition:color .15s,background .15s;white-space:nowrap;}
+.site-nav-link:hover{color:#e8c76a;background:rgba(255,255,255,.04);}
+.site-nav-link.active,.site-nav-link[aria-current="page"]{color:#c9a84c !important;background:rgba(201,168,76,.08);font-weight:600;}
+
+@media(max-width:700px){.site-nav-links{gap:0;}.site-nav-link{padding:.35rem .5rem;font-size:10px;}}
+@media(max-width:480px){.site-nav-link{display:none;}.site-nav-link.keep{display:block;}}
+
+/* Aircraft dropdown — universal across pages */
+.ac-drop{position:relative;display:inline-block}
+.ac-drop-btn{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);background:none;border:none;cursor:pointer;padding:.45rem .9rem;border-radius:3px;display:inline-flex;align-items:center;gap:.3rem;transition:color .15s,background .15s}
+.ac-drop-btn:hover,.ac-drop.open .ac-drop-btn{color:#e8c76a;background:rgba(255,255,255,.04)}
+.ac-drop-caret{font-size:8px;transition:transform .15s;display:inline-block}
+.ac-drop.open .ac-drop-caret{transform:rotate(180deg)}
+.ac-drop-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:240px;background:rgba(10,22,40,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,.18);border-radius:4px;box-shadow:0 12px 40px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(-4px);transition:all .15s;overflow:hidden;z-index:300}
+.ac-drop.open .ac-drop-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.ac-drop-item{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.65rem 1rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05);transition:all .12s}
+.ac-drop-item:last-child{border-bottom:none}
+.ac-drop-item:hover{background:rgba(201,168,76,.08);color:#e8c76a}
+.ac-drop-badge{font-size:8px;font-weight:700;padding:1px 6px;border-radius:2px;letter-spacing:.1em}
+.ac-drop-badge.live{background:rgba(42,92,48,.35);color:#9dc89f;border:1px solid rgba(42,92,48,.5)}
+.ac-drop-badge.soon{background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1)}
+
+
+/* Aircraft dropdown — paradise page nav */
+.ac-drop{position:relative;display:inline-block}
+.ac-drop-btn{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);background:none;border:none;cursor:pointer;padding:.45rem .9rem;border-radius:3px;display:inline-flex;align-items:center;gap:.3rem;transition:color .15s,background .15s;white-space:nowrap;line-height:1}
+.ac-drop-btn:hover,.ac-drop.open .ac-drop-btn,.ac-drop-btn.active{color:#e8c76a;background:rgba(255,255,255,.04)}
+.ac-drop-btn.active{color:#c9a84c}
+.ac-drop-caret{font-size:8px;transition:transform .15s;display:inline-block}
+.ac-drop.open .ac-drop-caret{transform:rotate(180deg)}
+.ac-drop-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:240px;background:rgba(10,22,40,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,.18);border-radius:4px;box-shadow:0 12px 40px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(-4px);transition:all .15s;overflow:hidden;z-index:300}
+.ac-drop.open .ac-drop-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.ac-drop-item{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.65rem 1rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05);transition:all .12s}
+.ac-drop-item:last-child{border-bottom:none}
+.ac-drop-item:hover{background:rgba(201,168,76,.08);color:#e8c76a}
+.ac-drop-item.current{background:rgba(201,168,76,.12);color:#e8c76a}
+.ac-drop-badge{font-size:8px;font-weight:700;padding:1px 6px;border-radius:2px;letter-spacing:.1em}
+.ac-drop-badge.live{background:rgba(42,92,48,.35);color:#9dc89f;border:1px solid rgba(42,92,48,.5)}
+.ac-drop-badge.soon{background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1)}
+
+
+/* ===== HOMEPAGE-STYLE VISUAL LIFT ===== */
+::selection{background:var(--brass);color:var(--raf-dark)}
+
+.site-header{
+  background:rgba(5,16,31,.72);
+  backdrop-filter:blur(20px) saturate(140%);
+  -webkit-backdrop-filter:blur(20px) saturate(140%);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  box-shadow:0 12px 40px rgba(0,0,0,.45);
+}
+
+.nav-tabs{
+  background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));
+  border-top:1px solid rgba(255,255,255,.03);
+}
+.nav-tab{position:relative}
+.nav-tab::after{
+  content:'';
+  position:absolute;
+  left:1rem;right:1rem;bottom:.3rem;height:1px;
+  background:var(--brass);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .25s ease;
+}
+.nav-tab:hover::after{transform:scaleX(1)}
+
+.aircraft-hero{
+  background:
+    radial-gradient(circle at 82% 20%, rgba(92,158,198,.12), transparent 22%),
+    radial-gradient(circle at 70% 70%, rgba(201,168,76,.10), transparent 26%),
+    linear-gradient(to right, rgba(5,16,31,.96) 0%, rgba(10,22,40,.88) 48%, rgba(17,34,64,.72) 100%);
+  box-shadow:inset 0 -30px 80px rgba(0,0,0,.18);
+}
+.aircraft-hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%,rgba(255,255,255,.18),transparent 50%),
+    radial-gradient(1px 1px at 28% 34%,rgba(255,255,255,.12),transparent 50%),
+    radial-gradient(1px 1px at 66% 22%,rgba(255,255,255,.14),transparent 50%),
+    radial-gradient(1px 1px at 78% 48%,rgba(255,255,255,.10),transparent 50%);
+  opacity:.55;
+  pointer-events:none;
+}
+.aircraft-hero > *{position:relative;z-index:1}
+.hero-roundel{
+  box-shadow:0 0 16px rgba(0,48,135,.45), 0 0 24px rgba(201,168,76,.12);
+}
+.hero-stats{
+  padding-left:1rem;
+  border-left:1px solid rgba(255,255,255,.08);
+}
+
+.filter-bar{
+  background:rgba(13,28,53,.76);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  box-shadow:0 8px 24px rgba(0,0,0,.22);
+}
+
+.main-wrap{position:relative}
+.main-wrap::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:200px;
+  background:linear-gradient(180deg,rgba(255,255,255,.015),transparent 70%);
+  pointer-events:none;
+}
+
+.sidebar-block,
+.info-box,
+.sq-card,
+.paint-card,
+.kit-card,
+.weather-card,
+.am-card{
+  box-shadow:0 10px 24px rgba(0,0,0,.24);
+}
+
+.sidebar-block,
+.info-box,
+.sq-card,
+.paint-card,
+.kit-card,
+.weather-card,
+.am-card{
+  background:linear-gradient(160deg,rgba(17,34,64,.76),rgba(10,22,40,.84));
+}
+
+.card-hd,
+.weather-hd,
+.sidebar-hd{
+  background:linear-gradient(135deg,rgba(5,16,31,.72),rgba(17,34,64,.76));
+}
+
+.sq-card:hover,
+.sq-card.active{
+  box-shadow:0 18px 38px rgba(0,0,0,.36), 0 0 22px rgba(201,168,76,.08);
+  transform:translateY(-3px);
+}
+
+.section-label,.sec-label{
+  text-shadow:0 1px 8px rgba(0,0,0,.25);
+}
+
+.shop-btn,.hb-brass,.hb-outline,.hb-raf,.hb-gold,.hb-red,.hb-olive,.hannants-btn{
+  box-shadow:0 4px 14px rgba(0,0,0,.16);
+}
+
+
+/* ===== LEAFLET IJN MAP ===== */
+#leaflet-map{width:100%;height:560px;background:#0c1722;filter:saturate(.82) contrast(1.04);border-radius:3px}
+.leaflet-container{font-family:'Oswald',sans-serif;background:#0c1722}
+.leaflet-control-attribution{font-size:9px;background:rgba(8,12,18,.68)!important;color:rgba(255,255,255,.55)!important}
+.raf-leaflet-marker{width:18px;height:18px;border-radius:50%;border:2px solid rgba(240,234,216,.92);box-shadow:0 0 0 5px rgba(255,255,255,.06),0 2px 12px rgba(0,0,0,.55);transition:transform .15s,box-shadow .15s}
+.raf-leaflet-marker.selected{transform:scale(1.25);box-shadow:0 0 0 6px rgba(201,168,76,.22),0 0 18px rgba(201,168,76,.65)}
+.raf-leaflet-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.04em;color:#fff;text-shadow:0 2px 4px #000,0 0 5px #000;white-space:nowrap;padding:1px 4px;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.12);border-radius:2px}
+
+
+/* ===== IJN real-map two-column layout ===== */
+.raf-map-shell{display:grid;grid-template-columns:minmax(360px,1.45fr) minmax(280px,.9fr);gap:.85rem;align-items:start}
+.raf-map-board{background:linear-gradient(160deg,rgba(8,19,31,.92),rgba(17,14,7,.86));border:1px solid rgba(201,168,76,.22);border-radius:5px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.32)}
+.raf-map-side{background:linear-gradient(160deg,rgba(21,39,68,.86),rgba(8,8,5,.78));border:1px solid rgba(201,168,76,.18);border-radius:5px;padding:1rem;min-height:560px;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+@media(max-width:860px){.raf-map-shell{grid-template-columns:1fr}.raf-map-side{min-height:auto}}
+
+
+/* Walkaround reference photo cards */
+.wa-ref-strip{margin:0 0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.85rem}
+.wa-ref-card{background:rgba(17,34,64,.82);border:1px solid rgba(255,255,255,.10);border-radius:5px;overflow:hidden;text-decoration:none;display:block;box-shadow:0 10px 24px rgba(0,0,0,.22);transition:transform .15s,border-color .15s}
+.wa-ref-card:hover{transform:translateY(-2px);border-color:rgba(201,168,76,.50)}
+.wa-ref-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#0a1628;min-height:180px}
+.wa-ref-body{padding:.75rem .9rem}
+.wa-ref-kicker{font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.25rem}
+.wa-ref-title{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.25rem}
+.wa-ref-desc{font-size:13px;color:rgba(255,255,255,.56);line-height:1.48}
+.wa-ref-link{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-top:.55rem}
+
+
+/* Universal aircraft dropdown hardening: opaque, above sticky tabs, scrollable and full list visible */
+.site-nav{overflow:visible !important;z-index:10000 !important}
+.site-nav-links{overflow:visible !important}
+.ac-drop{position:relative !important;z-index:10001 !important}
+.ac-drop-menu{
+  position:absolute !important;
+  top:calc(100% + 6px) !important;
+  left:0 !important;
+  min-width:290px !important;
+  background:#0d0b05 !important;
+  background:linear-gradient(180deg,rgba(13,11,5,.99),rgba(5,16,31,.98)) !important;
+  border:1px solid rgba(201,168,76,.32) !important;
+  border-radius:6px !important;
+  box-shadow:0 18px 48px rgba(0,0,0,.72) !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+  transform:translateY(-4px) !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  max-height:min(72vh,430px) !important;
+  z-index:10002 !important;
+  backdrop-filter:blur(18px) !important;
+  -webkit-backdrop-filter:blur(18px) !important;
+}
+.ac-drop.open .ac-drop-menu{
+  opacity:1 !important;
+  visibility:visible !important;
+  transform:translateY(0) !important;
+  pointer-events:auto !important;
+}
+.ac-drop-item{white-space:nowrap !important;display:flex !important;align-items:center !important;justify-content:space-between !important;gap:.9rem !important;color:rgba(255,255,255,.84) !important;background:transparent}
+.ac-drop-item:hover,.ac-drop-item.current{background:rgba(201,168,76,.12) !important;color:#e8c76a !important}
+.ac-drop-badge{flex-shrink:0 !important}
+@media(max-width:520px){.ac-drop-menu{position:fixed !important;left:12px !important;right:12px !important;top:54px !important;min-width:0 !important;width:auto !important}}
+
+
+/* Final global aircraft dropdown fix: opaque, complete, scrollable, mobile-safe */
+.site-nav,.site-nav-links{overflow:visible!important}
+.site-nav{z-index:10000!important}
+.ac-drop{position:relative!important;z-index:10001!important}
+.ac-drop-btn{background:rgba(18,31,52,.96)!important}
+.ac-drop-menu{position:absolute!important;top:calc(100% + 8px)!important;right:0!important;left:auto!important;min-width:310px!important;max-height:min(74vh,460px)!important;overflow-y:auto!important;overflow-x:hidden!important;background:linear-gradient(180deg,#0e1522 0%,#090d15 100%)!important;border:1px solid rgba(201,168,76,.42)!important;border-radius:8px!important;box-shadow:0 24px 60px rgba(0,0,0,.78)!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(-6px)!important;z-index:10002!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.ac-drop.open .ac-drop-menu{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:translateY(0)!important}
+.ac-drop-item{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:.9rem!important;padding:.72rem .9rem!important;background:transparent!important;color:rgba(255,255,255,.88)!important;text-decoration:none!important;white-space:normal!important}
+.ac-drop-item:hover,.ac-drop-item.current{background:rgba(201,168,76,.14)!important;color:#f1d073!important}
+.ac-drop-badge{flex-shrink:0!important}
+@media(max-width:640px){.ac-drop-menu{position:fixed!important;left:14px!important;right:14px!important;top:86px!important;min-width:0!important;width:auto!important;max-height:calc(100vh - 130px)!important}.site-nav-links{position:relative!important}}
+
+
+/* Smooth grouped aircraft navigation */
+.site-nav{overflow:visible!important;z-index:10000!important;position:sticky;top:0}
+.site-nav-inner,.site-nav-links{overflow:visible!important}
+.ac-drop{position:relative!important;z-index:10001!important}
+.ac-drop-btn{background:rgba(12,20,34,.92)!important;border:1px solid rgba(201,168,76,.26)!important;border-radius:999px!important;padding:.45rem .78rem!important;color:rgba(255,255,255,.86)!important;line-height:1!important}
+.ac-drop-btn:hover{color:#f1d073!important;border-color:rgba(201,168,76,.5)!important;background:rgba(18,31,52,.98)!important}
+.ac-drop-caret{font-size:8px;transition:transform .18s ease}.ac-drop.open .ac-drop-caret{transform:rotate(180deg)}
+.ac-drop-menu{display:block!important;position:absolute!important;top:calc(100% + 10px)!important;right:0!important;left:auto!important;width:min(820px,calc(100vw - 28px))!important;max-height:min(78vh,560px)!important;overflow:auto!important;background:linear-gradient(180deg,#101827 0%,#090e17 100%)!important;border:1px solid rgba(201,168,76,.42)!important;border-radius:12px!important;box-shadow:0 26px 70px rgba(0,0,0,.82)!important;padding:1rem!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(-8px)!important;transition:opacity .16s ease, transform .16s ease, visibility .16s ease!important;z-index:10002!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.ac-drop.open .ac-drop-menu{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:translateY(0)!important}
+.ac-drop-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:.85rem!important}
+.ac-drop-section{background:rgba(255,255,255,.035)!important;border:1px solid rgba(255,255,255,.08)!important;border-radius:8px!important;padding:.72rem!important;min-width:0!important}
+.ac-drop-heading{font-family:'Oswald',sans-serif!important;font-size:10px!important;letter-spacing:.18em!important;text-transform:uppercase!important;color:#c9a84c!important;margin:0 0 .45rem!important;padding-bottom:.35rem!important;border-bottom:1px solid rgba(201,168,76,.18)!important}
+.ac-drop-item{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:.75rem!important;padding:.52rem .55rem!important;border-radius:6px!important;background:transparent!important;color:rgba(255,255,255,.86)!important;text-decoration:none!important;white-space:normal!important;font-family:'Oswald',sans-serif!important;font-size:11px!important;letter-spacing:.08em!important;text-transform:uppercase!important;line-height:1.25!important}
+.ac-drop-item:hover,.ac-drop-item.current{background:rgba(201,168,76,.14)!important;color:#f1d073!important}
+.ac-drop-disabled{cursor:default!important;color:rgba(255,255,255,.46)!important}.ac-drop-disabled:hover{background:transparent!important;color:rgba(255,255,255,.46)!important}
+.ac-drop-badge{flex-shrink:0!important;font-size:8px!important;padding:2px 6px!important;border-radius:999px!important;letter-spacing:.08em!important;text-transform:uppercase!important}.ac-drop-badge.live{background:rgba(74,143,206,.22)!important;color:#9fd3ff!important;border:1px solid rgba(74,143,206,.36)!important}.ac-drop-badge.soon{background:rgba(184,144,42,.12)!important;color:#d9b965!important;border:1px solid rgba(184,144,42,.28)!important}.ac-drop-badge.plan{background:rgba(255,255,255,.06)!important;color:rgba(255,255,255,.52)!important;border:1px solid rgba(255,255,255,.12)!important}
+@media(max-width:760px){.site-nav-inner{gap:.75rem!important}.site-nav-links{gap:.55rem!important}.ac-drop{position:static!important}.ac-drop-menu{position:fixed!important;left:12px!important;right:12px!important;top:72px!important;width:auto!important;max-height:calc(100vh - 92px)!important;padding:.8rem!important}.ac-drop-grid{grid-template-columns:1fr!important;gap:.65rem!important}.ac-drop-section{padding:.65rem!important}.ac-drop-item{padding:.6rem .55rem!important}}
+
+
+
+/* MOBILE NAVIGATION FIX — keep Aircraft dropdown visible on small screens */
+@media (max-width: 700px){
+  .nav,
+  .site-nav{
+    overflow: visible !important;
+    z-index: 10000 !important;
+  }
+  .nav-links,
+  .site-nav-links{
+    display: flex !important;
+    align-items: center !important;
+    gap: .45rem !important;
+    overflow: visible !important;
+    flex-shrink: 0 !important;
+  }
+  .nav-links > .nav-link,
+  .site-nav-links > .site-nav-link{
+    display: none !important;
+  }
+  .nav-links > .ac-drop,
+  .site-nav-links > .ac-drop{
+    display: inline-flex !important;
+    position: static !important;
+    z-index: 10001 !important;
+  }
+  .ac-drop-btn{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 36px !important;
+    padding: .5rem .75rem !important;
+    font-size: 10px !important;
+    letter-spacing: .1em !important;
+    white-space: nowrap !important;
+  }
+  .ac-drop-menu{
+    position: fixed !important;
+    left: 10px !important;
+    right: 10px !important;
+    top: 68px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    max-height: calc(100vh - 88px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: .75rem !important;
+    background: #0b111d !important;
+    background: linear-gradient(180deg,#101827 0%,#070b12 100%) !important;
+    border: 1px solid rgba(201,168,76,.48) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 24px 70px rgba(0,0,0,.88) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-8px) !important;
+    z-index: 10002 !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .ac-drop.open .ac-drop-menu{
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+  .ac-drop-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: .65rem !important;
+  }
+  .ac-drop-section{
+    padding: .65rem !important;
+    border-radius: 8px !important;
+  }
+  .ac-drop-item{
+    min-height: 38px !important;
+    padding: .6rem .55rem !important;
+    font-size: 10.5px !important;
+    line-height: 1.25 !important;
+  }
+}
+
+
+/* Restored aircraft page tab bar */
+.plane-tab-bar{background:rgba(7,16,31,.95);border-bottom:2px solid var(--brass,#c9a84c);position:sticky;top:62px;z-index:190;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.plane-tab-bar .nav-tabs{display:flex!important;align-items:stretch!important;justify-content:flex-start!important;gap:0!important;overflow-x:auto!important;scrollbar-width:none!important;background:rgba(0,0,0,.25)!important;padding:0 1.5rem!important;min-height:44px!important;white-space:nowrap!important}
+.plane-tab-bar .nav-tabs::-webkit-scrollbar{display:none!important}
+.plane-tab-bar .nav-tab{display:inline-flex!important;align-items:center!important;justify-content:center!important;font-family:'Oswald',sans-serif!important;font-size:14px!important;font-weight:600!important;letter-spacing:.07em!important;text-transform:uppercase!important;padding:.72rem 1rem!important;border:none!important;background:transparent!important;color:rgba(255,255,255,.52)!important;cursor:pointer!important;white-space:nowrap!important;flex:0 0 auto!important;border-bottom:3px solid transparent!important;border-radius:0!important;line-height:1!important}
+.plane-tab-bar .nav-tab:hover{color:rgba(255,255,255,.9)!important;background:rgba(255,255,255,.045)!important}
+.plane-tab-bar .nav-tab.active{color:var(--brass2,#e8c76a)!important;border-bottom-color:var(--brass,#c9a84c)!important;background:rgba(201,168,76,.06)!important}
+@media(max-width:760px){.plane-tab-bar{top:56px}.plane-tab-bar .nav-tabs{padding:0 .75rem!important}.plane-tab-bar .nav-tab{font-size:12px!important;padding:.68rem .8rem!important}}
+
+
+/* Walkaround image size fix — keep reference photos card-sized, not full-row hero images */
+#tab-walkaround .wa-ref-strip{
+  grid-template-columns:repeat(auto-fill,minmax(220px,280px))!important;
+  justify-content:start!important;
+  align-items:start!important;
+  gap:.85rem!important;
+}
+#tab-walkaround .wa-ref-card{
+  max-width:280px!important;
+  width:100%!important;
+}
+#tab-walkaround .wa-ref-card img{
+  width:100%!important;
+  height:145px!important;
+  min-height:0!important;
+  max-height:145px!important;
+  aspect-ratio:auto!important;
+  object-fit:cover!important;
+}
+@media(max-width:640px){
+  #tab-walkaround .wa-ref-strip{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  #tab-walkaround .wa-ref-card{max-width:none!important;}
+  #tab-walkaround .wa-ref-card img{height:120px!important;max-height:120px!important;}
+}
+@media(max-width:420px){
+  #tab-walkaround .wa-ref-strip{grid-template-columns:1fr!important;}
+  #tab-walkaround .wa-ref-card img{height:155px!important;max-height:155px!important;}
+}
+
+
+/* Walkaround video cards */
+#tab-walkaround .p51-video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:.85rem;
+  margin:0 0 1.75rem;
+}
+#tab-walkaround .p51-video-card{
+  background:linear-gradient(160deg,rgba(17,34,64,.82),rgba(7,16,31,.88));
+  border:1px solid rgba(136,174,240,.18);
+  border-radius:5px;
+  overflow:hidden;
+  text-decoration:none;
+  display:block;
+  box-shadow:0 10px 24px rgba(0,0,0,.22);
+  transition:transform .15s,border-color .15s;
+}
+#tab-walkaround .p51-video-card:hover{transform:translateY(-2px);border-color:rgba(201,168,76,.52)}
+#tab-walkaround .p51-video-card img{width:100%;height:135px;object-fit:cover;display:block;background:#0a1628}
+#tab-walkaround .p51-video-body{padding:.75rem .85rem}
+#tab-walkaround .p51-video-kicker{font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem}
+#tab-walkaround .p51-video-title{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;color:#fff;line-height:1.35;margin-bottom:.3rem}
+#tab-walkaround .p51-video-desc{font-size:13px;color:rgba(255,255,255,.58);line-height:1.48}
+#tab-walkaround .p51-video-link{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass2);margin-top:.55rem}
+@media(max-width:760px){#tab-walkaround .p51-video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#tab-walkaround .p51-video-card img{height:115px}}
+@media(max-width:520px){#tab-walkaround .p51-video-grid{grid-template-columns:1fr}#tab-walkaround .p51-video-card img{height:150px}}
+</style>
+<style id="ww2-nav-tight-fix">
+.site-nav{padding:0 1rem!important;gap:.75rem!important;height:auto!important;min-height:56px!important;overflow:visible!important}
+.site-nav-logo{min-width:0!important;flex:0 0 auto!important}.site-nav-logo-text{font-size:13px!important;white-space:nowrap!important}
+.site-nav-links{margin-left:auto!important;gap:.2rem!important;display:flex!important;align-items:center!important;justify-content:flex-end!important;flex-wrap:nowrap!important;min-width:0!important;overflow:visible!important}
+.site-nav-link,.ac-drop-btn{font-size:10px!important;letter-spacing:.08em!important;padding:.36rem .48rem!important;white-space:nowrap!important;line-height:1.1!important}
+.ac-drop-menu{z-index:10001!important}
+@media(max-width:860px){.site-nav{padding:0 .65rem!important}.site-nav-links{gap:.1rem!important}.site-nav-link,.ac-drop-btn{font-size:9px!important;padding:.35rem .38rem!important}.site-nav-logo-text{font-size:12px!important}.ac-drop-menu{position:fixed!important;left:10px!important;right:10px!important;top:64px!important;width:auto!important;max-height:calc(100vh - 84px)!important;overflow:auto!important}}
+@media(max-width:520px){.site-nav-logo-text{font-size:11px!important}.site-nav-link:not(.keep){display:none!important}.ac-drop-btn{display:inline-flex!important}.nav-tabs{justify-content:flex-start!important}}
+</style>
+<style id="ww2-unified-nav-fix">
+.site-nav{position:sticky;top:0;z-index:10000;background:rgba(5,16,31,.88);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid rgba(255,255,255,.08);overflow:visible!important}
+.site-nav-inner{max-width:1180px!important;margin:0 auto!important;padding:.65rem 1rem!important;display:flex!important;align-items:center!important;gap:.8rem!important;min-height:54px!important;overflow:visible!important}
+.site-nav-logo{display:flex!important;align-items:center!important;gap:.55rem!important;text-decoration:none!important;flex:0 0 auto!important;min-width:0!important}
+.site-nav-logo svg{width:28px!important;height:28px!important;flex:0 0 auto!important}
+.site-nav-logo-text{font-family:'Oswald','Special Elite',sans-serif!important;font-size:13px!important;font-weight:600!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:#fff!important;white-space:nowrap!important}
+.site-nav-logo-text span{color:var(--brass,#c9a84c)!important}
+.site-nav-links{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:.25rem!important;margin-left:auto!important;flex-wrap:nowrap!important;min-width:0!important;overflow:visible!important}
+.site-nav-link,.ac-drop-btn{font-family:'Oswald',sans-serif!important;font-size:10px!important;font-weight:600!important;letter-spacing:.09em!important;text-transform:uppercase!important;color:rgba(255,255,255,.58)!important;text-decoration:none!important;padding:.38rem .55rem!important;border-radius:999px!important;line-height:1.1!important;white-space:nowrap!important;background:transparent!important;border:1px solid transparent!important;cursor:pointer!important}
+.site-nav-link:hover,.site-nav-link.active,.site-nav-link[aria-current="page"],.ac-drop-btn:hover{color:var(--brass2,#e8c76a)!important;background:rgba(201,168,76,.08)!important;border-color:rgba(201,168,76,.18)!important}
+.ac-drop{position:relative!important;display:inline-flex!important;overflow:visible!important;flex:0 0 auto!important}.ac-drop-caret{font-size:.8em;opacity:.75;margin-left:.2rem}.ac-drop-menu{display:none;position:absolute;top:calc(100% + 10px);left:0;z-index:10050;width:min(92vw,820px);max-height:calc(100vh - 90px);overflow:auto;background:rgba(7,16,29,.98);border:1px solid rgba(201,168,76,.25);box-shadow:0 24px 80px rgba(0,0,0,.55);border-radius:8px;padding:1rem;backdrop-filter:blur(18px)}.ac-drop.open .ac-drop-menu{display:block!important}.ac-drop-grid{display:grid;grid-template-columns:repeat(3,minmax(180px,1fr));gap:.75rem}.ac-drop-section{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:.75rem}.ac-drop-heading{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass2,#e8c76a);margin-bottom:.45rem}.ac-drop-item{display:flex;align-items:center;justify-content:space-between;gap:.5rem;text-decoration:none;color:rgba(255,255,255,.82);font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.04em;padding:.45rem .35rem;border-radius:4px}.ac-drop-item:hover{background:rgba(201,168,76,.09);color:#fff}.ac-drop-disabled{opacity:.5;cursor:default}.ac-drop-badge{font-size:9px;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:.08rem .35rem;color:rgba(255,255,255,.55)}.ac-drop-badge.live{color:#7fd39a;border-color:rgba(127,211,154,.35)}.ac-drop-badge.soon,.ac-drop-badge.plan{color:#d7b65d;border-color:rgba(215,182,93,.35)}
+@media(max-width:760px){.site-nav-inner{padding:.6rem .75rem!important;gap:.55rem!important}.site-nav-logo-text{font-size:11px!important;letter-spacing:.1em!important}.site-nav-links{gap:.12rem!important}.site-nav-link,.ac-drop-btn{font-size:9px!important;padding:.35rem .42rem!important}.ac-drop{position:static!important}.ac-drop-menu{position:fixed!important;left:10px!important;right:10px!important;top:64px!important;width:auto!important;max-height:calc(100vh - 84px)!important;padding:.8rem!important}.ac-drop-grid{grid-template-columns:1fr!important;gap:.55rem!important}.ac-drop-section{padding:.65rem!important}}
+@media(max-width:520px){.site-nav-link{display:none!important}.site-nav-link.keep-mobile,.site-nav-link.paint-nav-link{display:inline-flex!important}.site-nav-logo-text{font-size:10px!important}.site-nav-logo svg{width:24px!important;height:24px!important}}
+</style>
+<style id="ww2-nav-restore-readable">
+/* Final navigation readability fix: full-width, not tiny/centred. */
+.site-nav{width:100%!important;max-width:none!important;margin:0!important;padding:0 1.75rem!important;min-height:62px!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:1rem!important;box-sizing:border-box!important;overflow:visible!important;z-index:10000!important;}
+.site-nav-inner{width:100%!important;max-width:none!important;margin:0!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:1rem!important;min-height:62px!important;box-sizing:border-box!important;overflow:visible!important;}
+.site-nav-logo,.nav-logo{display:flex!important;align-items:center!important;gap:.6rem!important;text-decoration:none!important;flex:0 0 auto!important;min-width:0!important;}
+.site-nav-logo svg,.nav-logo svg{width:30px!important;height:30px!important;flex:0 0 auto!important;}
+.site-nav-logo-text,.nav-logo-text{font-family:'Oswald',sans-serif!important;font-size:15px!important;font-weight:600!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:#fff!important;white-space:nowrap!important;}
+.site-nav-logo-text span,.nav-logo-text span{color:var(--brass,#c9a84c)!important;}
+.site-nav-links,.nav-links{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:.28rem!important;margin-left:auto!important;flex-wrap:nowrap!important;overflow:visible!important;min-width:0!important;}
+.site-nav-link,.nav-link,.ac-drop-btn{font-family:'Oswald',sans-serif!important;font-size:11px!important;font-weight:600!important;letter-spacing:.105em!important;text-transform:uppercase!important;text-decoration:none!important;padding:.44rem .72rem!important;line-height:1.1!important;white-space:nowrap!important;border-radius:4px!important;}
+.ac-drop{position:relative!important;display:inline-flex!important;overflow:visible!important;flex:0 0 auto!important;}
+.ac-drop-menu{z-index:10050!important;}
+@media(max-width:820px){.site-nav,.nav{padding:0 .8rem!important}.site-nav-inner{min-height:58px!important}.site-nav-logo-text,.nav-logo-text{font-size:12px!important;letter-spacing:.1em!important}.site-nav-link,.nav-link,.ac-drop-btn{font-size:9px!important;padding:.36rem .45rem!important}.site-nav-links,.nav-links{gap:.08rem!important}.ac-drop-menu{position:fixed!important;left:10px!important;right:10px!important;top:64px!important;width:auto!important;max-height:calc(100vh - 84px)!important;overflow:auto!important}.ac-drop-grid{grid-template-columns:1fr!important;}}
+@media(max-width:520px){.site-nav-link:not(.paint-nav-link):not(.keep-mobile),.nav-link:not(.paint-nav-link):not(.keep-mobile){display:none!important}.paint-nav-link,.keep-mobile{display:inline-flex!important}.site-nav-logo svg,.nav-logo svg{width:25px!important;height:25px!important}.site-nav-logo-text,.nav-logo-text{font-size:10.5px!important}.ac-drop-btn{display:inline-flex!important}}
+</style>
+<style id="ww2-nav-position-final-fix">
+/* Final nav positioning fix: keep primary navigation beside the logo, not pushed to the far right. */
+.site-nav,.nav{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  box-sizing:border-box!important;
+  overflow:visible!important;
+}
+.site-nav-inner,.nav-inner{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:.65rem 1.25rem!important;
+  min-height:58px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:1rem!important;
+  box-sizing:border-box!important;
+  overflow:visible!important;
+}
+.site-nav-logo,.nav-logo{
+  flex:0 0 auto!important;
+  margin:0 1.2rem 0 0!important;
+}
+.site-nav-links,.nav-links{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:.55rem!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  flex:0 1 auto!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:calc(100vw - 260px)!important;
+  overflow:visible!important;
+  flex-wrap:nowrap!important;
+}
+.site-nav-link,.nav-link,.ac-drop-btn{
+  font-size:11px!important;
+  letter-spacing:.105em!important;
+  padding:.42rem .7rem!important;
+  white-space:nowrap!important;
+}
+.ac-drop{position:relative!important;flex:0 0 auto!important;}
+.ac-drop-menu{z-index:10050!important;}
+@media(max-width:820px){
+  .site-nav-inner,.nav-inner{padding:.55rem .75rem!important;gap:.55rem!important;}
+  .site-nav-logo,.nav-logo{margin-right:.35rem!important;}
+  .site-nav-logo-text,.nav-logo-text{font-size:11px!important;letter-spacing:.09em!important;}
+  .site-nav-links,.nav-links{gap:.2rem!important;max-width:none!important;}
+  .site-nav-link,.nav-link,.ac-drop-btn{font-size:9px!important;letter-spacing:.08em!important;padding:.35rem .42rem!important;}
+}
+@media(max-width:560px){
+  .site-nav-link:not(.paint-nav-link):not(.keep-mobile),.nav-link:not(.paint-nav-link):not(.keep-mobile){display:none!important;}
+  .paint-nav-link,.keep-mobile,.ac-drop-btn{display:inline-flex!important;}
+  .site-nav-logo-text,.nav-logo-text{font-size:10px!important;}
+  .site-nav-logo svg,.nav-logo svg{width:24px!important;height:24px!important;}
+}
+
+/* FIX: aircraft section tabs should sit as a centered secondary nav on desktop, not be shoved hard left. Mobile still scrolls from the left. */
+.plane-tab-bar .nav-tabs{
+  justify-content:center!important;
+  padding:0 1rem!important;
+}
+@media(max-width:760px){
+  .plane-tab-bar .nav-tabs{
+    justify-content:flex-start!important;
+    padding:0 .75rem!important;
+  }
+}
+
+</style>
+<style id="ww2-target-top-navigation-final">
+/* Target top navigation layout: logo left, Aircraft / Paint Codes / Techniques / Articles right. */
+.site-nav{
+  position:sticky!important;
+  top:0!important;
+  z-index:10000!important;
+  width:100%!important;
+  min-height:64px!important;
+  margin:0!important;
+  padding:0!important;
+  display:block!important;
+  background:#07111f!important;
+  border-bottom:1px solid rgba(201,168,76,.38)!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+  box-sizing:border-box!important;
+}
+.site-nav-inner{
+  width:100%!important;
+  max-width:none!important;
+  min-height:64px!important;
+  height:64px!important;
+  margin:0!important;
+  padding:0 22px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:24px!important;
+  box-sizing:border-box!important;
+  overflow:visible!important;
+}
+.site-nav-logo{
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  flex:0 0 auto!important;
+  text-decoration:none!important;
+  min-width:0!important;
+  margin:0!important;
+}
+.site-nav-logo svg{width:30px!important;height:30px!important;flex:0 0 auto!important;display:block!important;}
+.site-nav-logo-text{
+  font-family:'Oswald',sans-serif!important;
+  font-size:15px!important;
+  font-weight:700!important;
+  letter-spacing:.16em!important;
+  text-transform:uppercase!important;
+  color:#fff!important;
+  white-space:nowrap!important;
+  line-height:1!important;
+}
+.site-nav-logo-text span{color:var(--brass,#c9a84c)!important;}
+.site-nav-links{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:34px!important;
+  margin-left:auto!important;
+  flex:0 1 auto!important;
+  width:auto!important;
+  max-width:none!important;
+  min-width:0!important;
+  flex-wrap:nowrap!important;
+  overflow:visible!important;
+}
+.site-nav-link,.ac-drop-btn{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:auto!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  font-family:'Oswald',sans-serif!important;
+  font-size:11px!important;
+  font-weight:700!important;
+  letter-spacing:.13em!important;
+  text-transform:uppercase!important;
+  line-height:1!important;
+  color:rgba(255,255,255,.58)!important;
+  text-decoration:none!important;
+  white-space:nowrap!important;
+  cursor:pointer!important;
+}
+.site-nav-link:hover,.ac-drop-btn:hover,.site-nav-link.active,.site-nav-link[aria-current="page"]{
+  color:var(--brass2,#e8c76a)!important;
+  background:transparent!important;
+  border:0!important;
+}
+.ac-drop{position:relative!important;display:inline-flex!important;align-items:center!important;flex:0 0 auto!important;overflow:visible!important;}
+.ac-drop-caret{font-size:9px!important;margin-left:6px!important;opacity:.72!important;line-height:1!important;}
+.ac-drop-menu{
+  display:none;
+  position:absolute!important;
+  top:calc(100% + 18px)!important;
+  right:0!important;
+  left:auto!important;
+  width:min(92vw,840px)!important;
+  max-height:calc(100vh - 92px)!important;
+  overflow:auto!important;
+  z-index:10050!important;
+  background:rgba(7,16,29,.98)!important;
+  border:1px solid rgba(201,168,76,.28)!important;
+  border-radius:8px!important;
+  box-shadow:0 24px 80px rgba(0,0,0,.62)!important;
+  padding:1rem!important;
+}
+.ac-drop.open .ac-drop-menu{display:block!important;}
+@media(max-width:820px){
+  .site-nav-inner{height:auto!important;min-height:58px!important;padding:0 12px!important;gap:12px!important;}
+  .site-nav-logo svg{width:26px!important;height:26px!important;}
+  .site-nav-logo-text{font-size:12px!important;letter-spacing:.12em!important;}
+  .site-nav-links{gap:14px!important;}
+  .site-nav-link,.ac-drop-btn{font-size:9.5px!important;letter-spacing:.1em!important;}
+  .ac-drop-menu{position:fixed!important;left:10px!important;right:10px!important;top:64px!important;width:auto!important;max-height:calc(100vh - 84px)!important;}
+}
+@media(max-width:520px){
+  .site-nav-inner{padding:0 9px!important;gap:8px!important;}
+  .site-nav-logo-text{font-size:10.5px!important;letter-spacing:.09em!important;}
+  .site-nav-links{gap:9px!important;}
+  .site-nav-link,.ac-drop-btn{font-size:8.5px!important;letter-spacing:.075em!important;}
+  .site-nav-logo svg{width:24px!important;height:24px!important;}
+}
+
+
+/* === FINAL TOP NAV DROPDOWN FIX ===
+   Keeps logo left and Aircraft / Paint Codes / Techniques / Articles right.
+   Dropdown works by click JS, focus-within and hover fallback. */
+.site-nav,.nav{
+  position:sticky!important;top:0!important;z-index:2147483000!important;
+  overflow:visible!important;background:rgba(5,16,31,.92)!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+}
+.site-nav-inner,.nav-inner{
+  width:100%!important;max-width:none!important;margin:0!important;
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  gap:1rem!important;overflow:visible!important;
+}
+.site-nav-logo,.nav-logo{display:flex!important;align-items:center!important;gap:.6rem!important;flex:0 0 auto!important;text-decoration:none!important;min-width:0!important;}
+.site-nav-logo-text,.nav-logo-text{white-space:nowrap!important;}
+.site-nav-links,.nav-links{
+  margin-left:auto!important;display:flex!important;align-items:center!important;justify-content:flex-end!important;
+  gap:1.25rem!important;overflow:visible!important;flex-wrap:nowrap!important;min-width:0!important;
+}
+.site-nav-link,.nav-link,.ac-drop-btn{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  font-family:'Oswald',sans-serif!important;font-size:11px!important;font-weight:600!important;
+  letter-spacing:.12em!important;text-transform:uppercase!important;text-decoration:none!important;
+  color:rgba(255,255,255,.72)!important;background:transparent!important;border:0!important;
+  padding:.45rem 0!important;border-radius:0!important;line-height:1.1!important;white-space:nowrap!important;cursor:pointer!important;
+}
+.site-nav-link:hover,.nav-link:hover,.ac-drop-btn:hover{color:var(--brass2,#e8c76a)!important;background:transparent!important;}
+.ac-drop{position:relative!important;display:inline-flex!important;align-items:center!important;overflow:visible!important;z-index:2147483001!important;flex:0 0 auto!important;}
+.ac-drop-caret{font-size:.75em!important;margin-left:.35rem!important;color:var(--brass,#c9a84c)!important;transition:transform .16s ease!important;}
+.ac-drop.open .ac-drop-caret,.ac-drop:focus-within .ac-drop-caret{transform:rotate(180deg)!important;}
+.ac-drop-menu{
+  display:block!important;position:absolute!important;top:calc(100% + 14px)!important;right:0!important;left:auto!important;
+  width:min(860px,calc(100vw - 32px))!important;max-height:min(78vh,620px)!important;
+  overflow:auto!important;background:#07101f!important;border:1px solid rgba(201,168,76,.38)!important;
+  border-radius:12px!important;box-shadow:0 28px 80px rgba(0,0,0,.86)!important;padding:1rem!important;
+  opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(-8px)!important;
+  transition:opacity .14s ease,transform .14s ease,visibility .14s ease!important;z-index:2147483002!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+}
+.ac-drop.open .ac-drop-menu,.ac-drop:focus-within .ac-drop-menu,.ac-drop:hover .ac-drop-menu{
+  opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:translateY(0)!important;
+}
+.ac-drop-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:.8rem!important;}
+.ac-drop-section{background:rgba(255,255,255,.04)!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:8px!important;padding:.75rem!important;min-width:0!important;}
+.ac-drop-heading{font-family:'Oswald',sans-serif!important;font-size:10px!important;letter-spacing:.18em!important;text-transform:uppercase!important;color:var(--brass2,#e8c76a)!important;margin:0 0 .5rem!important;padding:0 0 .4rem!important;border-bottom:1px solid rgba(201,168,76,.18)!important;}
+.ac-drop-item{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:.7rem!important;padding:.55rem .55rem!important;border-radius:6px!important;background:transparent!important;color:rgba(255,255,255,.86)!important;text-decoration:none!important;white-space:normal!important;font-family:'Oswald',sans-serif!important;font-size:11px!important;letter-spacing:.08em!important;text-transform:uppercase!important;line-height:1.25!important;}
+.ac-drop-item:hover,.ac-drop-item.current{background:rgba(201,168,76,.14)!important;color:#f1d073!important;}
+.ac-drop-disabled{opacity:.55!important;cursor:default!important;}
+.ac-drop-disabled:hover{background:transparent!important;color:rgba(255,255,255,.86)!important;}
+.ac-drop-badge{flex-shrink:0!important;font-size:8px!important;padding:2px 6px!important;border-radius:999px!important;letter-spacing:.08em!important;text-transform:uppercase!important;border:1px solid rgba(255,255,255,.16)!important;color:rgba(255,255,255,.62)!important;}
+.ac-drop-badge.live{color:#8fe0a7!important;border-color:rgba(143,224,167,.35)!important;background:rgba(143,224,167,.10)!important;}
+.ac-drop-badge.soon,.ac-drop-badge.plan{color:#d9bd65!important;border-color:rgba(217,189,101,.35)!important;background:rgba(217,189,101,.10)!important;}
+@media(max-width:820px){
+  .site-nav,.nav{padding-left:.75rem!important;padding-right:.75rem!important;}
+  .site-nav-inner,.nav-inner{min-height:58px!important;gap:.75rem!important;}
+  .site-nav-logo-text,.nav-logo-text{font-size:11px!important;letter-spacing:.1em!important;}
+  .site-nav-logo svg,.nav-logo svg{width:26px!important;height:26px!important;}
+  .site-nav-links,.nav-links{gap:.65rem!important;}
+  .site-nav-link,.nav-link,.ac-drop-btn{font-size:9px!important;letter-spacing:.08em!important;}
+  .ac-drop{position:static!important;}
+  .ac-drop-menu{position:fixed!important;left:10px!important;right:10px!important;top:64px!important;width:auto!important;max-height:calc(100vh - 84px)!important;padding:.85rem!important;}
+  .ac-drop-grid{grid-template-columns:1fr!important;gap:.65rem!important;}
+}
+@media(max-width:520px){
+  .site-nav-links,.nav-links{gap:.45rem!important;}
+  .site-nav-logo-text,.nav-logo-text{font-size:10px!important;letter-spacing:.08em!important;}
+  .site-nav-link,.nav-link,.ac-drop-btn{font-size:8.4px!important;letter-spacing:.065em!important;}
+  .site-nav-link:not(.paint-nav-link):not(.keep-mobile),.nav-link:not(.paint-nav-link):not(.keep-mobile){display:none!important;}
+  .paint-nav-link,.keep-mobile,.ac-drop-btn{display:inline-flex!important;}
+}
+</style>
+<style id="p51-usaaf-theme-override">
+:root{
+  --brass:#88aef0;
+  --brass2:#dce8ff;
+  --gold3:#5f86d7;
+  --raf-sky:#88aef0;
+}
+.aircraft-hero{
+  background:linear-gradient(135deg,rgba(7,18,42,.98),rgba(16,36,88,.92))!important;
+  border:1px solid rgba(136,174,240,.22)!important;
+  box-shadow:0 24px 70px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03)!important;
+}
+.aircraft-hero::after{color:rgba(255,255,255,.04)!important;}
+.hero-roundel{
+  width:66px!important;
+  height:44px!important;
+  border-radius:8px!important;
+  overflow:visible!important;
+  border:2px solid rgba(255,255,255,.18)!important;
+  background:#1d4385!important;
+  box-shadow:0 0 18px rgba(29,67,133,.45)!important;
+}
+.hero-roundel::before{
+  content:'★'!important;
+  position:absolute!important;
+  inset:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  font-size:24px!important;
+  line-height:1!important;
+  color:#fff!important;
+  background:none!important;
+  z-index:2!important;
+}
+.hero-roundel::after{
+  content:''!important;
+  position:absolute!important;
+  left:-18px!important;
+  right:-18px!important;
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  height:14px!important;
+  background:linear-gradient(90deg,#fff 0 32%, transparent 32% 40%, transparent 60% 68%, #fff 68% 100%)!important;
+  z-index:1!important;
+}
+.hero-eyebrow,.section-label,.sec-label,.wa-ref-kicker,.wa-ref-link{color:var(--brass2)!important;}
+.wa-ref-card:hover{border-color:rgba(136,174,240,.55)!important;}
+#tab-walkaround [style*="color:var(--brass)"],
+#tab-walkaround [style*="color:var(--brass2)"]{color:var(--brass2)!important;}
+#tab-walkaround [style*="rgba(201,168,76,.3)"]{border-color:rgba(136,174,240,.32)!important;}
+#tab-walkaround [style*="rgba(201,168,76,.08)"]{background:rgba(136,174,240,.08)!important;}
+#tab-walkaround [style*="rgba(201,168,76,.06)"]{background:rgba(136,174,240,.06)!important;}
+#tab-walkaround [style*="rgba(201,168,76,.15)"]{border-color:rgba(136,174,240,.18)!important;}
+.map-filter-btn.on,.fb.on,.nav-tab.active{border-color:rgba(136,174,240,.35)!important; background:rgba(136,174,240,.10)!important; color:#fff!important;}
+</style>
+<style id="p51-wider-theatre-map-visual-fix">
+#leaflet-map{height:680px!important;min-height:680px!important;}
+.raf-map-shell{grid-template-columns:minmax(620px,2fr) minmax(320px,.82fr)!important;gap:1rem!important;}
+.p51-theatre-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem;margin:.9rem 0 1rem;}
+.p51-theatre-card{background:linear-gradient(150deg,rgba(22,44,92,.72),rgba(7,16,31,.82));border:1px solid rgba(136,174,240,.20);border-left:4px solid var(--brass);border-radius:6px;padding:.8rem .9rem;box-shadow:0 10px 28px rgba(0,0,0,.24);}
+.p51-theatre-card b{display:block;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem;}
+.p51-theatre-card span{display:block;font-size:13px;color:rgba(255,255,255,.68);line-height:1.45;}
+@media(max-width:900px){.raf-map-shell{grid-template-columns:1fr!important;}#leaflet-map{height:560px!important;min-height:560px!important;}}
+</style>
+
+<style id="zero-ijn-theme-and-page-fixes">
+:root{
+  --brass:#d2342a;
+  --brass2:#ffe7df;
+  --gold3:#b72b22;
+  --raf-dark:#10110d;
+  --raf-mid:#1b2419;
+  --raf-light:#34422c;
+  --raf-sky:#d2342a;
+  --ijn-red:#d2342a;
+  --ijn-cream:#f0ead8;
+  --ijn-green:#28331f;
+  --ijn-amber:#c9a15a;
+}
+body{background:linear-gradient(180deg,#0b0f0a,#13170f 60%,#080908)!important;}
+.aircraft-hero{background:radial-gradient(circle at 82% 22%,rgba(210,52,42,.16),transparent 22%),radial-gradient(circle at 68% 72%,rgba(201,161,90,.12),transparent 26%),linear-gradient(135deg,rgba(13,16,10,.98),rgba(38,50,31,.94))!important;border:1px solid rgba(210,52,42,.22)!important;box-shadow:0 24px 70px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.035)!important;}
+.aircraft-hero::after{content:'IJN'!important;color:rgba(255,255,255,.045)!important;letter-spacing:.12em!important;}
+.hero-roundel{width:56px!important;height:56px!important;border-radius:50%!important;overflow:hidden!important;border:2px solid rgba(255,255,255,.22)!important;background:#fff!important;box-shadow:0 0 18px rgba(210,52,42,.42)!important;}
+.hero-roundel::before{content:''!important;position:absolute!important;inset:11px!important;border-radius:50%!important;background:#d2342a!important;z-index:2!important;}
+.hero-roundel::after{display:none!important;}
+.hero-eyebrow,.section-label,.sec-label,.wa-ref-kicker,.wa-ref-link{color:var(--brass2)!important;}
+.hero-stat-val{color:#ffe2d8!important}.filter-bar{top:58px!important}.fb.on,.map-filter-btn.on,.nav-tab.active{border-color:rgba(210,52,42,.42)!important;background:rgba(210,52,42,.14)!important;color:#fff!important}.plane-tab-bar .nav-tab.active{border-bottom-color:#d2342a!important;background:rgba(210,52,42,.12)!important;color:#fff!important}.card-circle{border-color:rgba(210,52,42,.45)!important;color:#ffe7df!important;background:rgba(210,52,42,.10)!important}.sq-card:hover,.sq-card.active,.detail-panel{border-color:rgba(210,52,42,.58)!important}.detail-panel{box-shadow:0 18px 44px rgba(0,0,0,.45),0 0 24px rgba(210,52,42,.14)!important}.dp-top{border-bottom-color:rgba(210,52,42,.48)!important}.close-btn,.hb-outline,.hb-gold,.hb-raf{border-color:rgba(210,52,42,.36)!important;color:#ffe7df!important}.hb-outline:hover,.hb-gold:hover,.hb-raf:hover{background:rgba(210,52,42,.12)!important}.info-box{border-left-color:#d2342a!important}.t-blue{background:rgba(210,52,42,.16)!important;color:#ffd4cc!important;border-color:rgba(210,52,42,.25)!important}.t-green{background:rgba(70,96,48,.28)!important;color:#d8e4c0!important;border-color:rgba(70,96,48,.4)!important}.t-amber{background:rgba(201,161,90,.16)!important;color:#ffe3ae!important;border-color:rgba(201,161,90,.28)!important}.t-coral{background:rgba(142,55,43,.25)!important;color:#ffb0a8!important;border-color:rgba(210,52,42,.35)!important}
+.zero-compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.75rem}.zero-step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.75rem}.zero-step{background:rgba(21,39,68,.40);border:1px solid rgba(255,255,255,.09);border-left:3px solid rgba(210,52,42,.62);padding:.8rem;border-radius:4px}.zero-step b{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.09em;color:#ffe7df;font-size:12px}.zero-step p{font-size:14px;line-height:1.55;color:rgba(255,255,255,.66);margin-top:.25rem}.zero-linkrow{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.6rem}.wa-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.85rem}.wa-card{background:linear-gradient(160deg,rgba(22,29,18,.86),rgba(8,10,7,.88));border:1px solid rgba(255,255,255,.10);border-radius:5px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 24px rgba(0,0,0,.24)}.wa-card img{width:100%;height:150px;object-fit:cover;display:block;background:#0a1628}.wa-body{padding:.8rem}.wa-kicker{font-family:'Oswald',sans-serif;font-size:8px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#ffe7df;margin-bottom:.25rem}.wa-title{font-family:'Special Elite',cursive;font-size:16px;color:#fff;margin-bottom:.25rem}.wa-desc{font-size:13px;line-height:1.48;color:rgba(255,255,255,.64)}.wa-check{margin-top:.45rem;padding:.45rem .55rem;background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.07);border-radius:3px;font-size:12px;line-height:1.45;color:rgba(255,255,255,.70)}.wa-btn{font-family:'Oswald',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:3px;padding:.36rem .62rem;border:1px solid rgba(210,52,42,.35);color:#ffe7df;background:rgba(210,52,42,.12);display:inline-flex;margin-top:.45rem}.wa-btn:hover{background:rgba(210,52,42,.20)}.raf-map-shell{grid-template-columns:minmax(560px,2fr) minmax(280px,.8fr)!important}@media(max-width:860px){.raf-map-shell{grid-template-columns:1fr!important}#leaflet-map{height:430px!important}.sq-grid{grid-template-columns:1fr}.wa-card img{height:135px}}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409" crossorigin="anonymous"></script>
+</head><body>
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="site-nav-logo" aria-label="WW2 Modeller home">
+      <svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#003087"/><circle cx="15" cy="15" r="10" fill="#FFD700"/><circle cx="15" cy="15" r="6" fill="#CF142B"/><circle cx="15" cy="15" r="2.2" fill="#fff"/></svg>
+      <span class="site-nav-logo-text">WW2 <span>Modeller</span></span>
+    </a>
+    <div class="site-nav-links">
+      <div class="ac-drop" id="acDrop">
+        <button type="button" class="ac-drop-btn" aria-haspopup="true" aria-expanded="false">Aircraft <span class="ac-drop-caret">▼</span></button>
+        <div class="ac-drop-menu" role="menu" aria-label="Aircraft navigation">
+          <div class="ac-drop-grid">
+            <div class="ac-drop-section"><div class="ac-drop-heading">Allied fighters</div>
+              <a href="hurricane_paradise.html" class="ac-drop-item">Hawker Hurricane <span class="ac-drop-badge live">Live</span></a>
+              <a href="spitfire_paradise.html" class="ac-drop-item">Supermarine Spitfire <span class="ac-drop-badge live">Live</span></a>
+              <a href="p51_paradise.html" class="ac-drop-item">North American P-51 Mustang <span class="ac-drop-badge live">Live</span></a>
+              <span class="ac-drop-item ac-drop-disabled">Republic P-47 Thunderbolt <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">Lockheed P-38 Lightning <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">Hawker Typhoon <span class="ac-drop-badge plan">Planned</span></span>
+            </div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Allied bombers</div>
+              <a href="lancaster_paradise.html" class="ac-drop-item">Avro Lancaster <span class="ac-drop-badge live">Live</span></a>
+              <a href="mosquito_paradise.html" class="ac-drop-item">de Havilland Mosquito <span class="ac-drop-badge soon">Hub</span></a>
+              <a href="b17_paradise.html" class="ac-drop-item">B-17 Flying Fortress <span class="ac-drop-badge live">Live</span></a>
+              <span class="ac-drop-item ac-drop-disabled">B-24 Liberator <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">B-25 Mitchell <span class="ac-drop-badge plan">Planned</span></span>
+            </div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Axis fighters</div>
+              <a href="bf109_paradise.html" class="ac-drop-item">Messerschmitt Bf 109 <span class="ac-drop-badge soon">Hub</span></a>
+              <a href="fw190_paradise.html" class="ac-drop-item">Focke-Wulf Fw 190 <span class="ac-drop-badge live">Live</span></a>
+              <a href="zero_paradise.html" class="ac-drop-item current">Mitsubishi A6M Zero <span class="ac-drop-badge live">Live</span></a>
+              <span class="ac-drop-item ac-drop-disabled">Macchi C.202 <span class="ac-drop-badge plan">Planned</span></span>
+            </div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Axis bombers / attack</div>
+              <span class="ac-drop-item ac-drop-disabled">Ju 87 Stuka <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">Ju 88 <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">He 111 <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">Do 17 <span class="ac-drop-badge plan">Planned</span></span>
+            </div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Specialist aircraft</div>
+              <a href="mosquito_paradise.html" class="ac-drop-item">Mosquito Night Fighter <span class="ac-drop-badge soon">Hub</span></a>
+              <span class="ac-drop-item ac-drop-disabled">Bristol Beaufighter <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">PBY Catalina <span class="ac-drop-badge plan">Planned</span></span>
+              <span class="ac-drop-item ac-drop-disabled">Short Sunderland <span class="ac-drop-badge plan">Planned</span></span>
+            </div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Research tools</div>
+              <a href="paint-codes.html" class="ac-drop-item">Paint Codes <span class="ac-drop-badge live">Guide</span></a>
+              <a href="techniques-bank.html" class="ac-drop-item">Techniques Bank <span class="ac-drop-badge live">Guide</span></a>
+              <a href="articles.html" class="ac-drop-item">Articles Library <span class="ac-drop-badge live">Read</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="paint-codes.html" class="site-nav-link paint-nav-link keep-mobile">Paint Codes</a>
+      <a href="techniques-bank.html" class="site-nav-link">Techniques</a>
+      <a href="articles.html" class="site-nav-link">Articles</a>
+    </div>
+  </div>
+</nav>
+<div class="plane-tab-bar"><div class="nav-tabs">
+<button class="nav-tab active" onclick="switchTab('squadrons',this)">Units</button><button class="nav-tab" onclick="switchTab('build',this)">Build</button><button class="nav-tab" onclick="switchTab('reference',this)">Reference</button><button class="nav-tab" onclick="switchTab('stories',this)">Stories</button><button class="nav-tab" onclick="switchTab('media',this)">Media</button><button class="nav-tab" onclick="switchTab('walkaround',this)">Walkaround</button>
+</div></div>
+<section class="aircraft-hero"><div class="hero-roundel"></div><div><div class="hero-eyebrow">Imperial Japanese Navy Air Service · Carrier and island fighter war</div><h1 class="hero-title">Mitsubishi A6M Zero Paradise</h1><div class="hero-sub">A6M2 · A6M3 · A6M5 · IJN units, markings, colours and modelling references</div></div><div class="hero-stats"><div class="hero-stat"><div class="hero-stat-val">12</div><div class="hero-stat-lbl">Units</div></div><div class="hero-stat"><div class="hero-stat-val">7</div><div class="hero-stat-lbl">Walkaround areas</div></div><div class="hero-stat"><div class="hero-stat-val">IJN</div><div class="hero-stat-lbl">Theme</div></div></div></section>
+<div class="filter-bar" id="sqn-bar"><label>Filter</label><button class="fb on" data-filter="all" onclick="filterUnits('all',this)">All</button><button class="fb" data-filter="carrier" onclick="filterUnits('carrier',this)">Carrier</button><button class="fb" data-filter="land" onclick="filterUnits('land',this)">Rabaul / land-based</button><button class="fb" data-filter="late" onclick="filterUnits('late',this)">Late war</button><button class="fb" data-filter="home" onclick="filterUnits('home',this)">Home / test</button><span class="sq-count" id="sq-count">12 units</span></div>
+<div class="main-wrap"><main class="main-content">
+<div class="tab-panel active" id="tab-squadrons"><div class="section-label">IJN Zero units and carrier fighter groups</div><div class="info-box">The A6M Zero began the Pacific War as a carrier-based long-range fighter and later became the hard-worked defender of island bases, Rabaul, the Philippines and the Home Islands. Cards below use IJN terminology — carrier fighter units and Kōkūtai — rather than Western squadron/group wording.</div><div class="sq-grid" id="sq-grid"><div class="sq-card" id="card-akagi" data-id="akagi" data-group="carrier" onclick="openUnit('akagi')">
+      <div class="card-hd"><div class="card-circle">Akagi</div><div><div class="card-name">Akagi Fighter Unit</div><div class="card-base">IJN Akagi · Kure / Pearl Harbor strike force</div></div></div>
+      <div class="card-body"><div class="card-stats"><div class="stat"><div class="stat-val">A6M2</div><div class="stat-lbl">Variant</div></div><div class="stat"><div class="stat-val">IJN</div><div class="stat-lbl">Service</div></div><div class="stat"><div class="stat-val">零</div><div class="stat-lbl">Zero</div></div></div><div class="ops-text" style="font-size:13px;line-height:1.45;margin-bottom:.45rem;color:rgba(255,255,255,.66)">Pearl Harbor carrier Zero with clean early-war finish and red carrier identity</div><div class="card-tags"><span class="tag t-blue">Pearl Harbor / Indian Ocean / Midway</span><span class="tag t-amber">A6M2 Model 21</span><span class="tag t-green">1st Carrier Division / Kido Butai</span></div></div>
+    </div><div class="sq-card" id="card-kaga" data-id="kaga" data-group="carrier" onclick="openUnit('kaga')">
+      <div class="card-hd"><div class="card-circle">Kaga</div><div><div class="card-name">Kaga Fighter Unit</div><div class="card-base">IJN Kaga · Sasebo / Kido Butai</div></div></div>
+      <div class="card-body"><div class="card-stats"><div class="stat"><div class="stat-val">A6M2</div><div class="stat-lbl">Variant</div></div><div class="stat"><div class="stat-val">IJN</div><div class="stat-lbl">Service</div></div><div class="stat"><div class="stat-val">零</div><div class="stat-lbl">Zero</div></div></div><div class="ops-text" style="font-size:13px;line-height:1.45;margin-bottom:.45rem;color:rgba(255,255,255,.66)">A classic Pearl Harbor Zero subject with carrier code and early-war restrained weathering</div><div class="card-tags"><span class="tag t-blue">Pearl Harbor / Midway</span><span class="tag t-amber">A6M2 Model 21</span><span class="tag t-green">1st Carrier Division / Kido Butai</span></div></div>
+    </div><div class="sq-card" id="card-soryu" data-id="soryu" data-group="carrier" onclick="openUnit('soryu')">
+      <div class="card-hd"><div class="card-circle">Sōryū</div><div><div class="card-name">Sōryū Fighter Unit</div><div class="card-base">IJN Sōryū · Yokosuka / Kido Butai</div></div></div>
+      <div class="card-body"><div class="card-stats"><div class="stat"><div class="stat-val">A6M2</div><div class="stat-lbl">Variant</div></div><div class="stat"><div class="stat-val">IJN</div><div class="stat-lbl">Service</div></div><div class="stat"><div class="stat-val">零</div><div class="stat-lbl">Zero</div></div></div><div class="ops-text" style="font-size:13px;line-height:1.45;margin-bottom:.45rem;color:rgba(255,255,255,.66)">Good Midway subject: clean carrier aircraft just before catastrophic combat losses</div><div class="card-tags"><span class="tag t-blue">Pearl Harbor / Wake / Midway</span><span class="tag t-amber">A6M2 Model 21</span><span class="tag t-green">2nd Carrier Division / Kido Butai</span></div></div>
+    </div><div class="sq-card" id="card-hiryu" data-id="hiryu" data-group="carrier" onclick="openUnit('hiryu')">
+      <div class="card-hd"><div class="card-circle">Hiryū</div><div><div class="card-name">Hiryū Fighter Unit</div><div class="card-base">IJN Hiryū · Yokosuka / Kido Butai</div></div></div>
+      <div class="card-body"><div class="card-stats"><div class="stat"><div class="stat-val">A6M2</div><div class="stat-lbl">Variant</div></div><div class="stat"><div class="stat-val">IJN</div><div class="stat-lbl">Service</div></div><div class="stat"><div class="stat-val">零</div><div class="stat-lbl">Zero</div></div></div><div class="ops-text" style="font-size:13px;line-height:1.45;margin-bottom:.45rem;color:rgba(255,255,255,.66)">Midway counterattack story angle; excellent carrier-deck diorama subject</div><div class="card-tags"><span class="tag t-blue">Pearl Harbor / Midway</span><span class="tag t-amber">A6M2 Model 21</span><span class="tag t-green">2nd Carrier Division / Kido Butai</span></div></div>
+    </div><div class="sq-card" id="card-tainan" data-id="tainan" data-group="land" onclick="openUnit('tainan')">
+      <div class="card-hd"><div class="card-circle">Tainan</div><div><div class="card-name">Tainan Kōkūtai</div><div class="card-base">Lae / Rabaul / South Pacific island fields</div></div></div>
+      <div class="card-body"><div class="card-stats"><div class="stat"><div class="stat-val">A6M2</div><div class="stat-lbl">Variant</div></div><div class="stat"><div class="stat-val">IJN</div><div class="stat-lbl">Service</div></div><div class="stat"><div class="stat-val">零</div><div class="stat-lbl">Zero</div></div></div><div class="ops-text" style="font-size:13px;line-height:1.45;margin-bottom:.45rem;color:rgba(255,255,255,.66)">The ace-heavy South Pacific Zero unit: faded paint, dust, fuel staining and hard-used aircraft</div><div class="card-tags"><span class="tag t-blue">New Guinea / Solomons</span><span class="tag t-amber">A6M2 Model 21, later A6M3</span><span class="tag t-green">11th Air Fleet</span></div></div>
+    </div><div class="sq-card" id="card-204ku" data-id="204ku" data-group="land" onclick="openUnit('204ku')">
+      <div class="card-hd"><div class="card-circle">204 Ku</div><div><div class="card-name">204th Kōkūtai</div><div class="card-base">Rabaul / Buin / Solomons</div></div></div>
+      <div class="card-body"><div class="card-stats"><div class="stat"><div class="stat-val">A6M2,</div><div class="stat-lbl">Variant</div></div><div class="stat"><div class="stat-val">IJN</div><div class="stat-lbl">Service</div></div><div class="stat"><div class="stat-val">零</div><div class="stat-lbl">Zero</div></div></div><div class="ops-text" style="font-size:13px;line-height:1.45;margin-bottom:.45rem;color:rgba(255,255,255,.66)">Late Solomons Zero: battered, faded, operationally exhausted island fighter</div><div class="card-tags"><span class="tag t-blue">Solomons / Rabaul defence</span><span class="tag t-amber">A6M2, A6M3, A6M5</span><span class="tag t-green">11th Air Fleet</span></div></div>
+    </div><div class="sq-card" id="card-251ku" data-id="251ku" data-group="land" onclick="openUnit('251ku')">
+      <div class="card-hd"><div class="card-circle">251 Ku</div><div><div class="card-name">251st Kōkūtai</div><div class="card-base">Rabaul / New Britain</div></div></div>
+      <div class="card-body"><div class="card-stats"><div class="stat"><div class="stat-val">A6M3</div><div class="stat-lbl">Variant</div></div><div class="stat"><div class="stat-val">IJN</div><div class="stat-lbl">Service</div></div><div class="stat"><div class="stat-val">零</div><div class="stat-lbl">Zero</div></div></div><div class="ops-text" style="font-size:13px;line-height:1.45;margin-bottom:.45rem;color:rgba(255,255,255,.66)">Ace connection plus late-war Zero finish; good A6M3/A6M5 subject</div><div class="card-tags"><span class="tag t-blue">Rabaul / Solomons</span><span class="tag t-amber">A6M3 and A6M5</span><span class="tag t-green">11th Air Fleet</span></div></div>
+    </div><div class="sq-card" id="card-252ku" data-id="252ku" data-group="land" onclick="openUnit('252ku')">
+      <div class="card-hd"><div class="card-circle">252 Ku</div><div><div class="card-name">252nd Kōkūtai</div><div class="card-base">Rabaul / later Truk and home defence detachments</div></div></div>
+      <div class="card-body"><div class="card-stats"><div class="stat"><div class="stat-val">A6M2,</div><div class="stat-lbl">Variant</div></div><div class="stat"><div class="stat-val">IJN</div><div class="stat-lbl">Service</div></div><div class="stat"><div class="stat-val">零</div><div class="stat-lbl">Zero</div></div></div><div class="ops-text" style="font-size:13px;line-height:1.45;margin-bottom:.45rem;color:rgba(255,255,255,.66)">Useful for Central Pacific island airfields and worn mixed-variant Zero lines</div><div class="card-tags"><span class="tag t-blue">Central Pacific / Rabaul / Home defence</span><span class="tag t-amber">A6M2, A6M3, A6M5</span><span class="tag t-green">IJN land-based fighter units</span></div></div>
+    </div><div class="sq-card" id="card-201ku" data-id="201ku" data-group="late" onclick="openUnit('201ku')">
+      <div class="card-hd"><div class="card-circle">201 Ku</div><div><div class="card-name">201st Kōkūtai</div><div class="card-base">Mabalacat / Philippines</div></div></div>
+      <div class="card-body"><div class="card-stats"><div class="stat"><div class="stat-val">A6M5</div><div class="stat-lbl">Variant</div></div><div class="stat"><div class="stat-val">IJN</div><div class="stat-lbl">Service</div></div><div class="stat"><div class="stat-val">零</div><div class="stat-lbl">Zero</div></div></div><div class="ops-text" style="font-size:13px;line-height:1.45;margin-bottom:.45rem;color:rgba(255,255,255,.66)">Late-war Zero with difficult history: special attack context, heavy wear and austere base conditions</div><div class="card-tags"><span class="tag t-blue">Philippines / Kamikaze operations</span><span class="tag t-amber">A6M5 and older A6M variants</span><span class="tag t-green">1st Air Fleet / Philippines</span></div></div>
+    </div><div class="sq-card" id="card-302ku" data-id="302ku" data-group="late" onclick="openUnit('302ku')">
+      <div class="card-hd"><div class="card-circle">302 Ku</div><div><div class="card-name">302nd Kōkūtai</div><div class="card-base">Atsugi</div></div></div>
+      <div class="card-body"><div class="card-stats"><div class="stat"><div class="stat-val">A6M5</div><div class="stat-lbl">Variant</div></div><div class="stat"><div class="stat-val">IJN</div><div class="stat-lbl">Service</div></div><div class="stat"><div class="stat-val">零</div><div class="stat-lbl">Zero</div></div></div><div class="ops-text" style="font-size:13px;line-height:1.45;margin-bottom:.45rem;color:rgba(255,255,255,.66)">Home defence Zero: darker green uppers, yellow leading edges and defensive late-war look</div><div class="card-tags"><span class="tag t-blue">Home defence</span><span class="tag t-amber">A6M5 / A6M5c alongside J2M and N1K types</span><span class="tag t-green">Home Islands defence</span></div></div>
+    </div><div class="sq-card" id="card-653ku" data-id="653ku" data-group="carrier" onclick="openUnit('653ku')">
+      <div class="card-hd"><div class="card-circle">653 Ku</div><div><div class="card-name">653rd Kōkūtai</div><div class="card-base">IJN carriers / Philippines Sea</div></div></div>
+      <div class="card-body"><div class="card-stats"><div class="stat"><div class="stat-val">A6M5</div><div class="stat-lbl">Variant</div></div><div class="stat"><div class="stat-val">IJN</div><div class="stat-lbl">Service</div></div><div class="stat"><div class="stat-val">零</div><div class="stat-lbl">Zero</div></div></div><div class="ops-text" style="font-size:13px;line-height:1.45;margin-bottom:.45rem;color:rgba(255,255,255,.66)">Great Marianas/Great Turkey Shoot subject with late-war carrier colours</div><div class="card-tags"><span class="tag t-blue">Marianas / Philippine Sea</span><span class="tag t-amber">A6M5</span><span class="tag t-green">1st Mobile Fleet</span></div></div>
+    </div><div class="sq-card" id="card-yokosuka" data-id="yokosuka" data-group="home" onclick="openUnit('yokosuka')">
+      <div class="card-hd"><div class="card-circle">Yokosuka</div><div><div class="card-name">Yokosuka Kōkūtai Test & Training</div><div class="card-base">Yokosuka / Oppama</div></div></div>
+      <div class="card-body"><div class="card-stats"><div class="stat"><div class="stat-val">A6M</div><div class="stat-lbl">Variant</div></div><div class="stat"><div class="stat-val">IJN</div><div class="stat-lbl">Service</div></div><div class="stat"><div class="stat-val">零</div><div class="stat-lbl">Zero</div></div></div><div class="ops-text" style="font-size:13px;line-height:1.45;margin-bottom:.45rem;color:rgba(255,255,255,.66)">Prototype/training Zero: useful for cleaner finishes and technical reference builds</div><div class="card-tags"><span class="tag t-blue">Japan / trials and training</span><span class="tag t-amber">A6M prototypes, A6M2, later test airframes</span><span class="tag t-green">IJN technical and training establishment</span></div></div>
+    </div><div class="detail-panel" id="detail-panel"></div></div></div>
+<div class="tab-panel" id="tab-build"><div class="section-label">Zero build bench</div><div class="info-box">Choose the exact variant before buying decals or weathering: A6M2 Model 21 carrier aircraft, clipped-wing A6M3 Model 32, and later A6M5 subjects all need different wing, cowling and colour decisions.</div><div class="sec-label">Kits</div><div class="kit-grid"><div class="kit-card"><div class="kit-brand">Tamiya</div><div class="kit-name">1/48 Mitsubishi A6M5/5a Zero</div><div class="kit-scale">1:48</div><div class="kit-stars">★★★★☆</div><div class="kit-note">Excellent mainstream A6M5 choice; good fit and surface detail for late-war green-over-grey Zero subjects.</div><a class="shop-btn hb-outline" href="https://www.tamiya.com/english/products/61103/index.html" target="_blank" rel="noopener">Open Tamiya A6M5 kit</a></div><div class="kit-card"><div class="kit-brand">Airfix</div><div class="kit-name">Mitsubishi A6M2b Zero A01005B</div><div class="kit-scale">1:72</div><div class="kit-stars">★★★★☆</div><div class="kit-note">Beginner-friendly A6M2b Model 21 option suitable for Pearl Harbor, Midway and early Pacific builds.</div><a class="shop-btn hb-outline" href="https://uk.airfix.com/products/mitsubishi-a6m2b-zero-a01005b" target="_blank" rel="noopener">Open Airfix A6M2b kit</a></div><div class="kit-card"><div class="kit-brand">Eduard</div><div class="kit-name">A6M2 Type 21 Zero</div><div class="kit-scale">1:48</div><div class="kit-stars">★★★★☆</div><div class="kit-note">Modern detailed early-war Model 21 family. Use stable Eduard product/category page if the exact boxing changes.</div><a class="shop-btn hb-outline" href="https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/a6m2-zero-type-21-1-48.html" target="_blank" rel="noopener">Open Eduard A6M2 kit</a></div><div class="kit-card"><div class="kit-brand">Fine Molds</div><div class="kit-name">A6M5 Zero family</div><div class="kit-scale">1:48</div><div class="kit-stars">★★★★☆</div><div class="kit-note">Useful for advanced A6M5 subjects; pair with Eduard detail sets and careful late-war IJN paint research.</div><a class="shop-btn hb-outline" href="https://www.finemolds.co.jp/" target="_blank" rel="noopener">Open Fine Molds aircraft kits</a></div></div><div class="sec-label">Aftermarket and decals</div><div class="am-grid"><div class="am-card"><div class="am-type">Masks</div><div class="am-name">A6M2 national insignia masks</div><div class="am-maker">Eduard</div><div class="am-desc">Useful for painting hinomaru rather than relying on bright decals. Especially helpful on faded or chipped late-war subjects.</div><a class="shop-btn hb-outline" href="https://www.eduard.com/eduard/masks/aircraft/1-48/a6m2-type-21-national-insignia-1-48.html" target="_blank" rel="noopener">Open Eduard mask</a></div><div class="am-card"><div class="am-type">Photo-etch</div><div class="am-name">A6M5 Zero cockpit / details</div><div class="am-maker">Eduard</div><div class="am-desc">Use for cockpit colour detail, seatbelts and small parts where the kit interior looks sparse.</div><a class="shop-btn hb-outline" href="https://www.eduard.com/eduard/masks/aircraft/1-48/a6m5-zero-1-48-1-2.html" target="_blank" rel="noopener">Open Eduard A6M5 set</a></div><div class="am-card"><div class="am-type">Decals</div><div class="am-name">Zero unit markings</div><div class="am-maker">Lifelike Decals / Hannants</div><div class="am-desc">Specific 1:48 Mitsubishi A6M Zero decal sheet. Still match tail codes, carrier bands and variant carefully before committing paint.</div><a class="shop-btn hb-outline" href="https://www.hannants.co.uk/product/LL48064" target="_blank" rel="noopener">Open Lifelike decals</a></div></div><div class="sec-label">Paints and colours</div><div class="paint-grid"><div class="paint-card"><div class="paint-swatch" style="background:#b8b79a;color:#fff">#b8b79a</div><div class="paint-info"><div class="paint-name">IJN Grey-Green / Ame-iro</div><div class="kit-note"><b>Early A6M2 carrier finish</b><br>Early Zeros are not plain white. Use a warm grey-green/amber-tinted finish and keep carrier aircraft relatively clean.</div><a class="shop-btn hb-outline" href="https://ak-interactive.com/product/wwii-ijn-aircraft-colors/" target="_blank" rel="noopener">Open AK IJN colour set</a></div></div><div class="paint-card"><div class="paint-swatch" style="background:#26351f;color:#fff">#26351f</div><div class="paint-info"><div class="paint-name">IJN Dark Green</div><div class="kit-note"><b>Upper camouflage on later Zeros</b><br>A6M3/A6M5 aircraft commonly show dark green uppers over grey lower surfaces, often with fading and patchy maintenance wear.</div><a class="shop-btn hb-outline" href="https://ak-interactive.com/product/wwii-ijn-aircraft-colors-2/" target="_blank" rel="noopener">Open AK Real Colors IJN set</a></div></div><div class="paint-card"><div class="paint-swatch" style="background:#080b12;color:#fff">#080b12</div><div class="paint-info"><div class="paint-name">Black Cowling Blue-Black</div><div class="kit-note"><b>Cowling and anti-glare areas</b><br>IJN cowlings read as very dark blue-black rather than dead black; scale it subtly so surface detail remains visible.</div><a class="shop-btn hb-outline" href="https://www.tamiya.com/english/products/list/acrylic_1.htm" target="_blank" rel="noopener">Open Tamiya paint range</a></div></div><div class="paint-card"><div class="paint-swatch" style="background:#1c8a78;color:#fff">#1c8a78</div><div class="paint-info"><div class="paint-name">Aotake translucent blue-green</div><div class="kit-note"><b>Wheel wells / internal protective coating</b><br>Do not use it everywhere. Aotake was a translucent protective coating and varies by part, manufacturer and restoration evidence.</div><a class="shop-btn hb-outline" href="https://acrylicosvallejo.com/en/category/hobby/sets/air-war-en/" target="_blank" rel="noopener">Open Vallejo IJN references</a></div></div><div class="paint-card"><div class="paint-swatch" style="background:#d49b2a;color:#fff">#d49b2a</div><div class="paint-info"><div class="paint-name">Yellow-orange ID strips</div><div class="kit-note"><b>Leading-edge identification bands</b><br>Late-war Japanese aircraft often carried yellow/orange leading-edge ID strips; keep them weathered and scale-toned.</div><a class="shop-btn hb-outline" href="https://www.mr-hobby.com/en/" target="_blank" rel="noopener">Open Mr Hobby paint guide</a></div></div><div class="paint-card"><div class="paint-swatch" style="background:#b92b24;color:#fff">#b92b24</div><div class="paint-info"><div class="paint-name">Hinomaru Red</div><div class="kit-note"><b>National markings</b><br>Red discs weather differently from surrounding paint; decals may need toning down with filters and satin/matt varnish.</div><a class="shop-btn hb-outline" href="https://www.eduard.com/eduard/masks/aircraft/1-48/a6m2-type-21-national-insignia-1-48.html" target="_blank" rel="noopener">Open Eduard national insignia mask</a></div></div></div><div class="sec-label">Build guide</div><div class="zero-step-grid"><div class="zero-step"><b>1 · Pick variant first</b><p>A6M2 Model 21, A6M3 Model 32/22 and A6M5 differ visibly. Check wing tips, cowling, exhausts and armament before painting.</p></div><div class="zero-step"><b>2 · Cockpit colour caution</b><p>Japanese interiors vary by manufacturer and restoration. Use a Mitsubishi cockpit green reference and keep aotake selective.</p></div><div class="zero-step"><b>3 · Thin paint and light structure</b><p>The Zero should look lightweight. Avoid heavy black panel lines; use restrained brown-grey washes and scale-faded colours.</p></div><div class="zero-step"><b>4 · Tail code drives identity</b><p>Carrier bands, tail code and theatre markings tell the story. Do not apply random hinomaru and call it finished.</p></div></div><div class="sec-label">Weathering guide</div><div class="weather-grid"><div class="weather-card"><div class="weather-hd"><div class="weather-base">Early carrier A6M2</div><div class="weather-group">Pearl Harbor / Midway</div></div><div class="weather-body"><div class="weather-row"><span class="wr-label">Finish</span>Warm grey-green, satin-to-matt; keep it cleaner than island-based aircraft.</div><div class="weather-row"><span class="wr-label">Wear</span>Subtle foot traffic at wing roots, cowling fasteners and access panels.</div><div class="weather-row"><span class="wr-label">Stains</span>Fine exhaust staining and restrained oil leaks; avoid wreck-like chipping.</div></div></div><div class="weather-card"><div class="weather-hd"><div class="weather-base">Rabaul / island Zero</div><div class="weather-group">Solomons / New Guinea</div></div><div class="weather-body"><div class="weather-row"><span class="wr-label">Sun</span>Fade green uppers unevenly; use dusty filters and matt finish.</div><div class="weather-row"><span class="wr-label">Chips</span>Concentrate on wing roots, cowling lip, panels, leading edges and service hatches.</div><div class="weather-row"><span class="wr-label">Ground</span>Dusty tyres, dirty lower surfaces and fuel/oil handling marks suit rough coral strips.</div></div></div><div class="weather-card"><div class="weather-hd"><div class="weather-base">Late-war A6M5</div><div class="weather-group">Home defence / Philippines</div></div><div class="weather-body"><div class="weather-row"><span class="wr-label">Paint</span>Darker green uppers can be heavily worn, but keep scale effect controlled.</div><div class="weather-row"><span class="wr-label">ID strips</span>Yellow leading edges should be faded and chipped, not toy-bright.</div><div class="weather-row"><span class="wr-label">Mood</span>Austere maintenance: patchy panels, worn cowling, dirty underside and tired markings.</div></div></div></div></div>
+<div class="tab-panel" id="tab-reference"><div class="section-label">Map and reference</div><div class="info-box">The map covers the aircraft’s real Pacific geography: Japanese carrier bases, Pearl Harbor route context, Rabaul/New Guinea, Truk, the Marianas, Philippines and Japanese home defence locations.</div><div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.75rem"><button class="map-filter-btn on" onclick="filterMap('all',this)">All theatres</button><button class="map-filter-btn" onclick="filterMap('carrier',this)">Carrier war</button><button class="map-filter-btn" onclick="filterMap('land',this)">Rabaul / Solomons</button><button class="map-filter-btn" onclick="filterMap('late',this)">Late war</button></div><div class="raf-map-shell"><div class="raf-map-board"><div id="leaflet-map"></div></div><div class="map-sqn-list raf-map-side" id="map-list"><div class="section-label">Bases and theatres</div></div></div><div class="sec-label">Campaign timeline</div><input type="range" min="0" max="7" value="0" class="timeline-slider" id="timeline-slider" oninput="renderTimeline(this.value)"><div class="timeline-labels"><span>1940</span><span>1941</span><span>1942</span><span>1943</span><span>1944</span><span>1945</span></div><div id="timeline-panel" style="margin-top:1rem"></div><div class="sec-label">Compare units</div><div class="zero-compare-grid"><select id="cmp-a" class="fb" style="padding:.6rem;background:rgba(0,0,0,.25);color:#fff" onchange="renderCompare()"></select><select id="cmp-b" class="fb" style="padding:.6rem;background:rgba(0,0,0,.25);color:#fff" onchange="renderCompare()"></select></div><div id="compare-output"></div></div>
+<div class="tab-panel" id="tab-stories"><div class="section-label">Pilots and stories</div><div class="pilot-grid"><div class="pilot-card" onclick="openPilot('sakai')"><div class="pkills">64</div><div class="pname">Saburō Sakai</div><div class="pnote">Tainan Kōkūtai · A6M2 Model 21</div></div><div class="pilot-card" onclick="openPilot('nishizawa')"><div class="pkills">High-scoring ace</div><div class="pname">Hiroyoshi Nishizawa</div><div class="pnote">Tainan / 251 Ku · A6M2 / A6M3 / A6M5</div></div><div class="pilot-card" onclick="openPilot('ota')"><div class="pkills">Ace</div><div class="pname">Toshio Ōta</div><div class="pnote">Tainan Kōkūtai · A6M2</div></div><div class="pilot-card" onclick="openPilot('itaya')"><div class="pkills">Commander</div><div class="pname">Shigeru Itaya</div><div class="pnote">Akagi fighter unit · A6M2 Model 21</div></div><div class="pilot-card" onclick="openPilot('sasai')"><div class="pkills">Ace / leader</div><div class="pname">Junichi Sasai</div><div class="pnote">Tainan Kōkūtai · A6M2</div></div><div class="pilot-card" onclick="openPilot('seki')"><div class="pkills">Special attack leader</div><div class="pname">Yukio Seki</div><div class="pnote">201st Kōkūtai · A6M5</div></div></div></div>
+<div class="tab-panel" id="tab-media"><div class="section-label">Media and reference links</div><div class="books-grid"><div class="book-card"><div class="book-spine" style="background:#d2342a"></div><div class="book-info"><div class="book-title">A6M Zero reference research</div><div class="book-author">Use aircraft-specific monographs and period photos</div><div class="book-desc">Prioritise exact variant and unit photographs over generic colour profiles, especially for early-war grey-green and late-war green finishes.</div></div></div><div class="book-card"><div class="book-spine" style="background:#687857"></div><div class="book-info"><div class="book-title">Museum walkarounds</div><div class="book-author">IPMS / USAF Museum / Japanese museums</div><div class="book-desc">Use museum aircraft for structure and cockpit layout, but treat restoration colours with caution.</div></div></div></div></div>
+<div class="tab-panel" id="tab-walkaround"><div class="section-label">Zero walkaround bench</div><div class="info-box">Real photo/video references grouped by modelling task. Images are card-sized thumbnails; video links are direct and placed inside the relevant category.</div><div class="wa-grid"><article class="wa-card" id="wa-cockpit"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi%20A6M%20Zero%20cockpit.jpg?width=900" alt="A6M Zero Cockpit walkaround reference" loading="lazy" referrerpolicy="no-referrer"><div class="wa-body"><div class="wa-kicker">Cockpit</div><div class="wa-title">Cockpit, gunsight and canopy rails</div><div class="wa-desc">Check the compact cockpit opening, black panel, seat/harness layout, sidewall framework and the heavy canopy framing.</div><div class="wa-check"><b>Modeller check</b>Check the compact cockpit opening, black panel, seat/harness layout, sidewall framework and the heavy canopy framing.</div><a class="wa-btn" href="https://www.youtube.com/watch?v=hg24-z0TaRc" target="_blank" rel="noopener">Open cockpit video</a></div></article><article class="wa-card" id="wa-cowling"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi%20A6M5%20Zero%20at%20Yasukuni%20Shrine.jpg?width=900" alt="A6M Zero Nose / cowling walkaround reference" loading="lazy" referrerpolicy="no-referrer"><div class="wa-body"><div class="wa-kicker">Nose / cowling</div><div class="wa-title">Sakae cowling and spinner line</div><div class="wa-desc">The Zero nose is clean and tightly cowled. Watch the blue-black cowling tone, exhaust exits and spinner-to-cowling curve.</div><div class="wa-check"><b>Modeller check</b>The Zero nose is clean and tightly cowled. Watch the blue-black cowling tone, exhaust exits and spinner-to-cowling curve.</div><a class="wa-btn" href="https://www.youtube.com/watch?v=KsjzCIqQA7M" target="_blank" rel="noopener">Open USAF Museum walkaround</a></div></article><article class="wa-card" id="wa-engine"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nakajima%20Sakae%20engine.jpg?width=900" alt="A6M Zero Engine walkaround reference" loading="lazy" referrerpolicy="no-referrer"><div class="wa-body"><div class="wa-kicker">Engine</div><div class="wa-title">Nakajima Sakae radial</div><div class="wa-desc">Model the radial as visible but not over-bright. Add ignition detail carefully and keep oil/exhaust staining in the direction of airflow.</div><div class="wa-check"><b>Modeller check</b>Model the radial as visible but not over-bright. Add ignition detail carefully and keep oil/exhaust staining in the direction of airflow.</div><a class="wa-btn" href="https://www.youtube.com/watch?v=1fYM4T_5Kr0" target="_blank" rel="noopener">Open A6M5 walkaround video</a></div></article><article class="wa-card" id="wa-wings"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi%20A6M2%20Zero%20fighter.jpg?width=900" alt="A6M Zero Wings / control surfaces walkaround reference" loading="lazy" referrerpolicy="no-referrer"><div class="wa-body"><div class="wa-kicker">Wings / control surfaces</div><div class="wa-title">Long wing, folding tips and fabric controls</div><div class="wa-desc">Early Model 21 aircraft had folding wingtips; A6M3 Model 32 had clipped squared tips. Do not mix wing style and variant.</div><div class="wa-check"><b>Modeller check</b>Early Model 21 aircraft had folding wingtips; A6M3 Model 32 had clipped squared tips. Do not mix wing style and variant.</div><a class="wa-btn" href="https://www.youtube.com/watch?v=pyGdpDcXBnM" target="_blank" rel="noopener">Open A6M5 video</a></div></article><article class="wa-card" id="wa-gear"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi%20A6M%20Zero%20landing%20gear.jpg?width=900" alt="A6M Zero Landing gear walkaround reference" loading="lazy" referrerpolicy="no-referrer"><div class="wa-body"><div class="wa-kicker">Landing gear</div><div class="wa-title">Narrow gear stance and bay colour uncertainty</div><div class="wa-desc">Check the slight sit of the aircraft, gear door angles and whether the wheel wells suit grey-green, aotake or restoration-specific reference.</div><div class="wa-check"><b>Modeller check</b>Check the slight sit of the aircraft, gear door angles and whether the wheel wells suit grey-green, aotake or restoration-specific reference.</div><a class="wa-btn" href="https://www.youtube.com/watch?v=KsjzCIqQA7M" target="_blank" rel="noopener">Open gear reference video</a></div></article><article class="wa-card" id="wa-markings"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/A6M%20Zero%20tail.jpg?width=900" alt="A6M Zero Markings walkaround reference" loading="lazy" referrerpolicy="no-referrer"><div class="wa-body"><div class="wa-kicker">Markings</div><div class="wa-title">Hinomaru, tail codes and carrier bands</div><div class="wa-desc">Carrier and kōkūtai identity is in the tail code, bands and variant. Weather hinomaru and ID strips to sit into the paint finish.</div><div class="wa-check"><b>Modeller check</b>Carrier and kōkūtai identity is in the tail code, bands and variant. Weather hinomaru and ID strips to sit into the paint finish.</div><a class="wa-btn" href="https://www.youtube.com/watch?v=CqjzkUSpqsw" target="_blank" rel="noopener">Open aircraft arrival/walkaround</a></div></article><article class="wa-card" id="wa-surface"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi%20A6M%20Zero%20Type%2021.jpg?width=900" alt="A6M Zero Airframe finish walkaround reference" loading="lazy" referrerpolicy="no-referrer"><div class="wa-body"><div class="wa-kicker">Airframe finish</div><div class="wa-title">Flush-riveted lightweight surface</div><div class="wa-desc">The Zero’s light structure means restrained panel lining works better than heavy black washes. Late island aircraft can be very faded and chipped.</div><div class="wa-check"><b>Modeller check</b>The Zero’s light structure means restrained panel lining works better than heavy black washes. Late island aircraft can be very faded and chipped.</div><a class="wa-btn" href="https://ipms.nl/walkarounds/walkaround-vliegtuigen-props/walkaround-mitsubishi-zero" target="_blank" rel="noopener">Open IPMS walkaround</a></div></article></div></div>
+</main><aside class="sidebar"><div class="sidebar-block"><div class="sidebar-hd">Advertisement</div><div class="sidebar-ad-slot">AdSense 300×250</div></div><div class="sidebar-block"><div class="sidebar-hd">Zero quick links</div><a class="shop-link" href="https://www.tamiya.com/english/products/61103/index.html" target="_blank" rel="noopener"><span>🛩</span><div><div class="shop-name">Tamiya A6M5</div><div class="shop-cats">Kit reference</div></div></a><a class="shop-link" href="https://ak-interactive.com/product/wwii-ijn-aircraft-colors/" target="_blank" rel="noopener"><span>🎨</span><div><div class="shop-name">AK IJN colours</div><div class="shop-cats">Paints</div></div></a><a class="shop-link" href="https://ipms.nl/walkarounds/walkaround-vliegtuigen-props/walkaround-mitsubishi-zero" target="_blank" rel="noopener"><span>📷</span><div><div class="shop-name">IPMS Zero walkaround</div><div class="shop-cats">Photos</div></div></a></div></aside></div>
+<div class="pm-overlay" id="pm-overlay" onclick="if(event.target===this)closePilot()"><div class="pm-modal"><div class="pm-hd"><div><div class="pm-name" id="pm-name"></div><div class="pm-rank" id="pm-rank"></div></div><button class="pm-close" onclick="closePilot()">✕</button></div><div class="pm-body"><div class="pm-stats"><div class="pm-stat"><div class="v" id="pm-kills"></div><div class="l">Record</div></div><div class="pm-stat"><div class="v">IJN</div><div class="l">Service</div></div><div class="pm-stat"><div class="v">零</div><div class="l">Zero</div></div></div><div class="pm-bio" id="pm-bio"></div></div></div></div>
+<script>
+const UNITS=[{'id': 'akagi', 'num': 'Akagi', 'name': 'Akagi Fighter Unit', 'base': 'IJN Akagi · Kure / Pearl Harbor strike force', 'theatre': 'Pearl Harbor / Indian Ocean / Midway', 'variant': 'A6M2 Model 21', 'markings': 'Carrier code AI, red tail bands, light grey-green carrier finish', 'parent': '1st Carrier Division / Kido Butai', 'aces': 'Shigeru Itaya; Akira Sakamoto; carrier fighter section leaders', 'hook': 'Pearl Harbor carrier Zero with clean early-war finish and red carrier identity', 'lat': 34.24, 'lng': 132.56, 'group': 'carrier', 'ops': 'Akagi fighter units were central to the opening carrier war: Pearl Harbor, the Indian Ocean raid and Midway. Their Zeros are ideal for early-war A6M2 Model 21 builds with light grey-green finish, black cowling and carrier-specific tail code treatment.'}, {'id': 'kaga', 'num': 'Kaga', 'name': 'Kaga Fighter Unit', 'base': 'IJN Kaga · Sasebo / Kido Butai', 'theatre': 'Pearl Harbor / Midway', 'variant': 'A6M2 Model 21', 'markings': 'Carrier code AII, red tail bands, early-war hinomaru layout', 'parent': '1st Carrier Division / Kido Butai', 'aces': 'Kaga fighter leaders and Pearl Harbor escort pilots', 'hook': 'A classic Pearl Harbor Zero subject with carrier code and early-war restrained weathering', 'lat': 33.17, 'lng': 129.72, 'group': 'carrier', 'ops': 'Kaga Zeros escorted attack waves and provided combat air patrol in the early Pacific carrier battles. For modellers the attraction is the disciplined carrier presentation: pale airframe, black cowling, red bands and relatively clean finish compared with later island-based aircraft.'}, {'id': 'soryu', 'num': 'Sōryū', 'name': 'Sōryū Fighter Unit', 'base': 'IJN Sōryū · Yokosuka / Kido Butai', 'theatre': 'Pearl Harbor / Wake / Midway', 'variant': 'A6M2 Model 21', 'markings': 'Carrier code BI, red tail bands, light grey-green finish', 'parent': '2nd Carrier Division / Kido Butai', 'aces': 'Sōryū carrier fighter pilots; CAP and escort sections', 'hook': 'Good Midway subject: clean carrier aircraft just before catastrophic combat losses', 'lat': 35.29, 'lng': 139.67, 'group': 'carrier', 'ops': 'Sōryū fighter units fought through the opening carrier campaign and were destroyed with the carrier at Midway. Use restrained staining, careful tail codes and accurate carrier deck presentation rather than late-war heavy chipping.'}, {'id': 'hiryu', 'num': 'Hiryū', 'name': 'Hiryū Fighter Unit', 'base': 'IJN Hiryū · Yokosuka / Kido Butai', 'theatre': 'Pearl Harbor / Midway', 'variant': 'A6M2 Model 21', 'markings': 'Carrier code BII, red tail bands, early-war carrier markings', 'parent': '2nd Carrier Division / Kido Butai', 'aces': 'Pilots associated with Hiryū counterstrikes at Midway', 'hook': 'Midway counterattack story angle; excellent carrier-deck diorama subject', 'lat': 35.29, 'lng': 139.67, 'group': 'carrier', 'ops': 'Hiryū survived long enough at Midway to launch counterstrikes after the other Japanese carriers were burning. A Hiryū Zero can be presented as a neat carrier aircraft under extreme operational pressure.'}, {'id': 'tainan', 'num': 'Tainan', 'name': 'Tainan Kōkūtai', 'base': 'Lae / Rabaul / South Pacific island fields', 'theatre': 'New Guinea / Solomons', 'variant': 'A6M2 Model 21, later A6M3', 'markings': 'Tail code V / later unit changes; field-applied wear and tropical fading', 'parent': '11th Air Fleet', 'aces': 'Saburō Sakai; Hiroyoshi Nishizawa; Toshio Ōta; Junichi Sasai', 'hook': 'The ace-heavy South Pacific Zero unit: faded paint, dust, fuel staining and hard-used aircraft', 'lat': -6.73, 'lng': 146.99, 'group': 'land', 'ops': 'Tainan Kōkūtai is the great ace-unit Zero story. From Lae and Rabaul it fought over New Guinea and Guadalcanal, producing famous pilots and very hard-worked aircraft. This is where tropical fading and rough-field weathering become central to the model.'}, {'id': '204ku', 'num': '204 Ku', 'name': '204th Kōkūtai', 'base': 'Rabaul / Buin / Solomons', 'theatre': 'Solomons / Rabaul defence', 'variant': 'A6M2, A6M3, A6M5', 'markings': 'Field-applied greens, white/yellow theatre bands, late Solomons wear', 'parent': '11th Air Fleet', 'aces': 'Rabaul fighter pilots and replacement cadres', 'hook': 'Late Solomons Zero: battered, faded, operationally exhausted island fighter', 'lat': -4.2, 'lng': 152.18, 'group': 'land', 'ops': '204th Kōkūtai represents the grinding attrition around Rabaul and the Solomons. Models should show service wear: sun bleaching, panel repairs, dusty tyres, stained undersides and heavier cowling/exhaust staining.'}, {'id': '251ku', 'num': '251 Ku', 'name': '251st Kōkūtai', 'base': 'Rabaul / New Britain', 'theatre': 'Rabaul / Solomons', 'variant': 'A6M3 and A6M5', 'markings': 'Late-war green uppers, pale grey undersides, tail code/unit bands vary by period', 'parent': '11th Air Fleet', 'aces': 'Hiroyoshi Nishizawa associated with 251 Ku after Tainan reorganisation', 'hook': 'Ace connection plus late-war Zero finish; good A6M3/A6M5 subject', 'lat': -4.2, 'lng': 152.18, 'group': 'land', 'ops': '251st Kōkūtai continued the Rabaul fighter war after earlier units were reorganised. It is a good bridge from early A6M2 subjects into clipped-wing A6M3 and later A6M5 modelling.'}, {'id': '252ku', 'num': '252 Ku', 'name': '252nd Kōkūtai', 'base': 'Rabaul / later Truk and home defence detachments', 'theatre': 'Central Pacific / Rabaul / Home defence', 'variant': 'A6M2, A6M3, A6M5', 'markings': 'Mixed field and depot finishes; tail code changes by detachment', 'parent': 'IJN land-based fighter units', 'aces': 'Central Pacific Zero pilots', 'hook': 'Useful for Central Pacific island airfields and worn mixed-variant Zero lines', 'lat': 7.45, 'lng': 151.85, 'group': 'land', 'ops': '252nd Kōkūtai allows a Central Pacific Zero build rather than only Pearl Harbor or Rabaul. It also suits mixed variants and changing markings as the strategic situation deteriorated.'}, {'id': '201ku', 'num': '201 Ku', 'name': '201st Kōkūtai', 'base': 'Mabalacat / Philippines', 'theatre': 'Philippines / Kamikaze operations', 'variant': 'A6M5 and older A6M variants', 'markings': 'Late-war green, worn undersides, operational tail codes and mission markings', 'parent': '1st Air Fleet / Philippines', 'aces': 'Yukio Seki and early special attack personnel', 'hook': 'Late-war Zero with difficult history: special attack context, heavy wear and austere base conditions', 'lat': 15.22, 'lng': 120.58, 'group': 'late', 'ops': '201st Kōkūtai is tied to the emergence of organised special attack operations in the Philippines. The page treats this carefully: historically important, but model notes should focus on aircraft finish, field conditions and markings rather than glorification.'}, {'id': '302ku', 'num': '302 Ku', 'name': '302nd Kōkūtai', 'base': 'Atsugi', 'theatre': 'Home defence', 'variant': 'A6M5 / A6M5c alongside J2M and N1K types', 'markings': 'Home defence green, yellow leading-edge ID strips, late-war finish', 'parent': 'Home Islands defence', 'aces': 'Night/home defence pilots and intercept units', 'hook': 'Home defence Zero: darker green uppers, yellow leading edges and defensive late-war look', 'lat': 35.45, 'lng': 139.45, 'group': 'late', 'ops': '302nd Kōkūtai provides the home-defence angle. Zeros were no longer dominant but still served alongside newer interceptors, making them useful for late-war green schemes and heavily weathered defensive aircraft.'}, {'id': '653ku', 'num': '653 Ku', 'name': '653rd Kōkūtai', 'base': 'IJN carriers / Philippines Sea', 'theatre': 'Marianas / Philippine Sea', 'variant': 'A6M5', 'markings': 'Carrier air group markings, green upper surfaces, late-war carrier finish', 'parent': '1st Mobile Fleet', 'aces': 'Marianas carrier fighter pilots', 'hook': 'Great Marianas/Great Turkey Shoot subject with late-war carrier colours', 'lat': 15.2, 'lng': 145.75, 'group': 'carrier', 'ops': '653rd Kōkūtai represents the late carrier air groups at the Philippine Sea. For modellers it is a different carrier Zero from Pearl Harbor: A6M5, green upper surfaces, more desperate context and heavier wear.'}, {'id': 'yokosuka', 'num': 'Yokosuka', 'name': 'Yokosuka Kōkūtai Test & Training', 'base': 'Yokosuka / Oppama', 'theatre': 'Japan / trials and training', 'variant': 'A6M prototypes, A6M2, later test airframes', 'markings': 'Prototype/training markings; less field wear, more maintenance access detail', 'parent': 'IJN technical and training establishment', 'aces': 'Test pilots and instructors', 'hook': 'Prototype/training Zero: useful for cleaner finishes and technical reference builds', 'lat': 35.32, 'lng': 139.65, 'group': 'home', 'ops': 'Yokosuka Kōkūtai gives the research and training side of the Zero story. It is useful for prototype, test and clean technical-reference modelling rather than combat-weathered island aircraft.'}]; const PILOTS=[{'id': 'sakai', 'name': 'Saburō Sakai', 'rank': 'Petty Officer / later Ensign · Tainan Kōkūtai', 'kills': '64', 'unit': 'Tainan Kōkūtai', 'aircraft': 'A6M2 Model 21', 'bio': 'One of the best-known surviving Japanese fighter pilots. Sakai is strongly associated with the South Pacific Zero war and provides a modeller hook for Tainan Kōkūtai subjects: tropical fading, hard use and the long-range combat environment around New Guinea and Guadalcanal.'}, {'id': 'nishizawa', 'name': 'Hiroyoshi Nishizawa', 'rank': 'Petty Officer · Tainan / 251 Kōkūtai', 'kills': 'High-scoring ace', 'unit': 'Tainan / 251 Ku', 'aircraft': 'A6M2 / A6M3 / A6M5', 'bio': 'Often described as one of Japan’s leading fighter aces. Treat victory totals cautiously, but his association with Tainan and later units makes him a useful story anchor for Rabaul and Solomons Zero builds.'}, {'id': 'ota', 'name': 'Toshio Ōta', 'rank': 'Petty Officer · Tainan Kōkūtai', 'kills': 'Ace', 'unit': 'Tainan Kōkūtai', 'aircraft': 'A6M2', 'bio': 'A key Tainan Kōkūtai ace. His aircraft context is useful for early South Pacific Zero finishes: pale or field-modified schemes, heavy dust, sun fading and worn operating surfaces.'}, {'id': 'itaya', 'name': 'Shigeru Itaya', 'rank': 'Lt Cdr · Akagi Fighter Leader', 'kills': 'Commander', 'unit': 'Akagi fighter unit', 'aircraft': 'A6M2 Model 21', 'bio': 'Akagi fighter leader during the early carrier campaign. He anchors the Pearl Harbor/Midway carrier Zero story and is a useful subject when building clean early-war carrier aircraft.'}, {'id': 'sasai', 'name': 'Junichi Sasai', 'rank': 'Lt JG · Tainan Kōkūtai', 'kills': 'Ace / leader', 'unit': 'Tainan Kōkūtai', 'aircraft': 'A6M2', 'bio': 'A respected young officer in Tainan Kōkūtai and closely associated with the early South Pacific air battles. Good story hook for Rabaul/Lae-based Zero subjects.'}, {'id': 'seki', 'name': 'Yukio Seki', 'rank': 'Lt · 201st Kōkūtai', 'kills': 'Special attack leader', 'unit': '201st Kōkūtai', 'aircraft': 'A6M5', 'bio': 'Linked to the first organised special attack operations from the Philippines. Use this with care: the modelling focus should remain on late-war aircraft configuration, base conditions and historical context.'}];
+let currentFilter='all', currentMapFilter='all', map, markers=[];
+function switchTab(name,btn){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.getElementById('tab-'+name).classList.add('active');document.querySelectorAll('.nav-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');if(name==='reference') setTimeout(initMap,100);}
+function filterUnits(f,btn){currentFilter=f;document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));btn.classList.add('on');let count=0;document.querySelectorAll('.sq-card').forEach(c=>{let show=f==='all'||c.dataset.group===f;c.style.display=show?'block':'none';if(show)count++;});document.getElementById('sq-count').textContent=count+' units';document.getElementById('detail-panel').classList.remove('open');}
+function openUnit(id){const u=UNITS.find(x=>x.id===id);if(!u)return;document.querySelectorAll('.sq-card').forEach(c=>c.classList.toggle('active',c.dataset.id===id));const p=document.getElementById('detail-panel');p.innerHTML=`<div class="dp-top"><div><div class="dp-title">${u.name}</div><div class="dp-meta">${u.parent} · ${u.base} · ${u.theatre}</div></div><button class="close-btn" onclick="document.getElementById('detail-panel').classList.remove('open')">Close</button></div><div style="padding:1rem 1.2rem"><div class="ops-text">${u.ops}</div><div class="zero-step-grid" style="margin-top:1rem"><div class="zero-step"><b>Aircraft</b><p>${u.variant}</p></div><div class="zero-step"><b>Markings</b><p>${u.markings}</p></div><div class="zero-step"><b>Pilots / commanders</b><p>${u.aces}</p></div><div class="zero-step"><b>Modelling hook</b><p>${u.hook}</p></div></div><div class="zero-linkrow"><button class="shop-btn hb-outline" onclick="switchTab('reference',document.querySelectorAll('.nav-tab')[2]);setTimeout(()=>selectMarker('${u.id}'),250)">Show on map</button></div></div>`;p.classList.add('open');p.scrollIntoView({behavior:'smooth',block:'center'});}
+function initMap(){if(map)return;map=L.map('leaflet-map',{scrollWheelZoom:false});L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:9,attribution:'© OpenStreetMap'}).addTo(map);renderMarkers();renderTimeline(0);initCompare();}
+function renderMarkers(){markers.forEach(m=>m.remove());markers=[];const list=document.getElementById('map-list');list.innerHTML='<div class="section-label">Bases and theatres</div>';let bounds=[];UNITS.filter(u=>currentMapFilter==='all'||u.group===currentMapFilter).forEach(u=>{const col=u.group==='carrier'?'#d2342a':u.group==='land'?'#687857':u.group==='late'?'#c9a15a':'#8aaee8';const icon=L.divIcon({className:'',html:`<div class="raf-leaflet-marker" data-id="${u.id}" style="background:${col}"></div>`,iconSize:[18,18],iconAnchor:[9,9]});const m=L.marker([u.lat,u.lng],{icon}).addTo(map);m.bindTooltip(`<span class="raf-leaflet-label">${u.name}</span>`,{direction:'top',offset:[0,-10]});m.on('click',()=>{openUnit(u.id);selectMarker(u.id);});markers.push(m);bounds.push([u.lat,u.lng]);list.innerHTML+=`<div class="map-sqn-chip" onclick="openUnit('${u.id}');selectMarker('${u.id}')"><b>${u.num}</b><br>${u.base}</div>`;});if(bounds.length)map.fitBounds(bounds,{padding:[28,28],maxZoom:4});}
+function filterMap(f,btn){currentMapFilter=f;document.querySelectorAll('.map-filter-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');renderMarkers();}
+function selectMarker(id){markers.forEach(m=>{const el=m.getElement(); if(el){const dot=el.querySelector('.raf-leaflet-marker'); if(dot)dot.classList.toggle('selected',dot.dataset.id===id);}});}
+const timeline=[['1940','A6M enters frontline IJN service','Early carrier units begin receiving the Type 0 carrier fighter.'],['Dec 1941','Pearl Harbor and opening Pacific offensive','A6M2 Model 21 dominates early carrier operations.'],['Jun 1942','Midway','Carrier Zero units suffer catastrophic losses with the Kido Butai carriers.'],['1942–43','Guadalcanal, New Guinea and Rabaul','Land-based Kōkūtai fight a war of attrition from rough tropical bases.'],['1943','A6M3 / A6M5 transition','Clipped-wing and later improved variants appear as Allied fighters improve.'],['1944','Marianas and Philippine Sea','Late carrier Zero units face overwhelming US Navy strength.'],['1944–45','Philippines and special attack operations','A6M5s serve in increasingly desperate conditions.'],['1945','Home defence and final operations','Zeros remain in service alongside newer IJN fighters.']];
+function renderTimeline(i){i=+i;const t=timeline[i];document.getElementById('timeline-panel').innerHTML=`<div class="detail-panel open" style="display:block"><div class="dp-top"><div><div class="dp-title">${t[0]} · ${t[1]}</div><div class="dp-meta">A6M Zero campaign timeline</div></div></div><div style="padding:1rem 1.2rem" class="ops-text">${t[2]}</div></div>`;}
+function initCompare(){const a=document.getElementById('cmp-a'),b=document.getElementById('cmp-b'); if(!a||a.options.length)return;UNITS.forEach((u,i)=>{a.add(new Option(u.name+' — '+u.variant,u.id));b.add(new Option(u.name+' — '+u.variant,u.id));});b.selectedIndex=4;renderCompare();}
+function renderCompare(){const a=UNITS.find(u=>u.id===document.getElementById('cmp-a').value), b=UNITS.find(u=>u.id===document.getElementById('cmp-b').value); if(!a||!b)return;document.getElementById('compare-output').innerHTML=`<div class="zero-compare-grid" style="margin-top:1rem"><div class="kit-card"><div class="kit-brand">${a.name}</div><div class="kit-name">${a.variant}</div><div class="kit-note">${a.hook}</div></div><div class="kit-card"><div class="kit-brand">${b.name}</div><div class="kit-name">${b.variant}</div><div class="kit-note">${b.hook}</div></div></div>`;}
+function openPilot(id){const p=PILOTS.find(x=>x.id===id);if(!p)return;document.getElementById('pm-name').textContent=p.name;document.getElementById('pm-rank').textContent=p.rank;document.getElementById('pm-kills').textContent=p.kills;document.getElementById('pm-bio').innerHTML='<p>'+p.bio+'</p><div class="pm-awards"><span class="award">'+p.unit+'</span><span class="award">'+p.aircraft+'</span></div>';document.getElementById('pm-overlay').classList.add('open');}
+function closePilot(){document.getElementById('pm-overlay').classList.remove('open');}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.ac-drop-btn').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation();btn.closest('.ac-drop').classList.toggle('open');}));document.addEventListener('click',()=>document.querySelectorAll('.ac-drop').forEach(d=>d.classList.remove('open')));});
+</script></body></html>

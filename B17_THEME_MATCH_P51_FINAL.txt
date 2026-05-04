@@ -1,0 +1,1 @@
+Matched the B-17 USAAF theme more closely to the Mustang page by applying the same blue palette, hero styling, active states and walkaround/link colour treatment.
