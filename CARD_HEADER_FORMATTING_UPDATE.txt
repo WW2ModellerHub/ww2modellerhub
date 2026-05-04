@@ -1,0 +1,1 @@
+Updated the squadron/unit card header formatting across all live plane pages (Hurricane, Spitfire, Lancaster, Fw 190, P-51). Replaced the cramped circular badge with a pill-style unit badge for better mobile readability, adjusted header spacing/alignment, and removed the Fw 190 inline tiny-font circle override.
