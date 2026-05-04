@@ -1,0 +1,16 @@
+B-17 final structural/content QA fix
+
+Changed b17_paradise.html and local B-17 walkaround SVG assets.
+
+Fixes included:
+- Rebuilt B-17 group card rendering so cards show bases, theatre, markings and featured crew before expansion.
+- Rebuilt expanded group detail panel to show operating base, variant, group identity, map cue, personnel and decal notes in the same bottom-detail-panel pattern.
+- Fixed map-to-group navigation by using safe card IDs.
+- Added missing renderTimeline() so Campaign timeline no longer breaks.
+- Added renderCompare() so Compare groups shows B-17 bomb groups by default.
+- Rebuilt the B-17 map renderer to use real lat/lng data directly instead of the missing xyToLatLng() function.
+- Added Pacific/North Africa map context markers without forcing the first map view to zoom out across the whole world.
+- Added stronger personnel/crew entries to key B-17 groups.
+- Expanded B-17 weathering into a fuller modeller-facing guide covering exhaust, oil, walkways, OD fading, NMF oxidation, de-icer boots, wheels, markings, repairs and scale restraint.
+- Rebuilt walkaround tab with local reference artwork and clear modelling checklists, plus external photo collection links.
+- Replaced missing/placeholder-looking walkaround assets with B-17-specific local SVG reference cards.
