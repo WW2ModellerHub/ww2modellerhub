@@ -1,0 +1,1 @@
+Replaced P-51 walkaround SVG placeholder image paths with direct renderable image URLs from USAF Museum / Wikimedia Commons for cockpit, nose/exhaust, undercarriage, markings and airframe. Source buttons now open the matching source page, not just generic collections.
