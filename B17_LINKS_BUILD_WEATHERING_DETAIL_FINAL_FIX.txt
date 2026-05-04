@@ -3,5 +3,5 @@ B-17 final repair
 - Replaced B-17 aftermarket links with labelled specific product pages where possible.
 - Added product links directly to the B-17 paints tab.
 - Repaired missing render functions for paint, build guide and weathering tabs.
-- Reworked B-17 squadron/group expansion to use a bottom detail panel matching the other live Paradise pages, rather than inserting the box immediately after the clicked card.
+- Reworked B-17 squadron/group expansion to use a bottom detail panel matching the other live aircraft reference guides, rather than inserting the box immediately after the clicked card.
 - Kept Pacific theatre coverage in the B-17 map/data via Pacific group/station entries.

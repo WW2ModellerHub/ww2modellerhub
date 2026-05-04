@@ -1,0 +1,1 @@
+Removed visible Paradise wording from aircraft pages and standardised the Mustang walkaround card layout to match the newer aircraft pages. Also removed a stray duplicated walkaround video block from the Mustang pilot modal.

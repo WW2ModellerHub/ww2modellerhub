@@ -3,7 +3,7 @@ Date: 2026-05-04
 
 Summary
 - Created a new live B-17 Flying Fortress paradise page: b17_paradise.html
-- Used the existing Paradise-page structure so the page follows the same overall layout, tab system, card layout and responsive behaviour as the current live Paradise pages.
+- Used the existing aircraft-reference structure so the page follows the same overall layout, tab system, card layout and responsive behaviour as the current live aircraft reference guides.
 
 B-17 page content added / updated
 - Added aircraft-specific title, description, social/meta text and schema references for the Boeing B-17 Flying Fortress.
