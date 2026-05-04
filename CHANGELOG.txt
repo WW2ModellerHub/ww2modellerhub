@@ -1,0 +1,29 @@
+WW2 Modeller – CHANGELOG
+Date: 2026-05-04
+
+Summary
+- Created a new live B-17 Flying Fortress paradise page: b17_paradise.html
+- Used the existing Paradise-page structure so the page follows the same overall layout, tab system, card layout and responsive behaviour as the current live Paradise pages.
+
+B-17 page content added / updated
+- Added aircraft-specific title, description, social/meta text and schema references for the Boeing B-17 Flying Fortress.
+- Applied USAAF-style visual treatment and a non-RAF hero identity.
+- Added B-17-specific build, reference, stories, media and walkaround sections.
+- Added bomb-group cards covering key 8th Air Force groups plus Mediterranean and Pacific-context subjects.
+- Added wider-theatre base map content so the page is not left as a UK-only template.
+- Added B-17 paint / finish notes, kit guidance, decals, aftermarket, books, survivor references and build/weathering notes.
+- Replaced the walkaround panel with B-17-specific categories and reference-photo cards.
+- Replaced template/story text with B-17-focused crew / commander content.
+
+Navigation and index updates
+- Updated aircraft dropdown navigation across site HTML files so B-17 now appears as a live aircraft.
+- Kept existing live aircraft visible in navigation: Hurricane, Spitfire, Lancaster, Fw 190 and P-51 Mustang.
+- Updated index.html so B-17 appears in the live-aircraft grid.
+- Removed the separate planned B-17 tile from the planned-aircraft section to avoid duplication.
+
+Site file updates
+- Added b17_paradise.html to sitemap.xml.
+
+Notes
+- This package was built from the latest supplied ZIP only.
+- Output is ZIP-only, with no live HTML pasted into chat.
