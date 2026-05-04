@@ -1,0 +1,5 @@
+Live-plane pass covered Hurricane, Spitfire, Lancaster, Fw 190 and P-51 Mustang.
+
+Important note: automated external HTTP checking from this environment was unreliable because many domains timed out or blocked requests. I therefore focused on deterministic fixes: internal file references, navigation consistency, missing favicon, obvious template leftovers, image fallback behaviour, sitemap refresh, and adding archive/photo-research prompts to the unit sections.
+
+For best final QA before upload: open each live aircraft page, test Aircraft dropdown, secondary tabs, unit filters, map markers, kit/aftermarket/book sections and walkaround image cards in browser.

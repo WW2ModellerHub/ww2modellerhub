@@ -1,0 +1,11 @@
+- Created root favicon.svg so all favicon references resolve.
+- Standardised aircraft dropdown navigation across HTML pages: live aircraft now include Hurricane, Spitfire, Lancaster, Fw 190 and P-51; removed duplicate/missing P-51/Spitfire issues.
+- Added image fallback handling on live aircraft pages and index so remote reference images fail gracefully rather than showing broken image icons.
+- Added squadron/unit photo-research cards/notes to Spitfire, Lancaster, P-51, Hurricane and Fw 190 pages, pointing users to appropriate archive/photo sources for unit-specific confirmation.
+- Updated sitemap.xml with current live aircraft pages and article pages.
+- Adjusted P-51 visible unit wording so it does not label fighter groups as RAF squadrons.
+- Hardened Lancaster aftermarket rendering so object/array data shapes both display rather than blanking the section.
+- Post-fix internal link scan: 0 unresolved local references found. Template-literal JS placeholders are ignored; remaining items are listed below if any.
+
+Unresolved local references:
+None detected.
