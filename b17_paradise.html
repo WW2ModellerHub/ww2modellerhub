@@ -1056,6 +1056,27 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
   #leaflet-map{height:520px!important;min-height:520px!important;}
 }
 </style>
+
+<style id="b17-final-structure-fix">
+/* B-17 final repair: readable cards, consistent detail panel, labelled product links */
+#tab-build .kit-card{font-family:'Source Serif 4',Georgia,serif!important;line-height:1.35!important;padding:1rem!important;}
+#tab-build .kit-title,#tab-build .am-title{font-family:'Source Serif 4',Georgia,serif!important;font-size:20px!important;line-height:1.15!important;color:#fff!important;font-weight:700!important;margin:.25rem 0 .35rem!important;}
+#tab-build .kit-desc,#tab-build .am-desc{font-size:14px!important;line-height:1.5!important;color:rgba(255,255,255,.76)!important;margin:.35rem 0 .65rem!important;}
+#tab-build .kit-meta,#tab-build .store-label{font-family:'Oswald',sans-serif!important;font-size:10px!important;letter-spacing:.13em!important;text-transform:uppercase!important;color:rgba(255,255,255,.48)!important;margin-bottom:.25rem!important;}
+#tab-build .shop-btn{font-family:'Oswald',sans-serif!important;font-size:11px!important;letter-spacing:.11em!important;text-transform:uppercase!important;padding:.45rem .7rem!important;line-height:1!important;}
+#paint-grid .paint-card{display:grid!important;grid-template-columns:88px 1fr!important;min-height:96px!important;}
+#paint-grid .paint-swatch{width:auto!important;min-height:96px!important;display:flex!important;align-items:flex-end!important;font-family:'Oswald',sans-serif!important;font-size:10px!important;letter-spacing:.08em!important;text-transform:uppercase!important;line-height:1.15!important;color:#fff!important;padding:.55rem!important;}
+#paint-grid .paint-name{font-family:'Source Serif 4',Georgia,serif!important;font-size:18px!important;line-height:1.15!important;}
+#paint-grid .paint-use{font-size:13px!important;line-height:1.4!important;color:rgba(255,255,255,.75)!important;}
+#paint-grid .paint-links{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.55rem;}
+#detail-panel.detail-panel{grid-column:1/-1!important;margin-top:.9rem!important;}
+#detail-panel .dp-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;background:rgba(0,0,0,.28);border-bottom:1px solid rgba(255,255,255,.08);padding:1rem 1.1rem;}
+#detail-panel .dp-title{font-family:'Special Elite',cursive;font-size:1.35rem;color:#fff;}
+#detail-panel .dp-meta{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.48);margin-top:.2rem;}
+#detail-panel .pilot-card{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:.55rem .65rem;cursor:pointer;}
+#detail-panel .pilot-card:hover{border-color:var(--brass2);}
+@media(max-width:640px){#tab-build .kit-grid,#paint-grid{grid-template-columns:1fr!important;}#tab-build .kit-title,#tab-build .am-title{font-size:18px!important}.detail-grid{grid-template-columns:1fr!important}#detail-panel .dp-top{display:block}.close-btn{margin-top:.65rem}}
+</style>
 </head><body>
 <nav class="site-nav">
   <div class="site-nav-inner">
@@ -1386,54 +1407,45 @@ const SQ=[
 const PILOT_META={};
 
 const PAINTS=[
- {name:"Olive Drab 41",use:"Upper surfaces on early / mid-war B-17s",bs:"USAAF",aka:"OD 41",brands:["AK Real Color RC026","Tamiya XF-62","MRP-138"]},
- {name:"Neutral Gray 43",use:"Undersides on Olive Drab Fortresses",bs:"USAAF",aka:"NG 43",brands:["AK Real Color RC251","Tamiya XF-53 mix","MRP-141"]},
- {name:"Natural Metal",use:"Late-war B-17G finish",bs:"USAAF",aka:"Aluminium",brands:["AK Xtreme Metal Aluminium","Vallejo Metal Color Aluminium","MRP Super Silver"]},
- {name:"Olive Drab anti-glare",use:"Nose / upper nose anti-glare panels",bs:"USAAF",aka:"Anti-glare panel",brands:["Tamiya XF-62","MRP Olive Drab","AK RC026"]},
- {name:"Interior Green",use:"Cockpit and selected interior areas",bs:"USAAF",aka:"ANA 611",brands:["MRP-131","Tamiya XF-71","AK RC262"]},
- {name:"Bronze Green / Dull Dark Green",use:"Some early cockpit area interpretation",bs:"USAAF",aka:"Cockpit shade",brands:["Research required by subject"]},
- {name:"Black",use:"Instrument panels, tyres, de-icer boots and details",bs:"USAAF",aka:"Black",brands:["Any modelling black"]},
- {name:"Red / Yellow group markings",use:"Tail and group identity markings",bs:"USAAF",aka:"Unit colours",brands:["Match decal/reference subject"]}
+ {name:"Olive Drab 41",use:"Upper surfaces on early / mid-war B-17s",hex:"#545a35",links:[{label:"AK Real Colors Olive Drab",url:"https://ak-interactive.com/product/olive-drab-41-rc026/"},{label:"Tamiya XF-62 Olive Drab",url:"https://www.tamiyausa.com/shop/acrylic-paint-mini/xf-62-olive-drab/"}]},
+ {name:"Neutral Gray 43",use:"Undersides on Olive Drab Fortresses",hex:"#73777d",links:[{label:"AK Real Colors Neutral Gray",url:"https://ak-interactive.com/product/neutral-gray-43-rc251/"},{label:"Tamiya XF-53 Neutral Grey",url:"https://www.tamiyausa.com/shop/acrylic-paint-mini/xf-53-neutral-grey/"}]},
+ {name:"Natural Metal",use:"Late-war B-17G finish. Use several metallic tones rather than one flat silver.",hex:"#b8bec7",links:[{label:"AK Xtreme Metal Aluminium",url:"https://ak-interactive.com/product/aluminium-xtreme-metal/"},{label:"Vallejo Metal Color Aluminium",url:"https://acrylicosvallejo.com/en/product/hobby/metal-color-en/aluminium-77701/"}]},
+ {name:"Olive Drab anti-glare",use:"Nose / upper nose anti-glare panels on natural-metal aircraft",hex:"#3f4828",links:[{label:"Tamiya XF-62 Olive Drab",url:"https://www.tamiyausa.com/shop/acrylic-paint-mini/xf-62-olive-drab/"}]},
+ {name:"Interior Green",use:"Cockpit and selected interior areas; confirm exact aircraft/area before painting.",hex:"#687750",links:[{label:"Humbrol 226 Interior Green",url:"https://uk.humbrol.com/products/no-226-interior-green-matt"},{label:"Tamiya XF-71 Cockpit Green",url:"https://www.tamiyausa.com/shop/acrylic-paint-mini/xf-71-cockpit-green-ijn/"}]},
+ {name:"Bronze / Dull Dark Green",use:"Some cockpit interpretations on earlier aircraft; use subject photos where possible.",hex:"#29372e",links:[{label:"AK 3rd Gen Dull Dark Green",url:"https://ak-interactive.com/product/dull-dark-green/"}]},
+ {name:"Black",use:"Instrument panels, tyres, de-icer boots and detail painting",hex:"#111318",links:[{label:"Tamiya XF-1 Flat Black",url:"https://www.tamiyausa.com/shop/acrylic-paint-mini/xf-1-flat-black/"}]},
+ {name:"Red / Yellow unit markings",use:"Tail, cowl and group identity colours; match to the exact aircraft decal/reference.",hex:"#b28a34",links:[{label:"Tamiya acrylic paint range",url:"https://www.tamiyausa.com/shop/acrylic-paint-mini/"}]}
 ];
 
 const KITS=[
- {scale:"1:72",title:"Airfix B-17G Flying Fortress",maker:"Airfix",desc:"Good mainstream 1:72 route for a manageable Flying Fortress build. Use when you want broad decal compatibility and a sensible display footprint.",linkLabel:"Open Airfix B-17 search",link:"https://uk.airfix.com/search?q=B-17"},
- {scale:"1:72",title:"Revell B-17F / B-17G Flying Fortress",maker:"Revell",desc:"Strong 1:72 family for classic Eighth Air Force subjects. Check whether the boxing is an F or G before choosing nose art and turret references.",linkLabel:"Open Revell B-17 search",link:"https://www.revell.de/en/search?q=B-17"},
- {scale:"1:48",title:"HK Models B-17F / B-17G",maker:"HK Models",desc:"Large centrepiece Fortress option with room for interior, nose, cockpit, waist and turret detailing. Best for a serious display build.",linkLabel:"Open HK Models B-17 search",link:"https://www.hannants.co.uk/search/?FULL=HK%20Models%20B-17"},
- {scale:"1:144",title:"Academy / Minicraft B-17 options",maker:"Compact scale",desc:"Useful for multiple bomb-group subjects or formation displays without the shelf-space hit of 1:72 or 1:48.",linkLabel:"Open 1:144 B-17 search",link:"https://www.hannants.co.uk/search/?FULL=B-17%201:144"}
+ {scale:"1:72",title:"Airfix B-17G Flying Fortress",maker:"Airfix",desc:"Good mainstream 1:72 route for a manageable Flying Fortress build. Use when you want broad decal compatibility and a sensible display footprint.",linkLabel:"Airfix official product page",link:"https://uk.airfix.com/products/boeing-b-17g-flying-fortress-a08017b"},
+ {scale:"1:72",title:"Revell B-17F Memphis Belle",maker:"Revell",desc:"Classic 1:72 B-17F route for Memphis Belle and other mid-war Eighth Air Force subjects. Check exact boxing before applying group-specific decals.",linkLabel:"Revell official product page",link:"https://www.revell.de/en/products/modelmaking/aircraft/world-war-ii/b-17f-memphis-belle.html"},
+ {scale:"1:48",title:"HK Models B-17G Flying Fortress",maker:"HK Models",desc:"Large centrepiece Fortress option with room for interior, nose, cockpit, waist and turret detailing. Best for a serious display build.",linkLabel:"HK Models product page",link:"https://www.hk-models.com/hkm-01f001-b-17g-flying-fortress"},
+ {scale:"1:144",title:"Academy B-17G Flying Fortress",maker:"Academy",desc:"Compact option for multiple bomb-group subjects or formation displays without the shelf-space hit of 1:72 or 1:48.",linkLabel:"Academy product page",link:"https://www.academy.co.kr/eng/1-144-b-17g-flying-fortress/p/12619/"}
 ];
 
 const SQ_DECALS={
- "91 BG":[{name:"Kits-World B-17 91st BG decals",url:"https://kitsworld.co.uk/?s=B-17+91st+BG&post_type=product"}],
- "100 BG":[{name:"Kits-World Bloody Hundredth decals",url:"https://kitsworld.co.uk/?s=100th+BG&post_type=product"}],
- "303 BG":[{name:"B-17 303rd BG decal search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20303rd%20BG%20decal"}],
- "305 BG":[{name:"B-17 305th BG decal search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20305th%20BG%20decal"}],
- "306 BG":[{name:"B-17 306th BG decal search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20306th%20BG%20decal"}],
- "379 BG":[{name:"B-17 379th BG decal search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20379th%20BG%20decal"}],
- "381 BG":[{name:"B-17 381st BG decal search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20381st%20BG%20decal"}],
- "384 BG":[{name:"B-17 384th BG decal search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20384th%20BG%20decal"}],
- "398 BG":[{name:"B-17 398th BG decal search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20398th%20BG%20decal"}],
- "447 BG":[{name:"B-17 447th BG decal search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20447th%20BG%20decal"}],
- "97 BG":[{name:"B-17 97th BG decal search",url:"https://www.hannants.co.uk/search/?FULL=B-17%2097th%20BG%20decal"}],
- "301 BG":[{name:"B-17 301st BG decal search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20301st%20BG%20decal"}],
- "19 BG":[{name:"B-17 19th BG decal search",url:"https://www.hannants.co.uk/search/?FULL=B-17%2019th%20BG%20decal"}]
+ "91 BG":[{name:"Kits-World Memphis Belle decal sheet",url:"https://kitsworld.co.uk/product/kw172008-boeing-b-17f-flying-fortress-memphis-belle/"}],
+ "100 BG":[{name:"Kits-World B-17 Bloody Hundredth sheet",url:"https://kitsworld.co.uk/product/kw172080-boeing-b-17g-flying-fortress/"}],
+ "303 BG":[],"305 BG":[],"306 BG":[],"379 BG":[],"381 BG":[],"384 BG":[],"398 BG":[],"447 BG":[],"97 BG":[],"301 BG":[],"19 BG":[]
 };
 
 const AFTERMARKET={
  "Decals & markings":[
-  {title:"Kits-World B-17 decal range",desc:"Named Fortress nose-art subjects and useful group-marking coverage. Best first stop for decal-led builds.",label:"Open Kits-World B-17 decals",url:"https://kitsworld.co.uk/?s=B-17&post_type=product"},
-  {title:"Hannants B-17 decal catalogue",desc:"Useful fallback for specific bomb groups, aircraft names and older decal sheets.",label:"Open Hannants B-17 decals",url:"https://www.hannants.co.uk/search/?FULL=B-17%20decal"}
+  {title:"Kits-World B-17G Little Miss Mischief decals",desc:"Specific named-aircraft decal option for a colourful late-war Fortress subject.",label:"Kits-World product page",url:"https://kitsworld.co.uk/product/kw172082-boeing-b-17g-flying-fortress-little-miss-mischief/"},
+  {title:"Kits-World B-17F Memphis Belle decals",desc:"Specific decal option for the most famous B-17F subject.",label:"Kits-World product page",url:"https://kitsworld.co.uk/product/kw172008-boeing-b-17f-flying-fortress-memphis-belle/"}
  ],
  "Masks & transparency":[
-  {title:"B-17 canopy and wheel masks",desc:"Masks are not optional on a serious B-17 build — the Fortress has too much glazing to do casually.",label:"Open B-17 mask search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20mask"},
-  {title:"Eduard B-17 masks/detail sets",desc:"Use for canopy masks, cockpit detail, bomb-bay structure and exterior detail depending on scale and kit.",label:"Open Eduard B-17 search",url:"https://www.eduard.com/eduard/search/?lang=1&cur=2&searchparam=B-17"}
+  {title:"Eduard B-17G mask set",desc:"Canopy and clear-part masks; high-impact upgrade because the Fortress has so much glazing.",label:"Eduard product page",url:"https://www.eduard.com/eduard/masks/aircraft/1-72/b-17g-1-72.html"},
+  {title:"Eduard B-17F mask set",desc:"Use for B-17F projects where nose and cockpit glazing dominate the model.",label:"Eduard product page",url:"https://www.eduard.com/eduard/masks/aircraft/1-72/b-17f-1-72.html"}
  ],
  "Interior & exterior detail":[
-  {title:"Eduard B-17 detail sets",desc:"Cockpit, bomb bay, waist positions and exterior detail upgrades for larger-scale builds.",label:"Open Eduard B-17 detail",url:"https://www.eduard.com/eduard/search/?lang=1&cur=2&searchparam=B-17"},
-  {title:"Quickboost / resin B-17 accessories",desc:"Useful for engines, gun barrels, turbo/exhaust details and smaller correction items.",label:"Open B-17 resin search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20resin"}
+  {title:"Eduard B-17G interior photo-etch",desc:"Cockpit, nose and visible interior refinement for larger/detail-focused builds.",label:"Eduard product page",url:"https://www.eduard.com/eduard/photo-etched-parts/photo-etched-set/aircraft/1-72/b-17g-interior-1-72.html"},
+  {title:"Eduard B-17G exterior photo-etch",desc:"Exterior surface, landing gear and smaller airframe details for a sharper Fortress finish.",label:"Eduard product page",url:"https://www.eduard.com/eduard/photo-etched-parts/photo-etched-set/aircraft/1-72/b-17g-exterior-1-72.html"}
  ],
  "Wheels / engines / guns":[
-  {title:"B-17 wheels, engines and gun barrels",desc:"High-impact upgrades because the undercarriage, cowlings and defensive guns are very visible on a finished Fortress.",label:"Open wheels / engines search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20wheels%20engines%20guns"}
+  {title:"Eduard Brassin B-17 wheels",desc:"Useful upgrade because the undercarriage and tyres are very visible on a finished Fortress.",label:"Eduard product page",url:"https://www.eduard.com/eduard/brassin/aircraft/1-72/b-17-wheels-1-72.html"},
+  {title:"Master B-17 gun barrels",desc:"Metal gun barrels sharpen the defensive positions and avoid chunky plastic barrels.",label:"Master Model product page",url:"https://master-model.pl/product/am-72-027.html"}
  ]
 };
 
@@ -1444,9 +1456,9 @@ const WEATHER=[
 ];
 
 const TECHNIQUES=[
- {title:"Natural metal panel variation",text:"Late B-17G subjects look better with restrained tonal changes across panels rather than a single silver coat.",products:[{name:"AK Xtreme Metal range",url:"https://ak-interactive.com/product-category/paints/xtreme-metal/"}]},
- {title:"Large-airframe glazing",text:"The B-17 has a huge amount of clear framing, so masks make a disproportionate difference to the finished result.",products:[{name:"B-17 canopy mask search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20mask"}]},
- {title:"Nose-art placement",text:"Study period photos before applying decals; nose art, mission marks and squadron letters vary strongly between aircraft.",products:[{name:"B-17 decal search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20decal"}]}
+ {title:"Natural metal panel variation",text:"Late B-17G subjects look better with restrained tonal changes across panels rather than a single silver coat.",products:[{name:"AK Xtreme Metal Aluminium",url:"https://ak-interactive.com/product/aluminium-xtreme-metal/"}]},
+ {title:"Large-airframe glazing",text:"The B-17 has a huge amount of clear framing, so masks make a disproportionate difference to the finished result.",products:[{name:"Eduard B-17G mask set",url:"https://www.eduard.com/eduard/masks/aircraft/1-72/b-17g-1-72.html"}]},
+ {title:"Nose-art placement",text:"Study period photos before applying decals; nose art, mission marks and squadron letters vary strongly between aircraft.",products:[{name:"Kits-World Memphis Belle decals",url:"https://kitsworld.co.uk/product/kw172008-boeing-b-17f-flying-fortress-memphis-belle/"}]}
 ];
 
 const STATIONS=[
@@ -1507,12 +1519,12 @@ const PILOT_STORIES=[
 ];
 
 const BUILD_STEPS=[
- {n:1,title:"Choose the exact B-17 version",icon:"📋",text:"Choose whether you want an early B-17F, a late B-17G or a special Pacific subject before buying decals or aftermarket. Nose layout, turret fit and waist windows all depend on this decision.",products:[{name:"B-17 variant decal search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20decal"}]},
- {n:2,title:"Glazing first",icon:"🪟",text:"The Fortress has a huge amount of clear framing. Sort the nose, cockpit, dorsal and tail glazing early, because it affects how cleanly the entire build comes together.",products:[{name:"B-17 mask search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20mask"}]},
- {n:3,title:"Interior priorities",icon:"🪑",text:"Do not try to superdetail every compartment unless the kit and scale justify it. Prioritise the cockpit, nose, waist positions, visible bomb bay and gun stations that can actually be seen.",products:[{name:"Eduard B-17 detail search",url:"https://www.eduard.com/eduard/photo-etched-parts/aircraft/1-48/?lang=1&cur=2&listtype=search&searchparam=B-17"}]},
- {n:4,title:"Finish and markings",icon:"🎨",text:"Decide whether the subject is Olive Drab or natural metal, then build the look around the exact group and aircraft. Tail symbols, squadron codes and nose art are the key visual drivers.",products:[{name:"B-17 decals",url:"https://kitsworld.co.uk/?s=B-17&post_type=product"}]},
- {n:5,title:"Engines, wheels and stance",icon:"⚙️",text:"Because the B-17 is a large aircraft, weak engines, poor wheels or the wrong sit are very noticeable. If you only add a few upgrades, make them count here.",products:[{name:"B-17 wheels / engines",url:"https://www.hannants.co.uk/search/?FULL=B-17%20wheels%20engines"}]},
- {n:6,title:"Weather lightly but convincingly",icon:"🌤️",text:"Most Fortresses should look worked hard rather than theatrically filthy. Focus on exhaust staining, oil, worn walkways, crew access scuffing and localised fading or oxidation.",products:[{name:"Aircraft weathering search",url:"https://www.hannants.co.uk/search/?FULL=aircraft%20weathering"}]}
+ {n:1,title:"Choose the exact B-17 version",icon:"📋",text:"Choose whether you want an early B-17F, a late B-17G or a special Pacific subject before buying decals or aftermarket. Nose layout, turret fit and waist windows all depend on this decision.",products:[{name:"Airfix B-17G product page",url:"https://uk.airfix.com/products/boeing-b-17g-flying-fortress-a08017b"},{name:"Revell B-17F Memphis Belle",url:"https://www.revell.de/en/products/modelmaking/aircraft/world-war-ii/b-17f-memphis-belle.html"}]},
+ {n:2,title:"Glazing first",icon:"🪟",text:"The Fortress has a huge amount of clear framing. Sort the nose, cockpit, dorsal and tail glazing early, because it affects how cleanly the entire build comes together.",products:[{name:"Eduard B-17G mask set",url:"https://www.eduard.com/eduard/masks/aircraft/1-72/b-17g-1-72.html"}]},
+ {n:3,title:"Interior priorities",icon:"🪑",text:"Do not try to superdetail every compartment unless the kit and scale justify it. Prioritise the cockpit, nose, waist positions, visible bomb bay and gun stations that can actually be seen.",products:[{name:"Eduard B-17G interior",url:"https://www.eduard.com/eduard/photo-etched-parts/photo-etched-set/aircraft/1-72/b-17g-interior-1-72.html"}]},
+ {n:4,title:"Finish and markings",icon:"🎨",text:"Decide whether the subject is Olive Drab or natural metal, then build the look around the exact group and aircraft. Tail symbols, squadron codes and nose art are the key visual drivers.",products:[{name:"Kits-World Memphis Belle decals",url:"https://kitsworld.co.uk/product/kw172008-boeing-b-17f-flying-fortress-memphis-belle/"}]},
+ {n:5,title:"Engines, wheels and stance",icon:"⚙️",text:"Because the B-17 is a large aircraft, weak engines, poor wheels or the wrong sit are very noticeable. If you only add a few upgrades, make them count here.",products:[{name:"Eduard Brassin B-17 wheels",url:"https://www.eduard.com/eduard/brassin/aircraft/1-72/b-17-wheels-1-72.html"}]},
+ {n:6,title:"Weather lightly but convincingly",icon:"🌤️",text:"Most Fortresses should look worked hard rather than theatrically filthy. Focus on exhaust staining, oil, worn walkways, crew access scuffing and localised fading or oxidation.",products:[{name:"AK aircraft weathering products",url:"https://ak-interactive.com/product-category/weathering/aircraft-weathering/"}]}
 ];
 
 const MEDIA_ITEMS=[
@@ -1551,6 +1563,7 @@ let selectedStationId=null;
 let activeFilter='all';
 let activeSort='num';
 let activeTab='squadrons';
+let activeId=null;
 
 function escapeHtml(v){return String(v==null?'':v).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 function safeId(v){return String(v).replace(/[^a-zA-Z0-9_-]/g,'_');}
@@ -1614,26 +1627,35 @@ function renderGrid(){
         <div class="tags">${tags}</div>
         <div class="stats"><div class="stat"><div class="stat-val">${escapeHtml(sq.kills)}</div><div class="stat-lbl">Missions</div></div><div class="stat"><div class="stat-val">${escapeHtml(sq.losses)}</div><div class="stat-lbl">Lost</div></div><div class="stat"><div class="stat-val">${((sq.losses||0)/(sq.sorties||1)*100).toFixed(1)}%</div><div class="stat-lbl">Loss %</div></div></div>
         <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.55;margin:.65rem 0 0">${escapeHtml(sq.ops||'')}</p>
-        <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-top:.65rem">${names}</div>
+        <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-top:.65rem">Click to expand — group notes · crew · decals</div>
       </div>
     </div>`;
-  }).join('');
+  }).join('')+'<div id="detail-panel" class="detail-panel"></div>';
 }
 
 function selectSq(num){
-  const sq=SQ.find(s=>s.num===num); if(!sq)return;
+  if(activeId===num){closeDetail();return;}
+  activeId=num;
   document.querySelectorAll('.sq-card').forEach(c=>c.classList.remove('active'));
   const card=document.getElementById('card-'+safeId(num)); if(card)card.classList.add('active');
-  const detail=document.getElementById('detail'); if(!detail)return;
-  if(card && card.parentNode) card.insertAdjacentElement('afterend', detail);
-  const pilots=(sq.pilots||[]).map(p=>`<button type="button" class="pilot-chip" onclick="event.stopPropagation();openPilot('${escapeHtml(p.n)}','${escapeHtml(num)}')"><b>${escapeHtml(p.n)}</b><span>${escapeHtml(p.note||p.awards||'Crew / commander')}</span></button>`).join('');
-  const decs=(SQ_DECALS[sq.num]||[]).map(d=>`<a class="shop-btn hb-outline" href="${d.url}" target="_blank" rel="noopener">${escapeHtml(d.name)} ↗</a>`).join('');
-  detail.innerHTML=`<div class="detail-panel open"><div class="dp-hd"><div><div class="dp-title">${escapeHtml(sq.num)}</div><div class="dp-meta">${escapeHtml(sq.base)} · ${mapGroupLabel(sq.group)} · ${escapeHtml(sq.marks)} · ${escapeHtml(sq.codes||'')}</div></div><button class="close-btn" onclick="event.stopPropagation();document.getElementById('detail').innerHTML=''">Close ✕</button></div>
-    <div class="detail-grid"><div><div class="section-label">Group notes</div><p>${escapeHtml(sq.ops||'')}</p><div class="pilot-list">${pilots}</div></div>
-    <div><div class="section-label">Markings / decals</div><div style="font-size:14px;color:rgba(255,255,255,.70);line-height:1.7;margin-bottom:.8rem"><b>Codes:</b> ${escapeHtml(sq.codes||'')}<br><b>Subject:</b> ${escapeHtml((sq.decalRef&&sq.decalRef.serial)||'Choose by exact aircraft')}<br><b>Tail / group ID:</b> ${escapeHtml((sq.decalRef&&sq.decalRef.finFlash)||'Varies by aircraft')}</div><div style="display:flex;flex-wrap:wrap;gap:.5rem">${decs||'<span style="color:rgba(255,255,255,.45)">Use the general B-17 decal links in the build section.</span>'}</div></div></div></div>`;
-  setTimeout(()=>detail.scrollIntoView({behavior:'smooth',block:'nearest'}),40);
+  showDetail(num);
+  setTimeout(()=>{const p=document.getElementById('detail-panel');if(p)p.scrollIntoView({behavior:'smooth',block:'nearest'});},50);
 }
-
+function closeDetail(){
+  activeId=null;
+  document.querySelectorAll('.sq-card').forEach(c=>c.classList.remove('active'));
+  const p=document.getElementById('detail-panel');if(p){p.classList.remove('open');p.innerHTML='';}
+}
+function showDetail(num){
+  const sq=SQ.find(s=>s.num===num); if(!sq)return;
+  const panel=document.getElementById('detail-panel'); if(!panel)return;
+  const sqDecals=SQ_DECALS[sq.num]||[];
+  panel.innerHTML=`<div class="dp-top"><div><div class="dp-title">${escapeHtml(sq.num)} — ${escapeHtml(sq.codes||'')}</div><div class="dp-meta">Base: ${escapeHtml(sq.base)} · ${mapGroupLabel(sq.group)} · ${escapeHtml(sq.marks)} · ${sq.pilots.length} featured personnel · ${escapeHtml(sq.kills)} missions</div></div><button class="close-btn" onclick="closeDetail()">Close ✕</button></div>
+  <div style="padding:1rem 1.2rem 1.4rem"><div class="sec-label">Operations / modelling subject</div><div class="ops-text" style="margin-bottom:1.2rem">${escapeHtml(sq.ops||'')}</div>
+  <div class="detail-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.2rem"><div><div class="sec-label">Featured crew / commanders</div><div class="pilot-grid" style="grid-template-columns:1fr">${(sq.pilots||[]).map(p=>`<div class="pilot-card" onclick="event.stopPropagation();openPilot('${escapeHtml(p.n)}','${escapeHtml(num)}')"><span class="pkills">${escapeHtml(p.k||'—')}</span><div class="pname">${escapeHtml(p.n)}</div><div class="pnote">${escapeHtml(p.note||'')}</div><div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.4);margin-top:2px">${escapeHtml(p.fate||'')}</div></div>`).join('')}</div></div>
+  <div><div class="sec-label">Marking / decal notes</div><div style="font-size:14px;color:rgba(255,255,255,.70);line-height:1.7;margin-bottom:.8rem"><b>Codes:</b> ${escapeHtml(sq.codes||'')}<br><b>Subject:</b> ${escapeHtml((sq.decalRef&&sq.decalRef.serial)||'Choose by exact aircraft')}<br><b>Tail / group ID:</b> ${escapeHtml((sq.decalRef&&sq.decalRef.finFlash)||'Varies by aircraft')}</div><div style="display:flex;flex-wrap:wrap;gap:.5rem">${sqDecals.filter(d=>d.url).map(d=>`<a class="shop-btn hb-outline" href="${d.url}" target="_blank" rel="noopener">${escapeHtml(d.name)} ↗</a>`).join('')||'<span style="color:rgba(255,255,255,.45)">No confident specific decal product link for this group yet.</span>'}</div></div></div></div>`;
+  panel.classList.add('open');
+}
 function openPilot(name,num){
   const sq=SQ.find(s=>s.num===num);
   const p=sq && (sq.pilots||[]).find(x=>x.n===name);
@@ -1646,7 +1668,7 @@ function openPilot(name,num){
   document.getElementById('pm-bio').innerHTML='<p>'+escapeHtml(p.note||'Featured B-17 crew / commander reference. Use aircraft-specific sources and period photographs before finalising markings.')+'</p>';
   document.getElementById('pm-awards').textContent=p.awards||'';
   const pilotLink=document.getElementById('pm-h-pilot'); if(pilotLink) pilotLink.href='https://www.iwm.org.uk/collections/search?query='+encodeURIComponent(p.n+' B-17');
-  const sqLink=document.getElementById('pm-h-sqn'); if(sqLink) sqLink.href='https://www.hannants.co.uk/search/?FULL='+encodeURIComponent((sq?sq.num:'B-17')+' decal');
+  const sqLink=document.getElementById('pm-h-sqn'); if(sqLink) {sqLink.href='https://kitsworld.co.uk/product/kw172008-boeing-b-17f-flying-fortress-memphis-belle/';sqLink.textContent='Example B-17 decal product ↗';}
   overlay.classList.add('active');
 }
 function closePM(){const o=document.getElementById('pm-overlay');if(o)o.classList.remove('active');}
@@ -1663,6 +1685,20 @@ function renderAftermarket(){
   const storeName=(url)=> url.includes('kitsworld')?'Kits-World':url.includes('hannants')?'Hannants':url.includes('eduard')?'Eduard official':url.includes('ak-interactive')?'AK Interactive':'Online store/reference';
   el.innerHTML=Object.entries(AFTERMARKET).map(([cat,items])=>`<div class="section-label">${escapeHtml(cat)}</div><div class="kit-grid">${items.map(i=>`<div class="kit-card"><div class="store-label">${escapeHtml(storeName(i.url))}</div><div class="am-title">${escapeHtml(i.title)}</div><div class="am-desc">${escapeHtml(i.desc)}</div><a class="shop-btn hb-outline" href="${i.url}" target="_blank" rel="noopener">${escapeHtml(i.label||'Open link')} ↗</a></div>`).join('')}</div>`).join('');
 }
+
+function renderPaints(){
+  const el=document.getElementById('paint-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';
+  el.innerHTML=PAINTS.map(p=>`<div class="paint-card"><div class="paint-swatch" style="background:${escapeHtml(p.hex||'#777')}"><div>${escapeHtml(p.name)}</div></div><div class="paint-info"><div class="paint-name">${escapeHtml(p.name)}</div><div class="paint-use">${escapeHtml(p.use||'')}</div><div class="paint-links">${(p.links||[]).map(l=>`<a class="shop-btn hb-outline" href="${l.url}" target="_blank" rel="noopener">${escapeHtml(l.label)} ↗</a>`).join('')}</div></div></div>`).join('');
+}
+function renderBuildSteps(){
+  const el=document.getElementById('stepbystep-content');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';
+  el.innerHTML=BUILD_STEPS.map(s=>`<div class="info-box"><div style="font-family:'Special Elite',cursive;font-size:1.15rem;color:#fff;margin-bottom:.4rem">${s.icon||''} ${s.n}. ${escapeHtml(s.title)}</div><div style="font-size:15px;color:rgba(255,255,255,.72);line-height:1.65">${escapeHtml(s.text)}</div><div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.7rem">${(s.products||[]).map(p=>`<a class="shop-btn hb-outline" href="${p.url}" target="_blank" rel="noopener">${escapeHtml(p.name)} ↗</a>`).join('')}</div></div>`).join('');
+}
+function renderWeathering(){
+  const el=document.getElementById('weather-grid');if(el&&!el.dataset.rendered){el.dataset.rendered='1';el.innerHTML=WEATHER.map(w=>`<div class="kit-card"><div class="kit-title">${escapeHtml(w.base)}</div><div class="kit-desc">${escapeHtml(w.mudNote||'')}</div>${(w.rows||[]).map(r=>`<div style="font-size:13px;color:rgba(255,255,255,.70);margin:.45rem 0;line-height:1.45"><b>${escapeHtml(r.l)}:</b> ${escapeHtml(r.v)}</div>`).join('')}</div>`).join('');}
+  const te=document.getElementById('weathering-techniques');if(te&&!te.dataset.rendered){te.dataset.rendered='1';te.innerHTML=(TECHNIQUES||[]).map(t=>`<div class="info-box"><div style="font-family:'Special Elite',cursive;font-size:1.05rem;color:#fff;margin-bottom:.35rem">${escapeHtml(t.title||'Technique')}</div><div style="font-size:14px;color:rgba(255,255,255,.72);line-height:1.6">${escapeHtml(t.text||'')}</div><div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.65rem">${(t.products||[]).map(p=>`<a class="shop-btn hb-outline" href="${p.url}" target="_blank" rel="noopener">${escapeHtml(p.name)} ↗</a>`).join('')}</div></div>`).join('');}
+}
+
 function mapGroupLabel(group){
   return group==='1'?'8th AF / UK':group==='2'?'Mediterranean':group==='3'?'Pacific':group==='4'?'Special subjects':'All theatres';
 }
