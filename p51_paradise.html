@@ -617,6 +617,34 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
   #tab-walkaround .wa-ref-strip{grid-template-columns:1fr!important;}
   #tab-walkaround .wa-ref-card img{height:155px!important;max-height:155px!important;}
 }
+
+
+/* P-51 walkaround video cards */
+#tab-walkaround .p51-video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:.85rem;
+  margin:0 0 1.75rem;
+}
+#tab-walkaround .p51-video-card{
+  background:linear-gradient(160deg,rgba(17,34,64,.82),rgba(7,16,31,.88));
+  border:1px solid rgba(136,174,240,.18);
+  border-radius:5px;
+  overflow:hidden;
+  text-decoration:none;
+  display:block;
+  box-shadow:0 10px 24px rgba(0,0,0,.22);
+  transition:transform .15s,border-color .15s;
+}
+#tab-walkaround .p51-video-card:hover{transform:translateY(-2px);border-color:rgba(201,168,76,.52)}
+#tab-walkaround .p51-video-card img{width:100%;height:135px;object-fit:cover;display:block;background:#0a1628}
+#tab-walkaround .p51-video-body{padding:.75rem .85rem}
+#tab-walkaround .p51-video-kicker{font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem}
+#tab-walkaround .p51-video-title{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;color:#fff;line-height:1.35;margin-bottom:.3rem}
+#tab-walkaround .p51-video-desc{font-size:13px;color:rgba(255,255,255,.58);line-height:1.48}
+#tab-walkaround .p51-video-link{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass2);margin-top:.55rem}
+@media(max-width:760px){#tab-walkaround .p51-video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#tab-walkaround .p51-video-card img{height:115px}}
+@media(max-width:520px){#tab-walkaround .p51-video-grid{grid-template-columns:1fr}#tab-walkaround .p51-video-card img{height:150px}}
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409"
      crossorigin="anonymous"></script>
@@ -1271,6 +1299,23 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <a href="#p51-undercarriage" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(136,174,240,.3);border-radius:3px;color:var(--brass2);text-decoration:none">Undercarriage</a>
     <a href="#p51-markings" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(136,174,240,.3);border-radius:3px;color:var(--brass2);text-decoration:none">Markings</a>
     <a href="#p51-airframe" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(136,174,240,.3);border-radius:3px;color:var(--brass2);text-decoration:none">Airframe</a>
+    <a href="#p51-walkaround-videos" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(136,174,240,.3);border-radius:3px;color:var(--brass2);text-decoration:none">Videos</a>
+  </div>
+
+
+  <div id="p51-walkaround-videos" style="margin-bottom:2rem">
+    <div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Specific Mustang walkaround videos <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(136,174,240,.35),transparent)"></span></div>
+    <div style="background:rgba(136,174,240,.06);border:1px solid rgba(136,174,240,.18);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.72);line-height:1.65;margin-bottom:1rem">Direct video references for shape, stance, cockpit layout, surface finish and theatre-specific Mustang modelling. These are specific video links rather than generic YouTube search pages.</div>
+    <div class="p51-video-grid">
+      <a class="p51-video-card" href="https://www.youtube.com/watch?v=MNJKtP28Cp4" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/MNJKtP28Cp4/hqdefault.jpg" alt="P-51 Mustang walkaround Reno Air Races video thumbnail" loading="lazy"><div class="p51-video-body"><div class="p51-video-kicker">Exterior walkaround</div><div class="p51-video-title">P-51 Mustang Walkaround — Reno Air Races</div><div class="p51-video-desc">Useful for overall stance, wing planform, spinner line, radiator scoop and natural-metal surface variation.</div><div class="p51-video-link">Open YouTube video ↗</div></div></a>
+      <a class="p51-video-card" href="https://www.youtube.com/watch?v=jzKFkYLHq3Q" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/jzKFkYLHq3Q/hqdefault.jpg" alt="P-51D Kermie Cam walkaround video thumbnail" loading="lazy"><div class="p51-video-body"><div class="p51-video-kicker">Detailed P-51D</div><div class="p51-video-title">North American P-51D Mustang — Kermie Cam Walkaround</div><div class="p51-video-desc">Good broad reference for cowling, canopy, panel breaks, wing root and undercarriage presentation.</div><div class="p51-video-link">Open YouTube video ↗</div></div></a>
+      <a class="p51-video-card" href="https://www.youtube.com/watch?v=tAcQrt0N3Z0" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/tAcQrt0N3Z0/hqdefault.jpg" alt="P-51 Mustang cockpit walkthrough video thumbnail" loading="lazy"><div class="p51-video-body"><div class="p51-video-kicker">Cockpit walkthrough</div><div class="p51-video-title">P-51 Mustang Series — Cockpit Walkthrough</div><div class="p51-video-desc">Use for instrument panel layout, seat position, cockpit sill, radios and canopy visibility.</div><div class="p51-video-link">Open YouTube video ↗</div></div></a>
+      <a class="p51-video-card" href="https://www.youtube.com/watch?v=wYwjlg-fNGA" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/wYwjlg-fNGA/hqdefault.jpg" alt="P-51D Marinell Duxford walkaround video thumbnail" loading="lazy"><div class="p51-video-body"><div class="p51-video-kicker">Duxford reference</div><div class="p51-video-title">P-51D Mustang “Marinell” Walkaround — IWM Duxford</div><div class="p51-video-desc">Useful UK-based survivor reference for markings, surface finish and museum/static aircraft details.</div><div class="p51-video-link">Open YouTube video ↗</div></div></a>
+      <a class="p51-video-card" href="https://www.youtube.com/watch?v=7ctZ2cQdFd8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/7ctZ2cQdFd8/hqdefault.jpg" alt="Inside the cockpit of the P-51 Mustang video thumbnail" loading="lazy"><div class="p51-video-body"><div class="p51-video-kicker">Cockpit expert tour</div><div class="p51-video-title">Inside the Cockpit of the P-51 Mustang</div><div class="p51-video-desc">Use alongside photos when detailing belts, panel, gunsight, control column and interior contrast.</div><div class="p51-video-link">Open YouTube video ↗</div></div></a>
+      <a class="p51-video-card" href="https://www.youtube.com/watch?v=zVWtL77f12c" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/zVWtL77f12c/hqdefault.jpg" alt="P-51B Mustang cockpit tour video thumbnail" loading="lazy"><div class="p51-video-body"><div class="p51-video-kicker">P-51B/C angle</div><div class="p51-video-title">Cockpit Tour — P-51B Mustang</div><div class="p51-video-desc">Useful if modelling early B/C Mustangs rather than bubble-canopy P-51D subjects.</div><div class="p51-video-link">Open YouTube video ↗</div></div></a>
+      <a class="p51-video-card" href="https://www.youtube.com/watch?v=b64Hl7iis90" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/b64Hl7iis90/hqdefault.jpg" alt="National Museum of the US Air Force P-51D walk around video thumbnail" loading="lazy"><div class="p51-video-body"><div class="p51-video-kicker">Museum static reference</div><div class="p51-video-title">P-51D Mustang Video Walkaround — National Museum of the US Air Force</div><div class="p51-video-desc">Useful for clean static details, cockpit access points, wheel stance and overall finish checks.</div><div class="p51-video-link">Open YouTube video ↗</div></div></a>
+      <a class="p51-video-card" href="https://www.youtube.com/watch?v=M2Rx9-mF9uA" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/M2Rx9-mF9uA/hqdefault.jpg" alt="P-51 Red Tail Mustang walkaround video thumbnail" loading="lazy"><div class="p51-video-body"><div class="p51-video-kicker">Tuskegee / Red Tail</div><div class="p51-video-title">P-51 Red Tail Mustang Walk Around</div><div class="p51-video-desc">Use for red-tail modelling cues, theatre identity, group colour balance and natural metal contrast.</div><div class="p51-video-link">Open YouTube video ↗</div></div></a>
+    </div>
   </div>
 
   <div id="p51-cockpit" style="margin-bottom:2rem">
