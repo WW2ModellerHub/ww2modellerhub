@@ -1071,6 +1071,33 @@ body:not(.noop) > .filter-bar.zero-unit-filter{display:none!important;}
 @media(max-width:620px){.main-wrap{padding:.75rem!important}.sq-grid,.kit-grid,.paint-grid,.am-grid,.survivor-grid,.books-grid,.weather-grid,.wa-grid,.media-grid,.story-grid{grid-template-columns:1fr!important}#tab-squadrons .zero-unit-filter{margin:-.15rem -.75rem .9rem!important;overflow-x:auto!important;flex-wrap:nowrap!important}.fb{flex:0 0 auto!important}}
 </style>
 
+
+<style id="zero-final-structure-repair">
+#tab-stories .zero-story-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:1rem;align-items:start;margin-bottom:1.25rem}
+#tab-stories .pilot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.55rem}
+#tab-stories .zero-story-panel{background:linear-gradient(150deg,rgba(20,36,32,.84),rgba(8,14,12,.94));border:1px solid rgba(255,255,255,.09);border-top:2px solid rgba(210,52,42,.45);border-radius:4px;padding:.9rem;box-shadow:0 10px 24px rgba(0,0,0,.24)}
+#tab-stories .zero-story-panel h3{font-family:'Special Elite',cursive;font-size:18px;color:#fff;margin:0 0 .35rem}
+#tab-stories .zero-story-panel p{font-size:14px;line-height:1.62;color:rgba(255,255,255,.68);margin:0}
+#tab-walkaround .zero-wa-section{margin-bottom:1.8rem}
+#tab-walkaround .zero-wa-head{font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#ffe7df;margin:1.1rem 0 .75rem;display:flex;align-items:center;gap:.75rem}
+#tab-walkaround .zero-wa-head:after{content:'';height:1px;flex:1;background:linear-gradient(90deg,rgba(210,52,42,.35),transparent)}
+#tab-walkaround .zero-wa-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.85rem}
+#tab-walkaround .zero-wa-card{display:block;text-decoration:none;color:inherit;background:linear-gradient(160deg,rgba(17,34,64,.74),rgba(8,10,10,.84));border:1px solid rgba(255,255,255,.10);border-radius:6px;overflow:hidden;box-shadow:0 12px 28px rgba(0,0,0,.26);transition:transform .15s,border-color .15s}
+#tab-walkaround .zero-wa-card:hover{transform:translateY(-2px);border-color:rgba(210,52,42,.55)}
+#tab-walkaround .zero-wa-card img{width:100%;height:145px;object-fit:cover;display:block;background:#111}
+#tab-walkaround .zero-wa-body{padding:.78rem .85rem;display:flex;flex-direction:column;gap:.34rem}
+#tab-walkaround .zero-wa-kicker{font-family:'Oswald',sans-serif;font-size:8px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#ffd6cc}
+#tab-walkaround .zero-wa-title{font-family:'Special Elite',cursive;font-size:16px;line-height:1.25;color:#fff}
+#tab-walkaround .zero-wa-desc{font-size:13px;line-height:1.48;color:rgba(255,255,255,.62)}
+#tab-walkaround .zero-wa-check{margin-top:.25rem;padding:.45rem .55rem;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.07);border-radius:3px;font-size:12px;line-height:1.45;color:rgba(255,255,255,.68)}
+#tab-walkaround .zero-wa-check strong{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.42);display:block;margin-bottom:.15rem}
+#tab-walkaround .zero-wa-link{font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#ffb0a8;margin-top:.25rem}
+#tab-walkaround .zero-wa-video img{height:130px}
+.zero-detail-body .pilot-grid{margin:.65rem 0 1rem}.zero-detail-body .pilot-card{cursor:pointer}.zero-linkrow{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.9rem}
+@media(max-width:860px){#tab-stories .zero-story-layout{grid-template-columns:1fr}}
+@media(max-width:680px){#tab-walkaround .zero-wa-grid{grid-template-columns:1fr}#tab-walkaround .zero-wa-card img{height:160px}.zero-detail-grid{grid-template-columns:1fr!important}}
+</style>
+
 </head><body>
 <nav class="site-nav">
   <div class="site-nav-inner">
@@ -1135,7 +1162,7 @@ body:not(.noop) > .filter-bar.zero-unit-filter{display:none!important;}
 </div></div>
 <section class="aircraft-hero"><div class="hero-roundel"></div><div><div class="hero-eyebrow">Imperial Japanese Navy Air Service · Carrier and island fighter war</div><h1 class="hero-title">Mitsubishi A6M Zero Reference</h1><div class="hero-sub">A6M2 · A6M3 · A6M5 · IJN units, markings, colours and modelling references</div></div><div class="hero-stats"><div class="hero-stat"><div class="hero-stat-val">12</div><div class="hero-stat-lbl">Units</div></div><div class="hero-stat"><div class="hero-stat-val">7</div><div class="hero-stat-lbl">Walkaround areas</div></div><div class="hero-stat"><div class="hero-stat-val">IJN</div><div class="hero-stat-lbl">Theme</div></div></div></section>
 <div class="main-wrap"><main class="main-content">
-<div class="tab-panel active" id="tab-squadrons"><div class="filter-bar zero-unit-filter" id="sqn-bar"><label>Filter</label><button class="fb on" data-filter="all" onclick="filterUnits('all',this)">All</button><button class="fb" data-filter="carrier" onclick="filterUnits('carrier',this)">Carrier</button><button class="fb" data-filter="land" onclick="filterUnits('land',this)">Rabaul / land-based</button><button class="fb" data-filter="late" onclick="filterUnits('late',this)">Late war</button><button class="fb" data-filter="home" onclick="filterUnits('home',this)">Home / test</button><span class="sq-count" id="sq-count">12 units</span></div><div class="section-label">IJN Zero units and carrier fighter groups</div><div class="info-box">The A6M Zero began the Pacific War as a carrier-based long-range fighter and later became the hard-worked defender of island bases, Rabaul, the Philippines and the Home Islands. Cards below use IJN terminology — carrier fighter units and Kōkūtai — rather than Western squadron/group wording.</div><div class="sq-grid" id="sq-grid"><div class="sq-card" id="card-akagi" data-id="akagi" data-group="carrier" onclick="openUnit('akagi')">
+<div class="tab-panel active" id="tab-squadrons"><div class="filter-bar zero-unit-filter" id="sqn-bar"><label>Filter</label><button class="fb on" data-filter="all" onclick="filterUnits('all',this)">All</button><button class="fb" data-filter="carrier" onclick="filterUnits('carrier',this)">Carrier</button><button class="fb" data-filter="land" onclick="filterUnits('land',this)">Rabaul / land-based</button><button class="fb" data-filter="late" onclick="filterUnits('late',this)">Late war</button><button class="fb" data-filter="home" onclick="filterUnits('home',this)">Home / test</button><span class="sq-count" id="sq-count">12 units</span></div><div class="section-label">IJN Zero units and carrier fighter groups</div><div class="info-box">Unit cards and expanded panels now follow the fighter-page pattern: unit summary, named pilot/commander cards where available, marking references, research checks and map/build links. The A6M Zero began the Pacific War as a carrier-based long-range fighter and later became the hard-worked defender of island bases, Rabaul, the Philippines and the Home Islands. Cards below use IJN terminology — carrier fighter units and Kōkūtai — rather than Western squadron/group wording.</div><div class="sq-grid" id="sq-grid"><div class="sq-card" id="card-akagi" data-id="akagi" data-group="carrier" onclick="openUnit('akagi')">
       <div class="card-hd"><div class="card-circle">Akagi</div><div><div class="card-name">Akagi Fighter Unit</div><div class="card-base">IJN Akagi · Kure / Pearl Harbor strike force</div></div></div>
       <div class="card-body"><div class="card-stats"><div class="stat"><div class="stat-val">A6M2</div><div class="stat-lbl">Variant</div></div><div class="stat"><div class="stat-val">IJN</div><div class="stat-lbl">Service</div></div><div class="stat"><div class="stat-val">零</div><div class="stat-lbl">Zero</div></div></div><div class="ops-text" style="font-size:13px;line-height:1.45;margin-bottom:.45rem;color:rgba(255,255,255,.66)">Pearl Harbor carrier Zero with clean early-war finish and red carrier identity</div><div class="card-tags"><span class="tag t-blue">Pearl Harbor / Indian Ocean / Midway</span><span class="tag t-amber">A6M2 Model 21</span><span class="tag t-green">1st Carrier Division / Kido Butai</span></div></div>
     </div><div class="sq-card" id="card-kaga" data-id="kaga" data-group="carrier" onclick="openUnit('kaga')">
@@ -1296,22 +1323,33 @@ body:not(.noop) > .filter-bar.zero-unit-filter{display:none!important;}
 
 
 <div class="tab-panel" id="tab-stories">
-  <div class="section-label">Zero pilots, units and story angles</div>
-  <div class="info-box">This section is built for IJN fighter subjects: individual pilots, carrier fighter leaders, famous Kōkūtai and the modelling choices their stories imply.</div>
-  <div class="pilot-grid">
-    <div class="pilot-card" onclick="openPilot('sakai')"><div class="pkills">64</div><div class="pname">Saburō Sakai</div><div class="pnote">Tainan Kōkūtai · South Pacific A6M2</div></div>
-    <div class="pilot-card" onclick="openPilot('nishizawa')"><div class="pkills">Ace</div><div class="pname">Hiroyoshi Nishizawa</div><div class="pnote">Tainan / 251 Ku · Rabaul legend</div></div>
-    <div class="pilot-card" onclick="openPilot('ota')"><div class="pkills">Ace</div><div class="pname">Toshio Ōta</div><div class="pnote">Tainan Kōkūtai · A6M2</div></div>
-    <div class="pilot-card" onclick="openPilot('itaya')"><div class="pkills">Leader</div><div class="pname">Shigeru Itaya</div><div class="pnote">Akagi fighter leader · Pearl Harbor</div></div>
-    <div class="pilot-card" onclick="openPilot('sasai')"><div class="pkills">Leader</div><div class="pname">Junichi Sasai</div><div class="pnote">Tainan officer · Lae/Rabaul context</div></div>
-    <div class="pilot-card" onclick="openPilot('seki')"><div class="pkills">1944</div><div class="pname">Yukio Seki</div><div class="pnote">201st Kōkūtai · Philippines</div></div>
+  <div class="section-label">Zero pilots, commanders and modelling stories</div>
+  <div class="info-box">This tab now follows the same logic as the fighter pages: named people first, then the modelling story behind the aircraft. Use the pilot cards as entry points, then choose the unit, date and markings before committing to paint or decals.</div>
+  <div class="zero-story-layout">
+    <div>
+      <div class="section-label">Pilots and commanders</div>
+      <div class="pilot-grid">
+        <div class="pilot-card" onclick="openPilot('sakai')"><div class="pkills">64</div><div class="pname">Saburō Sakai</div><div class="pnote">Tainan Kōkūtai · South Pacific A6M2</div></div>
+        <div class="pilot-card" onclick="openPilot('nishizawa')"><div class="pkills">Ace</div><div class="pname">Hiroyoshi Nishizawa</div><div class="pnote">Tainan / 251 Ku · Rabaul and Solomons</div></div>
+        <div class="pilot-card" onclick="openPilot('ota')"><div class="pkills">Ace</div><div class="pname">Toshio Ōta</div><div class="pnote">Tainan Kōkūtai · New Guinea</div></div>
+        <div class="pilot-card" onclick="openPilot('itaya')"><div class="pkills">Lead</div><div class="pname">Shigeru Itaya</div><div class="pnote">Akagi fighter leader · Pearl Harbor / Midway</div></div>
+        <div class="pilot-card" onclick="openPilot('sasai')"><div class="pkills">Lead</div><div class="pname">Junichi Sasai</div><div class="pnote">Tainan officer · Lae/Rabaul context</div></div>
+        <div class="pilot-card" onclick="openPilot('seki')"><div class="pkills">1944</div><div class="pname">Yukio Seki</div><div class="pnote">201st Kōkūtai · Philippines context</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">How to choose the story</div>
+      <div class="zero-story-panel"><h3>Carrier Zero</h3><p>Akagi, Kaga, Sōryū and Hiryū subjects are about clean early-war A6M2 aircraft, disciplined carrier markings, red tail bands and restrained wear.</p></div>
+      <div class="zero-story-panel" style="margin-top:.75rem"><h3>Rabaul and Lae</h3><p>Tainan, 204 and 251 Kōkūtai subjects justify tropical fading, dust, fuel stains, field repairs and hard operational wear.</p></div>
+      <div class="zero-story-panel" style="margin-top:.75rem"><h3>Late-war Zero</h3><p>201, 302 and 653 Kōkūtai subjects shift the modeller towards darker green upper surfaces, yellow leading edges and tired late-war presentation.</p></div>
+    </div>
   </div>
-  <div class="section-label">Modeller story choices</div>
+  <div class="section-label">Modeller story angles</div>
   <div class="zero-story-grid">
-    <div class="zero-feature-card"><div class="k">Pearl Harbor</div><div class="t">Clean carrier A6M2</div><p>Early-war Zero subjects should look disciplined: warm grey-green finish, black cowling, carrier tail code and restrained staining.</p></div>
-    <div class="zero-feature-card"><div class="k">Midway</div><div class="t">Kido Butai turning point</div><p>Model by carrier and date. Midway is not a late-war battered-green subject; the drama is historical, not exaggerated chipping.</p></div>
-    <div class="zero-feature-card"><div class="k">Rabaul / Lae</div><div class="t">Ace-heavy island fighter war</div><p>Tainan and 251 Kōkūtai aircraft justify tropical fading, dusty tyres, fuel staining and worn cockpit access areas.</p></div>
-    <div class="zero-feature-card"><div class="k">Philippines / 1944–45</div><div class="t">Late-war A6M5</div><p>Darker green upper surfaces, yellow ID strips and tired maintenance conditions. Treat special attack history with care and accuracy.</p></div>
+    <div class="zero-feature-card"><div class="k">Pearl Harbor</div><div class="t">Clean carrier A6M2</div><p>Warm grey-green finish, black/blue-black cowling, carrier code, red bands and restrained staining. Do not over-weather an opening-war carrier aircraft.</p></div>
+    <div class="zero-feature-card"><div class="k">Midway</div><div class="t">Kido Butai turning point</div><p>Model by carrier and date. The aircraft can still be tidy; the drama is the operation, not random late-war chipping.</p></div>
+    <div class="zero-feature-card"><div class="k">Rabaul / Lae</div><div class="t">Ace-heavy island fighter war</div><p>Tainan and 251 Kōkūtai aircraft give you the classic weathered Zero: sun fade, dusty tyres, cowling grime and worn cockpit access areas.</p></div>
+    <div class="zero-feature-card"><div class="k">Philippines / 1944–45</div><div class="t">Late-war A6M5</div><p>Darker green, yellow ID strips and rougher conditions. Treat special attack subjects soberly and keep the page focused on aircraft accuracy.</p></div>
   </div>
 </div>
 
@@ -1328,24 +1366,39 @@ body:not(.noop) > .filter-bar.zero-unit-filter{display:none!important;}
 
 <div class="tab-panel" id="tab-walkaround">
   <div class="section-label">A6M Zero walkaround bench</div>
-  <div class="info-box">Walkaround references are grouped by modelling task. Use photos for structure and layout, then cross-check wartime colour/markings separately before painting.</div>
-  <div class="wa-section-head">Cockpit and canopy</div>
-  <div class="wa-grid">
-    <article class="wa-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M5_Zero_cockpit.jpg?width=900" alt="A6M Zero cockpit reference" loading="lazy" referrerpolicy="no-referrer"><div class="wa-body"><div class="wa-kicker">Cockpit</div><div class="wa-title">Seat, panel and canopy rails</div><div class="wa-desc">Check panel layout, seat/harness, rear decking, canopy frame thickness and gunsight position.</div><div class="wa-check"><strong>Modeller check</strong>Interior colours vary by manufacturer and restoration; avoid assuming one universal green.</div><a class="wa-btn" href="https://www.youtube.com/watch?v=pyGdpDcXBnM" target="_blank" rel="noopener">Open cockpit/reference video</a></div></article>
+  <div class="info-box">Walkaround is now structured by modelling task. Photo cards use real reference images or a real public-domain fallback if an external source blocks hotlinking. Video cards use direct YouTube thumbnails and sit inside the relevant category rather than in one loose video dump.</div>
+
+  <div class="zero-wa-section" id="zero-wa-cockpit">
+    <div class="zero-wa-head">Cockpit and canopy</div>
+    <div class="zero-wa-grid">
+      <a class="zero-wa-card" href="https://pwencycl.kgbudge.com/A/6/A6M_Zero.htm" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Captured_A6M5_in_flight_1944.jpeg/960px-Captured_A6M5_in_flight_1944.jpeg" alt="A6M Zero cockpit and canopy reference" loading="lazy"><div class="zero-wa-body"><div class="zero-wa-kicker">Cockpit</div><div class="zero-wa-title">Panel, seat, rails and gunsight</div><div class="zero-wa-desc">Use cockpit photos to check the instrument panel, seat frame, harness, gunsight, radio fit and canopy rail thickness.</div><div class="zero-wa-check"><strong>Modeller check</strong>Interior colours vary by manufacturer and restoration; do not assume one universal Japanese cockpit green.</div><div class="zero-wa-link">Open reference page ↗</div></div></a>
+      <a class="zero-wa-card zero-wa-video" href="https://www.youtube.com/watch?v=pyGdpDcXBnM" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/pyGdpDcXBnM/hqdefault.jpg" alt="A6M Zero cockpit reference video thumbnail" loading="lazy"><div class="zero-wa-body"><div class="zero-wa-kicker">Video</div><div class="zero-wa-title">Cockpit / close reference video</div><div class="zero-wa-desc">Use only for layout and relationship of parts; confirm wartime colours separately.</div><div class="zero-wa-link">Open YouTube video ↗</div></div></a>
+    </div>
   </div>
-  <div class="wa-section-head">Cowling, engine and propeller</div>
-  <div class="wa-grid">
-    <article class="wa-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_engine.jpg?width=900" alt="A6M Zero engine and cowling reference" loading="lazy" referrerpolicy="no-referrer"><div class="wa-body"><div class="wa-kicker">Cowling</div><div class="wa-title">Sakae engine, blue-black cowling and exhaust</div><div class="wa-desc">Check cowling opening, exhaust outlet, oil staining, propeller/spinner line and gun troughs.</div><div class="wa-check"><strong>Modeller check</strong>Cowling should not be pure dead black; use a slightly blue-black/satin feel.</div><a class="wa-btn" href="https://www.youtube.com/watch?v=KsjzCIqQA7M" target="_blank" rel="noopener">Open engine/cowling video</a></div></article>
+
+  <div class="zero-wa-section" id="zero-wa-cowling">
+    <div class="zero-wa-head">Cowling, engine and propeller</div>
+    <div class="zero-wa-grid">
+      <a class="zero-wa-card" href="https://commons.wikimedia.org/wiki/File:Captured_A6M5_in_flight_1944.jpeg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Captured_A6M5_in_flight_1944.jpeg/960px-Captured_A6M5_in_flight_1944.jpeg" alt="A6M Zero cowling engine and propeller reference" loading="lazy"><div class="zero-wa-body"><div class="zero-wa-kicker">Cowling</div><div class="zero-wa-title">Sakae radial and black cowling</div><div class="zero-wa-desc">Check the cowling opening, gun troughs, spinner/propeller relationship, exhaust route and staining direction.</div><div class="zero-wa-check"><strong>Modeller check</strong>The cowling should read blue-black or satin black, not flat pure black plastic.</div><div class="zero-wa-link">Open photo source ↗</div></div></a>
+      <a class="zero-wa-card zero-wa-video" href="https://www.youtube.com/watch?v=KsjzCIqQA7M" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/KsjzCIqQA7M/hqdefault.jpg" alt="A6M Zero engine cowling video thumbnail" loading="lazy"><div class="zero-wa-body"><div class="zero-wa-kicker">Video</div><div class="zero-wa-title">Cowling and airframe video reference</div><div class="zero-wa-desc">Useful for seeing the nose, propeller, stance and cowling sheen in one pass.</div><div class="zero-wa-link">Open YouTube video ↗</div></div></a>
+    </div>
   </div>
-  <div class="wa-section-head">Wings, controls and landing gear</div>
-  <div class="wa-grid">
-    <article class="wa-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_wing.jpg?width=900" alt="A6M Zero wing reference" loading="lazy" referrerpolicy="no-referrer"><div class="wa-body"><div class="wa-kicker">Wings</div><div class="wa-title">Wing tips, control surfaces and gun access</div><div class="wa-desc">Confirm A6M2, A6M3 or A6M5 wing type before adding markings or weathering.</div><div class="wa-check"><strong>Modeller check</strong>Variant accuracy beats extra weathering here.</div><a class="wa-btn" href="https://www.youtube.com/watch?v=pyGdpDcXBnM" target="_blank" rel="noopener">Open airframe video</a></div></article>
-    <article class="wa-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_landing_gear.jpg?width=900" alt="A6M Zero landing gear reference" loading="lazy" referrerpolicy="no-referrer"><div class="wa-body"><div class="wa-kicker">Landing gear</div><div class="wa-title">Narrow stance, doors and wheel bays</div><div class="wa-desc">Check main gear angle, tyre stance, wheel-bay doors and underside grime.</div><div class="wa-check"><strong>Modeller check</strong>Island-based machines justify more dust and dirty underside staining.</div><a class="wa-btn" href="https://www.youtube.com/watch?v=KsjzCIqQA7M" target="_blank" rel="noopener">Open landing gear video</a></div></article>
+
+  <div class="zero-wa-section" id="zero-wa-wings">
+    <div class="zero-wa-head">Wings, controls and landing gear</div>
+    <div class="zero-wa-grid">
+      <a class="zero-wa-card" href="https://www.cybermodeler.com/aircraft/a6m/a6m2_walk.shtml" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Captured_A6M5_in_flight_1944.jpeg/960px-Captured_A6M5_in_flight_1944.jpeg" alt="A6M Zero wing and control surface reference" loading="lazy"><div class="zero-wa-body"><div class="zero-wa-kicker">Wings</div><div class="zero-wa-title">Wing tips, access panels and controls</div><div class="zero-wa-desc">Confirm A6M2, A6M3 or A6M5 wing form before painting. Wing tips, gun access panels and control surfaces are variant-sensitive.</div><div class="zero-wa-check"><strong>Modeller check</strong>Variant accuracy matters more than extra chipping here.</div><div class="zero-wa-link">Open walkaround page ↗</div></div></a>
+      <a class="zero-wa-card" href="https://www.cybermodeler.com/aircraft/a6m/a6m2_walk.shtml" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Captured_A6M5_in_flight_1944.jpeg/960px-Captured_A6M5_in_flight_1944.jpeg" alt="A6M Zero landing gear reference" loading="lazy"><div class="zero-wa-body"><div class="zero-wa-kicker">Landing gear</div><div class="zero-wa-title">Narrow stance, doors and wheel bays</div><div class="zero-wa-desc">Check the narrow undercarriage stance, gear door geometry, tyre size and underside staining around the bays.</div><div class="zero-wa-check"><strong>Modeller check</strong>Island-based aircraft justify dustier tyres and dirtier lower surfaces than carrier subjects.</div><div class="zero-wa-link">Open walkaround page ↗</div></div></a>
+    </div>
   </div>
-  <div class="wa-section-head">Markings and surface finish</div>
-  <div class="wa-grid">
-    <article class="wa-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_Hinomaru.jpg?width=900" alt="A6M Zero Hinomaru and tail markings reference" loading="lazy" referrerpolicy="no-referrer"><div class="wa-body"><div class="wa-kicker">Markings</div><div class="wa-title">Hinomaru, tail codes and carrier bands</div><div class="wa-desc">Match tail codes, carrier identity, white borders and late-war marking wear to the exact aircraft.</div><div class="wa-check"><strong>Modeller check</strong>Painted hinomaru often looks better than decals over chipped or faded finishes.</div><a class="wa-btn" href="https://www.youtube.com/watch?v=1fYM4T_5Kr0" target="_blank" rel="noopener">Open markings video</a></div></article>
-    <article class="wa-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M5_Zero.jpg?width=900" alt="A6M Zero airframe finish reference" loading="lazy" referrerpolicy="no-referrer"><div class="wa-body"><div class="wa-kicker">Surface finish</div><div class="wa-title">Fading, chipping and panel restraint</div><div class="wa-desc">Weather by theatre: carrier salt, tropical dust, Rabaul fuel staining or late-war chalking.</div><div class="wa-check"><strong>Modeller check</strong>Avoid random silver speckling; wear should follow traffic, panels and airflow.</div><a class="wa-btn" href="https://www.youtube.com/watch?v=KsjzCIqQA7M" target="_blank" rel="noopener">Open full walkaround video</a></div></article>
+
+  <div class="zero-wa-section" id="zero-wa-markings">
+    <div class="zero-wa-head">Markings and surface finish</div>
+    <div class="zero-wa-grid">
+      <a class="zero-wa-card" href="https://commons.wikimedia.org/wiki/Category:Mitsubishi_A6M_Zero" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Captured_A6M5_in_flight_1944.jpeg/960px-Captured_A6M5_in_flight_1944.jpeg" alt="A6M Zero hinomaru and surface finish reference" loading="lazy"><div class="zero-wa-body"><div class="zero-wa-kicker">Markings</div><div class="zero-wa-title">Hinomaru, tail codes and ID strips</div><div class="zero-wa-desc">Match hinomaru borders, tail code, carrier bands and yellow leading-edge strips to the exact unit and date.</div><div class="zero-wa-check"><strong>Modeller check</strong>Painted hinomaru often looks more convincing over faded or chipped finishes than thick decals.</div><div class="zero-wa-link">Open Commons category ↗</div></div></a>
+      <a class="zero-wa-card zero-wa-video" href="https://www.youtube.com/watch?v=1fYM4T_5Kr0" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/1fYM4T_5Kr0/hqdefault.jpg" alt="A6M Zero markings video thumbnail" loading="lazy"><div class="zero-wa-body"><div class="zero-wa-kicker">Video</div><div class="zero-wa-title">Markings and exterior reference</div><div class="zero-wa-desc">Use for exterior placement cues, then verify exact aircraft markings against decals and photos.</div><div class="zero-wa-link">Open YouTube video ↗</div></div></a>
+      <a class="zero-wa-card" href="https://www.aviationofjapan.com/" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Captured_A6M5_in_flight_1944.jpeg/960px-Captured_A6M5_in_flight_1944.jpeg" alt="A6M Zero surface finish and colour reference" loading="lazy"><div class="zero-wa-body"><div class="zero-wa-kicker">Surface finish</div><div class="zero-wa-title">Fading, chipping and paint uncertainty</div><div class="zero-wa-desc">Weather by theatre: clean carrier aircraft, dusty Rabaul machines, late-war green uppers and service-panel wear.</div><div class="zero-wa-check"><strong>Modeller check</strong>Avoid random silver confetti; wear should follow traffic, access panels and airflow.</div><div class="zero-wa-link">Open colour research ↗</div></div></a>
+    </div>
   </div>
 </div>
 </main><aside class="sidebar"><div class="sidebar-block"><div class="sidebar-hd">Advertisement</div><div class="sidebar-ad-slot">AdSense 300×250</div></div><div class="sidebar-block"><div class="sidebar-hd">Zero quick links</div><a class="shop-link" href="https://www.tamiya.com/english/products/61103/index.html" target="_blank" rel="noopener"><span>🛩</span><div><div class="shop-name">Tamiya A6M5</div><div class="shop-cats">Kit reference</div></div></a><a class="shop-link" href="https://ak-interactive.com/product/wwii-ijn-aircraft-colors/" target="_blank" rel="noopener"><span>🎨</span><div><div class="shop-name">AK IJN colours</div><div class="shop-cats">Paints</div></div></a><a class="shop-link" href="https://ipms.nl/walkarounds/walkaround-vliegtuigen-props/walkaround-mitsubishi-zero" target="_blank" rel="noopener"><span>📷</span><div><div class="shop-name">IPMS Zero walkaround</div><div class="shop-cats">Photos</div></div></a></div></aside></div>
@@ -1366,15 +1419,24 @@ function openUnit(id){
   `${u.variant} — confirm cowling, wing tip and exhaust fit before choosing decals`,
   `${u.theatre} — match hinomaru borders, yellow leading-edge ID strips and tail markings to period photos`
  ];
- p.innerHTML=`<div class="dp-top"><div><div class="dp-title">${u.name}</div><div class="dp-meta">${u.parent} · ${u.base} · ${u.theatre}</div></div><button class="close-btn" onclick="document.getElementById('detail-panel').classList.remove('open')">Close</button></div>
+ const pilotIdMap={
+  akagi:['itaya'],kaga:['itaya'],soryu:['itaya'],hiryu:['itaya'],
+  tainan:['sakai','nishizawa','ota','sasai'], '204ku':['nishizawa','sasai'], '251ku':['nishizawa'], '252ku':['nishizawa'],
+  '201ku':['seki'], '302ku':[], '653ku':[], yokosuka:[]
+};
+const pilotCards=(pilotIdMap[u.id]||[]).map(pid=>PILOTS.find(p=>p.id===pid)).filter(Boolean).map(pp=>`<div class="pilot-card" onclick="openPilot('${pp.id}')"><div class="pkills">${pp.kills}</div><div class="pname">${pp.name}</div><div class="pnote">${pp.unit} · ${pp.aircraft}</div></div>`).join('') || '<div class="ops-text" style="font-size:14px;color:rgba(255,255,255,.58)">No named pilot card is attached yet — use the unit, date and aircraft marking as the main modelling reference.</div>';
+p.innerHTML=`<div class="dp-top"><div><div class="dp-title">${u.name}</div><div class="dp-meta">${u.parent} · ${u.base} · ${u.theatre}</div></div><button class="close-btn" onclick="document.getElementById('detail-panel').classList.remove('open')">Close</button></div>
  <div class="zero-detail-body">
    <div class="zero-detail-lede">${u.ops}</div>
+   <div class="section-label">Operational snapshot</div>
    <div class="zero-detail-grid">
      <div class="zero-detail-box"><b>Unit type</b><span>${groupLabel}</span></div>
      <div class="zero-detail-box"><b>Base / location</b><span>${u.base}</span></div>
      <div class="zero-detail-box"><b>Aircraft</b><span>${u.variant}</span></div>
      <div class="zero-detail-box"><b>Modelling hook</b><span>${u.hook}</span></div>
    </div>
+   <div class="section-label">Pilots / commanders</div>
+   <div class="pilot-grid">${pilotCards}</div>
    <div class="section-label">Marking reference — ${u.num}</div>
    <div class="zero-marking-grid">
      <div class="zero-marking-cell"><b>Aircraft type</b><span>${u.variant}</span></div>
@@ -1386,8 +1448,6 @@ function openUnit(id){
    </div>
    <div class="section-label">Specific decal / research checks</div>
    <div class="zero-decal-list">${decals.map(d=>`<div class="zero-decal-row">› ${d}</div>`).join('')}</div>
-   <div class="section-label">Pilots / commanders</div>
-   <div class="zero-chip-row">${pilots.length?pilots.map(x=>`<span class="zero-chip">${x}</span>`).join(''):'<span class="zero-chip">Unit personnel need aircraft/date confirmation</span>'}</div>
    <div class="zero-linkrow"><button class="shop-btn hb-outline" onclick="switchTab('reference',document.querySelectorAll('.nav-tab')[2]);setTimeout(()=>selectMarker('${u.id}'),250)">Show on map</button><button class="shop-btn hb-outline" onclick="switchTab('build',document.querySelectorAll('.nav-tab')[1]);setBuildSub('paint',document.querySelector('[data-build-sub=paint]'))">Open colours</button><button class="shop-btn hb-outline" onclick="switchTab('walkaround',document.querySelectorAll('.nav-tab')[5])">Open walkaround</button></div>
  </div>`;
  p.classList.add('open');p.scrollIntoView({behavior:'smooth',block:'center'});
