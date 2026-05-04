@@ -2440,5 +2440,219 @@ function acceptCookies(){try{localStorage.setItem('cookiesAccepted','1');}catch(
 })();
 </script>
 
+<style id="b17-spitfire-structure-final-pass">
+/* Final B-17 structural pass: bring B-17 page back into the Hurricane/Spitfire Paradise rhythm */
+#tab-squadrons > div:first-child,
+#tab-build > div,
+#tab-reference > div,
+#tab-walkaround > div{box-sizing:border-box;}
+#tab-squadrons .section-label,
+#tab-reference .section-label,
+#tab-build .section-label,
+#tab-walkaround .section-label{letter-spacing:.22em;}
+.sq-grid{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(265px,1fr))!important;gap:14px!important;align-items:stretch!important;margin-top:1rem!important;}
+.sq-card{height:100%!important;min-height:315px!important;display:flex!important;flex-direction:column!important;background:rgba(17,34,64,.82)!important;border:1px solid rgba(255,255,255,.10)!important;border-radius:5px!important;overflow:hidden!important;}
+.sq-card.active{border-color:rgba(136,174,240,.7)!important;box-shadow:0 0 0 1px rgba(136,174,240,.22),0 14px 35px rgba(0,0,0,.28)!important;}
+.card-hd{padding:.85rem .9rem!important;gap:.75rem!important;align-items:flex-start!important;min-height:76px!important;}
+.card-circle{min-width:48px!important;height:48px!important;border-radius:6px!important;font-family:'Oswald',sans-serif!important;font-size:13px!important;line-height:1.05!important;letter-spacing:.05em!important;text-align:center!important;display:flex!important;align-items:center!important;justify-content:center!important;}
+.card-name{font-family:'Special Elite',cursive!important;font-size:1.18rem!important;line-height:1.15!important;color:#fff!important;margin-bottom:.2rem!important;}
+.card-base{font-family:'Oswald',sans-serif!important;font-size:10px!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:rgba(220,232,255,.72)!important;line-height:1.35!important;}
+.card-body{padding:.85rem .9rem 1rem!important;display:flex!important;flex-direction:column!important;gap:.65rem!important;flex:1!important;}
+.card-body .tags{display:flex!important;gap:.35rem!important;flex-wrap:wrap!important;margin:0!important;}
+.card-body .tag{font-size:9px!important;line-height:1.1!important;padding:.25rem .4rem!important;}
+.b17-card-meta{display:grid;grid-template-columns:1fr 1fr;gap:.45rem!important;margin:.1rem 0!important;}
+.b17-card-meta div{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);border-radius:3px;padding:.45rem .5rem;min-height:48px;}
+.b17-card-meta b{display:block;font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(220,232,255,.54);margin-bottom:.15rem;}
+.b17-card-meta span{display:block;font-size:12px;color:rgba(255,255,255,.74);line-height:1.35;}
+.b17-card-crew{background:rgba(136,174,240,.07);border-left:3px solid rgba(136,174,240,.75);padding:.55rem .65rem;border-radius:3px;font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.42;margin-top:auto;}
+.b17-card-crew b{display:block;font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass2);margin-bottom:.2rem;}
+#detail-panel.detail-panel{grid-column:1/-1!important;margin:8px 0 2px!important;border:2px solid rgba(136,174,240,.72)!important;background:rgba(10,20,38,.96)!important;border-radius:5px!important;box-shadow:0 20px 60px rgba(0,0,0,.42)!important;overflow:hidden!important;}
+#detail-panel .detail-grid{display:grid!important;grid-template-columns:1.05fr .95fr!important;gap:1rem!important;padding:0!important;}
+.b17-detail-section{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:.85rem;}
+.b17-detail-section + .b17-detail-section{margin-top:.7rem;}
+.b17-detail-title{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass2);margin-bottom:.45rem;}
+.b17-detail-text{font-size:14px;color:rgba(255,255,255,.72);line-height:1.65;}
+.pilot-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))!important;gap:.55rem!important;}
+.pilot-card{min-height:96px!important;background:rgba(255,255,255,.045)!important;border:1px solid rgba(255,255,255,.1)!important;border-left:3px solid var(--brass)!important;border-radius:4px!important;padding:.65rem .75rem!important;cursor:pointer!important;}
+.pilot-card .pname{font-size:15px!important;line-height:1.2!important;color:#fff!important;}
+.pilot-card .pnote{font-size:12.5px!important;line-height:1.35!important;color:rgba(255,255,255,.62)!important;}
+.b17-ref-panel{background:rgba(21,39,68,.78);border:1px solid rgba(255,255,255,.10);border-radius:4px;padding:1rem;margin-bottom:1rem;}
+.b17-timeline-shell{background:rgba(21,39,68,.78);border:1px solid rgba(255,255,255,.10);border-radius:4px;padding:1rem;}
+.b17-tl-slider{width:100%;accent-color:#88aef0;margin:.9rem 0 .75rem;}
+.b17-tl-phase{display:grid;grid-template-columns:minmax(82px,.2fr) 1fr;gap:.9rem;align-items:stretch;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.08);border-radius:4px;overflow:hidden;margin:.75rem 0 1rem;}
+.b17-tl-year{font-family:'Special Elite',cursive;font-size:1.3rem;color:#fff;display:flex;align-items:center;justify-content:center;background:rgba(136,174,240,.14);padding:.85rem;text-align:center;}
+.b17-tl-copy{padding:.85rem .95rem;}
+.b17-tl-title{font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem;}
+.b17-tl-text{font-size:14px;color:rgba(255,255,255,.70);line-height:1.62;}
+.b17-tl-units{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.45rem;margin-top:1rem;}
+.b17-tl-unit{border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.04);border-radius:3px;padding:.55rem .65rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.72);}
+.b17-tl-unit.front{border-left:3px solid #88aef0;color:#fff;background:rgba(136,174,240,.08);}
+.b17-compare-table{width:100%;border-collapse:collapse;margin-top:1rem;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.08);}
+.b17-compare-table th,.b17-compare-table td{padding:.55rem .65rem;border-bottom:1px solid rgba(255,255,255,.07);vertical-align:top;}
+.b17-compare-table th{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);text-align:left;}
+.b17-compare-table td{font-size:13px;line-height:1.45;color:rgba(255,255,255,.74);}
+.b17-compare-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin-top:1rem;}
+.b17-compare-summary .b17-compare-card{min-height:0!important;padding:.85rem!important;}
+.raf-map-shell{grid-template-columns:minmax(0,1.55fr) minmax(285px,.85fr)!important;align-items:stretch!important;}
+#leaflet-map{height:640px!important;min-height:640px!important;}
+.raf-leaflet-marker{width:18px;height:18px;border:2px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.45);}
+.raf-leaflet-marker.selected{transform:scale(1.25);box-shadow:0 0 0 4px rgba(255,255,255,.20),0 2px 10px rgba(0,0,0,.55);}
+.b17-wa-nav{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.3rem;}
+.b17-wa-nav a{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .75rem;border:1px solid rgba(136,174,240,.32);border-radius:3px;color:var(--brass2);text-decoration:none;}
+.b17-wa-section{margin-bottom:2rem;}
+.b17-wa-heading{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem;}
+.b17-wa-heading span{flex:1;height:1px;background:linear-gradient(90deg,rgba(136,174,240,.3),transparent);}
+.b17-wa-note{background:rgba(136,174,240,.06);border:1px solid rgba(136,174,240,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.72);line-height:1.65;margin-bottom:1rem;}
+.b17-wa-grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem;}
+.wa-ref-card img{width:100%!important;display:block!important;aspect-ratio:16/9!important;object-fit:cover!important;min-height:0!important;background:#10233a!important;}
+@media(max-width:760px){
+  .sq-grid{grid-template-columns:1fr!important;gap:12px!important;}
+  .sq-card{min-height:0!important;}
+  #detail-panel .detail-grid,.b17-tl-phase{grid-template-columns:1fr!important;}
+  .b17-card-meta{grid-template-columns:1fr!important;}
+  #leaflet-map{height:520px!important;min-height:520px!important;}
+  .raf-map-shell{grid-template-columns:1fr!important;}
+}
+</style>
+<script id="b17-spitfire-structure-final-pass-js">
+(function(){
+  function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function js(v){return String(v==null?'':v).replace(/\\/g,'\\\\').replace(/'/g,"\\'");}
+  function id(v){return String(v).replace(/[^a-zA-Z0-9_-]/g,'_');}
+  function theatre(g){return g==='1'?'8th AF / UK':g==='2'?'Mediterranean':g==='3'?'Pacific':'Special';}
+  function crewText(s){return (s.pilots||[]).slice(0,3).map(function(p){return p.n+(p.note?' — '+p.note:'');}).join(' · ') || 'Group crews';}
+  function groupColour(g){return (window.GROUP_COLOURS&&GROUP_COLOURS[g]) || (g==='1'?'#d45757':g==='2'?'#49a36c':g==='3'?'#5b8fd5':'#b07fd5');}
+
+  window.renderGrid=function(){
+    var grid=document.getElementById('grid'); if(!grid||!window.SQ)return;
+    var list=SQ.slice();
+    if(window.activeFilter&&activeFilter!=='all') list=list.filter(function(s){return s.group===activeFilter;});
+    if(window.activeSort==='base') list.sort(function(a,b){return String(a.base).localeCompare(String(b.base));});
+    else if(window.activeSort==='kills') list.sort(function(a,b){return (b.kills||0)-(a.kills||0);});
+    else if(window.activeSort==='killrate') list.sort(function(a,b){return ((b.losses||0)/(b.sorties||1))-((a.losses||0)/(a.sorties||1));});
+    else list.sort(function(a,b){return String(a.num).localeCompare(String(b.num),undefined,{numeric:true});});
+    var count=document.getElementById('sq-count'); if(count) count.textContent=list.length+' groups shown';
+    grid.innerHTML=list.map(function(s){
+      var tags=(s.tagTxt||[]).map(function(t){return '<span class="tag t-blue">'+esc(t)+'</span>';}).join('');
+      var top=(s.pilots||[])[0]||{};
+      return '<div class="sq-card" id="card-'+id(s.num)+'" onclick="selectSq(\''+js(s.num)+'\')">'+
+        '<div class="card-hd"><div class="card-circle" style="background:'+groupColour(s.group)+'">'+esc(s.num)+'</div><div><div class="card-name">'+esc(s.num)+'</div><div class="card-base">'+esc(s.base)+' · '+theatre(s.group)+'</div></div></div>'+
+        '<div class="card-body"><div class="tags">'+tags+'</div>'+
+        '<div class="b17-card-meta"><div><b>Base</b><span>'+esc(s.base)+'</span></div><div><b>Aircraft</b><span>'+esc(s.marks||'B-17F/G')+'</span></div><div><b>Codes / tail</b><span>'+esc(s.codes||'Group markings vary')+'</span></div><div><b>Campaign</b><span>'+esc((s.firstOp||'1942')+'–'+(s.lastOp||'1945'))+'</span></div></div>'+
+        '<p style="font-size:13.5px;color:rgba(255,255,255,.68);line-height:1.55;margin:0">'+esc(s.ops||'')+'</p>'+
+        '<div class="b17-card-crew"><b>Featured crew / commander</b>'+esc(top.n?top.n+(top.note?' — '+top.note:''):crewText(s))+'</div>'+
+        '<div style="font-family:Oswald,sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-top:.2rem">Click to expand — base · personnel · markings · decals</div>'+
+      '</div></div>';
+    }).join('')+'<div id="detail-panel" class="detail-panel"></div>';
+  };
+
+  window.selectSq=function(num){
+    if(window.activeId===num){closeDetail();return;}
+    window.activeId=num;
+    document.querySelectorAll('.sq-card').forEach(function(c){c.classList.remove('active');});
+    var card=document.getElementById('card-'+id(num)); if(card) card.classList.add('active');
+    showDetail(num);
+    setTimeout(function(){var p=document.getElementById('detail-panel'); if(p) p.scrollIntoView({behavior:'smooth',block:'nearest'});},50);
+  };
+  window.closeDetail=function(){
+    window.activeId=null; document.querySelectorAll('.sq-card').forEach(function(c){c.classList.remove('active');});
+    var p=document.getElementById('detail-panel'); if(p){p.classList.remove('open');p.innerHTML='';}
+  };
+  window.showDetail=function(num){
+    var s=SQ.find(function(x){return x.num===num;}); var panel=document.getElementById('detail-panel'); if(!s||!panel)return;
+    var decals=(window.SQ_DECALS&&SQ_DECALS[s.num])||[];
+    panel.innerHTML='<div class="dp-top"><div><div class="dp-title">'+esc(s.num)+' — '+esc(s.base)+'</div><div class="dp-meta">'+theatre(s.group)+' · '+esc(s.marks||'B-17F/G')+' · '+esc(s.codes||'group markings vary')+' · '+(s.pilots||[]).length+' featured personnel</div></div><button class="close-btn" onclick="closeDetail()">Close ✕</button></div>'+
+      '<div style="padding:1rem 1.15rem 1.25rem"><div class="detail-grid">'+
+        '<div><div class="b17-detail-section"><div class="b17-detail-title">Operational / base notes</div><div class="b17-detail-text">'+esc(s.ops||'')+'</div></div>'+ 
+        '<div class="b17-detail-section"><div class="b17-detail-title">Base and map cue</div><div class="b17-detail-text"><b style="color:#fff">Base:</b> '+esc(s.base)+'<br><b style="color:#fff">Theatre:</b> '+theatre(s.group)+'<br><b style="color:#fff">Map:</b> open the Base map tab and select '+esc(s.base)+' to see the linked marker.</div></div>'+ 
+        '<div class="b17-detail-section"><div class="b17-detail-title">Marking / decal notes</div><div class="b17-detail-text"><b style="color:#fff">Codes:</b> '+esc(s.codes||'varies')+'<br><b style="color:#fff">Tail / identity:</b> '+esc((s.decalRef&&s.decalRef.finFlash)||'varies by exact aircraft')+'<br><b style="color:#fff">National marking:</b> '+esc(s.roundel||'US star-and-bar')+'</div></div></div>'+ 
+        '<div><div class="b17-detail-section"><div class="b17-detail-title">Pilots / crews / commanders</div><div class="pilot-grid">'+(s.pilots||[]).map(function(p){return '<div class="pilot-card" onclick="event.stopPropagation();openPilot(\''+js(p.n)+'\',\''+js(s.num)+'\')"><span class="pkills">'+esc(p.k||'—')+'</span><div class="pname">'+esc(p.n)+'</div><div class="pnote">'+esc(p.note||'B-17 crew reference')+'</div><div style="font-family:Oswald,sans-serif;font-size:11px;letter-spacing:.07em;color:rgba(255,255,255,.45);margin-top:.25rem">'+esc(p.fate||'')+' · '+esc(p.awards||'')+'</div></div>';}).join('')+'</div></div>'+ 
+        '<div class="b17-detail-section"><div class="b17-detail-title">Specific decal / research links</div><div style="display:flex;flex-wrap:wrap;gap:.45rem">'+(decals.filter(function(d){return d.url;}).map(function(d){return '<a class="shop-btn hb-outline" href="'+esc(d.url)+'" target="_blank" rel="noopener">'+esc(d.name||'Open decal reference')+' ↗</a>';}).join('')||'<span style="font-size:13px;color:rgba(255,255,255,.55)">No confident specific decal product link yet — use exact aircraft photos before choosing markings.</span>')+'</div></div></div>'+ 
+      '</div></div>';
+    panel.classList.add('open');
+  };
+
+  window.renderTimeline=function(){
+    var el=document.getElementById('timeline-content'); if(!el)return;
+    el.innerHTML='<div class="b17-timeline-shell"><div class="section-label">Campaign timeline</div><div style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65;max-width:820px">Use the slider in the same style as the Hurricane/Spitfire reference pages. It shows how B-17 subjects move from early Pacific/OD aircraft through the Eighth Air Force build-up, deep penetration raids, Big Week and late-war natural metal B-17Gs.</div><input id="b17-tl-slider" class="b17-tl-slider" type="range" min="0" max="113" value="52" oninput="updateTimeline(this.value)"><div id="b17-tl-phase"></div><div id="b17-tl-event"></div><div class="b17-tl-units" id="b17-tl-units"></div></div>';
+    updateTimeline(52);
+  };
+  window.updateTimeline=function(value){
+    var day=parseInt(value||0,10);
+    var phases=window.PHASES||[]; var events=window.EVENTS||[];
+    var phase=phases.find(function(p){return day>=p.start&&day<=p.end;}) || phases[0] || {name:'B-17 campaign',desc:'',colour:'#88aef0'};
+    var ev=events.filter(function(e){return e[0]<=day;}).pop() || events[0];
+    var year= day<16?'1941–42':day<43?'1942':day<68?'1943':day<90?'1944':'1945';
+    var ph=document.getElementById('b17-tl-phase'); if(ph) ph.innerHTML='<div class="b17-tl-year" style="background:'+esc(phase.colour||'#28466f')+'">'+esc(year)+'</div><div class="b17-tl-copy"><div class="b17-tl-title">'+esc(phase.name||'Campaign phase')+'</div><div class="b17-tl-text">'+esc(phase.desc||'')+'</div></div>';
+    var ed=document.getElementById('b17-tl-event'); if(ed&&ev) ed.innerHTML='<div class="b17-ref-panel"><div class="b17-detail-title">Nearest campaign event</div><div class="b17-detail-text"><b style="color:#fff">'+esc(ev[1])+'</b><br>'+esc(ev[2]||'')+'</div></div>';
+    var units=document.getElementById('b17-tl-units'); if(units&&window.SQ){units.innerHTML=SQ.map(function(s){var active=false; if(window.TL&&TL[s.num]) active=TL[s.num].some(function(p){return day>=p.s&&day<=p.e;}); else active=day>=20; return '<div class="b17-tl-unit '+(active?'front':'')+'"><b>'+esc(s.num)+'</b><br><span style="color:rgba(255,255,255,.50)">'+esc(s.base)+' · '+theatre(s.group)+'</span></div>';}).join('');}
+  };
+
+  window.renderCompare=function(){
+    var out=document.getElementById('compare-output'); if(!out||!window.SQ)return;
+    var aSel=document.getElementById('cmp-a'), bSel=document.getElementById('cmp-b');
+    var opts=SQ.map(function(s){return '<option value="'+esc(s.num)+'">'+esc(s.num+' — '+s.base)+'</option>';}).join('');
+    if(aSel&&!aSel.options.length) aSel.innerHTML=opts;
+    if(bSel&&!bSel.options.length){bSel.innerHTML=opts; if(SQ[1]) bSel.value=SQ[1].num;}
+    var a=SQ.find(function(s){return s.num===(aSel&&aSel.value);}) || SQ[0];
+    var b=SQ.find(function(s){return s.num===(bSel&&bSel.value);}) || SQ[1] || SQ[0];
+    out.innerHTML='<div class="b17-ref-panel"><div class="section-label">Compare B-17 bomb groups</div><div style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65;max-width:820px">Bomb groups are loaded by default. Change the two selectors above to compare base, theatre, aircraft type, markings and modelling hooks.</div></div>'+ 
+      '<div class="b17-compare-summary">'+[a,b].map(function(s){return '<div class="b17-compare-card"><div class="b17-compare-title">'+esc(s.num)+'</div><div class="b17-compare-meta">'+esc(s.base)+' · '+theatre(s.group)+' · '+esc(s.marks||'B-17')+'</div><div style="font-size:14px;color:rgba(255,255,255,.72);line-height:1.6"><b style="color:#fff">Crew hook:</b> '+esc(crewText(s))+'<br><b style="color:#fff">Codes:</b> '+esc(s.codes||'varies')+'</div><button class="shop-btn hb-outline" style="margin-top:.7rem" onclick="rafOpenMapUnit(\''+js(s.num)+'\')">Open group card</button></div>';}).join('')+'</div>'+ 
+      '<table class="b17-compare-table"><tr><th>Field</th><th>'+esc(a.num)+'</th><th>'+esc(b.num)+'</th></tr>'+[
+        ['Base',a.base,b.base],['Theatre',theatre(a.group),theatre(b.group)],['Aircraft',a.marks||'B-17',b.marks||'B-17'],['Codes / tail',a.codes||'varies',b.codes||'varies'],['Campaign',String(a.firstOp||'1942')+'–'+String(a.lastOp||'1945'),String(b.firstOp||'1942')+'–'+String(b.lastOp||'1945')],['Missions / operations',a.kills||'—',b.kills||'—'],['Losses',a.losses||'—',b.losses||'—'],['Best modelling use',a.ops||'',b.ops||'']
+      ].map(function(r){return '<tr><th>'+esc(r[0])+'</th><td>'+esc(r[1])+'</td><td>'+esc(r[2])+'</td></tr>';}).join('')+'</table>';
+  };
+
+  window.renderMap=function(){
+    var mapEl=document.getElementById('leaflet-map'); if(!mapEl)return;
+    if(window.leafletMap){setTimeout(function(){leafletMap.invalidateSize(); if(window.STATIONS&&STATIONS.length){leafletMap.fitBounds(L.latLngBounds(STATIONS.map(function(st){return [st.lat,st.lng];})).pad(.18),{padding:[18,18],maxZoom:3});}},80); return;}
+    if(typeof L==='undefined'){mapEl.innerHTML='<div style="padding:2rem;color:rgba(255,255,255,.65);font-family:Oswald,sans-serif;letter-spacing:.08em;text-transform:uppercase">Map library loading…</div>'; setTimeout(renderMap,250); return;}
+    window.leafletMarkers={}; window.leafletZones={};
+    window.leafletMap=L.map('leaflet-map',{zoomControl:true,attributionControl:true,scrollWheelZoom:false,worldCopyJump:false,minZoom:2,maxZoom:10}).setView([24,62],2);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',subdomains:'abcd',maxZoom:10,minZoom:2}).addTo(leafletMap);
+    STATIONS.forEach(function(st){var col=groupColour(st.group); var icon=L.divIcon({className:'',html:'<div class="raf-leaflet-marker" data-id="'+esc(st.id)+'" style="background:'+col+'"></div>',iconSize:[18,18],iconAnchor:[9,9]}); var m=L.marker([st.lat,st.lng],{icon:icon}).addTo(leafletMap); m._rafStation=st; m.on('click',function(){showMapStation(st);}); m.bindTooltip('<span class="raf-leaflet-label">'+esc(st.name)+'</span>',{permanent:false,direction:'top',offset:[0,-10],opacity:.96,className:''}); leafletMarkers[st.id]=m;});
+    if(STATIONS.length) leafletMap.fitBounds(L.latLngBounds(STATIONS.map(function(st){return [st.lat,st.lng];})).pad(.18),{padding:[18,18],maxZoom:3});
+    setTimeout(function(){leafletMap.invalidateSize();},100); showMapIntro();
+  };
+  window.filterMapGroup=function(group,btn){
+    renderMap(); document.querySelectorAll('.map-filter-btn').forEach(function(b){b.classList.remove('on');}); if(btn)btn.classList.add('on');
+    var shown=STATIONS.filter(function(st){return group==='all'||st.group===group;});
+    Object.keys(leafletMarkers||{}).forEach(function(k){var m=leafletMarkers[k], st=m._rafStation, show=group==='all'||st.group===group; if(show&&!leafletMap.hasLayer(m))m.addTo(leafletMap); if(!show&&leafletMap.hasLayer(m))leafletMap.removeLayer(m);});
+    if(shown.length) leafletMap.fitBounds(L.latLngBounds(shown.map(function(st){return [st.lat,st.lng];})).pad(group==='all'?.18:.30),{padding:[18,18],maxZoom:group==='all'?3:6});
+    var box=document.getElementById('map-sqn-list'); if(box) box.innerHTML='<div style="font-family:Special Elite,cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">'+(group==='all'?'All B-17 theatre bases':theatre(group))+'</div><div style="font-family:Oswald,sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem">'+shown.length+' marker'+(shown.length===1?'':'s')+' shown</div><p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">The all-theatres view is deliberately zoomed out to include England, the Mediterranean and the Pacific. Use theatre filters when you want a closer modelling-base view.</p><div style="max-height:290px;overflow:auto;padding-right:.2rem;margin-top:.7rem">'+shown.map(function(st){return '<button class="map-sqn-chip" onclick="showMapStation(\''+js(st.id)+'\')" style="display:block;width:100%;text-align:left;margin-top:.45rem;cursor:pointer"><b>'+esc(st.name)+'</b><div style="font-size:11px;color:rgba(255,255,255,.65)">'+esc((st.sqns||[]).join(' · '))+' · '+esc(st.type||'B-17 base')+'</div></button>';}).join('')+'</div>';
+  };
+  window.showMapIntro=function(){
+    var box=document.getElementById('map-sqn-list'); if(!box||!window.STATIONS)return;
+    var linked=[...new Set(STATIONS.flatMap(function(st){return (st.sqns||[]).map(function(n){return String(n).replace(' fwd','');});}).filter(function(n){return SQ.find(function(s){return s.num===n;});}))];
+    box.innerHTML='<div style="font-family:Special Elite,cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">USAAF B-17 theatre map</div><div style="font-family:Oswald,sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem">Zoomed out to include all bases</div><p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">All theatre bases are visible by default: England, Italy/Mediterranean and early Pacific. Click a marker for base notes and linked bomb-group cards.</p><div style="margin-top:.75rem;font-family:Oswald,sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)">'+STATIONS.length+' bases · '+linked.length+' linked group cards</div>';
+  };
+  window.showMapStation=function(stOrId){
+    var st=typeof stOrId==='string'?STATIONS.find(function(s){return s.id===stOrId;}):stOrId; var box=document.getElementById('map-sqn-list'); if(!st||!box)return;
+    Object.keys(leafletMarkers||{}).forEach(function(k){var el=leafletMarkers[k].getElement&&leafletMarkers[k].getElement(); if(el){var dot=el.querySelector('.raf-leaflet-marker'); if(dot)dot.classList.toggle('selected',k===st.id);}});
+    if(window.leafletMap&&leafletMarkers[st.id]) leafletMap.panTo([st.lat,st.lng],{animate:true});
+    var units=(st.sqns||[]).map(function(n){var clean=String(n).replace(' fwd',''); var s=SQ.find(function(x){return x.num===clean;}); return '<button class="map-sqn-chip" onclick="rafOpenMapUnit(\''+js(clean)+'\')" style="display:block;width:100%;text-align:left;margin-top:.5rem;cursor:pointer"><b>'+esc(clean)+'</b><div style="font-size:11px;color:rgba(255,255,255,.65)">'+esc(s?(s.codes||s.marks||'B-17 group'):'B-17 group')+'</div></button>';}).join('');
+    box.innerHTML='<div style="font-family:Special Elite,cursive;font-size:1.2rem;color:#fff;margin-bottom:.35rem">'+esc(st.name)+'</div><div style="font-family:Oswald,sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem">'+esc(st.type||theatre(st.group))+'</div><p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">'+esc(st.info||'B-17 operating base.')+'</p><div style="margin-top:1rem"><div class="b17-detail-title">Linked bomb groups</div>'+units+'</div>';
+  };
+
+  window.renderWalkaround=function(){
+    var tab=document.getElementById('tab-walkaround'); if(!tab)return;
+    var cards=[
+      ['cockpit','Cockpit','assets/b17_walkaround_cockpit.png','Cockpit, panel and overhead detail','Check the instrument panel density, seats, control columns, overhead framing and the greenhouse rhythm. Interior shades should be checked against the exact restored or period subject.','Panel, seats, throttles, control columns, glazing, sidewalls.','https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_cockpits'],
+      ['nose','Nose','assets/b17_walkaround_nose.png','Nose glazing and bombardier area','The nose defines the B-17 variant. Check cheek guns, bombsight, clear framing, nose-art position and chin turret fit on B-17G subjects.','Glazing frames, cheek guns, bombsight, chin turret, nose art.','https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_nose_sections'],
+      ['engines','Engines','assets/b17_walkaround_engines.png','Engines, cowlings and exhaust staining','This is where most B-17 weathering lives. Study cowling lips, cooling flaps, engine-face depth, turbo staining and oil trails.','Cowling shape, cooling flaps, turbo staining, oil, nacelle grime.','https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_engines'],
+      ['gear','Undercarriage','assets/b17_walkaround_gear.png','Landing gear, wheels and stance','The Fortress should sit heavy. Wheel size, tyre flattening, door angle and the rake of the legs make or break the finished model.','Leg rake, tyre bulge, wheel hubs, door angles, dirty underside.','https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_landing_gear'],
+      ['bombbay','Bomb bay','assets/b17_walkaround_bombbay.png','Bomb bay and internal structure','Open doors create a central focal point. Keep the catwalk, racks and darker internal structure convincing rather than over-bright.','Door thickness, racks, catwalk, bombs, interior colour.','https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_bomb_bays'],
+      ['markings','Markings','assets/b17_walkaround_markings.png','Nose art, mission markings and group identity','B-17 modelling depends on one exact aircraft and date. Do not mix a nose-art subject, tail symbol and serial from different references.','Serial, tail symbol, squadron codes, nose-art side, mission tally.','https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_nose_art']
+    ];
+    tab.innerHTML='<div class="info-box">Period and museum photographs grouped by aircraft detail area — use these as direct reference while building. All cards include a local image so the page does not show broken placeholders, plus a source link for real photo checking.</div><div class="b17-wa-nav">'+cards.map(function(c){return '<a href="#b17-wa-'+c[0]+'">'+c[1]+'</a>';}).join('')+'</div>'+cards.map(function(c){return '<div id="b17-wa-'+c[0]+'" class="b17-wa-section"><div class="b17-wa-heading">'+esc(c[1])+' <span></span></div><div class="b17-wa-note"><strong style="color:var(--brass2);font-family:Oswald,sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller\'s note</strong>'+esc(c[4])+'</div><div class="b17-wa-grid2"><a class="wa-ref-card" href="'+esc(c[6])+'" target="_blank" rel="noopener"><img src="'+esc(c[2])+'" alt="B-17 '+esc(c[3])+'" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Reference checkpoint</div><div class="wa-ref-title">'+esc(c[3])+'</div><div class="wa-ref-desc">'+esc(c[5])+'</div><div class="wa-ref-link">Open source photos ↗</div></div></a><div class="wa-ref-card"><img src="'+esc(c[2])+'" alt="B-17 modelling checklist for '+esc(c[1])+'" loading="lazy"><div class="wa-ref-body"><div class="wa-ref-kicker">Build checklist</div><div class="wa-ref-title">What to check before paint</div><div class="wa-ref-desc">'+esc(c[4])+'</div><div class="wa-ref-link">Use with exact aircraft photos</div></div></div></div></div>';}).join('');
+  };
+
+  document.addEventListener('DOMContentLoaded',function(){
+    try{ if(document.getElementById('grid')) renderGrid(); }catch(e){console.error(e);}
+    try{ renderWalkaround(); }catch(e){console.error(e);}
+  });
+})();
+</script>
+
 </body>
 </html>
