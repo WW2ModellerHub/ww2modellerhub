@@ -1065,7 +1065,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
   <div class="hero-text">
     <div class="hero-eyebrow">United States Army Air Forces · heavy bomber operations</div>
     <h1 class="hero-title">Boeing B-17 Flying Fortress</h1>
-    <div class="hero-sub">B-17B / B-17C / B-17D · USAAF · 1943–1945</div>
+    <div class="hero-sub">B-17F / B-17G · USAAF · 1941–1945</div>
   </div>
   <div class="hero-stats">
     <div class="hero-stat"><div class="hero-stat-val">13</div><div class="hero-stat-lbl">Key groups</div></div>
@@ -1114,9 +1114,10 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
         <div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">Bomb group photo research</div>
         <div style="font-size:13px;color:rgba(255,255,255,.66);line-height:1.5">Use the bomb-group card first, then cross-check tail markings, nose art, de-icer boots, natural metal or Olive Drab finish, and individual aircraft lettering. Mediterranean and Pacific subjects need separate photo checks from the standard 8th Air Force builds.</div>
       </div>
-      <a href="https://commons.wikimedia.org/wiki/Category:North_American_B-17_B-17" target="_blank" rel="noopener" style="display:block;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:.75rem .85rem;color:rgba(255,255,255,.75)"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">Wikimedia B-17 photos</div><div style="font-size:13px;line-height:1.45">Open B-17 image categories for walkaround and general reference.</div></a><a href="https://www.iwm.org.uk/collections" target="_blank" rel="noopener" style="display:block;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:.75rem .85rem;color:rgba(255,255,255,.75)"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">USAAF archive searches</div><div style="font-size:13px;line-height:1.45">Search by bomb group, base, crew or aircraft nickname for period photographs.</div></a>
+      <a href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress" target="_blank" rel="noopener" style="display:block;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:.75rem .85rem;color:rgba(255,255,255,.75)"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">Wikimedia B-17 photos</div><div style="font-size:13px;line-height:1.45">Open B-17 image categories for walkaround and general reference.</div></a><a href="https://www.iwm.org.uk/collections" target="_blank" rel="noopener" style="display:block;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:.75rem .85rem;color:rgba(255,255,255,.75)"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">USAAF archive searches</div><div style="font-size:13px;line-height:1.45">Search by bomb group, base, crew or aircraft nickname for period photographs.</div></a>
     </div>
 <div class="sq-grid" id="grid"></div>
+<div id="detail" style="margin-top:1rem"></div>
 </div>
 
 <div class="tab-panel" id="tab-build">
@@ -1474,6 +1475,119 @@ let leafletMap=null;
 let leafletMarkers={};
 let leafletZones={};
 let selectedStationId=null;
+
+
+// ═══ CORE B-17 PAGE RENDERING FIX ═══
+let activeFilter='all';
+let activeSort='num';
+let activeTab='squadrons';
+
+function escapeHtml(v){return String(v==null?'':v).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function safeId(v){return String(v).replace(/[^a-zA-Z0-9_-]/g,'_');}
+
+function switchTab(tab,btn){
+  activeTab=tab;
+  document.querySelectorAll('.nav-tab').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  const panel=document.getElementById('tab-'+tab);
+  if(panel) panel.classList.add('active');
+  const bar=document.getElementById('sqn-bar');
+  if(bar) bar.style.display=(tab==='squadrons')?'flex':'none';
+  if(tab==='squadrons') renderGrid();
+  if(tab==='build'){renderKits();renderPaints();renderAftermarket();renderBuildSteps();renderWeathering();}
+  if(tab==='reference'){renderMap();}
+  if(tab==='stories'){renderPilotStories();renderThisWeek();}
+  if(tab==='media') renderMedia();
+}
+
+function setFilter(group,btn){
+  activeFilter=group;
+  document.querySelectorAll('.fb.gf').forEach(b=>b.classList.remove('on'));
+  if(btn) btn.classList.add('on');
+  renderGrid();
+}
+function setSort(sort,btn){
+  activeSort=sort;
+  document.querySelectorAll('.fb.sf').forEach(b=>b.classList.remove('on'));
+  if(btn) btn.classList.add('on');
+  renderGrid();
+}
+function setBuildSub(sub,btn){
+  ['kits','aftermarket','paint','stepbystep','weathering'].forEach(k=>{const el=document.getElementById('bsub-'+k);if(el)el.style.display=(k===sub)?'block':'none';});
+  document.querySelectorAll('.fb.btf').forEach(b=>b.classList.remove('on'));
+  if(btn)btn.classList.add('on');
+  if(sub==='kits')renderKits(); if(sub==='aftermarket')renderAftermarket(); if(sub==='paint')renderPaints(); if(sub==='stepbystep')renderBuildSteps(); if(sub==='weathering')renderWeathering();
+}
+function setRefSub(sub,btn){
+  ['map','timeline','compare','survivors','books'].forEach(k=>{const el=document.getElementById('rsub-'+k);if(el)el.style.display=(k===sub)?'block':'none';});
+  document.querySelectorAll('.fb.rtf').forEach(b=>b.classList.remove('on'));
+  if(btn)btn.classList.add('on');
+  if(sub==='map')renderMap(); if(sub==='timeline')renderTimeline(); if(sub==='compare')renderCompare(); if(sub==='survivors')renderSurvivors(); if(sub==='books')renderBooks();
+}
+
+function renderGrid(){
+  const grid=document.getElementById('grid'); if(!grid)return;
+  let list=SQ.slice();
+  if(activeFilter!=='all') list=list.filter(s=>s.group===activeFilter);
+  if(activeSort==='base') list.sort((a,b)=>String(a.base).localeCompare(String(b.base)));
+  else if(activeSort==='kills') list.sort((a,b)=>(b.kills||0)-(a.kills||0));
+  else if(activeSort==='killrate') list.sort((a,b)=>((b.losses||0)/(b.sorties||1))-((a.losses||0)/(a.sorties||1)));
+  else list.sort((a,b)=>String(a.num).localeCompare(String(b.num),undefined,{numeric:true}));
+  const count=document.getElementById('sq-count'); if(count)count.textContent=list.length+' groups shown';
+  grid.innerHTML=list.map(sq=>{
+    const tags=(sq.tagTxt||[]).map(t=>`<span class="tag t-blue">${escapeHtml(t)}</span>`).join('');
+    const names=(sq.pilots||[]).slice(0,3).map(p=>escapeHtml(p.n)).join(' · ');
+    return `<div class="sq-card" id="card-${safeId(sq.num)}" onclick="selectSq('${escapeHtml(sq.num)}')">
+      <div class="card-hd"><div class="card-circle">${escapeHtml(sq.num)}</div><div><div class="card-name">${escapeHtml(sq.num)}</div><div class="card-base">${escapeHtml(sq.base)} · ${mapGroupLabel(sq.group)}</div></div></div>
+      <div class="card-body">
+        <div class="tags">${tags}</div>
+        <div class="stats"><div class="stat"><div class="stat-val">${escapeHtml(sq.kills)}</div><div class="stat-lbl">Missions</div></div><div class="stat"><div class="stat-val">${escapeHtml(sq.losses)}</div><div class="stat-lbl">Lost</div></div><div class="stat"><div class="stat-val">${((sq.losses||0)/(sq.sorties||1)*100).toFixed(1)}%</div><div class="stat-lbl">Loss %</div></div></div>
+        <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.55;margin:.65rem 0 0">${escapeHtml(sq.ops||'')}</p>
+        <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-top:.65rem">${names}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function selectSq(num){
+  const sq=SQ.find(s=>s.num===num); if(!sq)return;
+  document.querySelectorAll('.sq-card').forEach(c=>c.classList.remove('active'));
+  const card=document.getElementById('card-'+safeId(num)); if(card)card.classList.add('active');
+  const detail=document.getElementById('detail'); if(!detail)return;
+  const pilots=(sq.pilots||[]).map(p=>`<button class="pilot-chip" onclick="openPilot('${escapeHtml(p.n)}','${escapeHtml(num)}')"><b>${escapeHtml(p.n)}</b><span>${escapeHtml(p.note||p.awards||'Crew / commander')}</span></button>`).join('');
+  const decs=(SQ_DECALS[sq.num]||[]).map(d=>`<a class="shop-btn hb-outline" href="${d.url}" target="_blank" rel="noopener">${escapeHtml(d.name)} ↗</a>`).join('');
+  detail.innerHTML=`<div class="detail-panel open"><div class="dp-hd"><div><div class="dp-title">${escapeHtml(sq.num)}</div><div class="dp-meta">${escapeHtml(sq.base)} · ${mapGroupLabel(sq.group)} · ${escapeHtml(sq.marks)} · ${escapeHtml(sq.codes||'')}</div></div></div>
+    <div class="detail-grid"><div><div class="section-label">Group notes</div><p style="font-size:16px;color:rgba(255,255,255,.74);line-height:1.75">${escapeHtml(sq.ops||'')}</p><div class="pilot-list">${pilots}</div></div>
+    <div><div class="section-label">Markings / decals</div><div style="font-size:14px;color:rgba(255,255,255,.70);line-height:1.7;margin-bottom:.8rem"><b>Codes:</b> ${escapeHtml(sq.codes||'')}<br><b>Subject:</b> ${escapeHtml((sq.decalRef&&sq.decalRef.serial)||'Choose by exact aircraft')}<br><b>Tail / group ID:</b> ${escapeHtml((sq.decalRef&&sq.decalRef.finFlash)||'Varies by aircraft')}</div><div style="display:flex;flex-wrap:wrap;gap:.5rem">${decs||'<span style="color:rgba(255,255,255,.45)">Use the general B-17 decal links in the build section.</span>'}</div></div></div></div>`;
+}
+
+function openPilot(name,num){
+  const sq=SQ.find(s=>s.num===num);
+  const p=sq && (sq.pilots||[]).find(x=>x.n===name);
+  const overlay=document.getElementById('pm-overlay'); if(!overlay||!p)return;
+  document.getElementById('pm-name').textContent=p.n;
+  document.getElementById('pm-rank').textContent=(sq?sq.num+' · '+sq.base:'B-17 crew')+' · '+(p.note||'');
+  document.getElementById('pm-kills').textContent=p.k||'—';
+  document.getElementById('pm-sorties').textContent=sq?sq.kills:'—';
+  document.getElementById('pm-fate-short').textContent=p.fate||'—';
+  document.getElementById('pm-bio').innerHTML='<p>'+escapeHtml(p.note||'Featured B-17 crew / commander reference. Use aircraft-specific sources and period photographs before finalising markings.')+'</p>';
+  document.getElementById('pm-awards').textContent=p.awards||'';
+  const pilotLink=document.getElementById('pm-h-pilot'); if(pilotLink) pilotLink.href='https://www.iwm.org.uk/collections/search?query='+encodeURIComponent(p.n+' B-17');
+  const sqLink=document.getElementById('pm-h-sqn'); if(sqLink) sqLink.href='https://www.hannants.co.uk/search/?FULL='+encodeURIComponent((sq?sq.num:'B-17')+' decal');
+  overlay.classList.add('active');
+}
+function closePM(){const o=document.getElementById('pm-overlay');if(o)o.classList.remove('active');}
+function openLB(src,cap){const lb=document.getElementById('lightbox');const img=document.getElementById('lb-img');const c=document.getElementById('lb-cap');if(img)img.src=src;if(c)c.textContent=cap||'';if(lb)lb.classList.add('active');}
+function closeLB(){const lb=document.getElementById('lightbox');if(lb)lb.classList.remove('active');}
+
+function renderKits(){const el=document.getElementById('kit-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';el.innerHTML=KITS.map(k=>`<div class="kit-card"><div class="kit-scale">${escapeHtml(k.scale)}</div><h3>${escapeHtml(k.title)}</h3><div class="kit-maker">${escapeHtml(k.maker)}</div><p>${escapeHtml(k.desc)}</p><a class="shop-btn hb-brass" href="${k.link}" target="_blank" rel="noopener">Open kit link ↗</a></div>`).join('');}
+function renderPaints(){const el=document.getElementById('paint-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';el.innerHTML=PAINTS.map(p=>`<div class="paint-card"><div class="paint-name">${escapeHtml(p.name)}</div><div class="paint-use">${escapeHtml(p.use||'')}</div><div style="font-size:12px;color:rgba(255,255,255,.55);margin-top:.5rem">${escapeHtml((p.brands||[]).join(' · '))}</div></div>`).join('');}
+function renderAftermarket(){const el=document.getElementById('aftermarket-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';el.innerHTML=Object.entries(AFTERMARKET).map(([cat,items])=>`<div class="section-label">${escapeHtml(cat)}</div><div class="kit-grid">${items.map(i=>`<div class="kit-card"><h3>${escapeHtml(i.title)}</h3><p>${escapeHtml(i.desc)}</p><a class="shop-btn hb-outline" href="${i.url}" target="_blank" rel="noopener">Open link ↗</a></div>`).join('')}</div>`).join('');}
+function renderBuildSteps(){const el=document.getElementById('stepbystep-content');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';el.innerHTML=BUILD_STEPS.map(s=>`<div class="info-box"><div style="font-family:'Special Elite',cursive;font-size:1.15rem;color:#fff;margin-bottom:.4rem">${s.icon||''} ${s.n}. ${escapeHtml(s.title)}</div><div style="font-size:15px;color:rgba(255,255,255,.72);line-height:1.65">${escapeHtml(s.text)}</div><div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.7rem">${(s.products||[]).map(p=>`<a class="shop-btn hb-outline" href="${p.url}" target="_blank" rel="noopener">${escapeHtml(p.name)} ↗</a>`).join('')}</div></div>`).join('');}
+function renderWeathering(){const el=document.getElementById('weather-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';el.innerHTML=WEATHER.map(w=>`<div class="kit-card"><h3>${escapeHtml(w.base)}</h3><p>${escapeHtml(w.mudNote||'')}</p>${(w.rows||[]).map(r=>`<div style="font-size:13px;color:rgba(255,255,255,.66);margin:.35rem 0"><b>${escapeHtml(r.l)}:</b> ${escapeHtml(r.v)}</div>`).join('')}</div>`).join('');const te=document.getElementById('weathering-techniques');if(te&&!te.dataset.rendered){te.dataset.rendered='1';te.innerHTML=(TECHNIQUES||[]).map(t=>`<div class="info-box"><b>${escapeHtml(t.title||t.name)}</b><br>${escapeHtml(t.text||t.desc||'')}</div>`).join('');}}
+function renderTimeline(){const el=document.getElementById('timeline-content')||document.getElementById('rsub-timeline'); if(!el)return; if(el.dataset.timelineRendered)return; el.dataset.timelineRendered='1'; const html=`<div class="section-label">B-17 campaign timeline</div>${EVENTS.map(e=>`<div class="info-box"><div style="font-family:'Special Elite',cursive;font-size:1.1rem;color:#fff">${escapeHtml(e[1])}</div><div style="font-size:15px;color:rgba(255,255,255,.72);line-height:1.65;margin-top:.35rem">${escapeHtml(e[2])}</div></div>`).join('')}`; const target=document.getElementById('timeline-content')||el; target.innerHTML=html;}
+function renderCompare(){const el=document.getElementById('compare-content')||document.getElementById('rsub-compare'); if(!el)return; if(el.dataset.compareRendered)return; el.dataset.compareRendered='1'; el.innerHTML=`<div class="section-label">Compare B-17 groups</div><div class="info-box">Use the unit cards and map filters to compare groups by theatre, base, markings, losses, missions and decal availability.</div>`;}
 
 function xyToLatLng(st){
   // Prefer verified WGS84 coordinates where supplied. The old x/y values remain as a fallback only.
