@@ -1,0 +1,7 @@
+B-17 fonts, links and Pacific map fix
+- Rebuilt the ZIP after the previous link was missing.
+- Reduced oversized mobile typography on B-17 kit, aftermarket and paint cards.
+- Updated kit cards to use clearer manufacturer/category/search destinations and specific button labels.
+- Updated aftermarket cards to use clearer category/manufacturer links and labels.
+- Restored Pacific coverage to the B-17 map with a Port Moresby / Pacific marker linked to 19 BG.
+- Added Pacific filters to the map and squadron/group filters so users can zoom to that theatre without losing the wider context.

@@ -1633,7 +1633,7 @@ function showDetail(num){
           <div class="sec-label">All Pilots</div>
           <div class="pilot-grid" style="grid-template-columns:1fr">
             ${sq.pilots.map(p=>`
-              <div class="pilot-card" onclick="openPM('${p.n.replace(/'/g,"\\'")}')">
+              <div class="pilot-card" onclick="event.stopPropagation();openPM('${p.n.replace(/'/g,"\\'")}')">
                 <span class="pkills">${p.k}</span>
                 <div class="pname">${p.n}</div>
                 <div class="pnote">${p.note}</div>
@@ -1694,21 +1694,22 @@ function showDetail(num){
 
 // ═══ PILOT MODAL ═══
 function openPM(name){
-  const bio=BIOS[name];if(!bio)return;
+  const sqnFP=SQ.find(s=>s.pilots && s.pilots.some(p=>p.n===name));
+  const pilot=sqnFP ? sqnFP.pilots.find(p=>p.n===name) : null;
+  if(!pilot) return;
+  const bio=(typeof BIOS!=='undefined' && BIOS[name]) ? BIOS[name] : null;
   document.getElementById('pm-name').textContent=name;
-  document.getElementById('pm-rank').textContent=`${bio.kills} victories · ${bio.fate}`;
-  document.getElementById('pm-kills').textContent=bio.kills;
-  document.getElementById('pm-sorties').textContent=bio.sorties||'—';
-  document.getElementById('pm-fate-short').textContent=bio.fate.split(' — ')[0].split(',')[0];
-  document.getElementById('pm-bio').innerHTML=bio.bio;
-  document.getElementById('pm-awards').innerHTML=(bio.awards||[]).map(a=>`<span class="award">${a}</span>`).join('');
+  document.getElementById('pm-rank').textContent=`${sqnFP.num} · ${sqnFP.base} · ${pilot.fate||''}`;
+  document.getElementById('pm-kills').textContent=pilot.k || (bio && bio.kills) || '—';
+  document.getElementById('pm-sorties').textContent=(bio && bio.sorties) || sqnFP.sorties || '—';
+  document.getElementById('pm-fate-short').textContent=pilot.fate || (bio && bio.fate) || '—';
+  document.getElementById('pm-bio').innerHTML=(bio && bio.bio) ? bio.bio : `<p><strong>${name}</strong> is included as a featured ${sqnFP.num} Mustang pilot / commander reference. Use this alongside the group card, decals and period photos before choosing exact aircraft markings.</p><p>${pilot.note || sqnFP.ops || ''}</p>`;
+  document.getElementById('pm-awards').innerHTML=String(pilot.awards||'').split(/\s+/).filter(Boolean).map(a=>`<span class="award">${a}</span>`).join('');
   const surname=name.split(' ').slice(-1)[0];
   const pl=document.getElementById('pm-h-pilot');
-  pl.href=`https://www.iwm.org.uk/collections`;
-  pl.textContent=`IWM: ${surname} archive ↗`;
-  const sqnFP=SQ.find(s=>s.pilots.some(p=>p.n===name));
+  if(pl){pl.href=`https://www.iwm.org.uk/collections/search?query=${encodeURIComponent(name+' P-51 Mustang')}`;pl.textContent=`IWM: ${surname} archive ↗`;}
   const sl=document.getElementById('pm-h-sqn');
-  if(sqnFP){sl.href=`https://www.hannants.co.uk/search/?keyword_search=${encodeURIComponent(sqnFP.num+" P-51 decals")}`;sl.textContent=`Hannants: ${sqnFP.num} P-51 decals ↗`;sl.style.display='';}else{sl.style.display='none';}
+  if(sl){sl.href=`https://www.hannants.co.uk/search/?keyword_search=${encodeURIComponent(sqnFP.num+' P-51 decals')}`;sl.textContent=`Hannants: ${sqnFP.num} P-51 decals ↗`;sl.style.display='';}
   document.getElementById('pm-overlay').classList.add('open');
 }
 function closePM(){document.getElementById('pm-overlay').classList.remove('open');}

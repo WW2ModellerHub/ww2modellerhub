@@ -1,0 +1,9 @@
+Final B-17 / P-51 repair pass
+- Fixed P-51 pilot pop-up: it no longer depends on a missing BIOS object, so clicking a pilot now opens a modal using the pilot and unit card data.
+- Fixed B-17 group cards so clicking a card inserts the detail panel immediately underneath the selected card and scrolls to it.
+- Fixed B-17 pilot/crew pop-ups from the detail panel.
+- Tightened B-17 kit, aftermarket and paint typography for mobile and desktop.
+- Added store/source labels to kit and aftermarket cards so the button destination is clearer.
+- Added B-17 paint store links to the paint cards.
+- Restored Pacific coverage on the B-17 map and content, including 19th BG and 43rd BG context and Pacific map markers.
+- Rebuilt local B-17 walkaround SVG assets so reference image cards render reliably instead of showing broken external image placeholders.

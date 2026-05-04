@@ -988,6 +988,74 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 @media(max-width:900px){.raf-map-shell{grid-template-columns:1fr!important;}#leaflet-map{height:560px!important;min-height:560px!important;}}
 </style>
 
+
+<style id="b17-font-link-map-fix">
+/* B-17 card typography cleanup */
+.kit-card h3,.kit-title,.am-title{font-family:'Source Serif 4',Georgia,serif!important;font-size:1.28rem!important;line-height:1.18!important;margin:0 0 .32rem!important;color:#f5f0df!important;}
+.kit-card p,.kit-desc,.am-desc{font-size:.94rem!important;line-height:1.55!important;color:rgba(255,255,255,.72)!important;margin:.45rem 0 .7rem!important;}
+.kit-maker,.kit-scale,.kit-meta{font-family:'Oswald',sans-serif!important;font-size:.78rem!important;letter-spacing:.08em!important;text-transform:uppercase!important;color:rgba(255,255,255,.48)!important;margin-bottom:.25rem!important;}
+.kit-grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))!important;gap:.75rem!important;}
+.kit-card{padding:.95rem!important;overflow:hidden!important;}
+.shop-btn{font-size:.78rem!important;line-height:1!important;padding:.62rem .78rem!important;max-width:100%;white-space:normal!important;text-align:center!important;}
+.paint-card{min-height:0!important;}
+.paint-name{font-family:'Source Serif 4',Georgia,serif!important;font-size:1rem!important;line-height:1.15!important;}
+.paint-use{font-size:.9rem!important;line-height:1.45!important;}
+.paint-swatch{font-size:.82rem!important;line-height:1.05!important;}
+@media(max-width:640px){
+  .main-wrap{padding-left:.75rem!important;padding-right:.75rem!important;}
+  .kit-grid{grid-template-columns:1fr!important;gap:.7rem!important;}
+  .kit-card{padding:.85rem!important;}
+  .kit-card h3,.kit-title,.am-title{font-size:1.12rem!important;line-height:1.2!important;}
+  .kit-card p,.kit-desc,.am-desc{font-size:.9rem!important;line-height:1.5!important;}
+  .kit-maker,.kit-scale,.kit-meta{font-size:.72rem!important;}
+  .paint-card{grid-template-columns:76px 1fr!important;}
+  .paint-swatch{min-height:76px!important;font-size:.72rem!important;padding:.45rem!important;}
+  .paint-name{font-size:.96rem!important;}
+  .paint-use{font-size:.86rem!important;}
+  #leaflet-map{height:560px!important;min-height:560px!important;}
+}
+</style>
+
+
+<style id="b17-final-structural-fix">
+/* B-17 final typography and card layout pass */
+#tab-build p,#tab-reference p,#tab-walkaround p{font-size:15px!important;line-height:1.65!important;}
+.kit-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))!important;gap:.8rem!important;align-items:stretch!important;}
+.kit-card{padding:.9rem!important;border-radius:6px!important;background:rgba(17,34,64,.78)!important;}
+.kit-title,.am-title,.kit-card h3{font-family:'Source Serif 4',Georgia,serif!important;font-size:1.12rem!important;line-height:1.22!important;margin:0 0 .35rem!important;color:#f5f0df!important;}
+.kit-desc,.am-desc,.kit-card p{font-size:.88rem!important;line-height:1.5!important;color:rgba(255,255,255,.72)!important;margin:.35rem 0 .7rem!important;}
+.kit-meta,.kit-maker,.kit-scale,.store-label{font-family:'Oswald',sans-serif!important;font-size:.72rem!important;letter-spacing:.08em!important;text-transform:uppercase!important;color:rgba(255,255,255,.48)!important;margin-bottom:.25rem!important;}
+.store-label{color:#9fbff0!important;margin:.15rem 0 .45rem!important;}
+.shop-btn{font-size:.72rem!important;line-height:1.1!important;padding:.55rem .72rem!important;white-space:normal!important;text-align:center!important;max-width:100%;}
+.paint-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))!important;gap:.75rem!important;}
+.paint-card{display:grid!important;grid-template-columns:84px 1fr!important;min-height:0!important;overflow:hidden!important;border-radius:6px!important;}
+.paint-swatch{width:auto!important;min-height:86px!important;font-size:.7rem!important;line-height:1.05!important;padding:.45rem!important;font-family:'Oswald',sans-serif!important;letter-spacing:.06em!important;text-transform:uppercase!important;color:#fff!important;}
+.paint-info{padding:.65rem .75rem!important;}
+.paint-name{font-family:'Source Serif 4',Georgia,serif!important;font-size:1rem!important;line-height:1.16!important;margin-bottom:.25rem!important;}
+.paint-use{font-size:.84rem!important;line-height:1.45!important;color:rgba(255,255,255,.74)!important;}
+.paint-links{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.55rem;}
+.paint-links a{font-family:'Oswald',sans-serif;font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;color:#dce8ff;border:1px solid rgba(136,174,240,.32);border-radius:4px;padding:.38rem .48rem;background:rgba(136,174,240,.08);}
+#detail{grid-column:1/-1!important;}
+.detail-panel.open{display:block!important;margin:.8rem 0 1rem!important;}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem 1.1rem 1.2rem;}
+.pilot-list{display:grid;gap:.45rem;margin-top:.65rem;}
+.pilot-chip{display:block;width:100%;text-align:left;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.10);border-left:3px solid var(--brass);border-radius:4px;padding:.65rem .75rem;color:#fff;cursor:pointer;}
+.pilot-chip b{display:block;font-size:.92rem;line-height:1.25;color:#f5f0df;}
+.pilot-chip span{display:block;font-size:.78rem;line-height:1.35;color:rgba(255,255,255,.58);margin-top:.15rem;}
+.wa-ref-card img{background:#10233a!important;}
+.b17-theatre-note{margin:.7rem 0 1rem;padding:.8rem .9rem;border-left:4px solid #8aaee8;background:rgba(136,174,240,.08);border-radius:4px;color:rgba(255,255,255,.75);font-size:.9rem;line-height:1.55;}
+@media(max-width:680px){
+  .main-wrap{padding-left:.75rem!important;padding-right:.75rem!important;}
+  .kit-grid,.paint-grid,.wa-ref-grid{grid-template-columns:1fr!important;}
+  .kit-card{padding:.8rem!important;}
+  .kit-title,.am-title,.kit-card h3{font-size:1.02rem!important;}
+  .kit-desc,.am-desc,.kit-card p{font-size:.84rem!important;}
+  .paint-card{grid-template-columns:74px 1fr!important;}
+  .paint-swatch{min-height:74px!important;font-size:.62rem!important;}
+  .detail-grid{grid-template-columns:1fr!important;padding:.85rem!important;}
+  #leaflet-map{height:520px!important;min-height:520px!important;}
+}
+</style>
 </head><body>
 <nav class="site-nav">
   <div class="site-nav-inner">
@@ -1162,23 +1230,26 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <button class="fb rtf" onclick="setRefSub('books',this)">Books</button>
   </div>
   <div id="rsub-map">
-    <div class="info-box">B-17 theatre map focused on the main modelling theatres: 8th Air Force bases in England and Mediterranean heavy-bomber bases in Italy. Pacific service is still covered in the squadron cards and stories, but the map is kept focused so it reads cleanly on mobile.</div>
+    <div class="info-box">B-17 theatre map covering the main modelling contexts: 8th Air Force bases in England, Mediterranean heavy-bomber bases in Italy, and Pacific early-war Fortress operations. Use the filters so the mobile view does not try to show every theatre at once.</div>
+    <div class="b17-theatre-note"><strong>Pacific note:</strong> yes, the B-17 flew Pacific theatre missions, especially early in the war with units such as the 19th Bomb Group and 43rd Bomb Group in the Philippines / Australia / New Guinea area. The B-29 later became the better-known very-long-range Pacific heavy bomber, but B-17 Pacific subjects are valid and useful modelling alternatives.</div>
     <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem">
       <span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-right:.25rem">Filter:</span>
-      <button onclick="filterMapGroup('all',this)" class="map-filter-btn on" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)">All bases</button>
+      <button onclick="filterMapGroup('all',this)" class="map-filter-btn on" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)">All theatres</button>
       <button onclick="filterMapGroup('1',this)" class="map-filter-btn" style="border-color:#d45757;color:#ea8a8a">8th AF / UK</button>
       <button onclick="filterMapGroup('2',this)" class="map-filter-btn" style="border-color:#49a36c;color:#7fd39a">Mediterranean</button>
+      <button onclick="filterMapGroup('3',this)" class="map-filter-btn" style="border-color:#5b8fd5;color:#89b4ea">Pacific</button>
     </div>
     <div class="raf-map-shell">
       <div class="raf-map-board"><div id="leaflet-map"></div></div>
       <div class="map-sqn-list raf-map-side" id="map-sqn-list">
         <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">Station Info</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.45)">Click a marker to see the base, linked bomb groups and modelling notes. The map is focused on the cleanest B-17 modelling theatres for mobile use: England and the Mediterranean.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.45)">Click a marker to see the base, linked bomb groups and modelling notes. The map covers England, the Mediterranean and the Pacific. Use the theatre filters for a cleaner mobile view.</div>
         <div style="margin-top:1.2rem">
           <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.5rem">Group colours</div>
           <div style="display:flex;flex-direction:column;gap:4px">
             <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#e05555"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">8th AF / UK</span></div>
             <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#4caf7d"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">Mediterranean</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#5b9bd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">Pacific</span></div>
             
           </div>
         </div>
@@ -1308,7 +1379,8 @@ const SQ=[
  {num:"447 BG",nat:"USAAF",marks:"B-17G",firstOp:"1944",lastOp:"1945",losses:88,group:"1",base:"Rattlesden",codes:"Square K",kills:154,sorties:7800,tags:["t-amber","t-blue"],tagTxt:["8th AF / UK","Square K"],roundel:"US star-and-bar",spinner:"N/A",ops:"A good choice if you want a less overused late-war B-17G subject with clear tail markings.",decalRef:{serial:"447th BG subjects",codes:"Square K tails",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"N/A",finFlash:"Square K",codeColour:"Black"},pilots:[{n:"447th BG crews",k:0,fate:"Mixed",awards:"Multiple",note:"Late-war Rattlesden subjects"}]},
  {num:"97 BG",nat:"USAAF",marks:"B-17F/G",firstOp:"1942",lastOp:"1945",losses:89,group:"2",base:"Amendola",codes:"Mediterranean",kills:210,sorties:7300,tags:["t-coral","t-green"],tagTxt:["Mediterranean","15th AF"],roundel:"US star-and-bar",spinner:"N/A",ops:"The 97th Bomb Group broadens the page beyond England and gives modellers Mediterranean Olive Drab and weathered NMF Fortress options.",decalRef:{serial:"97th BG Mediterranean subjects",codes:"Mediterranean group markings",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"N/A",finFlash:"Tail identity varies",codeColour:"Black"},pilots:[{n:"97th BG crews",k:0,fate:"Mixed",awards:"Multiple",note:"Mediterranean subject pool"}]},
  {num:"301 BG",nat:"USAAF",marks:"B-17F/G",firstOp:"1942",lastOp:"1945",losses:95,group:"2",base:"Lucera",codes:"Mediterranean",kills:201,sorties:7600,tags:["t-green","t-amber"],tagTxt:["Mediterranean","15th AF"],roundel:"US star-and-bar",spinner:"N/A",ops:"Mediterranean-based B-17 group with dusty, sun-faded and often less frequently modelled subjects than the Eighth Air Force stalwarts.",decalRef:{serial:"301st BG Mediterranean subjects",codes:"Mediterranean group markings",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"N/A",finFlash:"Tail identity varies",codeColour:"Black"},pilots:[{n:"301st BG crews",k:0,fate:"Mixed",awards:"Multiple",note:"Mediterranean B-17 reference"}]},
- {num:"19 BG",nat:"USAAF",marks:"B-17C/E/F",firstOp:"1941",lastOp:"1943",losses:52,group:"3",base:"Townsville / Port Moresby",codes:"Pacific",kills:90,sorties:2800,tags:["t-blue","t-amber"],tagTxt:["Pacific","Early-war"],roundel:"US star-and-bar",spinner:"N/A",ops:"The 19th Bomb Group covers the early-war Pacific B-17 story and is useful if you want something other than the standard English-base build.",decalRef:{serial:"19th BG Pacific subjects",codes:"Early Pacific markings",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"N/A",finFlash:"Early-war variations",codeColour:"Black"},pilots:[{n:"Jay Zeamer",k:0,fate:"Survived",awards:"Medal of Honor",note:"Old 666 Pacific story"}]}
+ {num:"19 BG",nat:"USAAF",marks:"B-17C/E/F",firstOp:"1941",lastOp:"1943",losses:52,group:"3",base:"Clark Field / Port Moresby",codes:"Pacific",kills:90,sorties:2800,tags:["t-blue","t-amber"],tagTxt:["Pacific","Early-war"],roundel:"US star-and-bar",spinner:"N/A",ops:"The 19th Bomb Group covers the early-war Pacific B-17 story, from the Philippines and Australia into New Guinea. Useful if you want something other than the standard English-base build.",decalRef:{serial:"19th BG Pacific subjects",codes:"Early Pacific markings",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"N/A",finFlash:"Early-war variations",codeColour:"Black"},pilots:[{n:"Jay Zeamer",k:0,fate:"Survived",awards:"Medal of Honor",note:"Old 666 Pacific story"}]},
+ {num:"43 BG",nat:"USAAF",marks:"B-17E/F",firstOp:"1942",lastOp:"1944",losses:47,group:"3",base:"Port Moresby / Dobodura",codes:"Pacific",kills:74,sorties:2600,tags:["t-blue","t-green"],tagTxt:["Pacific","New Guinea"],roundel:"US star-and-bar",spinner:"N/A",ops:"The 43rd Bomb Group gives the page a stronger Southwest Pacific B-17 thread, including hard-used aircraft operating in tropical conditions before later conversion away from the Fortress.",decalRef:{serial:"43rd BG Pacific B-17 subjects",codes:"Early Pacific markings",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"N/A",finFlash:"Early-war variations",codeColour:"Black"},pilots:[{n:"43rd BG crews",k:0,fate:"Mixed",awards:"Multiple",note:"Southwest Pacific B-17 crews"}]}
 ];
 
 const PILOT_META={};
@@ -1325,9 +1397,10 @@ const PAINTS=[
 ];
 
 const KITS=[
- {scale:"1:72",title:"Airfix / Revell B-17 family",maker:"Mainstream 1:72",desc:"Best starting point for many modellers. Good size, sensible display footprint and broad decal support for ETO subjects.",link:"https://www.hannants.co.uk/search/?FULL=B-17%201:72"},
- {scale:"1:48",title:"HK Models B-17G / B-17F",maker:"HK Models",desc:"The standout large-scale choice if you want a centrepiece Flying Fortress build with room for interior and nose detail.",link:"https://www.hannants.co.uk/search/?FULL=HK%20Models%20B-17"},
- {scale:"1:144",title:"Minicraft / Academy B-17 options",maker:"Compact scale",desc:"Useful if you want multiple bomb-group subjects or a display of several aircraft without the shelf space hit.",link:"https://www.hannants.co.uk/search/?FULL=B-17%201:144"}
+ {scale:"1:72",title:"Airfix B-17G Flying Fortress",maker:"Airfix",desc:"Good mainstream 1:72 route for a manageable Flying Fortress build. Use when you want broad decal compatibility and a sensible display footprint.",linkLabel:"Open Airfix B-17 search",link:"https://uk.airfix.com/search?q=B-17"},
+ {scale:"1:72",title:"Revell B-17F / B-17G Flying Fortress",maker:"Revell",desc:"Strong 1:72 family for classic Eighth Air Force subjects. Check whether the boxing is an F or G before choosing nose art and turret references.",linkLabel:"Open Revell B-17 search",link:"https://www.revell.de/en/search?q=B-17"},
+ {scale:"1:48",title:"HK Models B-17F / B-17G",maker:"HK Models",desc:"Large centrepiece Fortress option with room for interior, nose, cockpit, waist and turret detailing. Best for a serious display build.",linkLabel:"Open HK Models B-17 search",link:"https://www.hannants.co.uk/search/?FULL=HK%20Models%20B-17"},
+ {scale:"1:144",title:"Academy / Minicraft B-17 options",maker:"Compact scale",desc:"Useful for multiple bomb-group subjects or formation displays without the shelf-space hit of 1:72 or 1:48.",linkLabel:"Open 1:144 B-17 search",link:"https://www.hannants.co.uk/search/?FULL=B-17%201:144"}
 ];
 
 const SQ_DECALS={
@@ -1347,10 +1420,21 @@ const SQ_DECALS={
 };
 
 const AFTERMARKET={
- "Decals & markings":[{title:"Kits-World B-17 decal range",desc:"One of the strongest starting points for named Fortress nose-art subjects.",url:"https://kitsworld.co.uk/?s=B-17&post_type=product"},{title:"Hannants B-17 decal search",desc:"Useful fallback for specific groups or aircraft names.",url:"https://www.hannants.co.uk/search/?FULL=B-17%20decal"}],
- "Masks & transparency":[{title:"Montex B-17 masks",desc:"Masks are especially useful on the Fortress because of the amount of glazing.",url:"https://www.hannants.co.uk/search/?FULL=B-17%20mask"},{title:"Eduard B-17 masks",desc:"Useful for canopies, nose glazing and wheel masks.",url:"https://www.eduard.com/eduard/photo-etched-parts/aircraft/1-48/?lang=1&cur=2&listtype=search&searchparam=B-17"}],
- "Interior & exterior detail":[{title:"Eduard B-17 detail sets",desc:"Cockpit, bomb bay and exterior detail upgrades.",url:"https://www.eduard.com/eduard/photo-etched-parts/aircraft/1-48/?lang=1&cur=2&listtype=search&searchparam=B-17"},{title:"Quickboost B-17 search",desc:"Useful for gun barrels, engines and smaller detail corrections.",url:"https://www.hannants.co.uk/search/?FULL=Quickboost%20B-17"}],
- "Wheels / engines / guns":[{title:"Resin wheels and engines",desc:"Worth prioritising because the Fortress undercarriage and cowlings are so visible.",url:"https://www.hannants.co.uk/search/?FULL=B-17%20wheels%20engines"}]
+ "Decals & markings":[
+  {title:"Kits-World B-17 decal range",desc:"Named Fortress nose-art subjects and useful group-marking coverage. Best first stop for decal-led builds.",label:"Open Kits-World B-17 decals",url:"https://kitsworld.co.uk/?s=B-17&post_type=product"},
+  {title:"Hannants B-17 decal catalogue",desc:"Useful fallback for specific bomb groups, aircraft names and older decal sheets.",label:"Open Hannants B-17 decals",url:"https://www.hannants.co.uk/search/?FULL=B-17%20decal"}
+ ],
+ "Masks & transparency":[
+  {title:"B-17 canopy and wheel masks",desc:"Masks are not optional on a serious B-17 build — the Fortress has too much glazing to do casually.",label:"Open B-17 mask search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20mask"},
+  {title:"Eduard B-17 masks/detail sets",desc:"Use for canopy masks, cockpit detail, bomb-bay structure and exterior detail depending on scale and kit.",label:"Open Eduard B-17 search",url:"https://www.eduard.com/eduard/search/?lang=1&cur=2&searchparam=B-17"}
+ ],
+ "Interior & exterior detail":[
+  {title:"Eduard B-17 detail sets",desc:"Cockpit, bomb bay, waist positions and exterior detail upgrades for larger-scale builds.",label:"Open Eduard B-17 detail",url:"https://www.eduard.com/eduard/search/?lang=1&cur=2&searchparam=B-17"},
+  {title:"Quickboost / resin B-17 accessories",desc:"Useful for engines, gun barrels, turbo/exhaust details and smaller correction items.",label:"Open B-17 resin search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20resin"}
+ ],
+ "Wheels / engines / guns":[
+  {title:"B-17 wheels, engines and gun barrels",desc:"High-impact upgrades because the undercarriage, cowlings and defensive guns are very visible on a finished Fortress.",label:"Open wheels / engines search",url:"https://www.hannants.co.uk/search/?FULL=B-17%20wheels%20engines%20guns"}
+ ]
 };
 
 const WEATHER=[
@@ -1378,6 +1462,7 @@ const STATIONS=[
  {id:"rattlesden",lat:52.1700,lng:0.8750,name:"Rattlesden",x:398,y:496,group:"1",sqns:["447 BG"],type:"8th AF heavy bomber base",info:"447th Bomb Group / Square K tails."},
  {id:"amendola",lat:41.5410,lng:15.7130,name:"Amendola",x:460,y:640,group:"2",sqns:["97 BG"],type:"Mediterranean heavy bomber base",info:"97th Bomb Group Mediterranean subject marker."},
  {id:"lucera",lat:41.5170,lng:15.3370,name:"Lucera",x:456,y:640,group:"2",sqns:["301 BG"],type:"Mediterranean heavy bomber base",info:"301st Bomb Group Mediterranean subject marker."},
+ {id:"portmoresby",lat:-9.4438,lng:147.1803,name:"Port Moresby / Pacific",x:700,y:720,group:"3",sqns:["19 BG"],type:"Pacific heavy bomber base",info:"19th Bomb Group Pacific marker — included to show the early-war Flying Fortress story beyond Europe."},
 ];
 
 const TL={"91 BG":[{s:0,e:113,st:"front"}],"100 BG":[{s:8,e:113,st:"front"}],"303 BG":[{s:0,e:113,st:"front"}],"305 BG":[{s:0,e:113,st:"front"}],"306 BG":[{s:0,e:113,st:"front"}],"379 BG":[{s:20,e:113,st:"front"}],"381 BG":[{s:25,e:113,st:"front"}],"384 BG":[{s:20,e:113,st:"front"}],"398 BG":[{s:60,e:113,st:"front"}],"447 BG":[{s:72,e:113,st:"front"}],"97 BG":[{s:0,e:113,st:"front"}],"301 BG":[{s:8,e:113,st:"front"}],"19 BG":[{s:0,e:40,st:"front"}]};
@@ -1540,11 +1625,13 @@ function selectSq(num){
   document.querySelectorAll('.sq-card').forEach(c=>c.classList.remove('active'));
   const card=document.getElementById('card-'+safeId(num)); if(card)card.classList.add('active');
   const detail=document.getElementById('detail'); if(!detail)return;
-  const pilots=(sq.pilots||[]).map(p=>`<button class="pilot-chip" onclick="openPilot('${escapeHtml(p.n)}','${escapeHtml(num)}')"><b>${escapeHtml(p.n)}</b><span>${escapeHtml(p.note||p.awards||'Crew / commander')}</span></button>`).join('');
+  if(card && card.parentNode) card.insertAdjacentElement('afterend', detail);
+  const pilots=(sq.pilots||[]).map(p=>`<button type="button" class="pilot-chip" onclick="event.stopPropagation();openPilot('${escapeHtml(p.n)}','${escapeHtml(num)}')"><b>${escapeHtml(p.n)}</b><span>${escapeHtml(p.note||p.awards||'Crew / commander')}</span></button>`).join('');
   const decs=(SQ_DECALS[sq.num]||[]).map(d=>`<a class="shop-btn hb-outline" href="${d.url}" target="_blank" rel="noopener">${escapeHtml(d.name)} ↗</a>`).join('');
-  detail.innerHTML=`<div class="detail-panel open"><div class="dp-hd"><div><div class="dp-title">${escapeHtml(sq.num)}</div><div class="dp-meta">${escapeHtml(sq.base)} · ${mapGroupLabel(sq.group)} · ${escapeHtml(sq.marks)} · ${escapeHtml(sq.codes||'')}</div></div></div>
-    <div class="detail-grid"><div><div class="section-label">Group notes</div><p style="font-size:16px;color:rgba(255,255,255,.74);line-height:1.75">${escapeHtml(sq.ops||'')}</p><div class="pilot-list">${pilots}</div></div>
+  detail.innerHTML=`<div class="detail-panel open"><div class="dp-hd"><div><div class="dp-title">${escapeHtml(sq.num)}</div><div class="dp-meta">${escapeHtml(sq.base)} · ${mapGroupLabel(sq.group)} · ${escapeHtml(sq.marks)} · ${escapeHtml(sq.codes||'')}</div></div><button class="close-btn" onclick="event.stopPropagation();document.getElementById('detail').innerHTML=''">Close ✕</button></div>
+    <div class="detail-grid"><div><div class="section-label">Group notes</div><p>${escapeHtml(sq.ops||'')}</p><div class="pilot-list">${pilots}</div></div>
     <div><div class="section-label">Markings / decals</div><div style="font-size:14px;color:rgba(255,255,255,.70);line-height:1.7;margin-bottom:.8rem"><b>Codes:</b> ${escapeHtml(sq.codes||'')}<br><b>Subject:</b> ${escapeHtml((sq.decalRef&&sq.decalRef.serial)||'Choose by exact aircraft')}<br><b>Tail / group ID:</b> ${escapeHtml((sq.decalRef&&sq.decalRef.finFlash)||'Varies by aircraft')}</div><div style="display:flex;flex-wrap:wrap;gap:.5rem">${decs||'<span style="color:rgba(255,255,255,.45)">Use the general B-17 decal links in the build section.</span>'}</div></div></div></div>`;
+  setTimeout(()=>detail.scrollIntoView({behavior:'smooth',block:'nearest'}),40);
 }
 
 function openPilot(name,num){
@@ -1566,37 +1653,18 @@ function closePM(){const o=document.getElementById('pm-overlay');if(o)o.classLis
 function openLB(src,cap){const lb=document.getElementById('lightbox');const img=document.getElementById('lb-img');const c=document.getElementById('lb-cap');if(img)img.src=src;if(c)c.textContent=cap||'';if(lb)lb.classList.add('active');}
 function closeLB(){const lb=document.getElementById('lightbox');if(lb)lb.classList.remove('active');}
 
-function renderKits(){const el=document.getElementById('kit-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';el.innerHTML=KITS.map(k=>`<div class="kit-card"><div class="kit-scale">${escapeHtml(k.scale)}</div><h3>${escapeHtml(k.title)}</h3><div class="kit-maker">${escapeHtml(k.maker)}</div><p>${escapeHtml(k.desc)}</p><a class="shop-btn hb-brass" href="${k.link}" target="_blank" rel="noopener">Open kit link ↗</a></div>`).join('');}
-function renderPaints(){
-  const el=document.getElementById('paint-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';
-  const swatchFor = (name)=>{
-    const n=String(name||'').toLowerCase();
-    if(n.includes('olive drab')) return 'linear-gradient(135deg,#5d6242,#2e3623)';
-    if(n.includes('neutral gray')) return 'linear-gradient(135deg,#6f747c,#40444a)';
-    if(n.includes('natural metal')) return 'linear-gradient(135deg,#b8bec7,#757d87)';
-    if(n.includes('interior green')) return 'linear-gradient(135deg,#6a7a53,#35412b)';
-    if(n.includes('bronze green')) return 'linear-gradient(135deg,#415244,#1f2d24)';
-    if(n.includes('black')) return 'linear-gradient(135deg,#202124,#050608)';
-    if(n.includes('red')||n.includes('yellow')) return 'linear-gradient(135deg,#b28a34,#7f1e1e)';
-    return 'linear-gradient(135deg,#6a7280,#313742)';
-  };
-  el.innerHTML=PAINTS.map(p=>`<div class="paint-card"><div class="paint-swatch" style="background:${swatchFor(p.name)}"><div>${escapeHtml(p.name)}</div></div><div class="paint-info"><div class="paint-name">${escapeHtml(p.name)}</div><div class="paint-use">${escapeHtml(p.use||'')}</div><div style="font-size:12px;color:rgba(255,255,255,.55);margin-top:.5rem;line-height:1.45">${escapeHtml((p.brands||[]).join(' · '))}</div></div></div>`).join('');
+function renderKits(){
+  const el=document.getElementById('kit-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';
+  const storeName=(url)=> url.includes('airfix')?'Airfix official store':url.includes('revell')?'Revell official store':url.includes('hannants')?'Hannants shop/search':url.includes('scalemates')?'Scalemates reference':'Online store/reference';
+  el.innerHTML=KITS.map(k=>`<div class="kit-card"><div class="kit-meta">${escapeHtml(k.scale)} · ${escapeHtml(k.maker||'')}</div><div class="kit-title">${escapeHtml(k.title)}</div><div class="kit-desc">${escapeHtml(k.desc)}</div><div class="store-label">${escapeHtml(storeName(k.link))}</div><a class="shop-btn hb-brass" href="${k.link}" target="_blank" rel="noopener">${escapeHtml(k.linkLabel||'Open kit link')} ↗</a></div>`).join('');
 }
-function renderAftermarket(){const el=document.getElementById('aftermarket-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';el.innerHTML=Object.entries(AFTERMARKET).map(([cat,items])=>`<div class="section-label">${escapeHtml(cat)}</div><div class="kit-grid">${items.map(i=>`<div class="kit-card"><h3>${escapeHtml(i.title)}</h3><p>${escapeHtml(i.desc)}</p><a class="shop-btn hb-outline" href="${i.url}" target="_blank" rel="noopener">Open link ↗</a></div>`).join('')}</div>`).join('');}
-function renderBuildSteps(){const el=document.getElementById('stepbystep-content');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';el.innerHTML=BUILD_STEPS.map(s=>`<div class="info-box"><div style="font-family:'Special Elite',cursive;font-size:1.15rem;color:#fff;margin-bottom:.4rem">${s.icon||''} ${s.n}. ${escapeHtml(s.title)}</div><div style="font-size:15px;color:rgba(255,255,255,.72);line-height:1.65">${escapeHtml(s.text)}</div><div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.7rem">${(s.products||[]).map(p=>`<a class="shop-btn hb-outline" href="${p.url}" target="_blank" rel="noopener">${escapeHtml(p.name)} ↗</a>`).join('')}</div></div>`).join('');}
-function renderWeathering(){const el=document.getElementById('weather-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';el.innerHTML=WEATHER.map(w=>`<div class="kit-card"><h3>${escapeHtml(w.base)}</h3><p>${escapeHtml(w.mudNote||'')}</p>${(w.rows||[]).map(r=>`<div style="font-size:13px;color:rgba(255,255,255,.66);margin:.35rem 0"><b>${escapeHtml(r.l)}:</b> ${escapeHtml(r.v)}</div>`).join('')}</div>`).join('');const te=document.getElementById('weathering-techniques');if(te&&!te.dataset.rendered){te.dataset.rendered='1';te.innerHTML=(TECHNIQUES||[]).map(t=>`<div class="info-box"><b>${escapeHtml(t.title||t.name)}</b><br>${escapeHtml(t.text||t.desc||'')}</div>`).join('');}}
-function renderTimeline(){const el=document.getElementById('timeline-content')||document.getElementById('rsub-timeline'); if(!el)return; if(el.dataset.timelineRendered)return; el.dataset.timelineRendered='1'; const html=`<div class="section-label">B-17 campaign timeline</div>${EVENTS.map(e=>`<div class="info-box"><div style="font-family:'Special Elite',cursive;font-size:1.1rem;color:#fff">${escapeHtml(e[1])}</div><div style="font-size:15px;color:rgba(255,255,255,.72);line-height:1.65;margin-top:.35rem">${escapeHtml(e[2])}</div></div>`).join('')}`; const target=document.getElementById('timeline-content')||el; target.innerHTML=html;}
-function renderCompare(){const el=document.getElementById('compare-content')||document.getElementById('rsub-compare'); if(!el)return; if(el.dataset.compareRendered)return; el.dataset.compareRendered='1'; el.innerHTML=`<div class="section-label">Compare B-17 groups</div><div class="info-box">Use the unit cards and map filters to compare groups by theatre, base, markings, losses, missions and decal availability.</div>`;}
-
-function xyToLatLng(st){
-  // Prefer verified WGS84 coordinates where supplied. The old x/y values remain as a fallback only.
-  if(typeof st.lat === 'number' && typeof st.lng === 'number') return [st.lat, st.lng];
-  const lon = -7 + ((st.x - 25) / 470) * 9.5;
-  const lat = 59 - ((st.y - 20) / 660) * 9.5;
-  return [lat, lon];
+function renderAftermarket(){
+  const el=document.getElementById('aftermarket-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';
+  const storeName=(url)=> url.includes('kitsworld')?'Kits-World':url.includes('hannants')?'Hannants':url.includes('eduard')?'Eduard official':url.includes('ak-interactive')?'AK Interactive':'Online store/reference';
+  el.innerHTML=Object.entries(AFTERMARKET).map(([cat,items])=>`<div class="section-label">${escapeHtml(cat)}</div><div class="kit-grid">${items.map(i=>`<div class="kit-card"><div class="store-label">${escapeHtml(storeName(i.url))}</div><div class="am-title">${escapeHtml(i.title)}</div><div class="am-desc">${escapeHtml(i.desc)}</div><a class="shop-btn hb-outline" href="${i.url}" target="_blank" rel="noopener">${escapeHtml(i.label||'Open link')} ↗</a></div>`).join('')}</div>`).join('');
 }
 function mapGroupLabel(group){
-  return group==='1'?'8th AF / UK':group==='2'?'Mediterranean':group==='3'?'Pacific story':group==='4'?'Special subjects':'All theatres';
+  return group==='1'?'8th AF / UK':group==='2'?'Mediterranean':group==='3'?'Pacific':group==='4'?'Special subjects':'All theatres';
 }
 function renderMap(){
   const mapEl=document.getElementById('leaflet-map');
@@ -1611,9 +1679,9 @@ function renderMap(){
     zoomControl:true,
     attributionControl:true,
     scrollWheelZoom:false,
-    maxBounds:[[35,-15],[57,22]],
+    maxBounds:[[-15,-30],[62,170]],
     maxBoundsViscosity:.45
-  }).setView([49,2],4);
+  }).setView([25,60],3);
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     attribution:'&copy; OpenStreetMap &copy; CARTO',
@@ -1692,13 +1760,13 @@ function showMapIntro(){
   if(!box) return;
   const stationCount = STATIONS.length;
   const linkedUnits = [...new Set(STATIONS.flatMap(st => (st.sqns||[]).map(n => String(n).replace(' fwd',''))).filter(n => SQ.find(s => s.num === n)))];
-  const byGroup = ['1','2'].map(g => `${mapGroupLabel(g)}: ${STATIONS.filter(s=>s.group===g).length}`).join(' · ');
+  const byGroup = ['1','2','3'].map(g => `${mapGroupLabel(g)}: ${STATIONS.filter(s=>s.group===g).length}`).join(' · ');
   box.innerHTML = `
     <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">USAAF B-17 theatre map</div>
     <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem">Clickable bases → linked group cards</div>
     <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Hover a marker to reveal the base name, or click it to open the station summary and linked group cards. The linked group card contains the crew/commander notes, markings, decals and kit notes.</p>
     <div style="margin-top:.75rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)">${stationCount} station markers · ${linkedUnits.length} linked group cards</div>
-    <div style="margin-top:.45rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38)">${byGroup}</div><div style="margin-top:.45rem;font-size:12px;color:rgba(255,255,255,.46);line-height:1.55">Pacific use is still covered in the squadron cards, but the map is intentionally centred on the clearest modelling bases.</div>`;
+    <div style="margin-top:.45rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38)">${byGroup}</div><div style="margin-top:.45rem;font-size:12px;color:rgba(255,255,255,.46);line-height:1.55">Use the filters to zoom into England, the Mediterranean or the Pacific without losing the wider theatre context.</div>`;
 }
 function showMapStation(stOrId){
   const st = typeof stOrId === 'string' ? STATIONS.find(s => s.id === stOrId) : stOrId;
