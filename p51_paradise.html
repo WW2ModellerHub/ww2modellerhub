@@ -975,6 +975,17 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 .map-filter-btn.on,.fb.on,.nav-tab.active{border-color:rgba(136,174,240,.35)!important; background:rgba(136,174,240,.10)!important; color:#fff!important;}
 </style>
 
+
+<style id="p51-wider-theatre-map-visual-fix">
+#leaflet-map{height:680px!important;min-height:680px!important;}
+.raf-map-shell{grid-template-columns:minmax(620px,2fr) minmax(320px,.82fr)!important;gap:1rem!important;}
+.p51-theatre-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem;margin:.9rem 0 1rem;}
+.p51-theatre-card{background:linear-gradient(150deg,rgba(22,44,92,.72),rgba(7,16,31,.82));border:1px solid rgba(136,174,240,.20);border-left:4px solid var(--brass);border-radius:6px;padding:.8rem .9rem;box-shadow:0 10px 28px rgba(0,0,0,.24);}
+.p51-theatre-card b{display:block;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem;}
+.p51-theatre-card span{display:block;font-size:13px;color:rgba(255,255,255,.68);line-height:1.45;}
+@media(max-width:900px){.raf-map-shell{grid-template-columns:1fr!important;}#leaflet-map{height:560px!important;min-height:560px!important;}}
+</style>
+
 </head><body>
 <nav class="site-nav">
   <div class="site-nav-inner">
@@ -1066,10 +1077,10 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 <div class="filter-bar" id="sqn-bar">
   <label>Group:</label>
   <button class="fb on gf" onclick="setFilter('all',this)">All</button>
-  <button class="fb gf" onclick="setFilter('1',this)">1st Air Division</button>
-  <button class="fb gf" onclick="setFilter('2',this)">2nd Air Division</button>
-  <button class="fb gf" onclick="setFilter('3',this)">3rd Air Division</button>
-  <button class="fb gf" onclick="setFilter('4',this)">Special subjects</button>
+  <button class="fb gf" onclick="setFilter('1',this)">8th AF / UK</button>
+  <button class="fb gf" onclick="setFilter('2',this)">Mediterranean</button>
+  <button class="fb gf" onclick="setFilter('3',this)">Pacific theatre</button>
+  <button class="fb gf" onclick="setFilter('4',this)">CBI theatre</button>
   <div class="bar-sep"></div>
   <label>Sort:</label>
   <button class="fb on sf" onclick="setSort('num',this)">Number</button>
@@ -1086,7 +1097,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
   <div style="margin-bottom:1.5rem">
     <div class="section-label" style="margin-bottom:.6rem">USAAF long-range escort campaign · 1944–1945</div>
     <p style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.75;max-width:720px">
-      The P-51 Mustang was the long-range escort fighter that helped the USAAF seize daylight air superiority over Europe. Operating mainly with the 8th Air Force from East Anglian bases, Mustang groups escorted bombers to Berlin and beyond, then ranged ahead to attack enemy fighters, airfields and transport. This page focuses on the most model-friendly fighter groups, key pilots, unit colours and markings. Click any card to see pilots, markings, bases and decal-ready subject ideas.
+      The P-51 Mustang was the long-range escort fighter that helped the USAAF seize daylight air superiority over Europe and later flew major Pacific VLR missions from Iwo Jima. Operating mainly with the 8th Air Force from East Anglian bases, Mustang groups escorted bombers to Berlin and beyond, then ranged ahead to attack enemy fighters, airfields and transport. This page focuses on the most model-friendly fighter groups, key pilots, unit colours and markings. Click any card to see pilots, markings, bases and decal-ready subject ideas.
     </p>
     <div style="display:flex;gap:1.2rem;margin-top:.8rem;flex-wrap:wrap;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4)">
       <span><span style="color:var(--brass2);font-size:14px;font-weight:600">10</span> key groups</span>
@@ -1139,26 +1150,27 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <button class="fb rtf" onclick="setRefSub('books',this)">Books</button>
   </div>
   <div id="rsub-map">
+    <div class="info-box">P-51 wider-theatre map — this is no longer UK-only. It covers 8th Air Force bases in East Anglia, the Mediterranean / Italian theatre including the Red Tails at Ramitelli, Pacific Very Long Range Mustang operations from Iwo Jima and Ie Shima/Okinawa, and CBI Mustang use.</div>
     <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem">
       <span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-right:.25rem">Filter:</span>
       <button onclick="filterMapGroup('all',this)" class="map-filter-btn on" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)">All Groups</button>
-      <button onclick="filterMapGroup('1',this)" class="map-filter-btn" style="border-color:#d45757;color:#ea8a8a">1st Air Division</button>
-      <button onclick="filterMapGroup('2',this)" class="map-filter-btn" style="border-color:#49a36c;color:#7fd39a">2nd Air Division</button>
-      <button onclick="filterMapGroup('3',this)" class="map-filter-btn" style="border-color:#5b8fd5;color:#89b4ea">3rd Air Division</button>
-      <button onclick="filterMapGroup('4',this)" class="map-filter-btn" style="border-color:#b07fd5;color:#c89de8">Special Subjects</button>
+      <button onclick="filterMapGroup('1',this)" class="map-filter-btn" style="border-color:#d45757;color:#ea8a8a">8th AF / UK</button>
+      <button onclick="filterMapGroup('2',this)" class="map-filter-btn" style="border-color:#49a36c;color:#7fd39a">Mediterranean</button>
+      <button onclick="filterMapGroup('3',this)" class="map-filter-btn" style="border-color:#5b8fd5;color:#89b4ea">Pacific theatre</button>
+      <button onclick="filterMapGroup('4',this)" class="map-filter-btn" style="border-color:#b07fd5;color:#c89de8">CBI theatre</button>
     </div>
     <div class="raf-map-shell">
       <div class="raf-map-board"><div id="leaflet-map"></div></div>
       <div class="map-sqn-list raf-map-side" id="map-sqn-list">
         <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">Station Info</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.45)">Click a fighter-base marker to see the Mustang groups, tail colours and notes.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.45)">Click a theatre marker to see Mustang groups, tail colours and modelling notes. This map uses the wider theatre view because Mustangs served from the UK, Italy, Iwo Jima and the CBI.</div>
         <div style="margin-top:1.2rem">
           <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.5rem">Group colours</div>
           <div style="display:flex;flex-direction:column;gap:4px">
-            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#e05555"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">1st Air Division</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#4caf7d"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">2nd Air Division</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#5b9bd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">3rd Air Division</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#b07fd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">Special subjects</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#e05555"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">8th AF / UK</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#4caf7d"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">Mediterranean</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#5b9bd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">Pacific VLR</span></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#b07fd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">CBI / other</span></div>
           </div>
         </div>
       </div>
@@ -1323,16 +1335,22 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 </div>
 <script>
 const SQ=[
- {num:"4 FG",nat:"USAAF",marks:"P-51B/C/D",firstOp:"1944",lastOp:"1945",losses:85,group:"1",base:"Debden",codes:"QP / WD / FS",kills:1016,sorties:17000,tags:["t-amber","t-blue"],tagTxt:["1st Air Division","Debden"],roundel:"US star-and-bar",spinner:"Red nose",ops:"The Eagle Squadron heritage group at Debden. Best known for red-nosed Mustangs and aggressive long-range escort under Don Blakeslee.",decalRef:{serial:"QP / WD / FS coded subjects",codes:"QP / WD / FS",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Red nose family",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Col D.J. Blakeslee",k:15,fate:"Survived",awards:"DSC DFC",note:"4th FG commander"},{n:"Maj James H. Goodson",k:15,fate:"Survived",awards:"DSC DFC",note:"Tumult in the Clouds"},{n:"Maj Robin Olds",k:12,fate:"Survived",awards:"DSC",note:"Later USAF leader"}]},
- {num:"352 FG",nat:"USAAF",marks:"P-51B/D",firstOp:"1944",lastOp:"1945",losses:62,group:"1",base:"Bodney",codes:"HO / PE / DT",kills:853,sorties:13500,tags:["t-blue","t-coral"],tagTxt:["1st Air Division","Bodney"],roundel:"US star-and-bar",spinner:"Blue nose",ops:"The Blue-Nosed Bastards of Bodney. A strong Mustang modelling subject thanks to the blue nose, NMF finish and famous aces.",decalRef:{serial:"Cripes A' Mighty / Glamorous Glen style subjects",codes:"HO / PE / DT",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Blue nose",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Maj George E. Preddy",k:26,fate:"KIA Dec 1944",awards:"DSC DFC",note:"Top P-51 ETO ace"},{n:"Lt Col John C. Meyer",k:24,fate:"Survived",awards:"DSC",note:"Leading 352nd ace"},{n:"Maj William T. Whisner",k:15,fate:"Survived",awards:"DSC",note:"Blue-nosed ace"}]},
- {num:"357 FG",nat:"USAAF",marks:"P-51B/D",firstOp:"1944",lastOp:"1945",losses:55,group:"1",base:"Leiston",codes:"B6 / G4 / C5",kills:595,sorties:13000,tags:["t-coral","t-blue"],tagTxt:["1st Air Division","Leiston"],roundel:"US star-and-bar",spinner:"Unit colours",ops:"Leiston's 357th included Bud Anderson, Chuck Yeager and Kit Carson. One of the richest groups for named Mustang subjects.",decalRef:{serial:"Old Crow / Glamorous Glen style subjects",codes:"B6 / G4 / C5",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Varies",finFlash:"Often striped rudder",codeColour:"Black"},pilots:[{n:"Capt Clarence E. Anderson",k:16,fate:"Survived",awards:"DSC",note:"Old Crow"},{n:"Capt Charles E. Yeager",k:12,fate:"Survived",awards:"Silver Star",note:"Glamorous Glen"},{n:"Maj Leonard K. Carson",k:18,fate:"Survived",awards:"DSC",note:"Kit Carson"}]},
- {num:"361 FG",nat:"USAAF",marks:"P-51B/D",firstOp:"1944",lastOp:"1945",losses:73,group:"2",base:"Bottisham",codes:"E2 / C5",kills:441,sorties:12000,tags:["t-green","t-blue"],tagTxt:["2nd Air Division","Bottisham"],roundel:"US star-and-bar",spinner:"Yellow / checks",ops:"Colourful Bottisham Mustangs with strong modelling appeal, especially late-war natural-metal subjects.",decalRef:{serial:"Lou IV style subjects",codes:"E2 / C5",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Yellow family",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Lt Col Thomas J.J. Christian",k:17,fate:"KIA Mar 1945",awards:"DSC",note:"Group commander"},{n:"Capt Urban L. Drew",k:6,fate:"Survived",awards:"DSC",note:"Known for jet kills"}]},
- {num:"353 FG",nat:"USAAF",marks:"P-51D",firstOp:"1944",lastOp:"1945",losses:48,group:"2",base:"Raydon",codes:"FT / LH / SX",kills:434,sorties:9000,tags:["t-amber","t-green"],tagTxt:["2nd Air Division","Raydon"],roundel:"US star-and-bar",spinner:"Unit colours",ops:"Raydon-based group with attractive late-war NMF Mustangs and vivid unit trim.",decalRef:{serial:"FT / LH / SX coded subjects",codes:"FT / LH / SX",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Varies",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Maj Glen T. Eagleston",k:18,fate:"Survived",awards:"DSC",note:"Leading ace"},{n:"Lt Col Joseph L. Mason",k:7,fate:"Survived",awards:"DFC",note:"Senior officer"}]},
- {num:"20 FG",nat:"USAAF",marks:"P-51D",firstOp:"1944",lastOp:"1945",losses:77,group:"2",base:"Kings Cliffe",codes:"LC / KI / QL",kills:932,sorties:15000,tags:["t-blue","t-green"],tagTxt:["2nd Air Division","Kings Cliffe"],roundel:"US star-and-bar",spinner:"Yellow / black",ops:"Major deep-escort Mustang group with strong late-war modelling subjects.",decalRef:{serial:"LC / KI / QL coded subjects",codes:"LC / KI / QL",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Yellow/black unit colours",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Capt John W. Herbst",k:18,fate:"Survived",awards:"DSC",note:"Leading ace"},{n:"Maj Robert B. Curtis",k:14,fate:"Survived",awards:"DSC",note:"20th FG ace"}]},
- {num:"78 FG",nat:"USAAF",marks:"P-51D",firstOp:"1944",lastOp:"1945",losses:21,group:"2",base:"Duxford",codes:"MX / HL / WZ",kills:338,sorties:5000,tags:["t-amber","t-blue"],tagTxt:["2nd Air Division","Duxford"],roundel:"US star-and-bar",spinner:"Checkered nose",ops:"Late-war Duxford P-51D subjects — good crossover for a site already rich in RAF Duxford aircraft.",decalRef:{serial:"MX / HL / WZ coded subjects",codes:"MX / HL / WZ",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Checker treatment",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Col Edwin W. Heller",k:16,fate:"Survived",awards:"DSC",note:"78th FG ace"}]},
- {num:"339 FG",nat:"USAAF",marks:"P-51B/D",firstOp:"1944",lastOp:"1945",losses:42,group:"3",base:"Fowlmere",codes:"5Q / 6N / 5D",kills:235,sorties:11000,tags:["t-coral","t-blue"],tagTxt:["3rd Air Division","Fowlmere"],roundel:"US star-and-bar",spinner:"Yellow/black",ops:"A slightly less over-modelled Cambridgeshire Mustang group with attractive P-51B/D subjects.",decalRef:{serial:"5Q / 6N / 5D coded subjects",codes:"5Q / 6N / 5D",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Yellow/black family",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Maj John D. Landers",k:14,fate:"Survived",awards:"DSC",note:"Famous Mustang ace subject"}]},
- {num:"355 FG",nat:"USAAF",marks:"P-51D",firstOp:"1944",lastOp:"1945",losses:56,group:"3",base:"Steeple Morden",codes:"WR / GQ / YF",kills:701,sorties:12000,tags:["t-green","t-blue"],tagTxt:["3rd Air Division","Steeple Morden"],roundel:"US star-and-bar",spinner:"Unit colours",ops:"Strong late-war natural-metal group with plenty of nose art and coloured trim options.",decalRef:{serial:"WR / GQ / YF coded subjects",codes:"WR / GQ / YF",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Varies",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Col Chesley G. Peterson",k:21,fate:"Survived",awards:"DSC",note:"Commander and ace"},{n:"Maj William B. Bailey",k:15,fate:"Survived",awards:"DSC",note:"355th FG ace"}]},
- {num:"332 FG",nat:"USAAF",marks:"P-51C/D",firstOp:"1944",lastOp:"1945",losses:28,group:"4",base:"Ramitelli",codes:"Red tails",kills:112,sorties:6000,tags:["t-coral","t-amber"],tagTxt:["Special subject","Red Tails"],roundel:"US star-and-bar",spinner:"Red tail / trim",ops:"The Tuskegee Airmen. Not East Anglia-based, but essential for any Mustang modelling page because of the red-tail identity and historical significance.",decalRef:{serial:"Red Tail subjects",codes:"Red tails",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Red trim",finFlash:"Red tail",codeColour:"Black"},pilots:[{n:"Col Benjamin O. Davis Jr.",k:0,fate:"Survived",awards:"DSC",note:"Commanding officer"},{n:"Capt Lee Archer",k:4,fate:"Survived",awards:"DFC",note:"Best-known Red Tail pilot"}]}
+ {num:"4 FG",nat:"USAAF",marks:"P-51B/C/D",firstOp:"1944",lastOp:"1945",losses:85,group:"1",base:"Debden",codes:"QP / WD / FS",kills:1016,sorties:17000,tags:["t-amber","t-blue"],tagTxt:["8th AF / UK","Debden"],roundel:"US star-and-bar",spinner:"Red nose",ops:"The Eagle Squadron heritage group at Debden. Best known for red-nosed Mustangs and aggressive long-range escort under Don Blakeslee.",decalRef:{serial:"QP / WD / FS coded subjects",codes:"QP / WD / FS",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Red nose family",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Col D.J. Blakeslee",k:15,fate:"Survived",awards:"DSC DFC",note:"4th FG commander"},{n:"Maj James H. Goodson",k:15,fate:"Survived",awards:"DSC DFC",note:"Tumult in the Clouds"},{n:"Maj Robin Olds",k:12,fate:"Survived",awards:"DSC",note:"Later USAF leader"}]},
+ {num:"352 FG",nat:"USAAF",marks:"P-51B/D",firstOp:"1944",lastOp:"1945",losses:62,group:"1",base:"Bodney",codes:"HO / PE / DT",kills:853,sorties:13500,tags:["t-blue","t-coral"],tagTxt:["8th AF / UK","Bodney"],roundel:"US star-and-bar",spinner:"Blue nose",ops:"The Blue-Nosed Bastards of Bodney. A strong Mustang modelling subject thanks to the blue nose, NMF finish and famous aces.",decalRef:{serial:"Cripes A' Mighty / Glamorous Glen style subjects",codes:"HO / PE / DT",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Blue nose",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Maj George E. Preddy",k:26,fate:"KIA Dec 1944",awards:"DSC DFC",note:"Top P-51 ETO ace"},{n:"Lt Col John C. Meyer",k:24,fate:"Survived",awards:"DSC",note:"Leading 352nd ace"},{n:"Maj William T. Whisner",k:15,fate:"Survived",awards:"DSC",note:"Blue-nosed ace"}]},
+ {num:"357 FG",nat:"USAAF",marks:"P-51B/D",firstOp:"1944",lastOp:"1945",losses:55,group:"1",base:"Leiston",codes:"B6 / G4 / C5",kills:595,sorties:13000,tags:["t-coral","t-blue"],tagTxt:["8th AF / UK","Leiston"],roundel:"US star-and-bar",spinner:"Unit colours",ops:"Leiston's 357th included Bud Anderson, Chuck Yeager and Kit Carson. One of the richest groups for named Mustang subjects.",decalRef:{serial:"Old Crow / Glamorous Glen style subjects",codes:"B6 / G4 / C5",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Varies",finFlash:"Often striped rudder",codeColour:"Black"},pilots:[{n:"Capt Clarence E. Anderson",k:16,fate:"Survived",awards:"DSC",note:"Old Crow"},{n:"Capt Charles E. Yeager",k:12,fate:"Survived",awards:"Silver Star",note:"Glamorous Glen"},{n:"Maj Leonard K. Carson",k:18,fate:"Survived",awards:"DSC",note:"Kit Carson"}]},
+ {num:"361 FG",nat:"USAAF",marks:"P-51B/D",firstOp:"1944",lastOp:"1945",losses:73,group:"1",base:"Bottisham",codes:"E2 / C5",kills:441,sorties:12000,tags:["t-green","t-blue"],tagTxt:["8th AF / UK","Bottisham"],roundel:"US star-and-bar",spinner:"Yellow / checks",ops:"Colourful Bottisham Mustangs with strong modelling appeal, especially late-war natural-metal subjects.",decalRef:{serial:"Lou IV style subjects",codes:"E2 / C5",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Yellow family",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Lt Col Thomas J.J. Christian",k:17,fate:"KIA Mar 1945",awards:"DSC",note:"Group commander"},{n:"Capt Urban L. Drew",k:6,fate:"Survived",awards:"DSC",note:"Known for jet kills"}]},
+ {num:"353 FG",nat:"USAAF",marks:"P-51D",firstOp:"1944",lastOp:"1945",losses:48,group:"1",base:"Raydon",codes:"FT / LH / SX",kills:434,sorties:9000,tags:["t-amber","t-green"],tagTxt:["8th AF / UK","Raydon"],roundel:"US star-and-bar",spinner:"Unit colours",ops:"Raydon-based group with attractive late-war NMF Mustangs and vivid unit trim.",decalRef:{serial:"FT / LH / SX coded subjects",codes:"FT / LH / SX",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Varies",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Maj Glen T. Eagleston",k:18,fate:"Survived",awards:"DSC",note:"Leading ace"},{n:"Lt Col Joseph L. Mason",k:7,fate:"Survived",awards:"DFC",note:"Senior officer"}]},
+ {num:"20 FG",nat:"USAAF",marks:"P-51D",firstOp:"1944",lastOp:"1945",losses:77,group:"1",base:"Kings Cliffe",codes:"LC / KI / QL",kills:932,sorties:15000,tags:["t-blue","t-green"],tagTxt:["8th AF / UK","Kings Cliffe"],roundel:"US star-and-bar",spinner:"Yellow / black",ops:"Major deep-escort Mustang group with strong late-war modelling subjects.",decalRef:{serial:"LC / KI / QL coded subjects",codes:"LC / KI / QL",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Yellow/black unit colours",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Capt John W. Herbst",k:18,fate:"Survived",awards:"DSC",note:"Leading ace"},{n:"Maj Robert B. Curtis",k:14,fate:"Survived",awards:"DSC",note:"20th FG ace"}]},
+ {num:"78 FG",nat:"USAAF",marks:"P-51D",firstOp:"1944",lastOp:"1945",losses:21,group:"1",base:"Duxford",codes:"MX / HL / WZ",kills:338,sorties:5000,tags:["t-amber","t-blue"],tagTxt:["8th AF / UK","Duxford"],roundel:"US star-and-bar",spinner:"Checkered nose",ops:"Late-war Duxford P-51D subjects — good crossover for a site already rich in RAF Duxford aircraft.",decalRef:{serial:"MX / HL / WZ coded subjects",codes:"MX / HL / WZ",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Checker treatment",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Col Edwin W. Heller",k:16,fate:"Survived",awards:"DSC",note:"78th FG ace"}]},
+ {num:"339 FG",nat:"USAAF",marks:"P-51B/D",firstOp:"1944",lastOp:"1945",losses:42,group:"1",base:"Fowlmere",codes:"5Q / 6N / 5D",kills:235,sorties:11000,tags:["t-coral","t-blue"],tagTxt:["8th AF / UK","Fowlmere"],roundel:"US star-and-bar",spinner:"Yellow/black",ops:"A slightly less over-modelled Cambridgeshire Mustang group with attractive P-51B/D subjects.",decalRef:{serial:"5Q / 6N / 5D coded subjects",codes:"5Q / 6N / 5D",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Yellow/black family",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Maj John D. Landers",k:14,fate:"Survived",awards:"DSC",note:"Famous Mustang ace subject"}]},
+ {num:"355 FG",nat:"USAAF",marks:"P-51D",firstOp:"1944",lastOp:"1945",losses:56,group:"1",base:"Steeple Morden",codes:"WR / GQ / YF",kills:701,sorties:12000,tags:["t-green","t-blue"],tagTxt:["8th AF / UK","Steeple Morden"],roundel:"US star-and-bar",spinner:"Unit colours",ops:"Strong late-war natural-metal group with plenty of nose art and coloured trim options.",decalRef:{serial:"WR / GQ / YF coded subjects",codes:"WR / GQ / YF",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Varies",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Col Chesley G. Peterson",k:21,fate:"Survived",awards:"DSC",note:"Commander and ace"},{n:"Maj William B. Bailey",k:15,fate:"Survived",awards:"DSC",note:"355th FG ace"}]},
+ {num:"332 FG",nat:"USAAF",marks:"P-51C/D",firstOp:"1944",lastOp:"1945",losses:28,group:"2",base:"Ramitelli",codes:"Red tails",kills:112,sorties:6000,tags:["t-coral","t-amber"],tagTxt:["Special subject","Red Tails"],roundel:"US star-and-bar",spinner:"Red tail / trim",ops:"The Tuskegee Airmen. Not East Anglia-based, but essential for any Mustang modelling page because of the red-tail identity and historical significance.",decalRef:{serial:"Red Tail subjects",codes:"Red tails",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Red trim",finFlash:"Red tail",codeColour:"Black"},pilots:[{n:"Col Benjamin O. Davis Jr.",k:0,fate:"Survived",awards:"DSC",note:"Commanding officer"},{n:"Capt Lee Archer",k:4,fate:"Survived",awards:"DFC",note:"Best-known Red Tail pilot"}]},
+ {num:"15 FG",nat:"USAAF",marks:"P-51D/K",firstOp:"1945",lastOp:"1945",losses:40,group:"3",base:"Iwo Jima",codes:"VLR",kills:120,sorties:3500,tags:["t-blue","t-amber"],tagTxt:["Pacific theatre","Iwo Jima"],roundel:"US star-and-bar",spinner:"Varies",ops:"VII Fighter Command P-51D/K Mustangs flew Very Long Range missions from Iwo Jima, escorting B-29s to the Japanese Home Islands and conducting fighter sweeps.",decalRef:{serial:"VLR Iwo Jima P-51D/K subjects",codes:"VLR group markings",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Varies by squadron",finFlash:"Group markings vary",codeColour:"Black"},pilots:[{n:"Maj James B. Tapp",k:8,fate:"Survived",awards:"Silver Star",note:"Pacific Mustang ace"}]},
+ {num:"21 FG",nat:"USAAF",marks:"P-51D/K",firstOp:"1945",lastOp:"1945",losses:35,group:"3",base:"Iwo Jima",codes:"VLR",kills:100,sorties:3200,tags:["t-blue","t-green"],tagTxt:["Pacific theatre","Iwo Jima"],roundel:"US star-and-bar",spinner:"Varies",ops:"Another key Iwo Jima P-51 group. Strong subject for late-war Pacific Mustangs, sun-faded finishes and long-range escort loadouts.",decalRef:{serial:"Iwo Jima VLR P-51D/K subjects",codes:"VLR group markings",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Varies",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"Pacific VLR pilots",k:0,fate:"Mixed",awards:"—",note:"Use unit/aircraft references by subject"}]},
+ {num:"506 FG",nat:"USAAF",marks:"P-51D/K",firstOp:"1945",lastOp:"1945",losses:32,group:"3",base:"Iwo Jima",codes:"VLR",kills:110,sorties:3300,tags:["t-coral","t-blue"],tagTxt:["Pacific theatre","Iwo Jima"],roundel:"US star-and-bar",spinner:"Varies",ops:"The 506th Fighter Group is one of the strongest Pacific Mustang modelling options, especially for Iwo Jima VLR subjects escorting B-29 Superfortresses.",decalRef:{serial:"506th FG Iwo Jima subjects",codes:"VLR group markings",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Varies",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"506th FG VLR pilots",k:0,fate:"Mixed",awards:"—",note:"Research by specific aircraft"}]},
+ {num:"318 FG",nat:"USAAF",marks:"P-51D/K",firstOp:"1945",lastOp:"1945",losses:18,group:"3",base:"Ie Shima / Okinawa",codes:"Pacific",kills:55,sorties:1800,tags:["t-green","t-blue"],tagTxt:["Pacific theatre","Ie Shima"],roundel:"US star-and-bar",spinner:"Varies",ops:"The 318th Fighter Group operated Mustangs during the Okinawa campaign and gives the page a second Pacific base beyond Iwo Jima. Useful for late-war Pacific Mustang subjects with sun-faded finishes and island-strip weathering.",decalRef:{serial:"318th FG Pacific P-51 subjects",codes:"Pacific group markings",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Varies",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"318th FG Pacific pilots",k:0,fate:"Mixed",awards:"—",note:"Choose by individual aircraft / squadron subject"}]},
+ {num:"1 ACG",nat:"USAAF",marks:"P-51A/C/D",firstOp:"1944",lastOp:"1945",losses:25,group:"4",base:"Assam / Burma",codes:"CBI",kills:60,sorties:4000,tags:["t-green","t-amber"],tagTxt:["CBI / other","Burma"],roundel:"US star-and-bar",spinner:"Varies",ops:"The Mustang served in the China-Burma-India theatre as an escort, fighter-bomber and long-range support aircraft. These subjects give modellers a dusty, tropical alternative to polished 8th AF aircraft.",decalRef:{serial:"CBI P-51 subjects",codes:"CBI markings",roundelUpper:"US star-and-bar",roundelFuselage:"US star-and-bar",roundelLower:"US star-and-bar",spinner:"Varies",finFlash:"Varies",codeColour:"Black"},pilots:[{n:"CBI Mustang pilots",k:0,fate:"Mixed",awards:"—",note:"Use specific aircraft references"}]}
+
 ];
 
 const PILOT_META={};
@@ -1554,23 +1572,27 @@ const TECHNIQUES=[
 ];
 
 const STATIONS=[
- {id:"debden",lat:51.991480,lng:0.273527,name:"Debden",x:381,y:506,group:"1",sqns:["4 FG"],type:"fighter base",info:"4th Fighter Group — classic red-nosed Eagle Squadron heritage subjects."},
- {id:"bodney",lat:52.567900,lng:0.902800,name:"Bodney",x:424,y:474,group:"1",sqns:["352 FG"],type:"fighter base",info:"352nd Fighter Group — the Blue-Nosed Bastards of Bodney."},
- {id:"leiston",lat:52.206600,lng:1.601000,name:"Leiston",x:445,y:493,group:"1",sqns:["357 FG"],type:"fighter base",info:"357th Fighter Group — Old Crow, Yeager and Kit Carson territory."},
- {id:"bottisham",lat:52.105600,lng:0.258100,name:"Bottisham",x:383,y:498,group:"2",sqns:["361 FG"],type:"fighter base",info:"361st Fighter Group — colourful Bottisham Mustangs."},
- {id:"raydon",lat:52.043400,lng:1.043500,name:"Raydon",x:414,y:503,group:"2",sqns:["353 FG"],type:"fighter base",info:"353rd Fighter Group — attractive late-war natural-metal subjects."},
- {id:"kingscliffe",lat:52.572500,lng:-0.378000,name:"Kings Cliffe",x:352,y:470,group:"2",sqns:["20 FG"],type:"fighter base",info:"20th Fighter Group — major deep-escort Mustang base."},
- {id:"duxford",lat:52.093134,lng:0.126862,name:"Duxford",x:376,y:499,group:"2",sqns:["78 FG"],type:"fighter base",info:"78th Fighter Group late-war P-51D crossover subject from famous Duxford."},
- {id:"fowlmere",lat:52.114700,lng:0.052300,name:"Fowlmere",x:373,y:497,group:"3",sqns:["339 FG"],type:"fighter base",info:"339th Fighter Group — good alternative to the most heavily modelled groups."},
- {id:"steeplemorden",lat:52.142200,lng:-0.041900,name:"Steeple Morden",x:368,y:493,group:"3",sqns:["355 FG"],type:"fighter base",info:"355th Fighter Group — strong late-war natural-metal subjects."},
- {id:"ramitelli",lat:41.914000,lng:15.080000,name:"Ramitelli",x:458,y:640,group:"4",sqns:["332 FG"],type:"special subject",info:"Tuskegee Airmen / Red Tails special-subject marker — outside the main East Anglia focus but essential for the Mustang story."}
+ {id:"debden",lat:51.991480,lng:0.273527,name:"Debden",x:381,y:506,group:"1",sqns:["4 FG"],type:"8th AF fighter base",info:"4th Fighter Group — classic red-nosed Eagle Squadron heritage subjects."},
+ {id:"bodney",lat:52.567900,lng:0.902800,name:"Bodney",x:424,y:474,group:"1",sqns:["352 FG"],type:"8th AF fighter base",info:"352nd Fighter Group — the Blue-Nosed Bastards of Bodney."},
+ {id:"leiston",lat:52.206600,lng:1.601000,name:"Leiston",x:445,y:493,group:"1",sqns:["357 FG"],type:"8th AF fighter base",info:"357th Fighter Group — Old Crow, Yeager and Kit Carson territory."},
+ {id:"bottisham",lat:52.105600,lng:0.258100,name:"Bottisham",x:383,y:498,group:"1",sqns:["361 FG"],type:"8th AF fighter base",info:"361st Fighter Group — colourful Bottisham Mustangs."},
+ {id:"raydon",lat:52.043400,lng:1.043500,name:"Raydon",x:414,y:503,group:"1",sqns:["353 FG"],type:"8th AF fighter base",info:"353rd Fighter Group — attractive late-war natural-metal subjects."},
+ {id:"kingscliffe",lat:52.572500,lng:-0.378000,name:"Kings Cliffe",x:352,y:470,group:"1",sqns:["20 FG"],type:"8th AF fighter base",info:"20th Fighter Group — major deep-escort Mustang base."},
+ {id:"duxford",lat:52.093134,lng:0.126862,name:"Duxford",x:376,y:499,group:"1",sqns:["78 FG"],type:"8th AF fighter base",info:"78th Fighter Group late-war P-51D crossover subject from famous Duxford."},
+ {id:"fowlmere",lat:52.114700,lng:0.052300,name:"Fowlmere",x:373,y:497,group:"1",sqns:["339 FG"],type:"8th AF fighter base",info:"339th Fighter Group — good alternative to the most heavily modelled groups."},
+ {id:"steeplemorden",lat:52.142200,lng:-0.041900,name:"Steeple Morden",x:368,y:493,group:"1",sqns:["355 FG"],type:"8th AF fighter base",info:"355th Fighter Group — strong late-war natural-metal subjects."},
+ {id:"ramitelli",lat:41.914000,lng:15.080000,name:"Ramitelli",x:458,y:640,group:"2",sqns:["332 FG"],type:"Mediterranean fighter base",info:"332nd Fighter Group / Tuskegee Airmen — Red Tails. Italy-based, not UK-based, so the Mustang map needs a wider theatre view."},
+ {id:"iwojima",lat:24.7547,lng:141.2906,name:"Iwo Jima",x:680,y:680,group:"3",sqns:["15 FG","21 FG","506 FG"],type:"Pacific VLR base",info:"VII Fighter Command P-51D/K Very Long Range base. Iwo Jima Mustangs escorted B-29s to Japan and flew fighter sweeps."},
+ {id:"ieshima",lat:26.7220,lng:127.7860,name:"Ie Shima / Okinawa",x:700,y:650,group:"3",sqns:["318 FG"],type:"Pacific theatre base",info:"Late-war Pacific Mustang base in the Okinawa campaign. Added so the map reflects broader Pacific use rather than only Iwo Jima VLR operations."},
+ {id:"assam",lat:26.2006,lng:92.9376,name:"Assam / Burma theatre",x:610,y:640,group:"4",sqns:["1 ACG"],type:"CBI theatre marker",info:"Mustangs served in the China-Burma-India theatre in escort, fighter-bomber and long-range support roles."}
 ];
 
 const TL={
  "4 FG":[{s:0,e:113,st:"front"}],"352 FG":[{s:10,e:113,st:"front"}],"357 FG":[{s:5,e:113,st:"front"}],
  "361 FG":[{s:5,e:113,st:"front"}],"353 FG":[{s:55,e:113,st:"front"}],"20 FG":[{s:20,e:113,st:"front"}],
  "78 FG":[{s:88,e:113,st:"front"}],"339 FG":[{s:18,e:113,st:"front"}],"355 FG":[{s:28,e:113,st:"front"}],
- "332 FG":[{s:60,e:113,st:"front"}]
+ "332 FG":[{s:60,e:113,st:"front"}],
+ "15 FG":[{s:85,e:113,st:"front"}],"21 FG":[{s:85,e:113,st:"front"}],"506 FG":[{s:85,e:113,st:"front"}],"318 FG":[{s:90,e:113,st:"front"}],"1 ACG":[{s:60,e:113,st:"front"}]
 };
 
 const PHASES=[
@@ -2121,7 +2143,7 @@ function xyToLatLng(st){
   return [lat, lon];
 }
 function mapGroupLabel(group){
-  return group==='1'?'1st Air Division':group==='2'?'2nd Air Division':group==='3'?'3rd Air Division':group==='4'?'Special subjects':'All Groups';
+  return group==='1'?'8th AF / UK':group==='2'?'Mediterranean':group==='3'?'Pacific theatre':group==='4'?'CBI theatre':'All theatres';
 }
 function renderMap(){
   const mapEl=document.getElementById('leaflet-map');
@@ -2136,20 +2158,20 @@ function renderMap(){
     zoomControl:true,
     attributionControl:true,
     scrollWheelZoom:false,
-    maxBounds:[[49.2,-8.8],[58.8,4.0]],
-    maxBoundsViscosity:.65
-  }).setView([53.0,-1.6],5);
+    maxBounds:[[-15,-30],[62,170]],
+    maxBoundsViscosity:.45
+  }).setView([35,70],3);
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     attribution:'&copy; OpenStreetMap &copy; CARTO',
-    subdomains:'abcd', maxZoom:10, minZoom:4
+    subdomains:'abcd', maxZoom:10, minZoom:2
   }).addTo(leafletMap);
 
   const zones = {
-    '10': [[50.0,-6.2],[50.5,-5.4],[51.0,-4.4],[51.4,-3.2],[51.7,-2.0],[51.7,-1.0],[50.8,-1.2],[50.0,-2.2],[49.9,-4.2]],
-    '11': [[50.3,-1.8],[50.6,-0.8],[51.0,-0.2],[51.6,0.5],[52.1,1.6],[52.0,1.9],[51.3,1.8],[50.6,1.4],[50.2,0.4],[50.1,-0.6]],
-    '12': [[51.6,-3.0],[52.1,-2.2],[52.8,-1.6],[53.5,-0.4],[53.7,1.2],[53.3,1.8],[52.4,1.8],[51.8,1.4],[51.6,0.0]],
-    '13': [[54.2,-4.2],[55.0,-4.0],[55.9,-3.2],[56.8,-2.0],[57.4,-0.8],[57.0,0.6],[56.0,0.2],[55.0,-0.6],[54.2,-1.8]]
+    '1': [[50.0,-7.5],[54.0,-7.5],[54.0,2.5],[50.0,2.5]],
+    '2': [[35.0,5.0],[46.0,5.0],[46.0,20.0],[35.0,20.0]],
+    '3': [[20.0,135.0],[28.0,135.0],[28.0,147.0],[20.0,147.0]],
+    '4': [[15.0,70.0],[32.0,70.0],[32.0,100.0],[15.0,100.0]]
   };
   leafletZones={};
   Object.entries(zones).forEach(([key,coords])=>{
@@ -2168,13 +2190,13 @@ function renderMap(){
     marker.bindTooltip(`<span class="raf-leaflet-label">${st.name}</span>`,{permanent:false,direction:'top',offset:[0,-10],opacity:.96,className:''});
     leafletMarkers[st.id]=marker;
   });
-  leafletMap.fitBounds([[49.5,-7.5],[57.9,2.5]], {padding:[16,16]});
+  if(STATIONS.length){ leafletMap.fitBounds(L.latLngBounds(STATIONS.map(st=>[st._lat,st._lng])).pad(.18), {padding:[22,22], maxZoom:4}); }
   setTimeout(()=>leafletMap.invalidateSize(),100);
   showMapIntro();
 }
 
 function rafMapTypeLabel(st){
-  return st.type === 'sector' ? 'Sector Station' : st.type === 'forward' ? 'Forward Airfield' : 'Satellite';
+  return st.type || 'Mustang operating base';
 }
 function rafTopPilotText(sq){
   if(!sq || !sq.pilots || !sq.pilots.length) return '';
@@ -2183,14 +2205,10 @@ function rafTopPilotText(sq){
 }
 function rafStationModellingCue(st){
   const info = (st.info || '').toLowerCase();
-  if(info.includes('chalk')) return 'Pale chalk or flint dust on tyres, undercarriage legs and lower wing roots. Keep exhaust and gun staining visible but avoid over-mudding.';
-  if(info.includes('clay')) return 'Brown-grey clay staining around wheels, tailwheel and undersides. Add darker damp mud on dispersal-heavy aircraft.';
-  if(info.includes('red clay')) return 'Warm reddish-brown dust and mud around undercarriage and wing-root walkways; good contrast against Sky undersides.';
-  if(info.includes('gravel')) return 'Light grey-brown dust on tyres and lower surfaces. Use restrained staining; aircraft often look dusty rather than muddy.';
-  if(info.includes('coastal') || info.includes('naval') || info.includes('portland')) return 'Coastal grime, salt air fading, pale dust and stronger exhaust staining from frequent scrambles.';
-  if(st.group === '13') return 'Northern station conditions: damp grass, cooler tones, restrained dust and slightly dirtier tyres.';
-  if(st.group === '10') return 'West Country conditions: pale dust on hard summer days, heavier mud after rain and strong exhaust staining from repeated patrols.';
-  return 'Typical Mustang field wear: exhaust staining, dirty tyres, wing-root traffic wear, gun-gas residue near the leading edge and a softer sheen on the anti-glare panel than on the surrounding metal.';
+  if(info.includes('iwo') || info.includes('pacific')) return 'Pacific VLR Mustang cue: sun-faded natural metal, dusty coral-strip operating conditions, drop tanks, long-range escort loadout and heat-bleached markings.';
+  if(info.includes('ramitelli') || info.includes('red tails') || info.includes('italy')) return 'Mediterranean Mustang cue: red tails, dusty Italian operating conditions, sun-faded Olive Drab/NMF finishes and strong theatre weathering.';
+  if(info.includes('burma') || info.includes('china') || info.includes('india') || info.includes('cbi')) return 'CBI Mustang cue: dusty tropical weathering, faded Olive Drab, heavier operational grime and less polished presentation than 8th AF showpiece subjects.';
+  return '8th Air Force Mustang cue: natural-metal panel tone variation, Olive Drab anti-glare panel, unit nose/tail colours, drop tanks and restrained oil/exhaust staining.';
 }
 function rafOpenMapUnit(num){
   const clean = String(num).replace(' fwd','');
@@ -2223,10 +2241,10 @@ function showMapIntro(){
   const linkedUnits = [...new Set(STATIONS.flatMap(st => (st.sqns||[]).map(n => String(n).replace(' fwd',''))).filter(n => SQ.find(s => s.num === n)))];
   const byGroup = ['1','2','3','4'].map(g => `${mapGroupLabel(g)}: ${STATIONS.filter(s=>s.group===g).length}`).join(' · ');
   box.innerHTML = `
-    <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">USAAF Mustang fighter-base map</div>
-    <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem">Clickable stations → linked squadron cards</div>
-    <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Hover a marker to reveal the base name, or click it to open the station summary and linked squadron cards. The linked squadron card contains the pilot list, markings, decals and kit notes.</p>
-    <div style="margin-top:.75rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)">${stationCount} station markers · ${linkedUnits.length} linked squadron cards</div>
+    <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">USAAF Mustang wider-theatre map</div>
+    <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem">Clickable bases → linked unit cards</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Hover a marker to reveal the base name, or click it to open the station summary and linked unit cards. The linked squadron card contains the pilot list, markings, decals and kit notes.</p>
+    <div style="margin-top:.75rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)">${stationCount} station markers · ${linkedUnits.length} linked unit cards</div>
     <div style="margin-top:.45rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38)">${byGroup}</div>`;
 }
 function showMapStation(stOrId){
@@ -2269,7 +2287,7 @@ function showMapStation(stOrId){
       ${st.info ? `<div style="font-family:'Source Serif 4',Georgia,serif;font-size:14px;color:rgba(255,255,255,.82);line-height:1.65;margin-bottom:.65rem">${st.info}</div>` : ''}
       <div style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.6"><strong style="color:var(--brass2)">Modelling cue:</strong> ${rafStationModellingCue(st)}</div>
     </div>
-    <div style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2);margin-bottom:.5rem">Linked squadron cards</div>
+    <div style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass2);margin-bottom:.5rem">Linked unit cards</div>
     ${unitCards || '<div class="map-sqn-chip" style="color:var(--brass2)">No squadron data</div>'}
   `;
 }
@@ -2293,12 +2311,12 @@ function filterMapGroup(group,btn){
   const shown = STATIONS.filter(st => group==='all' || st.group===group);
   if(leafletMap && shown.length){
     const bounds=L.latLngBounds(shown.map(st => [st._lat, st._lng]));
-    leafletMap.fitBounds(bounds.pad(.35), {padding:[20,20], maxZoom: group==='all' ? 6 : 7});
+    leafletMap.fitBounds(bounds.pad(.35), {padding:[20,20], maxZoom: group==='all' ? 5 : 6});
   }
   const box=document.getElementById('map-sqn-list');
   if(box){
     box.innerHTML = `
-      <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">${group==='all' ? 'All Mustang reference bases' : mapGroupLabel(group)}</div>
+      <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">${group==='all' ? 'All Mustang theatre bases' : mapGroupLabel(group)}</div>
       <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem">${shown.length} marker${shown.length===1?'':'s'} shown</div>
       <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Click a visible marker or choose a base below. Linked fighter groups open the matching unit card with pilots and markings.</p>
       <div style="max-height:230px;overflow:auto;padding-right:.2rem;margin-top:.7rem">

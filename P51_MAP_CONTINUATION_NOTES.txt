@@ -1,0 +1,1 @@
+Continuation patch: made the Mustang map visibly wider with a theatre summary strip, taller map canvas, UK/Italy/Pacific/CBI labels, and added 318 FG at Ie Shima/Okinawa as an additional Pacific-theatre Mustang group/base.
