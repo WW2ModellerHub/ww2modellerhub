@@ -1118,8 +1118,8 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <button class="fb btf" onclick="setBuildSub('stepbystep',this)">Build guide</button>
     <button class="fb btf" onclick="setBuildSub('weathering',this)">Weathering</button>
   </div>
-  <div id="bsub-kits"><div class="section-label">Choosing your Mustang kit</div><p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">The most useful Mustang kit choice depends on the version you want to build. For a late-war natural-metal P-51D in 1:48, Tamiya remains the safest recommendation, while Eduard offers extra cockpit detail and a stronger out-of-box package. For early Olive Drab P-51B/C subjects, Arma Hobby is a strong option in 1:72.</p><div class="kit-grid" id="kit-grid"></div></div>
-  <div id="bsub-aftermarket" style="display:none"><div class="section-label">Aftermarket for the P-51 Mustang</div><p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">For most Mustang builds the best upgrades are seatbelts, wheels, exhausts and — if you are building a natural-metal subject — a cleaner cockpit and sharper canopy framing. Wheels and exhausts are particularly noticeable on a parked P-51D.</p><div id="aftermarket-grid"></div></div>
+  <div id="bsub-kits"><div class="section-label">Choosing your Mustang kit</div><p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">The kit choice now supports Europe, Mediterranean, Pacific VLR and CBI subjects. Use P-51D/K kits for Iwo Jima, Ie Shima/Okinawa and late-war 8th AF subjects; use P-51B/C kits for early ETO or CBI-style Olive Drab builds. Choose by variant, theatre, tanks/stores and decal sheet.</p><div class="kit-grid" id="kit-grid"></div></div>
+  <div id="bsub-aftermarket" style="display:none"><div class="section-label">Aftermarket for the P-51 Mustang</div><p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">Aftermarket is now split by purpose: decals and markings, Pacific/VLR loadout, cockpit, exterior detail and masks. For Pacific subjects, drop tanks, sun-faded weathering and correct unit markings are as important as cockpit detail.</p><div id="aftermarket-grid"></div></div>
   <div id="bsub-paint" style="display:none">
     <div class="section-label">USAAF Mustang paint colours</div>
     <p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:700px;margin-bottom:1rem">Mustang colour treatment is dominated by two main looks: early-war <strong style="color:var(--cream)">Olive Drab over Neutral Gray</strong> on P-51B/C aircraft, and the classic late-war <strong style="color:var(--cream)">natural-metal finish</strong> on P-51D/K aircraft. Group colours, anti-glare panels, invasion stripes and tail markings do most of the visual work on a finished model.</p>
@@ -1295,7 +1295,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
       <span style="font-size:14px">✈</span>
       <div><div class="shop-name">BBMF</div><div class="shop-cats">Airworthy survivors</div></div>
     </a>
-    <a class="shop-link" href="https://barracudacals.com/collections/spitfire" target="_blank" rel="noopener">
+    <a class="shop-link" href="https://barracudacals.com/collections/p-51-mustang" target="_blank" rel="noopener">
       <span style="font-size:14px">🦈</span>
       <div><div class="shop-name">Barracuda Studios</div><div class="shop-cats">Resin · Decals · Masks</div></div>
     </a>
@@ -1368,190 +1368,38 @@ const PAINTS=[
 ];
 
 const KITS=[
- {brand:"Airfix",name:"Mustang Mk.Ia",scale:"1:48",stars:5,
-  accuracy:"New-tool Airfix kit and the safest mainstream BoB Mustang recommendation. Good outline, strong surface detail, sensible cockpit detail and two useful early-war schemes.",
-  markings:["222 Sqn ZD-B","611 Sqn FY-N"],
-  shops:[
-   {label:"Airfix direct — A05126A",url:"https://uk.airfix.com/products/supermarine-spitfire-mk1-a05126a"},
-   {label:"Airfix direct — A05126A",url:"https://uk.airfix.com/products/supermarine-spitfire-mk1-a05126a"}]},
- {brand:"Airfix",name:"Mustang Mk.Ia",scale:"1:72",stars:5,
-  accuracy:"Recent Airfix 1:72 tooling and the best beginner-friendly small-scale Mustang option. Ideal for USAAF escort war over Europe subjects.",
-  markings:["603 Sqn","609 Sqn","74 Sqn"],
-  shops:[
-   {label:"Airfix direct — A01071C",url:"https://uk.airfix.com/products/supermarine-spitfire-mkia-a01071c"},
-   {label:"Airfix direct — A01071C",url:"https://uk.airfix.com/products/supermarine-spitfire-mkia-a01071c"}]},
- {brand:"Tamiya",name:"Mustang Mk.I",scale:"1:48",stars:5,
-  accuracy:"Excellent modern Tamiya tooling. Superb fit, crisp detail and a very reliable option for a clean USAAF escort war over Europe Mk.I build.",
-  markings:["Various early-war USAAF"],
-  shops:[
-   {label:"Scale Model Shop — Tamiya 61119",url:"https://www.scalemodelshop.co.uk/tamiya-supermarine-spitfire-mk-i-61119/"}]},
- {brand:"Tamiya",name:"Mustang Mk.I",scale:"1:72",stars:4,
-  accuracy:"Older than the latest Airfix kit but still a sharp, easy build with good fit. Useful if Airfix stock is unavailable.",
-  markings:["Various early-war USAAF"],
-  shops:[
-   {label:"Scale Model Shop — Tamiya 60748",url:"https://www.scalemodelshop.co.uk/tamiya-spitfire-mki-60748/"}]},
- {brand:"Tamiya",name:"Mustang Mk.I & Light Utility Car 10HP Set",scale:"1:48",stars:4,
-  accuracy:"Good diorama-friendly Tamiya set using a Mk.I Mustang with ground vehicle context. Useful for airfield display builds.",
-  markings:["Early-war USAAF"],
-  shops:[
-   {label:"Tiger Hobbies — Tamiya 25211",url:"https://www.tigerhobbies.co.uk/product/tamiya-25211-1-48-supermarine-spitfire-mk-i-light-utility-car-10hp-set/"}]},
- {brand:"Eduard",name:"The Mustang Story — Limited Edition",scale:"1:48",stars:5,
-  accuracy:"Premium Eduard boxing focused on Mustang Mk.I subjects from introduction into service through the USAAF escort war over Europe. Best collector-level option where available.",
-  markings:["19 Sqn QV","602 Sqn LO","74 Sqn ZP","92 Sqn GR"],
-  shops:[
-   {label:"Scale Model Shop — Eduard 11143",url:"https://www.scalemodelshop.co.uk/1-48-ltd-edt-the-spitfire-story-eduard-11143-p2813/"},
-   {label:"Jadlam — Eduard 11143",url:"https://www.jadlamracingmodels.com/products/eduard-11143-the-spitfire-story-limited-edition-1-48-plastic-model-aircraft-kit"}]},
- {brand:"Eduard",name:"Mustang Mk.I early ProfiPACK",scale:"1:48",stars:5,
-  accuracy:"Definitive detail-led Mk.I option when available. Includes masks/PE depending on boxing; best for modellers who want extra cockpit and surface detail.",
-  markings:["19 Sqn","54 Sqn","72 Sqn","602 Sqn"],
-  shops:[
-   {label:"Dave Coley — Eduard 82152",url:"https://www.davecoleysemporium.co.uk/contents/en-uk/p10437.html"}]},
- {brand:"Eduard",name:"Mustang Mk.Ia Weekend Edition",scale:"1:48",stars:4,
-  accuracy:"Same accurate Eduard family tooling in a simpler Weekend boxing. Good value if you do not need photo-etch or masks.",
-  markings:["92 Sqn","602 Sqn","234 Sqn"],
-  shops:[
-   {label:"KingKit — Eduard 84179",url:"https://www.kingkit.co.uk/product/eduard-aircraft-model-kits-1-48-84179-spitfire-mk-ia-weekend-edition"}]},
- {brand:"Tamiya",name:"Mustang Mk.Vb",scale:"1:48",stars:4,
-  accuracy:"Excellent kit but not a USAAF escort war over Europe Mk.I. Keep this for 1941–44 Mustang V subjects, not 1940 Mk.I modelling.",
-  markings:["Various 1941–44"],
-  shops:[
-   {label:"Scale Model Shop — Tamiya 61033",url:"https://www.scalemodelshop.co.uk/tamiya-supermarine-spitfire-mk-vb-61033/"}]},
- {brand:"Revell",name:"Mustang Mk.IIa",scale:"1:32",stars:3,
-  accuracy:"Large-scale option for late-1940/early Mk.II subjects. Not a straight early USAAF escort war over Europe Mk.I without checking cowling and exhaust differences.",
-  markings:["19 Sqn QV","Various late 1940"],
-  shops:[
-   {label:"KingKit — Revell 03986",url:"https://www.kingkit.co.uk/product/revell-aircraft-1-32-03986-supermarine-spitfire-mkiia"}]},
+ {brand:"Tamiya",name:"North American P-51D Mustang",scale:"1:48",stars:5,accuracy:"Safest mainstream P-51D recommendation for both European 8th AF and Pacific VLR subjects. Excellent fit and clean surface prep, which matters for natural-metal finishes.",markings:["8th AF natural metal","Iwo Jima VLR P-51D/K","Blue Nose / Red Tail subjects"],shops:[{label:"Tamiya USA — P-51D Mustang 1:48",url:"https://www.tamiyausa.com/shop/148-aircraft/north-american-p-51d-mustang/"},{label:"Hannants — Tamiya P-51D 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Tamiya%20P-51D%201%2F48"}]},
+ {brand:"Eduard",name:"P-51D Mustang ProfiPACK",scale:"1:48",stars:5,accuracy:"Best detail-led P-51D family for serious builds. Strong for late-war 8th AF, Mediterranean and Pacific subjects when paired with the right decals.",markings:["8th AF groups","15th/21st/506th FG Pacific VLR via decals"],shops:[{label:"Eduard — P-51D Mustang kits",url:"https://www.eduard.com/eduard/plastic-kits/aircraft/1-48/?lang=1&cur=2&listtype=search&searchparam=p-51d"},{label:"Hannants — Eduard P-51D 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=Eduard%20P-51D%201%2F48"}]},
+ {brand:"Eduard",name:"P-51K Mustang",scale:"1:48",stars:5,accuracy:"Important for Pacific/VLR subjects because late-war Pacific units used both P-51D and P-51K aircraft. Check propeller and louvre details against the chosen aircraft.",markings:["Iwo Jima VLR","Pacific theatre late-war"],shops:[{label:"Eduard — P-51K Mustang kits",url:"https://www.eduard.com/eduard/plastic-kits/aircraft/1-48/?lang=1&cur=2&listtype=search&searchparam=p-51k"},{label:"Hannants — P-51K 1:48",url:"https://www.hannants.co.uk/search/?keyword_search=P-51K%201%2F48"}]},
+ {brand:"Airfix",name:"North American P-51D Mustang",scale:"1:72",stars:4,accuracy:"Good smaller-scale route for multiple subjects. Useful if you want an 8th AF machine, Red Tail subject and a Pacific VLR aircraft in one display set.",markings:["8th AF","Pacific VLR","Red Tails"],shops:[{label:"Airfix — P-51D Mustang 1:72",url:"https://uk.airfix.com/products/north-american-p-51d-mustang-a01004b"},{label:"Hannants — Airfix P-51D 1:72",url:"https://www.hannants.co.uk/search/?keyword_search=Airfix%20P-51D%201%2F72"}]},
+ {brand:"Arma Hobby",name:"P-51B/C Mustang",scale:"1:72",stars:5,accuracy:"Best early Mustang route for Olive Drab/Neutral Gray subjects before the P-51D bubbletop becomes dominant. Good for early ETO and CBI-style builds.",markings:["Early 8th AF P-51B/C","CBI / tactical subjects"],shops:[{label:"Arma Hobby — P-51B/C Mustang",url:"https://www.armahobby.com/70040-p-51b-c-mustang.html"},{label:"Hannants — Arma P-51B/C",url:"https://www.hannants.co.uk/search/?keyword_search=Arma%20P-51B%20Mustang"}]},
+ {brand:"Meng",name:"P-51D Mustang",scale:"1:48",stars:4,accuracy:"Good alternative late-war P-51D kit. Useful where local stock is better than Tamiya/Eduard, but choose decals carefully for theatre-specific accuracy.",markings:["8th AF","Pacific VLR via decals"],shops:[{label:"Hannants — Meng P-51D",url:"https://www.hannants.co.uk/search/?keyword_search=Meng%20P-51D%201%2F48"}]}
 ];
 
 const SQ_DECALS={
- "19":[
-  {name:"Xtradecal X48143 — 1:48 BoB Pt.1 · R6776 QV-H (Unwin) 19 Sqn",url:"https://www.hannants.co.uk/product/X48143"},
-  {name:"Xtradecal X48059 — 1:48 Mustang Mk.I/II · P9386 QV-K (Brian Lane) 19 Sqn March 1940",url:"https://www.hannants.co.uk/product/X48059"},
-  {name:"Xtradecal X48086 — 1:48 BoB USAAF mixed · X4474 QV-I 19 Sqn (+ Hurricanes 85, 310 Sqn)",url:"https://www.hannants.co.uk/product/X48086"},
-  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 (10 aircraft) · R6776 QV-H 19 Sqn",url:"https://www.hannants.co.uk/product/X72221"}],
- "41":[
-  {name:"Xtradecal X48145 — 1:48 BoB Pt.2 · EB-L 41 Sqn P/O Ted Shipman USAAF Catterick",url:"https://www.hannants.co.uk/product/X48145"},
-  {name:"Hannants — search 41 Sqn Mustang decals",url:"https://www.hannants.co.uk/search/?keyword_search=41+squadron+spitfire&product_type_id=2677"}],
- "54":[
-  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · P9398 KL-B (Al Deere) 54 Sqn Hornchurch",url:"https://www.hannants.co.uk/product/X72221"},
-  {name:"Hannants — search 54 Sqn Mustang decals",url:"https://www.hannants.co.uk/search/?keyword_search=54+squadron+spitfire&product_type_id=2677"}],
- "64":[
-  {name:"Hannants — search 64 Sqn Mustang decals",url:"https://www.hannants.co.uk/search/?keyword_search=64+squadron+spitfire&product_type_id=2677"},
-  {name:"Xtradecal X48147 — 1:48 National Insignia BoB 1940 (roundels + Sky codes)",url:"https://www.hannants.co.uk/product/X48147"}],
- "65":[
-  {name:"Hannants — search 65 Sqn Mustang decals",url:"https://www.hannants.co.uk/search/?keyword_search=65+squadron+spitfire&product_type_id=2677"},
-  {name:"Xtradecal X48147 — 1:48 National Insignia BoB 1940",url:"https://www.hannants.co.uk/product/X48147"}],
- "66":[
-  {name:"Xtradecal X48086 — 1:48 BoB USAAF mixed · R6800 LZ-N (Leigh) 66 Sqn + Hurricanes",url:"https://www.hannants.co.uk/product/X48086"},
-  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · R6800 LZ-N 66 Sqn S/Ldr Leigh Gravesend",url:"https://www.hannants.co.uk/product/X72221"}],
- "72":[
-  {name:"Xtradecal X48143 — 1:48 BoB Pt.1 · RN-N 72 Sqn F/O Desmond Sheen",url:"https://www.hannants.co.uk/product/X48143"},
-  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · RN-N 72 Sqn F/O Desmond Sheen",url:"https://www.hannants.co.uk/product/X72221"}],
- "74":[
-  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · K9953 ZP-A (Sailor Malan) 74 Tiger Sqn",url:"https://www.hannants.co.uk/product/X72221"},
-  {name:"Xtradecal X48147 — 1:48 National Insignia BoB 1940 (roundels + Sky codes for ZP)",url:"https://www.hannants.co.uk/product/X48147"},
-  {name:"Hannants — search 74 squadron spitfire Tiger",url:"https://www.hannants.co.uk/search/?keyword_search=74+squadron+spitfire&product_type_id=2677"}],
- "92":[
-  {name:"Xtradecal X48143 — 1:48 BoB Pt.1 · N3290 GR-U 92 Sqn USAAF Hornchurch",url:"https://www.hannants.co.uk/product/X48143"},
-  {name:"Xtradecal X48059 — 1:48 Mustang Mk.I/II · N3249 QJ-P 92 Sqn Biggin Hill Sept 1940",url:"https://www.hannants.co.uk/product/X48059"},
-  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · N3290 GR-U 92 Sqn Hornchurch",url:"https://www.hannants.co.uk/product/X72221"},
-  {name:"Eduard 82152 ProfiPACK — Dave Coley",url:"https://www.davecoleysemporium.co.uk/contents/en-uk/p10437.html"}],
- "152":[
-  {name:"Hannants — search 152 Sqn Mustang decals (Warmwell / 10 Group)",url:"https://www.hannants.co.uk/search/?keyword_search=152+squadron+spitfire&product_type_id=2677"},
-  {name:"Xtradecal X48147 — 1:48 National Insignia BoB 1940",url:"https://www.hannants.co.uk/product/X48147"}],
- "222":[
-  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · P9323 ZD-F 222 Sqn Hornchurch",url:"https://www.hannants.co.uk/product/X72221"},
-  {name:"Hannants — search 222 Sqn Mustang decals",url:"https://www.hannants.co.uk/search/?keyword_search=222+squadron+spitfire&product_type_id=2677"}],
- "234":[
-  {name:"Eduard 84179 Weekend Mk.Ia — KingKit",url:"https://www.kingkit.co.uk/product/eduard-aircraft-model-kits-1-48-84179-spitfire-mk-ia-weekend-edition"},
-  {name:"Hannants — search 234 Sqn Mustang decals",url:"https://www.hannants.co.uk/search/?keyword_search=234+squadron+spitfire&product_type_id=2677"}],
- "266":[
-  {name:"Xtradecal X48143 — 1:48 BoB Pt.1 · X4593 UO-A 266 Sqn USAAF Wittering",url:"https://www.hannants.co.uk/product/X48143"},
-  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · X4593 UO-A 266 Sqn Wittering",url:"https://www.hannants.co.uk/product/X72221"}],
- "602":[
-  {name:"Xtradecal X48143 — 1:48 BoB Pt.1 · X4382 LO-G (P/O Hanbury) 602 City Glasgow",url:"https://www.hannants.co.uk/product/X48143"},
-  {name:"Xtradecal X48145 — 1:48 BoB Pt.2 · L1027 LO-A 602 Sqn Westhampnett (Johnstone)",url:"https://www.hannants.co.uk/product/X48145"},
-  {name:"Xtradecal X48086 — 1:48 BoB USAAF mixed · K9899 LO-H 602 Sqn July 1940",url:"https://www.hannants.co.uk/product/X48086"},
-  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · X4382 LO-G 602 Sqn Westhampnett",url:"https://www.hannants.co.uk/product/X72221"},
-  {name:"Eduard 84179 Weekend Mk.Ia — KingKit",url:"https://www.kingkit.co.uk/product/eduard-aircraft-model-kits-1-48-84179-spitfire-mk-ia-weekend-edition"}],
- "603":[
-  {name:"Hannants — search 603 City Edinburgh Mustang decals",url:"https://www.hannants.co.uk/search/?keyword_search=603+squadron+spitfire&product_type_id=2677"},
-  {name:"Xtradecal X48147 — 1:48 National Insignia BoB 1940 (roundels + XT codes)",url:"https://www.hannants.co.uk/product/X48147"}],
- "609":[
-  {name:"Hannants — search 609 West Riding Mustang decals",url:"https://www.hannants.co.uk/search/?keyword_search=609+squadron+spitfire&product_type_id=2677"},
-  {name:"Xtradecal X48147 — 1:48 National Insignia BoB 1940",url:"https://www.hannants.co.uk/product/X48147"}],
- "610":[
-  {name:"Hannants — search 610 County Chester Mustang decals",url:"https://www.hannants.co.uk/search/?keyword_search=610+squadron+spitfire&product_type_id=2677"},
-  {name:"Xtradecal X48147 — 1:48 National Insignia BoB 1940",url:"https://www.hannants.co.uk/product/X48147"}],
- "611":[
-  {name:"Xtradecal X48145 — 1:48 BoB Pt.2 · X4253 FY-N 611 Sqn Sgt Duncan-Smith USAAF Rochford",url:"https://www.hannants.co.uk/product/X48145"},
-  {name:"Hannants — search 611 West Lancashire Mustang decals",url:"https://www.hannants.co.uk/search/?keyword_search=611+squadron+spitfire&product_type_id=2677"}],
- "616":[
-  {name:"Xtradecal X48143 — 1:48 BoB Pt.1 · N3093 QJ-W 616 Sqn (Gilliam) Leconfield",url:"https://www.hannants.co.uk/product/X48143"},
-  {name:"Xtradecal X72221 — 1:72 BoB Pt.1 · X4382 QJ-W 616 Sqn Leconfield",url:"https://www.hannants.co.uk/product/X72221"},
-  {name:"Hannants — search 616 S.Yorkshire Mustang decals",url:"https://www.hannants.co.uk/search/?keyword_search=616+squadron+spitfire&product_type_id=2677"}],
+ "4 FG":[{name:"EagleCals — 4th FG red-nose Mustang subjects",url:"https://www.eagle-editions.com/product-category/eaglecals/aircraft/1-48-scale/p-51-mustang/"},{name:"Hannants — 4th Fighter Group P-51 decal sheets",url:"https://www.hannants.co.uk/search/?keyword_search=4th%20Fighter%20Group%20P-51%20decals"}],
+ "352 FG":[{name:"Kits-World — Blue Nose P-51 Mustang decals",url:"https://kitsworld.co.uk/product-category/decals/1-48-scale-decals/?s=P-51%20Blue%20Nose"},{name:"Hannants — 352nd FG Blue Nose P-51 decals",url:"https://www.hannants.co.uk/search/?keyword_search=352nd%20Fighter%20Group%20P-51%20decals"}],
+ "357 FG":[{name:"EagleCals — Bud Anderson / 357th FG P-51 subjects",url:"https://www.eagle-editions.com/product-category/eaglecals/aircraft/1-48-scale/p-51-mustang/"},{name:"Hannants — 357th FG P-51 decals",url:"https://www.hannants.co.uk/search/?keyword_search=357th%20Fighter%20Group%20P-51%20decals"}],
+ "361 FG":[{name:"Hannants — 361st FG P-51D decals",url:"https://www.hannants.co.uk/search/?keyword_search=361st%20Fighter%20Group%20P-51%20decals"},{name:"Kits-World — Lou IV / 361st FG Mustang decals",url:"https://kitsworld.co.uk/product-category/decals/1-48-scale-decals/?s=Lou%20IV"}],
+ "353 FG":[{name:"Hannants — 353rd FG P-51 decals",url:"https://www.hannants.co.uk/search/?keyword_search=353rd%20Fighter%20Group%20P-51%20decals"}],
+ "20 FG":[{name:"Hannants — 20th FG P-51 decals",url:"https://www.hannants.co.uk/search/?keyword_search=20th%20Fighter%20Group%20P-51%20decals"}],
+ "78 FG":[{name:"Hannants — 78th FG P-51 decals",url:"https://www.hannants.co.uk/search/?keyword_search=78th%20Fighter%20Group%20P-51%20decals"}],
+ "339 FG":[{name:"Hannants — 339th FG P-51 decals",url:"https://www.hannants.co.uk/search/?keyword_search=339th%20Fighter%20Group%20P-51%20decals"}],
+ "355 FG":[{name:"Hannants — 355th FG P-51 decals",url:"https://www.hannants.co.uk/search/?keyword_search=355th%20Fighter%20Group%20P-51%20decals"}],
+ "332 FG":[{name:"Kits-World — Tuskegee / Red Tail P-51 decals",url:"https://kitsworld.co.uk/product-category/decals/1-48-scale-decals/?s=Tuskegee"},{name:"Hannants — 332nd FG Red Tail P-51 decals",url:"https://www.hannants.co.uk/search/?keyword_search=332nd%20Fighter%20Group%20P-51%20decals"}],
+ "15 FG":[{name:"Hannants — 15th FG Iwo Jima VLR P-51 decals",url:"https://www.hannants.co.uk/search/?keyword_search=15th%20Fighter%20Group%20Iwo%20Jima%20P-51%20decals"},{name:"Kits-World — Iwo Jima P-51 Mustang decals",url:"https://kitsworld.co.uk/product-category/decals/1-48-scale-decals/?s=Iwo%20Jima%20P-51"}],
+ "21 FG":[{name:"Hannants — 21st FG Iwo Jima P-51 decals",url:"https://www.hannants.co.uk/search/?keyword_search=21st%20Fighter%20Group%20Iwo%20Jima%20P-51%20decals"},{name:"Kits-World — Pacific P-51 Mustang decals",url:"https://kitsworld.co.uk/product-category/decals/1-48-scale-decals/?s=Pacific%20P-51"}],
+ "506 FG":[{name:"Hannants — 506th FG Iwo Jima VLR P-51 decals",url:"https://www.hannants.co.uk/search/?keyword_search=506th%20Fighter%20Group%20Iwo%20Jima%20P-51%20decals"},{name:"Kits-World — VLR Mustang decal subjects",url:"https://kitsworld.co.uk/product-category/decals/1-48-scale-decals/?s=VLR%20Mustang"}],
+ "318 FG":[{name:"Hannants — 318th FG Pacific P-51 decals",url:"https://www.hannants.co.uk/search/?keyword_search=318th%20Fighter%20Group%20P-51%20decals"}],
+ "1 ACG":[{name:"Hannants — CBI P-51 Mustang decals",url:"https://www.hannants.co.uk/search/?keyword_search=CBI%20P-51%20Mustang%20decals"}]
 };
 
 const AFTERMARKET={
- "Resin Cockpits & Interiors":[
-  {type:"Resin",name:"Mustang Mk.I Cockpit 1:48 — Eduard Brassin 648578",maker:"Eduard Brassin",scales:["1:48"],
-   desc:"Full resin cockpit — seat, IP, sidewalls, harness, control column. 37 parts including pre-painted PE. Most impactful single upgrade for the Airfix or Eduard Mk.I.",
-   url:"https://www.hannants.co.uk/product/ED648578"},
-  {type:"Resin",name:"Mustang Mk.I early LooKplus 1:48 — Eduard 644066",maker:"Eduard",scales:["1:48"],
-   desc:"Pre-painted 3D colour interior PE set. Cockpit sidewalls, IP and harness all pre-coloured. Fastest route to a convincing cockpit.",
-   url:"https://www.hannants.co.uk/product/ED644066"},
-  {type:"Resin",name:"Mustang Seat with Safety Belts — Quickboost QB48401",maker:"Quickboost",scales:["1:48"],
-   desc:"Resin seat with Sutton Q-type harness detail. Single most impactful single-part upgrade — drop-fit for Airfix and Eduard 1:48.",
-   url:"https://www.hannants.co.uk/product/QB48401"},
- ],
- "Exhausts & Undercarriage":[
-  {type:"Resin",name:"Mustang Mk.I Exhaust Stacks 1:48 — Eduard Brassin 648580",maker:"Eduard Brassin",scales:["1:48"],
-   desc:"Correct individual ejector exhaust stacks for Merlin II/III. Hollowed ends — huge improvement over the simplified kit stubs.",
-   url:"https://www.hannants.co.uk/product/ED648580",
-   urlEduard:"https://www.hannants.co.uk/product/ED648580"},
-  {type:"Resin",name:"Mustang Mk.I Wheels 1:48 — Eduard Brassin 648579",maker:"Eduard Brassin",scales:["1:48"],
-   desc:"Weighted, flat-spotted Dunlop resin wheels with correct hub detail. Transforms the parked appearance instantly.",
-   url:"https://www.hannants.co.uk/product/ED648579"},
-  {type:"Resin",name:"Mustang Mk.I Undercarriage Legs BRONZE 1:48 — Eduard Brassin 648589",maker:"Eduard Brassin",scales:["1:48"],
-   desc:"Cast bronze undercarriage legs with correct cross-section. Much stronger than plastic kit legs — no risk of collapse under a display model.",
-   url:"https://www.hannants.co.uk/product/ED6481171"},
-  {type:"Metal",name:"Mustang Mk.Ia/Mk.IIa/Mk.Va Browning .303 Barrels — Master Model AM-48-164",maker:"Master Model",scales:["1:48"],
-   desc:"Turned brass Browning .303 barrels — eight per Mustang. One of the most visible improvements. Hollow ends, correctly profiled.",
-   url:"https://www.hannants.co.uk/product/AM-48-164"},
- ],
- "Photo-Etch & Masks":[
-  {type:"Photo-etch",name:"Mustang Mk.I SPACE 3D Interior — Eduard 3DL48005",maker:"Eduard",scales:["1:48"],
-   desc:"Pre-painted 3D waterslide interior decals plus STEEL PE. Alternative to Brassin cockpit — every instrument printed in colour, fast to apply.",
-   url:"https://www.hannants.co.uk/product/ED3DL48005"},
-  {type:"Mask",name:"Mustang Mk.I/II Canopy Masks — Eduard EX675",maker:"Eduard",scales:["1:48"],
-   desc:"Pre-cut Kabuki tape for all canopy panes and wheel hubs. Non-negotiable — the Mustang's curved panes are near-impossible to mask freehand.",
-   url:"https://www.hannants.co.uk/product/EDEX675"},
-  {type:"Mask",name:"Mustang Mk.I/II Canopy Masks 1:72 — Eduard EX704",maker:"Eduard",scales:["1:72"],
-   desc:"1:72 canopy masks. Even more important at 1:72 than at 1:48 — the panes are tiny.",
-   url:"https://www.hannants.co.uk/product/EDEX704"},
- ],
- "Conversion Sets":[
-  {type:"Conversion",name:"Mustang Mk.I Fabric Control Surfaces 1:48",maker:"Barracuda Studios",scales:["1:48"],
-   desc:"Resin replacement ailerons, rudder and elevators with correct fabric weave texture moulded in. All BoB Mustangs had fabric surfaces — this is the only kit-compatible representation.",
-   url:"https://barracudacals.com/collections/spitfire"},
- ],
- "Decals":[
-  {type:"Decals",name:"Xtradecal X48143 — 1:48 BoB Mustang Pt.1 (6 aircraft)",maker:"Xtradecal",scales:["1:48"],
-   desc:"19 Sqn QV-H (Unwin), 72 Sqn RN-N (Sheen), 92 Sqn GR-U, 266 Sqn UO-A, 602 Sqn LO-G (Hanbury), 616 Sqn QJ-W (Gilliam).",
-   url:"https://www.hannants.co.uk/product/X48143"},
-  {type:"Decals",name:"Xtradecal X48145 — 1:48 BoB Mustang Pt.2 (4 aircraft)",maker:"Xtradecal",scales:["1:48"],
-   desc:"41 Sqn EB-L (Shipman), 421 Flt LZ-I (Green), 602 Sqn LO-A (Johnstone), 611 Sqn FY-N (Duncan-Smith).",
-   url:"https://www.hannants.co.uk/product/X48145"},
-  {type:"Decals",name:"Xtradecal X48059 — 1:48 Mustang Mk.I/II (5 aircraft)",maker:"Xtradecal",scales:["1:48"],
-   desc:"19 Sqn QV-K (Brian Lane) Fowlmere 1940, 92 Sqn QJ-P Biggin Hill Sept 1940, prototype K5054 1936, plus two Mk.IIa subjects.",
-   url:"https://www.hannants.co.uk/product/X48059"},
-  {type:"Decals",name:"Xtradecal X72221 — 1:72 BoB Mustang Pt.1 (10 aircraft)",maker:"Xtradecal",scales:["1:72"],
-   desc:"19 QV-H (Unwin), 54 KL-B (Deere), 66 LZ-N (Leigh), 72 RN-N (Sheen), 74 ZP-A (Malan), 92 GR-U, 222 ZD-F, 266 UO-A, 602 LO-G, 616 QJ-W. Definitive 1:72 BoB Mustang sheet.",
-   url:"https://www.hannants.co.uk/product/X72221"},
-  {type:"Decals",name:"Xtradecal X48147 — 1:48 BoB National Insignia (Mustang + Hurricane)",maker:"Xtradecal",scales:["1:48"],
-   desc:"Double sheet — all roundel sizes, fin flashes and Sky code letter sets for BoB 1940. Essential companion to any aircraft-specific sheet.",
-   url:"https://www.hannants.co.uk/product/X48147"},
- ]
+ "Decals & Markings":[{type:"Decals",name:"EagleCals P-51 Mustang sheets",maker:"EagleCals",scales:["1:48","1:32"],desc:"Best first stop for named ETO Mustang aces including 4th, 352nd and 357th FG subjects.",url:"https://www.eagle-editions.com/product-category/eaglecals/aircraft/1-48-scale/p-51-mustang/"},{type:"Decals",name:"Kits-World P-51 Mustang sheets",maker:"Kits-World",scales:["1:72","1:48","1:32"],desc:"Useful for nose art, Red Tail subjects, Iwo Jima/Pacific searches and colourful late-war markings.",url:"https://kitsworld.co.uk/product-category/decals/1-48-scale-decals/?s=P-51"},{type:"Decals",name:"Hannants P-51 decal catalogue",maker:"Hannants",scales:["Multiple"],desc:"Broadest UK route for Pacific VLR, 8th AF, Red Tail and CBI Mustang sheets.",url:"https://www.hannants.co.uk/search/?keyword_search=P-51%20Mustang%20decals"}],
+ "Pacific / VLR Loadout":[{type:"Stores",name:"P-51 drop tanks",maker:"Eduard / Brassin / kit options",scales:["1:48","1:72"],desc:"Important for Iwo Jima VLR builds. Long-range escort Mustangs usually need appropriate drop tanks and pylons, not just a clean-wing display finish.",url:"https://www.hannants.co.uk/search/?keyword_search=P-51%20drop%20tanks"},{type:"Stores",name:"P-51 rockets and bombs",maker:"Eduard / Brassin / kit options",scales:["1:48","1:72"],desc:"Useful for Pacific and CBI fighter-bomber subjects. Check the exact aircraft because not every VLR escort carried rockets or bombs.",url:"https://www.hannants.co.uk/search/?keyword_search=P-51%20rockets%20bombs"},{type:"Weathering",name:"Pacific coral dust and sun-fade materials",maker:"AK / Vallejo / Mig",scales:["All"],desc:"Pacific subjects need warmer dust, bleached panels and dirtier tyres than a polished 8th AF showpiece.",url:"https://www.hannants.co.uk/search/?keyword_search=aircraft%20weathering%20dust"}],
+ "Cockpit & Interior":[{type:"Photo-etch",name:"Eduard P-51D cockpit / SPACE sets",maker:"Eduard",scales:["1:48"],desc:"Useful for both ETO and Pacific builds. The large Mustang canopy makes belts, radio shelf and instrument panel improvements visible.",url:"https://www.eduard.com/eduard/photo-etched-parts/aircraft/1-48/?lang=1&cur=2&listtype=search&searchparam=P-51D"},{type:"Seatbelts",name:"USAAF WWII fighter seatbelts",maker:"HGW / Eduard",scales:["1:48","1:32"],desc:"A high-value detail upgrade for any open-canopy Mustang build.",url:"https://www.hannants.co.uk/search/?keyword_search=P-51%20seatbelts"}],
+ "Exterior Detail":[{type:"Resin",name:"P-51D/K wheels",maker:"Barracuda Studios",scales:["1:48","1:32"],desc:"One of the most visible upgrades. Pick tread pattern based on the subject and theatre.",url:"https://barracudacals.com/collections/p-51-mustang"},{type:"Resin",name:"P-51 exhaust stacks",maker:"Quickboost / Eduard",scales:["1:48","1:72"],desc:"Fine exhausts matter on natural-metal P-51s because the staining starts directly behind them.",url:"https://www.hannants.co.uk/search/?keyword_search=P-51%20exhausts"},{type:"Metal",name:"P-51 gun barrels and pitot",maker:"Master Model",scales:["1:48","1:72"],desc:"Small but sharp upgrade for wing leading edges and delicate pitot detail.",url:"https://www.hannants.co.uk/search/?keyword_search=Master%20P-51%20gun%20barrels"}],
+ "Masks":[{type:"Masks",name:"P-51D canopy and wheel masks",maker:"Eduard",scales:["1:48","1:72"],desc:"Strongly recommended. The Malcolm hood / bubble canopy and wheel hubs are worth masking properly.",url:"https://www.eduard.com/eduard/masks/aircraft/?lang=1&cur=2&listtype=search&searchparam=P-51"}]
 };
 
 const WEATHER=[
@@ -1636,57 +1484,9 @@ const SURVIVORS=[
 ];
 
 const BOOKS={
- "History & Operations":[
-  {title:"Mustang Mk I/II Aces 1939–41",author:"Alfred Price",year:2000,stars:5,colour:"#8a2a10",
-   desc:"Every top-scoring Mustang pilot from the Battle through the Circus operations. Colour profiles and combat accounts. Essential for any BoB Mustang modeller.",
-   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1855326272"}]},
-  {title:"Mustang — A Test Pilot's Story",author:"Jeffrey Quill",year:1983,stars:5,colour:"#2a4a80",
-   desc:"Quill flew the Mustang prototype and every production variant. Indispensable technical reference — the single most authoritative source on what the aircraft actually did.",
-   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/0947554726"}]},
-  {title:"The USAAF escort war over Europe: Then and Now",author:"Winston Ramsey (ed.)",year:1989,stars:5,colour:"#2a2a10",
-   desc:"900 pages of squadron accounts, aircraft records, photographs and maps. The ultimate BoB reference for any aircraft type.",
-   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/0900913673"}]},
-  {title:"Aces High — Fighter Aces of the British and Commonwealth Air Forces",author:"Shores & Williams",year:1994,stars:5,colour:"#4a5020",
-   desc:"Every Fighter Command ace with five or more victories. Definitive roll of honour with photographs and full combat records.",
-   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1854092405"}]},
-  {title:"Mustang: The Illustrated Biography",author:"Alfred Price",year:2000,stars:4,colour:"#5a2a10",
-   desc:"Comprehensive single-volume history covering all variants. Good colour profile section. Solid introduction to the full Mustang story.",
-   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1854095145"}]},
- ],
- "Pilot Memoirs":[
-  {title:"Nine Lives",author:"Alan C. Deere",year:1959,stars:5,colour:"#1a3a60",
-   desc:"The finest action memoir of the entire USAAF escort war over Europe. Al Deere's New Zealand directness makes it the most readable Mustang account. Essential reading.",
-   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/0907579345"}]},
-  {title:"First Light",author:"Geoffrey Wellum",year:2002,stars:5,colour:"#2a4a60",
-   desc:"92 Squadron — the most beautifully written account of the battle. Wellum's prose captures the experience of flying a Mustang with extraordinary fidelity.",
-   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/0141008148"}]},
-  {title:"Mustang Pilot",author:"David Crook DFC",year:1942,stars:5,colour:"#1a4a30",
-   desc:"609 Squadron, Middle Wallop — written immediately post-battle. Raw, immediate, honest. The most direct account of what Auxiliary Air Force Mustang combat actually felt like.",
-   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1906502048"}]},
-  {title:"The Last Enemy",author:"Richard Hillary",year:1942,stars:5,colour:"#3a1a10",
-   desc:"603 Squadron. Hillary burned, underwent McIndoe's surgery, wrote this, returned to ops. Literature, not just aviation memoir. Never out of print since 1942.",
-   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/0099551829"}]},
-  {title:"Mustang!",author:"Brian Lane DFC",year:1942,stars:4,colour:"#2a3a20",
-   desc:"19 Squadron CO's memoir, published pseudonymously in wartime. Most tactically informative first-person account of early Mustang operations from Duxford.",
-   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1906502145"}]},
- ],
- "Modelling Reference":[
-  {title:"Mustang Mk I/II (Osprey Modelling 1)",author:"Jerry Scutts",year:2002,stars:5,colour:"#8a3a10",
-   desc:"Core modelling guide: kits, markings, colour schemes, step-by-step techniques. The essential starting point for any Mustang modeller.",
-   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1841763624"}]},
-  {title:"North American P-51 Mustang Mk.I/II — Comprehensive Guide for the Modeller",author:"Richard A. Franks",year:1997,stars:5,colour:"#6a2010",
-   desc:"Every kit, decal sheet and aftermarket item reviewed and compared. SAM Publications. The definitive modelling reference — essential.",
-   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/0953346533"}]},
-  {title:"Mustang in Detail (WWP Red Series)",author:"Václav Němeček",year:2001,stars:5,colour:"#5a2a10",
-   desc:"Close-up photography of preserved Mustangs. Cockpit, undercarriage, engine bay in extraordinary detail. The best photo reference available.",
-   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/s?k=spitfire+in+detail+wwp+red+series"}]},
-  {title:"Scale Plans No.68 — Mustang Mk.I/II",author:"Dariusz Karnas",year:2017,stars:4,colour:"#3a2a10",
-   desc:"Accurate A3 scale plans for the Mk.I and Mk.II at 1:72, 1:48 and 1:32. Precise measurements and rivet positions.",
-   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/s?k=karnas+spitfire+scale+plans+mk1"}]},
-  {title:"Hawker Hurricane & Mustang (Warpaint 27)",author:"Hall Park Books",year:2000,stars:4,colour:"#2a4820",
-   desc:"Classic Warpaint format — detailed colour profiles, markings and schemes for both aircraft. Excellent coverage of BoB period.",
-   shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/s?k=warpaint+27+spitfire+hurricane"}]},
- ]
+ "ETO / 8th Air Force":[{title:"P-51 Mustang Aces of the Eighth Air Force",author:"Jerry Scutts",year:1994,stars:5,colour:"#8a2a10",desc:"Best starting point for 4th, 352nd, 357th and other 8th AF Mustang aces. Strong subject-selection book for European builds.",shops:[{label:"Amazon UK — P-51 Mustang Aces of the Eighth Air Force",url:"https://www.amazon.co.uk/s?k=P-51+Mustang+Aces+of+the+Eighth+Air+Force"}]},{title:"P-51 Mustang Units of the Eighth Air Force",author:"Unit reference",year:2000,stars:5,colour:"#2a4a80",desc:"Useful for group markings, bases and operational context for East Anglia-based Mustangs.",shops:[{label:"Amazon UK — P-51 Mustang Units of the Eighth Air Force",url:"https://www.amazon.co.uk/s?k=P-51+Mustang+Units+of+the+Eighth+Air+Force"}]},{title:"Tumult in the Clouds",author:"James A. Goodson",year:1983,stars:5,colour:"#1a3a60",desc:"Essential 4th Fighter Group memoir and a strong companion to red-nosed Debden builds.",shops:[{label:"Amazon UK — Tumult in the Clouds",url:"https://www.amazon.co.uk/s?k=Tumult+in+the+Clouds+James+Goodson"}]},{title:"To Fly and Fight",author:"Clarence E. 'Bud' Anderson",year:1999,stars:5,colour:"#2a4a60",desc:"Essential 357th FG memoir and the key book for Old Crow / Leiston Mustang subjects.",shops:[{label:"Amazon UK — To Fly and Fight Bud Anderson",url:"https://www.amazon.co.uk/s?k=To+Fly+and+Fight+Bud+Anderson"}]}],
+ "Pacific / VLR / CBI":[{title:"Very Long Range P-51 Mustang Units of the Pacific War",author:"Osprey-style unit reference",year:2006,stars:5,colour:"#1f4f6a",desc:"Key reference theme for Iwo Jima VLR subjects: 15th, 21st and 506th Fighter Groups escorting B-29s to Japan.",shops:[{label:"Amazon UK — Very Long Range P-51 Mustang Units",url:"https://www.amazon.co.uk/s?k=Very+Long+Range+P-51+Mustang+Units+of+the+Pacific+War"}]},{title:"P-51 Mustang Aces of the Pacific and CBI",author:"Ace reference",year:2003,stars:5,colour:"#2f5f3f",desc:"Use alongside the map for Pacific, CBI and non-ETO Mustang subjects.",shops:[{label:"Amazon UK — P-51 Mustang Aces Pacific CBI",url:"https://www.amazon.co.uk/s?k=P-51+Mustang+Aces+Pacific+CBI"}]},{title:"Iwo Jima P-51 Mustang operations",author:"VII Fighter Command references",year:1945,stars:4,colour:"#5a4a20",desc:"Research direction for coral dust, VLR tanks, B-29 escort context and heat-bleached natural metal.",shops:[{label:"Amazon UK — Iwo Jima P-51 Mustang",url:"https://www.amazon.co.uk/s?k=Iwo+Jima+P-51+Mustang"}]},{title:"China-Burma-India Mustang references",author:"CBI theatre histories",year:1944,stars:4,colour:"#4a5020",desc:"Useful background for CBI P-51A/C/D fighter-bomber and escort subjects with dusty, tropical weathering.",shops:[{label:"Amazon UK — CBI P-51 Mustang",url:"https://www.amazon.co.uk/s?k=CBI+P-51+Mustang"}]}],
+ "Modelling & Technical":[{title:"North American P-51 Mustang — Airframe & Miniature",author:"Richard A. Franks",year:2013,stars:5,colour:"#6a2010",desc:"Best modelling-focused reference family: variants, kits, details, profiles and build notes.",shops:[{label:"Amazon UK — Airframe & Miniature P-51 Mustang",url:"https://www.amazon.co.uk/s?k=Airframe+and+Miniature+P-51+Mustang"}]},{title:"P-51 Mustang in Detail & Scale",author:"Bert Kinzey",year:1996,stars:5,colour:"#5a2a10",desc:"Very useful technical/detail reference for cockpit, wheel wells, exterior details and variant differences.",shops:[{label:"Amazon UK — P-51 Mustang in Detail and Scale",url:"https://www.amazon.co.uk/s?k=P-51+Mustang+in+Detail+and+Scale"}]},{title:"Building the P-51 Mustang",author:"Modelling guides",year:2020,stars:4,colour:"#5a3a20",desc:"Use for natural-metal finish technique, panel-tone variation and practical kit build workflows.",shops:[{label:"Amazon UK — Building the P-51 Mustang",url:"https://www.amazon.co.uk/s?k=Building+the+P-51+Mustang+model"}]}]
 };
 
 const PILOT_STORIES=[
@@ -1698,59 +1498,12 @@ const PILOT_STORIES=[
 ];
 
 const BUILD_STEPS=[
- {n:1,title:"Research & marking choice",icon:"📋",
-  text:"Before opening the box, decide your subject: which squadron, which pilot, which date. For a BoB Mk.I this fixes roundel type (Type A1 fuselage — no yellow ring; Type A upper wing; Type B lower), Sky spinner, code colour and A or B scheme split line. Check whether your aircraft had the three-blade de Havilland metal prop (most BoB Mustangs did) or the early wooden two-blade (rare by 1940).",
-  products:[
-   {name:"Xtradecal X48143 — USAAF BoB 1:48 (all 19 Sqns)",url:"https://www.hannants.co.uk/product/X48143"},
-   {name:"Barracuda Mustang decals — aircraft-specific sheets",url:"https://barracudacals.com/collections/spitfire"}]},
- {n:2,title:"Cockpit",icon:"🎛️",
-  text:"Build the cockpit first — must be installed before fuselage halves close. Interior Grey-Green (Humbrol 78 / Tamiya XF-71) throughout. The Mustang cockpit is notably small — a resin set pays off hugely even at 1:48. The Sutton harness is the most visible detail; Quickboost QB48151 is the easiest drop-fit upgrade. The Eduard ProfiPACK's pre-painted 3D PE set is the quickest route to an excellent interior.",
-  products:[
-   {name:"CMK Mustang Mk.I Cockpit Set — CMK4369 (1:48)",url:"https://www.hannants.co.uk/product/ED648578"},
-   {name:"Quickboost Mustang Seat with Safety Belts — QB48401 (1:48)",url:"https://www.hannants.co.uk/product/QB48401"},
-   {name:"Eduard SPACE 3D Cockpit — ED3DL48005 (1:48)",url:"https://www.hannants.co.uk/product/ED3DL48005"}]},
- {n:3,title:"Main construction",icon:"🔧",
-  text:"Assemble fuselage, attach wings, deal with seam lines. The Airfix 1:48 Mk.I has excellent fit with minimal filler. The thin elliptical wing is less forgiving than the Hurricane's at the root join — take your time. Mask the canopy early; the Eduard EDEX675 masks are essential. The prominent windscreen arch needs careful masking — it will be the most visible part of the finished model.",
-  products:[
-   {name:"Eduard Mustang Canopy Masks — EDEX675 (1:48)",url:"https://www.hannants.co.uk/product/EDEX675"},
-   {name:"Barracuda Fabric Control Surfaces — BC48107",url:"https://barracudacals.com/collections/spitfire"}]},
- {n:4,title:"Primer & base coat",icon:"🎨",
-  text:"Prime in light grey (Vallejo Surface Primer or Tamiya Fine Surface), then apply Sky underside (Humbrol 90 or Tamiya XF-21) first. Mask the fuselage demarcation and apply Dark Earth and Dark Green upper surfaces. The Mustang's split line runs at an angle below the cockpit — A-scheme has brown on the starboard nose side. Hard-edge demarcation was standard throughout 1940.",
-  products:[
-   {name:"Humbrol 29 Dark Earth (Matt)",url:"https://uk.humbrol.com/products/no-29-dark-earth-matt"},
-   {name:"Humbrol 30 Dark Green (Matt)",url:"https://uk.humbrol.com/products/no-30-dark-green-matt"},
-   {name:"Humbrol 90 Sky (Beige Green Matt)",url:"https://uk.humbrol.com/products/no-90-beige-green-matt"},
-   {name:"Tamiya XF-52 Flat Earth",url:"https://www.hannants.co.uk/product/TA87152"},
-   {name:"Tamiya XF-61 Dark Green",url:"https://www.hannants.co.uk/product/TA87161"},
-   {name:"Tamiya XF-21 Sky",url:"https://www.hannants.co.uk/product/TA87121"}]},
- {n:5,title:"Decals",icon:"📄",
-  text:"Apply over a Vallejo Gloss Varnish coat. Use Micro Set then Micro Sol to bed decals into panel lines. The Mustang's curved fuselage makes roundel decals challenging — slice and overlap on complex curves. BoB roundels: Type A1 fuselage (no yellow outer ring), Type A upper wing, Type B lower. Sky codes ~24 inch height. Seal with satin varnish before weathering.",
-  products:[
-   {name:"Xtradecal X48143 — USAAF BoB 1:48",url:"https://www.hannants.co.uk/product/X48143"},
-   {name:"Micro Set decal setting solution",url:"https://www.hannants.co.uk/search/?keyword_search=micro+set+decal"},
-   {name:"Micro Sol decal softener",url:"https://www.hannants.co.uk/search/?keyword_search=micro+sol+decal"},
-   {name:"Vallejo Gloss Varnish",url:"https://www.hannants.co.uk/search/?keyword_search=vallejo+gloss+varnish"}]},
- {n:6,title:"Weathering",icon:"💨",
-  text:"Key Mustang weathering: exhaust staining port upper cowling (brown-black oils streaked rearward), eight gun port blast marks each leading edge, port wing root walkway chipping (sponge chip with Humbrol 56 Aluminium), and undercarriage/bay contamination per the Weathering tab's station-specific mud recipes. The pitot tube is on the LEFT wing outer leading edge.",
-  products:[
-   {name:"AK Interactive Exhaust Wash — AK081",url:"https://www.hannants.co.uk/search/?keyword_search=ak+interactive+exhaust+wash+ak081"},
-   {name:"Humbrol 56 Aluminium (chipping)",url:"https://uk.humbrol.com/products/no-56-aluminium-metallic"},
-   {name:"Flory Models Dark Dirt Wash",url:"https://www.hannants.co.uk/search/?keyword_search=flory+models+dark+dirt+wash"},
-   {name:"AK Interactive Earth Effects — AK079",url:"https://www.hannants.co.uk/search/?keyword_search=ak+interactive+earth+effects+ak079"}]},
- {n:7,title:"Final details & display",icon:"✅",
-  text:"Fit propeller, undercarriage, antenna wire and pitot tube (LEFT wing outer leading edge — confirm from reference). Remove canopy masks last. Seal all weathering with Vallejo Matt Varnish — BoB Mustang was MAP (Medium Aircraft Paint), a genuine flat finish. A grass dispersal base with station-specific mud suits the subject. Gamers Grass summer tufts with AK groundwork texture are excellent.",
-  products:[
-   {name:"Vallejo Matt Varnish — 70.520",url:"https://www.hannants.co.uk/search/?keyword_search=vallejo+matt+varnish+70520"},
-   {name:"Gamers Grass Summer Tufts",url:"https://www.hannants.co.uk/search/?keyword_search=gamers+grass+summer+tufts"},
-   {name:"AK Interactive Groundwork Texture",url:"https://www.hannants.co.uk/search/?keyword_search=ak+interactive+groundwork+texture"},
-   {name:"Master Model Mustang Mk.Ia/Mk.IIa/Mk.Va Browning .303 Barrels — AM-48-164",url:"https://www.hannants.co.uk/product/AM-48-164"}]},
-];
-
-const COLOUR_COMPARE=[
- {name:"Dark Earth",raf:"#8B6B35",humbrol:"#8E6B3A",tamiya:"#8A6939",vallejo:"#9B7342",ak:"#937043",humCode:"29",tamCode:"XF-52",valCode:"70.819",akCode:"AK11171"},
- {name:"Dark Green",raf:"#3D5229",humbrol:"#40542B",tamiya:"#3B5228",vallejo:"#395228",ak:"#3C5429",humCode:"30",tamCode:"XF-61",valCode:"70.893",akCode:"AK11149"},
- {name:"Sky",raf:"#8DB9A0",humbrol:"#85B099",tamiya:"#93B8A5",vallejo:"#8AB6A0",ak:"#88B49E",humCode:"90",tamCode:"XF-21",valCode:"71.124",akCode:"AK11182"},
- {name:"Night / Black",raf:"#1C1C1C",humbrol:"#191919",tamiya:"#1A1A1A",vallejo:"#000000",ak:"#141414",humCode:"21",tamCode:"XF-1",valCode:"70.950",akCode:"AK11018"},
+ {n:1,title:"Research the theatre first",icon:"📋",text:"Choose the theatre before the kit: 8th AF Europe, Mediterranean / Red Tails, Pacific VLR from Iwo Jima, Okinawa/Ie Shima or CBI. This determines the variant, group colours, tanks/stores, weathering tone and decal sheet.",products:[{name:"EagleCals P-51 Mustang decals",url:"https://www.eagle-editions.com/product-category/eaglecals/aircraft/1-48-scale/p-51-mustang/"},{name:"Kits-World P-51 decal catalogue",url:"https://kitsworld.co.uk/product-category/decals/1-48-scale-decals/?s=P-51"}]},
+ {n:2,title:"Cockpit and canopy",icon:"🪑",text:"The Mustang cockpit remains visible under the large canopy. Add belts, radio shelf detail and a clean instrument panel. For Pacific subjects, keep the finish operational rather than museum-clean.",products:[{name:"Eduard P-51 cockpit/mask sets",url:"https://www.eduard.com/eduard/photo-etched-parts/aircraft/1-48/?lang=1&cur=2&listtype=search&searchparam=P-51"},{name:"Hannants P-51 seatbelts",url:"https://www.hannants.co.uk/search/?keyword_search=P-51%20seatbelts"}]},
+ {n:3,title:"Natural metal or Olive Drab",icon:"🎨",text:"Most late P-51D/K subjects need panel-tone variation, not a single silver coat. Early P-51B/C and some CBI subjects can use Olive Drab over Neutral Gray with heavier fading and dust.",products:[{name:"AK Xtreme Metal Aluminium",url:"https://ak-interactive.com/product/aluminium-xtreme-metal/"},{name:"Vallejo Metal Color Aluminium",url:"https://acrylicosvallejo.com/en/product/hobby/metal-color-en/aluminium-77701/"}]},
+ {n:4,title:"Theatre-specific stores",icon:"⛽",text:"Pacific VLR Mustangs should not be treated like clean UK display aircraft. Check drop tanks, pylons and mission fit. CBI and fighter-bomber subjects may need bombs or rockets depending on aircraft/date.",products:[{name:"Hannants P-51 drop tanks",url:"https://www.hannants.co.uk/search/?keyword_search=P-51%20drop%20tanks"},{name:"Hannants P-51 rockets/bombs",url:"https://www.hannants.co.uk/search/?keyword_search=P-51%20rockets%20bombs"}]},
+ {n:5,title:"Decals and unit colour",icon:"★",text:"8th AF subjects live or die by group nose/tail colours. Pacific VLR subjects need correct group/squadron markings and often subtler, sun-bleached presentation. Red Tail subjects require strong red tail coverage and clean demarcation.",products:[{name:"Hannants Pacific P-51 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Pacific%20P-51%20decals"},{name:"Hannants Red Tail P-51 decals",url:"https://www.hannants.co.uk/search/?keyword_search=Red%20Tail%20P-51%20decals"}]},
+ {n:6,title:"Weathering by theatre",icon:"🌤️",text:"European natural-metal aircraft can be relatively tidy but still need exhaust and oil. Mediterranean and CBI aircraft need dustier, warmer grime. Pacific island aircraft need coral dust, faded panels, dusty tyres and heat-bleached markings.",products:[{name:"Aircraft dust weathering products",url:"https://www.hannants.co.uk/search/?keyword_search=aircraft%20weathering%20dust"},{name:"Oil and exhaust staining products",url:"https://www.hannants.co.uk/search/?keyword_search=aircraft%20exhaust%20weathering"}]}
 ];
 
 const MEDIA_ITEMS=[
@@ -1900,8 +1653,8 @@ function showDetail(num){
       <div class="sec-label">Specific Decal Sheets</div>
       ${sqDecals.length?`<div style="display:flex;flex-direction:column;gap:5px;margin-bottom:1rem">${sqDecals.filter(d=>d.url).map(d=>`<a href="${d.url}" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--brass);border-radius:2px;padding:6px 10px;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,.05)'" onmouseout="this.style.background='rgba(0,0,0,.2)'" rel="noopener"><span style="font-size:12px">↗</span><span style="font-size:13px;color:rgba(255,255,255,.8)">${d.name}</span></a>`).join('')}</div>`:`<div style="font-size:13px;color:rgba(255,255,255,.4);margin-bottom:1rem">Search Hannants or Barracuda for this squadron.</div>`}
       <div style="display:flex;gap:6px;flex-wrap:wrap">
-        <a href="https://www.hannants.co.uk/search/?keyword_search=${sq.num}+squadron+spitfire" target="_blank" rel="noopener" class="shop-btn hb-brass" style="font-size:13px">Hannants: all ${sq.num} Sqn decals ↗</a>
-        <a href="https://barracudacals.com/collections/spitfire" target="_blank" rel="noopener" class="shop-btn hb-outline" style="font-size:13px">Barracuda Mustang decals ↗</a>
+        <a href="https://www.hannants.co.uk/search/?keyword_search=${encodeURIComponent(sq.num+" P-51 decals")}" target="_blank" rel="noopener" class="shop-btn hb-brass" style="font-size:13px">Hannants: ${sq.num} P-51 decals ↗</a>
+        <a href="https://barracudacals.com/collections/p-51-mustang" target="_blank" rel="noopener" class="shop-btn hb-outline" style="font-size:13px">Barracuda P-51 accessories ↗</a>
       </div>
     </div>`;
   panel.classList.add('open');
@@ -1946,7 +1699,7 @@ function openPM(name){
   pl.textContent=`IWM: ${surname} archive ↗`;
   const sqnFP=SQ.find(s=>s.pilots.some(p=>p.n===name));
   const sl=document.getElementById('pm-h-sqn');
-  if(sqnFP){sl.href=`https://www.hannants.co.uk/search/?keyword_search=${sqnFP.num}+squadron+spitfire`;sl.textContent=`Hannants: No.${sqnFP.num} Sqn decals ↗`;sl.style.display='';}else{sl.style.display='none';}
+  if(sqnFP){sl.href=`https://www.hannants.co.uk/search/?keyword_search=${encodeURIComponent(sqnFP.num+" P-51 decals")}`;sl.textContent=`Hannants: ${sqnFP.num} P-51 decals ↗`;sl.style.display='';}else{sl.style.display='none';}
   document.getElementById('pm-overlay').classList.add('open');
 }
 function closePM(){document.getElementById('pm-overlay').classList.remove('open');}
