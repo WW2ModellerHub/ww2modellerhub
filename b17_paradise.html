@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Boeing B-17 Flying Fortress Modelling Reference — USAAF Groups, Colours, Kit Guide">
 <meta name="twitter:description" content="Complete Boeing B-17 Flying Fortress scale modelling reference: bomb groups, bases, crew profiles, USAAF paint codes, kits, decals, walkaround references and surviving aircraft.">
-<meta name="keywords" content="B-17 model, B-17I kit, USAAF escort war over Europe B-17, Sky Type S paint codes, Eduard B-17 ProfiPACK, Airfix B-17 A05126A, B-17 decals">
+<meta name="keywords" content="B-17 model, B-17I kit, USAAF heavy-bomber campaign B-17, Sky Type S paint codes, Eduard B-17 ProfiPACK, Airfix B-17 A05126A, B-17 decals">
   <meta name="description" content="WW2 aircraft modelling reference for the Boeing B-17 Flying Fortress: bomb groups, bases, nose art, paint colours, kits, decals, books, survivors, walkaround photos and modelling notes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,6 +152,8 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 .paint-swatch{width:56px;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-end;padding:5px;font-size:11px;color:rgba(255,255,255,.4);font-family:monospace}
 .paint-info{flex:1;padding:.6rem .75rem}
 .paint-name{font-family:'Special Elite',cursive;font-size:16px;color:#fff;margin-bottom:.2rem}
+.paint-use{font-size:13px;color:rgba(255,255,255,.82);line-height:1.45}
+@media(max-width:640px){.paint-grid,.kit-grid,.wa-ref-grid{grid-template-columns:1fr!important}.paint-card{display:grid;grid-template-columns:88px 1fr}.paint-swatch{width:auto;min-height:92px;justify-content:flex-start;font-family:'Special Elite',cursive;font-size:14px;line-height:1.05;color:#fff;padding:.55rem}.paint-info{padding:.65rem}.kit-card{padding:.8rem}.wa-ref-card img{min-height:150px}.raf-map-shell{grid-template-columns:1fr!important}.map-sqn-list{margin-top:.8rem}}
 .kit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
 .kit-card{background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:.85rem;box-shadow:var(--shadow)}
 .kit-brand{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:.2rem}
@@ -580,12 +582,12 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 
 
 /* Restored aircraft page tab bar */
-.plane-tab-bar{background:rgba(7,16,31,.95);border-bottom:2px solid var(--brass,#c9a84c);position:sticky;top:62px;z-index:190;overflow-x:auto;-webkit-overflow-scrolling:touch}
-.plane-tab-bar .nav-tabs{display:flex!important;align-items:stretch!important;justify-content:flex-start!important;gap:0!important;overflow-x:auto!important;scrollbar-width:none!important;background:rgba(0,0,0,.25)!important;padding:0 1.5rem!important;min-height:44px!important;white-space:nowrap!important}
+.plane-tab-bar{background:#081528;border-bottom:2px solid rgba(136,174,240,.28);position:sticky;top:62px;z-index:190;overflow-x:auto;-webkit-overflow-scrolling:touch;box-shadow:0 10px 22px rgba(0,0,0,.34)}
+.plane-tab-bar .nav-tabs{display:flex!important;align-items:stretch!important;justify-content:flex-start!important;gap:0!important;overflow-x:auto!important;scrollbar-width:none!important;background:#081528!important;padding:0 1.5rem!important;min-height:44px!important;white-space:nowrap!important}
 .plane-tab-bar .nav-tabs::-webkit-scrollbar{display:none!important}
 .plane-tab-bar .nav-tab{display:inline-flex!important;align-items:center!important;justify-content:center!important;font-family:'Oswald',sans-serif!important;font-size:14px!important;font-weight:600!important;letter-spacing:.07em!important;text-transform:uppercase!important;padding:.72rem 1rem!important;border:none!important;background:transparent!important;color:rgba(255,255,255,.52)!important;cursor:pointer!important;white-space:nowrap!important;flex:0 0 auto!important;border-bottom:3px solid transparent!important;border-radius:0!important;line-height:1!important}
 .plane-tab-bar .nav-tab:hover{color:rgba(255,255,255,.9)!important;background:rgba(255,255,255,.045)!important}
-.plane-tab-bar .nav-tab.active{color:var(--brass2,#e8c76a)!important;border-bottom-color:var(--brass,#c9a84c)!important;background:rgba(201,168,76,.06)!important}
+.plane-tab-bar .nav-tab.active{color:#eaf3ff!important;border-bottom-color:#8aaee8!important;background:rgba(136,174,240,.12)!important}
 @media(max-width:760px){.plane-tab-bar{top:56px}.plane-tab-bar .nav-tabs{padding:0 .75rem!important}.plane-tab-bar .nav-tab{font-size:12px!important;padding:.68rem .8rem!important}}
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714409"
@@ -965,7 +967,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
   z-index:1!important;
 }
 .hero-eyebrow,.section-label,.sec-label,.wa-ref-kicker,.wa-ref-link{color:var(--brass2)!important;}
-.wa-ref-card:hover{border-color:rgba(136,174,240,.55)!important;}
+.wa-ref-card:hover{border-color:rgba(136,174,240,.55)!important;box-shadow:0 12px 24px rgba(0,0,0,.22)!important;}
 #tab-walkaround [style*="color:var(--brass)"],
 #tab-walkaround [style*="color:var(--brass2)"]{color:var(--brass2)!important;}
 #tab-walkaround [style*="rgba(201,168,76,.3)"]{border-color:rgba(136,174,240,.32)!important;}
@@ -1160,47 +1162,31 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <button class="fb rtf" onclick="setRefSub('books',this)">Books</button>
   </div>
   <div id="rsub-map">
-    <div class="info-box">B-17 wider-theatre map. It covers the core 8th Air Force heavy-bomber bases in England, Mediterranean bases used by 12th/15th Air Force units, and a Pacific marker for the early-war Flying Fortress story.</div>
+    <div class="info-box">B-17 theatre map focused on the main modelling theatres: 8th Air Force bases in England and Mediterranean heavy-bomber bases in Italy. Pacific service is still covered in the squadron cards and stories, but the map is kept focused so it reads cleanly on mobile.</div>
     <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem">
       <span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-right:.25rem">Filter:</span>
-      <button onclick="filterMapGroup('all',this)" class="map-filter-btn on" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)">All Groups</button>
+      <button onclick="filterMapGroup('all',this)" class="map-filter-btn on" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)">All bases</button>
       <button onclick="filterMapGroup('1',this)" class="map-filter-btn" style="border-color:#d45757;color:#ea8a8a">8th AF / UK</button>
       <button onclick="filterMapGroup('2',this)" class="map-filter-btn" style="border-color:#49a36c;color:#7fd39a">Mediterranean</button>
-      <button onclick="filterMapGroup('3',this)" class="map-filter-btn" style="border-color:#5b8fd5;color:#89b4ea">Pacific</button>
-      <button onclick="filterMapGroup('4',this)" class="map-filter-btn" style="border-color:#b07fd5;color:#c89de8">Special</button>
     </div>
     <div class="raf-map-shell">
       <div class="raf-map-board"><div id="leaflet-map"></div></div>
       <div class="map-sqn-list raf-map-side" id="map-sqn-list">
         <div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">Station Info</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.45)">Click a marker to see the base, linked bomb groups and modelling notes. This map uses a wider theatre view because the B-17 story is not limited to East Anglia alone.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.45)">Click a marker to see the base, linked bomb groups and modelling notes. The map is focused on the cleanest B-17 modelling theatres for mobile use: England and the Mediterranean.</div>
         <div style="margin-top:1.2rem">
           <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.5rem">Group colours</div>
           <div style="display:flex;flex-direction:column;gap:4px">
             <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#e05555"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">8th AF / UK</span></div>
             <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#4caf7d"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">Mediterranean</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#5b9bd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">Pacific VLR</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#b07fd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">Special subjects</span></div>
+            
           </div>
         </div>
       </div>
     </div>
   </div>
   <div id="rsub-timeline" style="display:none">
-    <div style="background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1.1rem;margin-bottom:1.1rem">
-      <div class="sec-label" style="margin-bottom:.4rem">USAAF escort war over Europe — Interactive Timeline</div>
-      <div style="font-size:14px;color:rgba(255,255,255,.55);margin-bottom:.75rem">Drag the slider through the 113-day battle. See squadron status at each point.</div>
-      <div style="font-family:'Special Elite',cursive;font-size:16px;color:var(--brass2);text-align:center;margin-bottom:.5rem" id="tl-date">10 July 1940</div>
-      <input type="range" class="timeline-slider" id="tl-slider" min="0" max="113" value="0" oninput="updateTimeline(this.value)">
-      <div class="timeline-labels"><span>10 Jul</span><span>15 Aug</span><span>15 Sep</span><span>31 Oct</span></div>
-      <div class="tl-legend" style="margin-top:.75rem">
-        <span><span class="tl-dot" style="background:#9ab840"></span>Front line</span>
-        <span><span class="tl-dot" style="background:#d4a83a"></span>Reserve</span>
-        <span><span class="tl-dot" style="background:rgba(255,255,255,.3)"></span>Resting</span>
-      </div>
-    </div>
-    <div id="tl-event-detail"></div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:5px;margin-top:1rem" id="tl-sqns"></div>
+    <div id="timeline-content"></div>
   </div>
   <div id="rsub-compare" style="display:none">
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:1rem">
@@ -1221,7 +1207,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 </div>
 
 <div class="tab-panel" id="tab-stories">
-  <div class="section-label">Pilot Stories — B-17 aces of the USAAF escort war over Europe</div>
+  <div class="section-label">Pilot Stories — B-17 aces of the USAAF heavy-bomber campaign</div>
   <div class="info-box">Five of the most significant B-17 pilots of 1940, from squadron records and first-person memoirs.</div>
   <div id="this-week-bob" style="margin-bottom:1.5rem"></div>
   <div id="pilot-stories-grid"></div>
@@ -1237,12 +1223,12 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
   <div class="section-label">Walkaround and reference photos</div>
   <p style="font-size:16px;color:rgba(255,255,255,.72);line-height:1.8;max-width:860px;margin-bottom:1.2rem">Walkaround material for the B-17 should help you check the details that most affect a finished model: nose glazing, cockpit and bombardier positions, engines and cowlings, wheel wells and undercarriage, bomb-bay structure, gun positions, nose art and overall surface finish. Use more than one source before locking in interior colours or late-war field modifications.</p>
   <div class="wa-ref-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem">
-    <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_cockpits" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Boeing%20B-17G%20Flying%20Fortress%20cockpit.jpg?width=900" alt="B-17 cockpit reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Cockpit, panel and overhead detail</div><div class="wa-ref-desc">Use for the cockpit framing, seat and column layout, instrument panel feel and how busy the front office looks under the glazing.</div><div class="wa-ref-link">Open cockpit photo collection ↗</div></div></a>
-    <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_nose_sections" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/B-17G%20nose%20section.jpg?width=900" alt="B-17 nose glazing reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Nose glazing and bombardier area</div><div class="wa-ref-desc">Use for nose framing, bombardier glazing, cheek guns and the way the clear nose changes the look of F and G subjects.</div><div class="wa-ref-link">Open nose reference collection ↗</div></div></a>
-    <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_engines" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/B-17G%20engine%20and%20cowling.jpg?width=900" alt="B-17 engine and cowling reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Engines, cowlings and exhaust staining</div><div class="wa-ref-desc">Use for cowling lip shape, cooling flap detail, engine weathering and the direction of exhaust and oil staining along the wings.</div><div class="wa-ref-link">Open engine photo collection ↗</div></div></a>
-    <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_landing_gear" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/B-17G%20landing%20gear.jpg?width=900" alt="B-17 undercarriage reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Undercarriage, wheels and wheel wells</div><div class="wa-ref-desc">Use for the sit of the aircraft, leg angles, wheel hub style and the visual mass of the undercarriage on a parked bomber.</div><div class="wa-ref-link">Open undercarriage photo collection ↗</div></div></a>
-    <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_bomb_bays" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/B-17%20bomb%20bay.jpg?width=900" alt="B-17 bomb bay reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Bomb bay and internal structure</div><div class="wa-ref-desc">Use for catwalk layout, bomb racks and the very open internal look that matters if you build the model with doors open.</div><div class="wa-ref-link">Open bomb-bay photo collection ↗</div></div></a>
-    <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_nose_art" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/B-17F%20Memphis%20Belle.jpg?width=900" alt="B-17 nose art reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Nose art, mission markings and group identity</div><div class="wa-ref-desc">Use for the balance of nose art, squadron codes, tail symbols, serials and mission markings across the fuselage.</div><div class="wa-ref-link">Open markings photo collection ↗</div></div></a>
+    <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_cockpits" target="_blank" rel="noopener"><img src="assets/b17_walkaround_cockpit.svg" alt="B-17 cockpit reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Cockpit, panel and overhead detail</div><div class="wa-ref-desc">Use for the cockpit framing, seat and column layout, instrument panel feel and how busy the front office looks under the glazing.</div><div class="wa-ref-link">Open cockpit reference collection ↗</div></div></a>
+    <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_nose_sections" target="_blank" rel="noopener"><img src="assets/b17_walkaround_nose.svg" alt="B-17 nose glazing reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Nose glazing and bombardier area</div><div class="wa-ref-desc">Use for nose framing, bombardier glazing, cheek guns and the way the clear nose changes the look of F and G subjects.</div><div class="wa-ref-link">Open nose reference collection ↗</div></div></a>
+    <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_engines" target="_blank" rel="noopener"><img src="assets/b17_walkaround_engines.svg" alt="B-17 engine and cowling reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Engines, cowlings and exhaust staining</div><div class="wa-ref-desc">Use for cowling lip shape, cooling flap detail, engine weathering and the direction of exhaust and oil staining along the wings.</div><div class="wa-ref-link">Open engine reference collection ↗</div></div></a>
+    <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_landing_gear" target="_blank" rel="noopener"><img src="assets/b17_walkaround_gear.svg" alt="B-17 undercarriage reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Undercarriage, wheels and wheel wells</div><div class="wa-ref-desc">Use for the sit of the aircraft, leg angles, wheel hub style and the visual mass of the undercarriage on a parked bomber.</div><div class="wa-ref-link">Open undercarriage reference collection ↗</div></div></a>
+    <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_bomb_bays" target="_blank" rel="noopener"><img src="assets/b17_walkaround_bombbay.svg" alt="B-17 bomb bay reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Bomb bay and internal structure</div><div class="wa-ref-desc">Use for catwalk layout, bomb racks and the very open internal look that matters if you build the model with doors open.</div><div class="wa-ref-link">Open bomb-bay reference collection ↗</div></div></a>
+    <a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress_nose_art" target="_blank" rel="noopener"><img src="assets/b17_walkaround_markings.svg" alt="B-17 nose art reference image" loading="eager"><div class="wa-ref-body"><div class="wa-ref-kicker">Wikimedia Commons</div><div class="wa-ref-title">Nose art, mission markings and group identity</div><div class="wa-ref-desc">Use for the balance of nose art, squadron codes, tail symbols, serials and mission markings across the fuselage.</div><div class="wa-ref-link">Open markings reference collection ↗</div></div></a>
   </div>
   <div style="margin-top:1.4rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem">
     <div style="background:rgba(136,174,240,.08);border:1px solid rgba(136,174,240,.18);border-radius:4px;padding:1rem"><div class="sec-label">Recommended video reference</div><div style="font-size:14px;color:rgba(255,255,255,.72);line-height:1.65">Use museum and airworthy walkaround videos mainly for structure and shape rather than blindly copying restored interior colours.</div><div style="margin-top:.7rem"><a href="https://www.youtube.com/results?search_query=B-17+Flying+Fortress+walkaround" target="_blank" rel="noopener" style="color:var(--brass2);text-decoration:none;font-family:'Oswald',sans-serif;letter-spacing:.08em;text-transform:uppercase;font-size:12px">Open B-17 walkaround videos ↗</a></div></div>
@@ -1392,7 +1378,6 @@ const STATIONS=[
  {id:"rattlesden",lat:52.1700,lng:0.8750,name:"Rattlesden",x:398,y:496,group:"1",sqns:["447 BG"],type:"8th AF heavy bomber base",info:"447th Bomb Group / Square K tails."},
  {id:"amendola",lat:41.5410,lng:15.7130,name:"Amendola",x:460,y:640,group:"2",sqns:["97 BG"],type:"Mediterranean heavy bomber base",info:"97th Bomb Group Mediterranean subject marker."},
  {id:"lucera",lat:41.5170,lng:15.3370,name:"Lucera",x:456,y:640,group:"2",sqns:["301 BG"],type:"Mediterranean heavy bomber base",info:"301st Bomb Group Mediterranean subject marker."},
- {id:"portmoresby",lat:-9.4438,lng:147.1803,name:"Port Moresby / Pacific",x:700,y:720,group:"3",sqns:["19 BG"],type:"Pacific heavy bomber base",info:"19th Bomb Group Pacific-theatre marker, included so the B-17 page is not limited to Europe alone."}
 ];
 
 const TL={"91 BG":[{s:0,e:113,st:"front"}],"100 BG":[{s:8,e:113,st:"front"}],"303 BG":[{s:0,e:113,st:"front"}],"305 BG":[{s:0,e:113,st:"front"}],"306 BG":[{s:0,e:113,st:"front"}],"379 BG":[{s:20,e:113,st:"front"}],"381 BG":[{s:25,e:113,st:"front"}],"384 BG":[{s:20,e:113,st:"front"}],"398 BG":[{s:60,e:113,st:"front"}],"447 BG":[{s:72,e:113,st:"front"}],"97 BG":[{s:0,e:113,st:"front"}],"301 BG":[{s:8,e:113,st:"front"}],"19 BG":[{s:0,e:40,st:"front"}]};
@@ -1582,7 +1567,21 @@ function openLB(src,cap){const lb=document.getElementById('lightbox');const img=
 function closeLB(){const lb=document.getElementById('lightbox');if(lb)lb.classList.remove('active');}
 
 function renderKits(){const el=document.getElementById('kit-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';el.innerHTML=KITS.map(k=>`<div class="kit-card"><div class="kit-scale">${escapeHtml(k.scale)}</div><h3>${escapeHtml(k.title)}</h3><div class="kit-maker">${escapeHtml(k.maker)}</div><p>${escapeHtml(k.desc)}</p><a class="shop-btn hb-brass" href="${k.link}" target="_blank" rel="noopener">Open kit link ↗</a></div>`).join('');}
-function renderPaints(){const el=document.getElementById('paint-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';el.innerHTML=PAINTS.map(p=>`<div class="paint-card"><div class="paint-name">${escapeHtml(p.name)}</div><div class="paint-use">${escapeHtml(p.use||'')}</div><div style="font-size:12px;color:rgba(255,255,255,.55);margin-top:.5rem">${escapeHtml((p.brands||[]).join(' · '))}</div></div>`).join('');}
+function renderPaints(){
+  const el=document.getElementById('paint-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';
+  const swatchFor = (name)=>{
+    const n=String(name||'').toLowerCase();
+    if(n.includes('olive drab')) return 'linear-gradient(135deg,#5d6242,#2e3623)';
+    if(n.includes('neutral gray')) return 'linear-gradient(135deg,#6f747c,#40444a)';
+    if(n.includes('natural metal')) return 'linear-gradient(135deg,#b8bec7,#757d87)';
+    if(n.includes('interior green')) return 'linear-gradient(135deg,#6a7a53,#35412b)';
+    if(n.includes('bronze green')) return 'linear-gradient(135deg,#415244,#1f2d24)';
+    if(n.includes('black')) return 'linear-gradient(135deg,#202124,#050608)';
+    if(n.includes('red')||n.includes('yellow')) return 'linear-gradient(135deg,#b28a34,#7f1e1e)';
+    return 'linear-gradient(135deg,#6a7280,#313742)';
+  };
+  el.innerHTML=PAINTS.map(p=>`<div class="paint-card"><div class="paint-swatch" style="background:${swatchFor(p.name)}"><div>${escapeHtml(p.name)}</div></div><div class="paint-info"><div class="paint-name">${escapeHtml(p.name)}</div><div class="paint-use">${escapeHtml(p.use||'')}</div><div style="font-size:12px;color:rgba(255,255,255,.55);margin-top:.5rem;line-height:1.45">${escapeHtml((p.brands||[]).join(' · '))}</div></div></div>`).join('');
+}
 function renderAftermarket(){const el=document.getElementById('aftermarket-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';el.innerHTML=Object.entries(AFTERMARKET).map(([cat,items])=>`<div class="section-label">${escapeHtml(cat)}</div><div class="kit-grid">${items.map(i=>`<div class="kit-card"><h3>${escapeHtml(i.title)}</h3><p>${escapeHtml(i.desc)}</p><a class="shop-btn hb-outline" href="${i.url}" target="_blank" rel="noopener">Open link ↗</a></div>`).join('')}</div>`).join('');}
 function renderBuildSteps(){const el=document.getElementById('stepbystep-content');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';el.innerHTML=BUILD_STEPS.map(s=>`<div class="info-box"><div style="font-family:'Special Elite',cursive;font-size:1.15rem;color:#fff;margin-bottom:.4rem">${s.icon||''} ${s.n}. ${escapeHtml(s.title)}</div><div style="font-size:15px;color:rgba(255,255,255,.72);line-height:1.65">${escapeHtml(s.text)}</div><div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.7rem">${(s.products||[]).map(p=>`<a class="shop-btn hb-outline" href="${p.url}" target="_blank" rel="noopener">${escapeHtml(p.name)} ↗</a>`).join('')}</div></div>`).join('');}
 function renderWeathering(){const el=document.getElementById('weather-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';el.innerHTML=WEATHER.map(w=>`<div class="kit-card"><h3>${escapeHtml(w.base)}</h3><p>${escapeHtml(w.mudNote||'')}</p>${(w.rows||[]).map(r=>`<div style="font-size:13px;color:rgba(255,255,255,.66);margin:.35rem 0"><b>${escapeHtml(r.l)}:</b> ${escapeHtml(r.v)}</div>`).join('')}</div>`).join('');const te=document.getElementById('weathering-techniques');if(te&&!te.dataset.rendered){te.dataset.rendered='1';te.innerHTML=(TECHNIQUES||[]).map(t=>`<div class="info-box"><b>${escapeHtml(t.title||t.name)}</b><br>${escapeHtml(t.text||t.desc||'')}</div>`).join('');}}
@@ -1597,7 +1596,7 @@ function xyToLatLng(st){
   return [lat, lon];
 }
 function mapGroupLabel(group){
-  return group==='1'?'8th AF / UK':group==='2'?'Mediterranean':group==='3'?'Pacific':group==='4'?'Special subjects':'All theatres';
+  return group==='1'?'8th AF / UK':group==='2'?'Mediterranean':group==='3'?'Pacific story':group==='4'?'Special subjects':'All theatres';
 }
 function renderMap(){
   const mapEl=document.getElementById('leaflet-map');
@@ -1612,9 +1611,9 @@ function renderMap(){
     zoomControl:true,
     attributionControl:true,
     scrollWheelZoom:false,
-    maxBounds:[[-15,-30],[62,170]],
+    maxBounds:[[35,-15],[57,22]],
     maxBoundsViscosity:.45
-  }).setView([35,70],3);
+  }).setView([49,2],4);
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     attribution:'&copy; OpenStreetMap &copy; CARTO',
@@ -1693,13 +1692,13 @@ function showMapIntro(){
   if(!box) return;
   const stationCount = STATIONS.length;
   const linkedUnits = [...new Set(STATIONS.flatMap(st => (st.sqns||[]).map(n => String(n).replace(' fwd',''))).filter(n => SQ.find(s => s.num === n)))];
-  const byGroup = ['1','2','3','4'].map(g => `${mapGroupLabel(g)}: ${STATIONS.filter(s=>s.group===g).length}`).join(' · ');
+  const byGroup = ['1','2'].map(g => `${mapGroupLabel(g)}: ${STATIONS.filter(s=>s.group===g).length}`).join(' · ');
   box.innerHTML = `
-    <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">USAAF B-17 wider-theatre map</div>
+    <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">USAAF B-17 theatre map</div>
     <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem">Clickable bases → linked group cards</div>
-    <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Hover a marker to reveal the base name, or click it to open the station summary and linked unit cards. The linked group card contains the crew/commander notes, markings, decals and kit notes.</p>
-    <div style="margin-top:.75rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)">${stationCount} station markers · ${linkedUnits.length} linked unit cards</div>
-    <div style="margin-top:.45rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38)">${byGroup}</div>`;
+    <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Hover a marker to reveal the base name, or click it to open the station summary and linked group cards. The linked group card contains the crew/commander notes, markings, decals and kit notes.</p>
+    <div style="margin-top:.75rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)">${stationCount} station markers · ${linkedUnits.length} linked group cards</div>
+    <div style="margin-top:.45rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38)">${byGroup}</div><div style="margin-top:.45rem;font-size:12px;color:rgba(255,255,255,.46);line-height:1.55">Pacific use is still covered in the squadron cards, but the map is intentionally centred on the clearest modelling bases.</div>`;
 }
 function showMapStation(stOrId){
   const st = typeof stOrId === 'string' ? STATIONS.find(s => s.id === stOrId) : stOrId;
@@ -1727,7 +1726,7 @@ function showMapStation(stOrId){
     }
     return `<div class="map-sqn-chip" style="border-left:3px solid rgba(255,255,255,.25);opacity:.72;cursor:default;padding:.65rem .8rem;margin-bottom:.45rem">
       <b>${n}</b>
-      <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.45;margin-top:4px">Context unit — no linked unit card on this page.</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.45;margin-top:4px">Context unit — no linked group card on this page.</div>
     </div>`;
   }).join('');
 
@@ -1765,7 +1764,7 @@ function filterMapGroup(group,btn){
   const shown = STATIONS.filter(st => group==='all' || st.group===group);
   if(leafletMap && shown.length){
     const bounds=L.latLngBounds(shown.map(st => [st._lat, st._lng]));
-    leafletMap.fitBounds(bounds.pad(.35), {padding:[20,20], maxZoom: group==='all' ? 5 : 6});
+    leafletMap.fitBounds(bounds.pad(.28), {padding:[20,20], maxZoom: group==='all' ? 5 : 6});
   }
   const box=document.getElementById('map-sqn-list');
   if(box){

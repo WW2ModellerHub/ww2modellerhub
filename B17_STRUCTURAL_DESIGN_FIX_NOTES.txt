@@ -1,0 +1,8 @@
+B-17 structural/design pass
+- Fixed the B-17 mobile tab bar styling so it uses an opaque background and clearer active-state styling.
+- Reworked paint-card rendering so colour rows use proper swatches and readable content blocks on mobile.
+- Added mobile single-column layout rules for paint, kit and walkaround grids.
+- Replaced broken B-17 walkaround image sources with local B-17 walkaround card artwork so the cards render reliably instead of showing the unavailable-image placeholder.
+- Simplified the B-17 reference map to focus on the main modelling theatres (England and Mediterranean) for cleaner mobile presentation.
+- Removed the outlying Pacific marker from the map view while keeping Pacific service covered in the squadron/story content.
+- Simplified the reference timeline panel structure so it no longer shows inherited template slider/date clutter.
