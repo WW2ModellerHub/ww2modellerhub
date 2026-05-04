@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="AIRFRAME">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#07121f"/><stop offset="1" stop-color="#34495e"/></linearGradient>
+    <linearGradient id="metal" x1="0" x2="1"><stop offset="0" stop-color="#bcc4cc"/><stop offset=".28" stop-color="#eef2f5"/><stop offset=".52" stop-color="#8d99a5"/><stop offset=".78" stop-color="#d7dde4"/><stop offset="1" stop-color="#9faab4"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#000" flood-opacity=".45"/></filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity=".18" stroke="#fff" stroke-width="2">
+    <path d="M0 520 C240 465 425 490 630 440 C815 395 1015 410 1200 350" fill="none"/>
+    <path d="M0 570 C260 530 450 555 665 500 C850 455 1040 465 1200 405" fill="none"/>
+  </g>
+  <g transform="translate(140 190)" filter="url(#shadow)">
+    <path d="M70 210 C205 150 360 130 535 145 L830 175 C895 183 933 210 970 245 L1000 275 L735 268 L485 245 L275 265 L35 250 Z" fill="url(#metal)" stroke="#dbe2ea" stroke-width="4"/>
+    <path d="M520 145 L590 62 C650 58 710 75 760 118 L730 174 Z" fill="#15233d" stroke="#cfd8e3" stroke-width="4"/>
+    <path d="M552 138 L605 82 C645 82 690 96 725 125 L704 160 Z" fill="#8fb4d6" opacity=".9"/>
+    <ellipse cx="218" cy="270" rx="74" ry="26" fill="#1b1f24" opacity=".92"/>
+    <ellipse cx="735" cy="270" rx="78" ry="25" fill="#1b1f24" opacity=".92"/>
+    <path d="M875 188 L998 152 L1000 235 L900 225 Z" fill="url(#metal)" stroke="#dbe2ea" stroke-width="4"/>
+    <path d="M65 220 L20 185 L22 260 Z" fill="#b9c2cb"/>
+    <rect x="815" y="162" width="92" height="14" rx="5" fill="#2a2d32" opacity=".75"/>
+    <rect x="824" y="182" width="86" height="10" rx="5" fill="#2a2d32" opacity=".55"/>
+    <rect x="470" y="218" width="145" height="18" rx="9" fill="#254f92" opacity=".92"/>
+    <text x="542" y="233" fill="#fff" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="700">★</text>
+  </g>
+  <g transform="translate(78 68)">
+    <rect x="0" y="0" width="132" height="74" rx="8" fill="#1d4385" stroke="#fff" stroke-opacity=".28" stroke-width="3"/>
+    <rect x="-38" y="28" width="88" height="18" fill="#fff" opacity=".96"/>
+    <rect x="82" y="28" width="88" height="18" fill="#fff" opacity=".96"/>
+    <text x="66" y="50" fill="#fff" font-size="42" font-family="Arial, sans-serif" font-weight="700" text-anchor="middle">★</text>
+  </g>
+  <text x="78" y="570" fill="#dce8ff" font-family="Oswald, Arial, sans-serif" font-size="58" font-weight="700" letter-spacing="4">AIRFRAME</text>
+  <text x="80" y="615" fill="rgba(255,255,255,.72)" font-family="Georgia, serif" font-size="28">Laminar wing · radiator scoop · NMF panels</text>
+</svg>

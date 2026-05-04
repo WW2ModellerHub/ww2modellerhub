@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Turrets & Guns">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1728"/><stop offset="1" stop-color="#1b3358"/></linearGradient>
+    <radialGradient id="glow" cx="68%" cy="35%" r="62%"><stop offset="0" stop-color="#88aef0" stop-opacity=".18"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".55"/></filter>
+  </defs>
+  <rect width="960" height="540" fill="url(#sky)"/>
+  <rect width="960" height="540" fill="url(#glow)"/>
+  <path d="M45 430 C220 390 420 392 580 418 C720 442 840 430 930 394" fill="none" stroke="#c9a84c" stroke-opacity=".26" stroke-width="2"/>
+  <g filter="url(#shadow)" transform="translate(100 215)">
+    <path d="M80 38 L385 24 C470 20 553 28 640 46 L737 66 C755 70 760 89 742 99 L592 118 C501 129 405 130 305 118 L80 88 C54 84 52 43 80 38Z" fill="#d6d0bd" opacity=".92"/>
+    <path d="M400 18 L455 -64 L503 -62 L488 29" fill="#d6d0bd" opacity=".9"/>
+    <path d="M548 35 L646 -43 L686 -38 L618 62" fill="#d6d0bd" opacity=".78"/>
+    <path d="M170 34 L78 -28 L32 -20 L130 63" fill="#d6d0bd" opacity=".72"/>
+    <circle cx="250" cy="105" r="30" fill="#202838"/><circle cx="250" cy="105" r="16" fill="#0b0f18"/><circle cx="565" cy="105" r="30" fill="#202838"/><circle cx="565" cy="105" r="16" fill="#0b0f18"/>
+    <circle cx="160" cy="57" r="15" fill="#182234"/><circle cx="305" cy="52" r="16" fill="#182234"/><circle cx="480" cy="52" r="16" fill="#182234"/><circle cx="624" cy="61" r="15" fill="#182234"/>
+    <rect x="78" y="42" width="62" height="18" rx="9" fill="#243657" opacity=".72"/>
+    <path d="M82 38 C142 18 204 14 275 22" fill="none" stroke="#20314f" stroke-width="8" opacity=".55"/>
+    <text x="118" y="75" font-family="Oswald,Arial" font-size="22" fill="#20314f" font-weight="700">B-17</text>
+  </g>
+  <g transform="translate(44 42)">
+    <text font-family="Oswald,Arial" font-size="18" letter-spacing="5" fill="#c9a84c" font-weight="700">WALKAROUND REFERENCE</text>
+    <text y="46" font-family="Georgia,serif" font-size="40" fill="#fff" font-weight="700">Turrets & Guns</text>
+    <text y="84" font-family="Georgia,serif" font-size="24" fill="#d9dfef" opacity=".78">Ball, top, waist and tail gun positions</text>
+  </g>
+  <g transform="translate(44 458)">
+    <rect width="865" height="46" rx="4" fill="#0a1628" opacity=".72" stroke="#c9a84c" stroke-opacity=".28"/>
+    <text x="18" y="30" font-family="Oswald,Arial" font-size="16" letter-spacing="3" fill="#c9a84c" font-weight="700">CHECK:</text>
+    <text x="110" y="30" font-family="Georgia,serif" font-size="19" fill="#ffffff" opacity=".82">framing thickness, gun barrels, clear parts, ammo feed chutes</text>
+  </g>
+</svg>
