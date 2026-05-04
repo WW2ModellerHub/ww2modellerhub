@@ -1329,32 +1329,9 @@ body:not(.noop) > .filter-bar.zero-unit-filter{display:none!important;}
 
 <div class="tab-panel" id="tab-stories">
   <div class="section-label">Pilot Stories — A6M Zero pilots and IJN fighter leaders</div>
-  <div class="info-box">Named pilots first, then aircraft-specific story angles. This follows the fighter-page structure: people cards act as the entry point, while the lower story cards explain what that means for the model on the bench.</div>
-
-  <div id="zero-story-feature" style="margin-bottom:1.5rem;background:linear-gradient(150deg,rgba(38,21,18,.88),rgba(8,14,12,.96));border:1px solid rgba(255,255,255,.10);border-left:4px solid var(--brass);border-radius:4px;overflow:hidden;box-shadow:0 12px 28px rgba(0,0,0,.28)">
-    <div style="background:rgba(0,0,0,.32);padding:.75rem 1rem;border-bottom:1px solid rgba(255,255,255,.08)"><div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass)">Story focus</div><div style="font-family:'Special Elite',cursive;font-size:1.25rem;color:#fff;margin-top:.15rem">Do not build “a Zero” — build a unit, date and theatre</div></div>
-    <div style="padding:1rem;font-size:16px;color:rgba(255,255,255,.78);line-height:1.75">A Pearl Harbor A6M2, a Rabaul Tainan Kōkūtai machine and a 1945 A6M5 can all be Zeros, but they should not look alike. The story decides the variant, finish, wear, markings and decal choice.</div>
-  </div>
-
-  <div class="section-label">Pilots and commanders</div>
-  <div class="pilot-grid" style="margin-bottom:1.5rem">
-    <div class="pilot-card" onclick="openPilot('sakai')"><div class="pkills">64</div><div class="pname">Saburō Sakai</div><div class="pnote">Tainan Kōkūtai · South Pacific A6M2</div></div>
-    <div class="pilot-card" onclick="openPilot('nishizawa')"><div class="pkills">Ace</div><div class="pname">Hiroyoshi Nishizawa</div><div class="pnote">Tainan / 251 Ku · Rabaul and Solomons</div></div>
-    <div class="pilot-card" onclick="openPilot('ota')"><div class="pkills">Ace</div><div class="pname">Toshio Ōta</div><div class="pnote">Tainan Kōkūtai · New Guinea</div></div>
-    <div class="pilot-card" onclick="openPilot('itaya')"><div class="pkills">Lead</div><div class="pname">Shigeru Itaya</div><div class="pnote">Akagi fighter leader · Pearl Harbor / Midway</div></div>
-    <div class="pilot-card" onclick="openPilot('sasai')"><div class="pkills">Lead</div><div class="pname">Junichi Sasai</div><div class="pnote">Tainan officer · Lae / Rabaul context</div></div>
-    <div class="pilot-card" onclick="openPilot('seki')"><div class="pkills">1944</div><div class="pname">Yukio Seki</div><div class="pnote">201st Kōkūtai · Philippines context</div></div>
-  </div>
-
-  <div class="section-label">Modeller story angles</div>
-  <div class="zero-story-grid">
-    <div class="zero-feature-card"><div class="k">Pearl Harbor</div><div class="t">Clean carrier A6M2</div><p>Akagi, Kaga, Sōryū and Hiryū aircraft should look like disciplined early-war carrier fighters: warm grey-green finish, black/blue-black cowling, carrier code and red bands. Do not give them random late-war chipping.</p></div>
-    <div class="zero-feature-card"><div class="k">Midway</div><div class="t">Kido Butai turning point</div><p>The drama is historical, not visual over-weathering. Carrier aircraft can still be relatively tidy, so markings and carrier identity matter more than heavy paint loss.</p></div>
-    <div class="zero-feature-card"><div class="k">Lae / Rabaul</div><div class="t">Ace-heavy island fighter war</div><p>Tainan, 204 and 251 Kōkūtai subjects justify tropical fading, dust, fuel staining, access-panel wear and harder-used airframes.</p></div>
-    <div class="zero-feature-card"><div class="k">Solomons / New Guinea</div><div class="t">Weather and variant shift</div><p>This is where A6M2, A6M3 and A6M5 choices become dangerous to mix up. Wing tips, cowling/exhaust layout and unit/date research come before decals.</p></div>
-    <div class="zero-feature-card"><div class="k">Philippines 1944</div><div class="t">Late-war A6M5</div><p>Darker green uppers, yellow leading-edge ID strips, austere bases and a difficult special-attack context. Treat the subject soberly and keep the modelling note on aircraft accuracy.</p></div>
-    <div class="zero-feature-card"><div class="k">Home defence</div><div class="t">302 Ku and final operations</div><p>Late-war defensive subjects suit tired green paint, yellow ID strips, visible maintenance and a less glamorous but very useful modelling story.</p></div>
-  </div>
+  <div class="info-box">Real Zero stories using the same story structure as the Spitfire page: a campaign focus panel followed by full-width pilot story cards with photograph slots, unit context, aircraft notes and modelling implications.</div>
+  <div id="zero-campaign-focus" style="margin-bottom:1.5rem"></div>
+  <div id="pilot-stories-grid"></div>
 </div>
 
 <div class="tab-panel" id="tab-media">
@@ -1511,12 +1488,60 @@ function openUnit(id){
     </div>`;
  p.classList.add('open');setTimeout(()=>p.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
 }
+
+
+// ═══ ZERO PILOT STORIES — Spitfire-style structure ═══
+const ZERO_STORY_FOCUS={
+  kicker:'A6M Zero story focus',
+  title:'The same aircraft name can mean very different models',
+  text:'A Pearl Harbor A6M2 Model 21, a Tainan Kōkūtai aircraft at Lae/Rabaul, an Akutan captured Zero and a late-war A6M5 from the Philippines should not look alike. The story fixes the variant, theatre, unit markings, paint finish and weathering level before you touch the kit.'
+};
+const ZERO_PILOT_STORIES=[
+ {name:'Saburō Sakai',unit:'Tainan Kōkūtai',role:'IJN fighter pilot',kills:'64 claimed',wiki:'Saburō_Sakai',aircraft:'A6M2 Model 21 · South Pacific',story:`Sakai is the best-known Zero pilot in the English-language modelling world, largely because his memoir made the South Pacific air war personal. Flying with Tainan Kōkūtai from bases such as Lae and Rabaul, he represents the hard-used land-based Zero rather than the clean carrier fighter of December 1941. On 7 August 1942, during the Guadalcanal landings, Sakai was badly wounded in combat but still nursed his damaged Zero back to Rabaul. For a model, this is the point: a Sakai/Tainan subject should carry the logic of tropical operations — sun fade, cowling grime, wing-root traffic, oil streaking and unit-specific tail codes — not generic “Japanese chipping” applied everywhere.`},
+ {name:'Hiroyoshi Nishizawa',unit:'Tainan / 251 Kōkūtai',role:'IJN ace',kills:'Ace',wiki:'Hiroyoshi_Nishizawa',aircraft:'A6M2/A6M3/A6M5 context · Rabaul/Solomons',story:`Nishizawa became one of the legendary names of the Zero war, often associated with the Rabaul fighter battles and the Tainan/251 Kōkūtai circle of pilots. Victory totals differ by source, so the modelling value is not a scoreboard — it is the setting. His story belongs to the exhausting attrition war over New Guinea and the Solomons, where the Zero’s early dominance was being challenged by improved Allied aircraft, radar direction and better tactics. A Nishizawa-related build should start with unit/date research: variant, tail marking, theatre wear and land-based maintenance matter more than simply adding an “ace” label.`},
+ {name:'Tetsuzō Iwamoto',unit:'Zuikaku / later Rabaul units',role:'IJN fighter pilot',kills:'High-claim ace',wiki:'Tetsuzō_Iwamoto',aircraft:'A6M2 carrier fighter to later A6M variants',story:`Iwamoto is useful because his career bridges the Zero’s early carrier-war image and later defensive fighting. He flew from Zuikaku during the opening phase of the Pacific War and is often linked with later Rabaul operations. His diary and post-war claims are debated, so treat exact victory totals cautiously. For modellers, that caution is helpful: do not build a generic “Iwamoto Zero”. Decide whether you are modelling a carrier-based early-war aircraft, with cleaner finish and carrier identity, or a later South Pacific machine with tropical fading and field wear.`},
+ {name:'Shigeru Itaya',unit:'Akagi fighter unit',role:'Carrier fighter leader',kills:'Leader',wiki:'Shigeru_Itaya',aircraft:'A6M2 Model 21 · Pearl Harbor / Kido Butai',story:`Itaya led Akagi’s fighter element during the opening carrier operations, making him one of the clearest story anchors for a Pearl Harbor A6M2 Model 21. This is the opposite of a battered late-war Zero. The modelling hook is discipline: a relatively tidy carrier aircraft, warm grey-green finish, black-blue cowling, red Hinomaru, carrier/unit identity and restrained operational grime. The story is dramatic enough already; heavy random chipping usually makes a Pearl Harbor carrier Zero less convincing, not more.`},
+ {name:'Junichi Sasai',unit:'Tainan Kōkūtai',role:'Officer and fighter leader',kills:'Ace/leader',wiki:'Junichi_Sasai',aircraft:'A6M2 · Lae/Rabaul context',story:`Sasai was one of the leading Tainan Kōkūtai officers during the early South Pacific campaign and is closely connected to the Lae/Rabaul Zero story. He was killed in 1942 during the Guadalcanal fighting. His story gives a model a different tone from Pearl Harbor: land bases, high sortie tempo, long over-water flights and aircraft that were still elegant but increasingly worked hard. Use the story to justify restrained but visible wear — faded upper surfaces, dirty cowlings, access-panel scuffing and dust around landing gear and wing roots.`},
+ {name:'Yukio Seki',unit:'201st Kōkūtai',role:'Special attack leader',kills:'1944 context',wiki:'Yukio_Seki',aircraft:'A6M5 · Philippines',story:`Seki is a difficult but historically important late-war Zero story. He led the first organised Special Attack Unit mission from the Philippines in October 1944. This should be handled soberly on a modelling page: the interest is not glamour, but the aircraft’s late-war context. A Seki/201st Kōkūtai subject belongs to the exhausted 1944 Philippines campaign — darker green upper surfaces, yellow leading-edge ID strips where appropriate, field wear, hurried maintenance and a very different mood from the confident A6M2s of 1941.`}
+];
+const ZERO_STORY_ANGLES=[
+ {k:'Pearl Harbor',t:'Clean carrier A6M2',p:'Akagi, Kaga, Sōryū, Hiryū, Shōkaku and Zuikaku aircraft should be built around carrier identity, restrained wear and early-war grey-green finish. The drama is in the markings and operation, not heavy chipping.'},
+ {k:'Akutan Zero',t:'Captured A6M2 reference story',p:'Koga’s crash-landed Zero in the Aleutians became one of the most famous captured Japanese aircraft. It is a useful reminder that underside staining, field damage and recovery condition are not the same as normal operational weathering.'},
+ {k:'Rabaul and Lae',t:'Hard-used land-based fighters',p:'Tainan, 204 and 251 Kōkūtai subjects justify tropical fading, dirty cowlings, access wear and dust. These are the Zeros that can look worked hard without becoming random silver confetti.'},
+ {k:'Late-war Philippines',t:'A6M5 and special attack context',p:'Late-war Zero subjects need a different visual language: darker green upper surfaces, yellow ID strips where supported, tired paint and sober presentation.'}
+];
+function renderPilotStories(){
+  const focus=document.getElementById('zero-campaign-focus');
+  if(focus&&!focus.dataset.rendered){focus.dataset.rendered='1';focus.innerHTML=`<div style="background:rgba(21,39,68,.8);border:2px solid var(--brass);border-radius:4px;overflow:hidden"><div style="background:rgba(0,0,0,.35);padding:.75rem 1.2rem;display:flex;align-items:center;gap:1rem;border-bottom:1px solid rgba(184,144,42,.3)"><div style="text-align:center;background:var(--brass);color:var(--raf-dark);padding:.4rem .6rem;border-radius:2px;flex-shrink:0"><div style="font-family:'Special Elite',cursive;font-size:1.8rem;line-height:1">零</div><div style="font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase">A6M</div></div><div><div style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--brass);margin-bottom:.3rem">${ZERO_STORY_FOCUS.kicker}</div><div style="font-family:'Special Elite',cursive;font-size:1.2rem;color:#fff">${ZERO_STORY_FOCUS.title}</div></div></div><div style="padding:1rem 1.2rem;font-size:17px;color:rgba(255,255,255,.85);line-height:1.75">${ZERO_STORY_FOCUS.text}</div></div>`;}
+  const el=document.getElementById('pilot-stories-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';
+  el.innerHTML=ZERO_PILOT_STORIES.map((p,i)=>`
+    <div style="background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--brass);border-radius:3px;padding:1.4rem;margin-bottom:1.5rem">
+      <div style="display:flex;gap:1.2rem;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap">
+        <div id="story-photo-${i}" style="width:80px;height:100px;flex-shrink:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:2px;display:flex;align-items:center;justify-content:center;overflow:hidden"><div style="font-size:2rem;opacity:.2">✈</div></div>
+        <div style="flex:1;min-width:200px">
+          <div style="font-family:'Special Elite',cursive;font-size:1.4rem;color:#fff;margin-bottom:.3rem">${p.name}</div>
+          <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">${p.unit} &nbsp;·&nbsp; ${p.role} &nbsp;·&nbsp; ${p.kills}</div>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+            <span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:rgba(184,144,42,.15);color:var(--brass2);padding:2px 8px;border:1px solid rgba(184,144,42,.3);border-radius:2px">IJN</span>
+            <span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:2px 8px;border:1px solid rgba(255,255,255,.1);border-radius:2px">${p.aircraft}</span>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:16px;color:rgba(255,255,255,.82);line-height:1.85;font-family:'Source Serif 4',Georgia,serif;border-top:1px solid rgba(255,255,255,.07);padding-top:1rem">${p.story}</div>
+    </div>`).join('')+`<div class="section-label">Aircraft stories for modellers</div><div class="zero-story-grid">${ZERO_STORY_ANGLES.map(s=>`<div class="zero-feature-card"><div class="k">${s.k}</div><div class="t">${s.t}</div><p>${s.p}</p></div>`).join('')}</div>`;
+  ZERO_PILOT_STORIES.forEach(function(p,i){
+    if(!p.wiki)return;
+    fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(p.wiki)).then(function(r){return r.json();}).then(function(d){const img=d.thumbnail&&d.thumbnail.source;if(!img)return;const box=document.getElementById('story-photo-'+i);if(box)box.innerHTML='<img src="'+img+'" alt="'+p.name+'" style="width:100%;height:100%;object-fit:cover;object-position:top center">';}).catch(function(){});
+  });
+}
+
 function switchTab(name,btn){
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
   const panel=document.getElementById('tab-'+name); if(panel)panel.classList.add('active');
   document.querySelectorAll('.nav-tab').forEach(b=>b.classList.remove('active')); if(btn)btn.classList.add('active');
   if(name==='squadrons')renderUnitGrid();
   if(name==='reference'){setTimeout(()=>{if(document.getElementById('rsub-map') && document.getElementById('rsub-map').style.display!=='none')initMap(); if(document.getElementById('rsub-timeline'))renderTimeline(document.getElementById('timeline-slider')?document.getElementById('timeline-slider').value:0); initCompare();},100);}
+  if(name==='stories')renderPilotStories();
 }
 function initMap(){if(map)return;map=L.map('leaflet-map',{scrollWheelZoom:false});L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:9,attribution:'© OpenStreetMap'}).addTo(map);renderMarkers();renderTimeline(0);initCompare();}
 function renderMarkers(){markers.forEach(m=>m.remove());markers=[];const list=document.getElementById('map-list');list.innerHTML='<div class="section-label">Bases and theatres</div>';let bounds=[];UNITS.filter(u=>currentMapFilter==='all'||u.group===currentMapFilter).forEach(u=>{const col=u.group==='carrier'?'#d2342a':u.group==='land'?'#687857':u.group==='late'?'#c9a15a':'#8aaee8';const icon=L.divIcon({className:'',html:`<div class="raf-leaflet-marker" data-id="${u.id}" style="background:${col}"></div>`,iconSize:[18,18],iconAnchor:[9,9]});const m=L.marker([u.lat,u.lng],{icon}).addTo(map);m.bindTooltip(`<span class="raf-leaflet-label">${u.name}</span>`,{direction:'top',offset:[0,-10]});m.on('click',()=>{openUnit(u.id);selectMarker(u.id);});markers.push(m);bounds.push([u.lat,u.lng]);list.innerHTML+=`<div class="map-sqn-chip" onclick="openUnit('${u.id}');selectMarker('${u.id}')"><b>${u.num}</b><br>${u.base}</div>`;});if(bounds.length)map.fitBounds(bounds,{padding:[28,28],maxZoom:4});}
@@ -1554,5 +1579,5 @@ function setRefSub(name,btn){
   if(name==='compare') setTimeout(initCompare,50);
 }
 
-document.addEventListener('DOMContentLoaded',()=>{renderUnitGrid();document.querySelectorAll('.ac-drop-btn').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation();btn.closest('.ac-drop').classList.toggle('open');}));document.addEventListener('click',()=>document.querySelectorAll('.ac-drop').forEach(d=>d.classList.remove('open')));});
+document.addEventListener('DOMContentLoaded',()=>{renderUnitGrid();renderPilotStories();document.querySelectorAll('.ac-drop-btn').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation();btn.closest('.ac-drop').classList.toggle('open');}));document.addEventListener('click',()=>document.querySelectorAll('.ac-drop').forEach(d=>d.classList.remove('open')));});
 </script></body></html>
