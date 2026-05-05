@@ -1353,11 +1353,6 @@ document.addEventListener('DOMContentLoaded',function(){
 }
 </style>
 
-
-<style id="ww2-units-grid-gap-after-intro-fix">
-#tab-squadrons #grid.sq-grid{margin-top:2.75rem!important;clear:both!important;}
-#tab-squadrons > div:first-child{margin-bottom:1.75rem!important;}
-</style>
 </head><body>
 <nav class="site-nav">
   <div class="site-nav-inner">
@@ -1482,6 +1477,9 @@ document.addEventListener('DOMContentLoaded',function(){
       <span><span style="color:var(--brass2);font-size:14px;font-weight:600">3</span> theatres</span>
     </div>
   </div>
+  
+    
+  
 <div class="sq-grid" id="grid" style="margin-top:2.25rem!important;row-gap:1rem!important;column-gap:1rem!important;clear:both!important"></div>
 </div>
 
@@ -3419,22 +3417,7 @@ function acceptCookies(){try{localStorage.setItem('cookiesAccepted','1');}catch(
 
 
 <script id="b17-counter-remove-final">
-(function(){function kill(){document.querySelectorAll('#sq-count,.sq-count').forEach(function(n){n.remove();});document.querySelectorAll('*').forEach(function(n){if(n.childNodes&&n.childNodes.length===1&&/0\s+squadrons\s+shown/i.test(n.textContent||'')){n.textContent=(n.textContent||'').replace(/\s*[·•-]?\s*0\s+squadrons\s+shown/ig,'');}});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',kill);else kill();setInterval(kill,600);})();
-</script>
-
-<script id="b17-counter-source-fix">
-(function(){
-  function cleanB17Counter(){
-    document.querySelectorAll('#sq-count,.sq-count').forEach(function(n){ n.remove(); });
-    document.querySelectorAll('.filter-bar, #sqn-bar, body *').forEach(function(n){
-      if(!n || !n.childNodes || n.childNodes.length !== 1) return;
-      var t = n.textContent || '';
-      if(/0\s+squadrons\s+shown/i.test(t)) n.textContent = t.replace(/\s*[·•-]?\s*0\s+squadrons\s+shown/ig,'').trim();
-    });
-  }
-  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', cleanB17Counter); else cleanB17Counter();
-  setInterval(cleanB17Counter, 250);
-})();
+(function(){function kill(){document.querySelectorAll('#sq-count,.sq-count').forEach(function(n){n.remove();});document.querySelectorAll('*').forEach(function(n){if(n.childNodes&&n.childNodes.length===1&&//i.test(n.textContent||'')){n.textContent=(n.textContent||'').replace(/\s*·?\s*/ig,'');}});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',kill);else kill();setInterval(kill,600);})();
 </script>
 </body>
 </html>
