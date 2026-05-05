@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Mosquito Model Kit — Wood Finish, Night Fighter, PR</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="shortcut icon" href="favicon.ico">
 <meta property="og:title" content="de Havilland Mosquito Scale Modelling Reference — Wood Finish, Night Fighter, PR">
 <meta property="og:description" content="Mosquito scale modelling reference — wood-airframe finish, night fighter and FB.VI schemes, PR Mosquito variants, kit choices and markings.">
 <meta property="og:type" content="website">
@@ -805,6 +808,20 @@ footer{padding:2rem;text-align:center;border-top:1px solid var(--border);color:v
     if(btn){ e.preventDefault(); e.stopPropagation(); return false; }
   }, true);
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeAll(); });
+})();
+</script>
+
+
+<script id="ww2modeller-media-thumb-enhancer">
+(function(){
+  function ytId(url){try{const u=new URL(url,location.href);if(/youtu\.be$/.test(u.hostname))return u.pathname.slice(1);if(u.searchParams.get('v'))return u.searchParams.get('v');const m=u.pathname.match(/\/embed\/([^/?#]+)/);if(m)return m[1];}catch(e){}return '';}
+  function installFallback(img,fallback){if(img.dataset.thumbHandled)return;img.dataset.thumbHandled='1';if(fallback&&!img.dataset.fallback)img.dataset.fallback=fallback;img.addEventListener('error',function(){if(this.dataset.fallback&&this.src!==this.dataset.fallback){const next=this.dataset.fallback;this.dataset.fallback='video-thumb-fallback.png';this.src=next;return;}if(this.src.indexOf('video-thumb-fallback.png')===-1)this.src='video-thumb-fallback.png';});}
+  function removeEmojiLead(a){const first=a.firstElementChild;if(!first||first.tagName==='IMG')return;const t=(first.textContent||'').trim();if(t&&t.length<=3&&/^[^A-Za-z0-9]+$/.test(t))first.remove();}
+  function styleThumb(img,compact){img.loading='lazy';img.style.width=compact?'132px':'100%';img.style.height=compact?'84px':'145px';img.style.objectFit='cover';img.style.display='block';img.style.borderRadius=compact?'3px':'0';img.style.flexShrink='0';img.style.background='#0a1611';}
+  function ensure(a){if(a.dataset.thumbEnhanced)return;const href=a.getAttribute('href')||'';const isYT=/youtu(?:\.be|be\.com)/.test(href);const inMedia=!!a.closest('#media-grid,.zero-media-grid,#tab-media');const inWalk=!!a.closest('#tab-walkaround');const videoLike=isYT||/video/i.test(a.className)||(a.textContent||'').match(/video|walkaround|cockpit|archive footage|documentary|engine start/i);if(!(inMedia||inWalk||videoLike))return;let img=a.querySelector('img');const id=ytId(href);const hq=id?`https://img.youtube.com/vi/${id}/hqdefault.jpg`:'';const mq=id?`https://img.youtube.com/vi/${id}/mqdefault.jpg`:'';if(!img&&(inMedia||isYT||videoLike)){removeEmojiLead(a);img=document.createElement('img');img.alt=((a.textContent||'Reference video').trim().slice(0,90)||'Reference video thumbnail')+' thumbnail';img.src=hq||'video-thumb-fallback.png';installFallback(img,mq||'video-thumb-fallback.png');const compact=a.closest('#media-grid')&&!a.className.match(/card|zero|wa/);styleThumb(img,!!compact);a.insertBefore(img,a.firstChild);}else if(img){installFallback(img,mq||img.getAttribute('data-fallback')||'video-thumb-fallback.png');if(a.closest('#media-grid')&&!a.className.match(/card|zero|wa/))styleThumb(img,true);}a.dataset.thumbEnhanced='1';}
+  function process(scope){(scope||document).querySelectorAll('#media-grid a,.zero-media-grid a,#tab-media a,#tab-walkaround a').forEach(ensure);}
+  function boot(){process(document);document.querySelectorAll('#media-grid,#tab-media,#tab-walkaround,.zero-media-grid').forEach(n=>{try{new MutationObserver(()=>process(n)).observe(n,{childList:true,subtree:true});}catch(e){}});}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
 </script>
 
