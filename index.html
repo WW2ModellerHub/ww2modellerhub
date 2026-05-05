@@ -565,6 +565,7 @@ footer .copy{font-family:'Source Serif 4',serif;font-size:12px;color:var(--dim);
   }
 }
 
+.ac-drop-btn.active,.ac-drop-btn[aria-current="page"]{color:var(--brass2,var(--gold,#e8c76a))!important;background:rgba(201,168,76,.08)!important;border-color:rgba(201,168,76,.18)!important}
 </style>
 
 <link rel="canonical" href="https://www.ww2modeller.co.uk/">
@@ -902,48 +903,26 @@ footer .copy{font-family:'Source Serif 4',serif;font-size:12px;color:var(--dim);
       <span class="site-nav-logo-text">WW2 <span>Modeller</span></span>
     </a>
     <div class="site-nav-links">
-      <a href="aircraft.html" class="site-nav-link keep">Aircraft Index</a>
+      <a href="index.html" class="site-nav-link active">Home</a>
       <div class="ac-drop" id="acDrop">
         <button type="button" class="ac-drop-btn" aria-haspopup="true" aria-expanded="false">Aircraft <span class="ac-drop-caret">▼</span></button>
         <div class="ac-drop-menu" role="menu" aria-label="Aircraft navigation">
           <div class="ac-drop-grid">
-            <div class="ac-drop-section"><div class="ac-drop-heading">Allied fighters</div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Aircraft library</div>
+              <a href="aircraft.html" class="ac-drop-item">Full Aircraft Index <span class="ac-drop-badge live">Hub</span></a>
+            </div>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Live aircraft reference</div>
               <a href="hurricane_paradise.html" class="ac-drop-item">Hawker Hurricane <span class="ac-drop-badge live">Live</span></a>
               <a href="spitfire_paradise.html" class="ac-drop-item">Supermarine Spitfire <span class="ac-drop-badge live">Live</span></a>
-              <a href="p51_paradise.html" class="ac-drop-item">North American P-51 Mustang <span class="ac-drop-badge live">Live</span></a>
-              <span class="ac-drop-item ac-drop-disabled">Republic P-47 Thunderbolt <span class="ac-drop-badge plan">Planned</span></span>
-              <span class="ac-drop-item ac-drop-disabled">Lockheed P-38 Lightning <span class="ac-drop-badge plan">Planned</span></span>
-              <span class="ac-drop-item ac-drop-disabled">Hawker Typhoon <span class="ac-drop-badge plan">Planned</span></span>
-            </div>
-            <div class="ac-drop-section"><div class="ac-drop-heading">Allied bombers</div>
               <a href="lancaster_paradise.html" class="ac-drop-item">Avro Lancaster <span class="ac-drop-badge live">Live</span></a>
-              <a href="mosquito_paradise.html" class="ac-drop-item">de Havilland Mosquito <span class="ac-drop-badge soon">Hub</span></a>
-              <a href="b17_paradise.html" class="ac-drop-item">B-17 Flying Fortress <span class="ac-drop-badge live">Live</span></a>
-              <span class="ac-drop-item ac-drop-disabled">B-24 Liberator <span class="ac-drop-badge plan">Planned</span></span>
-              <span class="ac-drop-item ac-drop-disabled">B-25 Mitchell <span class="ac-drop-badge plan">Planned</span></span>
-            </div>
-            <div class="ac-drop-section"><div class="ac-drop-heading">Axis fighters</div>
-              <a href="bf109_paradise.html" class="ac-drop-item">Messerschmitt Bf 109 <span class="ac-drop-badge soon">Hub</span></a>
               <a href="fw190_paradise.html" class="ac-drop-item">Focke-Wulf Fw 190 <span class="ac-drop-badge live">Live</span></a>
+              <a href="p51_paradise.html" class="ac-drop-item">North American P-51 Mustang <span class="ac-drop-badge live">Live</span></a>
+              <a href="b17_paradise.html" class="ac-drop-item">B-17 Flying Fortress <span class="ac-drop-badge live">Live</span></a>
               <a href="zero_paradise.html" class="ac-drop-item">Mitsubishi A6M Zero <span class="ac-drop-badge live">Live</span></a>
-              <span class="ac-drop-item ac-drop-disabled">Macchi C.202 <span class="ac-drop-badge plan">Planned</span></span>
             </div>
-            <div class="ac-drop-section"><div class="ac-drop-heading">Axis bombers / attack</div>
-              <span class="ac-drop-item ac-drop-disabled">Ju 87 Stuka <span class="ac-drop-badge plan">Planned</span></span>
-              <span class="ac-drop-item ac-drop-disabled">Ju 88 <span class="ac-drop-badge plan">Planned</span></span>
-              <span class="ac-drop-item ac-drop-disabled">He 111 <span class="ac-drop-badge plan">Planned</span></span>
-              <span class="ac-drop-item ac-drop-disabled">Do 17 <span class="ac-drop-badge plan">Planned</span></span>
-            </div>
-            <div class="ac-drop-section"><div class="ac-drop-heading">Specialist aircraft</div>
-              <a href="mosquito_paradise.html" class="ac-drop-item">Mosquito Night Fighter <span class="ac-drop-badge soon">Hub</span></a>
-              <span class="ac-drop-item ac-drop-disabled">Bristol Beaufighter <span class="ac-drop-badge plan">Planned</span></span>
-              <span class="ac-drop-item ac-drop-disabled">PBY Catalina <span class="ac-drop-badge plan">Planned</span></span>
-              <span class="ac-drop-item ac-drop-disabled">Short Sunderland <span class="ac-drop-badge plan">Planned</span></span>
-            </div>
-            <div class="ac-drop-section"><div class="ac-drop-heading">Research tools</div>
-              <a href="paint-codes.html" class="ac-drop-item">Paint Codes <span class="ac-drop-badge live">Guide</span></a>
-              <a href="techniques-bank.html" class="ac-drop-item">Techniques Bank <span class="ac-drop-badge live">Guide</span></a>
-              <a href="articles.html" class="ac-drop-item">Articles Library <span class="ac-drop-badge live">Read</span></a>
+            <div class="ac-drop-section"><div class="ac-drop-heading">Next aircraft hubs</div>
+              <a href="mosquito_paradise.html" class="ac-drop-item">de Havilland Mosquito <span class="ac-drop-badge soon">Hub</span></a>
+              <a href="bf109_paradise.html" class="ac-drop-item">Messerschmitt Bf 109 <span class="ac-drop-badge soon">Hub</span></a>
             </div>
           </div>
         </div>
@@ -951,6 +930,7 @@ footer .copy{font-family:'Source Serif 4',serif;font-size:12px;color:var(--dim);
       <a href="paint-codes.html" class="site-nav-link paint-nav-link keep-mobile">Paint Codes</a>
       <a href="techniques-bank.html" class="site-nav-link">Techniques</a>
       <a href="articles.html" class="site-nav-link">Articles</a>
+      <a href="about.html" class="site-nav-link">About</a>
     </div>
   </div>
 </nav>

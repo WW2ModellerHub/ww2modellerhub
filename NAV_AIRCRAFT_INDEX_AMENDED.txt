@@ -1,0 +1,1 @@
+Top navigation amended across HTML pages: Home, Aircraft dropdown, Paint Codes, Techniques, Articles, About. Aircraft Index moved into the Aircraft dropdown as the full library/hangar link; dropdown reduced to quick-access live aircraft and next hubs so it does not become overloaded. Active state added for Aircraft dropdown.
