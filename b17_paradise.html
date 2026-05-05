@@ -1477,12 +1477,6 @@ document.addEventListener('DOMContentLoaded',function(){
       <span><span style="color:var(--brass2);font-size:14px;font-weight:600">3</span> theatres</span>
     </div>
   </div>
-  
-    <div class="ww2-unit-photo-pass-note" style="display:block!important;margin:1.25rem 0 2.25rem 0!important;padding:1rem 1.1rem!important;background:rgba(255,255,255,.045)!important;border:1px solid rgba(255,255,255,.10)!important;border-left:3px solid var(--brass)!important;border-radius:4px!important;max-width:100%!important;clear:both!important;">
-    <div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass2);margin-bottom:.35rem">Bomb group photo research</div>
-    <div style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.62">Use the bomb group card first, then cross-check tail symbol, nose art, individual aircraft serial, finish (Olive Drab vs natural metal) and theatre. Mediterranean and Pacific subjects need separate photo checks from standard 8th Air Force builds.</div>
-  </div>
-  
 <div class="sq-grid" id="grid" style="margin-top:2.25rem!important;row-gap:1rem!important;column-gap:1rem!important;clear:both!important"></div>
 </div>
 
@@ -3421,6 +3415,30 @@ function acceptCookies(){try{localStorage.setItem('cookiesAccepted','1');}catch(
 
 <script id="b17-counter-remove-final">
 (function(){function kill(){document.querySelectorAll('#sq-count,.sq-count').forEach(function(n){n.remove();});document.querySelectorAll('*').forEach(function(n){if(n.childNodes&&n.childNodes.length===1&&/0 squadrons shown/i.test(n.textContent||'')){n.textContent=(n.textContent||'').replace(/\s*·?\s*0 squadrons shown/ig,'');}});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',kill);else kill();setInterval(kill,600);})();
+</script>
+
+<script id="b17-counter-remove-robust">
+(function(){
+  function cleanB17Counter(){
+    document.querySelectorAll('#sq-count,.sq-count,[data-role="sq-count"],[class*="count"]').forEach(function(n){
+      if(/squadrons shown|0 squadrons/i.test(n.textContent||'')) n.remove();
+    });
+    var bar=document.getElementById('sqn-bar');
+    if(bar){
+      bar.childNodes.forEach(function(n){
+        if(n.nodeType===3 && /squadrons shown|0 squadrons/i.test(n.nodeValue||'')){ n.nodeValue=''; }
+        else if(n.nodeType===1 && /squadrons shown|0 squadrons/i.test(n.textContent||'')){ n.remove(); }
+      });
+    }
+    document.querySelectorAll('body *').forEach(function(n){
+      if(n.children.length===0 && /0 squadrons shown/i.test(n.textContent||'')){
+        n.textContent=(n.textContent||'').replace(/\s*·?\s*0 squadrons shown/ig,'');
+      }
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',cleanB17Counter); else cleanB17Counter();
+  setInterval(cleanB17Counter,250);
+})();
 </script>
 </body>
 </html>
