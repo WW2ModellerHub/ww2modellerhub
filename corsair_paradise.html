@@ -649,8 +649,8 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 .wa-jump{display:none!important}
 </style>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707875272714406"></script>
-<link href="https://unpkg.com/leaflet@1.6.4/dist/leaflet.css" rel="stylesheet"/>
-<script src="https://unpkg.com/leaflet@1.6.4/dist/leaflet.js"></script>
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style id="ww2-nav-tight-fix">
 .site-nav{padding:0 1rem!important;gap:.75rem!important;height:auto!important;min-height:56px!important;overflow:visible!important}
 .site-nav-logo{min-width:0!important;flex:0 0 auto!important}.site-nav-logo-text{font-size:13px!important;white-space:nowrap!important}
@@ -1331,10 +1331,10 @@ document.addEventListener('DOMContentLoaded',function(){
 <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem">
 <span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-right:.25rem">Filter:</span>
 <button class="map-filter-btn on" onclick="filterMapUnit('all',this)" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)">All Units</button>
-<button class="map-filter-btn" onclick="filterMapUnit('1',this)" style="border-color:#d45757;color:#ea8a8a">USMC / Solomons</button>
-<button class="map-filter-btn" onclick="filterMapUnit('2',this)" style="border-color:#46a36c;color:#7fd36a">Mediterranean</button>
-<button class="map-filter-btn" onclick="filterMapUnit('3',this)" style="border-color:#5b8fd5;color:#86b4ea">Pacific theatre</button>
-<button class="map-filter-btn" onclick="filterMapUnit('4',this)" style="border-color:#b07fd5;color:#c86de8">Fleet Air Arm</button>
+<button class="map-filter-btn" onclick="filterMapUnit('3',this)" style="border-color:#5b8fd5;color:#86b4ea">USMC / Solomons</button>
+<button class="map-filter-btn" onclick="filterMapUnit('2',this)" style="border-color:#46a36c;color:#7fd36a">Fleet Air Arm</button>
+<button class="map-filter-btn" onclick="filterMapUnit('1',this)" style="border-color:#d45757;color:#ea8a8a">US Navy carrier</button>
+<button class="map-filter-btn" onclick="filterMapUnit('4',this)" style="border-color:#b07fd5;color:#c86de8">Late-war carrier</button>
 </div>
 <div class="raf-map-shell">
 <div class="raf-map-board"><div id="leaflet-map"></div></div>
@@ -1345,9 +1345,9 @@ document.addEventListener('DOMContentLoaded',function(){
 <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.5rem">Unit colours</div>
 <div style="display:flex;flex-direction:column;gap:4px">
 <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#e05555"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">USMC / Solomons</span></div>
-<div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#4caf7d"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">Mediterranean</span></div>
+<div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#4caf7d"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">Fleet Air Arm</span></div>
 <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#5b6bd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">Pacific carrier</span></div>
-<div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#b07fd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">US Navy / Marines Pacific / FAA / other</span></div>
+<div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#b07fd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">Late-war carrier</span></div>
 </div>
 </div>
 </div>
@@ -2010,8 +2010,8 @@ function renderMap(){
   if(!mapEl) return;
   if(mapRendered){ setTimeout(()=>leafletMap && leafletMap.invalidateSize(), 80); return; }
   if(typeof L==='undefined'){
-    mapEl.innerHTML = `<div style="padding:2rem;color:rgba(255,255,255,.65);font-family:'Oswald',sans-serif;letter-spacing:.08em;text-transform:uppercase">Map library loading…</div>`;
-    setTimeout(renderMap,250); return;
+    mapEl.innerHTML = `<div style="padding:2rem;color:rgba(255,255,255,.65);font-family:'Oswald',sans-serif;letter-spacing:.08em;text-transform:uppercase">Map loading. Fallback unit board will appear automatically if the map library is blocked.</div>`;
+    setTimeout(renderMap,500); return;
   }
   mapRendered=true;
   leafletMap = L.map('leaflet-map', {
@@ -2406,5 +2406,91 @@ function acceptCookies(){try{localStorage.setItem('cookiesAccepted','1');}catch(
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
 </script>
+
+<script id="corsair-map-rescue-loader">
+(function(){
+  if(window.__corsairMapRescueLoader) return;
+  window.__corsairMapRescueLoader = true;
+
+  function ensureLeafletCss(){
+    if([].some.call(document.styleSheets, function(s){ return s.href && s.href.indexOf('leaflet') !== -1; })) return;
+    var css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(css);
+  }
+
+  function loadScript(src, cb){
+    var s = document.createElement('script');
+    s.src = src;
+    s.async = true;
+    s.onload = function(){ cb(true); };
+    s.onerror = function(){ cb(false); };
+    document.head.appendChild(s);
+  }
+
+  function drawFallbackMap(){
+    var el = document.getElementById('leaflet-map');
+    var panel = document.getElementById('map-sqn-list');
+    if(!el || (window.L && window.leafletMap)) return;
+
+    var stations = (window.STATIONS || []);
+    el.innerHTML = '<div style="height:100%;min-height:520px;padding:1rem;background:radial-gradient(circle at 74% 28%,rgba(91,143,213,.16),transparent 28%),linear-gradient(135deg,#08131f,#0d2032);border:1px solid rgba(201,168,76,.25);position:relative;overflow:hidden">' +
+      '<div style="font-family:Oswald,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#d8c179;font-size:12px;margin-bottom:.8rem">Corsair theatre board</div>' +
+      '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.6rem">' +
+      stations.map(function(st){
+        var units = (st.sqns || []).join(" · ");
+        return '<button type="button" data-station-id="' + st.id + '" style="text-align:left;border:1px solid rgba(255,255,255,.14);border-left:3px solid #5b8fd5;background:rgba(255,255,255,.045);color:#f3ecd9;border-radius:6px;padding:.7rem;cursor:pointer">' +
+          '<b style="display:block;font-family:Special Elite,Georgia,serif;font-size:15px;margin-bottom:.25rem">' + st.name + '</b>' +
+          '<span style="display:block;font-family:Oswald,Arial,sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)">' + units + '</span>' +
+          '<span style="display:block;font-size:12px;color:rgba(255,255,255,.68);line-height:1.35;margin-top:.35rem">' + (st.info || '') + '</span>' +
+        '</button>';
+      }).join('') +
+      '</div><div style="position:absolute;right:1rem;bottom:1rem;font-family:Oswald,Arial,sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35)">Leaflet unavailable · interactive unit board shown</div></div>';
+    [].forEach.call(el.querySelectorAll('[data-station-id]'), function(btn){
+      btn.addEventListener('click', function(){ showMapStation(btn.getAttribute('data-station-id')); });
+    });
+
+    if(panel && !panel.dataset.rescueWritten){
+      panel.dataset.rescueWritten = '1';
+      panel.innerHTML = '<div style="font-family:Special Elite,Georgia,serif;font-size:1.18rem;color:#fff;margin-bottom:.45rem">Corsair units</div>' +
+        '<p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.6">Click a location card on the board to open linked Corsair unit notes. This fallback prevents the page getting stuck if the map library is blocked by cache, browser privacy tools or CDN delay.</p>';
+    }
+  }
+
+  function startMap(){
+    ensureLeafletCss();
+    if(window.L){
+      try {
+        if(typeof renderMap === 'function') {
+          window.mapRendered = false;
+          renderMap();
+        }
+      } catch(e) {
+        console.warn('Corsair map render retry failed', e);
+      }
+      return;
+    }
+
+    var cdns = [
+      'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
+      'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js'
+    ];
+    var i = 0;
+    function next(){
+      if(window.L){ startMap(); return; }
+      if(i >= cdns.length){ drawFallbackMap(); return; }
+      loadScript(cdns[i++], function(){ setTimeout(next, 100); });
+    }
+    next();
+    setTimeout(function(){ if(!window.L) drawFallbackMap(); }, 6500);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', startMap);
+  else startMap();
+})();
+</script>
+
 </body>
 </html>
