@@ -1348,6 +1348,82 @@ document.addEventListener('DOMContentLoaded',function(){
 }
 </style>
 
+
+<style id="corsair-media-walkaround-photo-fix">
+.corsair-media-card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:.85rem;
+  margin:.75rem 0 1.35rem;
+}
+.corsair-media-card{
+  display:grid;
+  grid-template-columns:150px minmax(0,1fr);
+  gap:.85rem;
+  background:rgba(21,36,68,.7);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:5px;
+  padding:.65rem;
+  text-decoration:none;
+  color:inherit;
+  min-height:118px;
+  overflow:hidden;
+}
+.corsair-media-card:hover{background:rgba(255,255,255,.045);border-color:rgba(136,174,240,.35);}
+.corsair-media-thumb{
+  width:150px;
+  height:92px;
+  object-fit:cover;
+  border-radius:4px;
+  background:#07101f;
+  border:1px solid rgba(255,255,255,.08);
+}
+.corsair-media-icon{
+  width:150px;
+  height:92px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  background:rgba(0,0,0,.25);
+  border-radius:4px;
+}
+.corsair-media-title{
+  font-family:'Special Elite',cursive;
+  font-size:1.02rem;
+  color:#fff;
+  margin-bottom:.25rem;
+}
+.corsair-media-desc{
+  font-size:14px;
+  color:rgba(255,255,255,.64);
+  line-height:1.48;
+}
+.corsair-media-open{
+  font-family:'Oswald',sans-serif;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-top:.45rem;
+}
+#tab-walkaround .wa-grid{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr))!important;
+  gap:.85rem!important;
+}
+#tab-walkaround .wa-card img{
+  width:100%!important;
+  height:150px!important;
+  object-fit:cover!important;
+  display:block!important;
+  background:#07101f!important;
+}
+@media(max-width:620px){
+  .corsair-media-card{grid-template-columns:1fr;}
+  .corsair-media-thumb,.corsair-media-icon{width:100%;height:150px;}
+}
+</style>
+
 </head><body>
 <nav class="site-nav">
 <div class="site-nav-inner">
@@ -1554,35 +1630,42 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="tab-panel" id="tab-walkaround">
 <div class="wa-hero">
 <div class="wa-hero-title">F4U Corsair walkaround reference bench</div>
-<div class="wa-hero-text">Card-based Corsair walkaround notes for cockpit, cowling, gull wing, landing gear, stores and Pacific finishes. This section has been rebuilt specifically for the Corsair.</div>
+<div class="wa-hero-text">Photo-led Corsair walkaround notes for cockpit, cowling, gull wing, landing gear, stores and Pacific finishes.</div>
 </div>
+
 <div class="wa-section" id="corsair-wa-cockpit">
 <div class="wa-section-head">Cockpit, canopy and seat</div>
 <div class="wa-note"><b>Modeller's note</b>Check the exact variant before copying cockpit colour, canopy and seat details. F4U-1, F4U-1A, F4U-1D and F4U-4 references are not interchangeable.</div>
 <div class="wa-grid">
 <a class="wa-card wa-video" href="https://www.youtube.com/watch?v=cTqh358yT5M" rel="noopener" target="_blank"><img alt="F4U Corsair cockpit tour thumbnail" loading="lazy" src="https://i.ytimg.com/vi/cTqh358yT5M/hqdefault.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Cockpit video</div><div class="wa-title">F4U Corsair cockpit tour</div><div class="wa-desc">Use for seat, instrument panel, canopy rails and cockpit depth.</div><div class="wa-check"><strong>Use this for</strong><span>cockpit · canopy · seat</span></div></div></a>
+<a class="wa-card" href="https://navalaviationmuseum.org/f4u-1-corsair/" rel="noopener" target="_blank"><img alt="National Naval Aviation Museum F4U-1 Corsair reference" loading="lazy" src="https://navalaviationmuseum.org/wp-content/uploads/2020/06/F4U-1-Corsair.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Museum reference</div><div class="wa-title">F4U-1 preserved-aircraft reference</div><div class="wa-desc">Use for structure and shape checks, then cross-check wartime cockpit finish and equipment.</div><div class="wa-check"><strong>Use this for</strong><span>shape · cockpit · variant checks</span></div></div></a>
 </div>
 </div>
+
 <div class="wa-section" id="corsair-wa-nose">
 <div class="wa-section-head">Cowling, radial engine and exhaust</div>
 <div class="wa-note"><b>Modeller's note</b>The Pratt & Whitney radial, cowl flaps and exhaust staining are central Corsair visual cues. Keep staining directional and strongest around the cowling and lower fuselage.</div>
 <div class="wa-grid">
 <a class="wa-card wa-video" href="https://www.youtube.com/watch?v=C_1lKlxz5dk" rel="noopener" target="_blank"><img alt="F4U Corsair walkaround thumbnail" loading="lazy" src="https://i.ytimg.com/vi/C_1lKlxz5dk/hqdefault.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Airframe video</div><div class="wa-title">F4U Corsair walkaround</div><div class="wa-desc">Good general reference for the nose, cowl, wing roots and landing gear.</div><div class="wa-check"><strong>Use this for</strong><span>cowling · exhaust · panel lines</span></div></div></a>
+<a class="wa-card" href="https://www.youtube.com/watch?v=qkSI8abs0Ig" rel="noopener" target="_blank"><img alt="Corsair close-up walkaround reference" loading="lazy" src="https://i.ytimg.com/vi/qkSI8abs0Ig/hqdefault.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Close-up reference</div><div class="wa-title">Cowling and exhaust detail</div><div class="wa-desc">Use to place exhaust staining, oil marks and cowl-flap detail without over-weathering the whole airframe.</div><div class="wa-check"><strong>Use this for</strong><span>radial · cowl flaps · exhaust</span></div></div></a>
 </div>
 </div>
+
 <div class="wa-section" id="corsair-wa-wing">
 <div class="wa-section-head">Inverted gull wing and landing gear</div>
 <div class="wa-note"><b>Modeller's note</b>The gull wing and long landing gear define the Corsair's stance. Dry-fit carefully and keep the aircraft sitting square.</div>
 <div class="wa-grid">
-<a class="wa-card wa-video" href="https://www.youtube.com/watch?v=qkSI8abs0Ig" rel="noopener" target="_blank"><img alt="F4U Corsair close-up walkaround thumbnail" loading="lazy" src="https://i.ytimg.com/vi/qkSI8abs0Ig/hqdefault.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Close-up video</div><div class="wa-title">Corsair gear and wing reference</div><div class="wa-desc">Useful for checking stance, wheel wells, wing fold cues and surface detail.</div><div class="wa-check"><strong>Use this for</strong><span>gull wing · gear · tyres</span></div></div></a>
+<a class="wa-card wa-video" href="https://www.youtube.com/watch?v=qkSI8abs0Ig" rel="noopener" target="_blank"><img alt="F4U Corsair landing gear and wing walkaround thumbnail" loading="lazy" src="https://i.ytimg.com/vi/qkSI8abs0Ig/hqdefault.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Walkaround video</div><div class="wa-title">Corsair gear and wing reference</div><div class="wa-desc">Useful for checking stance, wheel wells, wing fold cues and surface detail.</div><div class="wa-check"><strong>Use this for</strong><span>gull wing · gear · tyres</span></div></div></a>
+<a class="wa-card" href="https://www.museumofflight.org/" rel="noopener" target="_blank"><img alt="Museum of Flight Corsair reference" loading="lazy" src="video-thumb-fallback.png"/><div class="wa-body"><div class="wa-kicker">Museum reference</div><div class="wa-title">FG-1D / late Corsair checks</div><div class="wa-desc">Use museum references for landing gear, late-war stores and overall stance. Cross-check variant-specific details.</div><div class="wa-check"><strong>Use this for</strong><span>gear · stores · stance</span></div></div></a>
 </div>
 </div>
+
 <div class="wa-section" id="corsair-wa-finish">
 <div class="wa-section-head">Tri-colour, Gloss Sea Blue and Pacific weathering</div>
 <div class="wa-note"><b>Modeller's note</b>Mid-war Corsairs need faded Sea Blue, Intermediate Blue and Insignia White. Late-war aircraft need Gloss Sea Blue with sheen variation, exhaust, oil and deck handling rather than random heavy chipping.</div>
 <div class="wa-grid">
-<a class="wa-card" href="paint-codes.html" rel="noopener"><div class="wa-body"><div class="wa-kicker">Paint reference</div><div class="wa-title">US Navy paint codes</div><div class="wa-desc">Open the paint conversion bench for Non-Specular Sea Blue, Intermediate Blue, Insignia White and Gloss Sea Blue.</div><div class="wa-check"><strong>Use this for</strong><span>paint · fading · scale effect</span></div></div></a>
-<a class="wa-card" href="https://navalaviationmuseum.org/f4u-1-corsair/" rel="noopener" target="_blank"><div class="wa-body"><div class="wa-kicker">Museum reference</div><div class="wa-title">National Naval Aviation Museum F4U-1</div><div class="wa-desc">Use as a preserved-aircraft structural reference, but cross-check wartime finish and equipment.</div><div class="wa-check"><strong>Use this for</strong><span>shape · structure · variant checks</span></div></div></a>
+<a class="wa-card" href="paint-codes.html" rel="noopener"><img alt="Corsair US Navy paint reference" loading="lazy" src="video-thumb-fallback.png"/><div class="wa-body"><div class="wa-kicker">Paint reference</div><div class="wa-title">US Navy paint codes</div><div class="wa-desc">Open the paint conversion bench for Non-Specular Sea Blue, Intermediate Blue, Insignia White and Gloss Sea Blue.</div><div class="wa-check"><strong>Use this for</strong><span>paint · fading · scale effect</span></div></div></a>
+<a class="wa-card" href="https://www.history.navy.mil/our-collections/photography.html" rel="noopener" target="_blank"><img alt="US Navy archive photo reference" loading="lazy" src="video-thumb-fallback.png"/><div class="wa-body"><div class="wa-kicker">Archive route</div><div class="wa-title">US Navy photo archive</div><div class="wa-desc">Use for real carrier-deck, unit and operational context before final markings and weathering.</div><div class="wa-check"><strong>Use this for</strong><span>markings · deck wear · context</span></div></div></a>
 </div>
 </div>
 </div><!-- /tab-walkaround --><!-- /tab-walkaround -->
@@ -1802,7 +1885,8 @@ const MEDIA_ITEMS=[
  {type:"video",title:"F4U Corsair cockpit tour",thumb:"https://i.ytimg.com/vi/cTqh358yT5M/hqdefault.jpg",url:"https://www.youtube.com/watch?v=cTqh358yT5M",desc:"Cockpit and preserved-aircraft detail reference. Check variant differences before applying details to an F4U-1A or F4U-1D build."},
  {type:"video",title:"F4U Corsair walkaround",thumb:"https://i.ytimg.com/vi/C_1lKlxz5dk/hqdefault.jpg",url:"https://www.youtube.com/watch?v=C_1lKlxz5dk",desc:"General airframe reference for wing shape, landing gear, cowling, panel lines and surface finish."},
  {type:"video",title:"Corsair close-up walkaround",thumb:"https://i.ytimg.com/vi/qkSI8abs0Ig/hqdefault.jpg",url:"https://www.youtube.com/watch?v=qkSI8abs0Ig",desc:"Useful close-up video for gear, cowling, exhaust and overall stance."},
- {type:"reference",title:"National Naval Aviation Museum F4U-1 Corsair",thumb:"🏛️",url:"https://navalaviationmuseum.org/f4u-1-corsair/",desc:"Museum reference for Corsair shape and restoration context."}
+ {type:"archive",title:"National Naval Aviation Museum F4U-1 Corsair",thumb:"https://navalaviationmuseum.org/wp-content/uploads/2020/06/F4U-1-Corsair.jpg",url:"https://navalaviationmuseum.org/f4u-1-corsair/",desc:"Museum reference for Corsair shape and restoration context."},
+ {type:"archive",title:"US Navy historical photo archive",thumb:"video-thumb-fallback.png",url:"https://www.history.navy.mil/our-collections/photography.html",desc:"Useful archive route for US Navy Corsair carrier and unit photographs."}
 ];
 
 const CORSAIR_EVENTS=[
@@ -2487,19 +2571,41 @@ function renderThisWeek(){
 
 // ═══ MEDIA ═══
 function renderMedia(){
-  const el=document.getElementById('media-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';
-  const cats=[{k:'video',label:'Video',col:'var(--raf-sky)'},{k:'audio',label:'Audio',col:'var(--brass)'},{k:'archive',label:'Archive',col:'var(--olive)'}];
+  const el=document.getElementById('media-grid');
+  if(!el || el.dataset.rendered) return;
+  el.dataset.rendered='1';
+  const cats=[
+    {k:'video',label:'Video',col:'var(--raf-sky)'},
+    {k:'audio',label:'Audio',col:'var(--brass)'},
+    {k:'archive',label:'Archives & references',col:'var(--olive)'}
+  ];
   cats.forEach(cat=>{
-    const items=MEDIA_ITEMS.filter(i=>i.type===cat.k);if(!items.length)return;
+    const items=MEDIA_ITEMS.filter(i=>i.type===cat.k);
+    if(!items.length) return;
     const sec=document.createElement('div');
-    sec.innerHTML=`<div class="section-label" style="color:${cat.col}">${cat.label}</div>`;
+    sec.innerHTML=`<div class="section-label" style="color:${cat.col};margin-top:1rem">${cat.label}</div>`;
+    const grid=document.createElement('div');
+    grid.className='corsair-media-card-grid';
     items.forEach(item=>{
-      const div=document.createElement('a');div.href=item.url;div.target='_blank';div.rel='noopener';
-      div.style.cssText='display:flex;gap:.6rem;background:rgba(21,36,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:.6rem 1rem;margin-bottom:8px;text-decoration:none;transition:background .15s;align-items:flex-start';
-      div.onmouseover=()=>div.style.background='rgba(255,255,255,.04)';div.onmouseout=()=>div.style.background='rgba(21,36,68,.7)';
-      div.innerHTML=`<div style="font-size:1.8rem;flex-shrink:0;line-height:1;padding-top:.1rem">${item.thumb}</div><div><div style="font-family:'Special Elite',cursive;font-size:1.05rem;color:#fff;margin-bottom:.25rem">${item.title}</div><div style="font-size:15px;color:rgba(255,255,255,.6);line-height:1.55">${item.desc}</div><div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:${cat.col};margin-top:.4rem">Open ↗</div></div>`;
-      sec.appendChild(div);
+      const div=document.createElement('a');
+      div.href=item.url;
+      div.target='_blank';
+      div.rel='noopener';
+      div.className='corsair-media-card';
+      const isImage = item.thumb && /^https?:\/\//.test(item.thumb) || (item.thumb||'').match(/\.(png|jpg|jpeg|webp)$/i);
+      const thumb = isImage
+        ? `<img class="corsair-media-thumb" src="${item.thumb}" alt="${item.title} thumbnail" loading="lazy" onerror="this.src='video-thumb-fallback.png'">`
+        : `<div class="corsair-media-icon">${item.thumb || '▶'}</div>`;
+      div.innerHTML=`
+        ${thumb}
+        <div class="corsair-media-body">
+          <div class="corsair-media-title">${item.title}</div>
+          <div class="corsair-media-desc">${item.desc}</div>
+          <div class="corsair-media-open" style="color:${cat.col}">Open ↗</div>
+        </div>`;
+      grid.appendChild(div);
     });
+    sec.appendChild(grid);
     el.appendChild(sec);
   });
 }
