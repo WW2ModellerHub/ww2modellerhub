@@ -904,7 +904,7 @@ linear-gradient(180deg,#020510 0%,#071428 30%,#091827 70%,#07111f 100%)!importan
 .home-start-card p{font-size:14px;line-height:1.5;color:rgba(255,255,255,.66);position:relative;z-index:1;}
 .home-start-card b{display:inline-flex;margin-top:.8rem;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass2);}
 .home-start-card.feature{border-color:rgba(201,168,76,.24);background:linear-gradient(135deg,rgba(201,168,76,.13),rgba(17,34,64,.88));}
-.ac-tile.ac-zero{border-top-color:#b84538}.ac-tile.ac-corsair{border-top-color:#496da7}.ac-tile.ac-il2{border-top-color:#b64d4b}
+.ac-tile.ac-zero{border-top-color:#b84538}.ac-tile.ac-corsair{border-top-color:#496da7}.ac-tile.ac-hellcat{border-top-color:#3f6fa8}.ac-tile.ac-il2{border-top-color:#b64d4b}
 .aircraft-grid{grid-template-columns:repeat(auto-fit,minmax(295px,1fr))!important;}
 .ac-name{line-height:1.08!important;}
 .art-feature{background:linear-gradient(135deg,rgba(201,168,76,.12),rgba(17,34,64,.84))!important;}
@@ -980,7 +980,7 @@ linear-gradient(180deg,#020510 0%,#071428 30%,#091827 70%,#07111f 100%)!importan
 <a class="btn-secondary" href="techniques-bank.html">Techniques Bank</a>
 </div>
 <div class="counters">
-<div class="counter"><div class="counter-num" data-count="10">0</div><div class="counter-lbl">Live aircraft</div></div>
+<div class="counter"><div class="counter-num" data-count="11">0</div><div class="counter-lbl">Live aircraft</div></div>
 <div class="counter"><div class="counter-num" data-count="7">0</div><div class="counter-lbl">Air forces</div></div>
 <div class="counter"><div class="counter-num" data-count="8">0</div><div class="counter-lbl">Paint systems</div></div>
 <div class="counter"><div class="counter-num" data-count="100">0</div><div class="counter-lbl">Kit & reference links</div></div>
@@ -1031,7 +1031,7 @@ linear-gradient(180deg,#020510 0%,#071428 30%,#091827 70%,#07111f 100%)!importan
 <div class="sec-hd-l">
 <div class="sec-kick">Aircraft field manuals</div>
 <h2 class="sec-h2">Live aircraft references.</h2>
-<div class="live-note">10 field guides live</div>
+<div class="live-note">11 field guides live</div>
 </div>
 <div class="sec-hd-r">These are the live aircraft references. Each one is built around real units, bases, markings, paint codes, kit links, decals, books, maps, stories, media and walkaround notes.</div>
 </header>
@@ -1099,6 +1099,14 @@ linear-gradient(180deg,#020510 0%,#071428 30%,#091827 70%,#07111f 100%)!importan
 <div class="ac-desc">Corsair reference covering VMF and VF units, Pacific bases, carrier operations, tri-colour camouflage, Gloss Sea Blue, kits, decals and walkaround notes.</div>
 <div class="ac-stats"><span>USN / USMC</span><span>Pacific</span><span>Tri-colour / GSB</span></div>
 <span class="ac-cta">Open Corsair reference →</span>
+</a>
+<a class="ac-tile ac-hellcat ac-live ac-clickable" href="hellcat_paradise.html">
+<div class="ac-era">US Navy fighter · 1943–45</div>
+<div class="ac-name">Grumman F6F Hellcat</div>
+<div class="ac-tag">Live · USN carrier reference</div>
+<div class="ac-desc">Hellcat field guide covering VF squadrons, carrier maps, F6F-3/F6F-5 colours, shark-mouth markings, ace pilots, kits, decals and walkaround references.</div>
+<div class="ac-stats"><span>US Navy</span><span>Carrier war</span><span>F6F-3 / F6F-5</span></div>
+<span class="ac-cta">Open Hellcat reference →</span>
 </a>
 <a class="ac-tile ac-il2 ac-live ac-clickable" href="il2_paradise.html">
 <div class="ac-era">Soviet VVS · 1941–45</div>
@@ -1330,7 +1338,7 @@ document.querySelectorAll('.reveal').forEach(el=>rio.observe(el));
 
 // ticker — field manual highlights
 const items=[
-  {t:'Live',d:'10 aircraft field guides now available'},
+  {t:'Live',d:'11 aircraft field guides now available'},
   {t:'New',d:'Il-2 Sturmovik Soviet VVS reference added'},
   {t:'Paint',d:'RAF · USAAF · US Navy · RLM · IJN · VVS colours'},
   {t:'Maps',d:'Interactive theatre maps and base-to-unit links'},
