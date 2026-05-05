@@ -589,7 +589,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 @media(max-width:760px){.plane-tab-bar{top:56px}.plane-tab-bar .nav-tabs{padding:0 .75rem!important}.plane-tab-bar .nav-tab{font-size:12px!important;padding:.68rem .8rem!important}}
 
 
-/* F4U walkaround image size fix — keep reference photos card-sized, not full-row hero images */
+/* Il-2 walkaround image size fix — keep reference photos card-sized, not full-row hero images */
 #tab-walkaround .wa-ref-strip{
   grid-template-columns:repeat(auto-fill,minmax(220px,280px))!important;
   justify-content:start!important;
@@ -619,7 +619,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 }
 
 
-/* F4U walkaround video cards */
+/* Il-2 walkaround video cards */
 #tab-walkaround .p51-video-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -1435,6 +1435,73 @@ document.addEventListener('DOMContentLoaded',function(){
 #sqn-bar,.plane-tab-bar,.map-filter-btn.on,.fb.on,.nav-tab.active{border-color:rgba(229,138,131,.35)!important;}
 .section-label,.wa-section-head,.books-section-title,.aftermarket-section-title{color:var(--brass2)!important;}
 </style>
+
+<style id="il2-book-card-fix">
+#books-grid .books-grid{
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr))!important;
+  gap:.9rem!important;
+}
+#books-grid .book-card{
+  min-width:0!important;
+  overflow:hidden!important;
+  align-items:stretch!important;
+}
+#books-grid .book-info{
+  min-width:0!important;
+  overflow:hidden!important;
+}
+#books-grid .book-title,
+#books-grid .book-author,
+#books-grid .book-desc{
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+  max-width:100%!important;
+}
+#books-grid .book-title{
+  font-size:16px!important;
+  line-height:1.28!important;
+}
+#books-grid .book-author{
+  font-size:12px!important;
+}
+#books-grid .book-desc{
+  font-size:14px!important;
+  line-height:1.5!important;
+}
+#books-grid .book-links{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:.35rem!important;
+  margin-top:.45rem!important;
+}
+#books-grid .book-links .shop-btn{
+  max-width:100%!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  line-height:1.25!important;
+  font-size:10px!important;
+}
+</style>
+
+
+<style id="il2-walkaround-photo-every-card">
+#tab-walkaround .wa-card img{
+  width:100%!important;
+  height:150px!important;
+  object-fit:cover!important;
+  display:block!important;
+  background:#0a1628!important;
+}
+#tab-walkaround .wa-card{
+  min-height:330px!important;
+}
+#tab-walkaround .wa-grid{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr))!important;
+  gap:.85rem!important;
+}
+</style>
+
 </head><body>
 <nav class="site-nav">
 <div class="site-nav-inner">
@@ -1628,8 +1695,8 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 </div>
 <div class="tab-panel" id="tab-stories">
-<div class="section-label">Pilot Stories — Il-2 Sturmovik aces of the Il-2 Sturmovik war in the Eastern Front</div>
-<div class="info-box">Five significant Il-2 Sturmovik story routes for modelling research.</div>
+<div class="section-label">Pilot Stories — Il-2 Sturmovik pilots and Eastern Front assault aviation</div>
+<div class="info-box">Four significant Il-2 Sturmovik story routes for modelling research.</div>
 <div id="this-week-corsair" style="margin-bottom:1.5rem"></div>
 <div id="pilot-stories-grid"></div>
 </div>
@@ -1644,16 +1711,16 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="wa-hero-text">Photo-led Il-2 walkaround notes for armoured cockpit, nose, wing roots, landing gear, rockets and Eastern Front finishes.</div>
 </div>
 <div class="wa-section"><div class="wa-section-head">Cockpit and armoured shell</div><div class="wa-note"><b>Modeller's note</b> The cockpit is built around an armoured shell. Keep colours subdued and check whether your chosen aircraft is a single-seater or rear-gunner machine.</div><div class="wa-grid">
-<a class="wa-card wa-video" href="https://www.youtube.com/results?search_query=Il-2+cockpit+walkaround" target="_blank" rel="noopener"><img src="video-thumb-fallback.png" alt="Il-2 cockpit reference" loading="lazy"><div class="wa-body"><div class="wa-kicker">Cockpit video</div><div class="wa-title">Il-2 cockpit reference</div><div class="wa-desc">Use for canopy framing, seat and armoured tub layout.</div><div class="wa-check"><strong>Use this for</strong><span>cockpit · canopy · armoured shell</span></div></div></a>
-<a class="wa-card" href="https://www.vhu.cz/en/air-museum-kbely/" target="_blank" rel="noopener"><img src="video-thumb-fallback.png" alt="Kbely Il-2 museum reference" loading="lazy"><div class="wa-body"><div class="wa-kicker">Museum reference</div><div class="wa-title">Kbely Il-2 reference aircraft</div><div class="wa-desc">Useful preserved-aircraft route for general cockpit and fuselage study.</div><div class="wa-check"><strong>Use this for</strong><span>shape · cockpit · museum walkaround</span></div></div></a>
+<a class="wa-card wa-video" href="https://www.youtube.com/results?search_query=Il-2+cockpit+walkaround" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9hJ2hI3YIXM/hqdefault.jpg" alt="Il-2 cockpit and build reference" loading="lazy" onerror="this.src=\'video-thumb-fallback.png\'"><div class="wa-body"><div class="wa-kicker">Cockpit video</div><div class="wa-title">Il-2 cockpit reference</div><div class="wa-desc">Use for canopy framing, seat and armoured tub layout.</div><div class="wa-check"><strong>Use this for</strong><span>cockpit · canopy · armoured shell</span></div></div></a>
+<a class="wa-card" href="https://www.vhu.cz/en/air-museum-kbely/" target="_blank" rel="noopener"><img src="video-thumb-fallback.png" alt="Kbely Il-2 museum reference photo placeholder" loading="lazy"><div class="wa-body"><div class="wa-kicker">Museum reference</div><div class="wa-title">Kbely Il-2 reference aircraft</div><div class="wa-desc">Useful preserved-aircraft route for general cockpit and fuselage study.</div><div class="wa-check"><strong>Use this for</strong><span>shape · cockpit · museum walkaround</span></div></div></a>
 </div></div>
 <div class="wa-section"><div class="wa-section-head">Nose, engine and wing roots</div><div class="wa-note"><b>Modeller's note</b> The armoured nose and wing-root area define the Sturmovik's look. Weather with oil, soot and service grime rather than random shiny chipping.</div><div class="wa-grid">
-<a class="wa-card wa-video" href="https://www.youtube.com/results?search_query=Il-2+walkaround" target="_blank" rel="noopener"><img src="video-thumb-fallback.png" alt="Il-2 walkaround video" loading="lazy"><div class="wa-body"><div class="wa-kicker">Walkaround</div><div class="wa-title">Il-2 external airframe reference</div><div class="wa-desc">Good route for the nose, wing roots and access panels.</div><div class="wa-check"><strong>Use this for</strong><span>nose · engine area · panel lines</span></div></div></a>
-<a class="wa-card" href="https://www.airpages.ru/eng/il2.shtml" target="_blank" rel="noopener"><img src="video-thumb-fallback.png" alt="AirPages Il-2 archive" loading="lazy"><div class="wa-body"><div class="wa-kicker">Archive</div><div class="wa-title">AirPages Il-2 archive</div><div class="wa-desc">Historical archive for equipment, external detail and operational context.</div><div class="wa-check"><strong>Use this for</strong><span>variant checks · armament · context</span></div></div></a>
+<a class="wa-card wa-video" href="https://www.youtube.com/results?search_query=Il-2+walkaround" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/RdTP8WP8ZWA/hqdefault.jpg" alt="Il-2 airframe and model reference thumbnail" loading="lazy" onerror="this.src=\'video-thumb-fallback.png\'"><div class="wa-body"><div class="wa-kicker">Walkaround</div><div class="wa-title">Il-2 external airframe reference</div><div class="wa-desc">Good route for the nose, wing roots and access panels.</div><div class="wa-check"><strong>Use this for</strong><span>nose · engine area · panel lines</span></div></div></a>
+<a class="wa-card" href="https://www.airpages.ru/eng/il2.shtml" target="_blank" rel="noopener"><img src="video-thumb-fallback.png" alt="AirPages Il-2 archive reference" loading="lazy"><div class="wa-body"><div class="wa-kicker">Archive</div><div class="wa-title">AirPages Il-2 archive</div><div class="wa-desc">Historical archive for equipment, external detail and operational context.</div><div class="wa-check"><strong>Use this for</strong><span>variant checks · armament · context</span></div></div></a>
 </div></div>
 <div class="wa-section"><div class="wa-section-head">Landing gear, stores and battlefield fit</div><div class="wa-note"><b>Modeller's note</b> The Il-2 often carried rockets or bombs and worked from rough strips. Focus on muddy tyres, dirt on lower surfaces and sensible stores.</div><div class="wa-grid">
-<a class="wa-card" href="https://www.scalemates.com/topics/topic.php?id=1230" target="_blank" rel="noopener"><img src="video-thumb-fallback.png" alt="Il-2 reference topic" loading="lazy"><div class="wa-body"><div class="wa-kicker">Reference hub</div><div class="wa-title">Il-2 detail and kit reference</div><div class="wa-desc">Useful for checking undercarriage, rockets and stores by variant.</div><div class="wa-check"><strong>Use this for</strong><span>landing gear · rockets · bombs</span></div></div></a>
-<a class="wa-card" href="paint-codes.html" rel="noopener"><img src="video-thumb-fallback.png" alt="Soviet paint guide" loading="lazy"><div class="wa-body"><div class="wa-kicker">Paint reference</div><div class="wa-title">Soviet paint conversion bench</div><div class="wa-desc">Use alongside museum and archive references to keep AMT / AII colours believable.</div><div class="wa-check"><strong>Use this for</strong><span>paint · weathering · camouflage</span></div></div></a>
+<a class="wa-card" href="https://www.scalemates.com/topics/topic.php?id=1230" target="_blank" rel="noopener"><img src="video-thumb-fallback.png" alt="Il-2 landing gear and stores reference" loading="lazy"><div class="wa-body"><div class="wa-kicker">Reference hub</div><div class="wa-title">Il-2 detail and kit reference</div><div class="wa-desc">Useful for checking undercarriage, rockets and stores by variant.</div><div class="wa-check"><strong>Use this for</strong><span>landing gear · rockets · bombs</span></div></div></a>
+<a class="wa-card" href="paint-codes.html" rel="noopener"><img src="video-thumb-fallback.png" alt="Soviet VVS camouflage and paint guide" loading="lazy"><div class="wa-body"><div class="wa-kicker">Paint reference</div><div class="wa-title">Soviet paint conversion bench</div><div class="wa-desc">Use alongside museum and archive references to keep AMT / AII colours believable.</div><div class="wa-check"><strong>Use this for</strong><span>paint · weathering · camouflage</span></div></div></a>
 </div></div>
 </div><!-- /tab-walkaround --><!-- /tab-walkaround -->
 </div><!-- /main-content -->
@@ -1728,20 +1795,25 @@ const SQ=[
 const PILOT_META={};
 
 const PAINTS=[
- {name:"AMT-4 Green",bs:"VVS upper",hex:"#4f6b3c",notes:"Main upper colour on many mid-war Il-2s. Keep it earthy and service-worn rather than bright green.",brands:[{brand:"AK",code:"VVS AMT-4",url:"https://ak-interactive.com/"},{brand:"Vallejo",code:"VVS Green",url:"https://acrylicosvallejo.com/"},{brand:"MRP",code:"AMT-4",url:"https://mrpaint.sk/"}]},
- {name:"AMT-6 Black",bs:"VVS upper",hex:"#202427",notes:"Used in disruptive upper-surface camouflage. Avoid pure jet black; weather to a charcoal tone.",brands:[{brand:"AK",code:"AMT-6 Black",url:"https://ak-interactive.com/"},{brand:"Tamiya mix",code:"XF-1 + grey",url:"https://www.tamiyausa.com/shop/acrylic-paint-mini/xf-1-flat-black/"}]},
- {name:"AMT-7 Blue",bs:"VVS underside",hex:"#6d8fa7",notes:"Underside blue for mid-war VVS aircraft. Apply slightly faded and dusty on hard-used Il-2s.",brands:[{brand:"AK",code:"AMT-7 Blue",url:"https://ak-interactive.com/"},{brand:"Vallejo",code:"VVS Blue",url:"https://acrylicosvallejo.com/"}]},
- {name:"AMT-1 Light Brown",bs:"Late-war upper",hex:"#7d6a4a",notes:"Third colour on some 1943–45 Il-2s. Works well with AMT-4 and AMT-12 on late-war arrow-wing machines.",brands:[{brand:"AK",code:"AMT-1",url:"https://ak-interactive.com/"},{brand:"MRP",code:"AMT-1",url:"https://mrpaint.sk/"}]},
- {name:"AII Green",bs:"Early-war",hex:"#48603a",notes:"Early Il-2 single-seat aircraft can be modelled in pre-AMT lacquers such as AII Green over AII Blue.",brands:[{brand:"AK",code:"AII Green",url:"https://ak-interactive.com/"},{brand:"Hataka",code:"AII Green",url:"https://hataka-hobby.com/"}]},
- {name:"A-14 Steel Grey",bs:"Interior",hex:"#63676b",notes:"Common cockpit and interior tone for Soviet types. Good default for armoured cockpit areas.",brands:[{brand:"AK",code:"A-14",url:"https://ak-interactive.com/"},{brand:"Vallejo",code:"Steel Grey",url:"https://acrylicosvallejo.com/"}]},
- {name:"Winter distemper",bs:"Field whitewash",hex:"#dcded6",notes:"Temporary winter coating. Apply thinly and unevenly over the summer camouflage, allowing heavy wear on wing roots and leading edges.",brands:[{brand:"Tamiya",code:"XF-2 Flat White",url:"https://www.tamiyausa.com/shop/acrylic-paint-mini/xf-2-flat-white/"},{brand:"AK",code:"Washable white",url:"https://ak-interactive.com/"}]}
+ {name:"AII Green",bs:"Early-war upper",hex:"#485f35",notes:"Good early-war route for single-seat 1941–42 Il-2s. It should look slightly warm and olive, not bright toy green. Pair with AII Blue undersides.",brands:[{brand:"AK Real Colors",code:"AII Green / Soviet Green family",url:"https://ak-interactive.com/"},{brand:"Hataka",code:"AII Green",url:"https://hataka-hobby.com/"},{brand:"MRP",code:"Soviet AII Green",url:"https://mrpaint.sk/"}]},
+ {name:"AII Blue",bs:"Early-war underside",hex:"#7898ac",notes:"Early underside blue. On a working Il-2 it quickly becomes dusty, greyed and stained behind the engine and landing gear.",brands:[{brand:"AK Real Colors",code:"AII Blue",url:"https://ak-interactive.com/"},{brand:"Hataka",code:"AII Blue",url:"https://hataka-hobby.com/"},{brand:"Vallejo",code:"Soviet underside blue family",url:"https://acrylicosvallejo.com/"}]},
+ {name:"AMT-4 Green",bs:"Mid-war upper",hex:"#516b3d",notes:"Core mid-war upper colour for many two-seat Il-2s. Keep it earthy and faded; avoid a saturated emerald tone.",brands:[{brand:"AK Real Colors",code:"AMT-4 Green",url:"https://ak-interactive.com/"},{brand:"MRP",code:"AMT-4",url:"https://mrpaint.sk/"},{brand:"Vallejo",code:"Russian Green / VVS Green family",url:"https://acrylicosvallejo.com/"}]},
+ {name:"AMT-6 Black",bs:"Mid-war disruptive",hex:"#202326",notes:"Use as a charcoal-black disruptive colour. Scale effect matters: lighten very slightly and weather with dust rather than pure black panels.",brands:[{brand:"AK Real Colors",code:"AMT-6 Black",url:"https://ak-interactive.com/"},{brand:"Tamiya mix",code:"XF-1 + grey/brown",url:"https://www.tamiyausa.com/shop/acrylic-paint-mini/xf-1-flat-black/"},{brand:"MRP",code:"AMT-6",url:"https://mrpaint.sk/"}]},
+ {name:"AMT-7 Blue",bs:"Mid-war underside",hex:"#6d8ca3",notes:"Standard underside blue for many Il-2M and Type 3 subjects. Add dust and oil staining around the belly, gear and radiator areas.",brands:[{brand:"AK Real Colors",code:"AMT-7 Blue",url:"https://ak-interactive.com/"},{brand:"MRP",code:"AMT-7",url:"https://mrpaint.sk/"},{brand:"Vallejo",code:"VVS underside blue family",url:"https://acrylicosvallejo.com/"}]},
+ {name:"AMT-1 Light Brown",bs:"Late-war upper",hex:"#7d6a4a",notes:"Appears on some later three-colour schemes. Works well for 1943–45 Il-2s with AMT-4 and AMT-12/dark grey depending reference.",brands:[{brand:"AK Real Colors",code:"AMT-1 Light Brown",url:"https://ak-interactive.com/"},{brand:"MRP",code:"AMT-1",url:"https://mrpaint.sk/"},{brand:"Hataka",code:"AMT-1",url:"https://hataka-hobby.com/"}]},
+ {name:"AMT-12 Dark Grey",bs:"Late-war upper",hex:"#424846",notes:"Late-war dark grey/grey-black route for three-colour patterns. Use carefully: exact Il-2 schemes vary by factory, date and source.",brands:[{brand:"AK Real Colors",code:"AMT-12",url:"https://ak-interactive.com/"},{brand:"MRP",code:"AMT-12",url:"https://mrpaint.sk/"},{brand:"Hataka",code:"AMT-12",url:"https://hataka-hobby.com/"}]},
+ {name:"A-14 Steel Grey",bs:"Interior",hex:"#64696c",notes:"Useful cockpit/interior starting point. Add darker shadows in the armoured tub and worn metal only where crew contact makes sense.",brands:[{brand:"AK Real Colors",code:"A-14 Steel Grey",url:"https://ak-interactive.com/"},{brand:"MRP",code:"A-14",url:"https://mrpaint.sk/"},{brand:"Vallejo",code:"Steel Grey family",url:"https://acrylicosvallejo.com/"}]},
+ {name:"Temporary winter whitewash",bs:"Field finish",hex:"#dddcd1",notes:"Apply over the summer camouflage as a thin, uneven distemper. Wear it back on the wing roots, nose panels and leading edges.",brands:[{brand:"AK",code:"Worn Effects / washable white",url:"https://ak-interactive.com/"},{brand:"Tamiya",code:"XF-2 Flat White + buff",url:"https://www.tamiyausa.com/shop/acrylic-paint-mini/xf-2-flat-white/"},{brand:"Vallejo",code:"White + glaze medium",url:"https://acrylicosvallejo.com/"}]}
 ];
 
 const KITS=[
- {brand:"Tamiya",name:"Ilyushin Il-2 Sturmovik",scale:"1:48",stars:5,accuracy:"One of the easiest routes to an Il-2 in 1/48. Good fit and a strong base for a mid-war two-seat aircraft with rockets or bombs.",markings:["mid-war two-seat","Eastern Front","standard camouflage"],shops:[{label:"Open Tamiya Il-2 kit",url:"https://www.scalemates.com/kits/tamiya-61113-ilyushin-il-2-shturmovik--126077"}]},
- {brand:"Academy / Accurate Miniatures",name:"Il-2m3 Sturmovik",scale:"1:48",stars:4,accuracy:"Useful arrow-wing / late-war route. Check specific boxing and details for the exact variant.",markings:["Type 3","late-war Guards","rocket rails"],shops:[{label:"Open Academy Il-2m3 kit",url:"https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Il-2m3+academy"}]},
- {brand:"Zvezda",name:"Il-2 Sturmovik",scale:"1:72",stars:4,accuracy:"Accessible 1/72 option for Soviet attack aircraft projects. Good for weathering-heavy front-line subjects.",markings:["1/72 Eastern Front","winter","muddy strip"],shops:[{label:"Open Zvezda Il-2 kit",url:"https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Zvezda+Il-2"}]},
- {brand:"Eduard / HobbyBoss",name:"Il-2 Sturmovik family search",scale:"1:48 / 1:72",stars:4,accuracy:"Useful route to dual-combo or reboxed tooling and associated masks / PE. Confirm exact wing, gun and rear gunner layout.",markings:["variant-specific","aftermarket-friendly"],shops:[{label:"Open Il-2 kit search",url:"https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Il-2+Sturmovik"}]}
+ {brand:"Tamiya",name:"Ilyushin IL-2 Shturmovik",scale:"1:48",stars:5,accuracy:"Best mainstream 1/48 late Il-2 route. Strong fit, two-seat cockpit and swept outer-wing late variant; ideal for Guards and late-war VVS subjects.",markings:["late two-seat","Eastern Front","rockets / bombs"],shops:[{label:"Open Tamiya 61113 kit",url:"https://www.tamiya.com/english/products/61113/index.html"},{label:"Open Scalemates Tamiya 61113",url:"https://www.scalemates.com/kits/tamiya-61113-ilyushin-il-2-shturmovik--143676"}]},
+ {brand:"Tamiya",name:"IL-2 Shturmovik & GAZ-67B Set",scale:"1:48",stars:5,accuracy:"Same strong Tamiya Il-2 base with a useful vehicle/display route for Eastern Front diorama work.",markings:["late Il-2","diorama","support vehicle"],shops:[{label:"Open Tamiya 25212 set",url:"https://www.scalemates.com/kits/tamiya-25212-ilyushin-il-2-shturmovik-and-gaz-67b-set--1482293"}]},
+ {brand:"Accurate Miniatures",name:"Ilyushin Il-2m3 Stormovik",scale:"1:48",stars:4,accuracy:"Classic 1/48 arrow-wing Il-2m3 kit. More old-school than Tamiya but still a useful route for late-war Type 3 subjects.",markings:["Il-2m3","late-war Guards","arrow wing"],shops:[{label:"Open Accurate Miniatures 3407",url:"https://www.scalemates.com/kits/accurate-miniatures-3407-ilyushin-il-2m3-stormovik--152855"}]},
+ {brand:"Zvezda",name:"IL-2 Shturmovik",scale:"1:48",stars:4,accuracy:"Modern Zvezda route for 1/48 Soviet attack aircraft projects; check boxing and variant details before choosing decals.",markings:["1/48 VVS","Eastern Front","weathered finish"],shops:[{label:"Open Zvezda 4825 kit",url:"https://www.scalemates.com/kits/zvezda-4825-il-2-shturmovik--1255690"}]},
+ {brand:"Eduard",name:"IL-2M Shturmovik",scale:"1:48",stars:4,accuracy:"Eduard boxing/rebox route with modelling extras depending issue. Useful when you want masks, PE or limited-edition value.",markings:["Il-2M","aftermarket-friendly","VVS"],shops:[{label:"Open Eduard 8165 Il-2M",url:"https://www.scalemates.com/kits/eduard-8165-il-2m-shturmovik--100932"}]},
+ {brand:"Italeri",name:"IL-2 Sturmovik",scale:"1:48",stars:3,accuracy:"Older but useful alternative route. Check kit lineage, cockpit and wing details before committing to a specific wartime aircraft.",markings:["Il-2","budget route","variant check"],shops:[{label:"Open Italeri 2657 kit",url:"https://www.scalemates.com/kits/italeri-2657-il-2-sturmovik--101584"}]},
+ {brand:"Accurate Miniatures",name:"Ilyushin Il-2 Stormovik Single-Seater",scale:"1:48",stars:4,accuracy:"Specific early single-seat route for 1941–42 subjects. Useful for Moscow/central-front style builds and early camouflage.",markings:["single-seat","1941–42","early war"],shops:[{label:"Open Accurate Miniatures 3408",url:"https://www.scalemates.com/kits/accurate-miniatures-3408-ilyushin-il-2-stormovik-single-seater--152856"}]}
 ];
 
 const SQ_DECALS={
@@ -1757,20 +1829,22 @@ const SQ_DECALS={
 
 const AFTERMARKET={
  "Decals & Markings":[
-  {type:"Decals",name:"Begemot Il-2 Sturmovik decal sheets",maker:"Begemot",scales:["1:48","1:72"],desc:"Excellent starting point for multiple Il-2 subjects, Guards aircraft and seasonal camouflage schemes.",url:"https://www.hannants.co.uk/search/?keyword_search=Begemot+Il-2"},
-  {type:"Decals",name:"Foxbot / AML Il-2 decal search",maker:"Mixed makers",scales:["1:48","1:72"],desc:"Useful route for Soviet tactical numbers, slogans and Guards badges.",url:"https://www.hannants.co.uk/search/?keyword_search=Il-2+decal"}
+  {type:"Masks/decals",name:"Montex K48349 IL-2M",maker:"Montex",scales:["1:48"],desc:"Specific Il-2M masking/marking set for Accurate Miniatures single-seat related tooling. Useful where you need painted markings rather than thick decals.",url:"https://www.scalemates.com/kits/montex-k48349-il-2m--1113726"},
+  {type:"Decals",name:"Begemot Il-2 decal sheets",maker:"Begemot",scales:["1:48","1:72"],desc:"Best route for a wide spread of Soviet tactical numbers, slogans and Guards subjects. Use the exact sheet that matches your kit variant.",url:"https://www.hannants.co.uk/search/?keyword_search=Begemot%20Il-2"},
+  {type:"Decals",name:"Il-2 Sturmovik decal catalogue",maker:"Hannants",scales:["1:48","1:72"],desc:"Use only after choosing the variant: single-seat, straight-wing two-seat or arrow-wing Type 3.",url:"https://www.hannants.co.uk/search/?keyword_search=Il-2%20Sturmovik%20decals"}
  ],
  "Cockpit & Interior":[
-  {type:"3D cockpit",name:"Quinta Studio Il-2 cockpit sets",maker:"Quinta Studio",scales:["1:48","1:72"],desc:"Good upgrade route for the armoured cockpit and instrument panel areas.",url:"https://www.hannants.co.uk/search/?keyword_search=Quinta+Il-2"},
-  {type:"Photo-etch",name:"Eduard Il-2 interior search",maker:"Eduard",scales:["1:48","1:72"],desc:"Photo-etch belts and cockpit extras for Il-2 builds.",url:"https://www.eduard.com/en/search/?q=il-2"}
+  {type:"Kit-specific cockpit",name:"Eduard IL-2M Shturmovik 8165",maker:"Eduard",scales:["1:48"],desc:"Eduard boxing/rebox route for Il-2M subjects; useful as a reference point for cockpit, masks and PE-related upgrades.",url:"https://www.scalemates.com/kits/eduard-8165-il-2m-shturmovik--100932"},
+  {type:"Interior reference",name:"Tamiya IL-2 cockpit base",maker:"Tamiya",scales:["1:48"],desc:"The Tamiya cockpit is a solid base. Add belts and subtle A-14 Steel Grey variation rather than overloading the interior.",url:"https://www.tamiya.com/english/products/61113/index.html"}
  ],
  "Exterior & Stores":[
-  {type:"Wheels",name:"ResKit Il-2 wheels",maker:"ResKit",scales:["1:48","1:72"],desc:"Upgrade wheels and tread detail for muddy Eastern Front finishes.",url:"https://www.hannants.co.uk/search/?keyword_search=Reskit+Il-2"},
-  {type:"Guns",name:"Quickboost Il-2 gun barrels",maker:"Quickboost",scales:["1:48","1:72"],desc:"Useful for improving wing guns and small details on the Sturmovik.",url:"https://www.hannants.co.uk/search/?keyword_search=Quickboost+Il-2"},
-  {type:"Rockets",name:"Il-2 rockets / bombs search",maker:"Mixed makers",scales:["1:48","1:72"],desc:"Helpful for RS-82 / RS-132 or bomb-armed ground attack subjects.",url:"https://www.hannants.co.uk/search/?keyword_search=Il-2+rocket"}
+  {type:"Stores reference",name:"Tamiya IL-2 ordnance parts",maker:"Tamiya",scales:["1:48"],desc:"Use the Tamiya kit/stores as the cleanest starting point for rockets, bombs and underwing fit.",url:"https://www.tamiya.com/english/products/61113/index.html"},
+  {type:"Variant reference",name:"Scalemates IL-2 topic",maker:"Scalemates",scales:["Multiple"],desc:"Use to check kit family, wing type, cockpit fit and rebox history before ordering aftermarket.",url:"https://www.scalemates.com/topics/topic.php?id=2544"},
+  {type:"Late variant reference",name:"Accurate Miniatures Il-2m3",maker:"Accurate Miniatures",scales:["1:48"],desc:"Specific late-war arrow-wing kit route. Useful for checking the airframe before adding rockets, bombs and markings.",url:"https://www.scalemates.com/kits/accurate-miniatures-3407-ilyushin-il-2m3-stormovik--152855"}
  ],
  "Masks":[
-  {type:"Masks",name:"Eduard / Peewit Il-2 masks",maker:"Eduard / Peewit",scales:["1:48","1:72"],desc:"Useful for multi-frame canopies and winter camouflage masking.",url:"https://www.hannants.co.uk/search/?keyword_search=Il-2+mask"}
+  {type:"Painted markings",name:"Montex IL-2M K48349",maker:"Montex",scales:["1:48"],desc:"Specific mask set route for painted stars and tactical markings.",url:"https://www.scalemates.com/kits/montex-k48349-il-2m--1113726"},
+  {type:"Canopy masking route",name:"Eduard / Il-2 mask search",maker:"Eduard",scales:["1:48"],desc:"Use kit-specific masks where available. Avoid generic canopy masks if the kit/variant differs.",url:"https://www.eduard.com/en/search/?q=Il-2"}
  ]
 };
 
@@ -1830,15 +1904,15 @@ const SURVIVORS=[
 ];
 
 const BOOKS={
- "General Il-2 / VVS reference":[
-  {title:"Shturmovik Guards Units of World War 2",author:"Dmitriy Khazanov / Osprey",year:2005,stars:5,colour:"#7b3737",desc:"Excellent starting point for Guards Il-2 units, markings and Eastern Front operational context.",shops:[{label:"Amazon UK — Shturmovik Guards Units",url:"https://www.amazon.co.uk/s?k=Shturmovik+Guards+Units+of+World+War+2"}]},
-  {title:"IL-2 Shturmovik in Action",author:"Squadron / Signal",year:2001,stars:4,colour:"#5a6a38",desc:"Broad reference on development, versions and useful photographs for modelling work.",shops:[{label:"Amazon UK — IL-2 in Action",url:"https://www.amazon.co.uk/s?k=IL-2+Shturmovik+in+Action"}]},
-  {title:"Stalin's Falcons",author:"VVS-themed reference",year:1999,stars:4,colour:"#3d4f6a",desc:"Useful background reading for Soviet aviation context and pilot stories around the Eastern Front.",shops:[{label:"Amazon UK — Soviet aviation history",url:"https://www.amazon.co.uk/s?k=Soviet+aviation+World+War+2"}]}
+ "Core Il-2 / VVS reference":[
+  {title:"Shturmovik Guards Units of World War 2",author:"Osprey Combat Aircraft",year:2005,stars:5,colour:"#7b3737",desc:"Best first stop for Guards units, markings and Eastern Front context.",shops:[{label:"Amazon UK — Shturmovik Guards Units",url:"https://www.amazon.co.uk/s?k=Shturmovik+Guards+Units+of+World+War+2"}]},
+  {title:"Il-2 Shturmovik in Action",author:"Squadron/Signal",year:2001,stars:4,colour:"#5a6a38",desc:"Useful photo-led overview of versions, weapons and external detail.",shops:[{label:"Amazon UK — Il-2 Shturmovik in Action",url:"https://www.amazon.co.uk/s?k=Il-2+Shturmovik+in+Action"}]},
+  {title:"Ilyushin Il-2 Stormovik",author:"Red Star series",year:2000,stars:4,colour:"#3d4f6a",desc:"Good technical and historical background for variant checking.",shops:[{label:"Amazon UK — Ilyushin Il-2 Stormovik book",url:"https://www.amazon.co.uk/s?k=Ilyushin+Il-2+Stormovik+book"}]}
  ],
  "Modelling & technical":[
-  {title:"Ilyushin Il-2 / Il-10 (Famous Russian Aircraft)",author:"Yefim Gordon",year:2004,stars:5,colour:"#6a4b2a",desc:"Strong technical reference for variants, external changes and detail differences.",shops:[{label:"Amazon UK — Yefim Gordon Il-2",url:"https://www.amazon.co.uk/s?k=Yefim+Gordon+Il-2+Il-10"}]},
-  {title:"MMP Single No. 17 IL-2 Shturmovik",author:"MMP Books",year:2012,stars:4,colour:"#4f5f36",desc:"Good modeller-friendly source for variant spotting and camouflage details.",shops:[{label:"Amazon UK — MMP Il-2",url:"https://www.amazon.co.uk/s?k=MMP+Il-2+Shturmovik"}]},
-  {title:"Building Soviet aircraft subjects",author:"General modelling references",year:2020,stars:4,colour:"#7a5a20",desc:"Use alongside paint and weathering references for Eastern Front mud, winter and fabric/metal finish effects.",shops:[{label:"Amazon UK — Soviet aircraft modelling",url:"https://www.amazon.co.uk/s?k=Soviet+aircraft+modelling"}]}
+  {title:"Ilyushin Il-2 / Il-10",author:"Yefim Gordon",year:2004,stars:5,colour:"#6a4b2a",desc:"Strong technical route for variants, structure and visual differences.",shops:[{label:"Amazon UK — Yefim Gordon Il-2 Il-10",url:"https://www.amazon.co.uk/s?k=Yefim+Gordon+Il-2+Il-10"}]},
+  {title:"MMP IL-2 Shturmovik",author:"MMP Books",year:2012,stars:4,colour:"#4f5f36",desc:"Modeller-friendly reference for schemes, drawings and detail checks.",shops:[{label:"Amazon UK — MMP Il-2 Shturmovik",url:"https://www.amazon.co.uk/s?k=MMP+Il-2+Shturmovik"}]},
+  {title:"Soviet Aircraft Colours 1941–45",author:"VVS colour reference",year:2010,stars:4,colour:"#7a5a20",desc:"Useful companion for AMT, AII and winter finish decisions.",shops:[{label:"Amazon UK — Soviet aircraft colours",url:"https://www.amazon.co.uk/s?k=Soviet+aircraft+colours+1941+1945"}]}
  ]
 };
 
@@ -2479,7 +2553,7 @@ function renderBooks(){
             <div class="book-author">${b.author} · ${b.year}</div>
             <div class="book-rating">${'★'.repeat(b.stars)}${'☆'.repeat(5-b.stars)}</div>
             <div class="book-desc">${b.desc}</div>
-            <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:.4rem">${(b.shops||[]).filter(s=>s.url).map(s=>`<a class="shop-btn hb-gold" href="${s.url}" target="_blank" style="font-size:12px;padding:4px 10px" rel="noopener">${s.label} ↗</a>`).join('')}</div>
+            <div class="book-links">${(b.shops||[]).filter(s=>s.url).map(s=>`<a class="shop-btn hb-gold" href="${s.url}" target="_blank" rel="noopener">${s.label} ↗</a>`).join('')}</div>
           </div>
         </div>`).join('')}
       </div>
