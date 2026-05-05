@@ -1,0 +1,1 @@
+Applied Hurricane-style unit section spacing by replacing multi-card research note rows with single full-width note panels and forcing direct spacing before card grids across aircraft pages. Removed B-17 squadron counter guard.
