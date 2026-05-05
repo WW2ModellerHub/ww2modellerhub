@@ -1,0 +1,1 @@
+Final hard fix for unit-card spacing: applied explicit grid top margin and note bottom margin. Removed misleading B-17 0 squadrons text.

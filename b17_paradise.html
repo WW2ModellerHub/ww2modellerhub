@@ -1305,6 +1305,16 @@ document.addEventListener('DOMContentLoaded',function(){
 }
 </style>
 
+
+<style id="ww2-unit-grid-gap-final-fix">
+#tab-squadrons .ww2-squadron-photo-note,
+#tab-squadrons .ww2-unit-photo-pass-note{margin-bottom:2rem!important;}
+#tab-squadrons .ww2-squadron-photo-note + .sq-grid,
+#tab-squadrons .ww2-unit-photo-pass-note + .sq-grid,
+#tab-squadrons #grid.sq-grid{margin-top:2rem!important;clear:both!important;}
+#tab-squadrons .sq-grid{row-gap:1rem!important;column-gap:1rem!important;}
+@media(max-width:700px){#tab-squadrons #grid.sq-grid{margin-top:1.35rem!important;}#tab-squadrons .ww2-squadron-photo-note,#tab-squadrons .ww2-unit-photo-pass-note{margin-bottom:1.35rem!important;}}
+</style>
 </head><body>
 <nav class="site-nav">
   <div class="site-nav-inner">
@@ -1430,14 +1440,14 @@ document.addEventListener('DOMContentLoaded',function(){
     </div>
   </div>
   
-    <div class="ww2-squadron-photo-note" style="margin-top:1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.65rem;max-width:980px">
+    <div class="ww2-squadron-photo-note" style="margin-top:1rem;margin-bottom:2rem!important;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.65rem;max-width:980px">
       <div style="background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.10);border-left:3px solid var(--brass);border-radius:4px;padding:.75rem .85rem">
         <div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">Bomb group photo research</div>
         <div style="font-size:13px;color:rgba(255,255,255,.66);line-height:1.5">Use the bomb group card first, then cross-check tail symbol, nose art, individual aircraft serial, finish (Olive Drab vs natural metal) and theatre. Mediterranean and Pacific subjects need separate photo checks from standard 8th AF builds.</div>
       </div>
       <a href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress" target="_blank" rel="noopener" style="display:block;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:.75rem .85rem;color:rgba(255,255,255,.75)"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">Wikimedia B-17 photos</div><div style="font-size:13px;line-height:1.45">Open B-17 image categories for walkaround and general reference.</div></a><a href="https://www.americanairmuseum.com/" target="_blank" rel="noopener" style="display:block;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:.75rem .85rem;color:rgba(255,255,255,.75)"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">American Air Museum / IWM</div><div style="font-size:13px;line-height:1.45">Search by bomb group, base, crew or aircraft nickname for period photographs.</div></a>
     </div>
-<div class="sq-grid" id="grid"></div>
+<div class="sq-grid" id="grid" style="margin-top:2rem!important;clear:both!important"></div>
 </div>
 
 <div class="tab-panel" id="tab-build">
