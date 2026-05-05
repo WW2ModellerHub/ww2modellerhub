@@ -1170,6 +1170,141 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
+
+
+<style id="ww2-hurricane-spacing-parity">
+/* Spacing parity pass: use Hurricane as the breathing-room benchmark without changing national themes. */
+.main-wrap{
+  padding-top:1.55rem!important;
+  gap:1.75rem!important;
+}
+.main-content > .tab-panel.active{
+  animation:none!important;
+}
+.tab-panel > .section-label:first-child,
+.tab-panel > .sec-label:first-child{
+  margin-top:.15rem!important;
+}
+.section-label,.sec-label{
+  margin-top:1.65rem!important;
+  margin-bottom:1.05rem!important;
+  gap:.85rem!important;
+  line-height:1.25!important;
+}
+.section-label + p,
+.sec-label + p,
+.tab-panel > p{
+  max-width:780px!important;
+  line-height:1.68!important;
+  margin-bottom:1.1rem!important;
+}
+.info-box{
+  padding:.95rem 1.1rem!important;
+  margin:0 0 1.35rem!important;
+  line-height:1.68!important;
+}
+.sq-grid,
+.kit-grid,
+.paint-grid,
+.am-grid,
+.weather-grid,
+.survivor-grid,
+.books-grid,
+.zero-media-grid,
+.zero-story-grid,
+#tab-walkaround .wa-grid,
+.wa-ref-strip,
+.p51-video-grid{
+  gap:14px!important;
+  margin-top:.9rem!important;
+  margin-bottom:1.55rem!important;
+}
+.sq-card,.kit-card,.paint-card,.am-card,.weather-card,.survivor-card,.book-card,.zero-media-card,#tab-walkaround .wa-card,.wa-ref-card,.p51-video-card{
+  margin:0!important;
+}
+.card-hd{
+  padding:.78rem .95rem!important;
+}
+.card-body{
+  padding:.75rem .95rem .9rem!important;
+}
+.card-stats{
+  gap:6px!important;
+  margin:.25rem 0 .65rem!important;
+}
+.stat{
+  padding:6px 7px!important;
+}
+.detail-panel{
+  margin:14px 0 8px!important;
+}
+.dp-top{
+  padding:1rem 1.2rem!important;
+}
+.dp-body,
+.zero-detail-body{
+  padding:1.05rem 1.25rem 1.25rem!important;
+}
+.paint-card,.kit-card,.am-card,.weather-card,.survivor-card,.book-card{
+  min-height:100%!important;
+}
+.plane-tab-bar{
+  margin-bottom:.15rem!important;
+}
+.filter-bar,
+.zero-unit-filter{
+  padding:.55rem 1.5rem!important;
+  gap:7px!important;
+}
+.fb,.map-filter-btn{
+  padding:4px 11px!important;
+}
+.hero-stats{
+  gap:1.35rem!important;
+}
+@media(max-width:760px){
+  .main-wrap{padding:.95rem .85rem 3rem!important;gap:1rem!important;}
+  .section-label,.sec-label{margin-top:1.25rem!important;margin-bottom:.85rem!important;}
+  .info-box{padding:.85rem .95rem!important;margin-bottom:1rem!important;}
+  .sq-grid,.kit-grid,.paint-grid,.am-grid,.weather-grid,.survivor-grid,.books-grid,.zero-media-grid,.zero-story-grid,#tab-walkaround .wa-grid,.wa-ref-strip,.p51-video-grid{gap:10px!important;margin-top:.7rem!important;margin-bottom:1.1rem!important;}
+  .filter-bar,.zero-unit-filter{padding:.45rem .8rem!important;}
+}
+</style>
+
+
+
+<style id="ww2-hurricane-style-spacing-correction">
+/* Real spacing parity with Hurricane: keep note/reference panels clear of the unit cards. */
+#tab-squadrons > div:first-child{margin-bottom:1.75rem!important;}
+#tab-squadrons .ww2-squadron-photo-note{
+  margin:1.45rem 0 2.35rem!important;
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr))!important;
+  gap:1rem!important;
+  max-width:1100px!important;
+}
+#tab-squadrons .ww2-squadron-photo-note > *{
+  min-height:108px!important;
+  padding:1rem 1.1rem!important;
+  line-height:1.6!important;
+}
+#tab-squadrons .ww2-squadron-photo-note + .sq-grid,
+#tab-squadrons #grid.sq-grid{
+  margin-top:1.15rem!important;
+  clear:both!important;
+}
+#tab-squadrons .sq-grid{
+  gap:1.05rem!important;
+}
+#tab-squadrons .sq-card{
+  margin:0!important;
+}
+@media(max-width:760px){
+  #tab-squadrons .ww2-squadron-photo-note{grid-template-columns:1fr!important;margin-bottom:1.6rem!important;}
+  #tab-squadrons .ww2-squadron-photo-note > *{min-height:auto!important;}
+}
+</style>
+
 </head><body>
 <nav class="site-nav">
   <div class="site-nav-inner">
@@ -2939,7 +3074,7 @@ function acceptCookies(){try{localStorage.setItem('cookiesAccepted','1');}catch(
     const count=document.getElementById('sq-count');
     if(count){
       const sqnTotal=list.reduce((n,s)=>n+(s.squadrons?s.squadrons.length:0),0);
-      count.textContent=list.length+' groups · '+sqnTotal+' squadrons shown';
+      count.textContent=list.length+' groups shown';
     }
     grid.innerHTML=list.map(s=>{
       const tags=[theatre(s.group),s.base,s.codes||s.tail||''].filter(Boolean).map((t,i)=>`<span class="tag ${['t-blue','t-amber','t-green'][i%3]}">${esc(t)}</span>`).join('');
