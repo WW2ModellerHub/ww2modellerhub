@@ -23,8 +23,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Boeing B-17 Flying Fortress Modelling Reference — Bomb Groups, USAAF Paint Codes, Kit Guide">
 <meta name="twitter:description" content="Complete Boeing B-17 Flying Fortress scale modelling reference: bomb groups, bases, crew profiles, USAAF paint codes, kits, decals, walkaround references and surviving aircraft.">
-<meta name="keywords" content="B-17 model, B-17F kit, B-17G kit, Memphis Belle, USAAF heavy bomber, Olive Drab 41, Neutral Gray 43, natural metal Fortress, HK Models B-17, Airfix B-17G, Revell B-17F, Eduard B-17 mask">
-  <meta name="description" content="Best B-17F/G model kits reviewed. USAAF paint codes, bomb groups, theatre weathering and crew histories for the Flying Fortress.">
+<meta name="keywords" content="World War II aircraft modelling, WW2 aircraft modelling, scale model aircraft, WW2 aircraft paint colours, World War 2 aircraft kits, aircraft markings, weathering guide, walkaround photos, decals, 1/72 aircraft kits, 1/48 aircraft kits, B-17 model, Flying Fortress model, USAAF bomb group markings, B-17 natural metal finish, Memphis Belle model">
+  <meta name="description" content="B-17 Flying Fortress World War II aircraft modelling reference with USAAF bomb groups, 8th Air Force markings, Olive Drab and natural metal finishes, kits, decals, weathering and walkaround references.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="canonical" href="https://www.ww2modeller.co.uk/b17_paradise.html">
@@ -86,7 +86,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
 .fb{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:2px;border:1px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.4);cursor:pointer;transition:all .15s;white-space:nowrap}
 .fb:hover{background:rgba(255,255,255,.07);color:rgba(255,255,255,.8)}
 .fb.on{background:var(--brass);color:var(--raf-dark);border-color:var(--brass);font-weight:600}
-.sq-count{margin-left:auto;font-family:'Oswald',sans-serif;font-size:12px;color:rgba(255,255,255,.25);letter-spacing:.05em;white-space:nowrap}
+
 .main-wrap{max-width:1400px;margin:0 auto;padding:1.2rem 1.5rem 4rem;display:grid;grid-template-columns:1fr 220px;gap:1.5rem}
 .main-content{min-width:0}
 .tab-panel{display:none}.tab-panel.active{display:block}
@@ -1315,6 +1315,7 @@ document.addEventListener('DOMContentLoaded',function(){
 #tab-squadrons .sq-grid{row-gap:1rem!important;column-gap:1rem!important;}
 @media(max-width:700px){#tab-squadrons #grid.sq-grid{margin-top:1.35rem!important;}#tab-squadrons .ww2-squadron-photo-note,#tab-squadrons .ww2-unit-photo-pass-note{margin-bottom:1.35rem!important;}}
 </style>
+<style id="b17-no-count-css">#sq-count,.sq-count{display:none!important;visibility:hidden!important;width:0!important;height:0!important;overflow:hidden!important}</style>
 </head><body>
 <nav class="site-nav">
   <div class="site-nav-inner">
@@ -1404,6 +1405,7 @@ document.addEventListener('DOMContentLoaded',function(){
     <div class="hero-stat"><div class="hero-stat-val">3</div><div class="hero-stat-lbl">Theatres</div></div>
   </div>
 </div>
+<div class="ww2-seo-summary" style="max-width:1400px;margin:0 auto;padding:.75rem 1.5rem 0;font-size:14px;line-height:1.65;color:rgba(255,255,255,.55)">World War II aircraft modelling reference for the B-17 Flying Fortress: WW2 model kits, paint colour codes, squadron or unit markings, decals, weathering notes, walkaround photos and build guidance for scale modellers.</div>
 
 <div class="filter-bar" id="sqn-bar">
   <label>Theatre:</label>
@@ -1446,8 +1448,8 @@ document.addEventListener('DOMContentLoaded',function(){
       </div>
       <a href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress" target="_blank" rel="noopener" style="display:block;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:.75rem .85rem;color:rgba(255,255,255,.75)"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">Wikimedia B-17 photos</div><div style="font-size:13px;line-height:1.45">Open B-17 image categories for walkaround and general reference.</div></a><a href="https://www.americanairmuseum.com/" target="_blank" rel="noopener" style="display:block;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:.75rem .85rem;color:rgba(255,255,255,.75)"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">American Air Museum / IWM</div><div style="font-size:13px;line-height:1.45">Search by bomb group, base, crew or aircraft nickname for period photographs.</div></a>
     </div>
-<div class="ww2-unit-grid-spacer" aria-hidden="true"></div>
-<div class="sq-grid" id="grid"></div>
+<div class="ww2-unit-grid-spacer" aria-hidden="true" style="display:block!important;height:42px!important;min-height:42px!important;clear:both!important;width:100%!important"></div>
+<div class="sq-grid" id="grid" style="margin-top:0!important;row-gap:18px!important;column-gap:18px!important;clear:both!important"></div>
 </div>
 
 <div class="tab-panel" id="tab-build">
@@ -2191,8 +2193,7 @@ function renderGrid(){
   else if(activeSort==='killrate')list.sort((a,b)=>((b.losses||0)/(b.sorties||1))-((a.losses||0)/(a.sorties||1)));
   else if(activeSort==='base')list.sort((a,b)=>String(a.base).localeCompare(String(b.base)));
   else list.sort((a,b)=>String(a.num).localeCompare(String(b.num),undefined,{numeric:true}));
-  const el=document.getElementById('sq-count');
-  if(el){el.textContent='';el.style.display='none';}
+  /* B-17 uses bomb groups; no squadron counter in filter bar. */
   grid.innerHTML=list.map(sq=>{
     const tags=(sq.tagTxt||[]).map((t,i)=>`<span class="tag ${(sq.tags||[])[i]||'t-blue'}">${esc(t)}</span>`).join('');
     const crew=(sq.pilots||[]).slice(0,3).map(p=>esc(p.n)).join(' · ');
@@ -3081,11 +3082,7 @@ function acceptCookies(){try{localStorage.setItem('cookiesAccepted','1');}catch(
     else if(activeSort==='killrate') list.sort((a,b)=>((b.losses||0)/(b.sorties||1))-((a.losses||0)/(a.sorties||1)));
     else if(activeSort==='base') list.sort((a,b)=>String(a.base).localeCompare(String(b.base)));
     else list.sort((a,b)=>String(a.num).localeCompare(String(b.num),undefined,{numeric:true}));
-    const count=document.getElementById('sq-count');
-    if(count){
-      const sqnTotal=list.reduce((n,s)=>n+(s.squadrons?s.squadrons.length:0),0);
-      count.textContent='';count.style.display='none';
-    }
+    /* B-17 counter intentionally removed. */
     grid.innerHTML=list.map(s=>{
       const tags=[theatre(s.group),s.base,s.codes||s.tail||''].filter(Boolean).map((t,i)=>`<span class="tag ${['t-blue','t-amber','t-green'][i%3]}">${esc(t)}</span>`).join('');
       const sqnChips=(s.squadrons||[]).map(x=>`<span class="b17-sqn-chip">${esc(x)}</span>`).join('');
@@ -3318,17 +3315,75 @@ function acceptCookies(){try{localStorage.setItem('cookiesAccepted','1');}catch(
 </style>
 
 
-<script id="b17-hide-squadron-counter-final">
+<style id="ww2-unit-spacing-final-direct">
+/* Direct unit-grid spacing fix: forces the same breathing room as the Hurricane page. */
+#tab-squadrons .ww2-squadron-photo-note,
+#tab-squadrons .ww2-unit-photo-pass-note,
+#tab-squadrons .zero-ref-card-grid,
+#tab-squadrons .info-box{
+  margin-bottom:42px!important;
+}
+#tab-squadrons .ww2-unit-grid-spacer,
+#tab-squadrons .ww2-grid-gap-final{
+  display:block!important;
+  width:100%!important;
+  height:42px!important;
+  min-height:42px!important;
+  flex-basis:100%!important;
+  grid-column:1/-1!important;
+  clear:both!important;
+}
+#tab-squadrons #grid.sq-grid,
+#tab-squadrons .sq-grid#grid,
+#tab-squadrons .sq-grid{
+  margin-top:42px!important;
+  padding-top:0!important;
+  row-gap:18px!important;
+  column-gap:18px!important;
+  clear:both!important;
+}
+#tab-squadrons .ww2-squadron-photo-note + .ww2-unit-grid-spacer + #grid.sq-grid,
+#tab-squadrons .ww2-unit-photo-pass-note + .ww2-unit-grid-spacer + #grid.sq-grid{
+  margin-top:0!important;
+}
+@media(max-width:700px){
+  #tab-squadrons .ww2-squadron-photo-note,
+  #tab-squadrons .ww2-unit-photo-pass-note,
+  #tab-squadrons .zero-ref-card-grid,
+  #tab-squadrons .info-box{margin-bottom:30px!important;}
+  #tab-squadrons .ww2-unit-grid-spacer,
+  #tab-squadrons .ww2-grid-gap-final{height:30px!important;min-height:30px!important;}
+  #tab-squadrons #grid.sq-grid,
+  #tab-squadrons .sq-grid#grid,
+  #tab-squadrons .sq-grid{margin-top:30px!important;row-gap:16px!important;column-gap:16px!important;}
+}
+</style>
+<script id="ww2-unit-spacing-final-js">
 (function(){
-  function hideB17Counter(){
-    var c=document.getElementById('sq-count');
-    if(c){ c.textContent=''; c.style.display='none'; c.setAttribute('aria-hidden','true'); }
-    document.querySelectorAll('.sq-count').forEach(function(el){ el.textContent=''; el.style.display='none'; el.setAttribute('aria-hidden','true'); });
+  function applyUnitSpacing(){
+    var tab=document.getElementById('tab-squadrons');
+    if(!tab) return;
+    var grid=tab.querySelector('#grid.sq-grid, .sq-grid#grid, .sq-grid');
+    if(!grid) return;
+    var prev=grid.previousElementSibling;
+    if(!(prev && prev.classList && (prev.classList.contains('ww2-unit-grid-spacer') || prev.classList.contains('ww2-grid-gap-final')))){
+      var spacer=document.createElement('div');
+      spacer.className='ww2-grid-gap-final';
+      spacer.setAttribute('aria-hidden','true');
+      grid.parentNode.insertBefore(spacer, grid);
+    }
+    grid.style.setProperty('margin-top','0','important');
+    grid.style.setProperty('row-gap','18px','important');
+    grid.style.setProperty('column-gap','18px','important');
+    tab.querySelectorAll('.ww2-squadron-photo-note,.ww2-unit-photo-pass-note,.zero-ref-card-grid,.info-box').forEach(function(n){
+      n.style.setProperty('margin-bottom','42px','important');
+    });
   }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', hideB17Counter); else hideB17Counter();
-  try{ new MutationObserver(hideB17Counter).observe(document.body,{childList:true,subtree:true,characterData:true}); }catch(e){}
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',applyUnitSpacing); else applyUnitSpacing();
+  setTimeout(applyUnitSpacing,50); setTimeout(applyUnitSpacing,300); setTimeout(applyUnitSpacing,1000);
 })();
 </script>
 
 </body>
 </html>
+

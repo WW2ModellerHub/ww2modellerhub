@@ -23,8 +23,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Supermarine Spitfire Modelling Reference — BoB Squadrons, Paint Codes, Kit Guide">
 <meta name="twitter:description" content="Complete Supermarine Spitfire Mk.I/II scale modelling reference: 19 BoB squadrons, 180+ pilot profiles, paint code cross-reference across six brands, kit comparison, decals, station weathering, survivors.">
-<meta name="keywords" content="Spitfire Mk.I model, Spitfire Mk.II kit, Battle of Britain Spitfire, Sky Type S paint codes, Eduard Spitfire ProfiPACK, Airfix Spitfire A05126A, Spitfire decals">
-  <meta name="description" content="Best Spitfire Mk.I/II model kits reviewed. BoB paint codes, 19 squadrons, station weathering and pilot histories.">
+<meta name="keywords" content="World War II aircraft modelling, WW2 aircraft modelling, scale model aircraft, WW2 aircraft paint colours, World War 2 aircraft kits, aircraft markings, weathering guide, walkaround photos, decals, 1/72 aircraft kits, 1/48 aircraft kits, Spitfire model, Battle of Britain Spitfire, RAF squadron codes, Spitfire paint colours">
+  <meta name="description" content="Supermarine Spitfire World War II aircraft modelling reference with RAF squadron markings, Battle of Britain paint colours, kit guides, decals, weathering notes and walkaround references.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="canonical" href="https://www.ww2modeller.co.uk/spitfire_paradise.html">
@@ -1152,6 +1152,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
     <div class="hero-stat"><div class="hero-stat-val">113</div><div class="hero-stat-lbl">Days</div></div>
   </div>
 </div>
+<div class="ww2-seo-summary" style="max-width:1400px;margin:0 auto;padding:.75rem 1.5rem 0;font-size:14px;line-height:1.65;color:rgba(255,255,255,.55)">World War II aircraft modelling reference for the Spitfire: WW2 model kits, paint colour codes, squadron or unit markings, decals, weathering notes, walkaround photos and build guidance for scale modellers.</div>
 
 <div class="filter-bar" id="sqn-bar">
   <label>Group:</label>
@@ -1194,8 +1195,8 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
       </div>
       <a href="https://www.iwm.org.uk/collections" target="_blank" rel="noopener" style="display:block;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:.75rem .85rem;color:rgba(255,255,255,.75)"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">IWM photo archive</div><div style="font-size:13px;line-height:1.45">Search by squadron number, pilot name or aircraft code for period photographs.</div></a><a href="https://commons.wikimedia.org/wiki/Category:Supermarine_Spitfire" target="_blank" rel="noopener" style="display:block;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:.75rem .85rem;color:rgba(255,255,255,.75)"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">Wikimedia Spitfire photos</div><div style="font-size:13px;line-height:1.45">Useful open-image reference for general details and surviving aircraft.</div></a>
     </div>
-<div class="ww2-unit-grid-spacer" aria-hidden="true"></div>
-<div class="sq-grid" id="grid"></div>
+<div class="ww2-unit-grid-spacer" aria-hidden="true" style="display:block!important;height:42px!important;min-height:42px!important;clear:both!important;width:100%!important"></div>
+<div class="sq-grid" id="grid" style="margin-top:0!important;row-gap:18px!important;column-gap:18px!important;clear:both!important"></div>
 </div>
 
 <div class="tab-panel" id="tab-build">
@@ -2939,6 +2940,76 @@ function acceptCookies(){try{localStorage.setItem('cookiesAccepted','1');}catch(
   }
 }
 </style>
+
+
+<style id="ww2-unit-spacing-final-direct">
+/* Direct unit-grid spacing fix: forces the same breathing room as the Hurricane page. */
+#tab-squadrons .ww2-squadron-photo-note,
+#tab-squadrons .ww2-unit-photo-pass-note,
+#tab-squadrons .zero-ref-card-grid,
+#tab-squadrons .info-box{
+  margin-bottom:42px!important;
+}
+#tab-squadrons .ww2-unit-grid-spacer,
+#tab-squadrons .ww2-grid-gap-final{
+  display:block!important;
+  width:100%!important;
+  height:42px!important;
+  min-height:42px!important;
+  flex-basis:100%!important;
+  grid-column:1/-1!important;
+  clear:both!important;
+}
+#tab-squadrons #grid.sq-grid,
+#tab-squadrons .sq-grid#grid,
+#tab-squadrons .sq-grid{
+  margin-top:42px!important;
+  padding-top:0!important;
+  row-gap:18px!important;
+  column-gap:18px!important;
+  clear:both!important;
+}
+#tab-squadrons .ww2-squadron-photo-note + .ww2-unit-grid-spacer + #grid.sq-grid,
+#tab-squadrons .ww2-unit-photo-pass-note + .ww2-unit-grid-spacer + #grid.sq-grid{
+  margin-top:0!important;
+}
+@media(max-width:700px){
+  #tab-squadrons .ww2-squadron-photo-note,
+  #tab-squadrons .ww2-unit-photo-pass-note,
+  #tab-squadrons .zero-ref-card-grid,
+  #tab-squadrons .info-box{margin-bottom:30px!important;}
+  #tab-squadrons .ww2-unit-grid-spacer,
+  #tab-squadrons .ww2-grid-gap-final{height:30px!important;min-height:30px!important;}
+  #tab-squadrons #grid.sq-grid,
+  #tab-squadrons .sq-grid#grid,
+  #tab-squadrons .sq-grid{margin-top:30px!important;row-gap:16px!important;column-gap:16px!important;}
+}
+</style>
+<script id="ww2-unit-spacing-final-js">
+(function(){
+  function applyUnitSpacing(){
+    var tab=document.getElementById('tab-squadrons');
+    if(!tab) return;
+    var grid=tab.querySelector('#grid.sq-grid, .sq-grid#grid, .sq-grid');
+    if(!grid) return;
+    var prev=grid.previousElementSibling;
+    if(!(prev && prev.classList && (prev.classList.contains('ww2-unit-grid-spacer') || prev.classList.contains('ww2-grid-gap-final')))){
+      var spacer=document.createElement('div');
+      spacer.className='ww2-grid-gap-final';
+      spacer.setAttribute('aria-hidden','true');
+      grid.parentNode.insertBefore(spacer, grid);
+    }
+    grid.style.setProperty('margin-top','0','important');
+    grid.style.setProperty('row-gap','18px','important');
+    grid.style.setProperty('column-gap','18px','important');
+    tab.querySelectorAll('.ww2-squadron-photo-note,.ww2-unit-photo-pass-note,.zero-ref-card-grid,.info-box').forEach(function(n){
+      n.style.setProperty('margin-bottom','42px','important');
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',applyUnitSpacing); else applyUnitSpacing();
+  setTimeout(applyUnitSpacing,50); setTimeout(applyUnitSpacing,300); setTimeout(applyUnitSpacing,1000);
+})();
+</script>
 
 </body>
 </html>

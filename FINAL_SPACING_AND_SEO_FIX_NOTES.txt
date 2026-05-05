@@ -1,0 +1,1 @@
+Direct spacing fix: forced actual DOM spacer and inline grid spacing on non-Hurricane aircraft pages; removed B-17 squadron counter at source; added World War II/World War 2 SEO descriptions, keywords and visible aircraft reference summaries across key pages.

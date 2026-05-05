@@ -23,8 +23,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Focke-Wulf Fw 190 Scale Modelling Reference">
 <meta name="twitter:description" content="Complete Fw 190 modelling reference: RLM paint codes, 8 JG units, A-series to D-9 Dora.">
-<meta name="keywords" content="Focke-Wulf Fw 190 model, Eduard ProfiPACK EDK82145, RLM 74 75 76 paint codes, Fw 190 A-8, D-9 Dora, JG 26, Luftwaffe modelling">
-  <meta name="description" content="Complete Fw 190 scale modelling reference: 8 Jagdgeschwader, RLM paint codes, kit guide and weathering.">
+<meta name="keywords" content="World War II aircraft modelling, WW2 aircraft modelling, scale model aircraft, WW2 aircraft paint colours, World War 2 aircraft kits, aircraft markings, weathering guide, walkaround photos, decals, 1/72 aircraft kits, 1/48 aircraft kits, Fw 190 model, Luftwaffe RLM colours, Fw 190 weathering, JG markings">
+  <meta name="description" content="Focke-Wulf Fw 190 World War II aircraft modelling reference with Luftwaffe RLM paint colours, unit markings, kit guide, decals, weathering and walkaround photos.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="canonical" href="https://www.ww2modeller.co.uk/fw190_paradise.html">
@@ -1754,8 +1754,8 @@ body{
       <span>Filter by front using the bar above</span>
     </div>
   </div>
-  <div class="ww2-unit-grid-spacer" aria-hidden="true"></div>
-<div class="sq-grid" id="grid"></div>
+  <div class="ww2-unit-grid-spacer" aria-hidden="true" style="display:block!important;height:42px!important;min-height:42px!important;clear:both!important;width:100%!important"></div>
+<div class="sq-grid" id="grid" style="margin-top:0!important;row-gap:18px!important;column-gap:18px!important;clear:both!important"></div>
 </div>
 
 <!-- TAB: BUILD — Kits + Aftermarket + Step-by-step + Paint + Colour comparison -->
@@ -4418,6 +4418,76 @@ function showWaTab(id, btn) {
   }
 }
 </style>
+
+
+<style id="ww2-unit-spacing-final-direct">
+/* Direct unit-grid spacing fix: forces the same breathing room as the Hurricane page. */
+#tab-squadrons .ww2-squadron-photo-note,
+#tab-squadrons .ww2-unit-photo-pass-note,
+#tab-squadrons .zero-ref-card-grid,
+#tab-squadrons .info-box{
+  margin-bottom:42px!important;
+}
+#tab-squadrons .ww2-unit-grid-spacer,
+#tab-squadrons .ww2-grid-gap-final{
+  display:block!important;
+  width:100%!important;
+  height:42px!important;
+  min-height:42px!important;
+  flex-basis:100%!important;
+  grid-column:1/-1!important;
+  clear:both!important;
+}
+#tab-squadrons #grid.sq-grid,
+#tab-squadrons .sq-grid#grid,
+#tab-squadrons .sq-grid{
+  margin-top:42px!important;
+  padding-top:0!important;
+  row-gap:18px!important;
+  column-gap:18px!important;
+  clear:both!important;
+}
+#tab-squadrons .ww2-squadron-photo-note + .ww2-unit-grid-spacer + #grid.sq-grid,
+#tab-squadrons .ww2-unit-photo-pass-note + .ww2-unit-grid-spacer + #grid.sq-grid{
+  margin-top:0!important;
+}
+@media(max-width:700px){
+  #tab-squadrons .ww2-squadron-photo-note,
+  #tab-squadrons .ww2-unit-photo-pass-note,
+  #tab-squadrons .zero-ref-card-grid,
+  #tab-squadrons .info-box{margin-bottom:30px!important;}
+  #tab-squadrons .ww2-unit-grid-spacer,
+  #tab-squadrons .ww2-grid-gap-final{height:30px!important;min-height:30px!important;}
+  #tab-squadrons #grid.sq-grid,
+  #tab-squadrons .sq-grid#grid,
+  #tab-squadrons .sq-grid{margin-top:30px!important;row-gap:16px!important;column-gap:16px!important;}
+}
+</style>
+<script id="ww2-unit-spacing-final-js">
+(function(){
+  function applyUnitSpacing(){
+    var tab=document.getElementById('tab-squadrons');
+    if(!tab) return;
+    var grid=tab.querySelector('#grid.sq-grid, .sq-grid#grid, .sq-grid');
+    if(!grid) return;
+    var prev=grid.previousElementSibling;
+    if(!(prev && prev.classList && (prev.classList.contains('ww2-unit-grid-spacer') || prev.classList.contains('ww2-grid-gap-final')))){
+      var spacer=document.createElement('div');
+      spacer.className='ww2-grid-gap-final';
+      spacer.setAttribute('aria-hidden','true');
+      grid.parentNode.insertBefore(spacer, grid);
+    }
+    grid.style.setProperty('margin-top','0','important');
+    grid.style.setProperty('row-gap','18px','important');
+    grid.style.setProperty('column-gap','18px','important');
+    tab.querySelectorAll('.ww2-squadron-photo-note,.ww2-unit-photo-pass-note,.zero-ref-card-grid,.info-box').forEach(function(n){
+      n.style.setProperty('margin-bottom','42px','important');
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',applyUnitSpacing); else applyUnitSpacing();
+  setTimeout(applyUnitSpacing,50); setTimeout(applyUnitSpacing,300); setTimeout(applyUnitSpacing,1000);
+})();
+</script>
 
 </body>
 </html>
