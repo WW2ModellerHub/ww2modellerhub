@@ -1295,6 +1295,16 @@ body:not(.noop) > .filter-bar.zero-unit-filter{display:none!important;}
 }
 </style>
 
+
+<style id="zero-map-structure-match-fix">
+#map-list .zero-base-card{background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.09);border-left:3px solid rgba(210,52,42,.55);border-radius:3px;margin-bottom:.55rem;padding:.7rem .75rem;cursor:pointer;transition:background .15s,border-color .15s}
+#map-list .zero-base-card:hover,#map-list .zero-base-card.active{background:rgba(210,52,42,.08);border-color:rgba(210,52,42,.38)}
+#map-list .zero-base-name{font-family:'Special Elite',cursive;font-size:16px;color:#fff;margin-bottom:.15rem}
+#map-list .zero-base-meta{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+#map-list .zero-base-detail{margin-top:.8rem;padding-top:.75rem;border-top:1px solid rgba(255,255,255,.09)}
+#map-list .zero-base-unit{display:block;text-decoration:none;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);border-radius:2px;padding:.5rem .55rem;margin:.35rem 0;color:rgba(255,255,255,.78)}
+#map-list .zero-base-unit:hover{background:rgba(210,52,42,.12);color:#fff}.zero-base-unit b{font-family:'Special Elite',cursive;color:#ffe7df}.zero-base-unit span{display:block;font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-top:.1rem}
+</style>
 </head><body>
 <nav class="site-nav">
   <div class="site-nav-inner">
@@ -1908,4 +1918,62 @@ document.addEventListener('DOMContentLoaded',()=>{renderUnitGrid();renderPilotSt
 })();
 </script>
 
+
+<script id="zero-map-base-to-unit-structure-fix">
+(function(){
+  function baseKey(u){return (Math.round(u.lat*100)/100)+'|'+(Math.round(u.lng*100)/100);} 
+  function baseName(items){
+    var u=items[0];
+    if(u.group==='carrier' && u.base.indexOf('Kido Butai')>-1) return 'Kido Butai / Japanese carrier force';
+    if(u.base.indexOf('Rabaul')>-1) return 'Rabaul / New Britain';
+    if(u.base.indexOf('Lae')>-1) return 'Lae / New Guinea';
+    if(u.base.indexOf('Truk')>-1) return 'Truk Lagoon / Central Pacific';
+    if(u.base.indexOf('Mabalacat')>-1) return 'Mabalacat / Philippines';
+    if(u.base.indexOf('Atsugi')>-1) return 'Atsugi / Home defence';
+    if(u.base.indexOf('Yokosuka')>-1) return 'Yokosuka / Oppama';
+    return u.base.split('·')[0].trim();
+  }
+  function baseTheatres(items){return Array.from(new Set(items.map(function(u){return u.theatre;}))).join(' · ');} 
+  window.renderMarkers=function(){
+    if(!window.map || typeof L==='undefined' || !window.UNITS) return;
+    markers.forEach(function(m){try{m.remove();}catch(e){}});markers=[];
+    var list=document.getElementById('map-list');
+    if(list) list.innerHTML='<div class="section-label">Bases and theatres</div><div class="info-box" style="font-size:14px;line-height:1.55;margin-bottom:.75rem">Click a base marker or base card first, then choose the attached Kōkūtai/carrier fighter unit to open its unit card.</div>';
+    var groups={};
+    UNITS.filter(function(u){return currentMapFilter==='all'||u.group===currentMapFilter;}).forEach(function(u){var k=baseKey(u);(groups[k]=groups[k]||[]).push(u);});
+    var bounds=[];
+    Object.keys(groups).forEach(function(k){
+      var items=groups[k]; var u=items[0]; var col=u.group==='carrier'?'#d2342a':u.group==='land'?'#687857':u.group==='late'?'#c9a15a':'#8aaee8';
+      var icon=L.divIcon({className:'',html:'<div class="raf-leaflet-marker" data-base="'+k+'" style="background:'+col+'"></div>',iconSize:[18,18],iconAnchor:[9,9]});
+      var m=L.marker([u.lat,u.lng],{icon:icon}).addTo(map);
+      m.bindTooltip('<span class="raf-leaflet-label">'+baseName(items)+'</span>',{direction:'top',offset:[0,-10]});
+      m.on('click',function(){selectZeroBase(k);});
+      markers.push(m);bounds.push([u.lat,u.lng]);
+      if(list){
+        var card=document.createElement('div'); card.className='zero-base-card'; card.dataset.base=k; card.onclick=function(){selectZeroBase(k);}; card.innerHTML='<div class="zero-base-name">'+baseName(items)+'</div><div class="zero-base-meta">'+items.length+' unit'+(items.length>1?'s':'')+' · '+baseTheatres(items)+'</div>'; list.appendChild(card);
+      }
+    });
+    if(bounds.length)map.fitBounds(bounds,{padding:[30,30],maxZoom:4});
+  };
+  window.selectZeroBase=function(k){
+    var list=document.getElementById('map-list'); if(!list||!window.UNITS) return;
+    document.querySelectorAll('#map-list .zero-base-card').forEach(function(c){c.classList.toggle('active',c.dataset.base===k);});
+    var items=UNITS.filter(function(u){return baseKey(u)===k && (currentMapFilter==='all'||u.group===currentMapFilter);});
+    if(!items.length) return;
+    var active=null; document.querySelectorAll('#map-list .zero-base-card').forEach(function(c){if(c.dataset.base===k) active=c;});
+    var old=document.querySelector('#map-list .zero-base-detail'); if(old) old.remove();
+    var detail=document.createElement('div'); detail.className='zero-base-detail';
+    detail.innerHTML='<div class="zero-base-meta" style="margin-bottom:.45rem">Squadrons / units at linked base</div>';
+    items.forEach(function(u){
+      var a=document.createElement('a'); a.href='#'; a.className='zero-base-unit';
+      a.innerHTML='<b>'+u.num+'</b> — '+u.name+'<span>'+u.variant+' · '+u.theatre+'</span>';
+      a.onclick=function(ev){ev.preventDefault(); openUnit(u.id); if(window.selectMarker) selectMarker(u.id); var sq=document.getElementById('tab-squadrons'); if(sq) sq.scrollIntoView({behavior:'smooth',block:'start'});};
+      detail.appendChild(a);
+    });
+    if(active) active.appendChild(detail);
+    markers.forEach(function(m){var el=m.getElement&&m.getElement(); if(!el)return; var dot=el.querySelector('.raf-leaflet-marker'); if(dot) dot.classList.toggle('selected',dot.dataset.base===k);});
+  };
+  window.filterMap=function(f,btn){currentMapFilter=f;document.querySelectorAll('.map-filter-btn').forEach(function(b){b.classList.remove('on');});if(btn)btn.classList.add('on');renderMarkers();};
+})();
+</script>
 </body></html>

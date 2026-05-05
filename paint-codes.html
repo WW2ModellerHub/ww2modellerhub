@@ -114,6 +114,11 @@ body{
 .cat-badge.rlm{background:rgba(142,101,80,.2);color:#d4a888;border:1px solid rgba(142,101,80,.35)}
 .cat-badge.usaaf{background:rgba(74,110,138,.2);color:#88aac8;border:1px solid rgba(74,110,138,.35)}
 .cat-badge.interior{background:rgba(90,90,122,.2);color:#aaaacc;border:1px solid rgba(90,90,122,.35)}
+.cat-badge.ijn{background:rgba(160,45,38,.22);color:#ffb8ae;border:1px solid rgba(160,45,38,.38)}
+.cat-badge.ijaaf{background:rgba(130,82,45,.22);color:#e0bd92;border:1px solid rgba(130,82,45,.38)}
+.cat-badge.vvs{background:rgba(170,40,45,.20);color:#ff9ca0;border:1px solid rgba(170,40,45,.36)}
+.cat-badge.italian{background:rgba(80,130,80,.20);color:#a8d0a8;border:1px solid rgba(80,130,80,.36)}
+
 .ref-num{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.1em;color:var(--muted)}
 .brands{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:.4rem}
 .brand-cell{background:rgba(0,0,0,.2);border-radius:2px;padding:.45rem .6rem;display:flex;flex-direction:column;gap:2px}
@@ -672,7 +677,7 @@ footer nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-
   <div class="hero-inner">
     <div class="hero-eyebrow">Reference Tool</div>
     <h1 class="hero-title">WW2 Paint<br><em>Code Converter</em></h1>
-    <p class="hero-sub">Cross-reference RAF, RLM and USAAF colours across all four major model paint brands. Search by colour name, reference number or paint code. 70+ colours covered.</p>
+    <p class="hero-sub">Cross-reference World War II and World War 2 aircraft paint colours across RAF MAP, USAAF ANA, Luftwaffe RLM, Japanese IJN/IJAAF, Soviet VVS and Italian camouflage references. Search by colour name, reference number or paint code.</p>
     <div class="brand-pills">
       <span class="brand-pill h">Humbrol</span>
       <span class="brand-pill t">Tamiya Acrylic</span>
@@ -693,6 +698,10 @@ footer nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-
       <button class="filter-btn raf" data-filter="raf">RAF</button>
       <button class="filter-btn rlm" data-filter="rlm">RLM</button>
       <button class="filter-btn usaaf" data-filter="usaaf">USAAF</button>
+      <button class="filter-btn" data-filter="ijn">IJN</button>
+      <button class="filter-btn" data-filter="ijaaf">IJAAF</button>
+      <button class="filter-btn" data-filter="vvs">Soviet VVS</button>
+      <button class="filter-btn" data-filter="italian">Italian</button>
       <button class="filter-btn" data-filter="interior">Interior</button>
     </div>
     <span class="results-count" id="count"></span>
@@ -706,6 +715,14 @@ footer nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-
     <p>No colours found — try a different search</p>
   </div>
 </div>
+
+
+<section class="results" id="world-paint-notes" style="padding-top:0">
+  <div class="colour-row" style="grid-template-columns:1fr;border-left:4px solid var(--brass);padding:1rem 1.2rem;display:block">
+    <h2 style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin:0 0 .65rem">Expanded World War II paint systems</h2>
+    <p style="color:rgba(255,255,255,.66);line-height:1.7;margin:0">This World War 2 aircraft paint reference now includes RAF MAP colours, Luftwaffe RLM colours, USAAF ANA colours, Japanese IJN and IJAAF colours, Soviet VVS AMT/AII-style references and Italian Regia Aeronautica camouflage notes. Treat all cross-brand matches as modelling equivalents and test before committing to a final finish.</p>
+  </div>
+</section>
 
 <footer>
   <div>Codes are best-match equivalents — always test against reference samples before committing to a build.</div>
@@ -949,6 +966,53 @@ const PAINTS = [
   { name:'Mud — Sussex Clay (Tangmere)', ref:'Sussex clay', cat:'interior', hex:'#6a4020',
     h:{c:'98',n:'Chocolate'},           t:{c:'XF-64',n:'Red Brown'},
     v:{c:'70.984',n:'Flat Brown'},      a:{c:'AK2047',n:'European Mud'} },
+
+
+  // ── JAPANESE IJN / IJAAF ──
+  { name:'IJN Amber Grey / Ame-iro', ref:'IJN early Zero grey-green', cat:'ijn', hex:'#b7b29a',
+    h:{c:'168',n:'Hemp (approx)'}, t:{c:'XF-76',n:'Gray Green (IJN)'},
+    v:{c:'71.312',n:'IJN Ash Grey'}, a:{c:'AK2061',n:'IJN J3 Hai-iro / grey-green'} },
+  { name:'Mitsubishi IJN Green', ref:'IJN upper surface green', cat:'ijn', hex:'#1f3b28',
+    h:{c:'75',n:'Bronze Green (approx)'}, t:{c:'XF-11',n:'J.N. Green'},
+    v:{c:'71.322',n:'IJN Black Green'}, a:{c:'AK2062',n:'IJN D1 Deep Green Black'} },
+  { name:'Nakajima IJN Green', ref:'IJN Nakajima factory green', cat:'ijn', hex:'#2c4427',
+    h:{c:'195',n:'Dark Green (approx)'}, t:{c:'XF-11',n:'J.N. Green'},
+    v:{c:'71.310',n:'IJN Deep Green'}, a:{c:'AK2063',n:'IJN Nakajima Green'} },
+  { name:'Aotake Translucent Blue-Green', ref:'Japanese protective lacquer', cat:'interior', hex:'#1b8a80',
+    h:{c:'1322',n:'Clear Blue + Green mix'}, t:{c:'X-23 + X-25',n:'Clear Blue/Green mix'},
+    v:{c:'71.419',n:'Aotake'}, a:{c:'AK2064',n:'Aotake'} },
+  { name:'IJAAF #7 Olive Brown', ref:'Japanese Army late-war olive brown', cat:'ijaaf', hex:'#4d4327',
+    h:{c:'155',n:'Olive Drab (approx)'}, t:{c:'XF-62',n:'Olive Drab'},
+    v:{c:'71.326',n:'IJA Olive Brown'}, a:{c:'AK2261',n:'IJA #7 Ohryoku Nana Go Shoku'} },
+  { name:'IJAAF Grey-Green Underside', ref:'Japanese Army lower surface grey-green', cat:'ijaaf', hex:'#a8ad96',
+    h:{c:'90',n:'Beige Green (approx)'}, t:{c:'XF-14',n:'J.A. Grey'},
+    v:{c:'71.311',n:'IJA Grey Green'}, a:{c:'AK2262',n:'IJA Grey Green'} },
+  // ── SOVIET VVS ──
+  { name:'AMT-4 Green', ref:'Soviet VVS upper green', cat:'vvs', hex:'#36552b',
+    h:{c:'117',n:'US Light Green (approx)'}, t:{c:'XF-58',n:'Olive Green'},
+    v:{c:'71.409',n:'AMT-4 Green'}, a:{c:'AK2251',n:'AMT-4 Green'} },
+  { name:'AMT-6 Black', ref:'Soviet VVS disruptive black', cat:'vvs', hex:'#171717',
+    h:{c:'33',n:'Matt Black'}, t:{c:'XF-1',n:'Flat Black'},
+    v:{c:'71.057',n:'Black'}, a:{c:'AK2252',n:'AMT-6 Black'} },
+  { name:'AMT-7 Blue', ref:'Soviet VVS underside blue', cat:'vvs', hex:'#6f9fc0',
+    h:{c:'65',n:'Aircraft Blue'}, t:{c:'XF-23',n:'Light Blue'},
+    v:{c:'71.408',n:'AMT-7 Greyish Blue'}, a:{c:'AK2253',n:'AMT-7 Blue'} },
+  { name:'A-14 Steel Grey', ref:'Soviet cockpit/interior grey', cat:'interior', hex:'#6b7070',
+    h:{c:'27',n:'Sea Grey (approx)'}, t:{c:'XF-53',n:'Neutral Grey'},
+    v:{c:'71.406',n:'A-14 Steel Grey'}, a:{c:'AK2254',n:'A-14 Steel Grey'} },
+  // ── ITALIAN / REGIA AERONAUTICA ──
+  { name:'Giallo Mimetico 3', ref:'Italian desert yellow', cat:'italian', hex:'#c99b45',
+    h:{c:'93',n:'Desert Yellow'}, t:{c:'XF-59',n:'Desert Yellow'},
+    v:{c:'71.284',n:'Italian Sand Yellow'}, a:{c:'AK2171',n:'Giallo Mimetico 3'} },
+  { name:'Verde Mimetico 2', ref:'Italian camouflage green', cat:'italian', hex:'#3e5a2e',
+    h:{c:'117',n:'US Light Green'}, t:{c:'XF-58',n:'Olive Green'},
+    v:{c:'71.285',n:'Italian Green'}, a:{c:'AK2172',n:'Verde Mimetico'} },
+  { name:'Nocciola Chiaro 4', ref:'Italian hazelnut tan', cat:'italian', hex:'#b98b54',
+    h:{c:'118',n:'US Tan'}, t:{c:'XF-52',n:'Flat Earth lightened'},
+    v:{c:'71.286',n:'Italian Hazel Tan'}, a:{c:'AK2173',n:'Nocciola Chiaro 4'} },
+  { name:'Grigio Azzurro Chiaro', ref:'Italian light blue-grey underside', cat:'italian', hex:'#9aa7a8',
+    h:{c:'64',n:'Light Grey'}, t:{c:'XF-19',n:'Sky Grey'},
+    v:{c:'71.287',n:'Grigio Azzurro Chiaro'}, a:{c:'AK2174',n:'Grigio Azzurro Chiaro'} },
 
 ];
 
