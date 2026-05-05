@@ -1195,7 +1195,8 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--raf-dark);color
       </div>
       <a href="https://www.iwm.org.uk/collections" target="_blank" rel="noopener" style="display:block;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:.75rem .85rem;color:rgba(255,255,255,.75)"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">IWM Lancaster archive</div><div style="font-size:13px;line-height:1.45">Search squadron number, serial, aircraft name or base.</div></a><a href="https://ibccdigitalarchive.lincoln.ac.uk/" target="_blank" rel="noopener" style="display:block;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:.75rem .85rem;color:rgba(255,255,255,.75)"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">IBCC Digital Archive</div><div style="font-size:13px;line-height:1.45">Strong Lancaster crew, squadron and Bomber Command photo archive.</div></a>
     </div>
-<div class="sq-grid" id="grid" style="margin-top:2rem!important;clear:both!important"></div>
+<div class="ww2-unit-grid-spacer" aria-hidden="true"></div>
+<div class="sq-grid" id="grid"></div>
 </div>
 
 <div class="tab-panel" id="tab-build">
@@ -2588,6 +2589,49 @@ setTimeout(() => { const btn = document.querySelector('.waf'); if(btn) setWalkCa
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
 </script>
+
+
+<style id="ww2-definitive-unit-grid-spacing">
+/* Definitive unit-card spacing fix: applies after all page CSS and JS patch styles. */
+#tab-squadrons .ww2-squadron-photo-note,
+#tab-squadrons .ww2-unit-photo-pass-note,
+#tab-squadrons .zero-ref-card-grid,
+#tab-squadrons .info-box {
+  margin-bottom: 28px !important;
+}
+#tab-squadrons .ww2-unit-grid-spacer {
+  display:block !important;
+  height: 26px !important;
+  min-height: 26px !important;
+  width:100% !important;
+  clear: both !important;
+}
+#tab-squadrons .sq-grid#grid,
+#tab-squadrons #grid.sq-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+  column-gap: 22px !important;
+  row-gap: 24px !important;
+  gap: 24px 22px !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  clear: both !important;
+}
+#tab-squadrons .sq-card {
+  margin: 0 !important;
+}
+@media(max-width:620px){
+  #tab-squadrons .sq-grid#grid,
+  #tab-squadrons #grid.sq-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  #tab-squadrons .ww2-unit-grid-spacer {
+    height: 18px !important;
+    min-height: 18px !important;
+  }
+}
+</style>
 
 </body>
 </html>

@@ -1417,7 +1417,6 @@ document.addEventListener('DOMContentLoaded',function(){
   <button class="fb sf" onclick="setSort('kills',this)">Missions ↓</button>
   <button class="fb sf" onclick="setSort('killrate',this)">Loss % ↓</button>
   <button class="fb sf" onclick="setSort('base',this)">Base A–Z</button>
-  <span class="sq-count" id="sq-count"></span>
 </div>
 
 <div class="main-wrap">
@@ -1447,7 +1446,8 @@ document.addEventListener('DOMContentLoaded',function(){
       </div>
       <a href="https://commons.wikimedia.org/wiki/Category:Boeing_B-17_Flying_Fortress" target="_blank" rel="noopener" style="display:block;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:.75rem .85rem;color:rgba(255,255,255,.75)"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">Wikimedia B-17 photos</div><div style="font-size:13px;line-height:1.45">Open B-17 image categories for walkaround and general reference.</div></a><a href="https://www.americanairmuseum.com/" target="_blank" rel="noopener" style="display:block;text-decoration:none;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:.75rem .85rem;color:rgba(255,255,255,.75)"><div style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.25rem">American Air Museum / IWM</div><div style="font-size:13px;line-height:1.45">Search by bomb group, base, crew or aircraft nickname for period photographs.</div></a>
     </div>
-<div class="sq-grid" id="grid" style="margin-top:2rem!important;clear:both!important"></div>
+<div class="ww2-unit-grid-spacer" aria-hidden="true"></div>
+<div class="sq-grid" id="grid"></div>
 </div>
 
 <div class="tab-panel" id="tab-build">
@@ -2192,7 +2192,7 @@ function renderGrid(){
   else if(activeSort==='base')list.sort((a,b)=>String(a.base).localeCompare(String(b.base)));
   else list.sort((a,b)=>String(a.num).localeCompare(String(b.num),undefined,{numeric:true}));
   const el=document.getElementById('sq-count');
-  if(el)el.textContent=list.length+' groups shown';
+  if(el){el.textContent='';el.style.display='none';}
   grid.innerHTML=list.map(sq=>{
     const tags=(sq.tagTxt||[]).map((t,i)=>`<span class="tag ${(sq.tags||[])[i]||'t-blue'}">${esc(t)}</span>`).join('');
     const crew=(sq.pilots||[]).slice(0,3).map(p=>esc(p.n)).join(' · ');
@@ -3084,7 +3084,7 @@ function acceptCookies(){try{localStorage.setItem('cookiesAccepted','1');}catch(
     const count=document.getElementById('sq-count');
     if(count){
       const sqnTotal=list.reduce((n,s)=>n+(s.squadrons?s.squadrons.length:0),0);
-      count.textContent=list.length+' groups shown';
+      count.textContent='';count.style.display='none';
     }
     grid.innerHTML=list.map(s=>{
       const tags=[theatre(s.group),s.base,s.codes||s.tail||''].filter(Boolean).map((t,i)=>`<span class="tag ${['t-blue','t-amber','t-green'][i%3]}">${esc(t)}</span>`).join('');
@@ -3271,6 +3271,62 @@ function acceptCookies(){try{localStorage.setItem('cookiesAccepted','1');}catch(
   function process(scope){(scope||document).querySelectorAll('#media-grid a,.zero-media-grid a,#tab-media a,#tab-walkaround a').forEach(ensure);}
   function boot(){process(document);document.querySelectorAll('#media-grid,#tab-media,#tab-walkaround,.zero-media-grid').forEach(n=>{try{new MutationObserver(()=>process(n)).observe(n,{childList:true,subtree:true});}catch(e){}});}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+})();
+</script>
+
+
+<style id="ww2-definitive-unit-grid-spacing">
+/* Definitive unit-card spacing fix: applies after all page CSS and JS patch styles. */
+#tab-squadrons .ww2-squadron-photo-note,
+#tab-squadrons .ww2-unit-photo-pass-note,
+#tab-squadrons .zero-ref-card-grid,
+#tab-squadrons .info-box {
+  margin-bottom: 28px !important;
+}
+#tab-squadrons .ww2-unit-grid-spacer {
+  display:block !important;
+  height: 26px !important;
+  min-height: 26px !important;
+  width:100% !important;
+  clear: both !important;
+}
+#tab-squadrons .sq-grid#grid,
+#tab-squadrons #grid.sq-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+  column-gap: 22px !important;
+  row-gap: 24px !important;
+  gap: 24px 22px !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  clear: both !important;
+}
+#tab-squadrons .sq-card {
+  margin: 0 !important;
+}
+@media(max-width:620px){
+  #tab-squadrons .sq-grid#grid,
+  #tab-squadrons #grid.sq-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  #tab-squadrons .ww2-unit-grid-spacer {
+    height: 18px !important;
+    min-height: 18px !important;
+  }
+}
+</style>
+
+
+<script id="b17-hide-squadron-counter-final">
+(function(){
+  function hideB17Counter(){
+    var c=document.getElementById('sq-count');
+    if(c){ c.textContent=''; c.style.display='none'; c.setAttribute('aria-hidden','true'); }
+    document.querySelectorAll('.sq-count').forEach(function(el){ el.textContent=''; el.style.display='none'; el.setAttribute('aria-hidden','true'); });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', hideB17Counter); else hideB17Counter();
+  try{ new MutationObserver(hideB17Counter).observe(document.body,{childList:true,subtree:true,characterData:true}); }catch(e){}
 })();
 </script>
 

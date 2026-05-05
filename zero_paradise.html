@@ -1340,7 +1340,8 @@ body:not(.noop) > .filter-bar.zero-unit-filter{display:none!important;}
 
   <div class="section-label">IJN Zero carrier fighter units and Kōkūtai</div>
   <div class="info-box">This section now follows the same fighter-page pattern as the Spitfire: compact unit cards first, then a full-width expanded detail panel with operations, named pilots/commanders, markings, decal/research checks and action links. IJN terminology is retained — carrier fighter units and Kōkūtai — rather than forcing RAF squadron wording onto Japanese units.</div>
-  <div class="sq-grid" id="grid" style="margin-top:2rem!important;clear:both!important"></div>
+  <div class="ww2-unit-grid-spacer" aria-hidden="true"></div>
+<div class="sq-grid" id="grid"></div>
 </div>
 <div class="tab-panel" id="tab-build">
   <div style="display:flex;gap:8px;margin-bottom:1.4rem;flex-wrap:wrap">
@@ -1756,5 +1757,48 @@ document.addEventListener('DOMContentLoaded',()=>{renderUnitGrid();renderPilotSt
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
 </script>
+
+
+<style id="ww2-definitive-unit-grid-spacing">
+/* Definitive unit-card spacing fix: applies after all page CSS and JS patch styles. */
+#tab-squadrons .ww2-squadron-photo-note,
+#tab-squadrons .ww2-unit-photo-pass-note,
+#tab-squadrons .zero-ref-card-grid,
+#tab-squadrons .info-box {
+  margin-bottom: 28px !important;
+}
+#tab-squadrons .ww2-unit-grid-spacer {
+  display:block !important;
+  height: 26px !important;
+  min-height: 26px !important;
+  width:100% !important;
+  clear: both !important;
+}
+#tab-squadrons .sq-grid#grid,
+#tab-squadrons #grid.sq-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+  column-gap: 22px !important;
+  row-gap: 24px !important;
+  gap: 24px 22px !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  clear: both !important;
+}
+#tab-squadrons .sq-card {
+  margin: 0 !important;
+}
+@media(max-width:620px){
+  #tab-squadrons .sq-grid#grid,
+  #tab-squadrons #grid.sq-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  #tab-squadrons .ww2-unit-grid-spacer {
+    height: 18px !important;
+    min-height: 18px !important;
+  }
+}
+</style>
 
 </body></html>
