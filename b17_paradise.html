@@ -1353,6 +1353,11 @@ document.addEventListener('DOMContentLoaded',function(){
 }
 </style>
 
+
+<style id="ww2-units-grid-gap-after-intro-fix">
+#tab-squadrons #grid.sq-grid{margin-top:2.75rem!important;clear:both!important;}
+#tab-squadrons > div:first-child{margin-bottom:1.75rem!important;}
+</style>
 </head><body>
 <nav class="site-nav">
   <div class="site-nav-inner">
@@ -3414,30 +3419,21 @@ function acceptCookies(){try{localStorage.setItem('cookiesAccepted','1');}catch(
 
 
 <script id="b17-counter-remove-final">
-(function(){function kill(){document.querySelectorAll('#sq-count,.sq-count').forEach(function(n){n.remove();});document.querySelectorAll('*').forEach(function(n){if(n.childNodes&&n.childNodes.length===1&&/0 squadrons shown/i.test(n.textContent||'')){n.textContent=(n.textContent||'').replace(/\s*·?\s*0 squadrons shown/ig,'');}});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',kill);else kill();setInterval(kill,600);})();
+(function(){function kill(){document.querySelectorAll('#sq-count,.sq-count').forEach(function(n){n.remove();});document.querySelectorAll('*').forEach(function(n){if(n.childNodes&&n.childNodes.length===1&&/0\s+squadrons\s+shown/i.test(n.textContent||'')){n.textContent=(n.textContent||'').replace(/\s*[·•-]?\s*0\s+squadrons\s+shown/ig,'');}});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',kill);else kill();setInterval(kill,600);})();
 </script>
 
-<script id="b17-counter-remove-robust">
+<script id="b17-counter-source-fix">
 (function(){
   function cleanB17Counter(){
-    document.querySelectorAll('#sq-count,.sq-count,[data-role="sq-count"],[class*="count"]').forEach(function(n){
-      if(/squadrons shown|0 squadrons/i.test(n.textContent||'')) n.remove();
-    });
-    var bar=document.getElementById('sqn-bar');
-    if(bar){
-      bar.childNodes.forEach(function(n){
-        if(n.nodeType===3 && /squadrons shown|0 squadrons/i.test(n.nodeValue||'')){ n.nodeValue=''; }
-        else if(n.nodeType===1 && /squadrons shown|0 squadrons/i.test(n.textContent||'')){ n.remove(); }
-      });
-    }
-    document.querySelectorAll('body *').forEach(function(n){
-      if(n.children.length===0 && /0 squadrons shown/i.test(n.textContent||'')){
-        n.textContent=(n.textContent||'').replace(/\s*·?\s*0 squadrons shown/ig,'');
-      }
+    document.querySelectorAll('#sq-count,.sq-count').forEach(function(n){ n.remove(); });
+    document.querySelectorAll('.filter-bar, #sqn-bar, body *').forEach(function(n){
+      if(!n || !n.childNodes || n.childNodes.length !== 1) return;
+      var t = n.textContent || '';
+      if(/0\s+squadrons\s+shown/i.test(t)) n.textContent = t.replace(/\s*[·•-]?\s*0\s+squadrons\s+shown/ig,'').trim();
     });
   }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',cleanB17Counter); else cleanB17Counter();
-  setInterval(cleanB17Counter,250);
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', cleanB17Counter); else cleanB17Counter();
+  setInterval(cleanB17Counter, 250);
 })();
 </script>
 </body>
