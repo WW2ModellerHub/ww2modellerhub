@@ -1255,6 +1255,99 @@ document.addEventListener('DOMContentLoaded',function(){
 }
 </style>
 
+
+<style id="corsair-hero-and-map-absolute-final-fix">
+/* Corsair final hero repair: removes the sticky divider line and stops the star-and-bar clipping */
+.aircraft-hero{
+  display:flex!important;
+  align-items:center!important;
+  gap:1.15rem!important;
+  padding:1.05rem 1.75rem!important;
+  margin:0!important;
+  border-top:1px solid rgba(136,174,240,.14)!important;
+  border-bottom:1px solid rgba(136,174,240,.22)!important;
+  min-height:104px!important;
+  overflow:hidden!important;
+  background:linear-gradient(135deg,rgba(7,18,42,.96),rgba(16,36,88,.70))!important;
+  position:relative!important;
+}
+.aircraft-hero::before{pointer-events:none!important;}
+.aircraft-hero::after{
+  content:'USN / USMC'!important;
+  right:1rem!important;
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  font-size:5.8rem!important;
+  color:rgba(255,255,255,.045)!important;
+  opacity:1!important;
+}
+.aircraft-hero .hero-roundel{
+  width:66px!important;
+  min-width:66px!important;
+  height:44px!important;
+  margin:0!important;
+  position:relative!important;
+  left:auto!important;
+  right:auto!important;
+  top:auto!important;
+  transform:none!important;
+  overflow:hidden!important;
+  border-radius:8px!important;
+  z-index:5!important;
+  box-sizing:border-box!important;
+}
+.aircraft-hero .hero-roundel::before{
+  content:'★'!important;
+  position:absolute!important;
+  inset:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:none!important;
+  color:#fff!important;
+  font-size:24px!important;
+  line-height:1!important;
+  z-index:2!important;
+}
+.aircraft-hero .hero-roundel::after{
+  content:''!important;
+  position:absolute!important;
+  left:0!important;
+  right:0!important;
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  height:14px!important;
+  width:100%!important;
+  background:linear-gradient(90deg,#fff 0 30%,transparent 30% 40%,transparent 60% 70%,#fff 70% 100%)!important;
+  z-index:1!important;
+}
+.hero-text,.hero-title,.hero-eyebrow,.hero-sub,.hero-stats{
+  position:relative!important;
+  z-index:6!important;
+}
+.hero-title{
+  margin:0!important;
+  padding:0!important;
+  line-height:1.05!important;
+  border:0!important;
+  text-decoration:none!important;
+  box-shadow:none!important;
+}
+.plane-tab-bar{
+  top:58px!important;
+  z-index:150!important;
+  border-top:0!important;
+}
+#leaflet-map .corsair-static-map-board{
+  min-height:640px;
+}
+@media(max-width:760px){
+  .aircraft-hero{padding:.9rem 1rem!important;min-height:86px!important;}
+  .aircraft-hero .hero-roundel{width:54px!important;min-width:54px!important;height:36px!important;}
+  .aircraft-hero::after{font-size:3.6rem!important;right:.6rem!important;}
+}
+</style>
+
 </head><body>
 <nav class="site-nav">
 <div class="site-nav-inner">
@@ -1291,8 +1384,6 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 </div>
 </nav>
-<div style="background:rgba(7,16,31,.65);border-bottom:2px solid var(--brass);position:sticky;top:58px;z-index:160;">
-</div>
 <div class="plane-tab-bar">
 <nav aria-label="Aircraft page sections" class="nav-tabs">
 <button class="nav-tab active" onclick="switchTab('squadrons',this)">Units</button>
@@ -2068,14 +2159,70 @@ function xyToLatLng(st){
 function mapUnitLabel(unit){
   return unit==='1'?'US Navy':unit==='2'?'Fleet Air Arm':unit==='3'?'USMC / Solomons':unit==='4'?'Late-war carrier':'All theatres';
 }
+
+function drawCorsairStaticMap(){
+  const mapEl=document.getElementById('leaflet-map');
+  if(!mapEl) return;
+  const stations = STATIONS || [];
+  const pos = {
+    guadalcanal:[70,58],
+    vellalavella:[64,52],
+    ondonga:[66,54],
+    espiritu:[82,70],
+    essex:[55,25],
+    bunkerhill:[48,24],
+    victorious:[24,43],
+    formidable:[52,31]
+  };
+  mapEl.innerHTML = `
+    <div class="corsair-static-map-board" style="height:100%;min-height:640px;position:relative;overflow:hidden;border-radius:4px;background:
+      radial-gradient(circle at 62% 42%,rgba(91,143,213,.18),transparent 22%),
+      radial-gradient(circle at 35% 36%,rgba(70,163,108,.12),transparent 24%),
+      linear-gradient(135deg,#07111e 0%,#0c2034 56%,#050b13 100%);border:1px solid rgba(201,168,76,.22);">
+      <div style="position:absolute;inset:0;opacity:.18;background:
+        radial-gradient(ellipse at 66% 56%,#49623f 0 8%,transparent 9%),
+        radial-gradient(ellipse at 70% 61%,#49623f 0 5%,transparent 6%),
+        radial-gradient(ellipse at 54% 26%,#49623f 0 7%,transparent 8%),
+        radial-gradient(ellipse at 25% 43%,#49623f 0 12%,transparent 13%);"></div>
+      <div style="position:absolute;left:1rem;top:1rem;font-family:'Oswald',Arial,sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass2);z-index:2">Corsair Pacific theatre board</div>
+      ${stations.map(st=>{
+        const p = pos[st.id] || [50,50];
+        const col = GROUP_COLOURS[st.unit] || '#5b8fd5';
+        return `<button type="button" onclick="showMapStation('${st.id}')" title="${st.name}" style="position:absolute;left:${p[0]}%;top:${p[1]}%;transform:translate(-50%,-50%);z-index:3;border:1px solid rgba(255,255,255,.75);background:${col};width:18px;height:18px;border-radius:50%;box-shadow:0 0 0 5px rgba(255,255,255,.08),0 10px 24px rgba(0,0,0,.45);cursor:pointer"></button>
+        <div style="position:absolute;left:calc(${p[0]}% + 12px);top:calc(${p[1]}% - 8px);z-index:2;font-family:'Oswald',Arial,sans-serif;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.74);text-shadow:0 2px 5px #000;white-space:nowrap">${st.name}</div>`;
+      }).join('')}
+      <div style="position:absolute;left:1rem;right:1rem;bottom:1rem;z-index:2;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.45rem;">
+        ${stations.map(st=>`<button type="button" onclick="showMapStation('${st.id}')" style="text-align:left;border:1px solid rgba(255,255,255,.12);border-left:3px solid ${GROUP_COLOURS[st.unit] || '#5b8fd5'};background:rgba(0,0,0,.32);color:#f3ecd9;border-radius:4px;padding:.45rem .55rem;cursor:pointer">
+          <b style="display:block;font-family:'Special Elite',Georgia,serif;font-size:13px">${st.name}</b>
+          <span style="display:block;font-family:'Oswald',Arial,sans-serif;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)">${(st.sqns||[]).join(' · ')}</span>
+        </button>`).join('')}
+      </div>
+    </div>`;
+}
+
 function renderMap(){
   const mapEl=document.getElementById('leaflet-map');
   if(!mapEl) return;
-  if(mapRendered){ setTimeout(()=>leafletMap && leafletMap.invalidateSize(), 80); return; }
-  if(typeof L==='undefined'){
-    mapEl.innerHTML = `<div style="padding:2rem;color:rgba(255,255,255,.65);font-family:'Oswald',sans-serif;letter-spacing:.08em;text-transform:uppercase">Map loading. Fallback unit board will appear automatically if the map library is blocked.</div>`;
-    setTimeout(renderMap,500); return;
+
+  // Never leave this page stuck on a loading message. Draw the clickable Corsair theatre board immediately.
+  if(!mapRendered && !window.L){
+    drawCorsairStaticMap();
+    setTimeout(function(){
+      if(window.L){
+        mapRendered=false;
+        renderMap();
+      }
+    }, 800);
+    return;
   }
+
+  if(mapRendered){ setTimeout(()=>leafletMap && leafletMap.invalidateSize(), 80); return; }
+
+  if(typeof L==='undefined'){
+    drawCorsairStaticMap();
+    return;
+  }
+
   mapRendered=true;
   leafletMap = L.map('leaflet-map', {
     zoomControl:true,
@@ -2104,6 +2251,7 @@ function renderMap(){
     leafletMarkers[st.id]=marker;
   });
   if(bounds.length){ leafletMap.fitBounds(L.latLngBounds(bounds).pad(.24), {padding:[22,22], maxZoom:4}); }
+  showMapIntro();
   setTimeout(()=>leafletMap.invalidateSize(),100);
 }
 
