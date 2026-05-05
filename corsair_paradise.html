@@ -2256,6 +2256,53 @@ function renderMap(){
 }
 
 
+
+function rafMapTypeLabel(st){
+  if(!st) return 'Corsair location';
+  if(st.type) return st.type;
+  const unit = st.unit || '';
+  if(unit === '1') return 'US Navy carrier area';
+  if(unit === '2') return 'Fleet Air Arm carrier area';
+  if(unit === '3') return 'USMC / Solomons base';
+  if(unit === '4') return 'Late-war carrier area';
+  return 'Corsair theatre marker';
+}
+
+function rafStationModellingCue(st){
+  if(!st) return 'Use this marker to choose a unit, then open the unit card for paint, markings and weathering notes.';
+  const units = (st.sqns || []).join(' · ');
+  if(st.unit === '3') return `${units}: island-strip Corsairs need coral dust, sun fading, cowl staining and worn wing roots.`;
+  if(st.unit === '2') return `${units}: Fleet Air Arm Corsairs need British markings, carrier wear and clipped-wing checks where relevant.`;
+  if(st.unit === '4') return `${units}: late-war carrier Corsairs suit Gloss Sea Blue, rockets, tanks, deck scuffs and restrained staining.`;
+  if(st.unit === '1') return `${units}: US Navy carrier subjects need carrier identifiers, folded-wing checks and deck handling wear.`;
+  return `${units}: use the linked unit card for aircraft, paint and marking notes.`;
+}
+
+function rafTopPilotText(sq){
+  if(!sq) return 'open the linked unit card';
+  const pilots = sq.pilots || [];
+  if(pilots.length && pilots[0].n) return `${pilots[0].n}${pilots[0].note ? ' — ' + pilots[0].note : ''}`;
+  return `${sq.num} modelling notes`;
+}
+
+function showMapIntro(){
+  const box=document.getElementById('map-sqn-list');
+  if(!box) return;
+  const stationCount = (STATIONS || []).length;
+  const linkedUnits = [...new Set((STATIONS || []).flatMap(st => (st.sqns||[]).map(n => String(n).replace(' fwd',''))).filter(n => SQ.find(s => s.num === n)))];
+  box.innerHTML = `
+    <div style="font-family:'Special Elite',cursive;font-size:1.18rem;color:#fff;margin-bottom:.35rem">Corsair theatre map</div>
+    <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass2);margin-bottom:.75rem">${stationCount} markers · ${linkedUnits.length} linked units</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Click a base or carrier marker, then click a linked Corsair unit to open the matching unit card with markings, paint and weathering notes.</p>
+    <div style="max-height:260px;overflow:auto;padding-right:.2rem;margin-top:.7rem">
+      ${(STATIONS || []).map(st => `<button class="map-sqn-chip" onclick="showMapStation('${st.id}')" style="display:block;width:100%;text-align:left;margin-top:.45rem;cursor:pointer;border-left:3px solid ${GROUP_COLOURS[st.unit] || '#5b8fd5'};padding:.65rem .8rem;background:rgba(255,255,255,.045)">
+        <b>${st.name}</b>
+        <div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:2px">${(st.sqns||[]).join(' · ')} · ${rafMapTypeLabel(st)}</div>
+      </button>`).join('')}
+    </div>
+  `;
+}
+
 function rafOpenMapUnit(num){
   const clean = String(num).replace(' fwd','');
   const sq = SQ.find(s => s.num === clean);
