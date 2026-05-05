@@ -1192,6 +1192,69 @@ document.addEventListener('DOMContentLoaded',function(){
   .filter-bar,.zero-unit-filter{padding:.45rem .8rem!important;}
 }
 </style>
+
+<style id="corsair-hero-final-fix">
+.aircraft-hero{
+  display:flex!important;
+  align-items:center!important;
+  gap:1.1rem!important;
+  padding:1.05rem 1.5rem 1.05rem 1.5rem!important;
+  margin:0!important;
+  border:0!important;
+  border-top:1px solid rgba(136,174,240,.16)!important;
+  border-bottom:1px solid rgba(136,174,240,.22)!important;
+  overflow:hidden!important;
+  min-height:104px!important;
+  background:linear-gradient(135deg,rgba(7,18,42,.92),rgba(16,36,88,.68))!important;
+}
+.aircraft-hero::before{pointer-events:none!important;}
+.aircraft-hero::after{
+  content:'USN / USMC'!important;
+  right:1.2rem!important;
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  font-size:6rem!important;
+  opacity:.45!important;
+}
+.aircraft-hero .hero-roundel{
+  width:66px!important;
+  min-width:66px!important;
+  height:44px!important;
+  margin:0!important;
+  transform:none!important;
+  left:auto!important;
+  right:auto!important;
+  top:auto!important;
+  overflow:hidden!important;
+  border-radius:7px!important;
+  position:relative!important;
+  z-index:2!important;
+}
+.aircraft-hero .hero-roundel::after{
+  left:0!important;
+  right:0!important;
+  width:100%!important;
+  height:14px!important;
+}
+.hero-text{min-width:0!important;position:relative!important;z-index:2!important;}
+.hero-title{
+  margin:0!important;
+  padding:0!important;
+  line-height:1.05!important;
+  border:0!important;
+  text-decoration:none!important;
+  position:relative!important;
+  z-index:2!important;
+}
+.hero-eyebrow,.hero-sub{position:relative!important;z-index:2!important;}
+.hero-stats{position:relative!important;z-index:2!important;}
+@media(max-width:760px){
+  .aircraft-hero{padding:.9rem 1rem!important;min-height:86px!important;}
+  .aircraft-hero .hero-roundel{width:54px!important;min-width:54px!important;height:36px!important;}
+  .aircraft-hero::after{font-size:3.6rem!important;right:.6rem!important;}
+}
+</style>
+
 </head><body>
 <nav class="site-nav">
 <div class="site-nav-inner">
@@ -2042,6 +2105,39 @@ function renderMap(){
   });
   if(bounds.length){ leafletMap.fitBounds(L.latLngBounds(bounds).pad(.24), {padding:[22,22], maxZoom:4}); }
   setTimeout(()=>leafletMap.invalidateSize(),100);
+}
+
+
+function rafOpenMapUnit(num){
+  const clean = String(num).replace(' fwd','');
+  const sq = SQ.find(s => s.num === clean);
+  if(!sq) return;
+
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  const unitPanel = document.getElementById('tab-squadrons');
+  if(unitPanel) unitPanel.classList.add('active');
+
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  const unitTab = [...document.querySelectorAll('.nav-tab')].find(t => (t.getAttribute('onclick')||'').includes("'squadrons'"));
+  if(unitTab) unitTab.classList.add('active');
+
+  const bar = document.getElementById('sqn-bar');
+  if(bar) bar.style.display = 'flex';
+
+  if(typeof activeTab !== 'undefined') activeTab = 'squadrons';
+  if(typeof activeFilter !== 'undefined') activeFilter = 'all';
+
+  document.querySelectorAll('.fb.gf').forEach(b => b.classList.remove('on'));
+  const allBtn = [...document.querySelectorAll('.fb.gf')].find(b => (b.getAttribute('onclick')||'').includes("'all'"));
+  if(allBtn) allBtn.classList.add('on');
+
+  if(typeof renderGrid === 'function') renderGrid();
+
+  setTimeout(() => {
+    if(typeof selectSq === 'function') selectSq(clean);
+    const card = document.getElementById('card-' + clean);
+    if(card) card.scrollIntoView({behavior:'smooth', block:'center'});
+  }, 60);
 }
 
 function showMapStation(stOrId){
