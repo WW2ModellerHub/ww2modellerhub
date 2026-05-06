@@ -1206,6 +1206,77 @@ document.addEventListener('DOMContentLoaded',function(){
 #tab-walkaround .wa-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))!important;gap:.85rem!important;}
 #books-grid .book-title,#books-grid .book-desc{overflow-wrap:anywhere!important;}
 </style>
+
+<style id="p40-media-walkaround-final-fix">
+.p40-media-card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:.85rem;
+  margin:.75rem 0 1.35rem;
+}
+.p40-media-card{
+  display:grid;
+  grid-template-columns:150px minmax(0,1fr);
+  gap:.85rem;
+  background:rgba(21,36,68,.72);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:6px;
+  padding:.65rem;
+  text-decoration:none;
+  color:inherit;
+  min-height:120px;
+  overflow:hidden;
+}
+.p40-media-card:hover{background:rgba(255,255,255,.045);border-color:rgba(201,168,76,.35);}
+.p40-media-thumb{
+  width:150px;
+  height:94px;
+  object-fit:cover;
+  border-radius:4px;
+  background:#07101f;
+  border:1px solid rgba(255,255,255,.08);
+}
+.p40-media-title{
+  font-family:'Special Elite',cursive;
+  font-size:1.02rem;
+  color:#fff;
+  margin-bottom:.25rem;
+  line-height:1.25;
+}
+.p40-media-desc{
+  font-size:14px;
+  color:rgba(255,255,255,.65);
+  line-height:1.48;
+}
+.p40-media-open{
+  font-family:'Oswald',sans-serif;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-top:.45rem;
+}
+#tab-walkaround .wa-grid{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(255px,1fr))!important;
+  gap:.9rem!important;
+}
+#tab-walkaround .wa-card{
+  min-height:335px!important;
+  overflow:hidden!important;
+}
+#tab-walkaround .wa-card img{
+  width:100%!important;
+  height:155px!important;
+  object-fit:cover!important;
+  display:block!important;
+  background:#07101f!important;
+}
+@media(max-width:620px){
+  .p40-media-card{grid-template-columns:1fr;}
+  .p40-media-thumb{width:100%;height:150px;}
+}
+</style>
+
 </head><body>
 <nav class="site-nav">
 <div class="site-nav-inner">
@@ -1416,18 +1487,42 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="wa-hero-title">P-40 Warhawk walkaround reference bench</div>
 <div class="wa-hero-text">Photo-led P-40 walkaround notes for cockpit, shark-mouth nose, radiator, landing gear, stores and theatre finishes.</div>
 </div>
-<div class="wa-section"><div class="wa-section-head">Cockpit, canopy and rear windows</div><div class="wa-note"><b>Modeller's note</b>Check Tomahawk, Kittyhawk and Warhawk differences before copying cockpit or rear-window details. The framed canopy is worth masking properly.</div><div class="wa-grid">
-<a class="wa-card wa-video" href="https://www.youtube.com/results?search_query=P-40+Warhawk+cockpit+walkaround" rel="noopener" target="_blank"><img alt="P-40 cockpit reference" loading="lazy" src="video-thumb-fallback.png"/><div class="wa-body"><div class="wa-kicker">Cockpit reference</div><div class="wa-title">P-40 cockpit and canopy</div><div class="wa-desc">Use for seat, instrument panel, rear windows and canopy framing.</div><div class="wa-check"><strong>Use this for</strong><span>cockpit · canopy · interior</span></div></div></a>
-<a class="wa-card" href="https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196262/curtiss-p-40e-warhawk/" rel="noopener" target="_blank"><img alt="National Museum USAF P-40E Warhawk reference" loading="lazy" src="video-thumb-fallback.png"/><div class="wa-body"><div class="wa-kicker">Museum reference</div><div class="wa-title">P-40E reference aircraft</div><div class="wa-desc">Use for overall shape, undercarriage, nose and radiator details.</div><div class="wa-check"><strong>Use this for</strong><span>shape · radiator · landing gear</span></div></div></a>
-</div></div>
-<div class="wa-section"><div class="wa-section-head">Nose, shark-mouth and radiator</div><div class="wa-note"><b>Modeller's note</b>The P-40 is dominated by the chin radiator and nose art. Keep shark-mouth decals clean, then weather around them.</div><div class="wa-grid">
-<a class="wa-card wa-video" href="https://www.youtube.com/results?search_query=P-40+Warhawk+walkaround" rel="noopener" target="_blank"><img alt="P-40 Warhawk walkaround video" loading="lazy" src="video-thumb-fallback.png"/><div class="wa-body"><div class="wa-kicker">Walkaround</div><div class="wa-title">Nose and radiator reference</div><div class="wa-desc">Good route for the chin intake, cowling panels, exhausts and spinner area.</div><div class="wa-check"><strong>Use this for</strong><span>nose · radiator · exhaust</span></div></div></a>
-<a class="wa-card" href="https://warhawkairmuseum.org/" rel="noopener" target="_blank"><img alt="Warhawk Air Museum P-40 reference" loading="lazy" src="video-thumb-fallback.png"/><div class="wa-body"><div class="wa-kicker">Museum route</div><div class="wa-title">Warhawk museum reference</div><div class="wa-desc">Useful for restored aircraft context and walkaround routes. Cross-check wartime schemes separately.</div><div class="wa-check"><strong>Use this for</strong><span>shape · nose art · stance</span></div></div></a>
-</div></div>
-<div class="wa-section"><div class="wa-section-head">Landing gear, desert dust and Pacific grime</div><div class="wa-note"><b>Modeller's note</b>P-40 weathering depends on theatre. Desert aircraft need sand abrasion; CBI aircraft need dust and fading; Pacific aircraft need mud, humidity and sun-faded Olive Drab.</div><div class="wa-grid">
-<a class="wa-card" href="https://www.awm.gov.au/advanced-search?query=Kittyhawk" rel="noopener" target="_blank"><img alt="Australian War Memorial Kittyhawk reference" loading="lazy" src="video-thumb-fallback.png"/><div class="wa-body"><div class="wa-kicker">Archive route</div><div class="wa-title">RAAF Kittyhawk photos</div><div class="wa-desc">Search for Kittyhawk, squadron codes and desert/Pacific context.</div><div class="wa-check"><strong>Use this for</strong><span>RAAF · codes · weathering</span></div></div></a>
+
+<div class="wa-section" id="p40-wa-cockpit">
+<div class="wa-section-head">Cockpit, canopy and rear windows</div>
+<div class="wa-note"><b>Modeller's note</b>Check Tomahawk, Kittyhawk and Warhawk differences before copying cockpit or rear-window details. The framed canopy is worth masking properly.</div>
+<div class="wa-grid">
+<a class="wa-card wa-video" href="https://www.youtube.com/watch?v=gl4BCNqecJ8" rel="noopener" target="_blank"><img alt="P-40 cockpit tour thumbnail" loading="lazy" src="https://i.ytimg.com/vi/gl4BCNqecJ8/hqdefault.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Cockpit video</div><div class="wa-title">P-40 cockpit tour</div><div class="wa-desc">Use for canopy framing, instrument panel, seat and narrow cockpit feel.</div><div class="wa-check"><strong>Use this for</strong><span>cockpit · canopy · instruments</span></div></div></a>
+<a class="wa-card" href="https://www.cybermodeler.com/aircraft/p-40/p-40e_walk2.shtml" rel="noopener" target="_blank"><img alt="P-40E cockpit photo walkaround" loading="lazy" src="https://www.cybermodeler.com/aircraft/p-40/images/wam_p-40e_04t.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Photo walkaround</div><div class="wa-title">P-40E cockpit details</div><div class="wa-desc">Photo-led reference for cockpit layout, seat, canopy rails and interior colour cues.</div><div class="wa-check"><strong>Use this for</strong><span>cockpit · seat · canopy rails</span></div></div></a>
+</div>
+</div>
+
+<div class="wa-section" id="p40-wa-nose">
+<div class="wa-section-head">Shark-mouth nose, radiator and exhaust</div>
+<div class="wa-note"><b>Modeller's note</b>The P-40 is dominated by the chin radiator and nose art. Keep shark-mouth decals clean, then weather around them.</div>
+<div class="wa-grid">
+<a class="wa-card" href="https://www.cybermodeler.com/aircraft/p-40/p-40c_walk.shtml" rel="noopener" target="_blank"><img alt="P-40C shark-mouth nose reference" loading="lazy" src="https://www.cybermodeler.com/aircraft/p-40/images/fhc_p-40c_08t.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Photo walkaround</div><div class="wa-title">P-40C shark-mouth nose</div><div class="wa-desc">Good reference for nose art placement, radiator shape, gear stance and early Tomahawk presence.</div><div class="wa-check"><strong>Use this for</strong><span>shark-mouth · radiator · stance</span></div></div></a>
+<a class="wa-card wa-video" href="https://www.youtube.com/watch?v=oXRP-_I_G7I" rel="noopener" target="_blank"><img alt="P-40E Warhawk USAF museum walkaround thumbnail" loading="lazy" src="https://i.ytimg.com/vi/oXRP-_I_G7I/hqdefault.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Museum video</div><div class="wa-title">P-40E Warhawk walkaround</div><div class="wa-desc">Museum video route for the P-40E nose, radiator, exhausts and shark-mouth markings.</div><div class="wa-check"><strong>Use this for</strong><span>nose · radiator · exhaust</span></div></div></a>
+</div>
+</div>
+
+<div class="wa-section" id="p40-wa-airframe">
+<div class="wa-section-head">Airframe, landing gear and underside</div>
+<div class="wa-note"><b>Modeller's note</b>P-40 landing gear and lower radiator detail are very visible. Desert and Pacific aircraft should show dirt around wheels, radiator outlet and lower fuselage.</div>
+<div class="wa-grid">
+<a class="wa-card" href="https://www.cybermodeler.com/aircraft/p-40/p-40b_walk.shtml" rel="noopener" target="_blank"><img alt="P-40B Tomahawk landing gear and airframe reference" loading="lazy" src="https://www.cybermodeler.com/aircraft/p-40/images/dsj_p-40b_04t.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Early airframe</div><div class="wa-title">P-40B Tomahawk walkaround</div><div class="wa-desc">Useful for early Tomahawk shape, landing gear, rear fuselage and AVG-style builds.</div><div class="wa-check"><strong>Use this for</strong><span>P-40B · gear · airframe</span></div></div></a>
+<a class="wa-card" href="https://www.cybermodeler.com/aircraft/p-40/p-40e_walk.shtml" rel="noopener" target="_blank"><img alt="P-40E underside and landing gear photo reference" loading="lazy" src="https://www.cybermodeler.com/aircraft/p-40/images/nasm_p-40e_01t.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Photo walkaround</div><div class="wa-title">P-40E underside and gear</div><div class="wa-desc">Use for gear doors, radiator underside, wheel stance and lower surface weathering.</div><div class="wa-check"><strong>Use this for</strong><span>landing gear · underside · radiator</span></div></div></a>
+</div>
+</div>
+
+<div class="wa-section" id="p40-wa-theatre">
+<div class="wa-section-head">Theatre finishes: AVG, desert and Pacific</div>
+<div class="wa-note"><b>Modeller's note</b>P-40 weathering depends on theatre. CBI aircraft need dust and faded RAF-style colours; desert aircraft need sand abrasion; Pacific aircraft need humidity, mud and faded Olive Drab.</div>
+<div class="wa-grid">
+<a class="wa-card" href="https://www.cybermodeler.com/aircraft/p-40/p-40n_walk.shtml" rel="noopener" target="_blank"><img alt="P-40N Warhawk shark-mouth photo walkaround" loading="lazy" src="https://www.cybermodeler.com/aircraft/p-40/images/wam_p-40n_46t.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Late P-40N</div><div class="wa-title">P-40N shark-mouth finish</div><div class="wa-desc">Reference for late-war P-40N stance, nose presentation and restored finish checks.</div><div class="wa-check"><strong>Use this for</strong><span>P-40N · shark-mouth · late war</span></div></div></a>
 <a class="wa-card" href="paint-codes.html" rel="noopener"><img alt="P-40 paint guide reference" loading="lazy" src="video-thumb-fallback.png"/><div class="wa-body"><div class="wa-kicker">Paint reference</div><div class="wa-title">P-40 paint routes</div><div class="wa-desc">Use RAF desert, AVG RAF-style and USAAF Olive Drab/Neutral Gray routes correctly by subject.</div><div class="wa-check"><strong>Use this for</strong><span>paint · fading · theatre finish</span></div></div></a>
-</div></div>
+</div>
+</div>
 </div><!-- /tab-walkaround -->
 </div><!-- /main-content -->
 <aside class="sidebar">
@@ -1629,10 +1724,15 @@ const BUILD_STEPS=[
 ];
 
 const MEDIA_ITEMS=[
- {type:"video",title:"P-40 Warhawk walkaround",thumb:"video-thumb-fallback.png",url:"https://www.youtube.com/results?search_query=P-40+Warhawk+walkaround",desc:"Use walkaround videos for cockpit, shark-mouth nose, landing gear and radiator details."},
- {type:"video",title:"P-40 cockpit reference",thumb:"video-thumb-fallback.png",url:"https://www.youtube.com/results?search_query=P-40+Warhawk+cockpit+walkaround",desc:"Cockpit and canopy route for P-40B/E/N builds."},
- {type:"archive",title:"Flying Tigers AVG reference",thumb:"video-thumb-fallback.png",url:"https://www.warhawkairmuseum.org/",desc:"Museum/reference route for AVG, P-40 and American fighter context."},
- {type:"archive",title:"Australian War Memorial Kittyhawk archive",thumb:"video-thumb-fallback.png",url:"https://www.awm.gov.au/advanced-search?query=Kittyhawk",desc:"Useful route for RAAF Kittyhawk photos and desert/Pacific context."}
+ {type:"video",title:"1943 Curtiss P-40 Kittyhawk — warbird walkaround",thumb:"https://i.ytimg.com/vi/Q_fkS-RacTY/hqdefault.jpg",url:"https://www.youtube.com/watch?v=Q_fkS-RacTY",desc:"Good full-airframe route for stance, nose profile, cockpit area and overall P-40 presence."},
+ {type:"video",title:"P-40N Warhawk in-depth walkaround",thumb:"https://i.ytimg.com/vi/FfnTFgiboF0/hqdefault.jpg",url:"https://www.youtube.com/watch?v=FfnTFgiboF0",desc:"Useful late P-40N reference for landing gear, cowling, radiator and restoration detail."},
+ {type:"video",title:"P-40 cockpit tour",thumb:"https://i.ytimg.com/vi/gl4BCNqecJ8/hqdefault.jpg",url:"https://www.youtube.com/watch?v=gl4BCNqecJ8",desc:"Cockpit-focused reference for canopy framing, instrument panel layout and pilot's compartment feel."},
+ {type:"video",title:"P-40E Warhawk walkaround — USAF Museum",thumb:"https://i.ytimg.com/vi/oXRP-_I_G7I/hqdefault.jpg",url:"https://www.youtube.com/watch?v=oXRP-_I_G7I",desc:"Museum walkaround route for a P-40E / Kittyhawk-style subject and shark-mouth markings."},
+ {type:"archive",title:"Cybermodeler P-40B Tomahawk photo walkaround",thumb:"https://www.cybermodeler.com/aircraft/p-40/images/dsj_p-40b_04t.jpg",url:"https://www.cybermodeler.com/aircraft/p-40/p-40b_walk.shtml",desc:"Photo reference for early Tomahawk/AVG-style airframe, canopy, landing gear and nose shape."},
+ {type:"archive",title:"Cybermodeler P-40E cockpit walkaround",thumb:"https://www.cybermodeler.com/aircraft/p-40/images/wam_p-40e_04t.jpg",url:"https://www.cybermodeler.com/aircraft/p-40/p-40e_walk2.shtml",desc:"Photo-led cockpit and detail reference for P-40E / Kittyhawk interiors and preserved aircraft details."},
+ {type:"archive",title:"Cybermodeler P-40C Tomahawk walkaround",thumb:"https://www.cybermodeler.com/aircraft/p-40/images/fhc_p-40c_08t.jpg",url:"https://www.cybermodeler.com/aircraft/p-40/p-40c_walk.shtml",desc:"Useful shark-mouth nose, landing gear and airframe photo set for early P-40C/Tomahawk subjects."},
+ {type:"archive",title:"P-40N Warhawk photo walkaround",thumb:"https://www.cybermodeler.com/aircraft/p-40/images/wam_p-40n_46t.jpg",url:"https://www.cybermodeler.com/aircraft/p-40/p-40n_walk.shtml",desc:"Late P-40N route for nose, propeller, landing gear and shark-mouth presentation."},
+ {type:"archive",title:"National Museum USAF P-40E Warhawk",thumb:"https://www.cybermodeler.com/aircraft/p-40/images/nasm_p-40e_01t.jpg",url:"https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196309/curtiss-p-40e-warhawk/",desc:"Museum page for the P-40E / Kittyhawk aircraft displayed in Flying Tigers successor markings."}
 ];
 
 const BOB_EVENTS=[
@@ -2278,19 +2378,37 @@ function renderThisWeek(){
 
 // ═══ MEDIA ═══
 function renderMedia(){
-  const el=document.getElementById('media-grid');if(!el||el.dataset.rendered)return;el.dataset.rendered='1';
-  const cats=[{k:'video',label:'Video',col:'var(--raf-sky)'},{k:'audio',label:'Audio',col:'var(--brass)'},{k:'archive',label:'Archive',col:'var(--olive)'}];
+  const el=document.getElementById('media-grid');
+  if(!el || el.dataset.rendered) return;
+  el.dataset.rendered='1';
+  const cats=[
+    {k:'video',label:'Video',col:'var(--raf-sky)'},
+    {k:'audio',label:'Audio',col:'var(--brass)'},
+    {k:'archive',label:'Photo archives & walkaround sources',col:'var(--olive)'}
+  ];
   cats.forEach(cat=>{
-    const items=MEDIA_ITEMS.filter(i=>i.type===cat.k);if(!items.length)return;
+    const items=MEDIA_ITEMS.filter(i=>i.type===cat.k);
+    if(!items.length) return;
     const sec=document.createElement('div');
-    sec.innerHTML=`<div class="section-label" style="color:${cat.col}">${cat.label}</div>`;
+    sec.innerHTML=`<div class="section-label" style="color:${cat.col};margin-top:1rem">${cat.label}</div>`;
+    const grid=document.createElement('div');
+    grid.className='p40-media-card-grid';
     items.forEach(item=>{
-      const div=document.createElement('a');div.href=item.url;div.target='_blank';div.rel='noopener';
-      div.style.cssText='display:flex;gap:.9rem;background:rgba(21,39,68,.7);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:.9rem 1rem;margin-bottom:8px;text-decoration:none;transition:background .15s;align-items:flex-start';
-      div.onmouseover=()=>div.style.background='rgba(255,255,255,.04)';div.onmouseout=()=>div.style.background='rgba(21,39,68,.7)';
-      div.innerHTML=`<div style="font-size:1.8rem;flex-shrink:0;line-height:1;padding-top:.1rem">${item.thumb}</div><div><div style="font-family:'Special Elite',cursive;font-size:1.05rem;color:#fff;margin-bottom:.25rem">${item.title}</div><div style="font-size:15px;color:rgba(255,255,255,.6);line-height:1.55">${item.desc}</div><div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:${cat.col};margin-top:.4rem">Open ↗</div></div>`;
-      sec.appendChild(div);
+      const a=document.createElement('a');
+      a.href=item.url;
+      a.target='_blank';
+      a.rel='noopener';
+      a.className='p40-media-card';
+      a.innerHTML=`
+        <img class="p40-media-thumb" src="${item.thumb}" alt="${item.title} thumbnail" loading="lazy" onerror="this.src='video-thumb-fallback.png'">
+        <div class="p40-media-body">
+          <div class="p40-media-title">${item.title}</div>
+          <div class="p40-media-desc">${item.desc}</div>
+          <div class="p40-media-open" style="color:${cat.col}">Open reference ↗</div>
+        </div>`;
+      grid.appendChild(a);
     });
+    sec.appendChild(grid);
     el.appendChild(sec);
   });
 }
