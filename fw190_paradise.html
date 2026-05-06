@@ -1573,6 +1573,98 @@ body{
 @media(max-width:760px){.ww2-map-grid{grid-template-columns:1fr!important}.ww2-final-card img{height:140px}}
 </style>
 
+
+<style id="ww2-hurricane-structure-css">
+.ww2-hurricane-structure{border:1px solid rgba(201,168,76,.24);border-radius:16px;background:rgba(9,18,32,.72);padding:1rem;margin:1rem 0}
+.ww2-h-subtabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 1rem}
+.ww2-h-btn{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#f4ead7;border-radius:999px;padding:.55rem .8rem;font-weight:800;cursor:pointer}
+.ww2-h-btn.on{background:#c9a84c;color:#111}
+.ww2-h-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.85rem}
+.ww2-h-map-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:1rem}
+.ww2-h-map{position:relative;min-height:430px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.14);background:radial-gradient(circle at 22% 36%,rgba(201,168,76,.22),transparent 17%),radial-gradient(circle at 66% 54%,rgba(126,165,207,.16),transparent 21%),linear-gradient(135deg,#0b192b,#1a324d)}
+.ww2-h-dot{position:absolute;width:23px;height:23px;border-radius:50%;border:2px solid #fff;background:#c9a84c;box-shadow:0 0 0 8px rgba(201,168,76,.18);cursor:pointer}
+.ww2-h-panel,.ww2-h-card{border:1px solid rgba(255,255,255,.13);border-radius:14px;background:rgba(255,255,255,.045);padding:1rem;color:#f4ead7}
+.ww2-h-card{display:block;text-decoration:none;overflow:hidden;padding:0}
+.ww2-h-card img{width:100%;height:165px;object-fit:cover;display:block;background:#111b2b}
+.ww2-h-card div{padding:.9rem}
+.ww2-h-card h3,.ww2-h-panel h3{margin:.2rem 0 .45rem;color:#fff}
+.ww2-h-card p,.ww2-h-panel p{color:rgba(244,234,215,.72);line-height:1.55;margin:.25rem 0}
+.ww2-h-kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#c9a84c;font-weight:900}
+.ww2-h-open{margin-top:.7rem}
+.ww2-timeline-list .ww2-h-panel.active{border-color:#c9a84c;background:rgba(201,168,76,.08)}
+@media(max-width:760px){.ww2-h-map-grid{grid-template-columns:1fr}.ww2-h-card img{height:135px}}
+</style>
+
+
+<style id="ww2-side-theme-system">
+:root{--ww2-side-primary:#162b45;--ww2-side-secondary:#293f55;--ww2-side-accent:#c9a84c}
+body.ww2-side-themed .aircraft-hero,
+body.ww2-side-themed .hero,
+body.ww2-side-themed header.hero,
+body.ww2-side-themed .page-hero{
+  background:
+    radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--ww2-side-accent) 24%, transparent), transparent 26%),
+    linear-gradient(135deg, var(--ww2-side-primary), var(--ww2-side-secondary)) !important;
+  border-bottom:1px solid color-mix(in srgb, var(--ww2-side-accent) 50%, transparent) !important;
+}
+body.ww2-side-themed .section-label,
+body.ww2-side-themed .ww2-h-kicker,
+body.ww2-side-themed .books-section-title,
+body.ww2-side-themed .aftermarket-section-title{color:var(--ww2-side-accent)!important}
+body.ww2-side-themed .ww2-h-btn.on,
+body.ww2-side-themed .fb.on,
+body.ww2-side-themed .nav-tab.active{
+  background:var(--ww2-side-accent)!important;
+  color:#111!important;
+  border-color:var(--ww2-side-accent)!important;
+}
+body.ww2-side-themed .ww2-h-map{
+  background:
+    radial-gradient(circle at 22% 34%, color-mix(in srgb, var(--ww2-side-accent) 24%, transparent), transparent 17%),
+    radial-gradient(circle at 66% 54%, rgba(126,165,207,.14), transparent 21%),
+    linear-gradient(135deg, color-mix(in srgb, var(--ww2-side-primary) 80%, #000), var(--ww2-side-secondary)) !important;
+}
+body.ww2-side-themed .ww2-h-dot{background:var(--ww2-side-accent)!important;box-shadow:0 0 0 8px color-mix(in srgb, var(--ww2-side-accent) 22%, transparent)!important}
+.ww2-side-identity{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  margin:.9rem 0 0;
+  max-width:760px;
+  padding:.75rem .9rem;
+  border:1px solid color-mix(in srgb, var(--ww2-side-accent) 38%, transparent);
+  border-radius:14px;
+  background:rgba(0,0,0,.22);
+  color:#f4ead7;
+}
+.ww2-side-emblem{
+  width:54px;
+  height:54px;
+  min-width:54px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:1.55rem;
+  color:#fff;
+  border:2px solid rgba(255,255,255,.82);
+  box-shadow:0 0 0 5px rgba(255,255,255,.08);
+  background:var(--ww2-side-accent);
+}
+.ww2-side-identity h2{font-size:.92rem;letter-spacing:.13em;text-transform:uppercase;margin:0;color:#fff}
+.ww2-side-identity p{margin:.2rem 0 0;color:rgba(244,234,215,.74);line-height:1.45}
+body.ww2-side-raf .ww2-side-emblem{background:radial-gradient(circle,#c3162f 0 18%,#fff 19% 34%,#1f4f9a 35% 68%,#7a0f24 69% 100%);font-size:0;color:transparent}
+body.ww2-side-usaaf .ww2-side-emblem,
+body.ww2-side-usn .ww2-side-emblem{border-radius:12px;background:linear-gradient(90deg,#fff 0 18%,#244f86 18% 82%,#fff 82% 100%);color:#fff;text-shadow:0 1px 1px #001b34}
+body.ww2-side-luftwaffe .ww2-side-emblem{border-radius:10px;background:#e8e0cc;color:#111;font-size:2rem}
+body.ww2-side-japanese .ww2-side-emblem{background:#fff;color:#d04b3e;font-size:2.4rem}
+body.ww2-side-soviet .ww2-side-emblem{background:#b51e26;color:#ffd97a}
+body.ww2-side-italian .ww2-side-emblem{background:conic-gradient(#267447 0 33%,#f5f1df 33% 66%,#b63a30 66% 100%);color:#1d1d1d}
+body.ww2-side-other .ww2-side-emblem{background:radial-gradient(circle,#c6283b 0 25%,#fff 26% 48%,#1e4d90 49% 100%);font-size:0;color:transparent}
+body.ww2-side-themed .hero-roundel{display:none!important}
+@media(max-width:760px){.ww2-side-identity{align-items:flex-start}.ww2-side-emblem{width:46px;height:46px;min-width:46px}}
+</style>
+
 </head>
 <body>
 <!-- HEADER -->
@@ -1742,81 +1834,7 @@ body{
 </div>
 <!-- TAB: REFERENCE — Map · Timeline · Compare · Survivors · Books -->
 <div class="tab-panel" id="tab-reference">
-<div style="display:flex;gap:8px;margin-bottom:1.4rem;flex-wrap:wrap">
-<button class="fb on rtf" onclick="setRefSub('map',this)" style="font-size:13px">Station map</button>
-<button class="fb rtf" onclick="setRefSub('timeline',this)" style="font-size:13px">BoB timeline</button>
-<button class="fb rtf" onclick="setRefSub('compare',this)" style="font-size:13px">Compare squadrons</button>
-<button class="fb rtf" onclick="setRefSub('survivors',this)" style="font-size:13px">Survivors</button>
-<button class="fb rtf" onclick="setRefSub('books',this)" style="font-size:13px">Books</button>
 </div>
-<div id="rsub-map">
-<div class="info-box">Fw 190 station map — rebuilt to work like the Hurricane map: click an airfield, then jump straight into the linked Jagdgeschwader card with pilots, markings, decals and kit notes. This is centred on occupied Europe, Germany, the Eastern Front and North Africa — not England.</div>
-<div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem">
-<span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-right:.25rem">Filter:</span>
-<button class="map-filter-btn on" onclick="filterMapGroup('all',this)" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)">All</button>
-<button class="map-filter-btn" onclick="filterMapGroup('channel',this)" style="border-color:#c87848;color:#c87848">Channel Front</button>
-<button class="map-filter-btn" onclick="filterMapGroup('reich',this)" style="border-color:#c85858;color:#c85858">Reich / Holland</button>
-<button class="map-filter-btn" onclick="filterMapGroup('east',this)" style="border-color:#4a7a5a;color:#4a7a5a">Eastern Front</button>
-<button class="map-filter-btn" onclick="filterMapGroup('med',this)" style="border-color:#c8a028;color:#c8a028">Mediterranean</button>
-</div>
-<div class="fw-map-key">
-<span><i class="fw-key-dot" style="background:#c87848"></i>JG 2 / JG 26 Channel</span>
-<span><i class="fw-key-dot" style="background:#c85858"></i>JG 1 / JG 11 / III./JG 3 Reich</span>
-<span><i class="fw-key-dot" style="background:#4a7a5a"></i>JG 54 / JG 51 East</span>
-<span><i class="fw-key-dot" style="background:#c8a028"></i>Mediterranean / Africa context</span>
-</div>
-<div class="fw-map-shell">
-<div class="fw-map-board">
-<div id="leaflet-map"></div>
-<div class="fw-map-theatre-band">
-<span class="fw-map-theatre-pill" style="border-left-color:#c87848">Channel Front</span>
-<span class="fw-map-theatre-pill" style="border-left-color:#c85858">Reich / Holland</span>
-<span class="fw-map-theatre-pill" style="border-left-color:#4a7a5a">Eastern Front</span>
-<span class="fw-map-theatre-pill" style="border-left-color:#c8a028">Mediterranean</span>
-</div>
-</div>
-<div class="fw-map-side" id="map-sqn-list">
-<p style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.06em;color:rgba(255,255,255,.5)">Click any station marker to see linked units, pilots and modelling context.</p>
-</div>
-</div>
-</div>
-<div id="rsub-timeline" style="display:none">
-<div class="timeline-wrap">
-<div id="tl-date" style="font-family:'Special Elite',cursive;font-size:1.4rem;color:var(--brass2);text-align:center;margin-bottom:.75rem"></div>
-<input class="timeline-slider" id="tl-slider" max="670" min="0" oninput="updateTimeline(this.value)" type="range" value="0"/>
-<div class="timeline-labels"><span>Aug 1941</span><span>May 1945</span></div>
-<div id="tl-event-detail" style="margin-top:.75rem"></div>
-</div>
-<div class="tl-legend" style="margin-top:1rem">
-<span><span class="tl-dot" style="background:var(--olive)"></span>Front line</span>
-<span><span class="tl-dot" style="background:var(--brass)"></span>Reserve</span>
-<span><span class="tl-dot" style="background:#5a5a5a"></span>Resting</span>
-</div>
-<div class="timeline-sqns" id="tl-sqns"></div>
-</div>
-
-<div id="timeline-detail" class="info-box">Use the timeline to connect period, theatre, markings and weathering.</div>
-<div id="rsub-compare" style="display:none">
-<div class="compare-selects">
-<div><label>Squadron A</label>
-<select id="cmp-a" onchange="renderCompare()" style="width:100%"></select></div>
-<div><label>Squadron B</label>
-<select id="cmp-b" onchange="renderCompare()" style="width:100%"></select></div>
-</div>
-<div id="compare-output"></div>
-</div>
-
-<div id="compare-grid"></div>
-<div id="rsub-survivors" style="display:none">
-<div class="info-box">Five surviving Focke-Wulf Fw 190 airframes you can visit — real aircraft for modelling reference. </div>
-<div id="survivors-grid"></div>
-</div>
-<div id="rsub-books" style="display:none">
-<div class="info-box">Essential reading for the Fw 190 modeller and historian. All links go directly to the specific book on Amazon UK — no search pages.</div>
-<div id="books-grid"></div>
-</div>
-</div>
-<!-- TAB: STORIES — Pilot narratives -->
 <div class="tab-panel" id="tab-stories">
 <div style="margin-bottom:1.5rem">
 <div class="section-label" style="margin-bottom:.5rem">Pilot Profiles · Experten and Modelling Subjects</div>
@@ -1831,166 +1849,9 @@ body{
 </div>
 <!-- TAB: MEDIA — YouTube, sounds, footage -->
 <div class="tab-panel" id="tab-media">
-<div class="info-box">Fw 190 footage, BMW 801 recordings, modelling tutorials and documentary clips. All links open YouTube. </div>
-<div id="media-grid"></div>
 </div>
 <div class="tab-panel" id="tab-walkaround">
-<div class="info-box">Fw 190 reference photos and walkaround videos grouped by detail area. Each section now starts with a proper photo reference card, followed by specific videos for deeper inspection.</div>
-<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
-<button class="wa-tab active" onclick="showWaTab('cockpit',this)" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:rgba(201,168,76,.12);border:1px solid var(--brass);color:var(--brass2);border-radius:2px;cursor:pointer">Cockpit</button>
-<button class="wa-tab" onclick="showWaTab('airframe',this)" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Airframe</button>
-<button class="wa-tab" onclick="showWaTab('engine',this)" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">Engine &amp; Cowling</button>
-<button class="wa-tab" onclick="showWaTab('dora',this)" style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);border-radius:2px;cursor:pointer">D-9 Dora</button>
 </div>
-<div class="wa-panel" id="wa-cockpit">
-<div class="section-label">Cockpit and interior</div>
-<div class="wa-video-grid">
-<a class="wa-ref-card" href="https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196261/focke-wulf-fw-190d-9/" rel="noopener" target="_blank">
-<img alt="Fw 190 D-9 cockpit photo" loading="lazy" src="https://media.defense.gov/2006/Nov/14/2000534913/2000/2000/0/061114-F-1234P-002.JPG"/>
-<div class="wa-ref-body">
-<div class="wa-ref-kicker">USAF Museum</div>
-<div class="wa-ref-title">Reference photo — Fw 190 cockpit</div>
-<div class="wa-ref-desc">Useful for the very dark RLM 66 cockpit finish, the heavy framing around the instrument panel and the relationship between seat, stick and side consoles. A strong reference before detailing the office.</div>
-<div class="wa-ref-link">Open source photo ↗</div>
-</div>
-</a>
-<a class="wa-video-card" href="https://www.youtube.com/watch?v=i7ytEtZBK6A" rel="noopener" target="_blank"><div class="wa-thumb">🎬</div><div class="wa-body"><div class="wa-title">Fw 190 walkaround close-up — Berlin Gatow</div><div class="wa-desc">Useful close-up walkaround of the Gatow aircraft, including cockpit/canopy and external detail.</div><div class="wa-link">Open specific video ↗</div></div></a>
-<a class="wa-video-card" href="https://www.youtube.com/watch?v=KRJj8kScSHc" rel="noopener" target="_blank"><div class="wa-thumb">✈</div><div class="wa-body"><div class="wa-title">Focke Wulf Fw 190 A-8 walkaround</div><div class="wa-desc">A-series walkaround reference for canopy frames, wing-root wear, cowling ring and landing gear stance.</div><div class="wa-link">Open specific video ↗</div></div></a>
-<a class="wa-video-card" href="https://www.youtube.com/watch?v=TmyRb8RUpNo" rel="noopener" target="_blank"><div class="wa-thumb">📷</div><div class="wa-body"><div class="wa-title">Fw 190 A-3/U3 “Black 3” walkaround</div><div class="wa-desc">Good restored A-3 reference for earlier A-series airframe details and underside views.</div><div class="wa-link">Open specific video ↗</div></div></a>
-</div>
-</div>
-<div class="wa-panel" id="wa-airframe" style="display:none">
-<div class="section-label">Airframe, markings and undercarriage</div>
-<div class="wa-video-grid">
-<a class="wa-ref-card" href="https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196261/focke-wulf-fw-190d-9/" rel="noopener" target="_blank">
-<img alt="Fw 190 D-9 overall airframe photo" loading="lazy" src="https://media.defense.gov/2014/Apr/21/2000857812/-1/-1/0/140421-F-IO108-021.JPG"/>
-<div class="wa-ref-body">
-<div class="wa-ref-kicker">USAF Museum</div>
-<div class="wa-ref-title">Reference photo — Airframe and undercarriage</div>
-<div class="wa-ref-desc">Useful for parked stance, undercarriage angle, wing thickness and general panel layout. Good for checking how compact the Fw 190 looks around the cockpit and wing root.</div>
-<div class="wa-ref-link">Open source photo ↗</div>
-</div>
-</a>
-<a class="wa-video-card" href="https://www.youtube.com/watch?v=JtgvMhIHGKo" rel="noopener" target="_blank"><div class="wa-thumb">🛠️</div><div class="wa-body"><div class="wa-title">Fw 190 military museum walkaround</div><div class="wa-desc">Useful for panel layout, wheel wells, wing undersides and general airframe finish.</div><div class="wa-link">Open specific video ↗</div></div></a>
-<a class="wa-video-card" href="https://www.youtube.com/watch?v=uH545TA4QUc" rel="noopener" target="_blank"><div class="wa-thumb">📐</div><div class="wa-body"><div class="wa-title">Fw 190A-8/U-1 walkaround</div><div class="wa-desc">Reference for two-seat conversion shape, but still useful for A-series surface and access panel study.</div><div class="wa-link">Open specific video ↗</div></div></a>
-<a class="wa-video-card" href="https://www.youtube.com/watch?v=uIiSAg-S4kE" rel="noopener" target="_blank"><div class="wa-thumb">🎯</div><div class="wa-body"><div class="wa-title">Fw 190A-9 walkaround</div><div class="wa-desc">Late A-series walkaround for weathering ideas, wheel stance and cowling/canopy details.</div><div class="wa-link">Open specific video ↗</div></div></a>
-</div>
-</div>
-<div class="wa-panel" id="wa-engine" style="display:none">
-<div class="section-label">BMW 801, cowling and exhaust staining</div>
-<div class="wa-video-grid">
-<a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:Focke-Wulf_Fw_190D-9_USAF.jpg" rel="noopener" target="_blank">
-<img alt="Fw 190 D-9 nose and cowling reference" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Focke-Wulf_Fw_190D-9_USAF.jpg/1280px-Focke-Wulf_Fw_190D-9_USAF.jpg"/>
-<div class="wa-ref-body">
-<div class="wa-ref-kicker">Wikimedia Commons</div>
-<div class="wa-ref-title">Reference photo — Nose, cowling and radiator ring</div>
-<div class="wa-ref-desc">Useful for the Dora’s long nose, annular radiator ring and the way the cowling tapers back into the fuselage. Helpful when checking the shape differences between a Dora and a radial-engined A-series machine.</div>
-<div class="wa-ref-link">Open source photo ↗</div>
-</div>
-</a>
-<a class="wa-video-card" href="https://www.youtube.com/watch?v=XctfCw4fKUg" rel="noopener" target="_blank"><div class="wa-thumb">🔥</div><div class="wa-body"><div class="wa-title">Radial-powered Fw 190 flying display</div><div class="wa-desc">Good live reference for exhaust tone, smoke pattern and radial-powered stance.</div><div class="wa-link">Open specific video ↗</div></div></a>
-<a class="wa-video-card" href="https://www.youtube.com/watch?v=b2ZYK6rZxC0" rel="noopener" target="_blank"><div class="wa-thumb">⚙️</div><div class="wa-body"><div class="wa-title">BMW 801 aircraft engine reference</div><div class="wa-desc">Engine detail reference for open cowling or museum-maintenance diorama subjects.</div><div class="wa-link">Open specific video ↗</div></div></a>
-</div>
-</div>
-<div class="wa-panel" id="wa-dora" style="display:none">
-<div class="section-label">Fw 190 D-9 Dora</div>
-<div class="wa-video-grid">
-<a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:Focke-Wulf_Fw_190D-9_outside_USAF.jpg" rel="noopener" target="_blank">
-<img alt="Fw 190 D-9 outdoor museum photo" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/6/67/Focke-Wulf_Fw_190D-9_outside_USAF.jpg"/>
-<div class="wa-ref-body">
-<div class="wa-ref-kicker">Wikimedia Commons</div>
-<div class="wa-ref-title">Reference photo — Dora side profile</div>
-<div class="wa-ref-desc">A clean side-profile style reference for Dora proportions: long nose, tall tail, undercarriage sit and rear fuselage line. Very useful when checking silhouette and decal placement.</div>
-<div class="wa-ref-link">Open source photo ↗</div>
-</div>
-</a>
-<a class="wa-video-card" href="https://www.youtube.com/watch?v=pbQVdx5PvOk" rel="noopener" target="_blank"><div class="wa-thumb">🦅</div><div class="wa-body"><div class="wa-title">USAF Museum Fw 190 D-9 walkaround</div><div class="wa-desc">Specific Dora reference for long nose, annular radiator, undercarriage and late-war finish.</div><div class="wa-link">Open specific video ↗</div></div></a>
-<a class="wa-video-card" href="https://www.youtube.com/watch?v=1Dftf-nX5Ec" rel="noopener" target="_blank"><div class="wa-thumb">🎥</div><div class="wa-body"><div class="wa-title">Focke-Wulf Fw 190D-9 museum video</div><div class="wa-desc">Additional D-9 reference for the Jumo cowling line and Dora proportions.</div><div class="wa-link">Open specific video ↗</div></div></a>
-</div>
-</div>
-</div><!-- /tab-walkaround -->
-</div><!-- /main-content -->
-<!-- SIDEBAR -->
-<aside class="sidebar">
-<div class="sidebar-block">
-<div class="sidebar-hd">Advertisement</div>
-<!-- ADSENSE 160×240 — paste your AdSense code here once approved -->
-</div>
-<div class="sidebar-block">
-<div class="sidebar-hd">Articles</div>
-<a class="shop-link" href="articles.html" style="text-decoration:none">
-<span class="shop-flag">📋</span>
-<div class="shop-info">
-<div class="shop-name">Kit Buying Guide</div>
-<div class="shop-cats">All 7 Fw 190 kits reviewed</div>
-</div>
-</a>
-<a class="shop-link" href="article-bf109-rlm-paint-codes.html" style="text-decoration:none">
-<span class="shop-flag">🎨</span>
-<div class="shop-info">
-<div class="shop-name">Paint Codes</div>
-<div class="shop-cats">Dark Earth · Dark Green · Sky</div>
-</div>
-</a>
-<a class="shop-link" href="articles.html" style="text-decoration:none">
-<span class="shop-flag">📰</span>
-<div class="shop-info">
-<div class="shop-name">All Articles →</div>
-<div class="shop-cats">Build guides · History · Reference</div>
-</div>
-</a>
-</div>
-<div class="sidebar-block">
-<div class="sidebar-hd">Advertisement</div>
-<!-- ADSENSE 160×180 — paste your AdSense code here once approved -->
-</div>
-<div class="sidebar-block">
-<div class="sidebar-hd">Other Aircraft</div>
-<a class="shop-link" href="index.html"><span class="shop-flag">🏠</span><div class="shop-info"><div class="shop-name">← Hub Home</div><div class="shop-cats">All aircraft</div></div></a>
-<div class="shop-link" style="opacity:.4;cursor:default"><span class="shop-flag">✈️</span><div class="shop-info"><div class="shop-name">Spitfire</div><div class="shop-cats">Coming soon</div></div></div>
-<div class="shop-link" style="opacity:.4;cursor:default"><span class="shop-flag">✈️</span><div class="shop-info"><div class="shop-name">Lancaster</div><div class="shop-cats">Coming soon</div></div></div>
-<div class="shop-link" style="opacity:.4;cursor:default"><span class="shop-flag">✈️</span><div class="shop-info"><div class="shop-name">Bf 109</div><div class="shop-cats">Coming soon</div></div></div>
-</div>
-</aside>
-</div><!-- /main-wrap -->
-<!-- PILOT MODAL -->
-<div class="pm-overlay" id="pm-overlay" onclick="closePM()">
-<div class="pm-modal" onclick="event.stopPropagation()">
-<div class="pm-hd">
-<div><div class="pm-name" id="pm-name"></div><div class="pm-rank" id="pm-rank"></div></div>
-<button class="pm-close" onclick="closePM()">✕</button>
-</div>
-<div class="pm-body">
-<div class="pm-stats" id="pm-stats"></div>
-<div class="pm-bio" id="pm-bio"></div>
-<div class="pm-awards" id="pm-awards"></div>
-<div id="pm-decal-list" style="display:none;margin:.6rem 0;padding:.5rem;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.08);border-radius:2px"></div>
-<div class="pm-links">
-<a class="shop-btn hb-brass" href="#" id="pm-h-pilot" rel="noopener" target="_blank">IWM archive ↗</a>
-<a class="shop-btn hb-outline" href="#" id="pm-h-sqn" rel="noopener" target="_blank">Squadron decals ↗</a>
-</div>
-</div>
-</div>
-</div>
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLB()">
-<button class="lb-close" onclick="closeLB()">✕</button>
-<img alt="" id="lb-img" src=""/>
-<div class="lb-cap" id="lb-cap"></div>
-</div>
-<footer style="background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.06);padding:1.5rem 2rem;text-align:center;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;color:rgba(255,255,255,.2)">
-<a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none">WW2 Modeller Hub</a>
-   · 
-  <a href="spitfire_paradise.html" style="color:rgba(255,255,255,.35);text-decoration:none">Spitfire</a>
-   · 
-  <a href="articles.html" style="color:rgba(255,255,255,.35);text-decoration:none">Articles</a>
-   · 
-  <a href="about.html" style="color:rgba(255,255,255,.35);text-decoration:none">About</a>
-   · 
-  <a href="privacy.html" style="color:rgba(255,255,255,.35);text-decoration:none">Privacy</a>
-<br/>
-  Focke-Wulf Fw 190 Reference · For scale modellers and aviation enthusiasts · Not affiliated with any manufacturer or retailer
-</footer>
 <script>
 
 // ═══════════════════════════════════════════════════════
@@ -4263,17 +4124,18 @@ function showWaTab(id, btn) {
 
 
 
-<script id="ww2-final-page-audit-repair">
-window.WW2_REF_DATA = {"name": "Focke-Wulf Fw 190", "category": "Luftwaffe", "role": "Luftwaffe fighter", "paint": "RLM 74/75/76, RLM 70/71, Eastern Front and desert variants", "query": "Fw 190", "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg", "bases": [{"base": "Western Front airfield", "unit": "Geschwader route", "x": 25, "y": 44, "note": "Focke-Wulf Fw 190: Geschwader route. Use this base to jump to unit cards, markings, paint and weathering notes."}, {"base": "Mediterranean / desert base", "unit": "Theatre route", "x": 52, "y": 62, "note": "Focke-Wulf Fw 190: Theatre route. Use this base to jump to unit cards, markings, paint and weathering notes."}, {"base": "Eastern Front base", "unit": "Ostfront route", "x": 76, "y": 42, "note": "Focke-Wulf Fw 190: Ostfront route. Use this base to jump to unit cards, markings, paint and weathering notes."}], "timeline": [{"label": "Introduction", "text": "Focke-Wulf Fw 190 enters the modelling story: choose early finish, first-unit markings and baseline variant details."}, {"label": "Main campaign use", "text": "Focke-Wulf Fw 190 reaches its key theatre identity. Base, unit and markings now drive the paint and weathering choices."}, {"label": "Peak operations", "text": "Operational tempo adds exhaust, oil, mud, dust, salt, fading or chipping depending on theatre."}, {"label": "Late-war / preserved reference", "text": "Use surviving aircraft for structure and walkaround detail, but wartime photos for paint and markings."}], "compare": [{"title": "Variant route", "text": "Luftwaffe fighter. Confirm exact mark/variant before choosing kit, decals or aftermarket."}, {"title": "Paint route", "text": "RLM 74/75/76, RLM 70/71, Eastern Front and desert variants"}, {"title": "Modelling risk", "text": "Cross-check restored aircraft, decal instructions and wartime photographs before final finish."}], "media": [{"title": "Focke-Wulf Fw 190 archive photographs", "kind": "Archive", "url": "https://www.iwm.org.uk/collections/search?query=Fw+190", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg", "text": "Wartime archive route for unit, markings and weathering evidence."}, {"title": "Focke-Wulf Fw 190 image references", "kind": "Photo reference", "url": "https://commons.wikimedia.org/w/index.php?search=Fw+190&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg", "text": "Image route for overall form, cockpit, undercarriage and surface details."}, {"title": "Focke-Wulf Fw 190 kit records", "kind": "Kit database", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Fw+190", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg", "text": "Use to verify exact tooling, boxing, scale and decal contents."}], "walkaround": [{"title": "Overall airframe and stance", "url": "https://commons.wikimedia.org/w/index.php?search=Fw+190+walkaround+airframe&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg"}, {"title": "Cockpit, canopy and forward section", "url": "https://commons.wikimedia.org/w/index.php?search=Fw+190+cockpit&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg"}, {"title": "Landing gear, bays and stores", "url": "https://commons.wikimedia.org/w/index.php?search=Fw+190+landing+gear&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg"}, {"title": "Paint, markings and weathering", "url": "paint-codes.html", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg"}], "shop": [{"title": "Fw 190 kit record", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Fw+190", "text": "Verify kit tooling and exact boxing before purchase."}, {"title": "Fw 190 decals", "url": "https://www.hannants.co.uk/search/?keyword_search=Fw+190+decals", "text": "Decal route matched to this aircraft only."}, {"title": "Fw 190 masks / detail", "url": "https://www.eduard.com/eduard/?lang=1&cur=2&listtype=search&searchparam=Fw+190", "text": "Detail/mask route matched to this aircraft only."}], "books": [{"title": "Focke-Wulf Fw 190 reference books", "url": "https://www.amazon.co.uk/s?k=Fw+190+aircraft+book", "text": "Book route for variants, markings and theatre context."}, {"title": "Focke-Wulf Fw 190 unit and markings references", "url": "https://www.amazon.co.uk/s?k=Fw+190+units+markings+World+War+2", "text": "Use for unit history, serials and campaign placement."}]};
 
+
+
+<script id="ww2-hurricane-structure-final">
+window.WW2_H_DATA = {"file": "fw190_paradise.html", "name": "Focke-Wulf Fw 190", "cat": "Luftwaffe", "role": "Luftwaffe fighter", "paint": "Western Front, Eastern Front, Reich Defence and RLM camouflage routes", "query": "Fw 190", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg", "bases": [{"base": "Western Front airfield", "unit": "Geschwader / Gruppe card", "x": 24, "y": 43, "linked": ["Geschwader / Gruppe card", "Focke-Wulf Fw 190 markings route", "Focke-Wulf Fw 190 weathering route"], "note": "Focke-Wulf Fw 190: click-through base card linked to unit, markings and modelling notes."}, {"base": "Mediterranean / desert field", "unit": "Theatre Gruppe card", "x": 52, "y": 62, "linked": ["Theatre Gruppe card", "Focke-Wulf Fw 190 markings route", "Focke-Wulf Fw 190 weathering route"], "note": "Focke-Wulf Fw 190: click-through base card linked to unit, markings and modelling notes."}, {"base": "Eastern Front base", "unit": "Ostfront Staffel card", "x": 76, "y": 42, "linked": ["Ostfront Staffel card", "Focke-Wulf Fw 190 markings route", "Focke-Wulf Fw 190 weathering route"], "note": "Focke-Wulf Fw 190: click-through base card linked to unit, markings and modelling notes."}], "timeline": [{"phase": "Introduction", "date": "Early service", "text": "Focke-Wulf Fw 190 enters service. Use this phase for early variants, first camouflage and initial unit markings."}, {"phase": "Main campaign use", "date": "Operational peak", "text": "Focke-Wulf Fw 190 develops its key theatre identity. Base, unit and markings now drive the model subject."}, {"phase": "Heavy wear stage", "date": "Sustained operations", "text": "Weathering becomes theatre-specific: Western Front, Eastern Front, Reich Defence and RLM camouflage routes plus exhaust, oil, mud, dust, salt, fading or chipping."}, {"phase": "Late-war / reference stage", "date": "Late war and survivors", "text": "Use preserved aircraft for structure and walkaround detail, but confirm paint and markings with wartime photographs."}], "compare": [{"h": "Variant choice", "t": "Luftwaffe fighter. Choose exact mark/variant first; it controls kit, cockpit, canopy, stores and decals."}, {"h": "Paint choice", "t": "Western Front, Eastern Front, Reich Defence and RLM camouflage routes"}, {"h": "Reference risk", "t": "Restorations, decal sheets and museum repaints can be misleading. Wartime photo evidence should lead."}], "media": [{"k": "Archive", "title": "Focke-Wulf Fw 190 wartime photographs", "url": "https://www.iwm.org.uk/collections/search?query=Fw+190", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg", "text": "Wartime photo route for markings, unit context and weathering evidence."}, {"k": "Photo reference", "title": "Focke-Wulf Fw 190 image references", "url": "https://commons.wikimedia.org/w/index.php?search=Fw+190&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg", "text": "Image route for preserved aircraft, stance and airframe detail."}, {"k": "Kit database", "title": "Focke-Wulf Fw 190 kit records", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Fw+190", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg", "text": "Kit tooling, boxing and decal route. Verify exact kit before buying aftermarket."}], "walk": [{"title": "Overall airframe and stance", "url": "https://commons.wikimedia.org/w/index.php?search=Fw+190+airframe+walkaround&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg"}, {"title": "Cockpit, canopy and forward section", "url": "https://commons.wikimedia.org/w/index.php?search=Fw+190+cockpit+canopy&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg"}, {"title": "Landing gear, bays and stores", "url": "https://commons.wikimedia.org/w/index.php?search=Fw+190+landing+gear+stores&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg"}, {"title": "Paint, markings and weathering", "url": "paint-codes.html", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Focke-Wulf_Fw_190_A-3_JG_2_in_France_1942.jpg"}], "shops": [{"k": "Kit route", "title": "Fw 190 kit record", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Fw+190", "text": "Aircraft-specific kit records; confirm boxing and variant."}, {"k": "Decals", "title": "Fw 190 decals", "url": "https://www.hannants.co.uk/search/?keyword_search=Fw+190+decals", "text": "Aircraft-specific decal route."}, {"k": "Aftermarket", "title": "Fw 190 masks/detail sets", "url": "https://www.eduard.com/eduard/?lang=1&cur=2&listtype=search&searchparam=Fw+190", "text": "Aircraft-specific mask/detail route."}, {"k": "Books", "title": "Fw 190 aircraft books", "url": "https://www.amazon.co.uk/s?k=Fw+190+aircraft+book", "text": "Aircraft-specific book/reference route."}]};
 (function(){
-  const DATA = window.WW2_REF_DATA;
+  const DATA = window.WW2_H_DATA;
   const $=(s,r=document)=>r.querySelector(s);
   const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const imgFallback='video-thumb-fallback.png';
 
-  function ensurePanel(id){
+  function ensureTab(id){
     let p=document.getElementById('tab-'+id);
     if(!p){
       const main=document.querySelector('main')||document.body;
@@ -4285,164 +4147,194 @@ window.WW2_REF_DATA = {"name": "Focke-Wulf Fw 190", "category": "Luftwaffe", "ro
     return p;
   }
 
-  function ensureReferenceSkeleton(){
-    const p=ensurePanel('reference');
-    p.innerHTML = `
-      <div class="ww2-ref-tabs" style="display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap">
-        <button class="fb rtf on" type="button" onclick="setRefSub('map',this)">Map</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('timeline',this)">Timeline</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('compare',this)">Compare</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('survivors',this)">Survivors</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('books',this)">Books</button>
-      </div>
-      <div id="rsub-map">
-        <div class="section-label">${esc(DATA.name)} theatre map</div>
-        <div class="info-box">Click a base marker to show the linked unit/squadron route. Then use “Open unit card” to jump back to the unit card section.</div>
-        <div class="ww2-map-grid" style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:1rem;align-items:stretch">
-          <div id="leaflet-map" class="map-board" style="min-height:430px;border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#102033,#172942)"></div>
-          <div id="map-sqn-list" class="map-info" style="border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(0,0,0,.22);padding:1rem"></div>
-        </div>
-      </div>
-      <div id="rsub-timeline" style="display:none">
-        <div class="section-label">${esc(DATA.name)} campaign timeline</div>
-        <div class="info-box">The timeline follows the same structure across aircraft: introduction, main campaign use, peak operations and late-war/reference stage.</div>
-        <input id="tl-slider" type="range" min="0" max="${Math.max(0,DATA.timeline.length-1)}" value="0" oninput="updateTimeline(this.value)" style="width:100%;margin:1rem 0">
-        <div id="tl-date" style="font-family:'Special Elite',cursive;color:#fff;font-size:1.3rem;margin:.75rem 0"></div>
-        <div id="timeline-detail"></div>
-      </div>
-      <div id="rsub-compare" style="display:none">
-        <div class="section-label">${esc(DATA.name)} modelling comparison</div>
-        <div id="compare-grid"></div>
-      </div>
-      <div id="rsub-survivors" style="display:none">
-        <div class="section-label">${esc(DATA.name)} reference sources</div>
-        <div id="survivors-grid"></div>
-      </div>
-      <div id="rsub-books" style="display:none">
-        <div class="section-label">${esc(DATA.name)} books and research</div>
-        <div id="books-grid"></div>
-      </div>`;
+  function card(item, kind){
+    return `<a class="ww2-h-card" href="${esc(item.url||'#')}" target="${item.url&&item.url.startsWith('http')?'_blank':'_self'}" rel="noopener">
+      ${item.img?`<img src="${esc(item.img)}" alt="${esc(item.title||DATA.name)}" loading="lazy" onerror="this.src='video-thumb-fallback.png'">`:''}
+      <div><div class="ww2-h-kicker">${esc(kind||item.k||'reference')}</div><h3>${esc(item.title)}</h3><p>${esc(item.text||'Aircraft-specific reference route.')}</p></div>
+    </a>`;
   }
 
-  function card(title,text,url,thumb,kind){
-    const img = thumb ? `<img src="${esc(thumb)}" alt="${esc(title)}" loading="lazy" onerror="this.src='${imgFallback}'">` : '';
-    return `<a class="media-card ww2-final-card" href="${esc(url||'#')}" target="${url&&url.startsWith('http')?'_blank':'_self'}" rel="noopener">
-      ${img}<div><div class="kicker">${esc(kind||'reference')}</div><h3>${esc(title)}</h3><p>${esc(text||'Reference route for this aircraft.')}</p></div></a>`;
+  function buildReference(){
+    const panel=ensureTab('reference');
+    panel.innerHTML = `
+      <section class="ww2-hurricane-structure">
+        <div class="ww2-h-subtabs">
+          <button class="ww2-h-btn on" type="button" data-ref="map">Map</button>
+          <button class="ww2-h-btn" type="button" data-ref="timeline">Timeline</button>
+          <button class="ww2-h-btn" type="button" data-ref="compare">Compare</button>
+          <button class="ww2-h-btn" type="button" data-ref="survivors">Survivors</button>
+          <button class="ww2-h-btn" type="button" data-ref="books">Books</button>
+        </div>
+        <div id="rsub-map" class="ww2-h-ref-panel"></div>
+        <div id="rsub-timeline" class="ww2-h-ref-panel" style="display:none"></div>
+        <div id="rsub-compare" class="ww2-h-ref-panel" style="display:none"></div>
+        <div id="rsub-survivors" class="ww2-h-ref-panel" style="display:none"></div>
+        <div id="rsub-books" class="ww2-h-ref-panel" style="display:none"></div>
+      </section>`;
+    $$('.ww2-h-btn', panel).forEach(btn=>{
+      btn.onclick=()=>setRefSub(btn.dataset.ref, btn);
+    });
+    renderMap();
+  }
+
+  window.setRefSub=function(sub, btn){
+    const root=ensureTab('reference');
+    ['map','timeline','compare','survivors','books'].forEach(s=>{
+      const p=document.getElementById('rsub-'+s);
+      if(p) p.style.display = s===sub ? '' : 'none';
+    });
+    $$('.ww2-h-btn',root).forEach(b=>b.classList.remove('on'));
+    if(btn) btn.classList.add('on');
+    if(sub==='map') renderMap();
+    if(sub==='timeline') renderTimeline(0);
+    if(sub==='compare') renderCompare();
+    if(sub==='survivors') renderSurvivors();
+    if(sub==='books') renderBooks();
+  };
+
+  function openUnit(unit){
+    const unitPanel=document.getElementById('tab-squadrons')||document.getElementById('tab-units');
+    if(window.openSqn){ window.openSqn(unit); return; }
+    if(window.openUnit){ window.openUnit(unit); return; }
+    switchTab(unitPanel && unitPanel.id==='tab-units' ? 'units':'squadrons', document.querySelector('.nav-tab,.tab-btn'));
+    setTimeout(()=>{
+      const cards=$$('.unit-card,.sq-card,#tab-squadrons article,#tab-units article');
+      const match=cards.find(c=>c.textContent.toLowerCase().includes(String(unit).toLowerCase()))||cards[0];
+      if(match) match.scrollIntoView({behavior:'smooth',block:'center'});
+    },60);
+  }
+
+  function renderMap(){
+    const p=document.getElementById('rsub-map');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-map-grid">
+      <div class="ww2-h-map" id="leaflet-map">
+        <div class="ww2-h-panel" style="position:absolute;left:1rem;top:1rem;background:rgba(0,0,0,.45);max-width:320px">
+          <div class="ww2-h-kicker">${esc(DATA.cat)}</div><h3>${esc(DATA.name)} map</h3><p>Click a base marker to show linked unit/squadron cards, matching the Hurricane map workflow.</p>
+        </div>
+        ${DATA.bases.map((b,i)=>`<button class="ww2-h-dot" type="button" data-i="${i}" title="${esc(b.base)}" style="left:${b.x}%;top:${b.y}%"></button>`).join('')}
+      </div>
+      <div class="ww2-h-panel" id="map-sqn-list"></div>
+    </div>`;
+    const side=$('#map-sqn-list',p);
+    function show(i){
+      const b=DATA.bases[i]||DATA.bases[0];
+      side.innerHTML=`<div class="ww2-h-kicker">Selected base</div><h3>${esc(b.base)}</h3><p><b>Linked unit route:</b> ${esc(b.unit)}</p><p>${esc(b.note)}</p>
+      <div class="ww2-h-grid">${b.linked.map(x=>`<button type="button" class="ww2-h-btn ww2-h-open" data-unit="${esc(x)}">${esc(x)}</button>`).join('')}</div>`;
+      $$('.ww2-h-open',side).forEach(btn=>btn.onclick=()=>openUnit(btn.dataset.unit));
+    }
+    $$('.ww2-h-dot',p).forEach(dot=>dot.onclick=()=>show(+dot.dataset.i));
+    show(0);
+  }
+
+  function renderTimeline(idx){
+    const p=document.getElementById('rsub-timeline');
+    if(!p) return;
+    const max=DATA.timeline.length-1;
+    const item=DATA.timeline[idx]||DATA.timeline[0];
+    p.innerHTML=`<div class="ww2-h-panel"><div class="ww2-h-kicker">Campaign timeline</div><h3>${esc(DATA.name)}</h3>
+      <p>Same timeline structure across the aircraft library: early service → main campaign → operational wear → late/reference stage.</p>
+      <input id="tl-slider" type="range" min="0" max="${max}" value="${idx}" style="width:100%;margin:1rem 0">
+      <h3 id="tl-date">${esc(item.date)} — ${esc(item.phase)}</h3><div id="timeline-detail"></div></div>
+      <div class="ww2-h-grid ww2-timeline-list">${DATA.timeline.map((t,i)=>`<div class="ww2-h-panel ${i===idx?'active':''}"><div class="ww2-h-kicker">${esc(t.date)}</div><h3>${esc(t.phase)}</h3><p>${esc(t.text)}</p></div>`).join('')}</div>`;
+    $('#tl-slider',p).oninput=e=>renderTimeline(+e.target.value);
+  }
+  window.updateTimeline=v=>renderTimeline(+v||0);
+
+  function renderCompare(){
+    const p=document.getElementById('rsub-compare');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-grid" id="compare-grid">${DATA.compare.map(c=>`<div class="ww2-h-panel"><div class="ww2-h-kicker">Compare</div><h3>${esc(c.h)}</h3><p>${esc(c.t)}</p></div>`).join('')}</div>`;
+  }
+
+  function renderSurvivors(){
+    const p=document.getElementById('rsub-survivors');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-grid" id="survivors-grid">${DATA.media.map(m=>card(m,'reference source')).join('')}</div>`;
+  }
+
+  function renderBooks(){
+    const p=document.getElementById('rsub-books');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-grid" id="books-grid">${DATA.shops.filter(x=>x.k==='Books').concat([{title:DATA.name+' unit and markings references',url:'https://www.amazon.co.uk/s?k='+encodeURIComponent(DATA.query+' units markings World War 2'),text:'Book route for unit histories, serials, markings and theatre placement.'}]).map(m=>card(m,'book')).join('')}</div>`;
+  }
+
+  window.renderMediaFinal=function(){
+    const panel=ensureTab('media');
+    panel.innerHTML=`<section class="ww2-hurricane-structure"><div class="ww2-h-kicker">Media</div><h2>${esc(DATA.name)} media board</h2><p>Same card structure across the site: archive, photo reference and kit database routes.</p><div class="ww2-h-grid">${DATA.media.map(m=>card(m,m.k)).join('')}</div></section>`;
+  };
+
+  window.renderWalkaroundFinal=function(){
+    const panel=ensureTab('walkaround');
+    panel.innerHTML=`<section class="ww2-hurricane-structure"><div class="ww2-h-kicker">Walkaround</div><h2>${esc(DATA.name)} walkaround board</h2><p>Same walkaround structure across the site: airframe, cockpit, landing gear/stores and paint/weathering.</p><div class="ww2-h-grid">${DATA.walk.map(w=>card({title:w.title,url:w.url,img:w.img,text:'Aircraft-specific walkaround/photo route.'},'walkaround')).join('')}</div></section>`;
+  };
+
+  function renderBuildSupplement(){
+    const panel=document.getElementById('tab-build');
+    if(!panel || $('#ww2-shop-supplement',panel)) return;
+    const div=document.createElement('section');
+    div.id='ww2-shop-supplement';
+    div.className='ww2-hurricane-structure';
+    div.innerHTML=`<div class="ww2-h-kicker">Checked routes</div><h2>${esc(DATA.name)} shop/book/reference routes</h2><div class="ww2-h-grid">${DATA.shops.map(s=>card(s,s.k)).join('')}</div>`;
+    panel.appendChild(div);
   }
 
   window.switchTab=function(id,el){
     $$('.tab-panel').forEach(p=>p.classList.remove('active'));
-    const p=ensurePanel(id);
-    p.classList.add('active');
+    const panel=ensureTab(id);
+    panel.classList.add('active');
     $$('.nav-tab,.tab-btn').forEach(b=>b.classList.remove('active'));
     if(el) el.classList.add('active');
     const bar=document.getElementById('sqn-bar');
     if(bar) bar.style.display=(id==='squadrons'||id==='units')?'flex':'none';
-    if(id==='reference'){ensureReferenceSkeleton(); setRefSub('map',$('#tab-reference .rtf'));}
+    if(id==='reference') buildReference();
     if(id==='media') renderMediaFinal();
     if(id==='walkaround') renderWalkaroundFinal();
-    if(id==='build') renderShopCardsFinal();
+    if(id==='build') renderBuildSupplement();
   };
 
-  window.setRefSub=function(sub,el){
-    const root=document.getElementById('tab-reference') || ensurePanel('reference');
-    ['map','timeline','compare','survivors','books'].forEach(s=>{
-      const target=document.getElementById('rsub-'+s);
-      if(target) target.style.display=s===sub?'':'none';
+  function bindClicks(){
+    $$('button[onclick*="switchTab"]').forEach(btn=>{
+      btn.addEventListener('click',ev=>{
+        const m=(btn.getAttribute('onclick')||'').match(/switchTab\('([^']+)'/);
+        if(m){ev.preventDefault();ev.stopImmediatePropagation();switchTab(m[1],btn);}
+      },true);
     });
-    $$('.rtf',root).forEach(b=>b.classList.remove('on'));
-    if(el) el.classList.add('on');
-    if(sub==='map') renderMapFinal();
-    if(sub==='timeline') renderTimelineFinal(0);
-    if(sub==='compare') renderCompareFinal();
-    if(sub==='survivors') renderSourcesFinal();
-    if(sub==='books') renderBooksFinal();
-  };
-
-  function renderMapFinal(){
-    const map=document.querySelector('#tab-reference #leaflet-map');
-    const side=document.querySelector('#tab-reference #map-sqn-list');
-    if(!map) return;
-    map.innerHTML=`<div class="ww2-static-map" style="position:relative;min-height:430px;border-radius:12px;overflow:hidden;background:radial-gradient(circle at 22% 34%,rgba(201,168,76,.24),transparent 16%),radial-gradient(circle at 66% 54%,rgba(126,165,207,.18),transparent 19%),linear-gradient(135deg,#0c1b2c,#19304a);border:1px solid rgba(255,255,255,.12)">
-      <div style="position:absolute;left:1rem;top:1rem;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:.7rem 1rem;color:#fff;font-weight:700">${esc(DATA.name)} bases</div>
-      ${DATA.bases.map((b,i)=>`<button type="button" class="ww2-map-dot" data-i="${i}" style="position:absolute;left:${b.x}%;top:${b.y}%;width:23px;height:23px;border-radius:50%;border:2px solid #fff;background:#c9a84c;box-shadow:0 0 0 8px rgba(201,168,76,.18);cursor:pointer" title="${esc(b.base)}"></button>`).join('')}
-    </div>`;
-    function show(i){
-      const b=DATA.bases[i]||DATA.bases[0];
-      if(!side || !b) return;
-      side.innerHTML=`<div class="section-label">Selected base</div>
-        <h3 style="margin:.35rem 0;color:#fff">${esc(b.base)}</h3>
-        <p style="color:rgba(255,255,255,.72);line-height:1.6"><b>Linked unit:</b> ${esc(b.unit)}</p>
-        <p style="color:rgba(255,255,255,.68);line-height:1.6">${esc(b.note)}</p>
-        <button class="fb ww2-open-unit" type="button">Open unit card</button>`;
-      const btn=side.querySelector('.ww2-open-unit');
-      if(btn) btn.onclick=()=>{
-        const first=document.querySelector('#tab-squadrons .unit-card,#tab-squadrons .sq-card,#tab-squadrons article,#tab-units .unit-card,#tab-units article');
-        if(window.openSqn) window.openSqn(b.unit);
-        else if(window.openUnit) window.openUnit(b.unit);
-        else {
-          window.switchTab('squadrons',document.querySelector('.nav-tab,.tab-btn'));
-          if(first) first.scrollIntoView({behavior:'smooth',block:'center'});
-        }
-      };
-    }
-    $$('.ww2-map-dot',map).forEach(dot=>dot.onclick=()=>show(+dot.dataset.i));
-    show(0);
+    $$('button[data-tab]').forEach(btn=>{
+      btn.addEventListener('click',ev=>{ev.preventDefault();ev.stopImmediatePropagation();switchTab(btn.dataset.tab,btn);},true);
+    });
+    document.addEventListener('click',ev=>{
+      const b=ev.target.closest('[data-ref]');
+      if(b){ev.preventDefault();setRefSub(b.dataset.ref,b);}
+    },true);
   }
 
-  window.updateTimeline=function(v){renderTimelineFinal(+v||0);};
-  function renderTimelineFinal(i){
-    const item=DATA.timeline[i]||DATA.timeline[0];
-    const title=document.querySelector('#tab-reference #tl-date');
-    const out=document.querySelector('#tab-reference #timeline-detail');
-    if(title) title.textContent=item.label;
-    if(out) out.innerHTML=`<div class="grid">${DATA.timeline.map((t,idx)=>`<div class="info-box" style="${idx===i?'border-color:#c9a84c':''}"><b>${esc(t.label)}</b><br>${esc(t.text)}</div>`).join('')}</div>`;
-  }
+  document.addEventListener('DOMContentLoaded',()=>{
+    bindClicks();
+    if(document.getElementById('tab-reference')?.classList.contains('active')) buildReference();
+  });
+})();
+</script>
 
-  function renderCompareFinal(){
-    const grid=document.querySelector('#tab-reference #compare-grid');
-    if(!grid) return;
-    grid.innerHTML=`<div class="grid">${DATA.compare.map(c=>`<div class="info-box"><b>${esc(c.title)}</b><br>${esc(c.text)}</div>`).join('')}</div>`;
-  }
 
-  function renderSourcesFinal(){
-    const grid=document.querySelector('#tab-reference #survivors-grid');
-    if(!grid) return;
-    grid.innerHTML=`<div class="grid">${DATA.media.map(m=>card(m.title,m.text,m.url,m.thumb,m.kind)).join('')}</div>`;
-  }
-
-  function renderBooksFinal(){
-    const grid=document.querySelector('#tab-reference #books-grid');
-    if(!grid) return;
-    grid.innerHTML=`<div class="grid">${DATA.books.map(b=>card(b.title,b.text,b.url,'','book')).join('')}</div>`;
-  }
-
-  window.renderMediaFinal=function(){
-    const panel=ensurePanel('media');
-    panel.innerHTML=`<div class="section-label">${esc(DATA.name)} media references</div><div class="grid">${DATA.media.map(m=>card(m.title,m.text,m.url,m.thumb,m.kind)).join('')}</div>`;
-  };
-
-  window.renderWalkaroundFinal=function(){
-    const panel=ensurePanel('walkaround');
-    panel.innerHTML=`<div class="section-label">${esc(DATA.name)} walkaround bench</div><div class="grid">${DATA.walkaround.map(w=>card(w.title,'Aircraft-specific walkaround/photo route for this area.',w.url,w.thumb,'walkaround')).join('')}</div>`;
-  };
-
-  window.renderShopCardsFinal=function(){
-    const panel=document.getElementById('tab-build');
-    if(!panel || panel.querySelector('#ww2-final-shop-block')) return;
-    const block=document.createElement('section');
-    block.id='ww2-final-shop-block';
-    block.className='info-box';
-    block.style.marginTop='1rem';
-    block.innerHTML=`<div class="section-label">${esc(DATA.name)} checked kit / decals / book routes</div>
-      <div class="grid">${DATA.shop.map(s=>card(s.title,s.text,s.url,'','shop')).join('')}${DATA.books.map(b=>card(b.title,b.text,b.url,'','book')).join('')}</div>`;
-    panel.appendChild(block);
-  };
-
-  document.addEventListener('DOMContentLoaded',function(){
-    if(document.getElementById('tab-reference')?.classList.contains('active')){
-      ensureReferenceSkeleton(); setRefSub('map',document.querySelector('#tab-reference .rtf'));
-    }
+<script id="ww2-side-theme-system">
+(function(){
+  const SIDE = "luftwaffe";
+  const DATA = {"label": "Luftwaffe", "emblem": "✚", "note": "Balkenkreuz-style modelling identity · charcoal, field grey and RLM tan", "primary": "#252924", "secondary": "#4c493b", "accent": "#b8a06a"};
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  ready(function(){
+    document.body.classList.add('ww2-side-themed','ww2-side-'+SIDE);
+    document.documentElement.style.setProperty('--ww2-side-primary', DATA.primary);
+    document.documentElement.style.setProperty('--ww2-side-secondary', DATA.secondary);
+    document.documentElement.style.setProperty('--ww2-side-accent', DATA.accent);
+    document.querySelectorAll('.hero-roundel').forEach(function(el){ el.remove(); });
+    if(document.querySelector('.ww2-side-identity')) return;
+    const target = document.querySelector('.hero-title') || document.querySelector('h1');
+    const wrap = document.createElement('div');
+    wrap.className = 'ww2-side-identity';
+    wrap.innerHTML = '<div class="ww2-side-emblem" aria-label="'+DATA.label+' emblem">'+DATA.emblem+'</div><div><h2>'+DATA.label+'</h2><p>'+DATA.note+'</p></div>';
+    if(target && target.parentNode){ target.insertAdjacentElement('afterend', wrap); }
+    else { document.body.insertAdjacentElement('afterbegin', wrap); }
   });
 })();
 </script>

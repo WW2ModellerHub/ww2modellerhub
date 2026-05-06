@@ -1221,6 +1221,98 @@ body:not(.noop) > .filter-bar.zero-unit-filter{display:none!important;}
 @media(max-width:760px){.ww2-map-grid{grid-template-columns:1fr!important}.ww2-final-card img{height:140px}}
 </style>
 
+
+<style id="ww2-hurricane-structure-css">
+.ww2-hurricane-structure{border:1px solid rgba(201,168,76,.24);border-radius:16px;background:rgba(9,18,32,.72);padding:1rem;margin:1rem 0}
+.ww2-h-subtabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 1rem}
+.ww2-h-btn{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#f4ead7;border-radius:999px;padding:.55rem .8rem;font-weight:800;cursor:pointer}
+.ww2-h-btn.on{background:#c9a84c;color:#111}
+.ww2-h-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.85rem}
+.ww2-h-map-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:1rem}
+.ww2-h-map{position:relative;min-height:430px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.14);background:radial-gradient(circle at 22% 36%,rgba(201,168,76,.22),transparent 17%),radial-gradient(circle at 66% 54%,rgba(126,165,207,.16),transparent 21%),linear-gradient(135deg,#0b192b,#1a324d)}
+.ww2-h-dot{position:absolute;width:23px;height:23px;border-radius:50%;border:2px solid #fff;background:#c9a84c;box-shadow:0 0 0 8px rgba(201,168,76,.18);cursor:pointer}
+.ww2-h-panel,.ww2-h-card{border:1px solid rgba(255,255,255,.13);border-radius:14px;background:rgba(255,255,255,.045);padding:1rem;color:#f4ead7}
+.ww2-h-card{display:block;text-decoration:none;overflow:hidden;padding:0}
+.ww2-h-card img{width:100%;height:165px;object-fit:cover;display:block;background:#111b2b}
+.ww2-h-card div{padding:.9rem}
+.ww2-h-card h3,.ww2-h-panel h3{margin:.2rem 0 .45rem;color:#fff}
+.ww2-h-card p,.ww2-h-panel p{color:rgba(244,234,215,.72);line-height:1.55;margin:.25rem 0}
+.ww2-h-kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#c9a84c;font-weight:900}
+.ww2-h-open{margin-top:.7rem}
+.ww2-timeline-list .ww2-h-panel.active{border-color:#c9a84c;background:rgba(201,168,76,.08)}
+@media(max-width:760px){.ww2-h-map-grid{grid-template-columns:1fr}.ww2-h-card img{height:135px}}
+</style>
+
+
+<style id="ww2-side-theme-system">
+:root{--ww2-side-primary:#162b45;--ww2-side-secondary:#293f55;--ww2-side-accent:#c9a84c}
+body.ww2-side-themed .aircraft-hero,
+body.ww2-side-themed .hero,
+body.ww2-side-themed header.hero,
+body.ww2-side-themed .page-hero{
+  background:
+    radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--ww2-side-accent) 24%, transparent), transparent 26%),
+    linear-gradient(135deg, var(--ww2-side-primary), var(--ww2-side-secondary)) !important;
+  border-bottom:1px solid color-mix(in srgb, var(--ww2-side-accent) 50%, transparent) !important;
+}
+body.ww2-side-themed .section-label,
+body.ww2-side-themed .ww2-h-kicker,
+body.ww2-side-themed .books-section-title,
+body.ww2-side-themed .aftermarket-section-title{color:var(--ww2-side-accent)!important}
+body.ww2-side-themed .ww2-h-btn.on,
+body.ww2-side-themed .fb.on,
+body.ww2-side-themed .nav-tab.active{
+  background:var(--ww2-side-accent)!important;
+  color:#111!important;
+  border-color:var(--ww2-side-accent)!important;
+}
+body.ww2-side-themed .ww2-h-map{
+  background:
+    radial-gradient(circle at 22% 34%, color-mix(in srgb, var(--ww2-side-accent) 24%, transparent), transparent 17%),
+    radial-gradient(circle at 66% 54%, rgba(126,165,207,.14), transparent 21%),
+    linear-gradient(135deg, color-mix(in srgb, var(--ww2-side-primary) 80%, #000), var(--ww2-side-secondary)) !important;
+}
+body.ww2-side-themed .ww2-h-dot{background:var(--ww2-side-accent)!important;box-shadow:0 0 0 8px color-mix(in srgb, var(--ww2-side-accent) 22%, transparent)!important}
+.ww2-side-identity{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  margin:.9rem 0 0;
+  max-width:760px;
+  padding:.75rem .9rem;
+  border:1px solid color-mix(in srgb, var(--ww2-side-accent) 38%, transparent);
+  border-radius:14px;
+  background:rgba(0,0,0,.22);
+  color:#f4ead7;
+}
+.ww2-side-emblem{
+  width:54px;
+  height:54px;
+  min-width:54px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:1.55rem;
+  color:#fff;
+  border:2px solid rgba(255,255,255,.82);
+  box-shadow:0 0 0 5px rgba(255,255,255,.08);
+  background:var(--ww2-side-accent);
+}
+.ww2-side-identity h2{font-size:.92rem;letter-spacing:.13em;text-transform:uppercase;margin:0;color:#fff}
+.ww2-side-identity p{margin:.2rem 0 0;color:rgba(244,234,215,.74);line-height:1.45}
+body.ww2-side-raf .ww2-side-emblem{background:radial-gradient(circle,#c3162f 0 18%,#fff 19% 34%,#1f4f9a 35% 68%,#7a0f24 69% 100%);font-size:0;color:transparent}
+body.ww2-side-usaaf .ww2-side-emblem,
+body.ww2-side-usn .ww2-side-emblem{border-radius:12px;background:linear-gradient(90deg,#fff 0 18%,#244f86 18% 82%,#fff 82% 100%);color:#fff;text-shadow:0 1px 1px #001b34}
+body.ww2-side-luftwaffe .ww2-side-emblem{border-radius:10px;background:#e8e0cc;color:#111;font-size:2rem}
+body.ww2-side-japanese .ww2-side-emblem{background:#fff;color:#d04b3e;font-size:2.4rem}
+body.ww2-side-soviet .ww2-side-emblem{background:#b51e26;color:#ffd97a}
+body.ww2-side-italian .ww2-side-emblem{background:conic-gradient(#267447 0 33%,#f5f1df 33% 66%,#b63a30 66% 100%);color:#1d1d1d}
+body.ww2-side-other .ww2-side-emblem{background:radial-gradient(circle,#c6283b 0 25%,#fff 26% 48%,#1e4d90 49% 100%);font-size:0;color:transparent}
+body.ww2-side-themed .hero-roundel{display:none!important}
+@media(max-width:760px){.ww2-side-identity{align-items:flex-start}.ww2-side-emblem{width:46px;height:46px;min-width:46px}}
+</style>
+
 </head><body>
 <nav class="site-nav">
 <div class="site-nav-inner">
@@ -1354,66 +1446,7 @@ body:not(.noop) > .filter-bar.zero-unit-filter{display:none!important;}
 </div>
 </div>
 <div class="tab-panel" id="tab-reference">
-<div style="display:flex;gap:8px;margin-bottom:1.4rem;flex-wrap:wrap">
-<button class="fb on rtf" onclick="setRefSub('map',this)">Pacific map</button>
-<button class="fb rtf" onclick="setRefSub('timeline',this)">Campaign timeline</button>
-<button class="fb rtf" onclick="setRefSub('compare',this)">Compare units</button>
-<button class="fb rtf" onclick="setRefSub('survivors',this)">Survivors</button>
-<button class="fb rtf" onclick="setRefSub('books',this)">Books</button>
 </div>
-<div id="rsub-map">
-<div class="section-label">IJN Zero theatre map</div>
-<div class="info-box">The map covers carrier-war and land-based Zero geography: Japan, Pearl Harbor route context, Midway, Rabaul, Truk, the Solomons, New Guinea, the Philippines, the Marianas and late-war home defence.</div>
-<div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.75rem"><button class="map-filter-btn on" onclick="filterMap('all',this)">All theatres</button><button class="map-filter-btn" onclick="filterMap('carrier',this)">Carrier war</button><button class="map-filter-btn" onclick="filterMap('land',this)">Rabaul / Solomons</button><button class="map-filter-btn" onclick="filterMap('late',this)">Late war</button></div>
-<div class="raf-map-shell"><div class="raf-map-board"><div id="leaflet-map"></div></div><div class="map-sqn-list raf-map-side" id="map-list"><div class="section-label">Bases and theatres</div></div></div>
-</div>
-
-<div id="map-sqn-list" class="map-info" style="margin-top:1rem;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(0,0,0,.22);padding:1rem"></div>
-<div id="rsub-timeline" style="display:none">
-<div class="section-label">Zero campaign timeline</div>
-<div class="info-box">Use the slider to follow the Zero from dominant early-war carrier fighter to overmatched late-war aircraft. The modelling implication changes with each phase.</div>
-<input class="timeline-slider" id="timeline-slider" max="7" min="0" oninput="renderTimeline(this.value)" type="range" value="0"/>
-<div class="timeline-labels"><span>1940</span><span>1941</span><span>1942</span><span>1943</span><span>1944</span><span>1945</span></div>
-<div id="timeline-panel" style="margin-top:1rem"></div>
-</div>
-
-<div id="tl-date" style="font-family:'Special Elite',cursive;color:#fff;font-size:1.3rem;margin:.75rem 0">Campaign timeline</div>
-
-<input id="tl-slider" type="range" min="0" max="100" value="0" oninput="updateTimeline(this.value)" style="width:100%;margin:1rem 0">
-
-<div id="timeline-detail" class="info-box">Use the timeline to connect period, theatre, markings and weathering.</div>
-<div id="rsub-compare" style="display:none">
-<div class="section-label">Compare Zero units</div>
-<div class="info-box">Compare carrier and land-based units by variant, theatre and modelling hook. Useful when deciding whether the build should be clean carrier-war, Rabaul-worn or late-war chipped green.</div>
-<div class="zero-compare-grid"><select class="fb" id="cmp-a" onchange="renderCompare()" style="padding:.6rem;background:rgba(0,0,0,.25);color:#fff"></select><select class="fb" id="cmp-b" onchange="renderCompare()" style="padding:.6rem;background:rgba(0,0,0,.25);color:#fff"></select></div>
-<div id="compare-output"></div>
-</div>
-
-<div id="compare-grid"></div>
-<div id="rsub-survivors" style="display:none">
-<div class="section-label">Survivors and museum reference</div>
-<div class="info-box">Use Zero survivors mainly for structure: cockpit openings, undercarriage geometry, cowling shape, propeller/spinner line and surface access panels. Restoration colours vary, so treat paint as reference evidence, not automatic truth.</div>
-<div class="survivor-grid">
-<div class="survivor-card"><div class="survivor-hd"><div><div class="survivor-serial">A6M5 Model 52</div><div class="survivor-name">National Museum of the US Air Force</div></div><span class="survivor-status status-static">Static</span></div><div class="survivor-body"><div class="survivor-row"><span class="survivor-key">Check</span>Cowling, cockpit, wing panels, landing gear and restored late-war layout.</div><div class="survivor-row"><span class="survivor-key">Caution</span>Do not copy restoration colours blindly.</div><a class="shop-btn hb-outline" href="https://www.nationalmuseum.af.mil/" rel="noopener" target="_blank">Open museum site</a></div></div>
-<div class="survivor-card"><div class="survivor-hd"><div><div class="survivor-serial">A6M2b / Model 21</div><div class="survivor-name">Pearl Harbor Aviation Museum reference angle</div></div><span class="survivor-status status-static">Static</span></div><div class="survivor-body"><div class="survivor-row"><span class="survivor-key">Check</span>Early-war A6M2 proportions and carrier-war presentation.</div><div class="survivor-row"><span class="survivor-key">Use for</span>Comparing early A6M2 look against later A6M5 subjects.</div><a class="shop-btn hb-outline" href="https://www.pearlharboraviationmuseum.org/" rel="noopener" target="_blank">Open museum site</a></div></div>
-<div class="survivor-card"><div class="survivor-hd"><div><div class="survivor-serial">A6M5 / Japanese museum examples</div><div class="survivor-name">Yūshūkan and Japanese collections</div></div><span class="survivor-status status-static">Static</span></div><div class="survivor-body"><div class="survivor-row"><span class="survivor-key">Check</span>Late-war cockpit opening, hinomaru placement and overall stance.</div><div class="survivor-row"><span class="survivor-key">Caution</span>Confirm whether displayed aircraft are restored, composite or repainted.</div><a class="shop-btn hb-outline" href="https://www.yasukuni.or.jp/english/yushukan/" rel="noopener" target="_blank">Open Yūshūkan site</a></div></div>
-<div class="survivor-card"><div class="survivor-hd"><div><div class="survivor-serial">Airworthy/restored Zero references</div><div class="survivor-name">Flying Heritage / warbird collections</div></div><span class="survivor-status status-restore">Restored</span></div><div class="survivor-body"><div class="survivor-row"><span class="survivor-key">Check</span>Stance, moving surfaces, gear travel and airframe sit.</div><div class="survivor-row"><span class="survivor-key">Caution</span>Warbird finishes can be modern safety/restoration compromises.</div><a class="shop-btn hb-outline" href="https://flyingheritage.org/" rel="noopener" target="_blank">Open collection site</a></div></div>
-</div>
-</div>
-
-<div id="survivors-grid"></div>
-<div id="rsub-books" style="display:none">
-<div class="section-label">Books and reference research</div>
-<div class="info-box">Zero references are notoriously sensitive to variant, date and paint interpretation. Use books to confirm the specific A6M sub-type and unit/date before buying decals or committing to colours.</div>
-<div class="books-grid">
-<div class="book-card"><div class="book-spine" style="background:#d2342a"></div><div class="book-info"><div class="book-title">A6M Zero model/variant monographs</div><div class="book-author">Use first for variant accuracy</div><div class="book-desc">Best for distinguishing A6M2, A6M3 and A6M5 cowling, wing, exhaust and armament details before building.</div><a class="shop-btn hb-outline" href="https://www.ospreypublishing.com/" rel="noopener" target="_blank">Open Osprey reference</a></div></div>
-<div class="book-card"><div class="book-spine" style="background:#687857"></div><div class="book-info"><div class="book-title">IJN carrier and Kōkūtai histories</div><div class="book-author">Use for unit and date context</div><div class="book-desc">Carrier codes, Rabaul units and late-war Kōkūtai markings all depend on the exact campaign phase.</div><a class="shop-btn hb-outline" href="https://www.aviationofjapan.com/" rel="noopener" target="_blank">Open Aviation of Japan</a></div></div>
-<div class="book-card"><div class="book-spine" style="background:#c9a15a"></div><div class="book-info"><div class="book-title">Japanese aircraft colour research</div><div class="book-author">Use for paint uncertainty</div><div class="book-desc">IJN grey-green, amber-grey, cowling black/blue-black and late-war greens require cautious interpretation.</div><a class="shop-btn hb-outline" href="https://www.aviationofjapan.com/" rel="noopener" target="_blank">Open colour research</a></div></div>
-<div class="book-card"><div class="book-spine" style="background:#2c3d2f"></div><div class="book-info"><div class="book-title">Museum walkaround photo sets</div><div class="book-author">Use for structure and modelling checks</div><div class="book-desc">Useful for cockpit, landing gear, cowling and surface access panels; less reliable for original wartime colour.</div><a class="shop-btn hb-outline" href="https://ipms.nl/walkarounds/walkaround-vliegtuigen-props/walkaround-mitsubishi-zero" rel="noopener" target="_blank">Open IPMS walkaround</a></div></div>
-</div>
-</div></div>
-
-<div id="books-grid"></div>
 <div class="tab-panel" id="tab-stories">
 <div class="section-label">Pilot Stories — A6M Zero pilots and IJN fighter leaders</div>
 <div class="info-box">Real Zero stories using the same story structure as the Spitfire page: a campaign focus panel followed by full-width pilot story cards with photograph slots, unit context, aircraft notes and modelling implications.</div>
@@ -1421,62 +1454,9 @@ body:not(.noop) > .filter-bar.zero-unit-filter{display:none!important;}
 <div id="pilot-stories-grid"></div>
 </div>
 <div class="tab-panel" id="tab-media">
-<div class="section-label">Zero media library</div>
-<div class="info-box">Specific A6M Zero videos and stable reference sources. These are direct video/page links, not generic YouTube or shop searches. Walkaround detail photos remain in the Walkaround tab.</div>
-<div class="section-label" style="margin-top:1rem">Video references</div>
-<div class="zero-media-grid">
-<a class="zero-media-card" href="https://www.youtube.com/watch?v=KsjzCIqQA7M" rel="noopener" target="_blank"><img alt="Mitsubishi A6M2 Zero USAF Museum walkaround video thumbnail" loading="lazy" src="https://img.youtube.com/vi/KsjzCIqQA7M/hqdefault.jpg"/><div class="zero-media-body"><div class="zero-media-kicker">Museum walkaround</div><div class="zero-media-title">Mitsubishi A6M2 “Zero” walkaround — USAF Museum</div><div class="zero-media-desc">Use for whole-aircraft stance, canopy/cowling relationship, wing planform and preserved A6M2 reference checks.</div><div class="zero-media-link">Open walkaround video ↗</div></div></a>
-<a class="zero-media-card" href="https://www.youtube.com/watch?v=1fYM4T_5Kr0" rel="noopener" target="_blank"><img alt="Mitsubishi A6M5 Zero Yushukan Museum walkaround video thumbnail" loading="lazy" src="https://img.youtube.com/vi/1fYM4T_5Kr0/hqdefault.jpg"/><div class="zero-media-body"><div class="zero-media-kicker">A6M5 walkaround</div><div class="zero-media-title">Mitsubishi A6M5 Zero — Yushukan Museum walkaround</div><div class="zero-media-desc">Good for late-war A6M5 cowling, clipped exhaust layout, cockpit glazing, surface finish and Hinomaru placement.</div><div class="zero-media-link">Open A6M5 video ↗</div></div></a>
-<a class="zero-media-card" href="https://www.youtube.com/watch?v=hg24-z0TaRc" rel="noopener" target="_blank"><img alt="Inside the cockpit A6M3 Zero Fighter video thumbnail" loading="lazy" src="https://img.youtube.com/vi/hg24-z0TaRc/hqdefault.jpg"/><div class="zero-media-body"><div class="zero-media-kicker">Cockpit</div><div class="zero-media-title">Inside The Cockpit — A6M3 “Zero” Fighter</div><div class="zero-media-desc">Use for cockpit framing, panel impression, seat/gunsight area and the modeller-visible details under the canopy.</div><div class="zero-media-link">Open cockpit video ↗</div></div></a>
-<a class="zero-media-card" href="https://www.youtube.com/watch?v=XT1FQ73Dh7E" rel="noopener" target="_blank"><img alt="A6M5 Zero engine start-up and flight video thumbnail" loading="lazy" src="https://img.youtube.com/vi/XT1FQ73Dh7E/hqdefault.jpg"/><div class="zero-media-body"><div class="zero-media-kicker">Engine / flying</div><div class="zero-media-title">A6M5 Zero Engine Start-Up &amp; Flight</div><div class="zero-media-desc">Useful for Sakae radial behaviour, prop/cowling impression, exhaust tone and how the aircraft sits and moves when live.</div><div class="zero-media-link">Open engine video ↗</div></div></a>
-<a class="zero-media-card" href="https://www.youtube.com/watch?v=CqjzkUSpqsw" rel="noopener" target="_blank"><img alt="Japanese Zero arrival and walk around video thumbnail" loading="lazy" src="https://img.youtube.com/vi/CqjzkUSpqsw/hqdefault.jpg"/><div class="zero-media-body"><div class="zero-media-kicker">Arrival / walkaround</div><div class="zero-media-title">Japanese Zero Arrival and Walk Around</div><div class="zero-media-desc">Good supporting reference for airframe stance, handling on the ground and museum display context.</div><div class="zero-media-link">Open arrival video ↗</div></div></a>
-<a class="zero-media-card" href="https://www.youtube.com/watch?v=_SSbpoGJkCc" rel="noopener" target="_blank"><img alt="Japanese Zero startup and flight video thumbnail" loading="lazy" src="https://img.youtube.com/vi/_SSbpoGJkCc/hqdefault.jpg"/><div class="zero-media-body"><div class="zero-media-kicker">Start-up / flight</div><div class="zero-media-title">Japanese Zero Startup and Flight</div><div class="zero-media-desc">Use for operational feel, engine start sequence, prop blur, cowling presence and parked-to-flying attitude.</div><div class="zero-media-link">Open flight video ↗</div></div></a>
-<a class="zero-media-card" href="https://www.youtube.com/watch?v=HxEEB0nL0nY" rel="noopener" target="_blank"><img alt="Japanese Zero original Sakae engine startup video thumbnail" loading="lazy" src="https://img.youtube.com/vi/HxEEB0nL0nY/hqdefault.jpg"/><div class="zero-media-body"><div class="zero-media-kicker">Sakae engine</div><div class="zero-media-title">Japanese Zero Startup — Original Sakae Engine</div><div class="zero-media-desc">Best used as engine/cowling atmosphere reference rather than colour reference: listen and observe exhaust/cowling behaviour.</div><div class="zero-media-link">Open Sakae video ↗</div></div></a>
-<a class="zero-media-card" href="https://www.youtube.com/watch?v=xjW8YWLVD-k" rel="noopener" target="_blank"><img alt="Military Aviation Museum A6M3 Model 32 Zero flight video thumbnail" loading="lazy" src="https://img.youtube.com/vi/xjW8YWLVD-k/hqdefault.jpg"/><div class="zero-media-body"><div class="zero-media-kicker">A6M3 Model 32</div><div class="zero-media-title">Military Aviation Museum’s A6M3 Model 32 Zero flight</div><div class="zero-media-desc">Useful for the clipped-wing A6M3 Model 32 silhouette and the difference from A6M2/A6M5 wing impressions.</div><div class="zero-media-link">Open A6M3 video ↗</div></div></a>
-</div>
-<div class="section-label" style="margin-top:1.8rem">Stable archive and museum routes</div>
-<div class="zero-media-grid">
-<a class="zero-media-card" href="https://commons.wikimedia.org/wiki/Category:Mitsubishi_A6M_Zero" rel="noopener" target="_blank"><img alt="Captured A6M5 Zero in flight archive image" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Captured_A6M5_in_flight_1944.jpeg/960px-Captured_A6M5_in_flight_1944.jpeg"/><div class="zero-media-body"><div class="zero-media-kicker">Photo archive</div><div class="zero-media-title">Wikimedia A6M Zero category</div><div class="zero-media-desc">Broad wartime, museum and preserved-aircraft image pool. Useful for locating subject-specific visual leads.</div><div class="zero-media-link">Open image archive ↗</div></div></a>
-<a class="zero-media-card" href="https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196270/mitsubishi-a6m2-zero/" rel="noopener" target="_blank"><img alt="National Museum of the US Air Force A6M2 Zero reference" loading="lazy" src="https://media.defense.gov/2006/Nov/29/2000527148/-1/-1/0/061129-F-1234S-013.JPG"/><div class="zero-media-body"><div class="zero-media-kicker">Museum page</div><div class="zero-media-title">National Museum of the US Air Force — A6M2 Zero</div><div class="zero-media-desc">Stable museum reference for an A6M2 subject, useful for basic identity, preserved-aircraft context and further research.</div><div class="zero-media-link">Open museum page ↗</div></div></a>
-<a class="zero-media-card" href="https://planesoffame.org/aircraft/plane-A6M5" rel="noopener" target="_blank"><img alt="Planes of Fame A6M5 Zero reference" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mitsubishi_A6M5_Zero_%28Planes_of_Fame%29.jpg/960px-Mitsubishi_A6M5_Zero_%28Planes_of_Fame%29.jpg"/><div class="zero-media-body"><div class="zero-media-kicker">Museum / flying example</div><div class="zero-media-title">Planes of Fame — Mitsubishi A6M5 Zero</div><div class="zero-media-desc">Useful route for preserved/flying A6M5 context. Treat restoration colours carefully and cross-check before painting.</div><div class="zero-media-link">Open museum page ↗</div></div></a>
-<a class="zero-media-card" href="https://www.aviationofjapan.com/" rel="noopener" target="_blank"><img alt="Japanese aircraft colour research reference" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Captured_A6M5_in_flight_1944.jpeg/960px-Captured_A6M5_in_flight_1944.jpeg"/><div class="zero-media-body"><div class="zero-media-kicker">Colour research</div><div class="zero-media-title">Aviation of Japan</div><div class="zero-media-desc">Use for careful Japanese colour interpretation, especially when handling amber-grey, Mitsubishi green and late-war finish debates.</div><div class="zero-media-link">Open colour research ↗</div></div></a>
-</div>
 </div>
 <div class="tab-panel" id="tab-walkaround">
-<div class="section-label">A6M Zero walkaround bench</div>
-<div class="info-box">Walkaround is now structured by modelling task. Photo cards use real reference images or a real public-domain fallback if an external source blocks hotlinking. Video cards use direct YouTube thumbnails and sit inside the relevant category rather than in one loose video dump.</div>
-<div class="zero-wa-section" id="zero-wa-cockpit">
-<div class="zero-wa-head">Cockpit and canopy</div>
-<div class="zero-wa-grid">
-<a class="zero-wa-card" href="https://pwencycl.kgbudge.com/A/6/A6M_Zero.htm" rel="noopener" target="_blank"><img alt="A6M Zero cockpit and canopy reference" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Captured_A6M5_in_flight_1944.jpeg/960px-Captured_A6M5_in_flight_1944.jpeg"/><div class="zero-wa-body"><div class="zero-wa-kicker">Cockpit</div><div class="zero-wa-title">Panel, seat, rails and gunsight</div><div class="zero-wa-desc">Use cockpit photos to check the instrument panel, seat frame, harness, gunsight, radio fit and canopy rail thickness.</div><div class="zero-wa-check"><strong>Modeller check</strong>Interior colours vary by manufacturer and restoration; do not assume one universal Japanese cockpit green.</div><div class="zero-wa-link">Open reference page ↗</div></div></a>
-<a class="zero-wa-card zero-wa-video" href="https://www.youtube.com/watch?v=pyGdpDcXBnM" rel="noopener" target="_blank"><img alt="A6M Zero cockpit reference video thumbnail" loading="lazy" src="https://img.youtube.com/vi/pyGdpDcXBnM/hqdefault.jpg"/><div class="zero-wa-body"><div class="zero-wa-kicker">Video</div><div class="zero-wa-title">Cockpit / close reference video</div><div class="zero-wa-desc">Use only for layout and relationship of parts; confirm wartime colours separately.</div><div class="zero-wa-link">Open YouTube video ↗</div></div></a>
 </div>
-</div>
-<div class="zero-wa-section" id="zero-wa-cowling">
-<div class="zero-wa-head">Cowling, engine and propeller</div>
-<div class="zero-wa-grid">
-<a class="zero-wa-card" href="https://commons.wikimedia.org/wiki/File:Captured_A6M5_in_flight_1944.jpeg" rel="noopener" target="_blank"><img alt="A6M Zero cowling engine and propeller reference" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Captured_A6M5_in_flight_1944.jpeg/960px-Captured_A6M5_in_flight_1944.jpeg"/><div class="zero-wa-body"><div class="zero-wa-kicker">Cowling</div><div class="zero-wa-title">Sakae radial and black cowling</div><div class="zero-wa-desc">Check the cowling opening, gun troughs, spinner/propeller relationship, exhaust route and staining direction.</div><div class="zero-wa-check"><strong>Modeller check</strong>The cowling should read blue-black or satin black, not flat pure black plastic.</div><div class="zero-wa-link">Open photo source ↗</div></div></a>
-<a class="zero-wa-card zero-wa-video" href="https://www.youtube.com/watch?v=KsjzCIqQA7M" rel="noopener" target="_blank"><img alt="A6M Zero engine cowling video thumbnail" loading="lazy" src="https://img.youtube.com/vi/KsjzCIqQA7M/hqdefault.jpg"/><div class="zero-wa-body"><div class="zero-wa-kicker">Video</div><div class="zero-wa-title">Cowling and airframe video reference</div><div class="zero-wa-desc">Useful for seeing the nose, propeller, stance and cowling sheen in one pass.</div><div class="zero-wa-link">Open YouTube video ↗</div></div></a>
-</div>
-</div>
-<div class="zero-wa-section" id="zero-wa-wings">
-<div class="zero-wa-head">Wings, controls and landing gear</div>
-<div class="zero-wa-grid">
-<a class="zero-wa-card" href="https://www.cybermodeler.com/aircraft/a6m/a6m2_walk.shtml" rel="noopener" target="_blank"><img alt="A6M Zero wing and control surface reference" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Captured_A6M5_in_flight_1944.jpeg/960px-Captured_A6M5_in_flight_1944.jpeg"/><div class="zero-wa-body"><div class="zero-wa-kicker">Wings</div><div class="zero-wa-title">Wing tips, access panels and controls</div><div class="zero-wa-desc">Confirm A6M2, A6M3 or A6M5 wing form before painting. Wing tips, gun access panels and control surfaces are variant-sensitive.</div><div class="zero-wa-check"><strong>Modeller check</strong>Variant accuracy matters more than extra chipping here.</div><div class="zero-wa-link">Open walkaround page ↗</div></div></a>
-<a class="zero-wa-card" href="https://www.cybermodeler.com/aircraft/a6m/a6m2_walk.shtml" rel="noopener" target="_blank"><img alt="A6M Zero landing gear reference" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Captured_A6M5_in_flight_1944.jpeg/960px-Captured_A6M5_in_flight_1944.jpeg"/><div class="zero-wa-body"><div class="zero-wa-kicker">Landing gear</div><div class="zero-wa-title">Narrow stance, doors and wheel bays</div><div class="zero-wa-desc">Check the narrow undercarriage stance, gear door geometry, tyre size and underside staining around the bays.</div><div class="zero-wa-check"><strong>Modeller check</strong>Island-based aircraft justify dustier tyres and dirtier lower surfaces than carrier subjects.</div><div class="zero-wa-link">Open walkaround page ↗</div></div></a>
-</div>
-</div>
-<div class="zero-wa-section" id="zero-wa-markings">
-<div class="zero-wa-head">Markings and surface finish</div>
-<div class="zero-wa-grid">
-<a class="zero-wa-card" href="https://commons.wikimedia.org/wiki/Category:Mitsubishi_A6M_Zero" rel="noopener" target="_blank"><img alt="A6M Zero hinomaru and surface finish reference" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Captured_A6M5_in_flight_1944.jpeg/960px-Captured_A6M5_in_flight_1944.jpeg"/><div class="zero-wa-body"><div class="zero-wa-kicker">Markings</div><div class="zero-wa-title">Hinomaru, tail codes and ID strips</div><div class="zero-wa-desc">Match hinomaru borders, tail code, carrier bands and yellow leading-edge strips to the exact unit and date.</div><div class="zero-wa-check"><strong>Modeller check</strong>Painted hinomaru often looks more convincing over faded or chipped finishes than thick decals.</div><div class="zero-wa-link">Open Commons category ↗</div></div></a>
-<a class="zero-wa-card zero-wa-video" href="https://www.youtube.com/watch?v=1fYM4T_5Kr0" rel="noopener" target="_blank"><img alt="A6M Zero markings video thumbnail" loading="lazy" src="https://img.youtube.com/vi/1fYM4T_5Kr0/hqdefault.jpg"/><div class="zero-wa-body"><div class="zero-wa-kicker">Video</div><div class="zero-wa-title">Markings and exterior reference</div><div class="zero-wa-desc">Use for exterior placement cues, then verify exact aircraft markings against decals and photos.</div><div class="zero-wa-link">Open YouTube video ↗</div></div></a>
-<a class="zero-wa-card" href="https://www.aviationofjapan.com/" rel="noopener" target="_blank"><img alt="A6M Zero surface finish and colour reference" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Captured_A6M5_in_flight_1944.jpeg/960px-Captured_A6M5_in_flight_1944.jpeg"/><div class="zero-wa-body"><div class="zero-wa-kicker">Surface finish</div><div class="zero-wa-title">Fading, chipping and paint uncertainty</div><div class="zero-wa-desc">Weather by theatre: clean carrier aircraft, dusty Rabaul machines, late-war green uppers and service-panel wear.</div><div class="zero-wa-check"><strong>Modeller check</strong>Avoid random silver confetti; wear should follow traffic, access panels and airflow.</div><div class="zero-wa-link">Open colour research ↗</div></div></a>
-</div>
-</div>
-</div>
-</main><aside class="sidebar"><div class="sidebar-block"><div class="sidebar-hd">Advertisement</div><div class="sidebar-ad-slot">AdSense 300×250</div></div><div class="sidebar-block"><div class="sidebar-hd">Zero quick links</div><a class="shop-link" href="https://www.tamiya.com/english/products/61103/index.html" rel="noopener" target="_blank"><span>🛩</span><div><div class="shop-name">Tamiya A6M5</div><div class="shop-cats">Kit reference</div></div></a><a class="shop-link" href="https://ak-interactive.com/product/wwii-imperial-japanese-navy-aircraft-colors/" rel="noopener" target="_blank"><span>🎨</span><div><div class="shop-name">AK IJN colours</div><div class="shop-cats">Paints</div></div></a><a class="shop-link" href="https://ipms.nl/walkarounds/walkaround-vliegtuigen-props/walkaround-mitsubishi-zero" rel="noopener" target="_blank"><span>📷</span><div><div class="shop-name">IPMS Zero walkaround</div><div class="shop-cats">Photos</div></div></a></div></aside></div>
-<div class="pm-overlay" id="pm-overlay" onclick="if(event.target===this)closePilot()"><div class="pm-modal"><div class="pm-hd"><div><div class="pm-name" id="pm-name"></div><div class="pm-rank" id="pm-rank"></div></div><button class="pm-close" onclick="closePilot()">✕</button></div><div class="pm-body"><div class="pm-stats"><div class="pm-stat"><div class="v" id="pm-kills"></div><div class="l">Record</div></div><div class="pm-stat"><div class="v">IJN</div><div class="l">Service</div></div><div class="pm-stat"><div class="v">零</div><div class="l">Zero</div></div></div><div class="pm-bio" id="pm-bio"></div></div></div></div>
 <script>
 const UNITS=[{'id': 'akagi', 'num': 'Akagi', 'name': 'Akagi Fighter Unit', 'base': 'IJN Akagi · Kure / Pearl Harbor strike force', 'theatre': 'Pearl Harbor / Indian Ocean / Midway', 'variant': 'A6M2 Model 21', 'markings': 'Carrier code AI, red tail bands, light grey-green carrier finish', 'parent': '1st Carrier Division / Kido Butai', 'aces': 'Shigeru Itaya; Akira Sakamoto; carrier fighter section leaders', 'hook': 'Pearl Harbor carrier Zero with clean early-war finish and red carrier identity', 'lat': 34.24, 'lng': 132.56, 'group': 'carrier', 'ops': 'Akagi fighter units were central to the opening carrier war: Pearl Harbor, the Indian Ocean raid and Midway. Their Zeros are ideal for early-war A6M2 Model 21 builds with light grey-green finish, black cowling and carrier-specific tail code treatment.'}, {'id': 'kaga', 'num': 'Kaga', 'name': 'Kaga Fighter Unit', 'base': 'IJN Kaga · Sasebo / Kido Butai', 'theatre': 'Pearl Harbor / Midway', 'variant': 'A6M2 Model 21', 'markings': 'Carrier code AII, red tail bands, early-war hinomaru layout', 'parent': '1st Carrier Division / Kido Butai', 'aces': 'Kaga fighter leaders and Pearl Harbor escort pilots', 'hook': 'A classic Pearl Harbor Zero subject with carrier code and early-war restrained weathering', 'lat': 33.17, 'lng': 129.72, 'group': 'carrier', 'ops': 'Kaga Zeros escorted attack waves and provided combat air patrol in the early Pacific carrier battles. For modellers the attraction is the disciplined carrier presentation: pale airframe, black cowling, red bands and relatively clean finish compared with later island-based aircraft.'}, {'id': 'soryu', 'num': 'Sōryū', 'name': 'Sōryū Fighter Unit', 'base': 'IJN Sōryū · Yokosuka / Kido Butai', 'theatre': 'Pearl Harbor / Wake / Midway', 'variant': 'A6M2 Model 21', 'markings': 'Carrier code BI, red tail bands, light grey-green finish', 'parent': '2nd Carrier Division / Kido Butai', 'aces': 'Sōryū carrier fighter pilots; CAP and escort sections', 'hook': 'Good Midway subject: clean carrier aircraft just before catastrophic combat losses', 'lat': 35.29, 'lng': 139.67, 'group': 'carrier', 'ops': 'Sōryū fighter units fought through the opening carrier campaign and were destroyed with the carrier at Midway. Use restrained staining, careful tail codes and accurate carrier deck presentation rather than late-war heavy chipping.'}, {'id': 'hiryu', 'num': 'Hiryū', 'name': 'Hiryū Fighter Unit', 'base': 'IJN Hiryū · Yokosuka / Kido Butai', 'theatre': 'Pearl Harbor / Midway', 'variant': 'A6M2 Model 21', 'markings': 'Carrier code BII, red tail bands, early-war carrier markings', 'parent': '2nd Carrier Division / Kido Butai', 'aces': 'Pilots associated with Hiryū counterstrikes at Midway', 'hook': 'Midway counterattack story angle; excellent carrier-deck diorama subject', 'lat': 35.29, 'lng': 139.67, 'group': 'carrier', 'ops': 'Hiryū survived long enough at Midway to launch counterstrikes after the other Japanese carriers were burning. A Hiryū Zero can be presented as a neat carrier aircraft under extreme operational pressure.'}, {'id': 'tainan', 'num': 'Tainan', 'name': 'Tainan Kōkūtai', 'base': 'Lae / Rabaul / South Pacific island fields', 'theatre': 'New Guinea / Solomons', 'variant': 'A6M2 Model 21, later A6M3', 'markings': 'Tail code V / later unit changes; field-applied wear and tropical fading', 'parent': '11th Air Fleet', 'aces': 'Saburō Sakai; Hiroyoshi Nishizawa; Toshio Ōta; Junichi Sasai', 'hook': 'The ace-heavy South Pacific Zero unit: faded paint, dust, fuel staining and hard-used aircraft', 'lat': -6.73, 'lng': 146.99, 'group': 'land', 'ops': 'Tainan Kōkūtai is the great ace-unit Zero story. From Lae and Rabaul it fought over New Guinea and Guadalcanal, producing famous pilots and very hard-worked aircraft. This is where tropical fading and rough-field weathering become central to the model.'}, {'id': '204ku', 'num': '204 Ku', 'name': '204th Kōkūtai', 'base': 'Rabaul / Buin / Solomons', 'theatre': 'Solomons / Rabaul defence', 'variant': 'A6M2, A6M3, A6M5', 'markings': 'Field-applied greens, white/yellow theatre bands, late Solomons wear', 'parent': '11th Air Fleet', 'aces': 'Rabaul fighter pilots and replacement cadres', 'hook': 'Late Solomons Zero: battered, faded, operationally exhausted island fighter', 'lat': -4.2, 'lng': 152.18, 'group': 'land', 'ops': '204th Kōkūtai represents the grinding attrition around Rabaul and the Solomons. Models should show service wear: sun bleaching, panel repairs, dusty tyres, stained undersides and heavier cowling/exhaust staining.'}, {'id': '251ku', 'num': '251 Ku', 'name': '251st Kōkūtai', 'base': 'Rabaul / New Britain', 'theatre': 'Rabaul / Solomons', 'variant': 'A6M3 and A6M5', 'markings': 'Late-war green uppers, pale grey undersides, tail code/unit bands vary by period', 'parent': '11th Air Fleet', 'aces': 'Hiroyoshi Nishizawa associated with 251 Ku after Tainan reorganisation', 'hook': 'Ace connection plus late-war Zero finish; good A6M3/A6M5 subject', 'lat': -4.2, 'lng': 152.18, 'group': 'land', 'ops': '251st Kōkūtai continued the Rabaul fighter war after earlier units were reorganised. It is a good bridge from early A6M2 subjects into clipped-wing A6M3 and later A6M5 modelling.'}, {'id': '252ku', 'num': '252 Ku', 'name': '252nd Kōkūtai', 'base': 'Rabaul / later Truk and home defence detachments', 'theatre': 'Central Pacific / Rabaul / Home defence', 'variant': 'A6M2, A6M3, A6M5', 'markings': 'Mixed field and depot finishes; tail code changes by detachment', 'parent': 'IJN land-based fighter units', 'aces': 'Central Pacific Zero pilots', 'hook': 'Useful for Central Pacific island airfields and worn mixed-variant Zero lines', 'lat': 7.45, 'lng': 151.85, 'group': 'land', 'ops': '252nd Kōkūtai allows a Central Pacific Zero build rather than only Pearl Harbor or Rabaul. It also suits mixed variants and changing markings as the strategic situation deteriorated.'}, {'id': '201ku', 'num': '201 Ku', 'name': '201st Kōkūtai', 'base': 'Mabalacat / Philippines', 'theatre': 'Philippines / Kamikaze operations', 'variant': 'A6M5 and older A6M variants', 'markings': 'Late-war green, worn undersides, operational tail codes and mission markings', 'parent': '1st Air Fleet / Philippines', 'aces': 'Yukio Seki and early special attack personnel', 'hook': 'Late-war Zero with difficult history: special attack context, heavy wear and austere base conditions', 'lat': 15.22, 'lng': 120.58, 'group': 'late', 'ops': '201st Kōkūtai is tied to the emergence of organised special attack operations in the Philippines. The page treats this carefully: historically important, but model notes should focus on aircraft finish, field conditions and markings rather than glorification.'}, {'id': '302ku', 'num': '302 Ku', 'name': '302nd Kōkūtai', 'base': 'Atsugi', 'theatre': 'Home defence', 'variant': 'A6M5 / A6M5c alongside J2M and N1K types', 'markings': 'Home defence green, yellow leading-edge ID strips, late-war finish', 'parent': 'Home Islands defence', 'aces': 'Night/home defence pilots and intercept units', 'hook': 'Home defence Zero: darker green uppers, yellow leading edges and defensive late-war look', 'lat': 35.45, 'lng': 139.45, 'group': 'late', 'ops': '302nd Kōkūtai provides the home-defence angle. Zeros were no longer dominant but still served alongside newer interceptors, making them useful for late-war green schemes and heavily weathered defensive aircraft.'}, {'id': '653ku', 'num': '653 Ku', 'name': '653rd Kōkūtai', 'base': 'IJN carriers / Philippines Sea', 'theatre': 'Marianas / Philippine Sea', 'variant': 'A6M5', 'markings': 'Carrier air group markings, green upper surfaces, late-war carrier finish', 'parent': '1st Mobile Fleet', 'aces': 'Marianas carrier fighter pilots', 'hook': 'Great Marianas/Great Turkey Shoot subject with late-war carrier colours', 'lat': 15.2, 'lng': 145.75, 'group': 'carrier', 'ops': '653rd Kōkūtai represents the late carrier air groups at the Philippine Sea. For modellers it is a different carrier Zero from Pearl Harbor: A6M5, green upper surfaces, more desperate context and heavier wear.'}, {'id': 'yokosuka', 'num': 'Yokosuka', 'name': 'Yokosuka Kōkūtai Test & Training', 'base': 'Yokosuka / Oppama', 'theatre': 'Japan / trials and training', 'variant': 'A6M prototypes, A6M2, later test airframes', 'markings': 'Prototype/training markings; less field wear, more maintenance access detail', 'parent': 'IJN technical and training establishment', 'aces': 'Test pilots and instructors', 'hook': 'Prototype/training Zero: useful for cleaner finishes and technical reference builds', 'lat': 35.32, 'lng': 139.65, 'group': 'home', 'ops': 'Yokosuka Kōkūtai gives the research and training side of the Zero story. It is useful for prototype, test and clean technical-reference modelling rather than combat-weathered island aircraft.'}]; const PILOTS=[{'id': 'sakai', 'name': 'Saburō Sakai', 'rank': 'Petty Officer / later Ensign · Tainan Kōkūtai', 'kills': '64', 'unit': 'Tainan Kōkūtai', 'aircraft': 'A6M2 Model 21', 'bio': 'One of the best-known surviving Japanese fighter pilots. Sakai is strongly associated with the South Pacific Zero war and provides a modeller hook for Tainan Kōkūtai subjects: tropical fading, hard use and the long-range combat environment around New Guinea and Guadalcanal.'}, {'id': 'nishizawa', 'name': 'Hiroyoshi Nishizawa', 'rank': 'Petty Officer · Tainan / 251 Kōkūtai', 'kills': 'High-scoring ace', 'unit': 'Tainan / 251 Ku', 'aircraft': 'A6M2 / A6M3 / A6M5', 'bio': 'Often described as one of Japan’s leading fighter aces. Treat victory totals cautiously, but his association with Tainan and later units makes him a useful story anchor for Rabaul and Solomons Zero builds.'}, {'id': 'ota', 'name': 'Toshio Ōta', 'rank': 'Petty Officer · Tainan Kōkūtai', 'kills': 'Ace', 'unit': 'Tainan Kōkūtai', 'aircraft': 'A6M2', 'bio': 'A key Tainan Kōkūtai ace. His aircraft context is useful for early South Pacific Zero finishes: pale or field-modified schemes, heavy dust, sun fading and worn operating surfaces.'}, {'id': 'itaya', 'name': 'Shigeru Itaya', 'rank': 'Lt Cdr · Akagi Fighter Leader', 'kills': 'Commander', 'unit': 'Akagi fighter unit', 'aircraft': 'A6M2 Model 21', 'bio': 'Akagi fighter leader during the early carrier campaign. He anchors the Pearl Harbor/Midway carrier Zero story and is a useful subject when building clean early-war carrier aircraft.'}, {'id': 'sasai', 'name': 'Junichi Sasai', 'rank': 'Lt JG · Tainan Kōkūtai', 'kills': 'Ace / leader', 'unit': 'Tainan Kōkūtai', 'aircraft': 'A6M2', 'bio': 'A respected young officer in Tainan Kōkūtai and closely associated with the early South Pacific air battles. Good story hook for Rabaul/Lae-based Zero subjects.'}, {'id': 'seki', 'name': 'Yukio Seki', 'rank': 'Lt · 201st Kōkūtai', 'kills': 'Special attack leader', 'unit': '201st Kōkūtai', 'aircraft': 'A6M5', 'bio': 'Linked to the first organised special attack operations from the Philippines. Use this with care: the modelling focus should remain on late-war aircraft configuration, base conditions and historical context.'}];
 let currentFilter='all', currentSort='order', activeUnitId=null, currentMapFilter='all', map, markers=[];
@@ -1759,17 +1739,18 @@ document.addEventListener('DOMContentLoaded',()=>{renderUnitGrid();renderPilotSt
 
 
 
-<script id="ww2-final-page-audit-repair">
-window.WW2_REF_DATA = {"name": "Mitsubishi A6M Zero", "category": "Japanese Aircraft", "role": "IJN carrier fighter", "paint": "IJN amber grey, IJN green, cowling black, tropical fading", "query": "A6M Zero", "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg", "bases": [{"base": "Carrier / IJN base", "unit": "Kōkūtai or carrier group route", "x": 30, "y": 45, "note": "Mitsubishi A6M Zero: Kōkūtai or carrier group route. Use this base to jump to unit cards, markings, paint and weathering notes."}, {"base": "Rabaul / New Guinea base", "unit": "Forward island route", "x": 58, "y": 58, "note": "Mitsubishi A6M Zero: Forward island route. Use this base to jump to unit cards, markings, paint and weathering notes."}, {"base": "Home Defence / late-war base", "unit": "Late-war route", "x": 78, "y": 38, "note": "Mitsubishi A6M Zero: Late-war route. Use this base to jump to unit cards, markings, paint and weathering notes."}], "timeline": [{"label": "Introduction", "text": "Mitsubishi A6M Zero enters the modelling story: choose early finish, first-unit markings and baseline variant details."}, {"label": "Main campaign use", "text": "Mitsubishi A6M Zero reaches its key theatre identity. Base, unit and markings now drive the paint and weathering choices."}, {"label": "Peak operations", "text": "Operational tempo adds exhaust, oil, mud, dust, salt, fading or chipping depending on theatre."}, {"label": "Late-war / preserved reference", "text": "Use surviving aircraft for structure and walkaround detail, but wartime photos for paint and markings."}], "compare": [{"title": "Variant route", "text": "IJN carrier fighter. Confirm exact mark/variant before choosing kit, decals or aftermarket."}, {"title": "Paint route", "text": "IJN amber grey, IJN green, cowling black, tropical fading"}, {"title": "Modelling risk", "text": "Cross-check restored aircraft, decal instructions and wartime photographs before final finish."}], "media": [{"title": "Mitsubishi A6M Zero archive photographs", "kind": "Archive", "url": "https://www.iwm.org.uk/collections/search?query=A6M+Zero", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg", "text": "Wartime archive route for unit, markings and weathering evidence."}, {"title": "Mitsubishi A6M Zero image references", "kind": "Photo reference", "url": "https://commons.wikimedia.org/w/index.php?search=A6M+Zero&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg", "text": "Image route for overall form, cockpit, undercarriage and surface details."}, {"title": "Mitsubishi A6M Zero kit records", "kind": "Kit database", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=A6M+Zero", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg", "text": "Use to verify exact tooling, boxing, scale and decal contents."}], "walkaround": [{"title": "Overall airframe and stance", "url": "https://commons.wikimedia.org/w/index.php?search=A6M+Zero+walkaround+airframe&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg"}, {"title": "Cockpit, canopy and forward section", "url": "https://commons.wikimedia.org/w/index.php?search=A6M+Zero+cockpit&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg"}, {"title": "Landing gear, bays and stores", "url": "https://commons.wikimedia.org/w/index.php?search=A6M+Zero+landing+gear&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg"}, {"title": "Paint, markings and weathering", "url": "paint-codes.html", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg"}], "shop": [{"title": "A6M Zero kit record", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=A6M+Zero", "text": "Verify kit tooling and exact boxing before purchase."}, {"title": "A6M Zero decals", "url": "https://www.hannants.co.uk/search/?keyword_search=A6M+Zero+decals", "text": "Decal route matched to this aircraft only."}, {"title": "A6M Zero masks / detail", "url": "https://www.eduard.com/eduard/?lang=1&cur=2&listtype=search&searchparam=A6M+Zero", "text": "Detail/mask route matched to this aircraft only."}], "books": [{"title": "Mitsubishi A6M Zero reference books", "url": "https://www.amazon.co.uk/s?k=A6M+Zero+aircraft+book", "text": "Book route for variants, markings and theatre context."}, {"title": "Mitsubishi A6M Zero unit and markings references", "url": "https://www.amazon.co.uk/s?k=A6M+Zero+units+markings+World+War+2", "text": "Use for unit history, serials and campaign placement."}]};
 
+
+
+<script id="ww2-hurricane-structure-final">
+window.WW2_H_DATA = {"file": "zero_paradise.html", "name": "Mitsubishi A6M Zero", "cat": "Japanese Aircraft", "role": "IJN carrier fighter", "paint": "Carrier Kōkūtai, Rabaul, Solomons, Home Defence and IJN paint uncertainty", "query": "A6M Zero", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg", "bases": [{"base": "Carrier / home base", "unit": "Kōkūtai or carrier group card", "x": 28, "y": 43, "linked": ["Kōkūtai or carrier group card", "Mitsubishi A6M Zero markings route", "Mitsubishi A6M Zero weathering route"], "note": "Mitsubishi A6M Zero: click-through base card linked to unit, markings and modelling notes."}, {"base": "Rabaul / island base", "unit": "Forward air group card", "x": 58, "y": 58, "linked": ["Forward air group card", "Mitsubishi A6M Zero markings route", "Mitsubishi A6M Zero weathering route"], "note": "Mitsubishi A6M Zero: click-through base card linked to unit, markings and modelling notes."}, {"base": "Home Defence base", "unit": "Late-war defence unit card", "x": 78, "y": 38, "linked": ["Late-war defence unit card", "Mitsubishi A6M Zero markings route", "Mitsubishi A6M Zero weathering route"], "note": "Mitsubishi A6M Zero: click-through base card linked to unit, markings and modelling notes."}], "timeline": [{"phase": "Introduction", "date": "Early service", "text": "Mitsubishi A6M Zero enters service. Use this phase for early variants, first camouflage and initial unit markings."}, {"phase": "Main campaign use", "date": "Operational peak", "text": "Mitsubishi A6M Zero develops its key theatre identity. Base, unit and markings now drive the model subject."}, {"phase": "Heavy wear stage", "date": "Sustained operations", "text": "Weathering becomes theatre-specific: Carrier Kōkūtai, Rabaul, Solomons, Home Defence and IJN paint uncertainty plus exhaust, oil, mud, dust, salt, fading or chipping."}, {"phase": "Late-war / reference stage", "date": "Late war and survivors", "text": "Use preserved aircraft for structure and walkaround detail, but confirm paint and markings with wartime photographs."}], "compare": [{"h": "Variant choice", "t": "IJN carrier fighter. Choose exact mark/variant first; it controls kit, cockpit, canopy, stores and decals."}, {"h": "Paint choice", "t": "Carrier Kōkūtai, Rabaul, Solomons, Home Defence and IJN paint uncertainty"}, {"h": "Reference risk", "t": "Restorations, decal sheets and museum repaints can be misleading. Wartime photo evidence should lead."}], "media": [{"k": "Archive", "title": "Mitsubishi A6M Zero wartime photographs", "url": "https://www.iwm.org.uk/collections/search?query=A6M+Zero", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg", "text": "Wartime photo route for markings, unit context and weathering evidence."}, {"k": "Photo reference", "title": "Mitsubishi A6M Zero image references", "url": "https://commons.wikimedia.org/w/index.php?search=A6M+Zero&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg", "text": "Image route for preserved aircraft, stance and airframe detail."}, {"k": "Kit database", "title": "Mitsubishi A6M Zero kit records", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=A6M+Zero", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg", "text": "Kit tooling, boxing and decal route. Verify exact kit before buying aftermarket."}], "walk": [{"title": "Overall airframe and stance", "url": "https://commons.wikimedia.org/w/index.php?search=A6M+Zero+airframe+walkaround&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg"}, {"title": "Cockpit, canopy and forward section", "url": "https://commons.wikimedia.org/w/index.php?search=A6M+Zero+cockpit+canopy&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg"}, {"title": "Landing gear, bays and stores", "url": "https://commons.wikimedia.org/w/index.php?search=A6M+Zero+landing+gear+stores&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg"}, {"title": "Paint, markings and weathering", "url": "paint-codes.html", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_A6M_Zero_02.jpg"}], "shops": [{"k": "Kit route", "title": "A6M Zero kit record", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=A6M+Zero", "text": "Aircraft-specific kit records; confirm boxing and variant."}, {"k": "Decals", "title": "A6M Zero decals", "url": "https://www.hannants.co.uk/search/?keyword_search=A6M+Zero+decals", "text": "Aircraft-specific decal route."}, {"k": "Aftermarket", "title": "A6M Zero masks/detail sets", "url": "https://www.eduard.com/eduard/?lang=1&cur=2&listtype=search&searchparam=A6M+Zero", "text": "Aircraft-specific mask/detail route."}, {"k": "Books", "title": "A6M Zero aircraft books", "url": "https://www.amazon.co.uk/s?k=A6M+Zero+aircraft+book", "text": "Aircraft-specific book/reference route."}]};
 (function(){
-  const DATA = window.WW2_REF_DATA;
+  const DATA = window.WW2_H_DATA;
   const $=(s,r=document)=>r.querySelector(s);
   const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const imgFallback='video-thumb-fallback.png';
 
-  function ensurePanel(id){
+  function ensureTab(id){
     let p=document.getElementById('tab-'+id);
     if(!p){
       const main=document.querySelector('main')||document.body;
@@ -1781,164 +1762,194 @@ window.WW2_REF_DATA = {"name": "Mitsubishi A6M Zero", "category": "Japanese Airc
     return p;
   }
 
-  function ensureReferenceSkeleton(){
-    const p=ensurePanel('reference');
-    p.innerHTML = `
-      <div class="ww2-ref-tabs" style="display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap">
-        <button class="fb rtf on" type="button" onclick="setRefSub('map',this)">Map</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('timeline',this)">Timeline</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('compare',this)">Compare</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('survivors',this)">Survivors</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('books',this)">Books</button>
-      </div>
-      <div id="rsub-map">
-        <div class="section-label">${esc(DATA.name)} theatre map</div>
-        <div class="info-box">Click a base marker to show the linked unit/squadron route. Then use “Open unit card” to jump back to the unit card section.</div>
-        <div class="ww2-map-grid" style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:1rem;align-items:stretch">
-          <div id="leaflet-map" class="map-board" style="min-height:430px;border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#102033,#172942)"></div>
-          <div id="map-sqn-list" class="map-info" style="border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(0,0,0,.22);padding:1rem"></div>
-        </div>
-      </div>
-      <div id="rsub-timeline" style="display:none">
-        <div class="section-label">${esc(DATA.name)} campaign timeline</div>
-        <div class="info-box">The timeline follows the same structure across aircraft: introduction, main campaign use, peak operations and late-war/reference stage.</div>
-        <input id="tl-slider" type="range" min="0" max="${Math.max(0,DATA.timeline.length-1)}" value="0" oninput="updateTimeline(this.value)" style="width:100%;margin:1rem 0">
-        <div id="tl-date" style="font-family:'Special Elite',cursive;color:#fff;font-size:1.3rem;margin:.75rem 0"></div>
-        <div id="timeline-detail"></div>
-      </div>
-      <div id="rsub-compare" style="display:none">
-        <div class="section-label">${esc(DATA.name)} modelling comparison</div>
-        <div id="compare-grid"></div>
-      </div>
-      <div id="rsub-survivors" style="display:none">
-        <div class="section-label">${esc(DATA.name)} reference sources</div>
-        <div id="survivors-grid"></div>
-      </div>
-      <div id="rsub-books" style="display:none">
-        <div class="section-label">${esc(DATA.name)} books and research</div>
-        <div id="books-grid"></div>
-      </div>`;
+  function card(item, kind){
+    return `<a class="ww2-h-card" href="${esc(item.url||'#')}" target="${item.url&&item.url.startsWith('http')?'_blank':'_self'}" rel="noopener">
+      ${item.img?`<img src="${esc(item.img)}" alt="${esc(item.title||DATA.name)}" loading="lazy" onerror="this.src='video-thumb-fallback.png'">`:''}
+      <div><div class="ww2-h-kicker">${esc(kind||item.k||'reference')}</div><h3>${esc(item.title)}</h3><p>${esc(item.text||'Aircraft-specific reference route.')}</p></div>
+    </a>`;
   }
 
-  function card(title,text,url,thumb,kind){
-    const img = thumb ? `<img src="${esc(thumb)}" alt="${esc(title)}" loading="lazy" onerror="this.src='${imgFallback}'">` : '';
-    return `<a class="media-card ww2-final-card" href="${esc(url||'#')}" target="${url&&url.startsWith('http')?'_blank':'_self'}" rel="noopener">
-      ${img}<div><div class="kicker">${esc(kind||'reference')}</div><h3>${esc(title)}</h3><p>${esc(text||'Reference route for this aircraft.')}</p></div></a>`;
+  function buildReference(){
+    const panel=ensureTab('reference');
+    panel.innerHTML = `
+      <section class="ww2-hurricane-structure">
+        <div class="ww2-h-subtabs">
+          <button class="ww2-h-btn on" type="button" data-ref="map">Map</button>
+          <button class="ww2-h-btn" type="button" data-ref="timeline">Timeline</button>
+          <button class="ww2-h-btn" type="button" data-ref="compare">Compare</button>
+          <button class="ww2-h-btn" type="button" data-ref="survivors">Survivors</button>
+          <button class="ww2-h-btn" type="button" data-ref="books">Books</button>
+        </div>
+        <div id="rsub-map" class="ww2-h-ref-panel"></div>
+        <div id="rsub-timeline" class="ww2-h-ref-panel" style="display:none"></div>
+        <div id="rsub-compare" class="ww2-h-ref-panel" style="display:none"></div>
+        <div id="rsub-survivors" class="ww2-h-ref-panel" style="display:none"></div>
+        <div id="rsub-books" class="ww2-h-ref-panel" style="display:none"></div>
+      </section>`;
+    $$('.ww2-h-btn', panel).forEach(btn=>{
+      btn.onclick=()=>setRefSub(btn.dataset.ref, btn);
+    });
+    renderMap();
+  }
+
+  window.setRefSub=function(sub, btn){
+    const root=ensureTab('reference');
+    ['map','timeline','compare','survivors','books'].forEach(s=>{
+      const p=document.getElementById('rsub-'+s);
+      if(p) p.style.display = s===sub ? '' : 'none';
+    });
+    $$('.ww2-h-btn',root).forEach(b=>b.classList.remove('on'));
+    if(btn) btn.classList.add('on');
+    if(sub==='map') renderMap();
+    if(sub==='timeline') renderTimeline(0);
+    if(sub==='compare') renderCompare();
+    if(sub==='survivors') renderSurvivors();
+    if(sub==='books') renderBooks();
+  };
+
+  function openUnit(unit){
+    const unitPanel=document.getElementById('tab-squadrons')||document.getElementById('tab-units');
+    if(window.openSqn){ window.openSqn(unit); return; }
+    if(window.openUnit){ window.openUnit(unit); return; }
+    switchTab(unitPanel && unitPanel.id==='tab-units' ? 'units':'squadrons', document.querySelector('.nav-tab,.tab-btn'));
+    setTimeout(()=>{
+      const cards=$$('.unit-card,.sq-card,#tab-squadrons article,#tab-units article');
+      const match=cards.find(c=>c.textContent.toLowerCase().includes(String(unit).toLowerCase()))||cards[0];
+      if(match) match.scrollIntoView({behavior:'smooth',block:'center'});
+    },60);
+  }
+
+  function renderMap(){
+    const p=document.getElementById('rsub-map');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-map-grid">
+      <div class="ww2-h-map" id="leaflet-map">
+        <div class="ww2-h-panel" style="position:absolute;left:1rem;top:1rem;background:rgba(0,0,0,.45);max-width:320px">
+          <div class="ww2-h-kicker">${esc(DATA.cat)}</div><h3>${esc(DATA.name)} map</h3><p>Click a base marker to show linked unit/squadron cards, matching the Hurricane map workflow.</p>
+        </div>
+        ${DATA.bases.map((b,i)=>`<button class="ww2-h-dot" type="button" data-i="${i}" title="${esc(b.base)}" style="left:${b.x}%;top:${b.y}%"></button>`).join('')}
+      </div>
+      <div class="ww2-h-panel" id="map-sqn-list"></div>
+    </div>`;
+    const side=$('#map-sqn-list',p);
+    function show(i){
+      const b=DATA.bases[i]||DATA.bases[0];
+      side.innerHTML=`<div class="ww2-h-kicker">Selected base</div><h3>${esc(b.base)}</h3><p><b>Linked unit route:</b> ${esc(b.unit)}</p><p>${esc(b.note)}</p>
+      <div class="ww2-h-grid">${b.linked.map(x=>`<button type="button" class="ww2-h-btn ww2-h-open" data-unit="${esc(x)}">${esc(x)}</button>`).join('')}</div>`;
+      $$('.ww2-h-open',side).forEach(btn=>btn.onclick=()=>openUnit(btn.dataset.unit));
+    }
+    $$('.ww2-h-dot',p).forEach(dot=>dot.onclick=()=>show(+dot.dataset.i));
+    show(0);
+  }
+
+  function renderTimeline(idx){
+    const p=document.getElementById('rsub-timeline');
+    if(!p) return;
+    const max=DATA.timeline.length-1;
+    const item=DATA.timeline[idx]||DATA.timeline[0];
+    p.innerHTML=`<div class="ww2-h-panel"><div class="ww2-h-kicker">Campaign timeline</div><h3>${esc(DATA.name)}</h3>
+      <p>Same timeline structure across the aircraft library: early service → main campaign → operational wear → late/reference stage.</p>
+      <input id="tl-slider" type="range" min="0" max="${max}" value="${idx}" style="width:100%;margin:1rem 0">
+      <h3 id="tl-date">${esc(item.date)} — ${esc(item.phase)}</h3><div id="timeline-detail"></div></div>
+      <div class="ww2-h-grid ww2-timeline-list">${DATA.timeline.map((t,i)=>`<div class="ww2-h-panel ${i===idx?'active':''}"><div class="ww2-h-kicker">${esc(t.date)}</div><h3>${esc(t.phase)}</h3><p>${esc(t.text)}</p></div>`).join('')}</div>`;
+    $('#tl-slider',p).oninput=e=>renderTimeline(+e.target.value);
+  }
+  window.updateTimeline=v=>renderTimeline(+v||0);
+
+  function renderCompare(){
+    const p=document.getElementById('rsub-compare');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-grid" id="compare-grid">${DATA.compare.map(c=>`<div class="ww2-h-panel"><div class="ww2-h-kicker">Compare</div><h3>${esc(c.h)}</h3><p>${esc(c.t)}</p></div>`).join('')}</div>`;
+  }
+
+  function renderSurvivors(){
+    const p=document.getElementById('rsub-survivors');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-grid" id="survivors-grid">${DATA.media.map(m=>card(m,'reference source')).join('')}</div>`;
+  }
+
+  function renderBooks(){
+    const p=document.getElementById('rsub-books');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-grid" id="books-grid">${DATA.shops.filter(x=>x.k==='Books').concat([{title:DATA.name+' unit and markings references',url:'https://www.amazon.co.uk/s?k='+encodeURIComponent(DATA.query+' units markings World War 2'),text:'Book route for unit histories, serials, markings and theatre placement.'}]).map(m=>card(m,'book')).join('')}</div>`;
+  }
+
+  window.renderMediaFinal=function(){
+    const panel=ensureTab('media');
+    panel.innerHTML=`<section class="ww2-hurricane-structure"><div class="ww2-h-kicker">Media</div><h2>${esc(DATA.name)} media board</h2><p>Same card structure across the site: archive, photo reference and kit database routes.</p><div class="ww2-h-grid">${DATA.media.map(m=>card(m,m.k)).join('')}</div></section>`;
+  };
+
+  window.renderWalkaroundFinal=function(){
+    const panel=ensureTab('walkaround');
+    panel.innerHTML=`<section class="ww2-hurricane-structure"><div class="ww2-h-kicker">Walkaround</div><h2>${esc(DATA.name)} walkaround board</h2><p>Same walkaround structure across the site: airframe, cockpit, landing gear/stores and paint/weathering.</p><div class="ww2-h-grid">${DATA.walk.map(w=>card({title:w.title,url:w.url,img:w.img,text:'Aircraft-specific walkaround/photo route.'},'walkaround')).join('')}</div></section>`;
+  };
+
+  function renderBuildSupplement(){
+    const panel=document.getElementById('tab-build');
+    if(!panel || $('#ww2-shop-supplement',panel)) return;
+    const div=document.createElement('section');
+    div.id='ww2-shop-supplement';
+    div.className='ww2-hurricane-structure';
+    div.innerHTML=`<div class="ww2-h-kicker">Checked routes</div><h2>${esc(DATA.name)} shop/book/reference routes</h2><div class="ww2-h-grid">${DATA.shops.map(s=>card(s,s.k)).join('')}</div>`;
+    panel.appendChild(div);
   }
 
   window.switchTab=function(id,el){
     $$('.tab-panel').forEach(p=>p.classList.remove('active'));
-    const p=ensurePanel(id);
-    p.classList.add('active');
+    const panel=ensureTab(id);
+    panel.classList.add('active');
     $$('.nav-tab,.tab-btn').forEach(b=>b.classList.remove('active'));
     if(el) el.classList.add('active');
     const bar=document.getElementById('sqn-bar');
     if(bar) bar.style.display=(id==='squadrons'||id==='units')?'flex':'none';
-    if(id==='reference'){ensureReferenceSkeleton(); setRefSub('map',$('#tab-reference .rtf'));}
+    if(id==='reference') buildReference();
     if(id==='media') renderMediaFinal();
     if(id==='walkaround') renderWalkaroundFinal();
-    if(id==='build') renderShopCardsFinal();
+    if(id==='build') renderBuildSupplement();
   };
 
-  window.setRefSub=function(sub,el){
-    const root=document.getElementById('tab-reference') || ensurePanel('reference');
-    ['map','timeline','compare','survivors','books'].forEach(s=>{
-      const target=document.getElementById('rsub-'+s);
-      if(target) target.style.display=s===sub?'':'none';
+  function bindClicks(){
+    $$('button[onclick*="switchTab"]').forEach(btn=>{
+      btn.addEventListener('click',ev=>{
+        const m=(btn.getAttribute('onclick')||'').match(/switchTab\('([^']+)'/);
+        if(m){ev.preventDefault();ev.stopImmediatePropagation();switchTab(m[1],btn);}
+      },true);
     });
-    $$('.rtf',root).forEach(b=>b.classList.remove('on'));
-    if(el) el.classList.add('on');
-    if(sub==='map') renderMapFinal();
-    if(sub==='timeline') renderTimelineFinal(0);
-    if(sub==='compare') renderCompareFinal();
-    if(sub==='survivors') renderSourcesFinal();
-    if(sub==='books') renderBooksFinal();
-  };
-
-  function renderMapFinal(){
-    const map=document.querySelector('#tab-reference #leaflet-map');
-    const side=document.querySelector('#tab-reference #map-sqn-list');
-    if(!map) return;
-    map.innerHTML=`<div class="ww2-static-map" style="position:relative;min-height:430px;border-radius:12px;overflow:hidden;background:radial-gradient(circle at 22% 34%,rgba(201,168,76,.24),transparent 16%),radial-gradient(circle at 66% 54%,rgba(126,165,207,.18),transparent 19%),linear-gradient(135deg,#0c1b2c,#19304a);border:1px solid rgba(255,255,255,.12)">
-      <div style="position:absolute;left:1rem;top:1rem;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:.7rem 1rem;color:#fff;font-weight:700">${esc(DATA.name)} bases</div>
-      ${DATA.bases.map((b,i)=>`<button type="button" class="ww2-map-dot" data-i="${i}" style="position:absolute;left:${b.x}%;top:${b.y}%;width:23px;height:23px;border-radius:50%;border:2px solid #fff;background:#c9a84c;box-shadow:0 0 0 8px rgba(201,168,76,.18);cursor:pointer" title="${esc(b.base)}"></button>`).join('')}
-    </div>`;
-    function show(i){
-      const b=DATA.bases[i]||DATA.bases[0];
-      if(!side || !b) return;
-      side.innerHTML=`<div class="section-label">Selected base</div>
-        <h3 style="margin:.35rem 0;color:#fff">${esc(b.base)}</h3>
-        <p style="color:rgba(255,255,255,.72);line-height:1.6"><b>Linked unit:</b> ${esc(b.unit)}</p>
-        <p style="color:rgba(255,255,255,.68);line-height:1.6">${esc(b.note)}</p>
-        <button class="fb ww2-open-unit" type="button">Open unit card</button>`;
-      const btn=side.querySelector('.ww2-open-unit');
-      if(btn) btn.onclick=()=>{
-        const first=document.querySelector('#tab-squadrons .unit-card,#tab-squadrons .sq-card,#tab-squadrons article,#tab-units .unit-card,#tab-units article');
-        if(window.openSqn) window.openSqn(b.unit);
-        else if(window.openUnit) window.openUnit(b.unit);
-        else {
-          window.switchTab('squadrons',document.querySelector('.nav-tab,.tab-btn'));
-          if(first) first.scrollIntoView({behavior:'smooth',block:'center'});
-        }
-      };
-    }
-    $$('.ww2-map-dot',map).forEach(dot=>dot.onclick=()=>show(+dot.dataset.i));
-    show(0);
+    $$('button[data-tab]').forEach(btn=>{
+      btn.addEventListener('click',ev=>{ev.preventDefault();ev.stopImmediatePropagation();switchTab(btn.dataset.tab,btn);},true);
+    });
+    document.addEventListener('click',ev=>{
+      const b=ev.target.closest('[data-ref]');
+      if(b){ev.preventDefault();setRefSub(b.dataset.ref,b);}
+    },true);
   }
 
-  window.updateTimeline=function(v){renderTimelineFinal(+v||0);};
-  function renderTimelineFinal(i){
-    const item=DATA.timeline[i]||DATA.timeline[0];
-    const title=document.querySelector('#tab-reference #tl-date');
-    const out=document.querySelector('#tab-reference #timeline-detail');
-    if(title) title.textContent=item.label;
-    if(out) out.innerHTML=`<div class="grid">${DATA.timeline.map((t,idx)=>`<div class="info-box" style="${idx===i?'border-color:#c9a84c':''}"><b>${esc(t.label)}</b><br>${esc(t.text)}</div>`).join('')}</div>`;
-  }
+  document.addEventListener('DOMContentLoaded',()=>{
+    bindClicks();
+    if(document.getElementById('tab-reference')?.classList.contains('active')) buildReference();
+  });
+})();
+</script>
 
-  function renderCompareFinal(){
-    const grid=document.querySelector('#tab-reference #compare-grid');
-    if(!grid) return;
-    grid.innerHTML=`<div class="grid">${DATA.compare.map(c=>`<div class="info-box"><b>${esc(c.title)}</b><br>${esc(c.text)}</div>`).join('')}</div>`;
-  }
 
-  function renderSourcesFinal(){
-    const grid=document.querySelector('#tab-reference #survivors-grid');
-    if(!grid) return;
-    grid.innerHTML=`<div class="grid">${DATA.media.map(m=>card(m.title,m.text,m.url,m.thumb,m.kind)).join('')}</div>`;
-  }
-
-  function renderBooksFinal(){
-    const grid=document.querySelector('#tab-reference #books-grid');
-    if(!grid) return;
-    grid.innerHTML=`<div class="grid">${DATA.books.map(b=>card(b.title,b.text,b.url,'','book')).join('')}</div>`;
-  }
-
-  window.renderMediaFinal=function(){
-    const panel=ensurePanel('media');
-    panel.innerHTML=`<div class="section-label">${esc(DATA.name)} media references</div><div class="grid">${DATA.media.map(m=>card(m.title,m.text,m.url,m.thumb,m.kind)).join('')}</div>`;
-  };
-
-  window.renderWalkaroundFinal=function(){
-    const panel=ensurePanel('walkaround');
-    panel.innerHTML=`<div class="section-label">${esc(DATA.name)} walkaround bench</div><div class="grid">${DATA.walkaround.map(w=>card(w.title,'Aircraft-specific walkaround/photo route for this area.',w.url,w.thumb,'walkaround')).join('')}</div>`;
-  };
-
-  window.renderShopCardsFinal=function(){
-    const panel=document.getElementById('tab-build');
-    if(!panel || panel.querySelector('#ww2-final-shop-block')) return;
-    const block=document.createElement('section');
-    block.id='ww2-final-shop-block';
-    block.className='info-box';
-    block.style.marginTop='1rem';
-    block.innerHTML=`<div class="section-label">${esc(DATA.name)} checked kit / decals / book routes</div>
-      <div class="grid">${DATA.shop.map(s=>card(s.title,s.text,s.url,'','shop')).join('')}${DATA.books.map(b=>card(b.title,b.text,b.url,'','book')).join('')}</div>`;
-    panel.appendChild(block);
-  };
-
-  document.addEventListener('DOMContentLoaded',function(){
-    if(document.getElementById('tab-reference')?.classList.contains('active')){
-      ensureReferenceSkeleton(); setRefSub('map',document.querySelector('#tab-reference .rtf'));
-    }
+<script id="ww2-side-theme-system">
+(function(){
+  const SIDE = "japanese";
+  const DATA = {"label": "Japanese IJN / IJAAF", "emblem": "●", "note": "Hinomaru identity · IJN/IJAAF green, amber-grey and Pacific fading", "primary": "#182d22", "secondary": "#4b3028", "accent": "#d04b3e"};
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  ready(function(){
+    document.body.classList.add('ww2-side-themed','ww2-side-'+SIDE);
+    document.documentElement.style.setProperty('--ww2-side-primary', DATA.primary);
+    document.documentElement.style.setProperty('--ww2-side-secondary', DATA.secondary);
+    document.documentElement.style.setProperty('--ww2-side-accent', DATA.accent);
+    document.querySelectorAll('.hero-roundel').forEach(function(el){ el.remove(); });
+    if(document.querySelector('.ww2-side-identity')) return;
+    const target = document.querySelector('.hero-title') || document.querySelector('h1');
+    const wrap = document.createElement('div');
+    wrap.className = 'ww2-side-identity';
+    wrap.innerHTML = '<div class="ww2-side-emblem" aria-label="'+DATA.label+' emblem">'+DATA.emblem+'</div><div><h2>'+DATA.label+'</h2><p>'+DATA.note+'</p></div>';
+    if(target && target.parentNode){ target.insertAdjacentElement('afterend', wrap); }
+    else { document.body.insertAdjacentElement('afterbegin', wrap); }
   });
 })();
 </script>

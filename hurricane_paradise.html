@@ -1352,6 +1352,98 @@ body{
 @media(max-width:760px){.ww2-map-grid{grid-template-columns:1fr!important}.ww2-final-card img{height:140px}}
 </style>
 
+
+<style id="ww2-hurricane-structure-css">
+.ww2-hurricane-structure{border:1px solid rgba(201,168,76,.24);border-radius:16px;background:rgba(9,18,32,.72);padding:1rem;margin:1rem 0}
+.ww2-h-subtabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 1rem}
+.ww2-h-btn{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#f4ead7;border-radius:999px;padding:.55rem .8rem;font-weight:800;cursor:pointer}
+.ww2-h-btn.on{background:#c9a84c;color:#111}
+.ww2-h-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.85rem}
+.ww2-h-map-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:1rem}
+.ww2-h-map{position:relative;min-height:430px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.14);background:radial-gradient(circle at 22% 36%,rgba(201,168,76,.22),transparent 17%),radial-gradient(circle at 66% 54%,rgba(126,165,207,.16),transparent 21%),linear-gradient(135deg,#0b192b,#1a324d)}
+.ww2-h-dot{position:absolute;width:23px;height:23px;border-radius:50%;border:2px solid #fff;background:#c9a84c;box-shadow:0 0 0 8px rgba(201,168,76,.18);cursor:pointer}
+.ww2-h-panel,.ww2-h-card{border:1px solid rgba(255,255,255,.13);border-radius:14px;background:rgba(255,255,255,.045);padding:1rem;color:#f4ead7}
+.ww2-h-card{display:block;text-decoration:none;overflow:hidden;padding:0}
+.ww2-h-card img{width:100%;height:165px;object-fit:cover;display:block;background:#111b2b}
+.ww2-h-card div{padding:.9rem}
+.ww2-h-card h3,.ww2-h-panel h3{margin:.2rem 0 .45rem;color:#fff}
+.ww2-h-card p,.ww2-h-panel p{color:rgba(244,234,215,.72);line-height:1.55;margin:.25rem 0}
+.ww2-h-kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#c9a84c;font-weight:900}
+.ww2-h-open{margin-top:.7rem}
+.ww2-timeline-list .ww2-h-panel.active{border-color:#c9a84c;background:rgba(201,168,76,.08)}
+@media(max-width:760px){.ww2-h-map-grid{grid-template-columns:1fr}.ww2-h-card img{height:135px}}
+</style>
+
+
+<style id="ww2-side-theme-system">
+:root{--ww2-side-primary:#162b45;--ww2-side-secondary:#293f55;--ww2-side-accent:#c9a84c}
+body.ww2-side-themed .aircraft-hero,
+body.ww2-side-themed .hero,
+body.ww2-side-themed header.hero,
+body.ww2-side-themed .page-hero{
+  background:
+    radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--ww2-side-accent) 24%, transparent), transparent 26%),
+    linear-gradient(135deg, var(--ww2-side-primary), var(--ww2-side-secondary)) !important;
+  border-bottom:1px solid color-mix(in srgb, var(--ww2-side-accent) 50%, transparent) !important;
+}
+body.ww2-side-themed .section-label,
+body.ww2-side-themed .ww2-h-kicker,
+body.ww2-side-themed .books-section-title,
+body.ww2-side-themed .aftermarket-section-title{color:var(--ww2-side-accent)!important}
+body.ww2-side-themed .ww2-h-btn.on,
+body.ww2-side-themed .fb.on,
+body.ww2-side-themed .nav-tab.active{
+  background:var(--ww2-side-accent)!important;
+  color:#111!important;
+  border-color:var(--ww2-side-accent)!important;
+}
+body.ww2-side-themed .ww2-h-map{
+  background:
+    radial-gradient(circle at 22% 34%, color-mix(in srgb, var(--ww2-side-accent) 24%, transparent), transparent 17%),
+    radial-gradient(circle at 66% 54%, rgba(126,165,207,.14), transparent 21%),
+    linear-gradient(135deg, color-mix(in srgb, var(--ww2-side-primary) 80%, #000), var(--ww2-side-secondary)) !important;
+}
+body.ww2-side-themed .ww2-h-dot{background:var(--ww2-side-accent)!important;box-shadow:0 0 0 8px color-mix(in srgb, var(--ww2-side-accent) 22%, transparent)!important}
+.ww2-side-identity{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  margin:.9rem 0 0;
+  max-width:760px;
+  padding:.75rem .9rem;
+  border:1px solid color-mix(in srgb, var(--ww2-side-accent) 38%, transparent);
+  border-radius:14px;
+  background:rgba(0,0,0,.22);
+  color:#f4ead7;
+}
+.ww2-side-emblem{
+  width:54px;
+  height:54px;
+  min-width:54px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:1.55rem;
+  color:#fff;
+  border:2px solid rgba(255,255,255,.82);
+  box-shadow:0 0 0 5px rgba(255,255,255,.08);
+  background:var(--ww2-side-accent);
+}
+.ww2-side-identity h2{font-size:.92rem;letter-spacing:.13em;text-transform:uppercase;margin:0;color:#fff}
+.ww2-side-identity p{margin:.2rem 0 0;color:rgba(244,234,215,.74);line-height:1.45}
+body.ww2-side-raf .ww2-side-emblem{background:radial-gradient(circle,#c3162f 0 18%,#fff 19% 34%,#1f4f9a 35% 68%,#7a0f24 69% 100%);font-size:0;color:transparent}
+body.ww2-side-usaaf .ww2-side-emblem,
+body.ww2-side-usn .ww2-side-emblem{border-radius:12px;background:linear-gradient(90deg,#fff 0 18%,#244f86 18% 82%,#fff 82% 100%);color:#fff;text-shadow:0 1px 1px #001b34}
+body.ww2-side-luftwaffe .ww2-side-emblem{border-radius:10px;background:#e8e0cc;color:#111;font-size:2rem}
+body.ww2-side-japanese .ww2-side-emblem{background:#fff;color:#d04b3e;font-size:2.4rem}
+body.ww2-side-soviet .ww2-side-emblem{background:#b51e26;color:#ffd97a}
+body.ww2-side-italian .ww2-side-emblem{background:conic-gradient(#267447 0 33%,#f5f1df 33% 66%,#b63a30 66% 100%);color:#1d1d1d}
+body.ww2-side-other .ww2-side-emblem{background:radial-gradient(circle,#c6283b 0 25%,#fff 26% 48%,#1e4d90 49% 100%);font-size:0;color:transparent}
+body.ww2-side-themed .hero-roundel{display:none!important}
+@media(max-width:760px){.ww2-side-identity{align-items:flex-start}.ww2-side-emblem{width:46px;height:46px;min-width:46px}}
+</style>
+
 </head>
 <body>
 <!-- HEADER -->
@@ -1521,76 +1613,7 @@ body{
 </div>
 <!-- TAB: REFERENCE — Map · Timeline · Compare · Survivors · Books -->
 <div class="tab-panel" id="tab-reference">
-<div style="display:flex;gap:8px;margin-bottom:1.4rem;flex-wrap:wrap">
-<button class="fb on rtf" onclick="setRefSub('map',this)" style="font-size:13px">Station map</button>
-<button class="fb rtf" onclick="setRefSub('timeline',this)" style="font-size:13px">BoB timeline</button>
-<button class="fb rtf" onclick="setRefSub('compare',this)" style="font-size:13px">Compare squadrons</button>
-<button class="fb rtf" onclick="setRefSub('survivors',this)" style="font-size:13px">Survivors</button>
-<button class="fb rtf" onclick="setRefSub('books',this)" style="font-size:13px">Books</button>
 </div>
-<div id="rsub-map">
-<div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem">
-<span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-right:.25rem">Filter:</span>
-<button class="map-filter-btn on" onclick="filterMapGroup('all',this)" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)">All Groups</button>
-<button class="map-filter-btn" onclick="filterMapGroup('11',this)" style="border-color:#e05555;color:#e07777">11 Group</button>
-<button class="map-filter-btn" onclick="filterMapGroup('10',this)" style="border-color:#4caf7d;color:#6ccc9a">10 Group</button>
-<button class="map-filter-btn" onclick="filterMapGroup('12',this)" style="border-color:#5b9bd5;color:#7db8ea">12 Group</button>
-<button class="map-filter-btn" onclick="filterMapGroup('13',this)" style="border-color:#b07fd5;color:#c89de8">13 Group</button>
-</div>
-<div class="raf-map-shell">
-<div class="raf-map-board"><div id="leaflet-map"></div></div>
-<div class="map-sqn-list raf-map-side" id="map-sqn-list">
-<div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">Station Info</div>
-<div style="font-size:13px;color:rgba(255,255,255,.45)">Click a station dot on the map to see squadrons and notes.</div>
-<div style="margin-top:1.2rem">
-<div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.5rem">Group colours</div>
-<div style="display:flex;flex-direction:column;gap:4px">
-<div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#e05555"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">11 Group (South)</span></div>
-<div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#4caf7d"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">10 Group (SW)</span></div>
-<div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#5b9bd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">12 Group (Midlands)</span></div>
-<div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#b07fd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">13 Group (North)</span></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="rsub-timeline" style="display:none">
-<div class="timeline-wrap">
-<div id="tl-date" style="font-family:'Special Elite',cursive;font-size:1.4rem;color:var(--brass2);text-align:center;margin-bottom:.75rem"></div>
-<input class="timeline-slider" id="tl-slider" max="113" min="0" oninput="updateTimeline(this.value)" type="range" value="0"/>
-<div class="timeline-labels"><span>10 Jul 1940</span><span>31 Oct 1940</span></div>
-<div id="tl-event-detail" style="margin-top:.75rem"></div>
-</div>
-<div class="tl-legend" style="margin-top:1rem">
-<span><span class="tl-dot" style="background:var(--olive)"></span>Front line</span>
-<span><span class="tl-dot" style="background:var(--brass)"></span>Reserve</span>
-<span><span class="tl-dot" style="background:#5a5a5a"></span>Resting</span>
-</div>
-<div class="timeline-sqns" id="tl-sqns"></div>
-</div>
-
-<div id="timeline-detail" class="info-box">Use the timeline to connect period, theatre, markings and weathering.</div>
-<div id="rsub-compare" style="display:none">
-<div class="compare-selects">
-<div><label>Squadron A</label>
-<select id="cmp-a" onchange="renderCompare()" style="width:100%"></select></div>
-<div><label>Squadron B</label>
-<select id="cmp-b" onchange="renderCompare()" style="width:100%"></select></div>
-</div>
-<div id="compare-output"></div>
-</div>
-
-<div id="compare-grid"></div>
-<div id="rsub-survivors" style="display:none">
-<div class="info-box">Airworthy and preserved Hawker Hurricane Mk.I survivors worldwide. These are the real aircraft you can photograph for reference at shows and museums.</div>
-<div id="survivors-grid"></div>
-</div>
-<div id="rsub-books" style="display:none">
-<div class="info-box">Essential reading for the Hurricane modeller and historian. All links go directly to the specific book on Amazon UK — no search pages.</div>
-<div id="books-grid"></div>
-</div>
-</div>
-<!-- TAB: STORIES — Pilot narratives -->
 <div class="tab-panel" id="tab-stories">
 <div style="margin-bottom:1.5rem">
 <div class="section-label" style="margin-bottom:.5rem">Pilot Profiles · Battle of Britain 1940</div>
@@ -1602,313 +1625,9 @@ body{
 </div>
 <!-- TAB: MEDIA — YouTube, sounds, footage -->
 <div class="tab-panel" id="tab-media">
-<div class="info-box">Curated Hurricane footage, Merlin engine recordings, IWM interviews and documentary clips. All links open on YouTube or the IWM website.</div>
-<div id="media-grid"></div>
 </div>
 <div class="tab-panel" id="tab-walkaround">
-<div class="info-box">Period and museum photographs grouped by aircraft detail area — use these as direct reference while building. All images link to their original source.</div>
-<!-- Feature nav -->
-<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
-<a href="#wa-cockpit" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(201,168,76,.08)'" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s">Cockpit</a>
-<a href="#wa-exhaust" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(201,168,76,.08)'" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s">Exhausts</a>
-<a href="#wa-undercart" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(201,168,76,.08)'" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s">Undercarriage</a>
-<a href="#wa-markings" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(201,168,76,.08)'" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s">Markings</a>
-<a href="#wa-airframe" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(201,168,76,.08)'" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s">Airframe</a>
 </div>
-<!-- COCKPIT -->
-<div id="wa-cockpit" style="margin-bottom:2rem">
-<div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Cockpit <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
-<div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
-<strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
-      Interior is Titanine Interior Grey-Green — slightly warmer and greener than Spitfire. Instrument panel Flat Black. The ejector exhaust handles on the right side of the cockpit are a distinctive detail. Floor is darker and more worn than side walls. R4118 (Hurricane Heritage) has the most accessible authentic cockpit of any surviving example.
-    </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
-<a class="wa-ref-card" href="https://collections.rafmuseum.org.uk/collection/object/object-1815/" rel="noopener" target="_blank">
-<img alt="RAF Museum Hurricane cockpit photo" loading="lazy" src="https://rafstories.org/ciim-media/pf/D63A5943_D295_9C52_1BE8_D4238A690CC6/122/7/large_78_A_872_003.jpg"/>
-<div class="wa-ref-body">
-<div class="wa-ref-kicker">RAF Museum</div>
-<div class="wa-ref-title">Reference photo — Hurricane cockpit</div>
-<div class="wa-ref-desc">Useful for the cockpit sidewalls, seat shape, instrument panel layout and the warmer grey-green interior tone. A strong visual check for cockpit opening size and internal framing.</div>
-<div class="wa-ref-link">Open source photo ↗</div>
-</div>
-</a>
-<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
-<a href="https://www.youtube.com/watch?v=afZwPxtY2iw" rel="noopener" style="display:block;position:relative" target="_blank">
-<img alt="BBMF Hurricane LF363 cockpit startup" src="https://img.youtube.com/vi/afZwPxtY2iw/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
-<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
-</a>
-<div style="padding:.75rem .9rem">
-<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">BBMF Hurricane LF363 — Cockpit Startup</div>
-<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Close-up cockpit video during engine startup at RAF Coningsby. Shows throttle quadrant, instrument readings and interior colour in natural light.</div>
-</div>
-</div>
-<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
-<a href="https://www.youtube.com/watch?v=NEmAlxaW44I" rel="noopener" style="display:block;position:relative" target="_blank">
-<img alt="Hurricane restoration cockpit detail" src="https://img.youtube.com/vi/NEmAlxaW44I/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
-<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
-</a>
-<div style="padding:.75rem .9rem">
-<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Hurricane Restoration — Interior Detail</div>
-<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Warbird Workshop documentary. Close-access footage of cockpit interior, instrument fitment and structural detail during rebuild.</div>
-</div>
-</div>
-</div>
-</div><!-- /cockpit -->
-<!-- EXHAUSTS -->
-<div id="wa-exhaust" style="margin-bottom:2rem">
-<div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Exhaust Stacks &amp; Staining <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
-<div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
-<strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
-      The Hurricane uses ejector exhaust stacks — one long casting per side, not individual stubs. The staining pattern is a single wide fan aft of the exhaust outlet, extending back to roughly the cockpit position. The stacks oxidise to a rusty brown-orange. Eduard Brassin 648580 gives you resin stacks with excellent casting detail for 1:48.
-    </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
-<a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:HAWKER_HURRICANE_MKXII.jpg" rel="noopener" target="_blank">
-<img alt="Hawker Hurricane external reference photo" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/HAWKER_HURRICANE_MKXII.jpg/1280px-HAWKER_HURRICANE_MKXII.jpg"/>
-<div class="wa-ref-body">
-<div class="wa-ref-kicker">Wikimedia Commons</div>
-<div class="wa-ref-title">Reference photo — Exhaust stacks and nose</div>
-<div class="wa-ref-desc">Good external view for the Hurricane’s ejector exhaust arrangement, spinner shape and cowling lines. Useful when checking the broad exhaust staining fan that runs back along the fuselage side.</div>
-<div class="wa-ref-link">Open source photo ↗</div>
-</div>
-</a>
-<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
-<a href="https://www.youtube.com/watch?v=Q2uDlTH86NU" rel="noopener" style="display:block;position:relative" target="_blank">
-<img alt="R4118 Hurricane exhaust detail Duxford" src="https://img.youtube.com/vi/Q2uDlTH86NU/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
-<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
-</a>
-<div style="padding:.75rem .9rem">
-<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">R4118 — Walk-around at Duxford 2023</div>
-<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Full walk-around of R4118. The exhaust stacks and staining pattern are clearly visible during the engine startup sequence. Best available video reference.</div>
-</div>
-</div>
-<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
-<a href="https://www.youtube.com/watch?v=afZwPxtY2iw" rel="noopener" style="display:block;position:relative" target="_blank">
-<img alt="Merlin startup exhaust smoke BBMF" src="https://img.youtube.com/vi/afZwPxtY2iw/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
-<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
-</a>
-<div style="padding:.75rem .9rem">
-<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Merlin Startup — Blue Smoke Plume</div>
-<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Cold-start sequence of LF363. The blue smoke from the ejector stacks and the resulting staining pattern is clearly visible — essential exhaust weathering reference.</div>
-</div>
-</div>
-</div>
-</div><!-- /exhaust -->
-<!-- UNDERCARRIAGE -->
-<div id="wa-undercart" style="margin-bottom:2rem">
-<div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Undercarriage <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
-<div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
-<strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
-      Undercarriage legs are Interior Grey-Green — not camouflage colour. Wheel bay interior also grey-green. Mechanical parts on legs are bare aluminium. Tyres are warm mid-grey, not cold grey or black. The wheel bays are open when gear is down — they were frequently mud-spattered on BoB grass airfields.
-    </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
-<a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:HAWKER_HURRICANE_MKXII.jpg" rel="noopener" target="_blank">
-<img alt="Hawker Hurricane undercarriage reference photo" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/HAWKER_HURRICANE_MKXII.jpg/1280px-HAWKER_HURRICANE_MKXII.jpg"/>
-<div class="wa-ref-body">
-<div class="wa-ref-kicker">Wikimedia Commons</div>
-<div class="wa-ref-title">Reference photo — Undercarriage stance</div>
-<div class="wa-ref-desc">Useful for checking the Hurricane’s slightly wide-set gear stance, wheel cover shape and the sit of the aircraft on its legs. Also helps with tyre size and door alignment.</div>
-<div class="wa-ref-link">Open source photo ↗</div>
-</div>
-</a>
-<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
-<a href="https://www.youtube.com/watch?v=NEmAlxaW44I" rel="noopener" style="display:block;position:relative" target="_blank">
-<img alt="Hurricane restoration undercarriage detail" src="https://img.youtube.com/vi/NEmAlxaW44I/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
-<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
-</a>
-<div style="padding:.75rem .9rem">
-<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Restoration — Undercarriage Bay Detail</div>
-<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Warbird Workshop restoration includes close-access footage of the wheel bay and leg assembly during strip-down. Shows leg colour, hydraulics and structural detail.</div>
-</div>
-</div>
-<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
-<a href="https://www.rafmuseum.org.uk/research/collections/" rel="noopener" style="display:block;background:#0a1628;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative" target="_blank">
-<div style="text-align:center;padding:1rem">
-<div style="font-size:2.5rem;opacity:.3;margin-bottom:.5rem">✈</div>
-<div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(100,160,255,.7)">RAF Museum</div>
-<div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:.3rem">Undercarriage reference photos</div>
-</div>
-<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(30,60,120,.9);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">RAF Museum</div>
-</a>
-<div style="padding:.75rem .9rem">
-<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">RAF Museum — Hurricane Technical Reference</div>
-<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">The RAF Museum Cosford houses a Hurricane with good undercarriage access. The online collection includes technical photographs of the leg assembly.</div>
-</div>
-</div>
-</div>
-</div><!-- /undercarriage -->
-<!-- MARKINGS -->
-<div id="wa-markings" style="margin-bottom:2rem">
-<div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Roundels, Codes &amp; Markings <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
-<div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
-<strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
-      Roundel types changed during the Battle. Before ~Aug 1940: Type A (red/white/blue/yellow outer) on upper wings, Type A1 (no yellow) on fuselage, Type B (red/blue only) on lower wings. Code letters were Night Black 8" — not white. Fin flash was red/white/blue equal thirds. Spinners matched Sky colour. See the Reference tab for exact roundel dimensions by scale.
-    </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
-<a class="wa-ref-card" href="https://www.rafmuseum.org.uk/research/collections/hawker-hurricane-1/" rel="noopener" target="_blank">
-<img alt="Hawker Hurricane markings reference photo" loading="lazy" src="https://assets.rafmuseum.org.uk/app/uploads/2021/01/Hurricane_hendon.jpg"/>
-<div class="wa-ref-body">
-<div class="wa-ref-kicker">RAF Museum</div>
-<div class="wa-ref-title">Reference photo — Codes, roundels and camouflage</div>
-<div class="wa-ref-desc">Useful for spacing of the fuselage roundel, code placement, fin flash proportions and the relationship between the wing camouflage pattern and the roundels.</div>
-<div class="wa-ref-link">Open source photo ↗</div>
-</div>
-</a>
-<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
-<a href="https://www.iwm.org.uk/collections" rel="noopener" style="display:block;background:#0a1628;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative" target="_blank">
-<div style="text-align:center;padding:1rem">
-<div style="font-size:2.5rem;opacity:.3;margin-bottom:.5rem">🎯</div>
-<div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(201,168,76,.7)">IWM Collection</div>
-<div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:.3rem">Search Hurricane markings photos</div>
-</div>
-<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(0,100,50,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">IWM</div>
-</a>
-<div style="padding:.75rem .9rem">
-<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">IWM — Hurricane Markings, 1940</div>
-<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">IWM photograph archive with hundreds of period images. Filter by "Hurricane" + "1940" + "Photograph" to find roundel and code reference photos.</div>
-</div>
-</div>
-<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
-<a href="https://www.youtube.com/watch?v=Q2uDlTH86NU" rel="noopener" style="display:block;position:relative" target="_blank">
-<img alt="R4118 original 605 Squadron markings" src="https://img.youtube.com/vi/Q2uDlTH86NU/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
-<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
-</a>
-<div style="padding:.75rem .9rem">
-<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">R4118 — Original 605 Squadron UP-W Markings</div>
-<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">R4118 flies in her original period markings — 605 Squadron UP-W. The actual size, style and positioning of code letters is clearly visible in the walk-around footage.</div>
-</div>
-</div>
-</div>
-</div><!-- /markings -->
-<!-- AIRFRAME -->
-<div id="wa-airframe" style="margin-bottom:2rem">
-<div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Airframe — Fabric Fuselage &amp; Panel Detail <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
-<div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
-<strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
-      The Hurricane's rear fuselage is fabric over a tubular steel frame — not metal. The ribs show through the doped fabric as subtle raised lines, much more muted than metal panel lines. Do not scribe heavy panel lines on the rear fuselage. The transition from metal (forward of cockpit) to fabric occurs approximately at the cockpit rear.
-    </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
-<a class="wa-ref-card" href="https://www.rafmuseum.org.uk/research/collections/hawker-hurricane-1/" rel="noopener" target="_blank">
-<img alt="Hawker Hurricane airframe reference photo" loading="lazy" src="https://assets.rafmuseum.org.uk/app/uploads/2021/01/Hurricane_hendon.jpg"/>
-<div class="wa-ref-body">
-<div class="wa-ref-kicker">RAF Museum</div>
-<div class="wa-ref-title">Reference photo — Overall airframe</div>
-<div class="wa-ref-desc">A strong overall reference for the mix of fabric and metal construction. Helpful for the rear fuselage texture, canopy proportions, wing planform and the general Battle of Britain Hurricane look.</div>
-<div class="wa-ref-link">Open source photo ↗</div>
-</div>
-</a>
-<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
-<a href="https://www.youtube.com/watch?v=1B_2D1zYdFc" rel="noopener" style="display:block;position:relative" target="_blank">
-<img alt="Lost Hurricane restoration airframe" src="https://img.youtube.com/vi/1B_2D1zYdFc/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
-<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
-</a>
-<div style="padding:.75rem .9rem">
-<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">The Lost Hurricane — India Restoration</div>
-<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Peter Vacher's restoration of a Hurricane found in India. The bare airframe footage shows the fabric structure, frame ribs and metal/fabric junction in exceptional detail.</div>
-</div>
-</div>
-<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
-<a href="https://www.youtube.com/watch?v=SuBHJ5pqWeE" rel="noopener" style="display:block;position:relative" target="_blank">
-<img alt="Hurricane P3351 restoration documentary" src="https://img.youtube.com/vi/SuBHJ5pqWeE/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
-<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
-</a>
-<div style="padding:.75rem .9rem">
-<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Hurricane P3351 — Rare Restoration Documentary</div>
-<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Remastered 1990s documentary of Hurricane P3351 restoration. Shows the full airframe before fabric application — essential reference for rivet patterns and panel construction.</div>
-</div>
-</div>
-</div>
-</div><!-- /airframe -->
-</div><!-- /tab-walkaround -->
-</div><!-- /main-content -->
-<!-- SIDEBAR -->
-<aside class="sidebar">
-<div class="sidebar-block">
-<div class="sidebar-hd">Advertisement</div>
-<!-- ADSENSE 160×240 — paste your AdSense code here once approved -->
-</div>
-<div class="sidebar-block">
-<div class="sidebar-hd">Articles</div>
-<a class="shop-link" href="article-hurricane-kits-guide.html" style="text-decoration:none">
-<span class="shop-flag">📋</span>
-<div class="shop-info">
-<div class="shop-name">Kit Buying Guide</div>
-<div class="shop-cats">All 9 Hurricane kits compared</div>
-</div>
-</a>
-<a class="shop-link" href="article-hurricane-bob-colours.html" style="text-decoration:none">
-<span class="shop-flag">🎨</span>
-<div class="shop-info">
-<div class="shop-name">Paint Codes</div>
-<div class="shop-cats">Dark Earth · Dark Green · Sky</div>
-</div>
-</a>
-<a class="shop-link" href="articles.html" style="text-decoration:none">
-<span class="shop-flag">📰</span>
-<div class="shop-info">
-<div class="shop-name">All Articles →</div>
-<div class="shop-cats">Build guides · History · Reference</div>
-</div>
-</a>
-</div>
-<div class="sidebar-block">
-<div class="sidebar-hd">Advertisement</div>
-<!-- ADSENSE 160×180 — paste your AdSense code here once approved -->
-</div>
-<div class="sidebar-block">
-<div class="sidebar-hd">Other Aircraft</div>
-<a class="shop-link" href="index.html"><span class="shop-flag">🏠</span><div class="shop-info"><div class="shop-name">← Hub Home</div><div class="shop-cats">All aircraft</div></div></a>
-<div class="shop-link" style="opacity:.4;cursor:default"><span class="shop-flag">✈️</span><div class="shop-info"><div class="shop-name">Spitfire</div><div class="shop-cats">Coming soon</div></div></div>
-<div class="shop-link" style="opacity:.4;cursor:default"><span class="shop-flag">✈️</span><div class="shop-info"><div class="shop-name">Lancaster</div><div class="shop-cats">Coming soon</div></div></div>
-<div class="shop-link" style="opacity:.4;cursor:default"><span class="shop-flag">✈️</span><div class="shop-info"><div class="shop-name">Bf 109</div><div class="shop-cats">Coming soon</div></div></div>
-</div>
-</aside>
-</div><!-- /main-wrap -->
-<!-- PILOT MODAL -->
-<div class="pm-overlay" id="pm-overlay" onclick="closePM()">
-<div class="pm-modal" onclick="event.stopPropagation()">
-<div class="pm-hd">
-<div><div class="pm-name" id="pm-name"></div><div class="pm-rank" id="pm-rank"></div></div>
-<button class="pm-close" onclick="closePM()">✕</button>
-</div>
-<div class="pm-body">
-<div class="pm-stats" id="pm-stats"></div>
-<div class="pm-bio" id="pm-bio"></div>
-<div class="pm-awards" id="pm-awards"></div>
-<div id="pm-decal-list" style="display:none;margin:.6rem 0;padding:.5rem;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.08);border-radius:2px"></div>
-<div class="pm-links">
-<a class="shop-btn hb-brass" href="#" id="pm-h-pilot" rel="noopener" target="_blank">IWM archive ↗</a>
-<a class="shop-btn hb-outline" href="#" id="pm-h-sqn" rel="noopener" target="_blank">Squadron decals ↗</a>
-</div>
-</div>
-</div>
-</div>
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLB()">
-<button class="lb-close" onclick="closeLB()">✕</button>
-<img alt="" id="lb-img" src=""/>
-<div class="lb-cap" id="lb-cap"></div>
-</div>
-<footer style="background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.06);padding:1.5rem 2rem;text-align:center;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;color:rgba(255,255,255,.2)">
-<a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none">WW2 Modeller Hub</a>
-   · 
-  <a href="spitfire_paradise.html" style="color:rgba(255,255,255,.35);text-decoration:none">Spitfire</a>
-   · 
-  <a href="articles.html" style="color:rgba(255,255,255,.35);text-decoration:none">Articles</a>
-   · 
-  <a href="about.html" style="color:rgba(255,255,255,.35);text-decoration:none">About</a>
-   · 
-  <a href="privacy.html" style="color:rgba(255,255,255,.35);text-decoration:none">Privacy</a>
-<br/>
-  Hawker Hurricane Reference · For scale modellers and aviation enthusiasts · Not affiliated with any manufacturer or retailer
-</footer>
 <script>
 
 // ═══════════════════════════════════════════════════════
@@ -4515,17 +4234,18 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-<script id="ww2-final-page-audit-repair">
-window.WW2_REF_DATA = {"name": "Hawker Hurricane", "category": "RAF & Commonwealth", "role": "RAF fighter", "paint": "RAF/MAP Dark Green, Dark Earth, Sky; Battle of Britain wear", "query": "Hawker Hurricane", "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "bases": [{"base": "RAF sector airfield", "unit": "Primary squadron route", "x": 22, "y": 40, "note": "Hawker Hurricane: Primary squadron route. Use this base to jump to unit cards, markings, paint and weathering notes."}, {"base": "Forward / coastal base", "unit": "Theatre specialist route", "x": 47, "y": 58, "note": "Hawker Hurricane: Theatre specialist route. Use this base to jump to unit cards, markings, paint and weathering notes."}, {"base": "Overseas command base", "unit": "Commonwealth or FAA route", "x": 73, "y": 50, "note": "Hawker Hurricane: Commonwealth or FAA route. Use this base to jump to unit cards, markings, paint and weathering notes."}], "timeline": [{"label": "Introduction", "text": "Hawker Hurricane enters the modelling story: choose early finish, first-unit markings and baseline variant details."}, {"label": "Main campaign use", "text": "Hawker Hurricane reaches its key theatre identity. Base, unit and markings now drive the paint and weathering choices."}, {"label": "Peak operations", "text": "Operational tempo adds exhaust, oil, mud, dust, salt, fading or chipping depending on theatre."}, {"label": "Late-war / preserved reference", "text": "Use surviving aircraft for structure and walkaround detail, but wartime photos for paint and markings."}], "compare": [{"title": "Variant route", "text": "RAF fighter. Confirm exact mark/variant before choosing kit, decals or aftermarket."}, {"title": "Paint route", "text": "RAF/MAP Dark Green, Dark Earth, Sky; Battle of Britain wear"}, {"title": "Modelling risk", "text": "Cross-check restored aircraft, decal instructions and wartime photographs before final finish."}], "media": [{"title": "Hawker Hurricane archive photographs", "kind": "Archive", "url": "https://www.iwm.org.uk/collections/search?query=Hawker+Hurricane", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "text": "Wartime archive route for unit, markings and weathering evidence."}, {"title": "Hawker Hurricane image references", "kind": "Photo reference", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "text": "Image route for overall form, cockpit, undercarriage and surface details."}, {"title": "Hawker Hurricane kit records", "kind": "Kit database", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Hawker+Hurricane", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "text": "Use to verify exact tooling, boxing, scale and decal contents."}], "walkaround": [{"title": "Overall airframe and stance", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane+walkaround+airframe&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}, {"title": "Cockpit, canopy and forward section", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane+cockpit&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}, {"title": "Landing gear, bays and stores", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane+landing+gear&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}, {"title": "Paint, markings and weathering", "url": "paint-codes.html", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}], "shop": [{"title": "Hawker Hurricane kit record", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Hawker+Hurricane", "text": "Verify kit tooling and exact boxing before purchase."}, {"title": "Hawker Hurricane decals", "url": "https://www.hannants.co.uk/search/?keyword_search=Hawker+Hurricane+decals", "text": "Decal route matched to this aircraft only."}, {"title": "Hawker Hurricane masks / detail", "url": "https://www.eduard.com/eduard/?lang=1&cur=2&listtype=search&searchparam=Hawker+Hurricane", "text": "Detail/mask route matched to this aircraft only."}], "books": [{"title": "Hawker Hurricane reference books", "url": "https://www.amazon.co.uk/s?k=Hawker+Hurricane+aircraft+book", "text": "Book route for variants, markings and theatre context."}, {"title": "Hawker Hurricane unit and markings references", "url": "https://www.amazon.co.uk/s?k=Hawker+Hurricane+units+markings+World+War+2", "text": "Use for unit history, serials and campaign placement."}]};
 
+
+
+<script id="ww2-hurricane-structure-final">
+window.WW2_H_DATA = {"file": "hurricane_paradise.html", "name": "Hawker Hurricane", "cat": "RAF & Commonwealth", "role": "RAF fighter", "paint": "Battle of Britain sector stations, RAF squadron codes and MAP camouflage", "query": "Hawker Hurricane", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "bases": [{"base": "Sector station", "unit": "Front-line squadron card", "x": 22, "y": 42, "linked": ["Front-line squadron card", "Hawker Hurricane markings route", "Hawker Hurricane weathering route"], "note": "Hawker Hurricane: click-through base card linked to unit, markings and modelling notes."}, {"base": "Forward / coastal base", "unit": "Specialist squadron card", "x": 48, "y": 57, "linked": ["Specialist squadron card", "Hawker Hurricane markings route", "Hawker Hurricane weathering route"], "note": "Hawker Hurricane: click-through base card linked to unit, markings and modelling notes."}, {"base": "Overseas command station", "unit": "Commonwealth / FAA card", "x": 72, "y": 44, "linked": ["Commonwealth / FAA card", "Hawker Hurricane markings route", "Hawker Hurricane weathering route"], "note": "Hawker Hurricane: click-through base card linked to unit, markings and modelling notes."}], "timeline": [{"phase": "Introduction", "date": "Early service", "text": "Hawker Hurricane enters service. Use this phase for early variants, first camouflage and initial unit markings."}, {"phase": "Main campaign use", "date": "Operational peak", "text": "Hawker Hurricane develops its key theatre identity. Base, unit and markings now drive the model subject."}, {"phase": "Heavy wear stage", "date": "Sustained operations", "text": "Weathering becomes theatre-specific: Battle of Britain sector stations, RAF squadron codes and MAP camouflage plus exhaust, oil, mud, dust, salt, fading or chipping."}, {"phase": "Late-war / reference stage", "date": "Late war and survivors", "text": "Use preserved aircraft for structure and walkaround detail, but confirm paint and markings with wartime photographs."}], "compare": [{"h": "Variant choice", "t": "RAF fighter. Choose exact mark/variant first; it controls kit, cockpit, canopy, stores and decals."}, {"h": "Paint choice", "t": "Battle of Britain sector stations, RAF squadron codes and MAP camouflage"}, {"h": "Reference risk", "t": "Restorations, decal sheets and museum repaints can be misleading. Wartime photo evidence should lead."}], "media": [{"k": "Archive", "title": "Hawker Hurricane wartime photographs", "url": "https://www.iwm.org.uk/collections/search?query=Hawker+Hurricane", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "text": "Wartime photo route for markings, unit context and weathering evidence."}, {"k": "Photo reference", "title": "Hawker Hurricane image references", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "text": "Image route for preserved aircraft, stance and airframe detail."}, {"k": "Kit database", "title": "Hawker Hurricane kit records", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Hawker+Hurricane", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "text": "Kit tooling, boxing and decal route. Verify exact kit before buying aftermarket."}], "walk": [{"title": "Overall airframe and stance", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane+airframe+walkaround&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}, {"title": "Cockpit, canopy and forward section", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane+cockpit+canopy&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}, {"title": "Landing gear, bays and stores", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane+landing+gear+stores&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}, {"title": "Paint, markings and weathering", "url": "paint-codes.html", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}], "shops": [{"k": "Kit route", "title": "Hawker Hurricane kit record", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Hawker+Hurricane", "text": "Aircraft-specific kit records; confirm boxing and variant."}, {"k": "Decals", "title": "Hawker Hurricane decals", "url": "https://www.hannants.co.uk/search/?keyword_search=Hawker+Hurricane+decals", "text": "Aircraft-specific decal route."}, {"k": "Aftermarket", "title": "Hawker Hurricane masks/detail sets", "url": "https://www.eduard.com/eduard/?lang=1&cur=2&listtype=search&searchparam=Hawker+Hurricane", "text": "Aircraft-specific mask/detail route."}, {"k": "Books", "title": "Hawker Hurricane aircraft books", "url": "https://www.amazon.co.uk/s?k=Hawker+Hurricane+aircraft+book", "text": "Aircraft-specific book/reference route."}]};
 (function(){
-  const DATA = window.WW2_REF_DATA;
+  const DATA = window.WW2_H_DATA;
   const $=(s,r=document)=>r.querySelector(s);
   const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const imgFallback='video-thumb-fallback.png';
 
-  function ensurePanel(id){
+  function ensureTab(id){
     let p=document.getElementById('tab-'+id);
     if(!p){
       const main=document.querySelector('main')||document.body;
@@ -4537,164 +4257,194 @@ window.WW2_REF_DATA = {"name": "Hawker Hurricane", "category": "RAF & Commonweal
     return p;
   }
 
-  function ensureReferenceSkeleton(){
-    const p=ensurePanel('reference');
-    p.innerHTML = `
-      <div class="ww2-ref-tabs" style="display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap">
-        <button class="fb rtf on" type="button" onclick="setRefSub('map',this)">Map</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('timeline',this)">Timeline</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('compare',this)">Compare</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('survivors',this)">Survivors</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('books',this)">Books</button>
-      </div>
-      <div id="rsub-map">
-        <div class="section-label">${esc(DATA.name)} theatre map</div>
-        <div class="info-box">Click a base marker to show the linked unit/squadron route. Then use “Open unit card” to jump back to the unit card section.</div>
-        <div class="ww2-map-grid" style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:1rem;align-items:stretch">
-          <div id="leaflet-map" class="map-board" style="min-height:430px;border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#102033,#172942)"></div>
-          <div id="map-sqn-list" class="map-info" style="border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(0,0,0,.22);padding:1rem"></div>
-        </div>
-      </div>
-      <div id="rsub-timeline" style="display:none">
-        <div class="section-label">${esc(DATA.name)} campaign timeline</div>
-        <div class="info-box">The timeline follows the same structure across aircraft: introduction, main campaign use, peak operations and late-war/reference stage.</div>
-        <input id="tl-slider" type="range" min="0" max="${Math.max(0,DATA.timeline.length-1)}" value="0" oninput="updateTimeline(this.value)" style="width:100%;margin:1rem 0">
-        <div id="tl-date" style="font-family:'Special Elite',cursive;color:#fff;font-size:1.3rem;margin:.75rem 0"></div>
-        <div id="timeline-detail"></div>
-      </div>
-      <div id="rsub-compare" style="display:none">
-        <div class="section-label">${esc(DATA.name)} modelling comparison</div>
-        <div id="compare-grid"></div>
-      </div>
-      <div id="rsub-survivors" style="display:none">
-        <div class="section-label">${esc(DATA.name)} reference sources</div>
-        <div id="survivors-grid"></div>
-      </div>
-      <div id="rsub-books" style="display:none">
-        <div class="section-label">${esc(DATA.name)} books and research</div>
-        <div id="books-grid"></div>
-      </div>`;
+  function card(item, kind){
+    return `<a class="ww2-h-card" href="${esc(item.url||'#')}" target="${item.url&&item.url.startsWith('http')?'_blank':'_self'}" rel="noopener">
+      ${item.img?`<img src="${esc(item.img)}" alt="${esc(item.title||DATA.name)}" loading="lazy" onerror="this.src='video-thumb-fallback.png'">`:''}
+      <div><div class="ww2-h-kicker">${esc(kind||item.k||'reference')}</div><h3>${esc(item.title)}</h3><p>${esc(item.text||'Aircraft-specific reference route.')}</p></div>
+    </a>`;
   }
 
-  function card(title,text,url,thumb,kind){
-    const img = thumb ? `<img src="${esc(thumb)}" alt="${esc(title)}" loading="lazy" onerror="this.src='${imgFallback}'">` : '';
-    return `<a class="media-card ww2-final-card" href="${esc(url||'#')}" target="${url&&url.startsWith('http')?'_blank':'_self'}" rel="noopener">
-      ${img}<div><div class="kicker">${esc(kind||'reference')}</div><h3>${esc(title)}</h3><p>${esc(text||'Reference route for this aircraft.')}</p></div></a>`;
+  function buildReference(){
+    const panel=ensureTab('reference');
+    panel.innerHTML = `
+      <section class="ww2-hurricane-structure">
+        <div class="ww2-h-subtabs">
+          <button class="ww2-h-btn on" type="button" data-ref="map">Map</button>
+          <button class="ww2-h-btn" type="button" data-ref="timeline">Timeline</button>
+          <button class="ww2-h-btn" type="button" data-ref="compare">Compare</button>
+          <button class="ww2-h-btn" type="button" data-ref="survivors">Survivors</button>
+          <button class="ww2-h-btn" type="button" data-ref="books">Books</button>
+        </div>
+        <div id="rsub-map" class="ww2-h-ref-panel"></div>
+        <div id="rsub-timeline" class="ww2-h-ref-panel" style="display:none"></div>
+        <div id="rsub-compare" class="ww2-h-ref-panel" style="display:none"></div>
+        <div id="rsub-survivors" class="ww2-h-ref-panel" style="display:none"></div>
+        <div id="rsub-books" class="ww2-h-ref-panel" style="display:none"></div>
+      </section>`;
+    $$('.ww2-h-btn', panel).forEach(btn=>{
+      btn.onclick=()=>setRefSub(btn.dataset.ref, btn);
+    });
+    renderMap();
+  }
+
+  window.setRefSub=function(sub, btn){
+    const root=ensureTab('reference');
+    ['map','timeline','compare','survivors','books'].forEach(s=>{
+      const p=document.getElementById('rsub-'+s);
+      if(p) p.style.display = s===sub ? '' : 'none';
+    });
+    $$('.ww2-h-btn',root).forEach(b=>b.classList.remove('on'));
+    if(btn) btn.classList.add('on');
+    if(sub==='map') renderMap();
+    if(sub==='timeline') renderTimeline(0);
+    if(sub==='compare') renderCompare();
+    if(sub==='survivors') renderSurvivors();
+    if(sub==='books') renderBooks();
+  };
+
+  function openUnit(unit){
+    const unitPanel=document.getElementById('tab-squadrons')||document.getElementById('tab-units');
+    if(window.openSqn){ window.openSqn(unit); return; }
+    if(window.openUnit){ window.openUnit(unit); return; }
+    switchTab(unitPanel && unitPanel.id==='tab-units' ? 'units':'squadrons', document.querySelector('.nav-tab,.tab-btn'));
+    setTimeout(()=>{
+      const cards=$$('.unit-card,.sq-card,#tab-squadrons article,#tab-units article');
+      const match=cards.find(c=>c.textContent.toLowerCase().includes(String(unit).toLowerCase()))||cards[0];
+      if(match) match.scrollIntoView({behavior:'smooth',block:'center'});
+    },60);
+  }
+
+  function renderMap(){
+    const p=document.getElementById('rsub-map');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-map-grid">
+      <div class="ww2-h-map" id="leaflet-map">
+        <div class="ww2-h-panel" style="position:absolute;left:1rem;top:1rem;background:rgba(0,0,0,.45);max-width:320px">
+          <div class="ww2-h-kicker">${esc(DATA.cat)}</div><h3>${esc(DATA.name)} map</h3><p>Click a base marker to show linked unit/squadron cards, matching the Hurricane map workflow.</p>
+        </div>
+        ${DATA.bases.map((b,i)=>`<button class="ww2-h-dot" type="button" data-i="${i}" title="${esc(b.base)}" style="left:${b.x}%;top:${b.y}%"></button>`).join('')}
+      </div>
+      <div class="ww2-h-panel" id="map-sqn-list"></div>
+    </div>`;
+    const side=$('#map-sqn-list',p);
+    function show(i){
+      const b=DATA.bases[i]||DATA.bases[0];
+      side.innerHTML=`<div class="ww2-h-kicker">Selected base</div><h3>${esc(b.base)}</h3><p><b>Linked unit route:</b> ${esc(b.unit)}</p><p>${esc(b.note)}</p>
+      <div class="ww2-h-grid">${b.linked.map(x=>`<button type="button" class="ww2-h-btn ww2-h-open" data-unit="${esc(x)}">${esc(x)}</button>`).join('')}</div>`;
+      $$('.ww2-h-open',side).forEach(btn=>btn.onclick=()=>openUnit(btn.dataset.unit));
+    }
+    $$('.ww2-h-dot',p).forEach(dot=>dot.onclick=()=>show(+dot.dataset.i));
+    show(0);
+  }
+
+  function renderTimeline(idx){
+    const p=document.getElementById('rsub-timeline');
+    if(!p) return;
+    const max=DATA.timeline.length-1;
+    const item=DATA.timeline[idx]||DATA.timeline[0];
+    p.innerHTML=`<div class="ww2-h-panel"><div class="ww2-h-kicker">Campaign timeline</div><h3>${esc(DATA.name)}</h3>
+      <p>Same timeline structure across the aircraft library: early service → main campaign → operational wear → late/reference stage.</p>
+      <input id="tl-slider" type="range" min="0" max="${max}" value="${idx}" style="width:100%;margin:1rem 0">
+      <h3 id="tl-date">${esc(item.date)} — ${esc(item.phase)}</h3><div id="timeline-detail"></div></div>
+      <div class="ww2-h-grid ww2-timeline-list">${DATA.timeline.map((t,i)=>`<div class="ww2-h-panel ${i===idx?'active':''}"><div class="ww2-h-kicker">${esc(t.date)}</div><h3>${esc(t.phase)}</h3><p>${esc(t.text)}</p></div>`).join('')}</div>`;
+    $('#tl-slider',p).oninput=e=>renderTimeline(+e.target.value);
+  }
+  window.updateTimeline=v=>renderTimeline(+v||0);
+
+  function renderCompare(){
+    const p=document.getElementById('rsub-compare');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-grid" id="compare-grid">${DATA.compare.map(c=>`<div class="ww2-h-panel"><div class="ww2-h-kicker">Compare</div><h3>${esc(c.h)}</h3><p>${esc(c.t)}</p></div>`).join('')}</div>`;
+  }
+
+  function renderSurvivors(){
+    const p=document.getElementById('rsub-survivors');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-grid" id="survivors-grid">${DATA.media.map(m=>card(m,'reference source')).join('')}</div>`;
+  }
+
+  function renderBooks(){
+    const p=document.getElementById('rsub-books');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-grid" id="books-grid">${DATA.shops.filter(x=>x.k==='Books').concat([{title:DATA.name+' unit and markings references',url:'https://www.amazon.co.uk/s?k='+encodeURIComponent(DATA.query+' units markings World War 2'),text:'Book route for unit histories, serials, markings and theatre placement.'}]).map(m=>card(m,'book')).join('')}</div>`;
+  }
+
+  window.renderMediaFinal=function(){
+    const panel=ensureTab('media');
+    panel.innerHTML=`<section class="ww2-hurricane-structure"><div class="ww2-h-kicker">Media</div><h2>${esc(DATA.name)} media board</h2><p>Same card structure across the site: archive, photo reference and kit database routes.</p><div class="ww2-h-grid">${DATA.media.map(m=>card(m,m.k)).join('')}</div></section>`;
+  };
+
+  window.renderWalkaroundFinal=function(){
+    const panel=ensureTab('walkaround');
+    panel.innerHTML=`<section class="ww2-hurricane-structure"><div class="ww2-h-kicker">Walkaround</div><h2>${esc(DATA.name)} walkaround board</h2><p>Same walkaround structure across the site: airframe, cockpit, landing gear/stores and paint/weathering.</p><div class="ww2-h-grid">${DATA.walk.map(w=>card({title:w.title,url:w.url,img:w.img,text:'Aircraft-specific walkaround/photo route.'},'walkaround')).join('')}</div></section>`;
+  };
+
+  function renderBuildSupplement(){
+    const panel=document.getElementById('tab-build');
+    if(!panel || $('#ww2-shop-supplement',panel)) return;
+    const div=document.createElement('section');
+    div.id='ww2-shop-supplement';
+    div.className='ww2-hurricane-structure';
+    div.innerHTML=`<div class="ww2-h-kicker">Checked routes</div><h2>${esc(DATA.name)} shop/book/reference routes</h2><div class="ww2-h-grid">${DATA.shops.map(s=>card(s,s.k)).join('')}</div>`;
+    panel.appendChild(div);
   }
 
   window.switchTab=function(id,el){
     $$('.tab-panel').forEach(p=>p.classList.remove('active'));
-    const p=ensurePanel(id);
-    p.classList.add('active');
+    const panel=ensureTab(id);
+    panel.classList.add('active');
     $$('.nav-tab,.tab-btn').forEach(b=>b.classList.remove('active'));
     if(el) el.classList.add('active');
     const bar=document.getElementById('sqn-bar');
     if(bar) bar.style.display=(id==='squadrons'||id==='units')?'flex':'none';
-    if(id==='reference'){ensureReferenceSkeleton(); setRefSub('map',$('#tab-reference .rtf'));}
+    if(id==='reference') buildReference();
     if(id==='media') renderMediaFinal();
     if(id==='walkaround') renderWalkaroundFinal();
-    if(id==='build') renderShopCardsFinal();
+    if(id==='build') renderBuildSupplement();
   };
 
-  window.setRefSub=function(sub,el){
-    const root=document.getElementById('tab-reference') || ensurePanel('reference');
-    ['map','timeline','compare','survivors','books'].forEach(s=>{
-      const target=document.getElementById('rsub-'+s);
-      if(target) target.style.display=s===sub?'':'none';
+  function bindClicks(){
+    $$('button[onclick*="switchTab"]').forEach(btn=>{
+      btn.addEventListener('click',ev=>{
+        const m=(btn.getAttribute('onclick')||'').match(/switchTab\('([^']+)'/);
+        if(m){ev.preventDefault();ev.stopImmediatePropagation();switchTab(m[1],btn);}
+      },true);
     });
-    $$('.rtf',root).forEach(b=>b.classList.remove('on'));
-    if(el) el.classList.add('on');
-    if(sub==='map') renderMapFinal();
-    if(sub==='timeline') renderTimelineFinal(0);
-    if(sub==='compare') renderCompareFinal();
-    if(sub==='survivors') renderSourcesFinal();
-    if(sub==='books') renderBooksFinal();
-  };
-
-  function renderMapFinal(){
-    const map=document.querySelector('#tab-reference #leaflet-map');
-    const side=document.querySelector('#tab-reference #map-sqn-list');
-    if(!map) return;
-    map.innerHTML=`<div class="ww2-static-map" style="position:relative;min-height:430px;border-radius:12px;overflow:hidden;background:radial-gradient(circle at 22% 34%,rgba(201,168,76,.24),transparent 16%),radial-gradient(circle at 66% 54%,rgba(126,165,207,.18),transparent 19%),linear-gradient(135deg,#0c1b2c,#19304a);border:1px solid rgba(255,255,255,.12)">
-      <div style="position:absolute;left:1rem;top:1rem;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:.7rem 1rem;color:#fff;font-weight:700">${esc(DATA.name)} bases</div>
-      ${DATA.bases.map((b,i)=>`<button type="button" class="ww2-map-dot" data-i="${i}" style="position:absolute;left:${b.x}%;top:${b.y}%;width:23px;height:23px;border-radius:50%;border:2px solid #fff;background:#c9a84c;box-shadow:0 0 0 8px rgba(201,168,76,.18);cursor:pointer" title="${esc(b.base)}"></button>`).join('')}
-    </div>`;
-    function show(i){
-      const b=DATA.bases[i]||DATA.bases[0];
-      if(!side || !b) return;
-      side.innerHTML=`<div class="section-label">Selected base</div>
-        <h3 style="margin:.35rem 0;color:#fff">${esc(b.base)}</h3>
-        <p style="color:rgba(255,255,255,.72);line-height:1.6"><b>Linked unit:</b> ${esc(b.unit)}</p>
-        <p style="color:rgba(255,255,255,.68);line-height:1.6">${esc(b.note)}</p>
-        <button class="fb ww2-open-unit" type="button">Open unit card</button>`;
-      const btn=side.querySelector('.ww2-open-unit');
-      if(btn) btn.onclick=()=>{
-        const first=document.querySelector('#tab-squadrons .unit-card,#tab-squadrons .sq-card,#tab-squadrons article,#tab-units .unit-card,#tab-units article');
-        if(window.openSqn) window.openSqn(b.unit);
-        else if(window.openUnit) window.openUnit(b.unit);
-        else {
-          window.switchTab('squadrons',document.querySelector('.nav-tab,.tab-btn'));
-          if(first) first.scrollIntoView({behavior:'smooth',block:'center'});
-        }
-      };
-    }
-    $$('.ww2-map-dot',map).forEach(dot=>dot.onclick=()=>show(+dot.dataset.i));
-    show(0);
+    $$('button[data-tab]').forEach(btn=>{
+      btn.addEventListener('click',ev=>{ev.preventDefault();ev.stopImmediatePropagation();switchTab(btn.dataset.tab,btn);},true);
+    });
+    document.addEventListener('click',ev=>{
+      const b=ev.target.closest('[data-ref]');
+      if(b){ev.preventDefault();setRefSub(b.dataset.ref,b);}
+    },true);
   }
 
-  window.updateTimeline=function(v){renderTimelineFinal(+v||0);};
-  function renderTimelineFinal(i){
-    const item=DATA.timeline[i]||DATA.timeline[0];
-    const title=document.querySelector('#tab-reference #tl-date');
-    const out=document.querySelector('#tab-reference #timeline-detail');
-    if(title) title.textContent=item.label;
-    if(out) out.innerHTML=`<div class="grid">${DATA.timeline.map((t,idx)=>`<div class="info-box" style="${idx===i?'border-color:#c9a84c':''}"><b>${esc(t.label)}</b><br>${esc(t.text)}</div>`).join('')}</div>`;
-  }
+  document.addEventListener('DOMContentLoaded',()=>{
+    bindClicks();
+    if(document.getElementById('tab-reference')?.classList.contains('active')) buildReference();
+  });
+})();
+</script>
 
-  function renderCompareFinal(){
-    const grid=document.querySelector('#tab-reference #compare-grid');
-    if(!grid) return;
-    grid.innerHTML=`<div class="grid">${DATA.compare.map(c=>`<div class="info-box"><b>${esc(c.title)}</b><br>${esc(c.text)}</div>`).join('')}</div>`;
-  }
 
-  function renderSourcesFinal(){
-    const grid=document.querySelector('#tab-reference #survivors-grid');
-    if(!grid) return;
-    grid.innerHTML=`<div class="grid">${DATA.media.map(m=>card(m.title,m.text,m.url,m.thumb,m.kind)).join('')}</div>`;
-  }
-
-  function renderBooksFinal(){
-    const grid=document.querySelector('#tab-reference #books-grid');
-    if(!grid) return;
-    grid.innerHTML=`<div class="grid">${DATA.books.map(b=>card(b.title,b.text,b.url,'','book')).join('')}</div>`;
-  }
-
-  window.renderMediaFinal=function(){
-    const panel=ensurePanel('media');
-    panel.innerHTML=`<div class="section-label">${esc(DATA.name)} media references</div><div class="grid">${DATA.media.map(m=>card(m.title,m.text,m.url,m.thumb,m.kind)).join('')}</div>`;
-  };
-
-  window.renderWalkaroundFinal=function(){
-    const panel=ensurePanel('walkaround');
-    panel.innerHTML=`<div class="section-label">${esc(DATA.name)} walkaround bench</div><div class="grid">${DATA.walkaround.map(w=>card(w.title,'Aircraft-specific walkaround/photo route for this area.',w.url,w.thumb,'walkaround')).join('')}</div>`;
-  };
-
-  window.renderShopCardsFinal=function(){
-    const panel=document.getElementById('tab-build');
-    if(!panel || panel.querySelector('#ww2-final-shop-block')) return;
-    const block=document.createElement('section');
-    block.id='ww2-final-shop-block';
-    block.className='info-box';
-    block.style.marginTop='1rem';
-    block.innerHTML=`<div class="section-label">${esc(DATA.name)} checked kit / decals / book routes</div>
-      <div class="grid">${DATA.shop.map(s=>card(s.title,s.text,s.url,'','shop')).join('')}${DATA.books.map(b=>card(b.title,b.text,b.url,'','book')).join('')}</div>`;
-    panel.appendChild(block);
-  };
-
-  document.addEventListener('DOMContentLoaded',function(){
-    if(document.getElementById('tab-reference')?.classList.contains('active')){
-      ensureReferenceSkeleton(); setRefSub('map',document.querySelector('#tab-reference .rtf'));
-    }
+<script id="ww2-side-theme-system">
+(function(){
+  const SIDE = "raf";
+  const DATA = {"label": "RAF / Commonwealth", "emblem": "RAF", "note": "Roundel identity · navy, brass and cream archive style", "primary": "#162b45", "secondary": "#293f55", "accent": "#c9a84c"};
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  ready(function(){
+    document.body.classList.add('ww2-side-themed','ww2-side-'+SIDE);
+    document.documentElement.style.setProperty('--ww2-side-primary', DATA.primary);
+    document.documentElement.style.setProperty('--ww2-side-secondary', DATA.secondary);
+    document.documentElement.style.setProperty('--ww2-side-accent', DATA.accent);
+    document.querySelectorAll('.hero-roundel').forEach(function(el){ el.remove(); });
+    if(document.querySelector('.ww2-side-identity')) return;
+    const target = document.querySelector('.hero-title') || document.querySelector('h1');
+    const wrap = document.createElement('div');
+    wrap.className = 'ww2-side-identity';
+    wrap.innerHTML = '<div class="ww2-side-emblem" aria-label="'+DATA.label+' emblem">'+DATA.emblem+'</div><div><h2>'+DATA.label+'</h2><p>'+DATA.note+'</p></div>';
+    if(target && target.parentNode){ target.insertAdjacentElement('afterend', wrap); }
+    else { document.body.insertAdjacentElement('afterbegin', wrap); }
   });
 })();
 </script>

@@ -1317,6 +1317,98 @@ document.addEventListener('DOMContentLoaded',function(){
 @media(max-width:760px){.ww2-map-grid{grid-template-columns:1fr!important}.ww2-final-card img{height:140px}}
 </style>
 
+
+<style id="ww2-hurricane-structure-css">
+.ww2-hurricane-structure{border:1px solid rgba(201,168,76,.24);border-radius:16px;background:rgba(9,18,32,.72);padding:1rem;margin:1rem 0}
+.ww2-h-subtabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 1rem}
+.ww2-h-btn{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#f4ead7;border-radius:999px;padding:.55rem .8rem;font-weight:800;cursor:pointer}
+.ww2-h-btn.on{background:#c9a84c;color:#111}
+.ww2-h-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.85rem}
+.ww2-h-map-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:1rem}
+.ww2-h-map{position:relative;min-height:430px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.14);background:radial-gradient(circle at 22% 36%,rgba(201,168,76,.22),transparent 17%),radial-gradient(circle at 66% 54%,rgba(126,165,207,.16),transparent 21%),linear-gradient(135deg,#0b192b,#1a324d)}
+.ww2-h-dot{position:absolute;width:23px;height:23px;border-radius:50%;border:2px solid #fff;background:#c9a84c;box-shadow:0 0 0 8px rgba(201,168,76,.18);cursor:pointer}
+.ww2-h-panel,.ww2-h-card{border:1px solid rgba(255,255,255,.13);border-radius:14px;background:rgba(255,255,255,.045);padding:1rem;color:#f4ead7}
+.ww2-h-card{display:block;text-decoration:none;overflow:hidden;padding:0}
+.ww2-h-card img{width:100%;height:165px;object-fit:cover;display:block;background:#111b2b}
+.ww2-h-card div{padding:.9rem}
+.ww2-h-card h3,.ww2-h-panel h3{margin:.2rem 0 .45rem;color:#fff}
+.ww2-h-card p,.ww2-h-panel p{color:rgba(244,234,215,.72);line-height:1.55;margin:.25rem 0}
+.ww2-h-kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#c9a84c;font-weight:900}
+.ww2-h-open{margin-top:.7rem}
+.ww2-timeline-list .ww2-h-panel.active{border-color:#c9a84c;background:rgba(201,168,76,.08)}
+@media(max-width:760px){.ww2-h-map-grid{grid-template-columns:1fr}.ww2-h-card img{height:135px}}
+</style>
+
+
+<style id="ww2-side-theme-system">
+:root{--ww2-side-primary:#162b45;--ww2-side-secondary:#293f55;--ww2-side-accent:#c9a84c}
+body.ww2-side-themed .aircraft-hero,
+body.ww2-side-themed .hero,
+body.ww2-side-themed header.hero,
+body.ww2-side-themed .page-hero{
+  background:
+    radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--ww2-side-accent) 24%, transparent), transparent 26%),
+    linear-gradient(135deg, var(--ww2-side-primary), var(--ww2-side-secondary)) !important;
+  border-bottom:1px solid color-mix(in srgb, var(--ww2-side-accent) 50%, transparent) !important;
+}
+body.ww2-side-themed .section-label,
+body.ww2-side-themed .ww2-h-kicker,
+body.ww2-side-themed .books-section-title,
+body.ww2-side-themed .aftermarket-section-title{color:var(--ww2-side-accent)!important}
+body.ww2-side-themed .ww2-h-btn.on,
+body.ww2-side-themed .fb.on,
+body.ww2-side-themed .nav-tab.active{
+  background:var(--ww2-side-accent)!important;
+  color:#111!important;
+  border-color:var(--ww2-side-accent)!important;
+}
+body.ww2-side-themed .ww2-h-map{
+  background:
+    radial-gradient(circle at 22% 34%, color-mix(in srgb, var(--ww2-side-accent) 24%, transparent), transparent 17%),
+    radial-gradient(circle at 66% 54%, rgba(126,165,207,.14), transparent 21%),
+    linear-gradient(135deg, color-mix(in srgb, var(--ww2-side-primary) 80%, #000), var(--ww2-side-secondary)) !important;
+}
+body.ww2-side-themed .ww2-h-dot{background:var(--ww2-side-accent)!important;box-shadow:0 0 0 8px color-mix(in srgb, var(--ww2-side-accent) 22%, transparent)!important}
+.ww2-side-identity{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  margin:.9rem 0 0;
+  max-width:760px;
+  padding:.75rem .9rem;
+  border:1px solid color-mix(in srgb, var(--ww2-side-accent) 38%, transparent);
+  border-radius:14px;
+  background:rgba(0,0,0,.22);
+  color:#f4ead7;
+}
+.ww2-side-emblem{
+  width:54px;
+  height:54px;
+  min-width:54px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:1.55rem;
+  color:#fff;
+  border:2px solid rgba(255,255,255,.82);
+  box-shadow:0 0 0 5px rgba(255,255,255,.08);
+  background:var(--ww2-side-accent);
+}
+.ww2-side-identity h2{font-size:.92rem;letter-spacing:.13em;text-transform:uppercase;margin:0;color:#fff}
+.ww2-side-identity p{margin:.2rem 0 0;color:rgba(244,234,215,.74);line-height:1.45}
+body.ww2-side-raf .ww2-side-emblem{background:radial-gradient(circle,#c3162f 0 18%,#fff 19% 34%,#1f4f9a 35% 68%,#7a0f24 69% 100%);font-size:0;color:transparent}
+body.ww2-side-usaaf .ww2-side-emblem,
+body.ww2-side-usn .ww2-side-emblem{border-radius:12px;background:linear-gradient(90deg,#fff 0 18%,#244f86 18% 82%,#fff 82% 100%);color:#fff;text-shadow:0 1px 1px #001b34}
+body.ww2-side-luftwaffe .ww2-side-emblem{border-radius:10px;background:#e8e0cc;color:#111;font-size:2rem}
+body.ww2-side-japanese .ww2-side-emblem{background:#fff;color:#d04b3e;font-size:2.4rem}
+body.ww2-side-soviet .ww2-side-emblem{background:#b51e26;color:#ffd97a}
+body.ww2-side-italian .ww2-side-emblem{background:conic-gradient(#267447 0 33%,#f5f1df 33% 66%,#b63a30 66% 100%);color:#1d1d1d}
+body.ww2-side-other .ww2-side-emblem{background:radial-gradient(circle,#c6283b 0 25%,#fff 26% 48%,#1e4d90 49% 100%);font-size:0;color:transparent}
+body.ww2-side-themed .hero-roundel{display:none!important}
+@media(max-width:760px){.ww2-side-identity{align-items:flex-start}.ww2-side-emblem{width:46px;height:46px;min-width:46px}}
+</style>
+
 </head><body>
 <nav class="site-nav">
 <div class="site-nav-inner">
@@ -1501,51 +1593,6 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 
 <div class="tab-panel" id="tab-reference">
-  <div style="display:flex;gap:8px;margin-bottom:1.4rem;flex-wrap:wrap">
-    <button class="fb on rtf" onclick="setRefSub('map',this)">Map</button>
-    <button class="fb rtf" onclick="setRefSub('timeline',this)">Timeline</button>
-    <button class="fb rtf" onclick="setRefSub('compare',this)">Compare</button>
-    <button class="fb rtf" onclick="setRefSub('survivors',this)">Survivors</button>
-    <button class="fb rtf" onclick="setRefSub('books',this)">Books</button>
-  </div>
-
-  <div id="rsub-map">
-    <div class="section-label">Ju 87 Stuka reference map</div>
-    <div class="info-box">Ju 87 Stuka theatre map — early-war, desert, Mediterranean and Eastern Front routes. Click a base or marker to show linked units, then open the unit card for markings, pilots, decals and kit notes.</div>
-    <div class="map-layout" style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:1rem;align-items:stretch">
-      <div id="leaflet-map" class="map-board" style="min-height:430px;border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#102033,#172942)"></div>
-      <div id="map-sqn-list" class="map-info" style="border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(0,0,0,.22);padding:1rem;min-height:260px">
-        <div style="font-family:'Special Elite',cursive;font-size:1.1rem;color:#fff;margin-bottom:.5rem">Ju 87 Stuka map loading</div>
-        <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Open the Reference tab to render the map. If the interactive map library is unavailable, the static theatre board will show the same linked unit routes.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="rsub-timeline" style="display:none">
-    <div class="section-label">Campaign timeline</div>
-    <div class="info-box">Move through the timeline to connect the aircraft, theatre, unit markings and weathering stage.</div>
-    <input id="tl-slider" type="range" min="0" max="100" value="0" oninput="updateTimeline(this.value)" style="width:100%;margin:1rem 0">
-    <div id="tl-date" style="font-family:'Special Elite',cursive;color:#fff;font-size:1.3rem;margin-bottom:.75rem">Start</div>
-    <div id="timeline-detail"></div>
-  </div>
-
-  <div id="rsub-compare" style="display:none">
-    <div class="section-label">Aircraft comparison</div>
-    <div class="info-box">Compare variants, paint routes and modelling difficulty before committing to a kit or decal sheet.</div>
-    <div id="compare-grid"></div>
-  </div>
-
-  <div id="rsub-survivors" style="display:none">
-    <div class="section-label">Survivors and museum references</div>
-    <div class="info-box">Use preserved aircraft for structure and walkaround detail, but cross-check restored paint and markings against wartime photographs.</div>
-    <div id="survivors-grid"></div>
-  </div>
-
-  <div id="rsub-books" style="display:none">
-    <div class="section-label">Books and reference sources</div>
-    <div class="info-box">Use books to confirm exact variants, markings, serials, theatre fit and camouflage before buying decals or aftermarket.</div>
-    <div id="books-grid"></div>
-  </div>
 </div>
 <div class="tab-panel" id="tab-stories">
 <div class="section-label">Pilot Stories — Stuka aces of the Luftwaffe escort war over Europe</div>
@@ -1554,81 +1601,8 @@ document.addEventListener('DOMContentLoaded',function(){
 <div id="pilot-stories-grid"></div>
 </div>
 <div class="tab-panel" id="tab-media">
-<div class="section-label">Films, audio &amp; archives</div>
-<div class="info-box">Recommended video, archive and museum resources for research and modelling inspiration.</div>
-<div id="media-grid"></div>
 </div>
 <div class="tab-panel" id="tab-walkaround">
-<div class="wa-hero"><div class="wa-hero-title">Ju 87 Stuka walkaround reference bench</div><div class="wa-hero-text">Photo-led notes for cockpit, airframe, landing gear, stores, markings and theatre finishes. Every card has a visual reference route.</div></div>
-<div class="wa-section" id="ju87-wa-shape"><div class="wa-section-head">Overall shape and stance</div><div class="wa-note"><b>Modeller's note</b>Start with outline, stance, canopy and landing gear. The visual signature matters before tiny detail.</div><div class="wa-grid">
-<a class="wa-card wa-video" href="https://www.youtube.com/watch?v=lCGBGi48dPM" rel="noopener" target="_blank"><img alt="Ju 87 Stuka walkaround thumbnail" loading="lazy" src="https://i.ytimg.com/vi/lCGBGi48dPM/hqdefault.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Walkaround video</div><div class="wa-title">Full airframe reference</div><div class="wa-desc">Use for stance, surface detail and the overall look before adding small details.</div><div class="wa-check"><strong>Use this for</strong><span>shape · stance · airframe</span></div></div></a>
-<a class="wa-card" href="https://www.rafmuseum.org.uk/research/collections/junkers-ju87g-2-stuka/" rel="noopener" target="_blank"><img alt="Ju 87 Stuka museum reference" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Junkers_Ju_87B_Stuka_at_RAF_Museum_Hendon.jpg/640px-Junkers_Ju_87B_Stuka_at_RAF_Museum_Hendon.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Museum route</div><div class="wa-title">Preserved aircraft details</div><div class="wa-desc">Use for museum details, then cross-check wartime finish and markings.</div><div class="wa-check"><strong>Use this for</strong><span>shape · details · stance</span></div></div></a>
-</div></div>
-<div class="wa-section" id="ju87-wa-cockpit"><div class="wa-section-head">Cockpit, canopy and forward section</div><div class="wa-note"><b>Modeller's note</b>Check cockpit, canopy and nose details against the exact subtype before committing to aftermarket.</div><div class="wa-grid">
-<a class="wa-card wa-video" href="https://www.youtube.com/watch?v=wFA5eShB4XE" rel="noopener" target="_blank"><img alt="Ju 87 Stuka cockpit thumbnail" loading="lazy" src="https://i.ytimg.com/vi/wFA5eShB4XE/hqdefault.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Cockpit video</div><div class="wa-title">Cockpit and forward section</div><div class="wa-desc">Use for cockpit layout, glazing, seat, instrument panel and colour notes.</div><div class="wa-check"><strong>Use this for</strong><span>cockpit · canopy · interior</span></div></div></a>
-<a class="wa-card" href="paint-codes.html" rel="noopener"><img alt="Ju 87 Stuka paint reference" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Junkers_Ju_87D.jpg/640px-Junkers_Ju_87D.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Paint reference</div><div class="wa-title">Paint and finish route</div><div class="wa-desc">Use the paint bench to match colour, theatre and period before weathering.</div><div class="wa-check"><strong>Use this for</strong><span>paint · finish · weathering</span></div></div></a>
-</div></div>
-<div class="wa-section" id="ju87-wa-weathering"><div class="wa-section-head">Landing gear, stores and theatre weathering</div><div class="wa-note"><b>Modeller's note</b>Weather from the aircraft's actual environment: concrete, desert, jungle, maritime, Eastern Front, Normandy or forward strips.</div><div class="wa-grid">
-<a class="wa-card" href="techniques-bank.html" rel="noopener"><img alt="Ju 87 Stuka weathering reference" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Junkers_Ju_87B_Stuka_at_RAF_Museum_Hendon.jpg/640px-Junkers_Ju_87B_Stuka_at_RAF_Museum_Hendon.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Technique route</div><div class="wa-title">Operational weathering</div><div class="wa-desc">Use this for dust, exhaust, oil, chipping, mud, salt, stains and varnish decisions.</div><div class="wa-check"><strong>Use this for</strong><span>weathering · oils · finish</span></div></div></a>
-<a class="wa-card" href="https://www.iwm.org.uk/collections/search?query=Junkers%20Ju%2087" rel="noopener" target="_blank"><img alt="Ju 87 Stuka archive reference" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Junkers_Ju_87D.jpg/640px-Junkers_Ju_87D.jpg" onerror="this.src='video-thumb-fallback.png'"/><div class="wa-body"><div class="wa-kicker">Archive route</div><div class="wa-title">Wartime photo checks</div><div class="wa-desc">Use archives to check the exact unit, markings, wear pattern and theatre fit.</div><div class="wa-check"><strong>Use this for</strong><span>markings · unit · theatre</span></div></div></a>
-</div></div>
-</div><!-- /tab-walkaround -->
-</div><!-- /main-content -->
-<aside class="sidebar">
-<div class="sidebar-block">
-<div class="sidebar-hd">Advertisement</div>
-<div class="sidebar-ad-slot">AdSense 300×250</div>
-</div>
-<div class="sidebar-block">
-<div class="sidebar-hd">Quick Links</div>
-<a class="shop-link" href="https://uk.airfix.com/products/supermarine-spitfire-mk1-a05126a" rel="noopener" target="_blank">
-<span style="font-size:14px">🇬🇧</span>
-<div><div class="shop-name">Hannants</div><div class="shop-cats">Kits · Decals · Aftermarket</div></div>
-</a>
-<a class="shop-link" href="https://www.iwm.org.uk/collections" rel="noopener" target="_blank">
-<span style="font-size:14px">🏛</span>
-<div><div class="shop-name">IWM Archive</div><div class="shop-cats">Photos · Documents</div></div>
-</a>
-<a class="shop-link" href="https://www.raf.mod.uk/display-teams/battle-of-britain-memorial-flight/" rel="noopener" target="_blank">
-<span style="font-size:14px">✈</span>
-<div><div class="shop-name">Stuka reference</div><div class="shop-cats">Airworthy survivors</div></div>
-</a>
-<a class="shop-link" href="https://www.hannants.co.uk/search/?keyword_search=Ju%2087%20Stuka%20aftermarket%20decals" rel="noopener" target="_blank">
-<span style="font-size:14px">🦈</span>
-<div><div class="shop-name">Hannants aftermarket search</div><div class="shop-cats">Resin · Decals · Masks</div></div>
-</a>
-<a class="shop-link" href="https://www.shuttleworth.org" rel="noopener" target="_blank">
-<span style="font-size:14px">✈</span>
-<div><div class="shop-name">Shuttleworth</div><div class="shop-cats">Oldest flying Stuka</div></div>
-</a>
-</div>
-</aside>
-</div>
-<div class="pm-overlay" id="pm-overlay" onclick="if(event.target===this)closePM()">
-<div class="pm-modal">
-<div class="pm-hd">
-<div><div class="pm-name" id="pm-name"></div><div class="pm-rank" id="pm-rank"></div></div>
-<button class="pm-close" onclick="closePM()">✕</button>
-</div>
-<div class="pm-body">
-<div class="pm-stats">
-<div class="pm-stat"><div class="v" id="pm-kills">—</div><div class="l">Victories</div></div>
-<div class="pm-stat"><div class="v" id="pm-sorties">—</div><div class="l">Sorties</div></div>
-<div class="pm-stat"><div class="v" id="pm-fate-short">—</div><div class="l">Fate</div></div>
-</div>
-<div class="pm-bio" id="pm-bio"></div>
-<div class="pm-awards" id="pm-awards"></div>
-<div class="pm-links">
-<a class="shop-btn hb-brass" href="#" id="pm-h-pilot" rel="noopener" target="_blank">IWM archive ↗</a>
-<a class="shop-btn hb-outline" href="#" id="pm-h-sqn" rel="noopener" target="_blank">Squadron decals ↗</a>
-</div>
-</div>
-</div>
-</div>
-<div class="lightbox" id="lightbox" onclick="closeLB()">
-<button class="lb-close" onclick="closeLB()">✕</button>
-<img alt="" id="lb-img" src=""/>
-<div id="lb-cap" style="position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);font-family:'Oswald',sans-serif;font-size:13px;color:rgba(255,255,255,.5)"></div>
 </div>
 <script>
 const SQ=[{"num": "StG 1", "nat": "Luftwaffe", "marks": "Ju 87B/D", "firstOp": "1940", "lastOp": "1945", "losses": 30, "group": "1", "base": "Poland / France / Eastern Front", "codes": "Geschwader markings", "kills": 50, "sorties": 3000, "tags": ["t-blue", "t-reference"], "tagTxt": ["Poland / France / Eastern Front", "Ju 87B/D"], "roundel": "Balkenkreuz", "spinner": "theatre colours", "ops": "StG 1 gives the classic early-war Stuka route: splinter camouflage, dive brakes and heavy campaign dust.", "decalRef": {"serial": "StG 1 Ju 87B/D", "codes": "Geschwader markings", "roundelUpper": "Balkenkreuz", "roundelFuselage": "Balkenkreuz", "roundelLower": "Balkenkreuz", "spinner": "theatre colour", "finFlash": "unit marking", "codeColour": "white / grey"}, "pilots": [{"n": "StG 1 crews", "k": "—", "note": "Early dive-bomber route", "awards": "combat service", "fate": "wartime operations"}, {"n": "Ground crews", "k": "—", "note": "Field maintenance", "awards": "combat service", "fate": "wartime operations"}]}, {"num": "StG 2 Immelmann", "nat": "Luftwaffe", "marks": "Ju 87B/D/G", "firstOp": "1940", "lastOp": "1945", "losses": 30, "group": "3", "base": "Eastern Front", "codes": "Immelmann markings", "kills": 50, "sorties": 3000, "tags": ["t-blue", "t-reference"], "tagTxt": ["Eastern Front", "Ju 87B/D/G"], "roundel": "Balkenkreuz", "spinner": "theatre colours", "ops": "The most famous Stuka unit route, including Hans-Ulrich Rudel and cannon-armed Ju 87G tank-busters.", "decalRef": {"serial": "StG 2 Immelmann Ju 87B/D/G", "codes": "Immelmann markings", "roundelUpper": "Balkenkreuz", "roundelFuselage": "Balkenkreuz", "roundelLower": "Balkenkreuz", "spinner": "theatre colour", "finFlash": "unit marking", "codeColour": "white / grey"}, "pilots": [{"n": "Hans-Ulrich Rudel", "k": "—", "note": "Ju 87G tank-buster route", "awards": "combat service", "fate": "wartime operations"}, {"n": "StG 2 crews", "k": "—", "note": "Eastern Front operations", "awards": "combat service", "fate": "wartime operations"}]}, {"num": "StG 3", "nat": "Luftwaffe", "marks": "Ju 87B/D", "firstOp": "1940", "lastOp": "1945", "losses": 30, "group": "2", "base": "North Africa / Mediterranean", "codes": "Theatre markings", "kills": 50, "sorties": 3000, "tags": ["t-blue", "t-reference"], "tagTxt": ["North Africa / Mediterranean", "Ju 87B/D"], "roundel": "Balkenkreuz", "spinner": "theatre colours", "ops": "Desert and Mediterranean Stukas bring sand, dust, RLM 78/79 and theatre recognition bands.", "decalRef": {"serial": "StG 3 Ju 87B/D", "codes": "Theatre markings", "roundelUpper": "Balkenkreuz", "roundelFuselage": "Balkenkreuz", "roundelLower": "Balkenkreuz", "spinner": "theatre colour", "finFlash": "unit marking", "codeColour": "white / grey"}, "pilots": [{"n": "StG 3 crews", "k": "—", "note": "Mediterranean Stuka route", "awards": "combat service", "fate": "wartime operations"}, {"n": "Desert ground crews", "k": "—", "note": "Dust and heat weathering", "awards": "combat service", "fate": "wartime operations"}]}, {"num": "StG 77", "nat": "Luftwaffe", "marks": "Ju 87B/D", "firstOp": "1940", "lastOp": "1945", "losses": 30, "group": "1", "base": "France / Balkans / Eastern Front", "codes": "Geschwader markings", "kills": 50, "sorties": 3000, "tags": ["t-blue", "t-reference"], "tagTxt": ["France / Balkans / Eastern Front", "Ju 87B/D"], "roundel": "Balkenkreuz", "spinner": "theatre colours", "ops": "StG 77 gives a broad European and Eastern Front route with splinter camouflage and winter weathering options.", "decalRef": {"serial": "StG 77 Ju 87B/D", "codes": "Geschwader markings", "roundelUpper": "Balkenkreuz", "roundelFuselage": "Balkenkreuz", "roundelLower": "Balkenkreuz", "spinner": "theatre colour", "finFlash": "unit marking", "codeColour": "white / grey"}, "pilots": [{"n": "StG 77 crews", "k": "—", "note": "Major campaign route", "awards": "combat service", "fate": "wartime operations"}, {"n": "Eastern Front crews", "k": "—", "note": "Winter and mud weathering", "awards": "combat service", "fate": "wartime operations"}]}, {"num": "NSGr units", "nat": "Luftwaffe", "marks": "Ju 87D", "firstOp": "1940", "lastOp": "1945", "losses": 30, "group": "3", "base": "Eastern Front", "codes": "Night harassment markings", "kills": 50, "sorties": 3000, "tags": ["t-blue", "t-reference"], "tagTxt": ["Eastern Front", "Ju 87D"], "roundel": "Balkenkreuz", "spinner": "theatre colours", "ops": "Late-war night harassment Stukas give worn finishes, field mods and darker weathering options.", "decalRef": {"serial": "NSGr units Ju 87D", "codes": "Night harassment markings", "roundelUpper": "Balkenkreuz", "roundelFuselage": "Balkenkreuz", "roundelLower": "Balkenkreuz", "spinner": "theatre colour", "finFlash": "unit marking", "codeColour": "white / grey"}, "pilots": [{"n": "Night attack crews", "k": "—", "note": "Late-war route", "awards": "combat service", "fate": "wartime operations"}, {"n": "Maintenance crews", "k": "—", "note": "Field repair route", "awards": "combat service", "fate": "wartime operations"}]}];
@@ -2553,17 +2527,18 @@ function acceptCookies(){try{localStorage.setItem('cookiesAccepted','1');}catch(
 
 
 
-<script id="ww2-final-page-audit-repair">
-window.WW2_REF_DATA = {"name": "Junkers Ju 87 Stuka", "category": "Luftwaffe", "role": "Luftwaffe dive bomber", "paint": "RLM 70/71/65, desert RLM 78/79/80, winter whitewash", "query": "Ju 87 Stuka", "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg", "bases": [{"base": "Western Front airfield", "unit": "Geschwader route", "x": 25, "y": 44, "note": "Junkers Ju 87 Stuka: Geschwader route. Use this base to jump to unit cards, markings, paint and weathering notes."}, {"base": "Mediterranean / desert base", "unit": "Theatre route", "x": 52, "y": 62, "note": "Junkers Ju 87 Stuka: Theatre route. Use this base to jump to unit cards, markings, paint and weathering notes."}, {"base": "Eastern Front base", "unit": "Ostfront route", "x": 76, "y": 42, "note": "Junkers Ju 87 Stuka: Ostfront route. Use this base to jump to unit cards, markings, paint and weathering notes."}], "timeline": [{"label": "Introduction", "text": "Junkers Ju 87 Stuka enters the modelling story: choose early finish, first-unit markings and baseline variant details."}, {"label": "Main campaign use", "text": "Junkers Ju 87 Stuka reaches its key theatre identity. Base, unit and markings now drive the paint and weathering choices."}, {"label": "Peak operations", "text": "Operational tempo adds exhaust, oil, mud, dust, salt, fading or chipping depending on theatre."}, {"label": "Late-war / preserved reference", "text": "Use surviving aircraft for structure and walkaround detail, but wartime photos for paint and markings."}], "compare": [{"title": "Variant route", "text": "Luftwaffe dive bomber. Confirm exact mark/variant before choosing kit, decals or aftermarket."}, {"title": "Paint route", "text": "RLM 70/71/65, desert RLM 78/79/80, winter whitewash"}, {"title": "Modelling risk", "text": "Cross-check restored aircraft, decal instructions and wartime photographs before final finish."}], "media": [{"title": "Junkers Ju 87 Stuka archive photographs", "kind": "Archive", "url": "https://www.iwm.org.uk/collections/search?query=Ju+87+Stuka", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg", "text": "Wartime archive route for unit, markings and weathering evidence."}, {"title": "Junkers Ju 87 Stuka image references", "kind": "Photo reference", "url": "https://commons.wikimedia.org/w/index.php?search=Ju+87+Stuka&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg", "text": "Image route for overall form, cockpit, undercarriage and surface details."}, {"title": "Junkers Ju 87 Stuka kit records", "kind": "Kit database", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Ju+87+Stuka", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg", "text": "Use to verify exact tooling, boxing, scale and decal contents."}], "walkaround": [{"title": "Overall airframe and stance", "url": "https://commons.wikimedia.org/w/index.php?search=Ju+87+Stuka+walkaround+airframe&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg"}, {"title": "Cockpit, canopy and forward section", "url": "https://commons.wikimedia.org/w/index.php?search=Ju+87+Stuka+cockpit&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg"}, {"title": "Landing gear, bays and stores", "url": "https://commons.wikimedia.org/w/index.php?search=Ju+87+Stuka+landing+gear&title=Special:MediaSearch&type=image", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg"}, {"title": "Paint, markings and weathering", "url": "paint-codes.html", "thumb": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg"}], "shop": [{"title": "Ju 87 Stuka kit record", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Ju+87+Stuka", "text": "Verify kit tooling and exact boxing before purchase."}, {"title": "Ju 87 Stuka decals", "url": "https://www.hannants.co.uk/search/?keyword_search=Ju+87+Stuka+decals", "text": "Decal route matched to this aircraft only."}, {"title": "Ju 87 Stuka masks / detail", "url": "https://www.eduard.com/eduard/?lang=1&cur=2&listtype=search&searchparam=Ju+87+Stuka", "text": "Detail/mask route matched to this aircraft only."}], "books": [{"title": "Junkers Ju 87 Stuka reference books", "url": "https://www.amazon.co.uk/s?k=Ju+87+Stuka+aircraft+book", "text": "Book route for variants, markings and theatre context."}, {"title": "Junkers Ju 87 Stuka unit and markings references", "url": "https://www.amazon.co.uk/s?k=Ju+87+Stuka+units+markings+World+War+2", "text": "Use for unit history, serials and campaign placement."}]};
 
+
+
+<script id="ww2-hurricane-structure-final">
+window.WW2_H_DATA = {"file": "ju87_paradise.html", "name": "Junkers Ju 87 Stuka", "cat": "Luftwaffe", "role": "Luftwaffe dive bomber", "paint": "Early-war Sturzkampfgeschwader, desert, Eastern Front and tank-buster routes", "query": "Ju 87 Stuka", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg", "bases": [{"base": "Western Front airfield", "unit": "Geschwader / Gruppe card", "x": 24, "y": 43, "linked": ["Geschwader / Gruppe card", "Junkers Ju 87 Stuka markings route", "Junkers Ju 87 Stuka weathering route"], "note": "Junkers Ju 87 Stuka: click-through base card linked to unit, markings and modelling notes."}, {"base": "Mediterranean / desert field", "unit": "Theatre Gruppe card", "x": 52, "y": 62, "linked": ["Theatre Gruppe card", "Junkers Ju 87 Stuka markings route", "Junkers Ju 87 Stuka weathering route"], "note": "Junkers Ju 87 Stuka: click-through base card linked to unit, markings and modelling notes."}, {"base": "Eastern Front base", "unit": "Ostfront Staffel card", "x": 76, "y": 42, "linked": ["Ostfront Staffel card", "Junkers Ju 87 Stuka markings route", "Junkers Ju 87 Stuka weathering route"], "note": "Junkers Ju 87 Stuka: click-through base card linked to unit, markings and modelling notes."}], "timeline": [{"phase": "Introduction", "date": "Early service", "text": "Junkers Ju 87 Stuka enters service. Use this phase for early variants, first camouflage and initial unit markings."}, {"phase": "Main campaign use", "date": "Operational peak", "text": "Junkers Ju 87 Stuka develops its key theatre identity. Base, unit and markings now drive the model subject."}, {"phase": "Heavy wear stage", "date": "Sustained operations", "text": "Weathering becomes theatre-specific: Early-war Sturzkampfgeschwader, desert, Eastern Front and tank-buster routes plus exhaust, oil, mud, dust, salt, fading or chipping."}, {"phase": "Late-war / reference stage", "date": "Late war and survivors", "text": "Use preserved aircraft for structure and walkaround detail, but confirm paint and markings with wartime photographs."}], "compare": [{"h": "Variant choice", "t": "Luftwaffe dive bomber. Choose exact mark/variant first; it controls kit, cockpit, canopy, stores and decals."}, {"h": "Paint choice", "t": "Early-war Sturzkampfgeschwader, desert, Eastern Front and tank-buster routes"}, {"h": "Reference risk", "t": "Restorations, decal sheets and museum repaints can be misleading. Wartime photo evidence should lead."}], "media": [{"k": "Archive", "title": "Junkers Ju 87 Stuka wartime photographs", "url": "https://www.iwm.org.uk/collections/search?query=Ju+87+Stuka", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg", "text": "Wartime photo route for markings, unit context and weathering evidence."}, {"k": "Photo reference", "title": "Junkers Ju 87 Stuka image references", "url": "https://commons.wikimedia.org/w/index.php?search=Ju+87+Stuka&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg", "text": "Image route for preserved aircraft, stance and airframe detail."}, {"k": "Kit database", "title": "Junkers Ju 87 Stuka kit records", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Ju+87+Stuka", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg", "text": "Kit tooling, boxing and decal route. Verify exact kit before buying aftermarket."}], "walk": [{"title": "Overall airframe and stance", "url": "https://commons.wikimedia.org/w/index.php?search=Ju+87+Stuka+airframe+walkaround&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg"}, {"title": "Cockpit, canopy and forward section", "url": "https://commons.wikimedia.org/w/index.php?search=Ju+87+Stuka+cockpit+canopy&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg"}, {"title": "Landing gear, bays and stores", "url": "https://commons.wikimedia.org/w/index.php?search=Ju+87+Stuka+landing+gear+stores&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg"}, {"title": "Paint, markings and weathering", "url": "paint-codes.html", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_87_Stuka.jpg"}], "shops": [{"k": "Kit route", "title": "Ju 87 Stuka kit record", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Ju+87+Stuka", "text": "Aircraft-specific kit records; confirm boxing and variant."}, {"k": "Decals", "title": "Ju 87 Stuka decals", "url": "https://www.hannants.co.uk/search/?keyword_search=Ju+87+Stuka+decals", "text": "Aircraft-specific decal route."}, {"k": "Aftermarket", "title": "Ju 87 Stuka masks/detail sets", "url": "https://www.eduard.com/eduard/?lang=1&cur=2&listtype=search&searchparam=Ju+87+Stuka", "text": "Aircraft-specific mask/detail route."}, {"k": "Books", "title": "Ju 87 Stuka aircraft books", "url": "https://www.amazon.co.uk/s?k=Ju+87+Stuka+aircraft+book", "text": "Aircraft-specific book/reference route."}]};
 (function(){
-  const DATA = window.WW2_REF_DATA;
+  const DATA = window.WW2_H_DATA;
   const $=(s,r=document)=>r.querySelector(s);
   const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const imgFallback='video-thumb-fallback.png';
 
-  function ensurePanel(id){
+  function ensureTab(id){
     let p=document.getElementById('tab-'+id);
     if(!p){
       const main=document.querySelector('main')||document.body;
@@ -2575,164 +2550,194 @@ window.WW2_REF_DATA = {"name": "Junkers Ju 87 Stuka", "category": "Luftwaffe", "
     return p;
   }
 
-  function ensureReferenceSkeleton(){
-    const p=ensurePanel('reference');
-    p.innerHTML = `
-      <div class="ww2-ref-tabs" style="display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap">
-        <button class="fb rtf on" type="button" onclick="setRefSub('map',this)">Map</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('timeline',this)">Timeline</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('compare',this)">Compare</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('survivors',this)">Survivors</button>
-        <button class="fb rtf" type="button" onclick="setRefSub('books',this)">Books</button>
-      </div>
-      <div id="rsub-map">
-        <div class="section-label">${esc(DATA.name)} theatre map</div>
-        <div class="info-box">Click a base marker to show the linked unit/squadron route. Then use “Open unit card” to jump back to the unit card section.</div>
-        <div class="ww2-map-grid" style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:1rem;align-items:stretch">
-          <div id="leaflet-map" class="map-board" style="min-height:430px;border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#102033,#172942)"></div>
-          <div id="map-sqn-list" class="map-info" style="border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(0,0,0,.22);padding:1rem"></div>
-        </div>
-      </div>
-      <div id="rsub-timeline" style="display:none">
-        <div class="section-label">${esc(DATA.name)} campaign timeline</div>
-        <div class="info-box">The timeline follows the same structure across aircraft: introduction, main campaign use, peak operations and late-war/reference stage.</div>
-        <input id="tl-slider" type="range" min="0" max="${Math.max(0,DATA.timeline.length-1)}" value="0" oninput="updateTimeline(this.value)" style="width:100%;margin:1rem 0">
-        <div id="tl-date" style="font-family:'Special Elite',cursive;color:#fff;font-size:1.3rem;margin:.75rem 0"></div>
-        <div id="timeline-detail"></div>
-      </div>
-      <div id="rsub-compare" style="display:none">
-        <div class="section-label">${esc(DATA.name)} modelling comparison</div>
-        <div id="compare-grid"></div>
-      </div>
-      <div id="rsub-survivors" style="display:none">
-        <div class="section-label">${esc(DATA.name)} reference sources</div>
-        <div id="survivors-grid"></div>
-      </div>
-      <div id="rsub-books" style="display:none">
-        <div class="section-label">${esc(DATA.name)} books and research</div>
-        <div id="books-grid"></div>
-      </div>`;
+  function card(item, kind){
+    return `<a class="ww2-h-card" href="${esc(item.url||'#')}" target="${item.url&&item.url.startsWith('http')?'_blank':'_self'}" rel="noopener">
+      ${item.img?`<img src="${esc(item.img)}" alt="${esc(item.title||DATA.name)}" loading="lazy" onerror="this.src='video-thumb-fallback.png'">`:''}
+      <div><div class="ww2-h-kicker">${esc(kind||item.k||'reference')}</div><h3>${esc(item.title)}</h3><p>${esc(item.text||'Aircraft-specific reference route.')}</p></div>
+    </a>`;
   }
 
-  function card(title,text,url,thumb,kind){
-    const img = thumb ? `<img src="${esc(thumb)}" alt="${esc(title)}" loading="lazy" onerror="this.src='${imgFallback}'">` : '';
-    return `<a class="media-card ww2-final-card" href="${esc(url||'#')}" target="${url&&url.startsWith('http')?'_blank':'_self'}" rel="noopener">
-      ${img}<div><div class="kicker">${esc(kind||'reference')}</div><h3>${esc(title)}</h3><p>${esc(text||'Reference route for this aircraft.')}</p></div></a>`;
+  function buildReference(){
+    const panel=ensureTab('reference');
+    panel.innerHTML = `
+      <section class="ww2-hurricane-structure">
+        <div class="ww2-h-subtabs">
+          <button class="ww2-h-btn on" type="button" data-ref="map">Map</button>
+          <button class="ww2-h-btn" type="button" data-ref="timeline">Timeline</button>
+          <button class="ww2-h-btn" type="button" data-ref="compare">Compare</button>
+          <button class="ww2-h-btn" type="button" data-ref="survivors">Survivors</button>
+          <button class="ww2-h-btn" type="button" data-ref="books">Books</button>
+        </div>
+        <div id="rsub-map" class="ww2-h-ref-panel"></div>
+        <div id="rsub-timeline" class="ww2-h-ref-panel" style="display:none"></div>
+        <div id="rsub-compare" class="ww2-h-ref-panel" style="display:none"></div>
+        <div id="rsub-survivors" class="ww2-h-ref-panel" style="display:none"></div>
+        <div id="rsub-books" class="ww2-h-ref-panel" style="display:none"></div>
+      </section>`;
+    $$('.ww2-h-btn', panel).forEach(btn=>{
+      btn.onclick=()=>setRefSub(btn.dataset.ref, btn);
+    });
+    renderMap();
+  }
+
+  window.setRefSub=function(sub, btn){
+    const root=ensureTab('reference');
+    ['map','timeline','compare','survivors','books'].forEach(s=>{
+      const p=document.getElementById('rsub-'+s);
+      if(p) p.style.display = s===sub ? '' : 'none';
+    });
+    $$('.ww2-h-btn',root).forEach(b=>b.classList.remove('on'));
+    if(btn) btn.classList.add('on');
+    if(sub==='map') renderMap();
+    if(sub==='timeline') renderTimeline(0);
+    if(sub==='compare') renderCompare();
+    if(sub==='survivors') renderSurvivors();
+    if(sub==='books') renderBooks();
+  };
+
+  function openUnit(unit){
+    const unitPanel=document.getElementById('tab-squadrons')||document.getElementById('tab-units');
+    if(window.openSqn){ window.openSqn(unit); return; }
+    if(window.openUnit){ window.openUnit(unit); return; }
+    switchTab(unitPanel && unitPanel.id==='tab-units' ? 'units':'squadrons', document.querySelector('.nav-tab,.tab-btn'));
+    setTimeout(()=>{
+      const cards=$$('.unit-card,.sq-card,#tab-squadrons article,#tab-units article');
+      const match=cards.find(c=>c.textContent.toLowerCase().includes(String(unit).toLowerCase()))||cards[0];
+      if(match) match.scrollIntoView({behavior:'smooth',block:'center'});
+    },60);
+  }
+
+  function renderMap(){
+    const p=document.getElementById('rsub-map');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-map-grid">
+      <div class="ww2-h-map" id="leaflet-map">
+        <div class="ww2-h-panel" style="position:absolute;left:1rem;top:1rem;background:rgba(0,0,0,.45);max-width:320px">
+          <div class="ww2-h-kicker">${esc(DATA.cat)}</div><h3>${esc(DATA.name)} map</h3><p>Click a base marker to show linked unit/squadron cards, matching the Hurricane map workflow.</p>
+        </div>
+        ${DATA.bases.map((b,i)=>`<button class="ww2-h-dot" type="button" data-i="${i}" title="${esc(b.base)}" style="left:${b.x}%;top:${b.y}%"></button>`).join('')}
+      </div>
+      <div class="ww2-h-panel" id="map-sqn-list"></div>
+    </div>`;
+    const side=$('#map-sqn-list',p);
+    function show(i){
+      const b=DATA.bases[i]||DATA.bases[0];
+      side.innerHTML=`<div class="ww2-h-kicker">Selected base</div><h3>${esc(b.base)}</h3><p><b>Linked unit route:</b> ${esc(b.unit)}</p><p>${esc(b.note)}</p>
+      <div class="ww2-h-grid">${b.linked.map(x=>`<button type="button" class="ww2-h-btn ww2-h-open" data-unit="${esc(x)}">${esc(x)}</button>`).join('')}</div>`;
+      $$('.ww2-h-open',side).forEach(btn=>btn.onclick=()=>openUnit(btn.dataset.unit));
+    }
+    $$('.ww2-h-dot',p).forEach(dot=>dot.onclick=()=>show(+dot.dataset.i));
+    show(0);
+  }
+
+  function renderTimeline(idx){
+    const p=document.getElementById('rsub-timeline');
+    if(!p) return;
+    const max=DATA.timeline.length-1;
+    const item=DATA.timeline[idx]||DATA.timeline[0];
+    p.innerHTML=`<div class="ww2-h-panel"><div class="ww2-h-kicker">Campaign timeline</div><h3>${esc(DATA.name)}</h3>
+      <p>Same timeline structure across the aircraft library: early service → main campaign → operational wear → late/reference stage.</p>
+      <input id="tl-slider" type="range" min="0" max="${max}" value="${idx}" style="width:100%;margin:1rem 0">
+      <h3 id="tl-date">${esc(item.date)} — ${esc(item.phase)}</h3><div id="timeline-detail"></div></div>
+      <div class="ww2-h-grid ww2-timeline-list">${DATA.timeline.map((t,i)=>`<div class="ww2-h-panel ${i===idx?'active':''}"><div class="ww2-h-kicker">${esc(t.date)}</div><h3>${esc(t.phase)}</h3><p>${esc(t.text)}</p></div>`).join('')}</div>`;
+    $('#tl-slider',p).oninput=e=>renderTimeline(+e.target.value);
+  }
+  window.updateTimeline=v=>renderTimeline(+v||0);
+
+  function renderCompare(){
+    const p=document.getElementById('rsub-compare');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-grid" id="compare-grid">${DATA.compare.map(c=>`<div class="ww2-h-panel"><div class="ww2-h-kicker">Compare</div><h3>${esc(c.h)}</h3><p>${esc(c.t)}</p></div>`).join('')}</div>`;
+  }
+
+  function renderSurvivors(){
+    const p=document.getElementById('rsub-survivors');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-grid" id="survivors-grid">${DATA.media.map(m=>card(m,'reference source')).join('')}</div>`;
+  }
+
+  function renderBooks(){
+    const p=document.getElementById('rsub-books');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-grid" id="books-grid">${DATA.shops.filter(x=>x.k==='Books').concat([{title:DATA.name+' unit and markings references',url:'https://www.amazon.co.uk/s?k='+encodeURIComponent(DATA.query+' units markings World War 2'),text:'Book route for unit histories, serials, markings and theatre placement.'}]).map(m=>card(m,'book')).join('')}</div>`;
+  }
+
+  window.renderMediaFinal=function(){
+    const panel=ensureTab('media');
+    panel.innerHTML=`<section class="ww2-hurricane-structure"><div class="ww2-h-kicker">Media</div><h2>${esc(DATA.name)} media board</h2><p>Same card structure across the site: archive, photo reference and kit database routes.</p><div class="ww2-h-grid">${DATA.media.map(m=>card(m,m.k)).join('')}</div></section>`;
+  };
+
+  window.renderWalkaroundFinal=function(){
+    const panel=ensureTab('walkaround');
+    panel.innerHTML=`<section class="ww2-hurricane-structure"><div class="ww2-h-kicker">Walkaround</div><h2>${esc(DATA.name)} walkaround board</h2><p>Same walkaround structure across the site: airframe, cockpit, landing gear/stores and paint/weathering.</p><div class="ww2-h-grid">${DATA.walk.map(w=>card({title:w.title,url:w.url,img:w.img,text:'Aircraft-specific walkaround/photo route.'},'walkaround')).join('')}</div></section>`;
+  };
+
+  function renderBuildSupplement(){
+    const panel=document.getElementById('tab-build');
+    if(!panel || $('#ww2-shop-supplement',panel)) return;
+    const div=document.createElement('section');
+    div.id='ww2-shop-supplement';
+    div.className='ww2-hurricane-structure';
+    div.innerHTML=`<div class="ww2-h-kicker">Checked routes</div><h2>${esc(DATA.name)} shop/book/reference routes</h2><div class="ww2-h-grid">${DATA.shops.map(s=>card(s,s.k)).join('')}</div>`;
+    panel.appendChild(div);
   }
 
   window.switchTab=function(id,el){
     $$('.tab-panel').forEach(p=>p.classList.remove('active'));
-    const p=ensurePanel(id);
-    p.classList.add('active');
+    const panel=ensureTab(id);
+    panel.classList.add('active');
     $$('.nav-tab,.tab-btn').forEach(b=>b.classList.remove('active'));
     if(el) el.classList.add('active');
     const bar=document.getElementById('sqn-bar');
     if(bar) bar.style.display=(id==='squadrons'||id==='units')?'flex':'none';
-    if(id==='reference'){ensureReferenceSkeleton(); setRefSub('map',$('#tab-reference .rtf'));}
+    if(id==='reference') buildReference();
     if(id==='media') renderMediaFinal();
     if(id==='walkaround') renderWalkaroundFinal();
-    if(id==='build') renderShopCardsFinal();
+    if(id==='build') renderBuildSupplement();
   };
 
-  window.setRefSub=function(sub,el){
-    const root=document.getElementById('tab-reference') || ensurePanel('reference');
-    ['map','timeline','compare','survivors','books'].forEach(s=>{
-      const target=document.getElementById('rsub-'+s);
-      if(target) target.style.display=s===sub?'':'none';
+  function bindClicks(){
+    $$('button[onclick*="switchTab"]').forEach(btn=>{
+      btn.addEventListener('click',ev=>{
+        const m=(btn.getAttribute('onclick')||'').match(/switchTab\('([^']+)'/);
+        if(m){ev.preventDefault();ev.stopImmediatePropagation();switchTab(m[1],btn);}
+      },true);
     });
-    $$('.rtf',root).forEach(b=>b.classList.remove('on'));
-    if(el) el.classList.add('on');
-    if(sub==='map') renderMapFinal();
-    if(sub==='timeline') renderTimelineFinal(0);
-    if(sub==='compare') renderCompareFinal();
-    if(sub==='survivors') renderSourcesFinal();
-    if(sub==='books') renderBooksFinal();
-  };
-
-  function renderMapFinal(){
-    const map=document.querySelector('#tab-reference #leaflet-map');
-    const side=document.querySelector('#tab-reference #map-sqn-list');
-    if(!map) return;
-    map.innerHTML=`<div class="ww2-static-map" style="position:relative;min-height:430px;border-radius:12px;overflow:hidden;background:radial-gradient(circle at 22% 34%,rgba(201,168,76,.24),transparent 16%),radial-gradient(circle at 66% 54%,rgba(126,165,207,.18),transparent 19%),linear-gradient(135deg,#0c1b2c,#19304a);border:1px solid rgba(255,255,255,.12)">
-      <div style="position:absolute;left:1rem;top:1rem;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:.7rem 1rem;color:#fff;font-weight:700">${esc(DATA.name)} bases</div>
-      ${DATA.bases.map((b,i)=>`<button type="button" class="ww2-map-dot" data-i="${i}" style="position:absolute;left:${b.x}%;top:${b.y}%;width:23px;height:23px;border-radius:50%;border:2px solid #fff;background:#c9a84c;box-shadow:0 0 0 8px rgba(201,168,76,.18);cursor:pointer" title="${esc(b.base)}"></button>`).join('')}
-    </div>`;
-    function show(i){
-      const b=DATA.bases[i]||DATA.bases[0];
-      if(!side || !b) return;
-      side.innerHTML=`<div class="section-label">Selected base</div>
-        <h3 style="margin:.35rem 0;color:#fff">${esc(b.base)}</h3>
-        <p style="color:rgba(255,255,255,.72);line-height:1.6"><b>Linked unit:</b> ${esc(b.unit)}</p>
-        <p style="color:rgba(255,255,255,.68);line-height:1.6">${esc(b.note)}</p>
-        <button class="fb ww2-open-unit" type="button">Open unit card</button>`;
-      const btn=side.querySelector('.ww2-open-unit');
-      if(btn) btn.onclick=()=>{
-        const first=document.querySelector('#tab-squadrons .unit-card,#tab-squadrons .sq-card,#tab-squadrons article,#tab-units .unit-card,#tab-units article');
-        if(window.openSqn) window.openSqn(b.unit);
-        else if(window.openUnit) window.openUnit(b.unit);
-        else {
-          window.switchTab('squadrons',document.querySelector('.nav-tab,.tab-btn'));
-          if(first) first.scrollIntoView({behavior:'smooth',block:'center'});
-        }
-      };
-    }
-    $$('.ww2-map-dot',map).forEach(dot=>dot.onclick=()=>show(+dot.dataset.i));
-    show(0);
+    $$('button[data-tab]').forEach(btn=>{
+      btn.addEventListener('click',ev=>{ev.preventDefault();ev.stopImmediatePropagation();switchTab(btn.dataset.tab,btn);},true);
+    });
+    document.addEventListener('click',ev=>{
+      const b=ev.target.closest('[data-ref]');
+      if(b){ev.preventDefault();setRefSub(b.dataset.ref,b);}
+    },true);
   }
 
-  window.updateTimeline=function(v){renderTimelineFinal(+v||0);};
-  function renderTimelineFinal(i){
-    const item=DATA.timeline[i]||DATA.timeline[0];
-    const title=document.querySelector('#tab-reference #tl-date');
-    const out=document.querySelector('#tab-reference #timeline-detail');
-    if(title) title.textContent=item.label;
-    if(out) out.innerHTML=`<div class="grid">${DATA.timeline.map((t,idx)=>`<div class="info-box" style="${idx===i?'border-color:#c9a84c':''}"><b>${esc(t.label)}</b><br>${esc(t.text)}</div>`).join('')}</div>`;
-  }
+  document.addEventListener('DOMContentLoaded',()=>{
+    bindClicks();
+    if(document.getElementById('tab-reference')?.classList.contains('active')) buildReference();
+  });
+})();
+</script>
 
-  function renderCompareFinal(){
-    const grid=document.querySelector('#tab-reference #compare-grid');
-    if(!grid) return;
-    grid.innerHTML=`<div class="grid">${DATA.compare.map(c=>`<div class="info-box"><b>${esc(c.title)}</b><br>${esc(c.text)}</div>`).join('')}</div>`;
-  }
 
-  function renderSourcesFinal(){
-    const grid=document.querySelector('#tab-reference #survivors-grid');
-    if(!grid) return;
-    grid.innerHTML=`<div class="grid">${DATA.media.map(m=>card(m.title,m.text,m.url,m.thumb,m.kind)).join('')}</div>`;
-  }
-
-  function renderBooksFinal(){
-    const grid=document.querySelector('#tab-reference #books-grid');
-    if(!grid) return;
-    grid.innerHTML=`<div class="grid">${DATA.books.map(b=>card(b.title,b.text,b.url,'','book')).join('')}</div>`;
-  }
-
-  window.renderMediaFinal=function(){
-    const panel=ensurePanel('media');
-    panel.innerHTML=`<div class="section-label">${esc(DATA.name)} media references</div><div class="grid">${DATA.media.map(m=>card(m.title,m.text,m.url,m.thumb,m.kind)).join('')}</div>`;
-  };
-
-  window.renderWalkaroundFinal=function(){
-    const panel=ensurePanel('walkaround');
-    panel.innerHTML=`<div class="section-label">${esc(DATA.name)} walkaround bench</div><div class="grid">${DATA.walkaround.map(w=>card(w.title,'Aircraft-specific walkaround/photo route for this area.',w.url,w.thumb,'walkaround')).join('')}</div>`;
-  };
-
-  window.renderShopCardsFinal=function(){
-    const panel=document.getElementById('tab-build');
-    if(!panel || panel.querySelector('#ww2-final-shop-block')) return;
-    const block=document.createElement('section');
-    block.id='ww2-final-shop-block';
-    block.className='info-box';
-    block.style.marginTop='1rem';
-    block.innerHTML=`<div class="section-label">${esc(DATA.name)} checked kit / decals / book routes</div>
-      <div class="grid">${DATA.shop.map(s=>card(s.title,s.text,s.url,'','shop')).join('')}${DATA.books.map(b=>card(b.title,b.text,b.url,'','book')).join('')}</div>`;
-    panel.appendChild(block);
-  };
-
-  document.addEventListener('DOMContentLoaded',function(){
-    if(document.getElementById('tab-reference')?.classList.contains('active')){
-      ensureReferenceSkeleton(); setRefSub('map',document.querySelector('#tab-reference .rtf'));
-    }
+<script id="ww2-side-theme-system">
+(function(){
+  const SIDE = "luftwaffe";
+  const DATA = {"label": "Luftwaffe", "emblem": "✚", "note": "Balkenkreuz-style modelling identity · charcoal, field grey and RLM tan", "primary": "#252924", "secondary": "#4c493b", "accent": "#b8a06a"};
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  ready(function(){
+    document.body.classList.add('ww2-side-themed','ww2-side-'+SIDE);
+    document.documentElement.style.setProperty('--ww2-side-primary', DATA.primary);
+    document.documentElement.style.setProperty('--ww2-side-secondary', DATA.secondary);
+    document.documentElement.style.setProperty('--ww2-side-accent', DATA.accent);
+    document.querySelectorAll('.hero-roundel').forEach(function(el){ el.remove(); });
+    if(document.querySelector('.ww2-side-identity')) return;
+    const target = document.querySelector('.hero-title') || document.querySelector('h1');
+    const wrap = document.createElement('div');
+    wrap.className = 'ww2-side-identity';
+    wrap.innerHTML = '<div class="ww2-side-emblem" aria-label="'+DATA.label+' emblem">'+DATA.emblem+'</div><div><h2>'+DATA.label+'</h2><p>'+DATA.note+'</p></div>';
+    if(target && target.parentNode){ target.insertAdjacentElement('afterend', wrap); }
+    else { document.body.insertAdjacentElement('afterbegin', wrap); }
   });
 })();
 </script>
