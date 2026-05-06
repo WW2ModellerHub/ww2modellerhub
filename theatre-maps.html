@@ -166,7 +166,7 @@
       <div class="summary-card panel"><h3>Battle of Britain</h3><p>Best for Hurricane and Spitfire squadron markings, sector stations, RAF camouflage and early-war weathering.</p><div class="small">Linked aircraft: Hurricane · Spitfire</div></div>
       <div class="summary-card panel"><h3>8th Air Force</h3><p>Core board for B-17 Bomb Group and P-51 Fighter Group subjects in East Anglia, including famous station identities and nose/tail colour cues.</p><div class="small">Linked aircraft: B-17 · P-51</div></div>
       <div class="summary-card panel"><h3>Mediterranean &amp; Italy</h3><p>Useful for Red Tails, desert-to-Italian transition subjects, bomber support and faded, dusty finishes.</p><div class="small">Linked aircraft: P-51 · B-17 · future RAF / Regia Aeronautica</div></div>
-      <div class="summary-card panel"><h3>Pacific &amp; Rabaul</h3><p>Zero, late-war Japanese aircraft and US long-range operations need tropical fading, coral dust and carrier or island-base context.</p><div class="small">Linked aircraft: A6M Zero · F4U Corsair · future Hellcat / Wildcat</div></div>
+      <div class="summary-card panel"><h3>Pacific &amp; Rabaul</h3><p>Zero, late-war Japanese aircraft and US long-range operations need tropical fading, coral dust and carrier or island-base context.</p><div class="small">Linked aircraft: A6M Zero · F4U Corsair · F6F Hellcat · P-40 Pacific/RNZAF route</div></div>
       <div class="summary-card panel"><h3>Eastern Front</h3><p>The right home for Fw 190, future Bf 109, Il-2, Yak and La fighters with harder weathering, field strips and AMT / RLM colour context.</p><div class="small">Linked aircraft: Fw 190 · future Soviet aircraft</div></div>
       <div class="summary-card panel"><h3>Campaign-first browsing</h3><p>Use this page as a campaign hub, then jump into aircraft reference pages, paint codes and the comparison tool.</p><div class="small">Site tools: Aircraft Compare · Paint Codes</div></div>
     </div>
@@ -290,7 +290,7 @@
     html += `<div class="panel-kicker" style="margin-top:1rem">Jump to related pages</div>`;
     html += `<div class="link-list">`;
     theatreAircraft.forEach(item=>{
-      html += `<a class="tool-link" href="${item[1]}"><span>${item[0]}</span><span>Open →</span></a>`;
+      html += `<a class="tool-link" href="${item[1]}"><span>${item[0]}</span><span>Open →</span></a><a class="map-aircraft-chip" href="p40_paradise.html">P-40 Warhawk / Kittyhawk</a>`;
     });
     html += `<a class="tool-link" href="paint-codes.html"><span>Paint codes and conversions</span><span>Open →</span></a>`;
     html += `</div>`;
