@@ -1306,7 +1306,7 @@ document.addEventListener('DOMContentLoaded',function(){
 #tab-walkaround .wa-card{min-height:352px!important;background:linear-gradient(135deg,rgba(21,36,68,.82),rgba(8,17,31,.72))!important}
 #tab-walkaround .wa-card img{height:165px!important;object-fit:cover!important}
 @media(max-width:640px){.ju87-media-card{grid-template-columns:1fr!important}.ju87-media-thumb{width:100%!important;height:170px!important}}
-</style></head><body>
+</style><style id="service-roundel-fix">.hero-roundel{display:none!important}</style></head><body>
 <nav class="site-nav">
 <div class="site-nav-inner">
 <a aria-label="WW2 Modeller home" class="site-nav-logo" href="index.html">
@@ -1488,6 +1488,54 @@ document.addEventListener('DOMContentLoaded',function(){
 <div id="books-grid"></div>
 </div>
 </div>
+
+<div class="tab-panel" id="tab-reference">
+  <div style="display:flex;gap:8px;margin-bottom:1.4rem;flex-wrap:wrap">
+    <button class="fb on rtf" onclick="setRefSub('map',this)">Map</button>
+    <button class="fb rtf" onclick="setRefSub('timeline',this)">Timeline</button>
+    <button class="fb rtf" onclick="setRefSub('compare',this)">Compare</button>
+    <button class="fb rtf" onclick="setRefSub('survivors',this)">Survivors</button>
+    <button class="fb rtf" onclick="setRefSub('books',this)">Books</button>
+  </div>
+
+  <div id="rsub-map">
+    <div class="section-label">Ju 87 Stuka reference map</div>
+    <div class="info-box">Ju 87 Stuka theatre map — early-war, desert, Mediterranean and Eastern Front routes. Click a base or marker to show linked units, then open the unit card for markings, pilots, decals and kit notes.</div>
+    <div class="map-layout" style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:1rem;align-items:stretch">
+      <div id="leaflet-map" class="map-board" style="min-height:430px;border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#102033,#172942)"></div>
+      <div id="map-sqn-list" class="map-info" style="border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(0,0,0,.22);padding:1rem;min-height:260px">
+        <div style="font-family:'Special Elite',cursive;font-size:1.1rem;color:#fff;margin-bottom:.5rem">Ju 87 Stuka map loading</div>
+        <p style="font-size:14px;color:rgba(255,255,255,.68);line-height:1.65">Open the Reference tab to render the map. If the interactive map library is unavailable, the static theatre board will show the same linked unit routes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="rsub-timeline" style="display:none">
+    <div class="section-label">Campaign timeline</div>
+    <div class="info-box">Move through the timeline to connect the aircraft, theatre, unit markings and weathering stage.</div>
+    <input id="tl-slider" type="range" min="0" max="100" value="0" oninput="updateTimeline(this.value)" style="width:100%;margin:1rem 0">
+    <div id="tl-date" style="font-family:'Special Elite',cursive;color:#fff;font-size:1.3rem;margin-bottom:.75rem">Start</div>
+    <div id="timeline-detail"></div>
+  </div>
+
+  <div id="rsub-compare" style="display:none">
+    <div class="section-label">Aircraft comparison</div>
+    <div class="info-box">Compare variants, paint routes and modelling difficulty before committing to a kit or decal sheet.</div>
+    <div id="compare-grid"></div>
+  </div>
+
+  <div id="rsub-survivors" style="display:none">
+    <div class="section-label">Survivors and museum references</div>
+    <div class="info-box">Use preserved aircraft for structure and walkaround detail, but cross-check restored paint and markings against wartime photographs.</div>
+    <div id="survivors-grid"></div>
+  </div>
+
+  <div id="rsub-books" style="display:none">
+    <div class="section-label">Books and reference sources</div>
+    <div class="info-box">Use books to confirm exact variants, markings, serials, theatre fit and camouflage before buying decals or aftermarket.</div>
+    <div id="books-grid"></div>
+  </div>
+</div>
 <div class="tab-panel" id="tab-stories">
 <div class="section-label">Pilot Stories — Stuka aces of the Luftwaffe escort war over Europe</div>
 <div class="info-box">Five of the most significant Stuka pilots of 1940, from squadron records and first-person memoirs.</div>
@@ -1534,9 +1582,9 @@ document.addEventListener('DOMContentLoaded',function(){
 <span style="font-size:14px">✈</span>
 <div><div class="shop-name">Stuka reference</div><div class="shop-cats">Airworthy survivors</div></div>
 </a>
-<a class="shop-link" href="https://barracudacals.com/collections/p-51-warhawk" rel="noopener" target="_blank">
+<a class="shop-link" href="https://www.hannants.co.uk/search/?keyword_search=Ju%2087%20Stuka%20aftermarket%20decals" rel="noopener" target="_blank">
 <span style="font-size:14px">🦈</span>
-<div><div class="shop-name">Barracuda Studios</div><div class="shop-cats">Resin · Decals · Masks</div></div>
+<div><div class="shop-name">Hannants aftermarket search</div><div class="shop-cats">Resin · Decals · Masks</div></div>
 </a>
 <a class="shop-link" href="https://www.shuttleworth.org" rel="noopener" target="_blank">
 <span style="font-size:14px">✈</span>
@@ -1614,7 +1662,7 @@ const BOOKS={"Core reference": [{"title": "Ju 87 Stuka Units of World War 2", "a
 
 const PILOT_STORIES=[{"name": "StG 1 crews", "sqn": "StG 1", "callsign": "—", "kills": "—", "wiki": "Junkers_Ju_87_Stuka", "aircraft": "Junkers Ju 87 Stuka", "story": "StG 1 crews is a useful route into Ju 87 Stuka modelling. Cross-check the exact aircraft, markings and theatre finish before committing to decals.", "tags": ["Ju 87 Stuka", "StG 1", "WW2"]}, {"name": "Hans-Ulrich Rudel", "sqn": "StG 2 Immelmann", "callsign": "—", "kills": "—", "wiki": "Junkers_Ju_87_Stuka", "aircraft": "Junkers Ju 87 Stuka", "story": "Hans-Ulrich Rudel is a useful route into Ju 87 Stuka modelling. Cross-check the exact aircraft, markings and theatre finish before committing to decals.", "tags": ["Ju 87 Stuka", "StG 2 Immelmann", "WW2"]}, {"name": "StG 3 crews", "sqn": "StG 3", "callsign": "—", "kills": "—", "wiki": "Junkers_Ju_87_Stuka", "aircraft": "Junkers Ju 87 Stuka", "story": "StG 3 crews is a useful route into Ju 87 Stuka modelling. Cross-check the exact aircraft, markings and theatre finish before committing to decals.", "tags": ["Ju 87 Stuka", "StG 3", "WW2"]}, {"name": "StG 77 crews", "sqn": "StG 77", "callsign": "—", "kills": "—", "wiki": "Junkers_Ju_87_Stuka", "aircraft": "Junkers Ju 87 Stuka", "story": "StG 77 crews is a useful route into Ju 87 Stuka modelling. Cross-check the exact aircraft, markings and theatre finish before committing to decals.", "tags": ["Ju 87 Stuka", "StG 77", "WW2"]}, {"name": "Night attack crews", "sqn": "NSGr units", "callsign": "—", "kills": "—", "wiki": "Junkers_Ju_87_Stuka", "aircraft": "Junkers Ju 87 Stuka", "story": "Night attack crews is a useful route into Ju 87 Stuka modelling. Cross-check the exact aircraft, markings and theatre finish before committing to decals.", "tags": ["Ju 87 Stuka", "NSGr units", "WW2"]}];
 
-const BUILD_STEPS=[{"n": 1, "title": "Choose the exact variant first", "icon": "📋", "text": "The kit choice starts with the subtype: Ju 87B/R early-war dive bombers, Ju 87D ground-attack aircraft and Ju 87G cannon-armed tank busters all need different details.", "products": [{"name": "Open kit reference", "url": "aircraft.html"}]}, {"n": 2, "title": "Dry-fit the defining shape", "icon": "🧩", "text": "Check the nose, canopy, landing gear and stores before paint.", "products": [{"name": "Open walkaround references", "url": "#ju87-wa-shape"}]}, {"n": 3, "title": "Paint by theatre and period", "icon": "🎨", "text": "Ju 87 paint routes include early RLM 70/71/65 splinter, desert RLM 78/79/80, winter whitewash, theatre bands and late Eastern Front weathering.", "products": [{"name": "Open Paint Codes", "url": "paint-codes.html"}]}, {"n": 4, "title": "Let markings lead", "icon": "★", "text": "Choose decals first so weathering does not hide the subject identity.", "products": [{"name": "Ju 87 Stuka decals", "url": "https://www.hannants.co.uk/search/?keyword_search=Ju%2087%20decals"}]}, {"n": 5, "title": "Weather from the environment", "icon": "🛠", "text": "Build wear from the aircraft's actual operating environment.", "products": [{"name": "Open Techniques Bank", "url": "techniques-bank.html"}]}];
+const BUILD_STEPS=[{"n": 1, "title": "Choose the exact variant first", "icon": "📋", "text": "The kit choice starts with the subtype: Ju 87B/R early-war dive bombers, Ju 87D ground-attack aircraft and Ju 87G cannon-armed tank busters all need different details.", "products": [{"name": "Open kit route", "url": "aircraft.html"}]}, {"n": 2, "title": "Dry-fit the defining shape", "icon": "🧩", "text": "Check the nose, canopy, landing gear and stores before paint.", "products": [{"name": "Open walkaround references", "url": "#ju87-wa-shape"}]}, {"n": 3, "title": "Paint by theatre and period", "icon": "🎨", "text": "Ju 87 paint routes include early RLM 70/71/65 splinter, desert RLM 78/79/80, winter whitewash, theatre bands and late Eastern Front weathering.", "products": [{"name": "Open Paint Codes", "url": "paint-codes.html"}]}, {"n": 4, "title": "Let markings lead", "icon": "★", "text": "Choose decals first so weathering does not hide the subject identity.", "products": [{"name": "Ju 87 Stuka decals", "url": "https://www.hannants.co.uk/search/?keyword_search=Ju%2087%20decals"}]}, {"n": 5, "title": "Weather from the environment", "icon": "🛠", "text": "Build wear from the aircraft's actual operating environment.", "products": [{"name": "Open Techniques Bank", "url": "techniques-bank.html"}]}];
 
 const MEDIA_ITEMS=[{"type": "video", "title": "Inside The Cockpit — Junkers Ju 87", "thumb": "https://i.ytimg.com/vi/wFA5eShB4XE/hqdefault.jpg", "url": "https://www.youtube.com/watch?v=wFA5eShB4XE", "desc": "Direct cockpit/exterior route for the Ju 87 canopy and forward section."}, {"type": "video", "title": "Junkers Ju-87 G-2 Stuka Dive Bomber Walkaround", "thumb": "https://i.ytimg.com/vi/lCGBGi48dPM/hqdefault.jpg", "url": "https://www.youtube.com/watch?v=lCGBGi48dPM", "desc": "Ju 87G walkaround route for cannon pods, undercarriage and late-war details."}, {"type": "archive", "title": "RAF Museum — Junkers Ju 87 Stuka", "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Junkers_Ju_87B_Stuka_at_RAF_Museum_Hendon.jpg/640px-Junkers_Ju_87B_Stuka_at_RAF_Museum_Hendon.jpg", "url": "https://www.rafmuseum.org.uk/research/collections/junkers-ju87g-2-stuka/", "desc": "Museum route for preserved Stuka details."}, {"type": "archive", "title": "IWM — Ju 87 archive", "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Junkers_Ju_87D.jpg/640px-Junkers_Ju_87D.jpg", "url": "https://www.iwm.org.uk/collections/search?query=Junkers%20Ju%2087", "desc": "Archive route for wartime Ju 87 references."}];
 
@@ -1722,7 +1770,7 @@ function showDetail(num){
       ${sqDecals.length?`<div style="display:flex;flex-direction:column;gap:5px;margin-bottom:1rem">${sqDecals.filter(d=>d.url).map(d=>`<a href="${d.url}" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--brass);border-radius:2px;padding:6px 10px;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,.05)'" onmouseout="this.style.background='rgba(0,0,0,.2)'" rel="noopener"><span style="font-size:12px">↗</span><span style="font-size:13px;color:rgba(255,255,255,.8)">${d.name}</span></a>`).join('')}</div>`:`<div style="font-size:13px;color:rgba(255,255,255,.4);margin-bottom:1rem">Search Hannants or Barracuda for this squadron.</div>`}
       <div style="display:flex;gap:6px;flex-wrap:wrap">
         <a href="https://www.hannants.co.uk/search/?keyword_search=${encodeURIComponent(sq.num+" Ju 87 decals")}" target="_blank" rel="noopener" class="shop-btn hb-brass" style="font-size:13px">Hannants: ${sq.num} Ju 87 decals ↗</a>
-        <a href="https://barracudacals.com/collections/p-51-warhawk" target="_blank" rel="noopener" class="shop-btn hb-outline" style="font-size:13px">Barracuda Ju 87 accessories ↗</a>
+        <a href="https://www.hannants.co.uk/search/?keyword_search=Ju%2087%20Stuka%20aftermarket%20decals" target="_blank" rel="noopener" class="shop-btn hb-outline" style="font-size:13px">Ju 87 aftermarket ↗</a>
       </div>
     </div>`;
   panel.classList.add('open');
@@ -1814,7 +1862,7 @@ function renderAftermarket(){
           <div class="am-desc">${item.desc}</div>
           <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:.4rem">
           <a href="${item.url}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;padding:4px 10px;border-radius:2px;background:rgba(30,58,92,.7);border:1px solid rgba(255,255,255,.12)" onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='rgba(255,255,255,.12)'">
-            <span style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass2)">${(()=>{try{const h=new URL(item.url).hostname.replace('www.','');return h.includes('genessis')?'Genessis Models UK':h.includes('spruebro')?'Sprue Brothers':h.includes('barracuda')?'Barracuda Studios':h.includes('hannants')?'Hannants':h}catch(e){return'Buy'}})()}</span>
+            <span style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass2)">${(()=>{try{const h=new URL(item.url).hostname.replace('www.','');return h.includes('genessis')?'Genessis Models UK':h.includes('spruebro')?'Sprue Brothers':h.includes('barracuda')?'Hannants aftermarket search':h.includes('hannants')?'Hannants':h}catch(e){return'Buy'}})()}</span>
             <span style="font-size:13px;color:rgba(255,255,255,.3)">↗</span>
           </a>
           ${item.urlEduard?`<a href="${item.urlEduard}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;padding:4px 10px;border-radius:2px;background:rgba(30,58,92,.7);border:1px solid rgba(255,255,255,.12)" onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='rgba(255,255,255,.12)'"><span style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass2)">Eduard direct</span><span style="font-size:13px;color:rgba(255,255,255,.3)">↗</span></a>`:''}

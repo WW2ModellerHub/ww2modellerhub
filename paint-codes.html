@@ -10,7 +10,7 @@
 <meta content="World War II aircraft paint colour codes for scale modellers, including RAF MAP colours, USAAF ANA colours, Luftwaffe RLM colours, IJN and IJAAF Japanese colours, Soviet VVS colours and Italian camouflage." name="description"/>
 <link href="https://www.ww2modeller.co.uk/paint-codes.html" rel="canonical"/>
 <meta content="WW2 Model Paint Code Converter — Humbrol, Tamiya, Vallejo &amp; AK" property="og:title"/>
-<meta content="Free cross-reference tool for WW2 model paint codes. Convert between Humbrol, Tamiya, Vallejo and AK Interactive for RAF, RLM and USAAF colours." property="og:description"/>
+<meta content="Free World War II aircraft paint code reference for RAF/MAP, USAAF/ANA, US Navy, Luftwaffe/RLM, IJN, IJAAF, Soviet VVS and Italian/Regia Aeronautica colours, with Humbrol, Tamiya, Vallejo and AK equivalents." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://www.ww2modeller.co.uk/paint-codes.html" property="og:url"/>
 <meta content="https://www.ww2modeller.co.uk/assets/social-preview.jpg" property="og:image"/>
@@ -19,7 +19,7 @@
 <meta content="WW2 Modeller Hub" property="og:site_name"/>
 <meta content="summary" name="twitter:card"/>
 <meta content="WW2 Model Paint Code Converter" name="twitter:title"/>
-<meta content="Convert between Humbrol, Tamiya, Vallejo and AK Interactive for RAF, RLM and USAAF colours." name="twitter:description"/>
+<meta content="Convert WW2 aircraft colours across RAF, USAAF, US Navy, Luftwaffe, IJN, IJAAF, Soviet VVS and Italian systems." name="twitter:description"/>
 <meta content="World War II aircraft modelling, WW2 aircraft modelling, scale model aircraft, WW2 aircraft paint colours, World War 2 aircraft kits, aircraft markings, weathering guide, walkaround photos, decals, 1/72 aircraft kits, 1/48 aircraft kits" name="keywords"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -779,6 +779,13 @@ footer nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-
 <p style="color:rgba(255,255,255,.66);line-height:1.7;margin:0">This World War 2 aircraft paint reference now includes RAF MAP colours, Luftwaffe RLM colours, USAAF ANA colours, Japanese IJN and IJAAF colours, Soviet VVS AMT/AII-style references and Italian Regia Aeronautica camouflage notes. Treat all cross-brand matches as modelling equivalents and test before committing to a final finish.</p>
 </div>
 </section>
+
+<section class="results" id="paint-codes-correction-note" style="padding-top:0">
+<div class="colour-row" style="grid-template-columns:1fr;border-left:4px solid #c9a84c;padding:1rem 1.2rem;display:block">
+<h2 style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin:0 0 .65rem">Paint code caution for modellers</h2>
+<p style="color:rgba(255,255,255,.66);line-height:1.7;margin:0">These are practical modelling equivalents, not laboratory paint matches. World War II aircraft paint varied by manufacturer, batch, weathering, theatre, primer, varnish and restoration evidence. Use this page to choose a credible starting colour, then confirm the final finish on the aircraft reference page.</p>
+</div>
+</section>
 <footer>
 <div>Codes are best-match equivalents — always test against reference samples before committing to a build.</div>
 </footer>
@@ -1066,6 +1073,69 @@ const PAINTS = [
   { name:'Grigio Azzurro Chiaro', ref:'Italian light blue-grey underside', cat:'italian', hex:'#9aa7a8',
     h:{c:'64',n:'Light Grey'}, t:{c:'XF-19',n:'Sky Grey'},
     v:{c:'71.287',n:'Grigio Azzurro Chiaro'}, a:{c:'AK2174',n:'Grigio Azzurro Chiaro'} },
+
+  // ── IJN / IJAAF EXPANSION ──
+  { name:'IJN J3 Hai-iro / Ash Grey', ref:'IJN carrier aircraft grey', cat:'ijn', hex:'#9fa79a',
+    h:{c:'168',n:'Hemp / light grey-green mix'}, t:{c:'XF-76',n:'Gray Green (IJN)'}, 
+    v:{c:'71.311',n:'IJN Ash Grey'}, a:{c:'AK2061',n:'J3 Hai-iro'} },
+
+  { name:'IJN D1 Deep Green Black', ref:'IJN upper surface green', cat:'ijn', hex:'#1f3328',
+    h:{c:'195',n:'Dark Green'}, t:{c:'XF-11',n:'J.N. Green'}, 
+    v:{c:'71.322',n:'IJN Black Green'}, a:{c:'AK2062',n:'IJN D1 Deep Green'} },
+
+  { name:'IJN Q1 Anti-Glare Black', ref:'IJN cowling / anti-glare', cat:'ijn', hex:'#10120f',
+    h:{c:'85',n:'Coal Black'}, t:{c:'XF-69',n:'NATO Black'}, 
+    v:{c:'70.862',n:'Black Grey'}, a:{c:'AK2064',n:'Q1 Anti-Glare Black'} },
+
+  { name:'IJAAF #21 Midori Iro', ref:'Army dark green upper', cat:'ijaaf', hex:'#2f4426',
+    h:{c:'116',n:'US Dark Green'}, t:{c:'XF-13',n:'J.A. Green'}, 
+    v:{c:'71.285',n:'IJAAF Dark Green'}, a:{c:'AK2261',n:'IJAAF Dark Green'} },
+
+  { name:'IJAAF #1 Hairyokushoku', ref:'Army grey-green', cat:'ijaaf', hex:'#9aa38f',
+    h:{c:'90',n:'Beige Green'}, t:{c:'XF-14',n:'J.A. Grey'}, 
+    v:{c:'71.326',n:'IJAAF Grey Green'}, a:{c:'AK2262',n:'IJAAF Grey Green'} },
+
+  { name:'IJAAF #30 Karekusa Iro', ref:'Army dry grass / brown', cat:'ijaaf', hex:'#8a6d3d',
+    h:{c:'84',n:'Mid Stone'}, t:{c:'XF-49',n:'Khaki'}, 
+    v:{c:'71.323',n:'IJAAF Khaki Brown'}, a:{c:'AK2263',n:'IJAAF Khaki Brown'} },
+
+  // ── SOVIET VVS EXPANSION ──
+  { name:'AMT-11 Blue Grey', ref:'VVS late-war upper grey', cat:'vvs', hex:'#64717a',
+    h:{c:'145',n:'Medium Grey'}, t:{c:'XF-53',n:'Neutral Grey'}, 
+    v:{c:'71.304',n:'AMT-11 Blue Grey'}, a:{c:'AK2241',n:'AMT-11 Blue Grey'} },
+
+  { name:'AMT-12 Dark Grey', ref:'VVS late-war upper dark grey', cat:'vvs', hex:'#3f4548',
+    h:{c:'32',n:'Dark Grey'}, t:{c:'XF-24',n:'Dark Grey'}, 
+    v:{c:'71.308',n:'AMT-12 Dark Grey'}, a:{c:'AK2242',n:'AMT-12 Dark Grey'} },
+
+  { name:'A-14 Steel Grey', ref:'VVS cockpit / interior', cat:'vvs', hex:'#5f6668',
+    h:{c:'140',n:'Gull Grey'}, t:{c:'XF-22',n:'RLM Grey'}, 
+    v:{c:'71.305',n:'A-14 Steel Grey'}, a:{c:'AK2245',n:'A-14 Steel Grey'} },
+
+  { name:'AII Light Blue', ref:'Early Soviet underside blue', cat:'vvs', hex:'#79a6bd',
+    h:{c:'65',n:'Aircraft Blue'}, t:{c:'XF-23',n:'Light Blue'}, 
+    v:{c:'71.318',n:'AII Light Blue'}, a:{c:'AK2246',n:'AII Light Blue'} },
+
+  { name:'AII Green', ref:'Early Soviet upper green', cat:'vvs', hex:'#3b5a2a',
+    h:{c:'150',n:'Forest Green'}, t:{c:'XF-5',n:'Flat Green'}, 
+    v:{c:'71.317',n:'AII Green'}, a:{c:'AK2247',n:'AII Green'} },
+
+  // ── REGIA AERONAUTICA EXPANSION ──
+  { name:'Verde Oliva Scuro 2', ref:'Italian dark olive green', cat:'italian', hex:'#3e4b2c',
+    h:{c:'116',n:'US Dark Green'}, t:{c:'XF-58',n:'Olive Green'}, 
+    v:{c:'71.010',n:'Interior Green / adjusted'}, a:{c:'AK2141',n:'Verde Oliva Scuro'} },
+
+  { name:'Grigio Mimetico', ref:'Italian camouflage grey', cat:'italian', hex:'#7f8783',
+    h:{c:'140',n:'Gull Grey'}, t:{c:'XF-19',n:'Sky Grey'}, 
+    v:{c:'71.046',n:'Pale Grey Blue'}, a:{c:'AK2142',n:'Grigio Mimetico'} },
+
+  { name:'Rosso Mimetico', ref:'Italian red-brown mottle', cat:'italian', hex:'#7d3f2d',
+    h:{c:'160',n:'German Camouflage Red Brown'}, t:{c:'XF-64',n:'Red Brown'}, 
+    v:{c:'71.105',n:'Brown RLM26'}, a:{c:'AK2143',n:'Rosso Mimetico'} },
+
+  { name:'Bianco Avorio / White Theatre Band', ref:'Italian theatre markings', cat:'italian', hex:'#e6dfc8',
+    h:{c:'34',n:'Matt White warmed'}, t:{c:'XF-2 + buff',n:'Warm White'}, 
+    v:{c:'70.820',n:'Offwhite'}, a:{c:'AK2144',n:'Italian Theatre White'} },
 
 ];
 
