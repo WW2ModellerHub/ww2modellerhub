@@ -1192,7 +1192,7 @@ document.addEventListener('DOMContentLoaded',function(){
   .filter-bar,.zero-unit-filter{padding:.45rem .8rem!important;}
 }
 </style>
-</head><body>
+<style id="service-roundel-fix">.hero-roundel{display:none!important}</style></head><body>
 <nav class="site-nav">
 <div class="site-nav-inner">
 <a aria-label="WW2 Modeller home" class="site-nav-logo" href="index.html">
@@ -2590,5 +2590,171 @@ function acceptCookies(){try{localStorage.setItem('cookiesAccepted','1');}catch(
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
 </script>
+
+
+
+
+
+
+
+<script id="ww2-page-repair">
+(function(){
+  const $=(s,r=document)=>r.querySelector(s);
+  const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+  const arr=n=>{try{return Array.isArray(window[n])?window[n]:[]}catch(e){return []}};
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const pageName=()=>($('.hero-title')||$('h1')||{}).textContent||'Aircraft';
+  const fallbackImg='video-thumb-fallback.png';
+
+  window.switchTab=function(id,el){
+    $$('.tab-panel').forEach(p=>p.classList.remove('active'));
+    const panel=document.getElementById('tab-'+id);
+    if(panel) panel.classList.add('active');
+    $$('.nav-tab,.tab-btn').forEach(b=>b.classList.remove('active'));
+    if(el) el.classList.add('active');
+    const bar=document.getElementById('sqn-bar');
+    if(bar) bar.style.display=(id==='squadrons'||id==='units')?'flex':'none';
+    if(id==='reference'){
+      const btn=$('#tab-reference .rtf.on')||$('#tab-reference .rtf')||$('#tab-reference button');
+      let sub='map';
+      if(btn){
+        const m=(btn.getAttribute('onclick')||'').match(/'([^']+)'/);
+        if(m) sub=m[1];
+      }
+      window.setRefSub(sub,btn);
+    }
+    if(id==='media') window.renderMediaRepair();
+    if(id==='walkaround') window.renderWalkaroundRepair();
+    if(id==='build'){
+      ['renderKits','renderPaint','renderAftermarket','renderWeathering','renderStepByStep'].forEach(fn=>{try{if(typeof window[fn]==='function')window[fn]()}catch(e){}});
+    }
+  };
+
+  window.setRefSub=function(sub,el){
+    const root=document.getElementById('tab-reference')||document;
+    $$('.rtf',root).forEach(b=>b.classList.remove('on'));
+    if(el) el.classList.add('on');
+    ['map','timeline','compare','survivors','books'].forEach(s=>{
+      const e=document.getElementById('rsub-'+s);
+      if(e) e.style.display=s===sub?'':'none';
+    });
+    if(sub==='map') window.renderReferenceMap();
+    if(sub==='timeline') window.renderTimelineRepair();
+    if(sub==='compare') window.renderCompareRepair();
+    if(sub==='survivors') window.renderSurvivorsRepair();
+    if(sub==='books') window.renderBooksRepair();
+  };
+
+  function unitList(){
+    const sq=arr('SQ'), stations=arr('STATIONS');
+    if(stations.length){
+      return stations.map((st,i)=>{
+        const unit=(st.sqns&&st.sqns[0])||st.name||`Unit ${i+1}`;
+        const detail=sq.find(s=>s.num===unit)||sq[i]||{};
+        return {name:st.name||unit,unit,x:st.x||25+(i*18)%60,y:st.y||30+(i*13)%45,info:st.info||detail.ops||'',detail};
+      });
+    }
+    return sq.map((s,i)=>({name:s.base||s.num,unit:s.num,x:20+(i*17)%65,y:28+(i*11)%48,info:s.ops||'',detail:s}));
+  }
+
+  window.renderReferenceMap=function(){
+    const map=document.getElementById('leaflet-map')||$('#rsub-map .map-board')||$('#rsub-map');
+    const side=document.getElementById('map-sqn-list')||document.getElementById('map-list');
+    if(!map) return;
+    const items=unitList();
+    map.innerHTML=`<div class="ww2-static-map" style="position:relative;min-height:420px;border-radius:12px;overflow:hidden;background:radial-gradient(circle at 22% 34%,rgba(201,168,76,.22),transparent 16%),radial-gradient(circle at 66% 54%,rgba(126,165,207,.18),transparent 19%),linear-gradient(135deg,#0c1b2c,#19304a);border:1px solid rgba(255,255,255,.12)">
+      <div style="position:absolute;left:1rem;top:1rem;background:rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:.7rem 1rem;color:#fff;font-weight:700">${esc(pageName())} theatre map</div>
+      ${items.map((it,i)=>`<button type="button" class="ww2-map-dot" data-i="${i}" style="position:absolute;left:${it.x}%;top:${it.y}%;width:22px;height:22px;border-radius:50%;border:2px solid #fff;background:#c9a84c;box-shadow:0 0 0 8px rgba(201,168,76,.18);cursor:pointer" title="${esc(it.unit)}"></button>`).join('')}
+    </div>`;
+    function show(i){
+      const it=items[i]||items[0]||{}, d=it.detail||{};
+      if(!side) return;
+      side.innerHTML=`<div class="section-label">Selected base / unit</div>
+        <h3 style="margin:.35rem 0;color:#fff">${esc(it.name)}</h3>
+        <p style="color:rgba(255,255,255,.72);line-height:1.6"><b>Linked unit:</b> ${esc(it.unit)}</p>
+        <p style="color:rgba(255,255,255,.68);line-height:1.6">${esc(it.info||d.ops||'Use this theatre marker to connect the base, unit card, markings and weathering route.')}</p>
+        <button class="fb ww2-open-unit" type="button">Open unit card</button>`;
+      const b=$('.ww2-open-unit',side);
+      if(b) b.addEventListener('click',()=>{
+        if(window.openSqn) window.openSqn(it.unit);
+        else if(window.openUnit) window.openUnit(it.unit);
+        else window.switchTab&&window.switchTab('squadrons',$('.nav-tab'));
+      });
+    }
+    $$('.ww2-map-dot',map).forEach(btn=>btn.addEventListener('click',()=>show(+btn.dataset.i)));
+    if(items.length) show(0);
+  };
+
+  window.renderTimelineRepair=function(){
+    const detail=document.getElementById('timeline-detail')||document.getElementById('tl-detail');
+    const date=document.getElementById('tl-date')||document.getElementById('timeline-date');
+    const slider=document.getElementById('tl-slider')||document.getElementById('timeline-slider');
+    if(!detail) return;
+    const val=slider?+slider.value:0, phases=arr('PHASES'), events=arr('EVENTS');
+    const phase=phases.find(p=>val>=p.start&&val<=p.end)||phases[0]||{name:'Campaign timeline',desc:'Key operational stages for this aircraft.'};
+    const ev=(events||[]).map(e=>Array.isArray(e)?{pos:e[0],title:e[1],desc:e[2]}:e).sort((a,b)=>Math.abs((a.pos||0)-val)-Math.abs((b.pos||0)-val))[0];
+    if(date) date.textContent=phase.name||'Campaign timeline';
+    detail.innerHTML=`<div class="info-box"><b>${esc(phase.name||'Campaign timeline')}</b><br>${esc(phase.desc||'Connect the period to the correct variant, markings, paint and weathering.')}</div>`+(ev?`<div class="info-box" style="margin-top:.8rem"><b>${esc(ev.title||ev.name||'Key event')}</b><br>${esc(ev.desc||ev.text||'Use this point to choose markings and theatre wear.')}</div>`:'');
+  };
+  window.updateTimeline=function(v){const s=document.getElementById('tl-slider')||document.getElementById('timeline-slider'); if(s&&v!=null)s.value=v; window.renderTimelineRepair();};
+
+  window.renderCompareRepair=function(){
+    const grid=document.getElementById('compare-grid');
+    if(!grid) return;
+    const paints=arr('PAINTS').slice(0,4), kits=arr('KITS').slice(0,3);
+    grid.innerHTML=`<div class="grid">
+      <div class="info-box"><b>Variant route</b><br>Choose the exact mark/variant before decals, masks or aftermarket.</div>
+      <div class="info-box"><b>Paint route</b><br>${paints.map(p=>esc(p.name)).join(' · ')||'Use the aircraft-specific paint route.'}</div>
+      <div class="info-box"><b>Kit route</b><br>${kits.map(k=>esc(`${k.brand} ${k.name} ${k.scale}`)).join(' · ')||'Choose the correct kit boxing.'}</div>
+    </div>`;
+  };
+
+  window.renderSurvivorsRepair=function(){
+    const grid=document.getElementById('survivors-grid');
+    if(!grid) return;
+    let data=arr('SURVIVORS');
+    if(!data.length) data=[{serial:`${pageName()} reference photos`,location:'Museum / archive route',note:'Use preserved aircraft for detail and wartime photographs for paint.',link:`https://www.iwm.org.uk/collections/search?query=${encodeURIComponent(pageName())}`}];
+    grid.innerHTML=`<div class="grid">${data.map(s=>`<a class="kit-card survivor-card" href="${esc(s.link||'#')}" target="_blank" rel="noopener"><h3>${esc(s.serial||s.name||'Reference aircraft')}</h3><p>${esc(s.location||'Museum / archive')}</p><p>${esc(s.note||s.history||'Cross-check restorations against wartime evidence.')}</p></a>`).join('')}</div>`;
+  };
+
+  window.renderBooksRepair=function(){
+    const grid=document.getElementById('books-grid');
+    if(!grid) return;
+    const cats=window.BOOKS||{}; let data=[];
+    Object.keys(cats).forEach(k=>data=data.concat(cats[k]||[]));
+    if(!data.length) data=[{title:`${pageName()} reference books`,author:'Reference route',desc:'Find books for variants, markings and theatre context.',shops:[{url:`https://www.amazon.co.uk/s?k=${encodeURIComponent(pageName()+' aircraft book')}`,label:'Find reference books'}]}];
+    grid.innerHTML=`<div class="grid">${data.map(b=>{const shop=(b.shops&&b.shops[0])||{};return `<a class="kit-card book-card" href="${esc(shop.url||'#')}" target="_blank" rel="noopener"><h3>${esc(b.title||'Reference book')}</h3><p>${esc(b.author||'')}</p><p>${esc(b.desc||'Variant and markings reference.')}</p></a>`}).join('')}</div>`;
+  };
+
+  window.renderMediaRepair=function(){
+    const panel=document.getElementById('tab-media');
+    if(!panel) return;
+    const imgs=$$('img',panel).filter(i=>i.getAttribute('src')&&i.getAttribute('src')!=='video-thumb-fallback.png');
+    if(imgs.length) return;
+    let data=arr('MEDIA_ITEMS');
+    if(!data.length) data=[
+      {title:`${pageName()} archive photos`,url:`https://www.iwm.org.uk/collections/search?query=${encodeURIComponent(pageName())}`,thumb:fallbackImg,desc:'Archive route for wartime photographs.'},
+      {title:`${pageName()} walkaround images`,url:`https://commons.wikimedia.org/w/index.php?search=${encodeURIComponent(pageName())}&title=Special:MediaSearch&type=image`,thumb:fallbackImg,desc:'Walkaround image route.'}
+    ];
+    const target=panel.querySelector('.grid')||panel.querySelector('[id*="media"]')||panel;
+    target.innerHTML=`<div class="grid">${data.map(m=>{const thumb=(m.thumb&&m.thumb!=='video-thumb-fallback.png')?m.thumb:fallbackImg;return `<a class="media-card" href="${esc(m.url||'#')}" target="_blank" rel="noopener"><img src="${esc(thumb)}" alt="${esc(m.title||pageName())}" loading="lazy"><div><div class="kicker">${esc(m.type||'reference')}</div><h3>${esc(m.title||'Media reference')}</h3><p>${esc(m.desc||'Reference route for this aircraft.')}</p></div></a>`}).join('')}</div>`;
+  };
+
+  window.renderWalkaroundRepair=function(){
+    const panel=document.getElementById('tab-walkaround');
+    if(!panel) return;
+    const imgs=$$('img',panel).filter(i=>i.getAttribute('src')&&i.getAttribute('src')!=='video-thumb-fallback.png');
+    if(imgs.length) return;
+    const img=(arr('MEDIA_ITEMS')[0]||{}).thumb||fallbackImg;
+    panel.innerHTML=`<div class="section-label">${esc(pageName())} walkaround reference bench</div><div class="grid">${['Overall shape and stance','Cockpit and canopy','Landing gear and stores','Paint and weathering'].map(t=>`<a class="walk-card" href="https://commons.wikimedia.org/w/index.php?search=${encodeURIComponent(pageName()+' '+t)}&title=Special:MediaSearch&type=image" target="_blank" rel="noopener"><img src="${esc(img)}" alt="${esc(pageName()+' '+t)}" loading="lazy"><div class="walk-body"><div class="kicker">Walkaround</div><h3>${esc(t)}</h3><p>Use photo evidence to check this area before paint and weathering.</p></div></a>`).join('')}</div>`;
+  };
+
+  document.addEventListener('DOMContentLoaded',function(){
+    if(!document.querySelector('.tab-panel.active')){const first=document.querySelector('.tab-panel'); if(first) first.classList.add('active');}
+    if(document.getElementById('tab-reference')&&document.getElementById('tab-reference').classList.contains('active')) window.renderReferenceMap();
+  });
+})();
+</script>
+
 </body>
 </html>
