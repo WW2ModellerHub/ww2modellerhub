@@ -1350,6 +1350,24 @@ body{
 
 
 
+
+<style id="ww2-mobile-map-fix">
+.ww2-h-map-intro{margin-bottom:1rem}
+.ww2-h-map-label{position:absolute;left:1rem;top:1rem;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:.45rem .7rem;color:#fff;font-weight:900;font-size:.9rem;letter-spacing:.06em;z-index:4}
+.ww2-map-land{position:absolute;border-radius:48% 52% 43% 57%;background:rgba(201,168,76,.10);border:1px solid rgba(201,168,76,.16);filter:blur(.1px)}
+.ww2-map-land.land-a{width:38%;height:32%;left:8%;top:22%;transform:rotate(-16deg)}
+.ww2-map-land.land-b{width:34%;height:40%;left:44%;top:34%;transform:rotate(19deg)}
+.ww2-map-land.land-c{width:22%;height:24%;left:70%;top:18%;transform:rotate(-8deg)}
+.ww2-h-dot{z-index:5;display:grid;place-items:center}
+.ww2-h-dot span{font-size:.68rem;color:#111;font-weight:900;line-height:1}
+@media(max-width:760px){
+  .ww2-h-map{min-height:340px!important}
+  .ww2-h-map-label{font-size:.78rem;max-width:70%;white-space:normal}
+  .ww2-h-dot{width:28px!important;height:28px!important}
+  .ww2-h-map-grid{gap:.8rem}
+}
+</style>
+
 </head>
 <body>
 <!-- HEADER -->
@@ -2715,54 +2733,36 @@ function ensureRAFMapVisible(){
 }
 
 function renderMap(){
-  const mapEl=document.getElementById('leaflet-map');
-  if(!mapEl) return;
-  if(mapRendered){ setTimeout(()=>leafletMap && leafletMap.invalidateSize(), 80); return; }
-  if(typeof L==='undefined'){
-    mapEl.innerHTML = `<div style="padding:2rem;color:rgba(255,255,255,.65);font-family:'Oswald',sans-serif;letter-spacing:.08em;text-transform:uppercase">Map library loading…</div>`;
-    setTimeout(renderMap,250); return;
+    const p=document.getElementById('rsub-map');
+    if(!p) return;
+    p.innerHTML=`<div class="ww2-h-panel ww2-h-map-intro">
+        <div class="ww2-h-kicker">${esc(DATA.cat)}</div>
+        <h3>${esc(DATA.name)} theatre map</h3>
+        <p>Click a base marker to show linked unit/squadron cards, then open the matching unit card. This follows the Hurricane reference-map workflow without covering the mobile map with oversized text.</p>
+      </div>
+      <div class="ww2-h-map-grid">
+        <div class="ww2-h-map" id="leaflet-map">
+          <div class="ww2-h-map-label">${esc(DATA.name)} bases</div>
+          <div class="ww2-map-land land-a"></div>
+          <div class="ww2-map-land land-b"></div>
+          <div class="ww2-map-land land-c"></div>
+          ${DATA.bases.map((b,i)=>`<button class="ww2-h-dot" type="button" data-i="${i}" title="${esc(b.base)}" style="left:${b.x}%;top:${b.y}%"><span>${i+1}</span></button>`).join('')}
+        </div>
+        <div class="ww2-h-panel" id="map-sqn-list"></div>
+      </div>`;
+    const side=$('#map-sqn-list',p);
+    function show(i){
+      const b=DATA.bases[i]||DATA.bases[0];
+      side.innerHTML=`<div class="ww2-h-kicker">Selected base</div>
+        <h3>${esc(b.base)}</h3>
+        <p><b>Linked unit route:</b> ${esc(b.unit)}</p>
+        <p>${esc(b.note)}</p>
+        <div class="ww2-h-grid">${b.linked.map(x=>`<button type="button" class="ww2-h-btn ww2-h-open" data-unit="${esc(x)}">${esc(x)}</button>`).join('')}</div>`;
+      $$('.ww2-h-open',side).forEach(btn=>btn.onclick=()=>openUnit(btn.dataset.unit));
+    }
+    $$('.ww2-h-dot',p).forEach(dot=>dot.onclick=()=>show(+dot.dataset.i));
+    show(0);
   }
-  mapRendered=true;
-  leafletMap = L.map('leaflet-map', {
-    zoomControl:true,
-    attributionControl:true,
-    scrollWheelZoom:false,
-    maxBounds:[[49.2,-8.8],[58.8,4.0]],
-    maxBoundsViscosity:.65
-  }).setView([53.0,-1.6],5);
-
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution:'&copy; OpenStreetMap &copy; CARTO',
-    subdomains:'abcd', maxZoom:10, minZoom:4
-  }).addTo(leafletMap);
-
-  const zones = {
-    '10': [[50.0,-6.2],[50.5,-5.4],[51.0,-4.4],[51.4,-3.2],[51.7,-2.0],[51.7,-1.0],[50.8,-1.2],[50.0,-2.2],[49.9,-4.2]],
-    '11': [[50.3,-1.8],[50.6,-0.8],[51.0,-0.2],[51.6,0.5],[52.1,1.6],[52.0,1.9],[51.3,1.8],[50.6,1.4],[50.2,0.4],[50.1,-0.6]],
-    '12': [[51.6,-3.0],[52.1,-2.2],[52.8,-1.6],[53.5,-0.4],[53.7,1.2],[53.3,1.8],[52.4,1.8],[51.8,1.4],[51.6,0.0]],
-    '13': [[54.2,-4.2],[55.0,-4.0],[55.9,-3.2],[56.8,-2.0],[57.4,-0.8],[57.0,0.6],[56.0,0.2],[55.0,-0.6],[54.2,-1.8]]
-  };
-  leafletZones={};
-  Object.entries(zones).forEach(([key,coords])=>{
-    leafletZones[key]=L.polygon(coords,{color:GROUP_COLOURS[key],weight:1,opacity:.34,fillColor:GROUP_COLOURS[key],fillOpacity:.08,interactive:false}).addTo(leafletMap);
-  });
-
-  leafletMarkers={};
-  STATIONS.forEach(st=>{
-    const [lat,lng] = xyToLatLng(st);
-    st._lat = lat; st._lng = lng;
-    const col = GROUP_COLOURS[st.group] || '#999';
-    const icon=L.divIcon({className:'',html:`<div class="raf-leaflet-marker" data-id="${st.id}" style="background:${col}"></div>`,iconSize:[18,18],iconAnchor:[9,9]});
-    const marker=L.marker([lat,lng],{icon}).addTo(leafletMap);
-    marker._rafStation = st;
-    marker.on('click',()=>showMapStation(st));
-    marker.bindTooltip(`<span class="raf-leaflet-label">${st.name}</span>`,{permanent:false,direction:'top',offset:[0,-10],opacity:.96,className:''});
-    leafletMarkers[st.id]=marker;
-  });
-  leafletMap.fitBounds([[49.5,-7.5],[57.9,2.5]], {padding:[16,16]});
-  setTimeout(()=>leafletMap.invalidateSize(),100);
-  showMapIntro();
-}
 
 function showMapStationById(id){
   const st = STATIONS.find(s => s.id === id);
@@ -3562,7 +3562,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 <script id="true-hurricane-structure-data">
-window.TRUE_AIRCRAFT_DATA = {"file": "bf109_paradise.html", "name": "Messerschmitt Bf 109", "short": "Bf 109", "category": "Luftwaffe", "role": "Luftwaffe fighter", "side": "luftwaffe", "notes": "Emil, Friedrich, Gustav and late-war RLM mottling across major fronts", "query": "Bf 109", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg", "bases": [{"base": "Western Front airfield", "unit": "Geschwader / Gruppe", "x": 24, "y": 43, "linked": ["Geschwader / Gruppe", "Bf 109 markings route", "Bf 109 weathering route"], "note": "Messerschmitt Bf 109: base card linked to unit, markings and modelling notes."}, {"base": "Mediterranean / desert field", "unit": "Theatre Gruppe", "x": 52, "y": 62, "linked": ["Theatre Gruppe", "Bf 109 markings route", "Bf 109 weathering route"], "note": "Messerschmitt Bf 109: base card linked to unit, markings and modelling notes."}, {"base": "Eastern Front base", "unit": "Ostfront Staffel", "x": 76, "y": 42, "linked": ["Ostfront Staffel", "Bf 109 markings route", "Bf 109 weathering route"], "note": "Messerschmitt Bf 109: base card linked to unit, markings and modelling notes."}], "timeline": [{"phase": "Introduction", "date": "Early service", "text": "Messerschmitt Bf 109 enters service. Use this phase for early variants, first camouflage and initial unit markings."}, {"phase": "Main campaign use", "date": "Operational peak", "text": "Messerschmitt Bf 109 develops its key theatre identity. Base, unit and markings drive the model subject."}, {"phase": "Heavy wear stage", "date": "Sustained operations", "text": "Weathering becomes theatre-specific: Emil, Friedrich, Gustav and late-war RLM mottling across major fronts."}, {"phase": "Late-war / reference stage", "date": "Late war and survivors", "text": "Use preserved aircraft for structure and walkaround detail, but confirm paint and markings with wartime photographs."}], "compare": [{"h": "Variant choice", "t": "Luftwaffe fighter. Choose exact mark/variant first; it controls kit, cockpit, canopy, stores and decals."}, {"h": "Paint choice", "t": "Emil, Friedrich, Gustav and late-war RLM mottling across major fronts"}, {"h": "Reference risk", "t": "Restorations, decal sheets and museum repaints can be misleading. Wartime photo evidence should lead."}], "media": [{"k": "Archive", "title": "Messerschmitt Bf 109 wartime photographs", "url": "https://www.iwm.org.uk/collections/search?query=Bf+109", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg", "text": "Wartime photo route for markings, unit context and weathering evidence."}, {"k": "Photo reference", "title": "Messerschmitt Bf 109 image references", "url": "https://commons.wikimedia.org/w/index.php?search=Bf+109&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg", "text": "Image route for preserved aircraft, stance and airframe detail."}, {"k": "Kit database", "title": "Messerschmitt Bf 109 kit records", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Bf+109", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg", "text": "Kit tooling, boxing and decal route. Verify exact kit before buying aftermarket."}], "walk": [{"title": "Overall airframe and stance", "url": "https://commons.wikimedia.org/w/index.php?search=Bf+109+airframe+walkaround&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg"}, {"title": "Cockpit, canopy and forward section", "url": "https://commons.wikimedia.org/w/index.php?search=Bf+109+cockpit+canopy&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg"}, {"title": "Landing gear, bays and stores", "url": "https://commons.wikimedia.org/w/index.php?search=Bf+109+landing+gear+stores&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg"}, {"title": "Paint, markings and weathering", "url": "paint-codes.html", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg"}], "shops": [{"k": "Kit route", "title": "Bf 109 kit record", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Bf+109", "text": "Aircraft-specific kit records; confirm boxing and variant."}, {"k": "Decals", "title": "Bf 109 decals", "url": "https://www.hannants.co.uk/search/?keyword_search=Bf+109+decals", "text": "Aircraft-specific decal route."}, {"k": "Aftermarket", "title": "Bf 109 masks/detail sets", "url": "https://www.eduard.com/eduard/?lang=1&cur=2&listtype=search&searchparam=Bf+109", "text": "Aircraft-specific mask/detail route."}, {"k": "Books", "title": "Bf 109 aircraft books", "url": "https://www.amazon.co.uk/s?k=Bf+109+aircraft+book", "text": "Aircraft-specific book/reference route."}]};
+window.TRUE_AIRCRAFT_DATA = {"file": "bf109_paradise.html", "name": "Messerschmitt Bf 109", "short": "Bf 109", "category": "Luftwaffe", "role": "Luftwaffe fighter", "side": "luftwaffe", "notes": "Emil, Friedrich, Gustav and late-war RLM mottling across major fronts", "query": "Bf 109", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg", "bases": [{"base": "Calais-Marck", "unit": "Battle of Britain route", "x": 24, "y": 42, "linked": ["Battle of Britain route", "Bf 109 markings route", "Bf 109 weathering route"], "note": "Messerschmitt Bf 109: Battle of Britain route. Click through to the unit card, markings and modelling notes."}, {"base": "Tobruk area", "unit": "Desert JG route", "x": 49, "y": 55, "linked": ["Desert JG route", "Bf 109 markings route", "Bf 109 weathering route"], "note": "Messerschmitt Bf 109: Desert JG route. Click through to the unit card, markings and modelling notes."}, {"base": "Eastern Front field", "unit": "JG 52 route", "x": 72, "y": 45, "linked": ["JG 52 route", "Bf 109 markings route", "Bf 109 weathering route"], "note": "Messerschmitt Bf 109: JG 52 route. Click through to the unit card, markings and modelling notes."}], "timeline": [{"phase": "Introduction", "date": "Early service", "text": "Messerschmitt Bf 109 enters service. Use this phase for early variants, first camouflage and initial unit markings."}, {"phase": "Main campaign use", "date": "Operational peak", "text": "Messerschmitt Bf 109 develops its key theatre identity. Base, unit and markings drive the model subject."}, {"phase": "Heavy wear stage", "date": "Sustained operations", "text": "Weathering becomes theatre-specific: Emil, Friedrich, Gustav and late-war RLM mottling across major fronts."}, {"phase": "Late-war / reference stage", "date": "Late war and survivors", "text": "Use preserved aircraft for structure and walkaround detail, but confirm paint and markings with wartime photographs."}], "compare": [{"h": "Variant choice", "t": "Luftwaffe fighter. Choose exact mark/variant first; it controls kit, cockpit, canopy, stores and decals."}, {"h": "Paint choice", "t": "Emil, Friedrich, Gustav and late-war RLM mottling across major fronts"}, {"h": "Reference risk", "t": "Restorations, decal sheets and museum repaints can be misleading. Wartime photo evidence should lead."}], "media": [{"k": "Archive", "title": "Messerschmitt Bf 109 wartime photographs", "url": "https://www.iwm.org.uk/collections/search?query=Bf+109", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg", "text": "Wartime photo route for markings, unit context and weathering evidence."}, {"k": "Photo reference", "title": "Messerschmitt Bf 109 image references", "url": "https://commons.wikimedia.org/w/index.php?search=Bf+109&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg", "text": "Image route for preserved aircraft, stance and airframe detail."}, {"k": "Kit database", "title": "Messerschmitt Bf 109 kit records", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Bf+109", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg", "text": "Kit tooling, boxing and decal route. Verify exact kit before buying aftermarket."}], "walk": [{"title": "Overall airframe and stance", "url": "https://commons.wikimedia.org/w/index.php?search=Bf+109+airframe+walkaround&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg"}, {"title": "Cockpit, canopy and forward section", "url": "https://commons.wikimedia.org/w/index.php?search=Bf+109+cockpit+canopy&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg"}, {"title": "Landing gear, bays and stores", "url": "https://commons.wikimedia.org/w/index.php?search=Bf+109+landing+gear+stores&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg"}, {"title": "Paint, markings and weathering", "url": "paint-codes.html", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Messerschmitt_Bf_109E.jpg"}], "shops": [{"k": "Kit route", "title": "Bf 109 kit record", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Bf+109", "text": "Aircraft-specific kit records; confirm boxing and variant."}, {"k": "Decals", "title": "Bf 109 decals", "url": "https://www.hannants.co.uk/search/?keyword_search=Bf+109+decals", "text": "Aircraft-specific decal route."}, {"k": "Aftermarket", "title": "Bf 109 masks/detail sets", "url": "https://www.eduard.com/eduard/?lang=1&cur=2&listtype=search&searchparam=Bf+109", "text": "Aircraft-specific mask/detail route."}, {"k": "Books", "title": "Bf 109 aircraft books", "url": "https://www.amazon.co.uk/s?k=Bf+109+aircraft+book", "text": "Aircraft-specific book/reference route."}]};
 </script>
 
 <style id="ww2-hurricane-structure-css">
@@ -3668,7 +3668,7 @@ window.WW2_H_DATA = {"file": "hurricane_paradise.html", "name": "Hawker Hurrican
     p.innerHTML=`<div class="ww2-h-map-grid">
       <div class="ww2-h-map" id="leaflet-map">
         <div class="ww2-h-panel" style="position:absolute;left:1rem;top:1rem;background:rgba(0,0,0,.45);max-width:320px">
-          <div class="ww2-h-kicker">${esc(DATA.cat)}</div><h3>${esc(DATA.name)} map</h3><p>Click a base marker to show linked unit/squadron cards, matching the Hurricane map workflow.</p>
+          <div class="ww2-h-kicker">${esc(DATA.cat)}</div><h3>${esc(DATA.name)} map</h3><p>Click a base marker to show linked unit/squadron cards, using the same base-to-unit workflow.</p>
         </div>
         ${DATA.bases.map((b,i)=>`<button class="ww2-h-dot" type="button" data-i="${i}" title="${esc(b.base)}" style="left:${b.x}%;top:${b.y}%"></button>`).join('')}
       </div>
