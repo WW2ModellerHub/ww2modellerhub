@@ -4,12 +4,12 @@
 <head>
 <meta charset="utf-8"/>
 <!-- SEO -->
-<title>Hawker Hurricane Aircraft Reference | WW2 Modeller</title>
+<title>Hawker Hurricane Model Kit Guide — Best 1/48 &amp; 1/72</title>
 <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="favicon.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="favicon.ico" rel="shortcut icon"/>
-<meta content="Hawker Hurricane Modelling Reference" property="og:title"/>
-<meta content="Hawker Hurricane World War II aircraft modelling reference: units, markings, paint codes, kits, media and walkaround." property="og:description"/>
+<meta content="Hawker Hurricane Modelling Reference — Battle of Britain Squadrons, Paint, Kits" property="og:title"/>
+<meta content="Complete Hawker Hurricane Mk.I/II scale modelling reference: 22 BoB squadrons, 200+ pilot profiles, paint cross-reference (Humbrol, Tamiya, Vallejo, AK), kit guide, decals, weathering by station, pilot stories." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://www.ww2modeller.co.uk/hurricane_paradise.html" property="og:url"/>
 <meta content="https://www.ww2modeller.co.uk/assets/og-hurricane.jpg" property="og:image"/>
@@ -22,10 +22,10 @@
 <meta content="WW2 Modeller Hub" name="author"/>
 <meta content="en_GB" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Hawker Hurricane Modelling Reference — RAF fighter, Paint, Kits" name="twitter:title"/>
-<meta content="Hawker Hurricane scale modelling reference: World War II units, aircraft markings, WW2 aircraft paint colours, kit guide, weathering notes, media and walkaround references." name="twitter:description"/>
-<meta content="World War II aircraft modelling reference, World War 2 aircraft scale modelling guide, WW2 aircraft paint colours, Hurricane model kit guide, aircraft walkaround photos, aircraft colour codes, squadron markings" name="keywords"/>
-<meta content="Hawker Hurricane World War II aircraft modelling reference with units, markings, RAF/MAP paint colour codes, model kit guide, weathering notes, media and walkaround photos." name="description"/>
+<meta content="Hawker Hurricane Modelling Reference — Battle of Britain Squadrons, Paint, Kits" name="twitter:title"/>
+<meta content="Complete Hawker Hurricane Mk.I/II scale modelling reference: 22 BoB squadrons, 200+ pilot profiles, paint cross-reference (Humbrol, Tamiya, Vallejo, AK), kit guide, decals, weathering by station, pilot stories." name="twitter:description"/>
+<meta content="World War II aircraft modelling, WW2 aircraft modelling, scale model aircraft, WW2 aircraft paint colours, World War 2 aircraft kits, aircraft markings, weathering guide, walkaround photos, decals, 1/72 aircraft kits, 1/48 aircraft kits, Hurricane model, Battle of Britain Hurricane, RAF squadron markings, Hurricane paint colours" name="keywords"/>
+<meta content="Hawker Hurricane World War II aircraft modelling reference with RAF Battle of Britain squadrons, paint colour codes, model kit guide, decals, weathering and walkaround photos." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://www.ww2modeller.co.uk/hurricane_paradise.html" rel="canonical"/>
@@ -33,7 +33,7 @@
 <!-- Twitter Card -->
 <!-- Schema.org -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Hawker Hurricane Aircraft Modelling Reference — Units, Paint Codes, Kits & Walkaround","description":"Hawker Hurricane World War II aircraft modelling reference with units, markings, RAF/MAP paint colour codes, model kit guide, weathering notes, media and walkaround photos.","url":"https://www.ww2modeller.co.uk/hurricane_paradise.html","publisher":{"@type":"Organization","name":"WW2 Modeller Hub","url":"https://www.ww2modeller.co.uk"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.ww2modeller.co.uk/hurricane_paradise.html"},"articleSection":"Scale Modelling","keywords":"scale model,WW2 aircraft,Battle of Britain,hurricane_paradise"}
+{"@context":"https://schema.org","@type":"Article","headline":"Hawker Hurricane Scale Modelling Reference — 22 BoB Squadrons, Paint Codes, Kits & Decals","description":"Complete Hawker Hurricane Mk.I modelling reference. 22 Battle of Britain squadrons, Ginger Lacey, Douglas Bader, exact Humbrol/Tamiya/Vallejo paint codes, kit reviews, Xtradecal sheets and airfield weathering guides.","url":"https://www.ww2modeller.co.uk/hurricane_paradise.html","publisher":{"@type":"Organization","name":"WW2 Modeller Hub","url":"https://www.ww2modeller.co.uk"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.ww2modeller.co.uk/hurricane_paradise.html"},"articleSection":"Scale Modelling","keywords":"scale model,WW2 aircraft,Battle of Britain,hurricane_paradise"}
 </script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&amp;family=Oswald:wght@400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
@@ -787,8 +787,8 @@ body{
 
 
 /* ===== LEAFLET RAF MAP ===== */
-#legacy-build-leaflet-map{width:100%;height:560px;min-height:560px;background:#0c1722;filter:saturate(.82) contrast(1.04);border-radius:3px;position:relative;z-index:1}
-#tab-reference.active #legacy-build-rsub-map #legacy-build-leaflet-map{display:block;visibility:visible}
+#leaflet-map{width:100%;height:560px;min-height:560px;background:#0c1722;filter:saturate(.82) contrast(1.04);border-radius:3px;position:relative;z-index:1}
+#tab-reference.active #rsub-map #leaflet-map{display:block;visibility:visible}
 .leaflet-container{font-family:'Oswald',sans-serif;background:#0c1722}
 .leaflet-control-attribution{font-size:9px;background:rgba(8,12,18,.68)!important;color:rgba(255,255,255,.55)!important}
 .raf-leaflet-marker{width:18px;height:18px;border-radius:50%;border:2px solid rgba(240,234,216,.92);box-shadow:0 0 0 5px rgba(255,255,255,.06),0 2px 12px rgba(0,0,0,.55);transition:transform .15s,box-shadow .15s}
@@ -796,7 +796,7 @@ body{
 .raf-leaflet-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.04em;color:#fff;text-shadow:0 2px 4px #000,0 0 5px #000;white-space:nowrap;padding:1px 4px;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.12);border-radius:2px}
 
 /* ===== MOBILE-SAFE STATIC RAF MAP FALLBACK ===== */
-#legacy-build-leaflet-map.static-raf-map-ready{background:radial-gradient(circle at 48% 40%,rgba(49,83,118,.22),transparent 36%),linear-gradient(160deg,#071018,#0c1722 58%,#060b10);overflow:hidden;touch-action:manipulation}
+#leaflet-map.static-raf-map-ready{background:radial-gradient(circle at 48% 40%,rgba(49,83,118,.22),transparent 36%),linear-gradient(160deg,#071018,#0c1722 58%,#060b10);overflow:hidden;touch-action:manipulation}
 .static-raf-map{position:relative;width:100%;height:100%;min-height:560px;overflow:hidden}
 .static-raf-map svg{position:absolute;inset:0;width:100%;height:100%;opacity:.62;filter:drop-shadow(0 12px 24px rgba(0,0,0,.45))}
 .static-raf-marker{position:absolute;transform:translate(-50%,-50%);width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,.9);box-shadow:0 0 0 5px rgba(255,255,255,.06),0 0 16px rgba(0,0,0,.75);cursor:pointer;z-index:5;background:#c9a84c}
@@ -804,7 +804,7 @@ body{
 .static-raf-marker:hover::after,.static-raf-marker.selected::after{opacity:1}
 .static-raf-marker.selected{transform:translate(-50%,-50%) scale(1.28);box-shadow:0 0 0 6px rgba(201,168,76,.24),0 0 22px rgba(201,168,76,.75);z-index:8}
 .static-raf-map-note{position:absolute;left:10px;bottom:10px;right:10px;font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.44);background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.08);border-radius:3px;padding:6px 8px;z-index:3}
-@media(max-width:600px){#legacy-build-leaflet-map{height:520px;min-height:520px}.static-raf-map{min-height:520px}.static-raf-marker{width:24px;height:24px}.static-raf-marker::after{display:none}}
+@media(max-width:600px){#leaflet-map{height:520px;min-height:520px}.static-raf-map{min-height:520px}.static-raf-marker{width:24px;height:24px}.static-raf-marker::after{display:none}}
 
 
 /* ===== RAF real-map two-column layout ===== */
@@ -869,12 +869,12 @@ body{
 .raf-key-dot{width:10px;height:10px;border-radius:50%;display:inline-block;box-shadow:0 0 0 3px rgba(255,255,255,.06)}
 .raf-map-theatre-band{position:absolute;left:14px;right:14px;bottom:14px;display:flex;gap:.5rem;flex-wrap:wrap;pointer-events:none}
 .raf-map-theatre-pill{background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--brass);padding:.3rem .55rem;border-radius:3px;font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.82);backdrop-filter:blur(2px)}
-#legacy-build-leaflet-map.static-raf-map-ready{display:block!important;visibility:visible!important;width:100%!important;height:560px!important;min-height:560px!important;position:relative!important;overflow:hidden!important;background:linear-gradient(160deg,#071018,#0c1722 58%,#060b10)!important;filter:none!important;z-index:1!important}
+#leaflet-map.static-raf-map-ready{display:block!important;visibility:visible!important;width:100%!important;height:560px!important;min-height:560px!important;position:relative!important;overflow:hidden!important;background:linear-gradient(160deg,#071018,#0c1722 58%,#060b10)!important;filter:none!important;z-index:1!important}
 #hurricane-static-map.static-raf-map,.static-raf-map{display:block!important;position:relative!important;width:100%!important;height:100%!important;min-height:560px!important;overflow:hidden!important}
 .static-raf-map svg{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;opacity:.68!important;z-index:1!important}
 .static-raf-marker{appearance:none;-webkit-appearance:none;position:absolute!important;transform:translate(-50%,-50%)!important;width:24px!important;height:24px!important;border-radius:50%!important;border:2px solid rgba(255,255,255,.94)!important;box-shadow:0 0 0 5px rgba(255,255,255,.08),0 0 18px rgba(0,0,0,.85)!important;cursor:pointer!important;z-index:7!important;padding:0!important;margin:0!important}
 .static-raf-marker.selected{transform:translate(-50%,-50%) scale(1.28)!important;box-shadow:0 0 0 6px rgba(201,168,76,.24),0 0 22px rgba(201,168,76,.75)!important;z-index:8!important}
-@media(max-width:600px){#legacy-build-leaflet-map.static-raf-map-ready{height:520px!important;min-height:520px!important}.static-raf-map{min-height:520px!important}.static-raf-marker{width:26px!important;height:26px!important}.static-raf-marker::after{display:none!important}}
+@media(max-width:600px){#leaflet-map.static-raf-map-ready{height:520px!important;min-height:520px!important}.static-raf-map{min-height:520px!important}.static-raf-marker{width:26px!important;height:26px!important}.static-raf-marker::after{display:none!important}}
 
 
 /* Final global aircraft dropdown fix: opaque, complete, scrollable, mobile-safe */
@@ -995,14 +995,14 @@ body{
 
 
 /* HURRICANE MAP HARDENING — static fallback, no Leaflet dependency */
-#legacy-build-leaflet-map{display:block!important;width:100%!important;height:auto!important;min-height:560px!important;background:#07121c!important;position:relative!important;overflow:hidden!important;border-radius:6px!important;touch-action:manipulation!important;z-index:1!important}
+#leaflet-map{display:block!important;width:100%!important;height:auto!important;min-height:560px!important;background:#07121c!important;position:relative!important;overflow:hidden!important;border-radius:6px!important;touch-action:manipulation!important;z-index:1!important}
 #hurricane-static-map{display:block!important;position:relative!important;width:100%!important;min-height:560px!important;height:560px!important;background:linear-gradient(160deg,#071018,#0c1722 58%,#060b10)!important;overflow:hidden!important;border-radius:6px!important}
 #hurricane-static-map svg{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important}
 .static-raf-marker{position:absolute!important;z-index:5!important;transform:translate(-50%,-50%)!important;width:20px!important;height:20px!important;border-radius:50%!important;border:2px solid rgba(240,234,216,.94)!important;box-shadow:0 0 0 5px rgba(255,255,255,.08),0 4px 14px rgba(0,0,0,.65)!important;cursor:pointer!important;padding:0!important;appearance:none!important;-webkit-appearance:none!important}
 .static-raf-marker.selected{transform:translate(-50%,-50%) scale(1.35)!important;box-shadow:0 0 0 7px rgba(201,168,76,.24),0 0 20px rgba(201,168,76,.75)!important;z-index:8!important}
 .static-raf-label{position:absolute!important;z-index:4!important;transform:translate(-50%,-50%)!important;font-family:'Oswald',sans-serif!important;font-size:10px!important;letter-spacing:.04em!important;color:rgba(255,255,255,.92)!important;text-shadow:0 2px 5px #000,0 0 7px #000!important;white-space:nowrap!important;background:rgba(0,0,0,.34)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:2px!important;padding:1px 4px!important;pointer-events:none!important}
 .static-raf-map-note{position:absolute!important;left:12px!important;bottom:10px!important;z-index:6!important;font-family:'Oswald',sans-serif!important;font-size:10px!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:rgba(255,255,255,.55)!important;background:rgba(0,0,0,.38)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:3px!important;padding:5px 8px!important}
-@media(max-width:600px){#legacy-build-leaflet-map,#hurricane-static-map{min-height:520px!important;height:520px!important}.static-raf-marker{width:26px!important;height:26px!important}.static-raf-label{display:none!important}.static-raf-map-note{font-size:9px!important;right:8px!important;left:8px!important;text-align:center!important}}
+@media(max-width:600px){#leaflet-map,#hurricane-static-map{min-height:520px!important;height:520px!important}.static-raf-marker{width:26px!important;height:26px!important}.static-raf-label{display:none!important}.static-raf-map-note{font-size:9px!important;right:8px!important;left:8px!important;text-align:center!important}}
 
 
 /* Restored aircraft page tab bar */
@@ -1021,11 +1021,11 @@ body{
 /* Full-site maintenance patch: mobile tabs and static RAF map safety */
 .nav-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .nav-tabs::-webkit-scrollbar{display:none}
-#legacy-build-leaflet-map{display:block!important;width:100%!important;min-height:560px!important;background:#07121c!important;position:relative!important;overflow:hidden!important;touch-action:manipulation}
-#legacy-build-leaflet-map .static-raf-map{display:block!important;width:100%!important;height:100%!important;min-height:560px!important;position:relative!important;overflow:hidden!important}
+#leaflet-map{display:block!important;width:100%!important;min-height:560px!important;background:#07121c!important;position:relative!important;overflow:hidden!important;touch-action:manipulation}
+#leaflet-map .static-raf-map{display:block!important;width:100%!important;height:100%!important;min-height:560px!important;position:relative!important;overflow:hidden!important}
 .static-raf-marker{z-index:5!important;pointer-events:auto!important;cursor:pointer!important}
 .static-raf-marker.selected{transform:translate(-50%,-50%) scale(1.22)!important;box-shadow:0 0 0 7px rgba(201,168,76,.24),0 0 22px rgba(201,168,76,.7)!important}
-@media(max-width:600px){#legacy-build-leaflet-map{min-height:520px!important}.nav-tab{min-width:max-content}.static-raf-marker{width:26px!important;height:26px!important}}
+@media(max-width:600px){#leaflet-map{min-height:520px!important}.nav-tab{min-width:max-content}.static-raf-marker{width:26px!important;height:26px!important}}
 </style>
 <style id="ww2-nav-tight-fix">
 .site-nav{padding:0 1rem!important;gap:.75rem!important;height:auto!important;min-height:56px!important;overflow:visible!important}
@@ -1341,39 +1341,6 @@ body{
   .paint-nav-link,.keep-mobile,.ac-drop-btn{display:inline-flex!important;}
 }
 </style>
-
-
-
-
-
-
-
-
-
-
-<style id="ww2-mobile-map-fix">
-.ww2-h-map-intro{margin-bottom:1rem}
-.ww2-h-map-label{position:absolute;left:1rem;top:1rem;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:.45rem .7rem;color:#fff;font-weight:900;font-size:.9rem;letter-spacing:.06em;z-index:4}
-.ww2-map-land{position:absolute;border-radius:48% 52% 43% 57%;background:rgba(201,168,76,.10);border:1px solid rgba(201,168,76,.16);filter:blur(.1px)}
-.ww2-map-land.land-a{width:38%;height:32%;left:8%;top:22%;transform:rotate(-16deg)}
-.ww2-map-land.land-b{width:34%;height:40%;left:44%;top:34%;transform:rotate(19deg)}
-.ww2-map-land.land-c{width:22%;height:24%;left:70%;top:18%;transform:rotate(-8deg)}
-.ww2-h-dot{z-index:5;display:grid;place-items:center}
-.ww2-h-dot span{font-size:.68rem;color:#111;font-weight:900;line-height:1}
-@media(max-width:760px){
-  .ww2-h-map{min-height:340px!important}
-  .ww2-h-map-label{font-size:.78rem;max-width:70%;white-space:normal}
-  .ww2-h-dot{width:28px!important;height:28px!important}
-  .ww2-h-map-grid{gap:.8rem}
-}
-</style>
-
-<style id="ww2-aircraft-theme-vars">
-:root{--brass:#c9a84c;--brass2:#e6c564;--raf-dark:#0a1628;--raf-mid:#152744;--raf-light:#1e3a5c;--raf-sky:#1e3a5c;}
-.aircraft-hero::after{content:'RAF';}
-.hero-roundel::before,.site-nav-logo-roundel{background:radial-gradient(circle at 50% 50%, #cf142b 0%, #cf142b 24%, #fff 24%, #fff 44%, #003087 44%, #003087 100%)!important;}
-
-</style>
 </head>
 <body>
 <!-- HEADER -->
@@ -1428,40 +1395,52 @@ body{
 <div class="aircraft-hero">
 <div class="hero-roundel"></div>
 <div class="hero-text">
-<div class="hero-eyebrow">Royal Air Force · World War II</div>
+<div class="hero-eyebrow">Royal Air Force · Battle of Britain 1940</div>
 <h1 class="hero-title">Hawker Hurricane</h1>
-<div class="hero-sub">Mk.I, Mk.II · Fighter · Battle of Britain and early-war RAF operations</div>
+<div class="hero-sub">Mk.I / Mk.II · Fighter Command · 1939–1944</div>
 </div>
-<div class="hero-stats"><div class="hero-stat"><div class="hero-stat-val">3</div><div class="hero-stat-lbl">Units</div></div><div class="hero-stat"><div class="hero-stat-val">Fighter</div><div class="hero-stat-lbl">Role</div></div><div class="hero-stat"><div class="hero-stat-val">RAF/MAP</div><div class="hero-stat-lbl">Paint</div></div><div class="hero-stat"><div class="hero-stat-val">WW2</div><div class="hero-stat-lbl">Era</div></div></div>
-</div><!-- TOP AD BANNER -->
+<div class="hero-stats">
+<div class="hero-stat"><div class="hero-stat-val">22</div><div class="hero-stat-lbl">Squadrons</div></div>
+<div class="hero-stat"><div class="hero-stat-val">1,715</div><div class="hero-stat-lbl">Claims</div></div>
+<div class="hero-stat"><div class="hero-stat-val">55%</div><div class="hero-stat-lbl">BoB Kills</div></div>
+<div class="hero-stat"><div class="hero-stat-val">113</div><div class="hero-stat-lbl">Days</div></div>
+</div>
+</div>
+<!-- TOP AD BANNER -->
 <!-- ADSENSE LEADERBOARD 728×90 — paste your AdSense code here once approved -->
-<div class="main-wrap">
-<div class="main-content">
-<!-- TAB: SQUADRONS -->
-<div class="tab-panel active" id="tab-squadrons">
-<div style="margin-bottom:1.9rem">
-<div class="section-label" style="margin-bottom:.6rem">Battle of Britain and early-war RAF operations · World War II aircraft modelling reference</div>
-<p style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.75;max-width:760px">
-      This Hawker Hurricane aircraft guide brings together real units, bases, markings, paint colours, kits, media and walkaround notes for scale modellers. Use the cards below as the starting point for aircraft-specific subjects, squadron markings, weathering choices and reference routes.
-    </p>
-<div style="display:flex;gap:1.2rem;margin-top:.95rem;margin-bottom:1.2rem;flex-wrap:wrap;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)">
-<span><span style="color:var(--brass2);font-size:14px;font-weight:600">3</span> units</span>
-<span><span style="color:var(--brass2);font-size:14px;font-weight:600">3</span> linked bases</span>
-<span><span style="color:var(--brass2);font-size:14px;font-weight:600">RAF/MAP</span> paint system</span>
-</div>
 <!-- FILTER BAR -->
 <div class="filter-bar" id="sqn-bar">
 <label>Group:</label>
 <button class="fb on gf" onclick="setFilter('all',this)">All</button>
-<button class="fb gf" onclick="setFilter('11',this)">Unit 1</button>
-<button class="fb gf" onclick="setFilter('11',this)">Unit 2</button>
-<button class="fb gf" onclick="setFilter('10',this)">Unit 3</button>
+<button class="fb gf" onclick="setFilter('11',this)">11 Group</button>
+<button class="fb gf" onclick="setFilter('12',this)">12 Group</button>
+<button class="fb gf" onclick="setFilter('13',this)">13 Group</button>
+<button class="fb gf" onclick="setFilter('10',this)">10 Group</button>
 <div class="bar-sep"></div>
 <label>Sort:</label>
-<button class="fb on sf" onclick="setSort('num',this)">Unit Ref</button>
-<button class="fb sf" onclick="setSort('kills',this)">Reference ↓</button>
+<button class="fb on sf" onclick="setSort('num',this)">Number</button>
+<button class="fb sf" onclick="setSort('kills',this)">Claims ↓</button>
+<button class="fb sf" onclick="setSort('killrate',this)">Kill % ↓</button>
 <button class="fb sf" onclick="setSort('base',this)">Base A–Z</button>
 <span class="sq-count" id="sq-count"></span>
+</div>
+<div class="main-wrap">
+<div class="main-content">
+<!-- TAB: SQUADRONS -->
+<div class="tab-panel active" id="tab-squadrons">
+<div style="margin-bottom:1.5rem">
+<div class="section-label" style="margin-bottom:.6rem">Battle of Britain · 10 July – 31 October 1940</div>
+<p style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.75;max-width:720px">
+      Twenty-two RAF Hurricane squadrons defended southern England during the Battle of Britain. Together they destroyed more enemy aircraft than all other defences combined — accounting for over 55% of RAF claims. Click any squadron to see its pilots, aircraft codes, victories and decal options.
+    </p>
+<div style="display:flex;gap:1.2rem;margin-top:.8rem;flex-wrap:wrap;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4)">
+<span><span style="color:var(--brass2);font-size:14px;font-weight:600">22</span> squadrons</span>
+<span>·</span>
+<span><span style="color:var(--brass2);font-size:14px;font-weight:600">200+</span> named pilots</span>
+<span>·</span>
+<span><span style="color:var(--brass2);font-size:14px;font-weight:600">4</span> RAF groups</span>
+<span>·</span>
+<span>Filter by group using the bar above</span>
 </div>
 </div>
 <div class="sq-grid" id="grid" style="margin-top:2.25rem!important;row-gap:1rem!important;column-gap:1rem!important;clear:both!important"></div>
@@ -1531,7 +1510,72 @@ body{
 </div>
 <!-- TAB: REFERENCE — Map · Timeline · Compare · Survivors · Books -->
 <div class="tab-panel" id="tab-reference">
+<div style="display:flex;gap:8px;margin-bottom:1.4rem;flex-wrap:wrap">
+<button class="fb on rtf" onclick="setRefSub('map',this)" style="font-size:13px">Station map</button>
+<button class="fb rtf" onclick="setRefSub('timeline',this)" style="font-size:13px">BoB timeline</button>
+<button class="fb rtf" onclick="setRefSub('compare',this)" style="font-size:13px">Compare squadrons</button>
+<button class="fb rtf" onclick="setRefSub('survivors',this)" style="font-size:13px">Survivors</button>
+<button class="fb rtf" onclick="setRefSub('books',this)" style="font-size:13px">Books</button>
 </div>
+<div id="rsub-map">
+<div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem">
+<span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-right:.25rem">Filter:</span>
+<button class="map-filter-btn on" onclick="filterMapGroup('all',this)" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)">All Groups</button>
+<button class="map-filter-btn" onclick="filterMapGroup('11',this)" style="border-color:#e05555;color:#e07777">11 Group</button>
+<button class="map-filter-btn" onclick="filterMapGroup('10',this)" style="border-color:#4caf7d;color:#6ccc9a">10 Group</button>
+<button class="map-filter-btn" onclick="filterMapGroup('12',this)" style="border-color:#5b9bd5;color:#7db8ea">12 Group</button>
+<button class="map-filter-btn" onclick="filterMapGroup('13',this)" style="border-color:#b07fd5;color:#c89de8">13 Group</button>
+</div>
+<div class="raf-map-shell">
+<div class="raf-map-board"><div id="leaflet-map"></div></div>
+<div class="map-sqn-list raf-map-side" id="map-sqn-list">
+<div style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem">Station Info</div>
+<div style="font-size:13px;color:rgba(255,255,255,.45)">Click a station dot on the map to see squadrons and notes.</div>
+<div style="margin-top:1.2rem">
+<div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.5rem">Group colours</div>
+<div style="display:flex;flex-direction:column;gap:4px">
+<div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#e05555"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">11 Group (South)</span></div>
+<div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#4caf7d"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">10 Group (SW)</span></div>
+<div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#5b9bd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">12 Group (Midlands)</span></div>
+<div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#b07fd5"></div><span style="font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.5)">13 Group (North)</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="rsub-timeline" style="display:none">
+<div class="timeline-wrap">
+<div id="tl-date" style="font-family:'Special Elite',cursive;font-size:1.4rem;color:var(--brass2);text-align:center;margin-bottom:.75rem"></div>
+<input class="timeline-slider" id="tl-slider" max="113" min="0" oninput="updateTimeline(this.value)" type="range" value="0"/>
+<div class="timeline-labels"><span>10 Jul 1940</span><span>31 Oct 1940</span></div>
+<div id="tl-event-detail" style="margin-top:.75rem"></div>
+</div>
+<div class="tl-legend" style="margin-top:1rem">
+<span><span class="tl-dot" style="background:var(--olive)"></span>Front line</span>
+<span><span class="tl-dot" style="background:var(--brass)"></span>Reserve</span>
+<span><span class="tl-dot" style="background:#5a5a5a"></span>Resting</span>
+</div>
+<div class="timeline-sqns" id="tl-sqns"></div>
+</div>
+<div id="rsub-compare" style="display:none">
+<div class="compare-selects">
+<div><label>Squadron A</label>
+<select id="cmp-a" onchange="renderCompare()" style="width:100%"></select></div>
+<div><label>Squadron B</label>
+<select id="cmp-b" onchange="renderCompare()" style="width:100%"></select></div>
+</div>
+<div id="compare-output"></div>
+</div>
+<div id="rsub-survivors" style="display:none">
+<div class="info-box">Airworthy and preserved Hawker Hurricane Mk.I survivors worldwide. These are the real aircraft you can photograph for reference at shows and museums.</div>
+<div id="survivors-grid"></div>
+</div>
+<div id="rsub-books" style="display:none">
+<div class="info-box">Essential reading for the Hurricane modeller and historian. All links go directly to the specific book on Amazon UK — no search pages.</div>
+<div id="books-grid"></div>
+</div>
+</div>
+<!-- TAB: STORIES — Pilot narratives -->
 <div class="tab-panel" id="tab-stories">
 <div style="margin-bottom:1.5rem">
 <div class="section-label" style="margin-bottom:.5rem">Pilot Profiles · Battle of Britain 1940</div>
@@ -1543,25 +1587,709 @@ body{
 </div>
 <!-- TAB: MEDIA — YouTube, sounds, footage -->
 <div class="tab-panel" id="tab-media">
+<div class="info-box">Curated Hurricane footage, Merlin engine recordings, IWM interviews and documentary clips. All links open on YouTube or the IWM website.</div>
+<div id="media-grid"></div>
 </div>
 <div class="tab-panel" id="tab-walkaround">
+<div class="info-box">Period and museum photographs grouped by aircraft detail area — use these as direct reference while building. All images link to their original source.</div>
+<!-- Feature nav -->
+<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
+<a href="#wa-cockpit" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(201,168,76,.08)'" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s">Cockpit</a>
+<a href="#wa-exhaust" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(201,168,76,.08)'" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s">Exhausts</a>
+<a href="#wa-undercart" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(201,168,76,.08)'" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s">Undercarriage</a>
+<a href="#wa-markings" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(201,168,76,.08)'" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s">Markings</a>
+<a href="#wa-airframe" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(201,168,76,.08)'" style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(201,168,76,.3);border-radius:3px;color:var(--brass);text-decoration:none;transition:background .15s">Airframe</a>
 </div>
+<!-- COCKPIT -->
+<div id="wa-cockpit" style="margin-bottom:2rem">
+<div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Cockpit <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+<div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
+<strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
+      Interior is Titanine Interior Grey-Green — slightly warmer and greener than Spitfire. Instrument panel Flat Black. The ejector exhaust handles on the right side of the cockpit are a distinctive detail. Floor is darker and more worn than side walls. R4118 (Hurricane Heritage) has the most accessible authentic cockpit of any surviving example.
+    </div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+<a class="wa-ref-card" href="https://collections.rafmuseum.org.uk/collection/object/object-1815/" rel="noopener" target="_blank">
+<img alt="RAF Museum Hurricane cockpit photo" loading="lazy" src="https://rafstories.org/ciim-media/pf/D63A5943_D295_9C52_1BE8_D4238A690CC6/122/7/large_78_A_872_003.jpg"/>
+<div class="wa-ref-body">
+<div class="wa-ref-kicker">RAF Museum</div>
+<div class="wa-ref-title">Reference photo — Hurricane cockpit</div>
+<div class="wa-ref-desc">Useful for the cockpit sidewalls, seat shape, instrument panel layout and the warmer grey-green interior tone. A strong visual check for cockpit opening size and internal framing.</div>
+<div class="wa-ref-link">Open source photo ↗</div>
+</div>
+</a>
+<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+<a href="https://www.youtube.com/watch?v=afZwPxtY2iw" rel="noopener" style="display:block;position:relative" target="_blank">
+<img alt="BBMF Hurricane LF363 cockpit startup" src="https://img.youtube.com/vi/afZwPxtY2iw/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
+<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+</a>
+<div style="padding:.75rem .9rem">
+<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">BBMF Hurricane LF363 — Cockpit Startup</div>
+<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Close-up cockpit video during engine startup at RAF Coningsby. Shows throttle quadrant, instrument readings and interior colour in natural light.</div>
+</div>
+</div>
+<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+<a href="https://www.youtube.com/watch?v=NEmAlxaW44I" rel="noopener" style="display:block;position:relative" target="_blank">
+<img alt="Hurricane restoration cockpit detail" src="https://img.youtube.com/vi/NEmAlxaW44I/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
+<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+</a>
+<div style="padding:.75rem .9rem">
+<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Hurricane Restoration — Interior Detail</div>
+<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Warbird Workshop documentary. Close-access footage of cockpit interior, instrument fitment and structural detail during rebuild.</div>
+</div>
+</div>
+</div>
+</div><!-- /cockpit -->
+<!-- EXHAUSTS -->
+<div id="wa-exhaust" style="margin-bottom:2rem">
+<div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Exhaust Stacks &amp; Staining <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+<div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
+<strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
+      The Hurricane uses ejector exhaust stacks — one long casting per side, not individual stubs. The staining pattern is a single wide fan aft of the exhaust outlet, extending back to roughly the cockpit position. The stacks oxidise to a rusty brown-orange. Eduard Brassin 648580 gives you resin stacks with excellent casting detail for 1:48.
+    </div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+<a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:HAWKER_HURRICANE_MKXII.jpg" rel="noopener" target="_blank">
+<img alt="Hawker Hurricane external reference photo" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/HAWKER_HURRICANE_MKXII.jpg/1280px-HAWKER_HURRICANE_MKXII.jpg"/>
+<div class="wa-ref-body">
+<div class="wa-ref-kicker">Wikimedia Commons</div>
+<div class="wa-ref-title">Reference photo — Exhaust stacks and nose</div>
+<div class="wa-ref-desc">Good external view for the Hurricane’s ejector exhaust arrangement, spinner shape and cowling lines. Useful when checking the broad exhaust staining fan that runs back along the fuselage side.</div>
+<div class="wa-ref-link">Open source photo ↗</div>
+</div>
+</a>
+<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+<a href="https://www.youtube.com/watch?v=Q2uDlTH86NU" rel="noopener" style="display:block;position:relative" target="_blank">
+<img alt="R4118 Hurricane exhaust detail Duxford" src="https://img.youtube.com/vi/Q2uDlTH86NU/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
+<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+</a>
+<div style="padding:.75rem .9rem">
+<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">R4118 — Walk-around at Duxford 2023</div>
+<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Full walk-around of R4118. The exhaust stacks and staining pattern are clearly visible during the engine startup sequence. Best available video reference.</div>
+</div>
+</div>
+<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+<a href="https://www.youtube.com/watch?v=afZwPxtY2iw" rel="noopener" style="display:block;position:relative" target="_blank">
+<img alt="Merlin startup exhaust smoke BBMF" src="https://img.youtube.com/vi/afZwPxtY2iw/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
+<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+</a>
+<div style="padding:.75rem .9rem">
+<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Merlin Startup — Blue Smoke Plume</div>
+<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Cold-start sequence of LF363. The blue smoke from the ejector stacks and the resulting staining pattern is clearly visible — essential exhaust weathering reference.</div>
+</div>
+</div>
+</div>
+</div><!-- /exhaust -->
+<!-- UNDERCARRIAGE -->
+<div id="wa-undercart" style="margin-bottom:2rem">
+<div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Undercarriage <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+<div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
+<strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
+      Undercarriage legs are Interior Grey-Green — not camouflage colour. Wheel bay interior also grey-green. Mechanical parts on legs are bare aluminium. Tyres are warm mid-grey, not cold grey or black. The wheel bays are open when gear is down — they were frequently mud-spattered on BoB grass airfields.
+    </div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+<a class="wa-ref-card" href="https://commons.wikimedia.org/wiki/File:HAWKER_HURRICANE_MKXII.jpg" rel="noopener" target="_blank">
+<img alt="Hawker Hurricane undercarriage reference photo" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/HAWKER_HURRICANE_MKXII.jpg/1280px-HAWKER_HURRICANE_MKXII.jpg"/>
+<div class="wa-ref-body">
+<div class="wa-ref-kicker">Wikimedia Commons</div>
+<div class="wa-ref-title">Reference photo — Undercarriage stance</div>
+<div class="wa-ref-desc">Useful for checking the Hurricane’s slightly wide-set gear stance, wheel cover shape and the sit of the aircraft on its legs. Also helps with tyre size and door alignment.</div>
+<div class="wa-ref-link">Open source photo ↗</div>
+</div>
+</a>
+<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+<a href="https://www.youtube.com/watch?v=NEmAlxaW44I" rel="noopener" style="display:block;position:relative" target="_blank">
+<img alt="Hurricane restoration undercarriage detail" src="https://img.youtube.com/vi/NEmAlxaW44I/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
+<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+</a>
+<div style="padding:.75rem .9rem">
+<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Restoration — Undercarriage Bay Detail</div>
+<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Warbird Workshop restoration includes close-access footage of the wheel bay and leg assembly during strip-down. Shows leg colour, hydraulics and structural detail.</div>
+</div>
+</div>
+<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+<a href="https://www.rafmuseum.org.uk/research/collections/" rel="noopener" style="display:block;background:#0a1628;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative" target="_blank">
+<div style="text-align:center;padding:1rem">
+<div style="font-size:2.5rem;opacity:.3;margin-bottom:.5rem">✈</div>
+<div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(100,160,255,.7)">RAF Museum</div>
+<div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:.3rem">Undercarriage reference photos</div>
+</div>
+<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(30,60,120,.9);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">RAF Museum</div>
+</a>
+<div style="padding:.75rem .9rem">
+<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">RAF Museum — Hurricane Technical Reference</div>
+<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">The RAF Museum Cosford houses a Hurricane with good undercarriage access. The online collection includes technical photographs of the leg assembly.</div>
+</div>
+</div>
+</div>
+</div><!-- /undercarriage -->
+<!-- MARKINGS -->
+<div id="wa-markings" style="margin-bottom:2rem">
+<div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Roundels, Codes &amp; Markings <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+<div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
+<strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
+      Roundel types changed during the Battle. Before ~Aug 1940: Type A (red/white/blue/yellow outer) on upper wings, Type A1 (no yellow) on fuselage, Type B (red/blue only) on lower wings. Code letters were Night Black 8" — not white. Fin flash was red/white/blue equal thirds. Spinners matched Sky colour. See the Reference tab for exact roundel dimensions by scale.
+    </div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+<a class="wa-ref-card" href="https://www.rafmuseum.org.uk/research/collections/hawker-hurricane-1/" rel="noopener" target="_blank">
+<img alt="Hawker Hurricane markings reference photo" loading="lazy" src="https://assets.rafmuseum.org.uk/app/uploads/2021/01/Hurricane_hendon.jpg"/>
+<div class="wa-ref-body">
+<div class="wa-ref-kicker">RAF Museum</div>
+<div class="wa-ref-title">Reference photo — Codes, roundels and camouflage</div>
+<div class="wa-ref-desc">Useful for spacing of the fuselage roundel, code placement, fin flash proportions and the relationship between the wing camouflage pattern and the roundels.</div>
+<div class="wa-ref-link">Open source photo ↗</div>
+</div>
+</a>
+<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+<a href="https://www.iwm.org.uk/collections" rel="noopener" style="display:block;background:#0a1628;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative" target="_blank">
+<div style="text-align:center;padding:1rem">
+<div style="font-size:2.5rem;opacity:.3;margin-bottom:.5rem">🎯</div>
+<div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(201,168,76,.7)">IWM Collection</div>
+<div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:.3rem">Search Hurricane markings photos</div>
+</div>
+<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(0,100,50,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">IWM</div>
+</a>
+<div style="padding:.75rem .9rem">
+<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">IWM — Hurricane Markings, 1940</div>
+<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">IWM photograph archive with hundreds of period images. Filter by "Hurricane" + "1940" + "Photograph" to find roundel and code reference photos.</div>
+</div>
+</div>
+<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+<a href="https://www.youtube.com/watch?v=Q2uDlTH86NU" rel="noopener" style="display:block;position:relative" target="_blank">
+<img alt="R4118 original 605 Squadron markings" src="https://img.youtube.com/vi/Q2uDlTH86NU/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
+<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+</a>
+<div style="padding:.75rem .9rem">
+<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">R4118 — Original 605 Squadron UP-W Markings</div>
+<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">R4118 flies in her original period markings — 605 Squadron UP-W. The actual size, style and positioning of code letters is clearly visible in the walk-around footage.</div>
+</div>
+</div>
+</div>
+</div><!-- /markings -->
+<!-- AIRFRAME -->
+<div id="wa-airframe" style="margin-bottom:2rem">
+<div style="font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem">Airframe — Fabric Fuselage &amp; Panel Detail <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></span></div>
+<div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:3px;padding:.75rem 1rem;font-size:14px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem">
+<strong style="color:var(--brass);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem">Modeller's note</strong>
+      The Hurricane's rear fuselage is fabric over a tubular steel frame — not metal. The ribs show through the doped fabric as subtle raised lines, much more muted than metal panel lines. Do not scribe heavy panel lines on the rear fuselage. The transition from metal (forward of cockpit) to fabric occurs approximately at the cockpit rear.
+    </div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.85rem">
+<a class="wa-ref-card" href="https://www.rafmuseum.org.uk/research/collections/hawker-hurricane-1/" rel="noopener" target="_blank">
+<img alt="Hawker Hurricane airframe reference photo" loading="lazy" src="https://assets.rafmuseum.org.uk/app/uploads/2021/01/Hurricane_hendon.jpg"/>
+<div class="wa-ref-body">
+<div class="wa-ref-kicker">RAF Museum</div>
+<div class="wa-ref-title">Reference photo — Overall airframe</div>
+<div class="wa-ref-desc">A strong overall reference for the mix of fabric and metal construction. Helpful for the rear fuselage texture, canopy proportions, wing planform and the general Battle of Britain Hurricane look.</div>
+<div class="wa-ref-link">Open source photo ↗</div>
+</div>
+</a>
+<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+<a href="https://www.youtube.com/watch?v=1B_2D1zYdFc" rel="noopener" style="display:block;position:relative" target="_blank">
+<img alt="Lost Hurricane restoration airframe" src="https://img.youtube.com/vi/1B_2D1zYdFc/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
+<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+</a>
+<div style="padding:.75rem .9rem">
+<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">The Lost Hurricane — India Restoration</div>
+<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Peter Vacher's restoration of a Hurricane found in India. The bare airframe footage shows the fabric structure, frame ribs and metal/fabric junction in exceptional detail.</div>
+</div>
+</div>
+<div style="background:rgba(17,34,64,.8);border:1px solid rgba(255,255,255,.09);border-radius:4px;overflow:hidden">
+<a href="https://www.youtube.com/watch?v=SuBHJ5pqWeE" rel="noopener" style="display:block;position:relative" target="_blank">
+<img alt="Hurricane P3351 restoration documentary" src="https://img.youtube.com/vi/SuBHJ5pqWeE/mqdefault.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
+<div style="position:absolute;top:.5rem;right:.5rem;background:rgba(180,0,0,.85);color:#fff;font-family:'Oswald',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px">YouTube</div>
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)"><div style="width:44px;height:44px;background:rgba(180,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px">▶</div></div>
+</a>
+<div style="padding:.75rem .9rem">
+<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;color:#fff;margin-bottom:.3rem">Hurricane P3351 — Rare Restoration Documentary</div>
+<div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.5">Remastered 1990s documentary of Hurricane P3351 restoration. Shows the full airframe before fabric application — essential reference for rivet patterns and panel construction.</div>
+</div>
+</div>
+</div>
+</div><!-- /airframe -->
+</div><!-- /tab-walkaround -->
+</div><!-- /main-content -->
+<!-- SIDEBAR -->
+<aside class="sidebar">
+<div class="sidebar-block">
+<div class="sidebar-hd">Advertisement</div>
+<!-- ADSENSE 160×240 — paste your AdSense code here once approved -->
+</div>
+<div class="sidebar-block">
+<div class="sidebar-hd">Articles</div>
+<a class="shop-link" href="article-hurricane-kits-guide.html" style="text-decoration:none">
+<span class="shop-flag">📋</span>
+<div class="shop-info">
+<div class="shop-name">Kit Buying Guide</div>
+<div class="shop-cats">All 9 Hurricane kits compared</div>
+</div>
+</a>
+<a class="shop-link" href="article-hurricane-bob-colours.html" style="text-decoration:none">
+<span class="shop-flag">🎨</span>
+<div class="shop-info">
+<div class="shop-name">Paint Codes</div>
+<div class="shop-cats">Dark Earth · Dark Green · Sky</div>
+</div>
+</a>
+<a class="shop-link" href="articles.html" style="text-decoration:none">
+<span class="shop-flag">📰</span>
+<div class="shop-info">
+<div class="shop-name">All Articles →</div>
+<div class="shop-cats">Build guides · History · Reference</div>
+</div>
+</a>
+</div>
+<div class="sidebar-block">
+<div class="sidebar-hd">Advertisement</div>
+<!-- ADSENSE 160×180 — paste your AdSense code here once approved -->
+</div>
+<div class="sidebar-block">
+<div class="sidebar-hd">Other Aircraft</div>
+<a class="shop-link" href="index.html"><span class="shop-flag">🏠</span><div class="shop-info"><div class="shop-name">← Hub Home</div><div class="shop-cats">All aircraft</div></div></a>
+<div class="shop-link" style="opacity:.4;cursor:default"><span class="shop-flag">✈️</span><div class="shop-info"><div class="shop-name">Spitfire</div><div class="shop-cats">Coming soon</div></div></div>
+<div class="shop-link" style="opacity:.4;cursor:default"><span class="shop-flag">✈️</span><div class="shop-info"><div class="shop-name">Lancaster</div><div class="shop-cats">Coming soon</div></div></div>
+<div class="shop-link" style="opacity:.4;cursor:default"><span class="shop-flag">✈️</span><div class="shop-info"><div class="shop-name">Bf 109</div><div class="shop-cats">Coming soon</div></div></div>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- PILOT MODAL -->
+<div class="pm-overlay" id="pm-overlay" onclick="closePM()">
+<div class="pm-modal" onclick="event.stopPropagation()">
+<div class="pm-hd">
+<div><div class="pm-name" id="pm-name"></div><div class="pm-rank" id="pm-rank"></div></div>
+<button class="pm-close" onclick="closePM()">✕</button>
+</div>
+<div class="pm-body">
+<div class="pm-stats" id="pm-stats"></div>
+<div class="pm-bio" id="pm-bio"></div>
+<div class="pm-awards" id="pm-awards"></div>
+<div id="pm-decal-list" style="display:none;margin:.6rem 0;padding:.5rem;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.08);border-radius:2px"></div>
+<div class="pm-links">
+<a class="shop-btn hb-brass" href="#" id="pm-h-pilot" rel="noopener" target="_blank">IWM archive ↗</a>
+<a class="shop-btn hb-outline" href="#" id="pm-h-sqn" rel="noopener" target="_blank">Squadron decals ↗</a>
+</div>
+</div>
+</div>
+</div>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLB()">
+<button class="lb-close" onclick="closeLB()">✕</button>
+<img alt="" id="lb-img" src=""/>
+<div class="lb-cap" id="lb-cap"></div>
+</div>
+<footer style="background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.06);padding:1.5rem 2rem;text-align:center;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.07em;color:rgba(255,255,255,.2)">
+<a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none">WW2 Modeller Hub</a>
+   · 
+  <a href="spitfire_paradise.html" style="color:rgba(255,255,255,.35);text-decoration:none">Spitfire</a>
+   · 
+  <a href="articles.html" style="color:rgba(255,255,255,.35);text-decoration:none">Articles</a>
+   · 
+  <a href="about.html" style="color:rgba(255,255,255,.35);text-decoration:none">About</a>
+   · 
+  <a href="privacy.html" style="color:rgba(255,255,255,.35);text-decoration:none">Privacy</a>
+<br/>
+  Hawker Hurricane Reference · For scale modellers and aviation enthusiasts · Not affiliated with any manufacturer or retailer
+</footer>
 <script>
 
 // ═══════════════════════════════════════════════════════
 // DATA
 // ═══════════════════════════════════════════════════════
 
-const SQ = [{"num": "No. 303 Squadron", "nat": "RAF / Commonwealth", "marks": "Hurricane Mk.I", "firstOp": "1939", "lastOp": "1945", "losses": 0, "group": "11", "base": "RAF Northolt", "codes": "RF codes", "kills": 0, "sorties": 0, "tags": ["t-11"], "tagTxt": ["RAF Northolt", "Battle of Britain"], "roundel": "RAF / Commonwealth", "spinner": "theatre identity", "ops": "No. 303 Squadron — Fighter Command. Battle of Britain. Polish squadron markings and heavy summer 1940 operational wear", "decalRef": {"serial": "Hurricane Mk.I", "codes": "RF codes", "roundelUpper": "RAF / Commonwealth", "roundelFuselage": "RAF / Commonwealth", "roundelLower": "RAF / Commonwealth", "spinner": "theatre appropriate", "finFlash": "unit marking", "codeColour": "check period references"}, "pilots": [{"n": "Witold Urbanowicz", "k": "—", "note": "Polish squadron markings and heavy summer 1940 operational wear", "awards": "reference route", "fate": "unit card"}, {"n": "Jan Zumbach", "k": "—", "note": "Polish squadron markings and heavy summer 1940 operational wear", "awards": "reference route", "fate": "unit card"}]}, {"num": "No. 32 Squadron", "nat": "RAF / Commonwealth", "marks": "Hurricane Mk.I", "firstOp": "1939", "lastOp": "1945", "losses": 0, "group": "11", "base": "RAF Biggin Hill", "codes": "GZ codes", "kills": 0, "sorties": 0, "tags": ["t-11"], "tagTxt": ["RAF Biggin Hill", "Battle of Britain"], "roundel": "RAF / Commonwealth", "spinner": "theatre identity", "ops": "No. 32 Squadron — Fighter Command. Battle of Britain. front-line 11 Group Hurricane subjects with visible service staining", "decalRef": {"serial": "Hurricane Mk.I", "codes": "GZ codes", "roundelUpper": "RAF / Commonwealth", "roundelFuselage": "RAF / Commonwealth", "roundelLower": "RAF / Commonwealth", "spinner": "theatre appropriate", "finFlash": "unit marking", "codeColour": "check period references"}, "pilots": [{"n": "Peter Brothers", "k": "—", "note": "front-line 11 Group Hurricane subjects with visible service staining", "awards": "reference route", "fate": "unit card"}, {"n": "John Worrall", "k": "—", "note": "front-line 11 Group Hurricane subjects with visible service staining", "awards": "reference route", "fate": "unit card"}]}, {"num": "No. 87 Squadron", "nat": "RAF / Commonwealth", "marks": "Hurricane Mk.I", "firstOp": "1939", "lastOp": "1945", "losses": 0, "group": "10", "base": "RAF Exeter", "codes": "LK codes", "kills": 0, "sorties": 0, "tags": ["t-10"], "tagTxt": ["RAF Exeter", "South-West approaches"], "roundel": "RAF / Commonwealth", "spinner": "theatre identity", "ops": "No. 87 Squadron — Fighter Command. South-West approaches. 10 Group defence subjects with varied field wear", "decalRef": {"serial": "Hurricane Mk.I", "codes": "LK codes", "roundelUpper": "RAF / Commonwealth", "roundelFuselage": "RAF / Commonwealth", "roundelLower": "RAF / Commonwealth", "spinner": "theatre appropriate", "finFlash": "unit marking", "codeColour": "check period references"}, "pilots": [{"n": "Ian Gleed", "k": "—", "note": "10 Group defence subjects with varied field wear", "awards": "reference route", "fate": "unit card"}, {"n": "Roland Beamont", "k": "—", "note": "10 Group defence subjects with varied field wear", "awards": "reference route", "fate": "unit card"}]}];
+const SQ = [
+  {num:"1",nat:"British",marks:"Mk.I",firstOp:"Jul 1940",lastOp:"Oct 1940",losses:13,group:"11",base:"Northolt",codes:"JX",kills:155,sorties:550,tags:["t-blue","t-amber"],tagTxt:["11 Group","Northolt"],
+   roundel:"A1",spinner:"Sky",ops:"One of the most experienced Hurricane units, blooded in France. Flew from Northolt covering Thames approaches and south London. Frequent engagements Aug–Sep 1940.",
+   decalRef:{serial:"P2923",codes:"JX-B",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr P.J.H. Halahan",k:7,fate:"Survived",awards:"DFC",note:"CO, led unit in France and opening of BoB"},
+    {n:"Flt Lt P.W.O. Mould",k:8,fate:"KIA Libya Oct 1941",awards:"DFC",note:"Scored first Hurricane kill of the war"},
+    {n:"Flg Off W.H. Stratton",k:7,fate:"Survived",awards:"DFC",note:"Multiple engagements Aug–Sep 1940"},
+    {n:"Sqn Ldr D.A. Pemberton",k:5,fate:"Survived",awards:"DFC",note:"CO from Sep 1940"},
+    {n:"Plt Off A.V. Clowes",k:7,fate:"Survived",awards:"DFM",note:"'Taffy' Clowes, Welsh ace"},
+    {n:"Plt Off P.R. Walker",k:4,fate:"Survived",awards:"DFC",note:"Later Air Marshal Sir Patrick Walker"},
+    {n:"Sgt R.A. Plenderleith",k:3,fate:"Survived",awards:"DFM",note:"NCO ace, skilled at deflection shooting"}
+   ]},
+  {num:"3",group:"11",base:"Kenley",codes:"QO",kills:98,sorties:420,tags:["t-blue","t-green"],tagTxt:["11 Group","Kenley"],
+   roundel:"A1",spinner:"Sky",ops:"Operated from Kenley during the critical Aug–Sep period. Suffered heavy attrition during Luftwaffe raids on the sector stations themselves.",
+   decalRef:{serial:"P3144",codes:"QO-Q",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr S. Godden",k:6,fate:"Survived",awards:"DFC",note:"Led squadron Aug–Sep 1940"},
+    {n:"Flt Lt R.E. Peel",k:9,fate:"Survived",awards:"DFC",note:"Top scorer, awarded Oct 1940"},
+    {n:"Plt Off H. Atkinson",k:4,fate:"KIA 30 Aug 1940",awards:"—",note:"Lost in action over Kent"},
+    {n:"Sgt E. Snowdon",k:3,fate:"Survived",awards:"DFM",note:"NCO pilot, credited multiple combats"},
+    {n:"Plt Off C.A. Woods-Scawen",k:6,fate:"KIA 1 Sep 1940",awards:"DFC",note:"Shot down over Kenley sector"}
+   ]},
+  {num:"17",group:"11",base:"Debden",codes:"YB",kills:102,sorties:460,tags:["t-blue","t-coral"],tagTxt:["11 Group","Debden"],
+   roundel:"A1",spinner:"Sky",ops:"Based at Debden — bombed 26 Aug. Intercepted raids on Sector B airfields and east London docks. Rotated to Martlesham Heath under pressure.",
+   decalRef:{serial:"P3120",codes:"YB-W",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr A.G. Miller",k:7,fate:"Survived",awards:"DFC",note:"Led squadron through main battle"},
+    {n:"Flt Lt D.H.W. Hanson",k:6,fate:"Survived",awards:"DFC",note:"Ace status by end of Sep 1940"},
+    {n:"Plt Off K.T. Lofts",k:5,fate:"Survived",awards:"DFC",note:"Later instructor, survived war"},
+    {n:"Plt Off H.A.C. Bird-Wilson",k:7,fate:"Survived",awards:"DFC",note:"Later Air Vice-Marshal"},
+    {n:"Sgt J. Griffiths",k:4,fate:"Survived",awards:"DFM",note:"NCO pilot, multiple Aug engagements"},
+    {n:"Plt Off P.L. Parrott",k:5,fate:"Survived",awards:"DFC",note:"DFC action 18 Aug 1940"}
+   ]},
+  {num:"32",group:"11",base:"Biggin Hill",codes:"GZ",kills:107,sorties:480,tags:["t-blue","t-amber"],tagTxt:["11 Group","Biggin Hill"],
+   roundel:"A1",spinner:"Sky",ops:"Officially the most successful Fighter Command squadron in the first half of the battle. Operated from Biggin Hill and forward airfield Hawkinge. Crossley became the top-scoring Hurricane pilot of 1940.",
+   decalRef:{serial:"P3522",codes:"GZ-V",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr J. Worrall",k:5,fate:"Survived",awards:"DFC",note:"CO until mid-Aug 1940"},
+    {n:"Sqn Ldr M.N. Crossley",k:22,fate:"Survived — died 1987",awards:"DSO DFC",note:"'Red Knight', top Hurricane ace of the battle"},
+    {n:"Flt Lt P.M. Brothers",k:16,fate:"Survived — died 2008",awards:"DFC",note:"GZ-L (P2921), last of the Few"},
+    {n:"Plt Off R.F. Smythe",k:9,fate:"Survived",awards:"DFC",note:"Pilot in the famous Hawkinge photograph"},
+    {n:"Plt Off K.R. Gillman",k:5,fate:"KIA 25 Aug 1940",awards:"—",note:"Hawkinge photo — only fatality of the seven"},
+    {n:"Plt Off D.H. Grice",k:4,fate:"Survived",awards:"DFC",note:"'Grubby' Grice, N2459 in Hawkinge photo"},
+    {n:"Plt Off J.E. Proctor",k:4,fate:"Survived",awards:"DFC",note:"Hawkinge photo, DFC Sep 1940"},
+    {n:"Plt Off P.M. Gardner",k:3,fate:"Survived",awards:"DFC",note:"Hawkinge photo, survived war"},
+    {n:"Plt Off A.F. Eckford",k:3,fate:"Survived",awards:"DFC",note:"Hawkinge photo, survived war"},
+    {n:"Sub Lt G.G.R. Bulmer RN",k:4,fate:"Survived",awards:"DSC",note:"Royal Navy pilot attached, shot down 20 Jul"}
+   ]},
+  {num:"43",group:"11",base:"Tangmere",codes:"FT",kills:116,sorties:500,tags:["t-blue","t-green"],tagTxt:["11 Group","Tangmere"],
+   roundel:"A1",spinner:"Sky",ops:"First to intercept cross-Channel raids on Portsmouth and the south coast. Directly in the path of Luftflotte 3 from Normandy airfields.",
+   decalRef:{serial:"P3386",codes:"FT-A",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr C.G. Lott",k:8,fate:"Survived",awards:"DFC",note:"CO, DFC Aug 1940"},
+    {n:"Flt Lt T.F. Dalton-Morgan",k:11,fate:"Survived",awards:"DFC",note:"Welsh ace, later Wing Commander"},
+    {n:"Plt Off W.L. Dymond",k:7,fate:"KIA 2 Sep 1940",awards:"DFC",note:"Shot down near Chichester"},
+    {n:"Sgt C.A. Ayling",k:3,fate:"KIA 9 Jul 1940",awards:"—",note:"Killed early in Channel battle"},
+    {n:"Flt Lt R.C. Reynell",k:6,fate:"KIA 7 Sep 1940",awards:"DFC",note:"Australian ace, killed Blitz opening day"},
+    {n:"Plt Off J.I. Kilmartin",k:7,fate:"Survived",awards:"DFC",note:"Irish ace, later awarded DFC and Bar"},
+    {n:"Sgt J. Hallowes",k:7,fate:"Survived",awards:"DFM DFC",note:"'Ginger' Hallowes, remarkable NCO ace"}
+   ]},
+  {num:"56",group:"11",base:"North Weald",codes:"US",kills:88,sorties:400,tags:["t-blue","t-amber"],tagTxt:["11 Group","N.Weald"],
+   roundel:"A1",spinner:"Sky",ops:"Defended eastern approaches and Essex. North Weald attacked by Do 17s on 24 Aug. Frequently engaged raids on the airfield itself.",
+   decalRef:{serial:"N3522",codes:"US-P",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr H.M. Pinfold",k:4,fate:"Survived",awards:"DFC",note:"CO throughout main battle"},
+    {n:"Flt Lt E.J. Gracie",k:6,fate:"Survived",awards:"DFC",note:"Experienced pre-war pilot"},
+    {n:"Plt Off M.H. Mounsdon",k:5,fate:"Survived",awards:"DFC",note:"Wounded Aug 1940, returned"},
+    {n:"Plt Off P.S. Weaver",k:4,fate:"KIA 28 Sep 1940",awards:"DFC",note:"Killed over Essex late in battle"},
+    {n:"Sgt R.H. Gundry",k:4,fate:"Survived",awards:"DFM",note:"NCO ace, multiple combats Aug"},
+    {n:"Plt Off J.H. Coghlan",k:3,fate:"Survived",awards:"DFC",note:"Later instructor role"},
+    {n:"Plt Off P.V. Higgs",k:5,fate:"Survived",awards:"DFC",note:"Active Aug–Sep period"}
+   ]},
+  {num:"73",group:"11",base:"Debden",codes:"TP",kills:85,sorties:380,tags:["t-blue","t-coral"],tagTxt:["11 Group","Debden"],
+   roundel:"A1",spinner:"Sky",ops:"Hardened by France. 'Cobber' Kain was already famous before the battle opened. Rotated through Debden and other 11 Group fields during August.",
+   decalRef:{serial:"P2828",codes:"TP-K",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Flt Lt E.J. Kain",k:17,fate:"Killed accident Jun 1940",awards:"DFC Bar",note:"'Cobber' Kain — first RAF ace, killed before BoB"},
+    {n:"Sqn Ldr M.W.S. Robinson",k:8,fate:"Survived",awards:"DFC",note:"CO through Blitz phase"},
+    {n:"Plt Off J.E. Scoular",k:5,fate:"KIA Nov 1940",awards:"DFC",note:"New Zealander, killed late battle"},
+    {n:"Flt Lt J.E. Walker",k:4,fate:"Survived",awards:"DFC",note:"Flight commander, multiple claims"},
+    {n:"Sgt R. Marchand",k:3,fate:"Survived",awards:"DFM",note:"NCO pilot, Aug engagements"}
+   ]},
+  {num:"85",group:"11",base:"Croydon",codes:"VY",kills:121,sorties:510,tags:["t-blue","t-blue"],tagTxt:["11 Group","Croydon"],
+   roundel:"A1",spinner:"Sky",ops:"One of the most distinguished Hurricane units. Lee's death 18 Aug was a blow. Townsend led with DSO results. Croydon was attacked by Bf 110s on 15 Aug.",
+   decalRef:{serial:"P3166",codes:"VY-Q",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr P.W. Townsend",k:11,fate:"Survived — died 1995",awards:"DSO DFC",note:"Later equerry to Queen; wrote Duel of Eagles"},
+    {n:"Flt Lt R.H.A. Lee",k:13,fate:"KIA 18 Aug 1940",awards:"DFC",note:"Highest scorer at death — The Hardest Day"},
+    {n:"Plt Off A.G. Lewis",k:10,fate:"Survived",awards:"DFC",note:"'Zulu' Lewis, South African, VY-R (P2923)"},
+    {n:"Flt Lt R.H. Lee",k:6,fate:"Survived",awards:"DFC",note:"Flight commander, multiple Aug claims"},
+    {n:"Plt Off J.H. Marshall",k:4,fate:"Survived",awards:"DFC",note:"Active Aug–Sep period"},
+    {n:"Sgt G. Allard",k:6,fate:"KIA Mar 1941",awards:"DFM DFC",note:"'Sammy' Allard — exceptional NCO ace"},
+    {n:"Plt Off P.P. Woods-Scawen",k:7,fate:"KIA 1 Sep 1940",awards:"DFC",note:"Shot down over Kenley, brother also KIA"},
+    {n:"Plt Off J. Lecky",k:3,fate:"KIA Aug 1940",awards:"—",note:"Killed during height of battle"}
+   ]},
+  {num:"87",group:"10",base:"Exeter",codes:"LK",kills:76,sorties:340,tags:["t-green","t-amber"],tagTxt:["10 Group","Exeter"],
+   roundel:"A1",spinner:"Sky",ops:"Covered south-west England intercepting Luftflotte 3. Gleed wrote 'Arise to Conquer' — essential reading. Lovell-Gregg killed Black Thursday 15 Aug.",
+   decalRef:{serial:"P2798",codes:"LK-A",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr T.G. Lovell-Gregg",k:6,fate:"KIA 15 Aug 1940",awards:"DFC",note:"New Zealander, killed Black Thursday"},
+    {n:"Flt Lt I.R. Gleed",k:13,fate:"KIA Tunisia Apr 1943",awards:"DSO DFC",note:"'Widge' — wrote Arise to Conquer"},
+    {n:"Plt Off D.G. Shepherd",k:4,fate:"Survived",awards:"DFM",note:"NCO-ranked pilot, survived war"},
+    {n:"Sgt J.H. Ellis",k:3,fate:"Survived",awards:"DFM",note:"Active Aug engagements"},
+    {n:"Plt Off D.E. Jay",k:3,fate:"Survived",awards:"DFC",note:"West Country operations"},
+    {n:"Flt Lt R.V. Mills",k:4,fate:"Survived",awards:"DFC",note:"Flight commander, Portland raids"}
+   ]},
+  {num:"111",group:"11",base:"Croydon",codes:"JU",kills:134,sorties:530,tags:["t-blue","t-amber"],tagTxt:["11 Group","Croydon"],
+   roundel:"A1",spinner:"Sky",ops:"Treble-One pioneered head-on attacks against bomber formations — adopted across Fighter Command. One of the fastest-responding squadrons, based at Croydon.",
+   decalRef:{serial:"P3200",codes:"JU-X",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr J.M. Thompson",k:11,fate:"Survived",awards:"DFC Bar",note:"'Tommy' Thompson, pioneered head-on attacks"},
+    {n:"Flt Lt S.D.P. Connors",k:6,fate:"KIA 5 Sep 1940",awards:"DFC",note:"Killed leading formation attack"},
+    {n:"Plt Off A. Wallace",k:5,fate:"Survived",awards:"DFC",note:"Survived battle"},
+    {n:"Flt Lt H.S.L. Dundas",k:4,fate:"Survived",awards:"DFC",note:"Later Air Marshal Sir Hugh Dundas"},
+    {n:"Sgt P.K. Walley",k:3,fate:"Survived",awards:"DFM",note:"NCO pilot, multiple Aug claims"},
+    {n:"Plt Off R.P. Plummer",k:3,fate:"Survived",awards:"DFC",note:"Active Aug–Sep period"},
+    {n:"Plt Off B.J. van Mentz",k:4,fate:"Survived",awards:"DFC",note:"South African, multiple claims"}
+   ]},
+  {num:"151",group:"11",base:"North Weald",codes:"DZ",kills:79,sorties:360,tags:["t-blue","t-green"],tagTxt:["11 Group","N.Weald"],
+   roundel:"A1",spinner:"Sky",ops:"Home of 'Ginger' Lacey — the top scoring Hurricane pilot of the entire battle. Based at North Weald alongside 56 Sqn.",
+   decalRef:{serial:"P3386",codes:"DZ-H",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr E.M. Donaldson",k:7,fate:"Survived",awards:"DSO DFC",note:"Set world air speed record 1946 in Meteor"},
+    {n:"Flt Lt J.H. Lacey",k:18,fate:"Survived — died 1989",awards:"DFM Bar",note:"'Ginger' — top scoring Hurricane pilot of BoB"},
+    {n:"Plt Off R. Starr",k:4,fate:"Survived",awards:"DFM",note:"Ground crew favourite"},
+    {n:"Plt Off J.W. Blair",k:3,fate:"Survived",awards:"DFC",note:"Active Aug–Sep period"},
+    {n:"Sgt H.N. Howes",k:3,fate:"Survived",awards:"DFM",note:"NCO pilot, multiple claims"},
+    {n:"Flt Lt R.G. Dutton",k:5,fate:"Survived",awards:"DFC",note:"Flight commander, skilful deflection shots"}
+   ]},
+  {num:"213",group:"11",base:"Tangmere",codes:"AK",kills:92,sorties:410,tags:["t-blue","t-coral"],tagTxt:["11 Group","Tangmere"],
+   roundel:"A1",spinner:"Sky",ops:"Shared Tangmere sector with 43 Sqn. Engaged Ju 87 Stukas during the critical convoy and coastal raids of July–August.",
+   decalRef:{serial:"P3040",codes:"AK-R",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr H.D. McGregor",k:6,fate:"Survived",awards:"DSO DFC",note:"Later Air Marshal, CB CBE"},
+    {n:"Flt Lt D.S. Smallwood",k:5,fate:"Survived",awards:"DFC",note:"Later Group Captain"},
+    {n:"Plt Off W.M. Sizer",k:4,fate:"KIA Sep 1940",awards:"—",note:"Killed in action Sep 1940"},
+    {n:"Plt Off A.R. Watson",k:4,fate:"Survived",awards:"DFC",note:"Active Jul–Sep period"},
+    {n:"Sgt H.R. Mitchell",k:3,fate:"Survived",awards:"DFM",note:"NCO pilot, Stuka engagements Jul"}
+   ]},
+  {num:"229",group:"11",base:"Northolt",codes:"RE",kills:67,sorties:320,tags:["t-blue","t-amber"],tagTxt:["11 Group","Northolt"],
+   roundel:"A1",spinner:"Sky",ops:"Built its experience during the battle alongside 1 Sqn at Northolt. Engaged Thames valley and London approach raids throughout September.",
+   decalRef:{serial:"P3040",codes:"RE-C",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr H.J. Maguire",k:5,fate:"Survived",awards:"DSO DFC",note:"Later Air Marshal Sir Harold Maguire"},
+    {n:"Flt Lt D. Garton",k:4,fate:"Survived",awards:"DFC",note:"Transferred Middle East 1941"},
+    {n:"Plt Off W.J. Saunders",k:3,fate:"Survived",awards:"DFC",note:"New Zealander, survived war"},
+    {n:"Sgt A.N. Feary",k:3,fate:"KIA Sep 1940",awards:"DFM",note:"Killed over Thames estuary"},
+    {n:"Plt Off J.C. Bryson",k:3,fate:"Survived",awards:"DFC",note:"Active Sep period"}
+   ]},
+  {num:"238",group:"10",base:"Middle Wallop",codes:"VK",kills:71,sorties:330,tags:["t-green","t-amber"],tagTxt:["10 Group","M.Wallop"],
+   roundel:"A1",spinner:"Sky",ops:"Covered Hampshire and Dorset for 10 Group. Frequently engaged Luftflotte 3 raids targeting Warmwell, Portland and Southampton.",
+   decalRef:{serial:"P3100",codes:"VK-F",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr H.A. Fenton",k:6,fate:"Survived",awards:"DFC",note:"South African CO, Aug–Oct 1940"},
+    {n:"Flt Lt C.T. Davis",k:5,fate:"KIA 7 Oct 1940",awards:"DFC",note:"Canadian, killed late battle"},
+    {n:"Plt Off V.C. Simmonds",k:4,fate:"Survived",awards:"DFC",note:"Later Flight Lieutenant"},
+    {n:"Sgt C.T. Caister",k:3,fate:"Survived",awards:"DFM",note:"NCO pilot, Portland raids"}
+   ]},
+  {num:"242",nat:"Canadian",marks:"Mk.I",firstOp:"Jul 1940",lastOp:"Oct 1940",losses:10,group:"12",base:"Coltishall",codes:"LE",kills:84,sorties:380,tags:["t-amber","t-coral"],tagTxt:["12 Group","Coltishall"],
+   roundel:"A1",spinner:"Sky",ops:"The 'Canadian squadron' under Bader. Anchor of the Big Wing controversy. McKnight was Bader's wingman and deadly combat partner.",
+   decalRef:{serial:"V7467",codes:"LE-D",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr D.R.S. Bader",k:22,fate:"POW 1941–45 — died 1982",awards:"DSO Bar DFC Bar",note:"Legless ace, led Big Wing from Duxford"},
+    {n:"Flt Lt W.L. McKnight",k:17,fate:"KIA 12 Jan 1941",awards:"DFC Bar",note:"Bader's wingman — superb marksman, age 23"},
+    {n:"Flt Lt E.A. McNab",k:5,fate:"Survived",awards:"DFC",note:"Canadian CO pre-Bader"},
+    {n:"Plt Off N.N. Campbell",k:4,fate:"Survived",awards:"DFC",note:"Canadian pilot, multiple claims"},
+    {n:"Sgt J. Latta",k:3,fate:"Survived",awards:"DFM",note:"NCO Canadian pilot"},
+    {n:"Sub Lt R.J. Cork RN",k:6,fate:"Survived",awards:"DSO DSC DFC",note:"Royal Navy pilot attached, remarkable record"},
+    {n:"Sub Lt J. Gardner RN",k:3,fate:"Survived",awards:"DSC",note:"RN pilot on attachment, Duxford"}
+   ]},
+  {num:"249",group:"12",base:"Church Fenton",codes:"GN",kills:103,sorties:450,tags:["t-amber","t-blue"],tagTxt:["12 Group","Church Fenton"],
+   roundel:"A1",spinner:"Sky",ops:"Gold Coast squadron rotated south for 11 Group support. Tom Neil's memoirs are the finest first-person Hurricane pilot account of the battle.",
+   decalRef:{serial:"P3616",codes:"GN-F",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr J.R.A. Peel",k:7,fate:"Survived",awards:"DFC",note:"CO throughout main battle"},
+    {n:"Flt Lt R.A. Barton",k:9,fate:"Survived",awards:"DFC",note:"'Butch' Barton, Canadian DFC"},
+    {n:"Plt Off T.F. Neil",k:12,fate:"Survived",awards:"DFC Bar",note:"'Ginger' Neil — wrote Gun Button to Fire"},
+    {n:"Flt Lt E.J.B. Nicholson",k:6,fate:"KIA Burma May 1945",awards:"VC DFC",note:"Only Fighter Command VC of the battle — 249 Sqn"},
+    {n:"Plt Off R.G.A. Barclay",k:5,fate:"KIA Egypt Oct 1942",awards:"DFC",note:"Active Sep–Oct 1940"},
+    {n:"Sgt A.G. Lund",k:3,fate:"Survived",awards:"DFM",note:"NCO pilot, Church Fenton"},
+    {n:"Plt Off J.R.B. Meaker",k:4,fate:"KIA 27 Sep 1940",awards:"DFC",note:"Killed during late-battle engagements"}
+   ]},
+  {num:"310",nat:"Czech",marks:"Mk.I",firstOp:"Aug 1940",lastOp:"Oct 1940",losses:8,group:"12",base:"Duxford",codes:"NN",kills:54,sorties:260,tags:["t-amber","t-green"],tagTxt:["12 Group","Duxford"],
+   roundel:"A1",spinner:"Sky",ops:"First Czech RAF squadron. Flew Duxford Wing. Initial language difficulties quickly overcome; Czech pilots known for aggressive, fearless tactics.",
+   decalRef:{serial:"P3143",codes:"NN-D",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr A. Hess",k:5,fate:"Survived",awards:"DFC",note:"Czech CO, DFC award"},
+    {n:"Flt Lt J. Jefferies",k:3,fate:"Survived",awards:"DFC",note:"British flight commander"},
+    {n:"Plt Off S. Fejfar",k:7,fate:"KIA Tunisia May 1942",awards:"DFM",note:"Top Czech ace of the BoB"},
+    {n:"Plt Off J. Maly",k:5,fate:"Survived",awards:"DFC",note:"Czech ace, DFC awarded"},
+    {n:"Plt Off V. Bergman",k:3,fate:"Survived",awards:"DFC",note:"Czech pilot, Duxford Wing"},
+    {n:"Sgt F. Dolezal",k:3,fate:"Survived",awards:"DFM",note:"Czech NCO pilot, multiple combats"},
+    {n:"Plt Off R. Zimprich",k:2,fate:"KIA Nov 1940",awards:"—",note:"Killed shortly after formal BoB period"}
+   ]},
+  {num:"501",group:"11",base:"Kenley",codes:"SD",kills:131,sorties:520,tags:["t-blue","t-amber"],tagTxt:["11 Group","Kenley"],
+   roundel:"A1",spinner:"Sky",ops:"County of Gloucester Auxiliary. Among the most productive Hurricane squadrons by total claims. Several NCO pilots became aces. Lacey was here before moving to 151 Sqn.",
+   decalRef:{serial:"V6665",codes:"SD-B",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr H.A.V. Hogan",k:7,fate:"Survived",awards:"DFC",note:"Highly effective CO"},
+    {n:"Sgt J.H. Lacey",k:15,fate:"Survived — died 1989",awards:"DFM Bar",note:"'Ginger' before moving to 151 Sqn"},
+    {n:"Plt Off K.N.T. Lee",k:9,fate:"Survived",awards:"DFC",note:"Later Wing Commander"},
+    {n:"Plt Off V.R. Snell",k:4,fate:"Survived",awards:"DFC",note:"Active Jul–Sep 1940"},
+    {n:"Sgt A.D. Palliser",k:4,fate:"Survived",awards:"DFM",note:"NCO ace, Kenley and Gravesend"},
+    {n:"Plt Off S. Witorzenc",k:4,fate:"Survived",awards:"DFC",note:"Polish pilot attached, later aces with 303 Sqn"},
+    {n:"Sgt P. Farnes",k:5,fate:"Survived",awards:"DFM",note:"Remarkable NCO pilot, multiple claims"}
+   ]},
+  {num:"504",group:"12",base:"Hendon",codes:"TM",kills:61,sorties:290,tags:["t-amber","t-blue"],tagTxt:["12 Group","Hendon"],
+   roundel:"A1",spinner:"Sky",ops:"County of Nottingham Auxiliary. Intercepted 15 Sep London raid. Sample's account of breaking up a bomber formation over St Paul's was widely published.",
+   decalRef:{serial:"P3021",codes:"TM-N",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr J. Sample",k:6,fate:"Survived",awards:"DFC",note:"Led famous St Paul's intercept 15 Sep"},
+    {n:"Flt Lt T.D. Williams",k:4,fate:"Survived",awards:"DFC",note:"Flight commander, survived"},
+    {n:"Plt Off M.E. Royce",k:3,fate:"KIA Sep 1940",awards:"—",note:"Killed mid-battle"},
+    {n:"Sgt R.T. Lonsdale",k:3,fate:"Survived",awards:"DFM",note:"NCO pilot, 15 Sep engagement"},
+    {n:"Plt Off G.R. Barclay",k:4,fate:"Survived",awards:"DFC",note:"Active Aug–Sep period"}
+   ]},
+  {num:"601",group:"11",base:"Tangmere",codes:"UF",kills:88,sorties:390,tags:["t-blue","t-green"],tagTxt:["11 Group","Tangmere"],
+   roundel:"A1",spinner:"Sky",ops:"County of London Auxiliary — the 'Millionaires'. Fought fiercely despite reputation. Rhodes-Moorhouse death in Aug mourned in London society. Note: lightning bolt nose art on some aircraft.",
+   decalRef:{serial:"P3675",codes:"UF-S",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky",special:"Lightning bolt nose art on some aircraft"},
+   pilots:[
+    {n:"Flt Lt W.H. Rhodes-Moorhouse",k:8,fate:"KIA 6 Sep 1940",awards:"DFC",note:"Son of WWI VC recipient, killed age 26"},
+    {n:"Sqn Ldr M. Robinson",k:6,fate:"Survived",awards:"DFC",note:"CO after Rhodes-Moorhouse loss"},
+    {n:"Plt Off K.W.G. Gillman",k:5,fate:"KIA 25 Aug 1940",awards:"—",note:"Killed same day as 32 Sqn's Gillman"},
+    {n:"Plt Off H.C. Mayers",k:4,fate:"Survived",awards:"DFC",note:"Active Jul–Sep period"},
+    {n:"Sgt J.R. Lacey",k:3,fate:"Survived",awards:"DFM",note:"Not related to 'Ginger' Lacey"}
+   ]},
+  {num:"605",group:"13",base:"Drem",codes:"UP",kills:58,sorties:280,tags:["t-coral","t-amber"],tagTxt:["13 Group","Drem"],
+   roundel:"A1",spinner:"Sky",ops:"County of Warwick Auxiliary. Scotland-based before rotating south. McKellar — 21 victories — is Scotland's great unsung ace, killed Nov 1940.",
+   decalRef:{serial:"P3886",codes:"UP-W",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr W.M. Churchill",k:5,fate:"Survived",awards:"DFC",note:"No relation to PM; DFC"},
+    {n:"Flt Lt A.A. McKellar",k:21,fate:"KIA 1 Nov 1940",awards:"DSO DFC Bar",note:"Scotland's greatest fighter ace, age 26"},
+    {n:"Plt Off R.H. Waterhouse",k:4,fate:"Survived",awards:"DFC",note:"Survived, later instructor"},
+    {n:"Flt Lt J.A. Gillan",k:4,fate:"Survived",awards:"DFC",note:"Flight commander, Drem"},
+    {n:"Sgt I.R. Mackay",k:3,fate:"Survived",awards:"DFM",note:"Scottish NCO pilot"}
+   ]},
+  {num:"607",group:"13",base:"Usworth",codes:"AF",kills:45,sorties:240,tags:["t-coral","t-blue"],tagTxt:["13 Group","Usworth"],
+   roundel:"A1",spinner:"Sky",ops:"County of Durham Auxiliary. Crucial 15 Aug: Luftflotte 5 from Norway attacked expecting undefended skies. Hurricanes and Spitfires inflicted severe losses, permanently ending large-scale Scandinavian raids.",
+   decalRef:{serial:"P2874",codes:"AF-F",roundelUpper:"Type A",roundelFuselage:"Type A1",roundelLower:"Type B",spinner:"Sky",finFlash:"Full width",codeColour:"Sky"},
+   pilots:[
+    {n:"Sqn Ldr J. Vick",k:4,fate:"Survived",awards:"DFC",note:"Led 15 Aug northern interceptions"},
+    {n:"Flt Lt P. Kirkpatrick",k:5,fate:"Survived",awards:"DFC",note:"Northern Irish pilot, DFC"},
+    {n:"Plt Off D.G. Nichols",k:3,fate:"KIA Aug 1940",awards:"—",note:"Killed early in battle"},
+    {n:"Sgt J.E. Craig",k:3,fate:"Survived",awards:"DFM",note:"Durham NCO pilot, 15 Aug veteran"}
+   ]}
+];
 
 // ── PILOT BIOS ──────────────────────────────────────────
-const BIOS = {"Witold Urbanowicz": {"kills": "—", "sorties": "reference", "fate": "see unit card", "awards": ["unit/reference note"], "bio": "<p>Witold Urbanowicz is included as a Hawker Hurricane reference entry linked to No. 303 Squadron at RAF Northolt. Use the unit card for markings, aircraft variant and modelling notes.</p>"}, "Jan Zumbach": {"kills": "—", "sorties": "reference", "fate": "see unit card", "awards": ["unit/reference note"], "bio": "<p>Jan Zumbach is included as a Hawker Hurricane reference entry linked to No. 303 Squadron at RAF Northolt. Use the unit card for markings, aircraft variant and modelling notes.</p>"}, "Peter Brothers": {"kills": "—", "sorties": "reference", "fate": "see unit card", "awards": ["unit/reference note"], "bio": "<p>Peter Brothers is included as a Hawker Hurricane reference entry linked to No. 32 Squadron at RAF Biggin Hill. Use the unit card for markings, aircraft variant and modelling notes.</p>"}, "John Worrall": {"kills": "—", "sorties": "reference", "fate": "see unit card", "awards": ["unit/reference note"], "bio": "<p>John Worrall is included as a Hawker Hurricane reference entry linked to No. 32 Squadron at RAF Biggin Hill. Use the unit card for markings, aircraft variant and modelling notes.</p>"}, "Ian Gleed": {"kills": "—", "sorties": "reference", "fate": "see unit card", "awards": ["unit/reference note"], "bio": "<p>Ian Gleed is included as a Hawker Hurricane reference entry linked to No. 87 Squadron at RAF Exeter. Use the unit card for markings, aircraft variant and modelling notes.</p>"}, "Roland Beamont": {"kills": "—", "sorties": "reference", "fate": "see unit card", "awards": ["unit/reference note"], "bio": "<p>Roland Beamont is included as a Hawker Hurricane reference entry linked to No. 87 Squadron at RAF Exeter. Use the unit card for markings, aircraft variant and modelling notes.</p>"}};
+const BIOS = {
+  "Sqn Ldr M.N. Crossley":{kills:22,sorties:"~200+",fate:"Survived — died 1987",awards:["DSO","DFC"],bio:`<p>Michael Crossley joined the RAF in 1935 after Eton, posted to 32 Squadron at Biggin Hill. He led 'Red Section' — earning the nickname <em>Red Knight</em>. He scored six victories during Dunkirk; his DFC was presented by King George VI at Biggin Hill on 21 June 1940.</p><p>Promoted to squadron leader on 16 August, his first day in command he destroyed three aircraft in a single day — a Bf 109 near Folkestone, a Ju 88 over Sevenoaks, and a Bf 110. Shot down on The Hardest Day (18 Aug), his DSO was gazetted two days later. His 22 victories made him the top-scoring Hurricane pilot of 1940. He emigrated to South Africa after the war and died in 1987.</p>`},
+  "Flt Lt P.M. Brothers":{kills:16,sorties:"~180+",fate:"Survived — died 2008",awards:["DFC"],bio:`<p>Peter Brothers flew throughout the entire battle with 32 Squadron, his Hurricane coded GZ-L (P2921). His 16 victories placed him among the top Hurricane aces. He later commanded 457 Squadron RAAF and rose to Group Captain. He became one of the most frequently interviewed and reliable oral sources on Fighter Command in 1940, and died in January 2008 — one of the very last of the Few.</p>`},
+  "Plt Off K.R. Gillman":{kills:5,sorties:"~60",fate:"KIA 25 Aug 1940, age 22",awards:[],bio:`<p>Keith Gillman appears in the famous IWM photograph taken at Hawkinge on 29 July 1940 — B Flight relaxing in front of GZ-V (P3522). His face was used on RAF recruitment posters and became one of the most reproduced images of the battle.</p><p>He was posted missing on 25 August 1940, shot down over the Channel near Dover. He was 22. His body was never recovered. Of the seven pilots in that photograph, he was the only one who did not survive the war.</p>`},
+  "Sqn Ldr P.W. Townsend":{kills:11,sorties:"~150+",fate:"Survived — died 1995",awards:["DSO","DFC"],bio:`<p>Peter Townsend led 85 Squadron through the battle from Croydon and Debden. Wounded in the foot on 31 August, he returned to flying within weeks. After the war he became equerry to King George VI then Queen Elizabeth II; his romance with Princess Margaret defined 1950s tabloid coverage.</p><p>He wrote <em>Duel of Eagles</em> (1970) — one of the finest accounts of the air war. He died in June 1995.</p>`},
+  "Flt Lt R.H.A. Lee":{kills:13,sorties:"~100+",fate:"KIA 18 Aug 1940, age 26",awards:["DFC"],bio:`<p>'Dickie' Lee was the top-scoring pilot in 85 Squadron at the time of his death and one of the highest-scoring pilots in all of Fighter Command. He was shot down on 18 August 1940 — The Hardest Day — a severe blow to 85 Squadron's morale. He was 26 and is buried in Belgium.</p>`},
+  "Plt Off A.G. Lewis":{kills:10,sorties:"~120+",fate:"Survived",awards:["DFC"],bio:`<p>'Zulu' Lewis was a South African who scored 10 victories with 85 Squadron. His Hurricane P2923 coded VY-R is featured on Xtradecal's Battle of Britain 70th Anniversary decal sheet. One of the highest-scoring Commonwealth pilots of the battle, he survived the war.</p>`},
+  "Sqn Ldr D.R.S. Bader":{kills:22,sorties:"~200+",fate:"POW 1941–45 — died 1982",awards:["DSO Bar","DFC Bar"],bio:`<p>Douglas Bader lost both legs in a 1931 flying accident yet returned to operational flying. Posted to 242 Squadron in June 1940, he transformed a demoralised Canadian unit into one of Fighter Command's most aggressive. He was the principal advocate of the 12 Group 'Big Wing' — five squadrons massed for a single interception — bringing him into direct conflict with AVM Keith Park. Shot down over France in August 1941, he became a POW notorious for escape attempts. His story: Paul Brickhill's <em>Reach for the Sky</em> (1954). He died September 1982.</p>`},
+  "Flt Lt W.L. McKnight":{kills:17,sorties:"~150+",fate:"KIA 12 Jan 1941, age 23",awards:["DFC Bar"],bio:`<p>Willie McKnight was Bader's wingman and closest friend — one of the finest Canadian fighter pilots of the war. His 17 victories were the second-highest in 242 Squadron. Aggressive and an exceptional marksman, he was killed on 12 January 1941 during an offensive sweep over France. His body was never found. He was 23.</p>`},
+  "Flt Lt J.H. Lacey":{kills:18,sorties:"~200+",fate:"Survived — died 1989",awards:["DFM","DFM Bar"],bio:`<p>James 'Ginger' Lacey was the highest-scoring Hurricane pilot of the entire Battle of Britain with 18 confirmed victories. He began as a sergeant pilot — an NCO — making his achievement remarkable in the class-conscious RAF of 1940. Shot down or force-landed nine times, he always returned. Cool and methodical in combat, his tally remains the definitive Hurricane score for the battle. He died May 1989.</p>`},
+  "Flt Lt I.R. Gleed":{kills:13,sorties:"~130+",fate:"KIA Tunisia 16 Apr 1943",awards:["DSO","DFC"],bio:`<p>Ian 'Widge' Gleed flew throughout the battle from Exeter and wrote <em>Arise to Conquer</em> (1942) — regarded as the most vivid and honest first-person Hurricane pilot account: the fear, boredom, friendships, and sudden violence. He was shot down and killed over Tunisia on 16 April 1943 commanding 244 Wing.</p>`},
+  "Plt Off T.F. Neil":{kills:12,sorties:"~140+",fate:"Survived",awards:["DFC Bar"],bio:`<p>Tom 'Ginger' Neil flew with 249 Squadron and wrote what many consider the most detailed Hurricane pilot memoir. <em>Gun Button to Fire</em> and <em>A Fighter in My Sights</em> chart daily life on a fighter station — the dispersal huts, waiting, scrambles, friendships cut short. His 12 victories earned DFC and Bar.</p>`},
+  "Flt Lt E.J.B. Nicholson":{kills:6,sorties:"~80+",fate:"KIA Burma May 1945",awards:["VC","DFC"],bio:`<p>Eric Nicholson is the only Fighter Command pilot to be awarded the Victoria Cross during the Battle of Britain. On 16 August 1940, his Hurricane ablaze, he stayed in the cockpit to shoot down a Bf 110 before baling out — severely burned. He was awarded the VC for this act. He was later killed in Burma on 2 May 1945, just days before VE Day.</p>`},
+  "Flt Lt W.H. Rhodes-Moorhouse":{kills:8,sorties:"~90+",fate:"KIA 6 Sep 1940, age 26",awards:["DFC"],bio:`<p>William Rhodes-Moorhouse was the son of William Barnard Rhodes-Moorhouse VC — the first aviator ever awarded the Victoria Cross, April 1915. He flew with 601 Squadron (the 'Millionaires') and was killed on 6 September 1940 near Tunbridge Wells, aged 26. His death was mourned widely in London society.</p>`},
+  "Flt Lt A.A. McKellar":{kills:21,sorties:"~180+",fate:"KIA 1 Nov 1940, age 26",awards:["DSO","DFC Bar"],bio:`<p>Archie McKellar was Scotland's greatest fighter ace and arguably the most underappreciated pilot of the Battle of Britain. His 21 victories place him among the elite scorers, yet he remains far less known than Bader or Lacey. Flying with 605 Squadron, he was known for aggressive instinctive combat and exceptional marksmanship. He was shot down near Mayfield, Kent on 1 November 1940 — weeks after the formal battle period closed. He was 26.</p>`},
+  "Flt Lt P.W.O. Mould":{kills:8,sorties:"~100+",fate:"KIA Libya 1 Oct 1941",awards:["DFC"],bio:`<p>'Boy' Mould has a unique place in RAF history: on 30 October 1939 over France, he shot down a Dornier Do 17 — the first aerial victory ever achieved by an RAF Hurricane in the Second World War. He was 22. He fought through France and the BoB before being killed in Libya on 1 October 1941.</p>`},
+  "Plt Off S. Fejfar":{kills:7,sorties:"~90+",fate:"KIA Tunisia 17 May 1942",awards:["DFM"],bio:`<p>Štěpán Fejfar was the highest-scoring Czech pilot of the Battle of Britain. Already combat-experienced from France, he brought determination and skill to 310 Squadron at Duxford. His 7 victories in the battle marked him as one of the Duxford Wing's most capable pilots. He was killed in Tunisia on 17 May 1942.</p>`},
+  "Sqn Ldr E.M. Donaldson":{kills:7,sorties:"~100+",fate:"Survived",awards:["DSO","DFC"],bio:`<p>Teddy Donaldson commanded 151 Squadron at North Weald. After the war he became famous for a completely different achievement: on 7 September 1946 he set the world absolute air speed record in a Gloster Meteor at 616 mph — a record that stood for nearly a year. He rose to Air Commodore.</p>`},
+  "Sgt J.H. Lacey":{kills:15,sorties:"~180+",fate:"Survived — died 1989",awards:["DFM","DFM Bar"],bio:`<p>'Ginger' Lacey flew with 501 Squadron before transferring to 151. His total of 18 battle victories (15 with 501) make him the top Hurricane scorer of the battle. As a sergeant pilot he represented the outstanding NCO pilots who formed the backbone of Fighter Command in 1940.</p>`}
+};
 
 // ── PAINT DATA ────────────────────────────────────────────
-const PAINTS = [{"name": "Battle of Britain sector airfields, RAF squadron codes and MAP camouflage", "bs": "theatre route", "hex": "#66715a", "notes": "Battle of Britain sector airfields, RAF squadron codes and MAP camouflage", "brands": [{"brand": "Paint Codes", "code": "open guide", "url": "paint-codes.html"}]}];
+const PAINTS = [
+  {name:"Dark Earth",bs:"BS381C-450",hex:"#7a5c3a",notes:"Upper surface camouflage, paired with Dark Green in splinter scheme",
+   brands:[
+     {brand:"Humbrol",code:"29",url:"https://uk.humbrol.com/products/no-29-dark-earth-matt"},
+     {brand:"Tamiya",code:"XF-52",url:"https://www.hannants.co.uk/product/TA87152"},
+     {brand:"Vallejo",code:"MC-871",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/flat-earth-70871/"},
+     {brand:"AK",code:"AK2102",url:"https://ak-interactive.com/product/raf-dark-earth/"},
+   ]},
+  {name:"Dark Green",bs:"BS381C-241",hex:"#3a4a2a",notes:"Upper surface camouflage, paired with Dark Earth",
+   brands:[
+     {brand:"Humbrol",code:"116",url:"https://uk.humbrol.com/products/no-116-dark-green-matt"},
+     {brand:"Tamiya",code:"XF-61",url:"https://www.hannants.co.uk/product/TA87161"},
+     {brand:"Vallejo",code:"MC-893",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/us-dark-green-70893/"},
+     {brand:"AK",code:"AK2099",url:"https://ak-interactive.com/product/raf-dark-green/"},
+   ]},
+  {name:"Sky (Duck Egg Green)",bs:"BS381C-216",hex:"#8ab0a0",notes:"Undersides, spinner, code letters. Port underside black in early July 1940 only",
+   brands:[
+     {brand:"Humbrol",code:"90",url:"https://uk.humbrol.com/products/no-90-beige-green-matt"},
+     {brand:"Tamiya",code:"XF-21",url:"https://www.hannants.co.uk/product/TA87121"},
+     {brand:"Vallejo",code:"MC-900",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/sky-70900/"},
+     {brand:"AK",code:"AK2101",url:"https://ak-interactive.com/product/raf-sky-type-s/"},
+   ]},
+  {name:"Night (Black)",bs:"BS381C-642",hex:"#1a1a1a",notes:"Port underside of wings — early July 1940 period only",
+   brands:[
+     {brand:"Humbrol",code:"21",url:"https://uk.humbrol.com/products/no-21-black-gloss"},
+     {brand:"Tamiya",code:"XF-1",url:"https://www.hannants.co.uk/product/TA87101"},
+     {brand:"Vallejo",code:"MC-950",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/black-70950/"},
+     {brand:"AK",code:"AK11002",url:"https://ak-interactive.com/product/black-matt/"},
+   ]},
+  {name:"Aluminium (bare metal)",bs:"—",hex:"#c0c0c8",notes:"Leading edge wear, exhaust areas, propeller leading edges",
+   brands:[
+     {brand:"Humbrol",code:"56",url:"https://uk.humbrol.com/products/no-56-aluminium-metallic"},
+     {brand:"Tamiya",code:"XF-16",url:"https://www.hannants.co.uk/product/TA87116"},
+     {brand:"Vallejo",code:"MC-997",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/silver-70997/"},
+     {brand:"AK",code:"AK479",url:"https://ak-interactive.com/product/aluminium/"},
+   ]},
+  {name:"Propeller Yellow",bs:"BS381C-356",hex:"#f0c830",notes:"Last 48 inches of propeller tips. Bright yellow, crisp edge",
+   brands:[
+     {brand:"Humbrol",code:"69",url:"https://uk.humbrol.com/products/no-69-yellow-gloss"},
+     {brand:"Tamiya",code:"XF-3",url:"https://www.hannants.co.uk/product/TA87103"},
+     {brand:"Vallejo",code:"MC-953",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/flat-yellow-70953/"},
+     {brand:"AK",code:"AK2024",url:"https://ak-interactive.com/product/yellow/"},
+   ]},
+  {name:"Interior Grey-Green",bs:"BS381C-283",hex:"#7a8a70",notes:"Cockpit interior, instrument panel surround, seat",
+   brands:[
+     {brand:"Humbrol",code:"78",url:"https://uk.humbrol.com/products/no-78-cockpit-green-matt"},
+     {brand:"Tamiya",code:"XF-71",url:"https://www.hannants.co.uk/product/TA87171"},
+     {brand:"Vallejo",code:"MC-886",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/green-grey-70886/"},
+     {brand:"AK",code:"AK2099",url:"https://ak-interactive.com/product/raf-interior-green/"},
+   ]},
+  {name:"Exhaust Stain (modelling)",bs:"—",hex:"#3a2a10",notes:"Use as base for exhaust streaking. Blend with black. Oil wash over",
+   brands:[
+     {brand:"Humbrol",code:"98",url:"https://uk.humbrol.com/products/no-98-chocolate-matt"},
+     {brand:"Tamiya",code:"XF-64",url:"https://www.hannants.co.uk/product/TA87164"},
+     {brand:"Vallejo",code:"MC-822",url:"https://acrylicosvallejo.com/en/product/hobby/model-color-en/german-camo-black-brown-70822/"},
+     {brand:"AK",code:"AK082",url:"https://ak-interactive.com/product/engine-grime/"},
+   ]},
+];
 
 // ── KIT DATA ─────────────────────────────────────────────
-const KITS = [{"brand": "Scalemates", "name": "Hawker Hurricane kit records", "scale": "1:72 / 1:48", "stars": 4, "accuracy": "Aircraft-specific kit route. Confirm exact boxing and variant before buying aftermarket.", "markings": ["Hurricane"], "shops": [{"label": "Find matching kit on Scalemates", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Hawker+Hurricane"}]}];
+const KITS = [
+  {brand:"Airfix",name:"Hawker Hurricane Mk.I",scale:"1:48",stars:4,
+   accuracy:"Reliable mainstream 1:48 Hurricane Mk.I. Good outline and accessible build; cockpit and wheels benefit from aftermarket.",
+   markings:["32 Sqn","85 Sqn","501 Sqn"],
+   shops:[
+     {label:"Hannants — AX05127A",url:"https://www.hannants.co.uk/product/AX05127A"},
+     {label:"Airfix direct — A05127A",url:"https://uk.airfix.com/products/hawker-hurricane-mk1-a05127a"},
+   ]},
+  {brand:"Airfix",name:"Hawker Hurricane Mk.I Tropical",scale:"1:48",stars:4,
+   accuracy:"Airfix tropical Mk.I boxing. Useful for desert/Mediterranean subjects rather than core Battle of Britain home-defence aircraft.",
+   markings:["Tropical service subjects"],
+   shops:[
+     {label:"Hannants — AX05129",url:"https://www.hannants.co.uk/product/AX05129"},
+     {label:"Airfix direct — A05129",url:"https://uk.airfix.com/products/hawker-hurricane-mki-tropical-a05129"},
+   ]},
+  {brand:"Arma Hobby",name:"Hawker Hurricane Mk.I",scale:"1:48",stars:5,
+   accuracy:"Best modern 1:48 Hurricane Mk.I choice. Later metal-wing Mk.I variant; excellent for accurate high-detail builds.",
+   markings:["Various Mk.I subjects"],
+   shops:[
+     {label:"Hannants — AH40015",url:"https://www.hannants.co.uk/product/AH40015"},
+   ]},
+  {brand:"Arma Hobby",name:"Hawker Hurricane Mk.I Trop",scale:"1:48",stars:5,
+   accuracy:"New 1:48 tropical Mk.I boxing. Best choice for Malta/North Africa style Mk.I subjects rather than standard BoB home-based machines.",
+   markings:["Tropical Mk.I subjects"],
+   shops:[
+     {label:"Hannants — AH40016",url:"https://www.hannants.co.uk/product/AH40016"},
+   ]},
+  {brand:"Airfix",name:"Hawker Hurricane Mk.I",scale:"1:72",stars:4,
+   accuracy:"Good budget 1:72 Hurricane Mk.I. Simple, accessible and useful for Battle of Britain subjects.",
+   markings:["73 Sqn","56 Sqn"],
+   shops:[
+     {label:"Hannants — AX02067A",url:"https://www.hannants.co.uk/product/AX02067A"},
+     {label:"Airfix direct — A02067A",url:"https://uk.airfix.com/products/hawker-hurricane-mki-a02067a"},
+   ]},
+  {brand:"Arma Hobby",name:"Hurricane Mk.I Expert Set / Allied Squadrons",scale:"1:72",stars:5,
+   accuracy:"Top-tier 1:72 Hurricane Mk.I options. 70019 is the Battle of Britain Expert Set; AH70024 is the Allied Squadrons Mk.I boxing.",
+   markings:["BoB / Allied Squadron subjects"],
+   shops:[
+     {label:"Arma Hobby — 70019",url:"https://www.armahobby.com/70019-hurricane-mk-i-expert-set.html"},
+     {label:"Hannants — AH70024",url:"https://www.hannants.co.uk/product/AH70024"},
+   ]},
+  {brand:"Arma Hobby",name:"Hurricane Mk.I Trop",scale:"1:72",stars:4,
+   accuracy:"Good 1:72 Arma Hobby tropical Mk.I option. More appropriate for overseas/tropical theatres than standard BoB modelling.",
+   markings:["Tropical Mk.I subjects"],
+   shops:[
+     {label:"Hannants — AH70021",url:"https://www.hannants.co.uk/product/AH70021"},
+   ]},
+  {brand:"Hasegawa",name:"Hawker Hurricane Mk.I",scale:"1:32",stars:3,
+   accuracy:"Older but still useful large-scale Hurricane base. Best for experienced modellers willing to add detail.",
+   markings:["32 Sqn","242 Sqn"],
+   shops:[
+   ]},
+  {brand:"Revell",name:"Hawker Hurricane Mk.IIb",scale:"1:32",stars:3,
+   accuracy:"Mk.IIb, not Mk.I. Useful for later-war subjects, but not accurate for a Battle of Britain Mk.I without conversion work.",
+   markings:["Various later-war subjects"],
+   shops:[
+     {label:"Hannants — RV4968",url:"https://www.hannants.co.uk/product/RV4968"},
+   ]},
+];
 
 // ── WEATHERING DATA ────────────────────────────────────────
 const WEATHER = [
@@ -1708,7 +2436,44 @@ const TECHNIQUES = [
 // ── AIRFIELD STATIONS ─────────────────────────────────────
 // Station coordinates — real geographic projection matching map SVG
 // proj: lon -7→2.5 = x 25→495; lat 59→49.5 = y 20→680
-const STATIONS = [{"id": "st1", "lat": 51, "lng": 5, "name": "RAF Northolt", "x": 24, "y": 42, "group": "11", "sqns": ["No. 303 Squadron"], "type": "No. 303 Squadron", "info": "No. 303 Squadron — Fighter Command. Battle of Britain. Polish squadron markings and heavy summer 1940 operational wear"}, {"id": "st2", "lat": 52, "lng": 10, "name": "RAF Biggin Hill", "x": 52, "y": 58, "group": "11", "sqns": ["No. 32 Squadron"], "type": "No. 32 Squadron", "info": "No. 32 Squadron — Fighter Command. Battle of Britain. front-line 11 Group Hurricane subjects with visible service staining"}, {"id": "st3", "lat": 53, "lng": 15, "name": "RAF Exeter", "x": 72, "y": 35, "group": "10", "sqns": ["No. 87 Squadron"], "type": "No. 87 Squadron", "info": "No. 87 Squadron — Fighter Command. South-West approaches. 10 Group defence subjects with varied field wear"}];
+const STATIONS = [
+  {id:"biggin",lat:51.330466,lng:0.031087,    name:"Biggin Hill",   x:371,y:554,group:"11",sqns:["32","79","92"],type:"sector",
+   info:"Bombed 6 times in 3 days Aug 1940. WAAF operators stayed at posts under fire. Ops room moved to a local butcher's shop. Never ceased operations. Chalk/flint dust — pale buff on undercarriages."},
+  {id:"kenley",lat:51.304705,lng:-0.094867,   name:"Kenley",         x:366,y:554,group:"11",sqns:["3","501"],type:"sector",
+   info:"18 Aug 1940: Do 17s of 9/KG76 attacked at low level destroying all 10 hangars. Ops room moved to a Caterham butcher's shop. Surrey clay-chalk mix — medium brown-grey mud."},
+  {id:"tangmere",lat:50.846383,lng:-0.710210, name:"Tangmere",       x:337,y:590,group:"11",sqns:["43","213","601"],type:"sector",
+   info:"Bombed 16 Aug 1940 by Ju 87 Stukas. Closest sector to France. 601 Sqn lightning bolt aircraft based here. Sussex clay — dark rich brown mud, distinctive weathering opportunity."},
+  {id:"northolt",lat:51.553224,lng:-0.419150, name:"Northolt",       x:352,y:541,group:"11",sqns:["1","229","303"],type:"sector",
+   info:"303 (Polish) Squadron — highest-scoring by kill rate — was based here from Aug 1940. Middlesex gravel gives light grey-brown dust."},
+  {id:"northweald",lat:51.721280,lng:0.152801,name:"North Weald",   x:376,y:527,group:"11",sqns:["56","151"],type:"sector",
+   info:"Bombed 24 Aug 1940 by Do 17s. Essex clay gives dark brown mud — very visible on undercarriages by September."},
+  {id:"debden",lat:51.991480,lng:0.273527,   name:"Debden",         x:381,y:506,group:"11",sqns:["17","73","85"],type:"sector",
+   info:"85 Squadron (Townsend) was based here in early battle. Good defensive position for northern London approaches."},
+  {id:"hornchurch",lat:51.539506,lng:0.207663,name:"Hornchurch",    x:381,y:541,group:"11",sqns:["41","54"],type:"sector",
+   info:"Thames Estuary sector — primarily Spitfire station but Hurricane units rotated through. Essex marshland dust."},
+  {id:"croydon",lat:51.356370,lng:-0.120014,  name:"Croydon",        x:362,y:554,group:"11",sqns:["85","111"],type:"satellite",
+   info:"Bombed 15 Aug 1940 — one of the first raids on London's outer airfields. Pre-war civil airport also damaged."},
+  {id:"hawkinge",lat:51.112115,lng:1.157423, name:"Hawkinge",       x:426,y:569,group:"11",sqns:["32 fwd","79 fwd"],type:"forward",
+   info:"Only 22 miles from France. Front-line refuelling point — turnaround in minutes. Chalk downland: palest white dust. Bombed repeatedly throughout the battle."},
+  {id:"exeter",lat:50.734304,lng:-3.415559,   name:"Exeter",         x:198,y:597,group:"10",sqns:["87","238"],type:"sector",
+   info:"10 Group westernmost. 87 Sqn's Gleed flew LK-A from here. Devon red clay is the ONLY red mud weathering in the entire BoB — unique modelling opportunity."},
+  {id:"wallop",lat:51.144944,lng:-1.563940,   name:"M. Wallop",      x:297,y:569,group:"10",sqns:["238","609","604"],type:"sector",
+   info:"10 Group's main sector station. Hampshire chalk downland — palest dust of any BoB station. Almost white-grey contamination on aircraft undersurfaces."},
+  {id:"warmwell",lat:50.697419,lng:-2.346841, name:"Warmwell",       x:243,y:597,group:"10",sqns:["152","609 fwd"],type:"sector",
+   info:"Forward station for Portland naval base defence. Dorset limestone: pale grey-buff dust, lighter than chalk."},
+  {id:"duxford",lat:52.093134,lng:0.126862,  name:"Duxford",        x:376,y:499,group:"12",sqns:["19","310","312"],type:"sector",
+   info:"Home of 12 Group's controversial 'Big Wing'. Bader led multi-squadron formations from here. 310 (Czech) Sqn formed July 1940. Dark Cambridgeshire clay mud."},
+  {id:"coltishall",lat:52.752394,lng:1.362255,name:"Coltishall",    x:436,y:458,group:"12",sqns:["242","66"],type:"sector",
+   info:"242 (Canadian) Sqn under Bader. Norfolk sandy loam gives light buff dust — noticeably lighter than London-area clay stations. Good contrast on undersurfaces."},
+  {id:"churchfenton",lat:53.835553,lng:-1.196121,name:"Ch. Fenton", x:312,y:381,group:"12",sqns:["249","73"],type:"sector",
+   info:"Yorkshire — guarded the industrial north. 249 Sqn formed here. Yorkshire coal dust adds dark contamination to mud."},
+  {id:"drem",lat:56.019338,lng:-2.795641,     name:"Drem",           x:233,y:228,group:"13",sqns:["605","603"],type:"sector",
+   info:"East Lothian — 13 Group's main East Scotland base. Targeted 15 Aug when Luftflotte 5 launched its disastrous Norway raid. Scottish rain gives wetter, darker mud."},
+  {id:"usworth",lat:54.920038,lng:-1.471086,  name:"Usworth",        x:297,y:305,group:"13",sqns:["607"],type:"sector",
+   info:"607 (County of Durham) AAF near Sunderland. Industrial northeast — coal dust and heavy Northumbrian clay give dark contamination."},
+  {id:"turnhouse",lat:55.946192,lng:-3.352968,name:"Turnhouse",      x:213,y:235,group:"13",sqns:["253","245"],type:"sector",
+   info:"Edinburgh's station — 13 Group central Scotland. Targeted 15 Aug 1940 by Luftflotte 5 from Norway."}
+     ];
 
 
 // ── TIMELINE DATA ─────────────────────────────────────────
@@ -2528,10 +3293,35 @@ function renderCompare(){
 const TL_START = new Date('1940-07-10');
 
 // Phases of the battle
-const PHASES = [{"start": 0, "end": 25, "name": "Introduction", "colour": "#c9a84c", "desc": "Hawker Hurricane enters or expands operational service. Use this phase for early variants, first camouflage and initial unit markings."}, {"start": 25, "end": 50, "name": "Main campaign use", "colour": "#c9a84c", "desc": "Hawker Hurricane becomes associated with Battle of Britain and early-war RAF operations. Bases, unit markings and theatre conditions drive the model subject."}, {"start": 50, "end": 75, "name": "Peak operational wear", "colour": "#c9a84c", "desc": "Operational tempo creates the strongest weathering cues: exhaust, access wear, dust, salt, mud or sun fading depending on theatre."}, {"start": 75, "end": 100, "name": "Late-war / legacy", "colour": "#c9a84c", "desc": "Later variants, replacement aircraft and post-campaign changes alter markings, colours and equipment fit."}];
+const PHASES = [
+  {start:0,end:33,name:"Phase 1 — Kanalkampf",colour:"#4a5020",desc:"Luftwaffe attacks Channel convoys and coastal ports. RAF drawn into defensive action over the sea. Convoy CW9 'Peewit' (8 Aug) suffers severe losses."},
+  {start:34,end:57,name:"Phase 2 — Adlerangriff",colour:"#7a3a10",desc:"Eagle Attack. Systematic assault on RAF airfields, radar stations and sector operations rooms. The critical phase — Fighter Command pushed to breaking point."},
+  {start:58,end:85,name:"Phase 3 — The Blitz Opens",colour:"#5a1a1a",desc:"Hitler orders switch to bombing London (7 Sep). Catastrophic for civilians but relieves pressure on Fighter Command's battered airfields."},
+  {start:86,end:113,name:"Phase 4 — Daylight Battle Ends",colour:"#2a3a20",desc:"Luftwaffe switches primarily to night bombing. Daylight raids continue at reduced scale. Battle officially ends 31 October."}
+];
 
 // Key events: [day from 10 Jul, title, detail, raf_losses, lw_losses]
-const EVENTS = [[0, "Introduction", "Hawker Hurricane reaches operational units. Check variant, paint system and early unit markings."], [30, "Campaign use", "Key use in Battle of Britain and early-war RAF operations. Match bases and unit cards to markings and weathering."], [65, "Weathering phase", "Operational conditions shape exhaust, staining, fading and access wear."], [90, "Late-war notes", "Later service may change colours, equipment and recognition markings."]];
+const EVENTS = [
+  [0,"10 Jul — Battle Opens","Luftwaffe attacks convoy in the Strait of Dover. First major engagement. 6 RAF fighters lost.",6,13],
+  [3,"13 Jul — CW7 Convoy attacked","Heavy attacks on Channel convoy. Hurricane squadrons scrambled repeatedly.",4,7],
+  [22,"1 Aug — Führer Directive 17","Hitler orders Luftwaffe to overcome RAF. Intensified attacks ordered.",2,4],
+  [33,"12 Aug — Radar Raids","First attacks on Chain Home radar stations. Pevensey, Rye, Dover temporarily blinded.",22,31],
+  [34,"13 Aug — Adlertag (Eagle Day)","The planned knock-out blow. 1,485 Luftwaffe sorties. Bad weather disrupts timing. RAF: 13 lost. Luftwaffe: 45 lost.",13,45],
+  [36,"15 Aug — Black Thursday","Luftflotte 5 attacks from Norway — met by 13 Group. Largest single day of battle. RAF: 34 lost. Luftwaffe: 75 lost.",34,75],
+  [37,"16 Aug — Nicholson's VC","Flt Lt Nicholson of 249 Sqn wins Fighter Command's only VC of the battle — stays in burning Hurricane to shoot down Bf 110.",18,45],
+  [39,"18 Aug — The Hardest Day","Heaviest losses for both sides. Kenley bombed. Stukas withdrawn after severe losses. RAF: 68 aircraft. Luftwaffe: 69.",68,69],
+  [45,"24 Aug — Critical Phase Begins","Luftwaffe shifts full effort to sector stations and airfields. North Weald, Biggin Hill, Debden under sustained attack.",38,26],
+  [48,"27 Aug — Biggin Hill bombed","Third attack on Biggin Hill in three days. Operations room destroyed, moved to local shop. Station barely operational.",18,26],
+  [52,"31 Aug — Worst Day for RAF","Fighter Command's heaviest single-day losses. 39 aircraft destroyed, 14 pilots killed. Biggin Hill attacked again.",39,41],
+  [58,"7 Sep — The Blitz Begins","Hitler switches target to London after RAF bombs Berlin. 348 bombers, 617 fighters attack London. Reprieve for Fighter Command.",28,41],
+  [64,"13 Sep — Sea Lion postponed","Hitler delays Operation Sea Lion to 27 Sep. Fighter Command has survived the worst.",7,15],
+  [66,"15 Sep — Battle of Britain Day","Luftwaffe's last mass daylight assault on London. ~1,500 aircraft. RAF: 26 lost. Luftwaffe: 60 lost. Decisive defeat.",26,60],
+  [68,"17 Sep — Sea Lion cancelled","Hitler postpones Sea Lion indefinitely. The invasion will not come.",3,6],
+  [75,"24 Sep — Spitfire factory hit","Southampton Supermarine factory bombed and destroyed. Production dispersed.",12,16],
+  [86,"5 Oct — Daylight raids dwindle","Luftwaffe adopts fighter-bomber ('Jabo') tactics. Large formations replaced by fast individual raids.",7,9],
+  [99,"18 Oct — Night Blitz only","Daylight campaign effectively over. Night bombing continues. RAF Fighter Command has won.",4,7],
+  [113,"31 Oct — Battle officially ends","Air Ministry sets this as the formal end. Night attacks continue through winter, but the RAF has not been defeated.",2,4]
+];
 
 function getPhase(day) {
   return PHASES.find(p => day >= p.start && day <= p.end) || PHASES[3];
@@ -2708,36 +3498,54 @@ function ensureRAFMapVisible(){
 }
 
 function renderMap(){
-    const p=document.getElementById('rsub-map');
-    if(!p) return;
-    p.innerHTML=`<div class="ww2-h-panel ww2-h-map-intro">
-        <div class="ww2-h-kicker">${esc(DATA.cat)}</div>
-        <h3>${esc(DATA.name)} theatre map</h3>
-        <p>Click a base marker to show linked unit/squadron cards, then open the matching unit card. This follows the Hurricane reference-map workflow without covering the mobile map with oversized text.</p>
-      </div>
-      <div class="ww2-h-map-grid">
-        <div class="ww2-h-map" id="leaflet-map">
-          <div class="ww2-h-map-label">${esc(DATA.name)} bases</div>
-          <div class="ww2-map-land land-a"></div>
-          <div class="ww2-map-land land-b"></div>
-          <div class="ww2-map-land land-c"></div>
-          ${DATA.bases.map((b,i)=>`<button class="ww2-h-dot" type="button" data-i="${i}" title="${esc(b.base)}" style="left:${b.x}%;top:${b.y}%"><span>${i+1}</span></button>`).join('')}
-        </div>
-        <div class="ww2-h-panel" id="map-sqn-list"></div>
-      </div>`;
-    const side=$('#map-sqn-list',p);
-    function show(i){
-      const b=DATA.bases[i]||DATA.bases[0];
-      side.innerHTML=`<div class="ww2-h-kicker">Selected base</div>
-        <h3>${esc(b.base)}</h3>
-        <p><b>Linked unit route:</b> ${esc(b.unit)}</p>
-        <p>${esc(b.note)}</p>
-        <div class="ww2-h-grid">${b.linked.map(x=>`<button type="button" class="ww2-h-btn ww2-h-open" data-unit="${esc(x)}">${esc(x)}</button>`).join('')}</div>`;
-      $$('.ww2-h-open',side).forEach(btn=>btn.onclick=()=>openUnit(btn.dataset.unit));
-    }
-    $$('.ww2-h-dot',p).forEach(dot=>dot.onclick=()=>show(+dot.dataset.i));
-    show(0);
+  const mapEl=document.getElementById('leaflet-map');
+  if(!mapEl) return;
+  if(mapRendered){ setTimeout(()=>leafletMap && leafletMap.invalidateSize(), 80); return; }
+  if(typeof L==='undefined'){
+    mapEl.innerHTML = `<div style="padding:2rem;color:rgba(255,255,255,.65);font-family:'Oswald',sans-serif;letter-spacing:.08em;text-transform:uppercase">Map library loading…</div>`;
+    setTimeout(renderMap,250); return;
   }
+  mapRendered=true;
+  leafletMap = L.map('leaflet-map', {
+    zoomControl:true,
+    attributionControl:true,
+    scrollWheelZoom:false,
+    maxBounds:[[49.2,-8.8],[58.8,4.0]],
+    maxBoundsViscosity:.65
+  }).setView([53.0,-1.6],5);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution:'&copy; OpenStreetMap &copy; CARTO',
+    subdomains:'abcd', maxZoom:10, minZoom:4
+  }).addTo(leafletMap);
+
+  const zones = {
+    '10': [[50.0,-6.2],[50.5,-5.4],[51.0,-4.4],[51.4,-3.2],[51.7,-2.0],[51.7,-1.0],[50.8,-1.2],[50.0,-2.2],[49.9,-4.2]],
+    '11': [[50.3,-1.8],[50.6,-0.8],[51.0,-0.2],[51.6,0.5],[52.1,1.6],[52.0,1.9],[51.3,1.8],[50.6,1.4],[50.2,0.4],[50.1,-0.6]],
+    '12': [[51.6,-3.0],[52.1,-2.2],[52.8,-1.6],[53.5,-0.4],[53.7,1.2],[53.3,1.8],[52.4,1.8],[51.8,1.4],[51.6,0.0]],
+    '13': [[54.2,-4.2],[55.0,-4.0],[55.9,-3.2],[56.8,-2.0],[57.4,-0.8],[57.0,0.6],[56.0,0.2],[55.0,-0.6],[54.2,-1.8]]
+  };
+  leafletZones={};
+  Object.entries(zones).forEach(([key,coords])=>{
+    leafletZones[key]=L.polygon(coords,{color:GROUP_COLOURS[key],weight:1,opacity:.34,fillColor:GROUP_COLOURS[key],fillOpacity:.08,interactive:false}).addTo(leafletMap);
+  });
+
+  leafletMarkers={};
+  STATIONS.forEach(st=>{
+    const [lat,lng] = xyToLatLng(st);
+    st._lat = lat; st._lng = lng;
+    const col = GROUP_COLOURS[st.group] || '#999';
+    const icon=L.divIcon({className:'',html:`<div class="raf-leaflet-marker" data-id="${st.id}" style="background:${col}"></div>`,iconSize:[18,18],iconAnchor:[9,9]});
+    const marker=L.marker([lat,lng],{icon}).addTo(leafletMap);
+    marker._rafStation = st;
+    marker.on('click',()=>showMapStation(st));
+    marker.bindTooltip(`<span class="raf-leaflet-label">${st.name}</span>`,{permanent:false,direction:'top',offset:[0,-10],opacity:.96,className:''});
+    leafletMarkers[st.id]=marker;
+  });
+  leafletMap.fitBounds([[49.5,-7.5],[57.9,2.5]], {padding:[16,16]});
+  setTimeout(()=>leafletMap.invalidateSize(),100);
+  showMapIntro();
+}
 
 function showMapStationById(id){
   const st = STATIONS.find(s => s.id === id);
@@ -2890,12 +3698,80 @@ function filterMapGroup(group,btn){
 
 // SURVIVORS DATA
 // ═══════════════════════════════════════════════════════
-const SURVIVORS = [{"serial": "Hawker Hurricane museum/reference route", "reg": "museum reference", "loc": "Preserved aircraft and archive collections", "status": "reference route", "use": "Useful for cockpit, surface finish and stencil placement; confirm variant before copying details."}, {"serial": "Hurricane walkaround references", "reg": "walkaround", "loc": "Museum and restoration photography", "status": "reference route", "use": "Use for stance, landing gear, canopy framing, weapons fit and airframe wear."}];
+const SURVIVORS = [
+  {serial:"R4118",reg:"G-HUPW",status:"fly",location:"Old Flying Machine Company, Duxford, UK",markings:"UP-W / 605 Sqn markings",history:"The only confirmed Battle of Britain veteran still flying. Shot down 28 Oct 1940, rebuilt. Found in Indian storage 2001 — returned to airworthiness 2004 after 62 years. The most historically significant airworthy Hurricane in existence.",note:"Photograph every angle — this IS the aircraft. The surface wear, fabric texture, and rivet detail are authentic.",link:"https://www.oldflyingmachinecompany.com"},
+  {serial:"LF363",reg:"RAF ZA-P",status:"fly",location:"BBMF RAF Coningsby, Lincolnshire",markings:"Varies annually — often GN-F (249 Sqn Tom Neil) or JX-B",history:"Last Hurricane delivered to the RAF (January 1944). Has flown continuously with the BBMF since 1957 — the longest-serving airworthy Hurricane. Painted in different squadron markings each display season.",note:"BBMF announce annual markings each spring. Check raf.mod.uk for current season coding. Often sees GN-F honouring Tom Neil.",link:"https://www.raf.mod.uk/display-teams/battle-of-britain-memorial-flight/"},
+  {serial:"PZ865",reg:"G-AMAU",status:"fly",location:"BBMF RAF Coningsby, Lincolnshire",markings:"Varies — often SE Asia/tropical markings",history:"The last Hurricane built (July 1944). Originally civil-registered post-war as 'The Last of the Many'. Donated to RAF 1972. Flies in various schemes including tropical colours distinct from BoB markings.",note:"Mk.IIc with four-cannon wings — different cowling and wing profile from BoB Mk.I. Note the differences carefully.",link:"https://www.raf.mod.uk/display-teams/battle-of-britain-memorial-flight/"},
+  {serial:"AE977",reg:"G-TWTD",status:"fly",location:"Biggin Hill Heritage Hangar, Kent",markings:"P3886 / No. 32 Squadron GZ codes",history:"Sea Hurricane Mk.X (Canadian-built). Currently painted to represent a 32 Squadron Battle of Britain Mk.I at historic Biggin Hill — direct relevance to Crossley/Brothers research.",note:"Based at the actual Battle of Britain aerodrome. 32 Squadron flew from here throughout the battle. Excellent location context.",link:"https://www.bigginhillheritagehangar.com"},
+  {serial:"P2902",reg:"G-ROBT",status:"fly",location:"Hawker Restorations, Sudbury, Suffolk",markings:"DX-R / 245 Sqn",history:"Early production Mk.I — crashed 31 May 1940 during the Battle of France. Recovered wreck restored to airworthiness, returning to flight June 2017. One of the earliest production Mk.Is flying.",note:"Fabric-covered wings on this early example — essential reference for the exact surface texture of BoB-period aircraft.",link:"https://www.hawkerrestorations.co.uk"},
+  {serial:"V7497",reg:"G-HRLI",status:"restore",location:"Hawker Restorations, Sudbury, Suffolk",markings:"X-SD / 501 Squadron",history:"Battle of Britain veteran. Shot down 28 Sep 1940 by a Bf 109 over Sussex — pilot Plt Off Everett Rogers baled out safely. Wreck recovered from crash site. Under active restoration to airworthy condition.",note:"When complete, this will be only the second confirmed BoB combat veteran flying alongside R4118.",link:"https://www.hawkerrestorations.co.uk"},
+  {serial:"Z2315",reg:"static",status:"static",location:"IWM Duxford, Hangar 4 (Battle of Britain)",markings:"JU-E / 111 Squadron",history:"Hurricane Mk.IIb, ex-Russian aircraft. On permanent display in Hangar 4 at Duxford. Accessible for close-up reference study — cockpit visible, undercarriage detail accessible.",note:"Ground-accessible. Study the cockpit, wing structure, undercarriage and surface rivet detail at close range. Free with IWM membership.",link:"https://www.iwm.org.uk/visits/iwm-duxford"},
+  {serial:"L1592",reg:"static",status:"static",location:"RAF Museum Hendon, London",markings:"Natural metal / primer finish",history:"Hurricane Mk.I from the earliest production batch, fabric-covered wings. On static display at Hendon showing construction detail in bare primer — the best reference for early production surface texture.",note:"Fabric-wing early production — the best reference for BoB-period aircraft surface texture. Free museum entry.",link:"https://www.rafmuseum.org.uk/london"},
+  {serial:"BE505",reg:"static",status:"static",location:"National Air and Space Museum, Washington DC",markings:"Canadian colours",history:"Hurricane Mk.IIb, Canadian-built (CCF). On long-term loan. One of the few Hurricanes on public display in North America.",note:"Accessible reference for North American modellers. NASM entry is free. Note Mk.II differences from BoB Mk.I.",link:"https://airandspace.si.edu"}
+     ];
 
 // ═══════════════════════════════════════════════════════
 // BOOKS DATA
 // ═══════════════════════════════════════════════════════
-const BOOKS = {"Reference": [{"title": "Hawker Hurricane aircraft books", "author": "Reference route", "year": 2026, "stars": 4, "colour": "#4a5870", "desc": "Aircraft-specific book/reference route.", "shops": [{"label": "Books", "url": "https://www.amazon.co.uk/s?k=Hawker+Hurricane+aircraft+book"}]}]};
+const BOOKS = {
+  "History & Operations":[
+    {title:"Hurricane Aces 1939–40",author:"Tony Holmes",year:1998,stars:5,colour:"#8a3a10",
+     desc:"Every top-scoring Hurricane pilot with colour profiles and combat accounts. Essential for any BoB modeller.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1855325977"}]},
+    {title:"Hurricane Aces 1941–45",author:"Andrew Thomas",year:2003,stars:4,colour:"#7a2a10",
+     desc:"Covers Channel Front, Malta, India, Ceylon and Fleet Air Arm Sea Hurricane aces beyond the BoB.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1841766102"}]},
+    {title:"Soviet Hurricane Aces of World War 2",author:"Osprey",year:2012,stars:4,colour:"#6a2010",
+     desc:"The Lend-Lease Hurricane on the Eastern Front — Soviet VVS pilots who achieved considerable success.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1849087414"}]},
+    {title:"Malta: The Hurricane Years 1940–41",author:"Shores & Cull",year:1987,stars:5,colour:"#3a2a10",
+     desc:"Definitive account of Malta's air battle when Hurricanes were the island's sole defence. Essential reading.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/0948817045"}]},
+    {title:"Hawker Hurricane and Sea Hurricane",author:"Malcolm V. Lowe",year:2016,stars:4,colour:"#4a5020",
+     desc:"All variants from Mk.I through Sea Hurricane, covering Fleet Air Arm operations and post-war service.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1473827257"}]},
+    {title:"Hawker Hurricane (Classic WWII Aviation)",author:"Jerry Scutts",year:1994,stars:4,colour:"#2a4820",
+     desc:"Colour profiles and unit markings guide across all theatres. Covers camouflage and unit codes.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/0752415970"}]},
+    {title:"The Battle of Britain: Then and Now",author:"Winston Ramsey (ed.)",year:1989,stars:5,colour:"#2a2a10",
+     desc:"900 pages of squadron accounts, aircraft records, photographs and maps. The ultimate BoB reference.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/s?k=battle+britain+then+now+ramsey+after+battle"}]},
+    {title:"Duel of Eagles",author:"Peter Townsend",year:1970,stars:5,colour:"#4a5020",
+     desc:"The finest personal memoir of the BoB by 85 Squadron's CO. Townsend flew Hurricanes and writes with unmatched authority.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1913727076"}]},
+    {title:"Gun Button to Fire",author:"Tom Neil DFC",year:2010,stars:5,colour:"#2a4a60",
+     desc:"249 Squadron — the most tactically precise first-person account of how Hurricane combat actually worked.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1445605104"}]},
+    {title:"Arise to Conquer",author:"Ian Gleed",year:1942,stars:5,colour:"#5a2a10",
+     desc:"87 Squadron pilot Gleed's wartime memoir — vivid first-person Hurricane account from Exeter.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/s?k=arise+conquer+gleed+87+squadron"}]},
+  ],
+  "Fiction":[
+    {title:"Arise to Conquer",author:"Derek Robinson",year:1983,stars:5,colour:"#2a4a60",
+     desc:"The finest novel about RAF Fighter Command — brutal, funny, technically accurate. Based on a Hurricane squadron. Mandatory.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1906502935"}]},
+  ],
+  "Modelling Reference":[
+    {title:"The Hawker Hurricane: A Comprehensive Guide for the Modeller",author:"Richard A. Franks",year:2000,stars:5,colour:"#8a3a10",
+     desc:"Every kit, decal sheet and aftermarket item for the Hurricane reviewed and compared. SAM Publications — the definitive modelling reference.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/0953346516"}]},
+    {title:"Hurricane Mk.I/II (Osprey Modelling 1)",author:"Jerry Scutts",year:2002,stars:5,colour:"#6a2010",
+     desc:"Core modelling guide: kits, markings, colour schemes and conversion techniques. Essential starting point.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1841763497"}]},
+    {title:"Hawker Hurricane Mk I–V (Osprey Modelling Guide)",author:"Osprey",year:2013,stars:4,colour:"#4a5020",
+     desc:"Updated modelling guide with modern kit reviews including Eduard ProfiPACK and Airfix retool.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/1780966021"}]},
+    {title:"Hawker Hurricane: History and How to Model Them",author:"Bruce Robertson",year:1977,stars:4,colour:"#3a2a10",
+     desc:"Classic reference with scale plans, markings and colour notes. Still useful for the scale plans alone.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/0850591244"}]},
+    {title:"Hawker Hurricane Mk I (Scale Plans 72)",author:"Dariusz Karnas",year:2018,stars:4,colour:"#2a4820",
+     desc:"A3 format scale plans for the Hurricane Mk.I at 1:72, 1:48 and 1:32. Excellent accuracy.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/dp/8363678864"}]},
+    {title:"Hurricane in Detail (WWP Red Series)",author:"Václav Němeček",year:2003,stars:5,colour:"#5a2a10",
+     desc:"Unrivalled close-up photo reference of actual preserved aircraft. The cockpit section alone justifies purchase.",
+     shops:[{label:"Amazon UK",url:"https://www.amazon.co.uk/s?k=hurricane+in+detail+wwp+red+series"}]},
+  ]
+};
 
 // ═══════════════════════════════════════════════════════
 // COLOUR PROFILES
@@ -2904,7 +3780,43 @@ const BOOKS = {"Reference": [{"title": "Hawker Hurricane aircraft books", "autho
 // ═══════════════════════════════════════════════════════
 // RENDER FUNCTIONS — NEW TABS
 // ═══════════════════════════════════════════════════════
-const AFTERMARKET = {"Decals / Masks / Aftermarket": [{"type": "Kit route", "name": "Hawker Hurricane kit record", "maker": "Kit route", "scales": ["1:72", "1:48"], "desc": "Aircraft-specific kit records; confirm boxing and variant.", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Hawker+Hurricane"}, {"type": "Decals", "name": "Hawker Hurricane decals", "maker": "Decals", "scales": ["1:72", "1:48"], "desc": "Aircraft-specific decal route.", "url": "https://www.hannants.co.uk/search/?keyword_search=Hawker+Hurricane+decals"}, {"type": "Aftermarket", "name": "Hawker Hurricane masks/detail sets", "maker": "Aftermarket", "scales": ["1:72", "1:48"], "desc": "Aircraft-specific mask/detail route.", "url": "https://www.eduard.com/eduard/?lang=1&cur=2&listtype=search&searchparam=Hawker+Hurricane"}]};
+const AFTERMARKET={
+ "Cockpit & Interior":[
+  {type:"Resin",name:"Hurricane Mk.I Cockpit 1:48 — Eduard Brassin 648018",maker:"Eduard Brassin",scales:["1:48"],
+   desc:"Full resin cockpit replacement — seat, IP, sidewalls, throttle quadrant. Most impactful single upgrade for Airfix or Eduard 1:48 Hurricane.",
+   url:"https://www.hannants.co.uk/search/?keyword_search=648018+hurricane"},
+  {type:"PE",name:"Hurricane Mk.I PE Cockpit 1:48 — Eduard 48948",maker:"Eduard",scales:["1:48"],
+   desc:"Photo-etch instrument panel and harness for Airfix or Eduard 1:48 kit.",
+   url:"https://www.hannants.co.uk/search/?keyword_search=48948+hurricane"},
+  {type:"PE",name:"Hurricane Mk.I PE Cockpit 1:72 — Eduard 73561",maker:"Eduard",scales:["1:72"],
+   desc:"Photo-etch cockpit detail for Airfix 1:72 Hurricane.",
+   url:"https://www.hannants.co.uk/search/?keyword_search=73561+hurricane"},
+ ],
+ "Exhausts & Undercarriage":[
+  {type:"Resin",name:"Hurricane Mk.I exhaust stacks 1:48 — Barracuda",maker:"Barracuda Studios",scales:["1:48"],
+   desc:"Resin replacement exhaust stacks with correct cross-section profile.",
+   url:"https://barracudacals.com/collections/1-48-resin-detail-sets"},
+  {type:"Resin",name:"Hurricane Mk.I wheels 1:48 — Barracuda",maker:"Barracuda Studios",scales:["1:48"],
+   desc:"Weighted flat-spotted Dunlop wheels with correct tread.",
+   url:"https://barracudacals.com/collections/1-48-resin-detail-sets"},
+ ],
+ "Masks":[
+  {type:"Masks",name:"Hurricane Mk.I canopy masks 1:48 — Eduard EX419",maker:"Eduard",scales:["1:48"],
+   desc:"Pre-cut Kabuki tape masks for Airfix and Eduard 1:48 Hurricane canopy frames.",
+   url:"https://www.hannants.co.uk/search/?keyword_search=EX419+hurricane"},
+  {type:"Masks",name:"Hurricane canopy masks 1:72 — Eduard EX777",maker:"Eduard",scales:["1:72"],
+   desc:"Pre-cut Kabuki tape masks for 1:72 Hurricane canopy.",
+   url:"https://www.hannants.co.uk/search/?keyword_search=EX777+hurricane"},
+ ],
+ "Decals":[
+  {type:"Decals",name:"Xtradecal X48143 — RAF BoB 1:48 (all 19 Sqns)",maker:"Xtradecal",scales:["1:48"],
+   desc:"Comprehensive BoB sheet covering all 19 Hurricane and Spitfire BoB squadrons in 1:48. Essential.",
+   url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+X48143"},
+  {type:"Decals",name:"Xtradecal X72296 — RAF BoB 1:72",maker:"Xtradecal",scales:["1:72"],
+   desc:"1:72 Battle of Britain markings sheet for Hurricane and Spitfire squadrons.",
+   url:"https://www.hannants.co.uk/search/?keyword_search=xtradecal+X72296"},
+ ],
+};
 
 function renderWeathering(){
   const wg=document.getElementById('weather-grid');
@@ -3040,10 +3952,43 @@ const BOB_EVENTS = [
 ];
 
 
-const PILOT_STORIES = [{"name": "Witold Urbanowicz", "sqn": "No. 303 Squadron", "kills": "—", "aircraft": "Hurricane", "story": "No. 303 Squadron — Fighter Command. Battle of Britain. Polish squadron markings and heavy summer 1940 operational wear", "model": "Use the linked unit/base details to choose markings, loadout and weathering."}, {"name": "Peter Brothers", "sqn": "No. 32 Squadron", "kills": "—", "aircraft": "Hurricane", "story": "No. 32 Squadron — Fighter Command. Battle of Britain. front-line 11 Group Hurricane subjects with visible service staining", "model": "Use the linked unit/base details to choose markings, loadout and weathering."}, {"name": "Ian Gleed", "sqn": "No. 87 Squadron", "kills": "—", "aircraft": "Hurricane", "story": "No. 87 Squadron — Fighter Command. South-West approaches. 10 Group defence subjects with varied field wear", "model": "Use the linked unit/base details to choose markings, loadout and weathering."}];
+const PILOT_STORIES = [
+  {name:"Archibald McKellar DSO DFC & Bar",sqn:"605",callsign:"'Archie'",kills:"21",wiki:"Archie_McKellar",aircraft:"Hurricane Mk.I · UP-X",
+   story:`Archibald McKellar was perhaps Scotland's greatest fighter pilot, and certainly the most complete. Small, wiry, and with a natural aggression in the air that unnerved even his closest colleagues, he built his score through instinct and precision rather than recklessness. Flying Hurricanes with 605 Squadron from Croydon, McKellar had 21 victories by the time the Battle reached its peak. Colleagues recalled that he had an almost uncanny ability to close to point-blank range before firing — well inside the comfortable gunnery distance — which made his attacks devastatingly effective. He was awarded the DSO in September 1940. On 1 November, just as the Battle was officially over, he was caught and killed by Bf 109s near Marsden in Kent. He was 26.`},
+  {name:"James 'Ginger' Lacey DFM & Bar",wiki:"James_Harry_Lacey",sqn:"501",callsign:"'Ginger'",kills:"18",
+   story:`James Harry Lacey came from Wetherby in Yorkshire and had none of the public-school background of many of his contemporaries. He was a sergeant — an NCO ace — and he finished the Battle as the highest-scoring Hurricane pilot in Fighter Command with 18 kills. His most celebrated moment came on 15 September 1940, Battle of Britain Day, when he shot down a Heinkel He 111 that had just bombed Buckingham Palace. Lacey had a gift for deflection shooting — firing ahead of the target to intercept it — and he typically opened fire later than most pilots, accepting the risk to guarantee a kill. He survived the war with 28 victories and died in 1989.`},
+  {name:"Ian Gleed DFC",wiki:"Ian_Gleed",sqn:"87",callsign:"'Widge'",kills:"13",
+   story:`Ian Gleed flew Hurricanes with 87 Squadron from Exeter, covering the south-west sector. He was known for leading from the front — always first to spot the enemy, always first to engage. His Hurricane bore the personal marking of a cartoon black cat, 'Figaro', on the cowling — a distinctive touch that became famous in the illustrated press. By October 1940 his score stood at 13 confirmed. Gleed wrote a memoir, Arise to Conquer, published in 1942, which remains one of the best personal accounts of Hurricane combat. He was killed in April 1943 over Tunisia, strafed while at low altitude. He was 26.`},
+  {name:"Tom Neil DFC & Bar",wiki:"Tom_Neil_(RAF_officer)",sqn:"249",callsign:"'Ginger'",kills:"13",
+   story:`Tom Neil flew with 249 Squadron through the height of the Battle, based first at Church Fenton then operating from North Weald and Boscombe Down. He was a meticulous diarist and later wrote The Silver Spitfire and Gun Button to Fire, two of the most detailed personal accounts of the period — though his aircraft was, of course, a Hurricane. Neil's accounts capture the grinding exhaustion of the August–September period, when pilots flew five or six sorties a day in high summer heat, returning to find their aircraft rearmed and refuelled before they had finished their tea. He survived the war and died in 2018, aged 96.`},
+  {name:"Peter Townsend CVO DSO DFC",wiki:"Peter_Townsend",sqn:"85",callsign:"—",kills:"11",
+   story:`Peter Townsend commanded 85 Squadron with quiet authority and considerable skill. Later famous for his relationship with Princess Margaret, during the Battle he was one of the most capable squadron leaders in 11 Group. He was wounded in action on 31 August 1940 — one of the worst days of the Battle — when his Hurricane was hit over Essex and he was forced to bale out with injuries to his foot. He returned to operations within weeks. Townsend's post-war memoir Time and Chance gives a precise and unsentimental account of leadership under extreme pressure, and of what it actually felt like to control a Hurricane in close combat at 250 mph.`},
+];
 
 
-const BUILD_STEPS = [{"n": 1, "title": "Hawker Hurricane kit record", "icon": "🔗", "text": "Aircraft-specific kit records; confirm boxing and variant.", "products": [{"name": "Hawker Hurricane kit record", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Hawker+Hurricane"}]}, {"n": 2, "title": "Hawker Hurricane decals", "icon": "🔗", "text": "Aircraft-specific decal route.", "products": [{"name": "Hawker Hurricane decals", "url": "https://www.hannants.co.uk/search/?keyword_search=Hawker+Hurricane+decals"}]}, {"n": 3, "title": "Hawker Hurricane masks/detail sets", "icon": "🔗", "text": "Aircraft-specific mask/detail route.", "products": [{"name": "Hawker Hurricane masks/detail sets", "url": "https://www.eduard.com/eduard/?lang=1&cur=2&listtype=search&searchparam=Hawker+Hurricane"}]}, {"n": 4, "title": "Hawker Hurricane aircraft books", "icon": "🔗", "text": "Aircraft-specific book/reference route.", "products": [{"name": "Hawker Hurricane aircraft books", "url": "https://www.amazon.co.uk/s?k=Hawker+Hurricane+aircraft+book"}]}];
+const BUILD_STEPS = [
+  {n:1,title:"Research & marking choice",icon:"📋",
+   text:"Before opening the box, decide on your subject — which squadron, which pilot, which date. This fixes your roundel type, code colours, camouflage pattern and weathering tone. The Squadrons tab has marking references for all 22 units. For a 1940 subject, you want Type A1 fuselage roundels, Type A upper wings, Type B lower wings, Sky spinner and codes.",
+   products:[{name:"Xtradecal X48147 (1:48 BoB Hurricane)",url:"https://www.hannants.co.uk/product/X48147"},{name:"Barracuda decals Hurricane",url:"https://barracudacals.com/search?q=Hurricane"}]},
+  {n:2,title:"Cockpit",icon:"🎛️",
+   text:"Build and paint the cockpit first — it must be installed before the fuselage halves close. Interior Grey-Green (Humbrol 78 or Tamiya XF-71) for the main tub. The seat cushion is a dark olive-buff. Instruments are best done with a PE set or Barracuda resin replacement. CMK and Aires both offer excellent drop-in cockpit sets for the 1:48 Airfix kit.",
+   products:[{name:"CMK Hurricane 1:48 cockpit",url:"https://www.hannants.co.uk/product/CMK4352"},{name:"Aires Hurricane cockpit resin",url:"https://www.hannants.co.uk/search/?keyword_search=aires+hurricane&product_type_id=1819&scale_id=955"}]},
+  {n:3,title:"Main construction",icon:"🔧",
+   text:"Assemble the fuselage, fit the wings, and deal with any seam lines before paint. The Airfix 1:48 Mk.I has very good fit. Thin superglue works well for seams. The wing-root join benefits from small amounts of filler. Ensure the undercarriage bays are painted Interior Grey-Green before the wings are closed. Mask the canopy early — the Barracuda masks are excellent.",
+   products:[{name:"Barracuda Hurricane canopy masks",url:"https://barracudacals.com/search?q=Hurricane"},{name:"Eduard masks Hurricane",url:"https://www.hannants.co.uk/product/EDEX712"}]},
+  {n:4,title:"Primer & base coat",icon:"🎨",
+   text:"Prime in grey — Vallejo Surface Primer or Tamiya Fine Surface primer. Then lay down the Sky underside (Humbrol 90 or Tamiya XF-21). Use the camouflage scheme guide in the Paint tab for the upper surface split. The Hard Edge A scheme has a wavy demarcation line that can be done freehand with a fine brush or Blu-Tack as a mask.",
+   products:[{name:"Humbrol Dark Earth (Humbrol 29)",url:"https://uk.humbrol.com/products/no-29-dark-earth-matt"},{name:"Humbrol Dark Green (Humbrol 30)",url:"https://uk.humbrol.com/products/no-30-dark-green-matt"},{name:"Humbrol Sky (Humbrol 90)",url:"https://uk.humbrol.com/products/no-90-beige-green-matt"}]},
+  {n:5,title:"Decals",icon:"📄",
+   text:"Apply decals over a gloss varnish coat — Vallejo Gloss Varnish or Mr Hobby. Use Micro Set and Micro Sol to bed them into panel lines. For 1940 Hurricanes the roundels sit very close to the surface — check your reference for exact positioning. Once dry, seal with a satin coat before weathering.",
+   products:[{name:"Micro Set & Micro Sol",url:"https://www.hannants.co.uk/search/?keyword_search=micro+sol&product_type_id=all_decals"},{name:"AK Interactive decal softener",url:"https://ak-interactive.com/product/decal-fix/"}]},
+  {n:6,title:"Weathering",icon:"💨",
+   text:"The key Hurricane weathering features: exhaust staining on the port cowling (brown-black Tamiya panel liner or oils), gun port blast marks (carbon black), wheel well mud, leading edge wear (aluminium dry-brush). Use the Weathering tab for airfield-specific mud colours and Tamiya mix recipes. Pin wash panel lines with Flory Models dark wash or AK Interactive.",
+   products:[{name:"AK Interactive Hurricane weathering set",url:"https://www.hannants.co.uk/search/?keyword_search=ak+interactive+hurricane&product_type_id=all"},{name:"Flory Models dark wash",url:"https://www.hannants.co.uk/search/?keyword_search=flory+models+wash"}]},
+  {n:7,title:"Final details & base",icon:"✅",
+   text:"Fit the propeller, undercarriage, antennas and pitot tube last. The antenna mast is often broken in combat photos — a historically accurate choice. A blast-pen or scramble base suits a BoB subject — grass airfield with mud from the Weathering tab's colour palette. Dry grass tufts from Gamers Grass look excellent.",
+   products:[{name:"Gamers Grass tufts",url:"https://www.hannants.co.uk/search/?keyword_search=gamers+grass+tufts"},{name:"AK Interactive groundwork",url:"https://ak-interactive.com/product-category/groundwork-solutions/"}]},
+];
 
 function renderStepByStep() {
   const el = document.getElementById('stepbystep-content');
@@ -3094,7 +4039,35 @@ function renderColourCompare() {
 
 // ── Media tab ──────────────────────────────────────────────────────────────
 
-const MEDIA_ITEMS = [{"type": "archive", "title": "Hawker Hurricane wartime photographs", "desc": "Archive photo route for markings, unit context and weathering evidence.", "url": "https://www.iwm.org.uk/collections/search?query=Hawker+Hurricane", "thumb": "video-thumb-fallback.png"}, {"type": "museum", "title": "Hawker Hurricane museum/reference page", "desc": "Stable reference route for preserved aircraft, dimensions, cockpit and airframe details.", "url": "https://commons.wikimedia.org/wiki/Category:Hawker_Hurricane", "thumb": "video-thumb-fallback.png"}, {"type": "walkaround", "title": "Hawker Hurricane walkaround video route", "desc": "Use as a fallback route only where an exact cockpit or airframe video has not been verified.", "url": "https://www.youtube.com/results?search_query=Hawker+Hurricane+walkaround", "thumb": "video-thumb-fallback.png"}];
+const MEDIA_ITEMS = [
+  {type:"video",title:"Merlin engine startup — BBMF Hurricane LF363",
+   desc:"Close-up cockpit startup sequence of Hurricane LF363 at RAF Coningsby. Essential reference for exhaust staining patterns and the distinctive blue smoke plume on cold start.",
+   url:"https://www.youtube.com/watch?v=afZwPxtY2iw",thumb:"🎬"},
+  {type:"video",title:"R4118 — the only flying BoB Hurricane (Duxford 2023)",
+   desc:"R4118 in her 605 Squadron UP-W markings — walk-around, startup, taxi, take-off and flyby. 70% original airframe. The definitive colour and weathering reference for any BoB Hurricane build.",
+   url:"https://www.youtube.com/watch?v=Q2uDlTH86NU",thumb:"🎬"},
+  {type:"video",title:"Hawker Hurricane: Restoring Britain's Unsung Hero | Warbird Workshop",
+   desc:"Full restoration documentary. Close-up detail of fabric covering, cockpit fitment, control surfaces and authentic period finishes throughout. Essential reference for the aftermarket tab.",
+   url:"https://www.youtube.com/watch?v=NEmAlxaW44I",thumb:"🎬"},
+  {type:"video",title:"Tom Neil — Chronicles of Courage: Hurricane & the Battle of Britain",
+   desc:"249 Squadron ace Tom Neil (13 victories) narrates the Battle of Britain from the Hurricane cockpit. First-hand account of North Weald operations, Aug–Oct 1940.",
+   url:"https://www.youtube.com/watch?v=DTk4DU46WDQ",thumb:"🎬"},
+  {type:"video",title:"Wg Cdr Tom Neil — personal BoB speech (249 Sqn)",
+   desc:"Tom Neil speaks about his 249 Squadron experiences in the Battle of Britain — tactics, the Hurricane vs Spitfire debate and loss of comrades. Recorded lecture, Part 1 of 6.",
+   url:"https://www.youtube.com/watch?v=0WD1tU5TirE",thumb:"🎬"},
+  {type:"audio",title:"Rolls-Royce Merlin — pure engine sound (R4118)",
+   desc:"Isolated Merlin XII recording from R4118 — no narration, no music. Play on the workbench while building for authentic atmosphere and reference.",
+   url:"https://www.youtube.com/watch?v=afZwPxtY2iw",thumb:"🔊"},
+  {type:"archive",title:"IWM — Battle of Britain pilot sound archive",
+   desc:"First-hand pilot accounts recorded by the Imperial War Museum. Includes interviews with survivors of all 22 Hurricane squadrons — searchable by name and unit.",
+   url:"https://www.iwm.org.uk/collections",thumb:"📼"},
+  {type:"archive",title:"IWM Film — Battle of Britain footage",
+   desc:"Original period film including Hurricane operations and airfield scenes. Invaluable for weathering, equipment, groundcrew uniform and airfield surface reference.",
+   url:"https://www.iwm.org.uk/collections",thumb:"📼"},
+  {type:"archive",title:"R4118 — Hurricane Heritage official site",
+   desc:"Full history, photographs and restoration notes for R4118, the only surviving BoB Hurricane. 49 combat sorties, five kills, shot down once. The most historically significant Hurricane for modellers.",
+   url:"https://www.hurricaneheritage.com/the-aircraft/hurricane-r4118/",thumb:"📁"},
+];
 
 
 // Suppress unhandled promise rejections (Wikimedia fetch, etc.) from showing as Script error on iOS
@@ -3511,262 +4484,5 @@ document.addEventListener('DOMContentLoaded', function(){
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script id="true-hurricane-structure-data">
-window.TRUE_AIRCRAFT_DATA = {"file": "hurricane_paradise.html", "name": "Hawker Hurricane", "short": "Hurricane", "category": "RAF & Commonwealth", "role": "RAF fighter", "side": "raf", "notes": "Battle of Britain sector airfields, RAF squadron codes and MAP camouflage", "query": "Hawker Hurricane", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "bases": [{"base": "RAF Northolt", "unit": "No. 303 Squadron / sector card", "x": 24, "y": 42, "linked": ["No. 303 Squadron / sector card", "Hurricane markings route", "Hurricane weathering route"], "note": "Hawker Hurricane: No. 303 Squadron / sector card. Click through to the unit card, markings and modelling notes."}, {"base": "RAF Biggin Hill", "unit": "No. 32 / 610 Squadron route", "x": 46, "y": 55, "linked": ["No. 32 / 610 Squadron route", "Hurricane markings route", "Hurricane weathering route"], "note": "Hawker Hurricane: No. 32 / 610 Squadron route. Click through to the unit card, markings and modelling notes."}, {"base": "RAF Tangmere", "unit": "No. 1 / 43 Squadron route", "x": 68, "y": 47, "linked": ["No. 1 / 43 Squadron route", "Hurricane markings route", "Hurricane weathering route"], "note": "Hawker Hurricane: No. 1 / 43 Squadron route. Click through to the unit card, markings and modelling notes."}], "timeline": [{"phase": "Introduction", "date": "Early service", "text": "Hawker Hurricane enters service. Use this phase for early variants, first camouflage and initial unit markings."}, {"phase": "Main campaign use", "date": "Operational peak", "text": "Hawker Hurricane develops its key theatre identity. Base, unit and markings drive the model subject."}, {"phase": "Heavy wear stage", "date": "Sustained operations", "text": "Weathering becomes theatre-specific: Battle of Britain sector airfields, RAF squadron codes and MAP camouflage."}, {"phase": "Late-war / reference stage", "date": "Late war and survivors", "text": "Use preserved aircraft for structure and walkaround detail, but confirm paint and markings with wartime photographs."}], "compare": [{"h": "Variant choice", "t": "RAF fighter. Choose exact mark/variant first; it controls kit, cockpit, canopy, stores and decals."}, {"h": "Paint choice", "t": "Battle of Britain sector airfields, RAF squadron codes and MAP camouflage"}, {"h": "Reference risk", "t": "Restorations, decal sheets and museum repaints can be misleading. Wartime photo evidence should lead."}], "media": [{"k": "Archive", "title": "Hawker Hurricane wartime photographs", "url": "https://www.iwm.org.uk/collections/search?query=Hawker+Hurricane", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "text": "Wartime photo route for markings, unit context and weathering evidence."}, {"k": "Photo reference", "title": "Hawker Hurricane image references", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "text": "Image route for preserved aircraft, stance and airframe detail."}, {"k": "Kit database", "title": "Hawker Hurricane kit records", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Hawker+Hurricane", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "text": "Kit tooling, boxing and decal route. Verify exact kit before buying aftermarket."}], "walk": [{"title": "Overall airframe and stance", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane+airframe+walkaround&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}, {"title": "Cockpit, canopy and forward section", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane+cockpit+canopy&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}, {"title": "Landing gear, bays and stores", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane+landing+gear+stores&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}, {"title": "Paint, markings and weathering", "url": "paint-codes.html", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}], "shops": [{"k": "Kit route", "title": "Hawker Hurricane kit record", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Hawker+Hurricane", "text": "Aircraft-specific kit records; confirm boxing and variant."}, {"k": "Decals", "title": "Hawker Hurricane decals", "url": "https://www.hannants.co.uk/search/?keyword_search=Hawker+Hurricane+decals", "text": "Aircraft-specific decal route."}, {"k": "Aftermarket", "title": "Hawker Hurricane masks/detail sets", "url": "https://www.eduard.com/eduard/?lang=1&cur=2&listtype=search&searchparam=Hawker+Hurricane", "text": "Aircraft-specific mask/detail route."}, {"k": "Books", "title": "Hawker Hurricane aircraft books", "url": "https://www.amazon.co.uk/s?k=Hawker+Hurricane+aircraft+book", "text": "Aircraft-specific book/reference route."}]};
-</script>
-
-<style id="ww2-hurricane-structure-css">
-.ww2-hurricane-structure{border:1px solid rgba(201,168,76,.24);border-radius:16px;background:rgba(9,18,32,.72);padding:1rem;margin:1rem 0}
-.ww2-h-subtabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 1rem}
-.ww2-h-btn{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#f4ead7;border-radius:999px;padding:.55rem .8rem;font-weight:800;cursor:pointer}
-.ww2-h-btn.on{background:#c9a84c;color:#111}
-.ww2-h-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.85rem}
-.ww2-h-map-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:1rem}
-.ww2-h-map{position:relative;min-height:430px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.14);background:radial-gradient(circle at 22% 36%,rgba(201,168,76,.22),transparent 17%),radial-gradient(circle at 66% 54%,rgba(126,165,207,.16),transparent 21%),linear-gradient(135deg,#0b192b,#1a324d)}
-.ww2-h-dot{position:absolute;width:23px;height:23px;border-radius:50%;border:2px solid #fff;background:#c9a84c;box-shadow:0 0 0 8px rgba(201,168,76,.18);cursor:pointer}
-.ww2-h-panel,.ww2-h-card{border:1px solid rgba(255,255,255,.13);border-radius:14px;background:rgba(255,255,255,.045);padding:1rem;color:#f4ead7}
-.ww2-h-card{display:block;text-decoration:none;overflow:hidden;padding:0}
-.ww2-h-card img{width:100%;height:165px;object-fit:cover;display:block;background:#111b2b}
-.ww2-h-card div{padding:.9rem}
-.ww2-h-card h3,.ww2-h-panel h3{margin:.2rem 0 .45rem;color:#fff}
-.ww2-h-card p,.ww2-h-panel p{color:rgba(244,234,215,.72);line-height:1.55;margin:.25rem 0}
-.ww2-h-kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#c9a84c;font-weight:900}
-.ww2-h-open{margin-top:.7rem}
-.ww2-timeline-list .ww2-h-panel.active{border-color:#c9a84c;background:rgba(201,168,76,.08)}
-@media(max-width:760px){.ww2-h-map-grid{grid-template-columns:1fr}.ww2-h-card img{height:135px}}
-</style>
-<script id="ww2-hurricane-structure-final">
-window.WW2_H_DATA = {"file": "hurricane_paradise.html", "name": "Hawker Hurricane", "cat": "RAF & Commonwealth", "role": "RAF fighter", "paint": "Battle of Britain sector stations, RAF squadron codes and MAP camouflage", "query": "Hawker Hurricane", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "bases": [{"base": "", "unit": "Front-line squadron card", "x": 22, "y": 42, "linked": ["Front-line squadron card", "Hawker Hurricane markings route", "Hawker Hurricane weathering route"], "note": "Hawker Hurricane: click-through base card linked to unit, markings and modelling notes."}, {"base": "", "unit": "Specialist squadron card", "x": 48, "y": 57, "linked": ["Specialist squadron card", "Hawker Hurricane markings route", "Hawker Hurricane weathering route"], "note": "Hawker Hurricane: click-through base card linked to unit, markings and modelling notes."}, {"base": "", "unit": "Commonwealth / FAA card", "x": 72, "y": 44, "linked": ["Commonwealth / FAA card", "Hawker Hurricane markings route", "Hawker Hurricane weathering route"], "note": "Hawker Hurricane: click-through base card linked to unit, markings and modelling notes."}], "timeline": [{"phase": "Introduction", "date": "Early service", "text": "Hawker Hurricane enters service. Use this phase for early variants, first camouflage and initial unit markings."}, {"phase": "Main campaign use", "date": "Operational peak", "text": "Hawker Hurricane develops its key theatre identity. Base, unit and markings now drive the model subject."}, {"phase": "Heavy wear stage", "date": "Sustained operations", "text": "Weathering becomes theatre-specific: Battle of Britain sector stations, RAF squadron codes and MAP camouflage plus exhaust, oil, mud, dust, salt, fading or chipping."}, {"phase": "Late-war / reference stage", "date": "Late war and survivors", "text": "Use preserved aircraft for structure and walkaround detail, but confirm paint and markings with wartime photographs."}], "compare": [{"h": "Variant choice", "t": "RAF fighter. Choose exact mark/variant first; it controls kit, cockpit, canopy, stores and decals."}, {"h": "Paint choice", "t": "Battle of Britain sector stations, RAF squadron codes and MAP camouflage"}, {"h": "Reference risk", "t": "Restorations, decal sheets and museum repaints can be misleading. Wartime photo evidence should lead."}], "media": [{"k": "Archive", "title": "Hawker Hurricane wartime photographs", "url": "https://www.iwm.org.uk/collections/search?query=Hawker+Hurricane", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "text": "Wartime photo route for markings, unit context and weathering evidence."}, {"k": "Photo reference", "title": "Hawker Hurricane image references", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "text": "Image route for preserved aircraft, stance and airframe detail."}, {"k": "Kit database", "title": "Hawker Hurricane kit records", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Hawker+Hurricane", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg", "text": "Kit tooling, boxing and decal route. Verify exact kit before buying aftermarket."}], "walk": [{"title": "Overall airframe and stance", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane+airframe+walkaround&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}, {"title": "Cockpit, canopy and forward section", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane+cockpit+canopy&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}, {"title": "Landing gear, bays and stores", "url": "https://commons.wikimedia.org/w/index.php?search=Hawker+Hurricane+landing+gear+stores&title=Special:MediaSearch&type=image", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}, {"title": "Paint, markings and weathering", "url": "paint-codes.html", "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Hawker_Hurricane_R4118.jpg"}], "shops": [{"k": "Kit route", "title": "Hawker Hurricane kit record", "url": "https://www.scalemates.com/search.php?fkSECTION%5B%5D=Kits&q=Hawker+Hurricane", "text": "Aircraft-specific kit records; confirm boxing and variant."}, {"k": "Decals", "title": "Hawker Hurricane decals", "url": "https://www.hannants.co.uk/search/?keyword_search=Hawker+Hurricane+decals", "text": "Aircraft-specific decal route."}, {"k": "Aftermarket", "title": "Hawker Hurricane masks/detail sets", "url": "https://www.eduard.com/eduard/?lang=1&cur=2&listtype=search&searchparam=Hawker+Hurricane", "text": "Aircraft-specific mask/detail route."}, {"k": "Books", "title": "Hawker Hurricane aircraft books", "url": "https://www.amazon.co.uk/s?k=Hawker+Hurricane+aircraft+book", "text": "Aircraft-specific book/reference route."}]};
-(function(){
-  const DATA = window.TRUE_AIRCRAFT_DATA;
-  const $=(s,r=document)=>r.querySelector(s);
-  const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
-  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-
-  function ensureTab(id){
-    let p=document.getElementById('tab-'+id);
-    if(!p){
-      const main=document.querySelector('main')||document.body;
-      p=document.createElement('div');
-      p.className='tab-panel';
-      p.id='tab-'+id;
-      main.appendChild(p);
-    }
-    return p;
-  }
-
-  function card(item, kind){
-    return `<a class="ww2-h-card" href="${esc(item.url||'#')}" target="${item.url&&item.url.startsWith('http')?'_blank':'_self'}" rel="noopener">
-      ${item.img?`<img src="${esc(item.img)}" alt="${esc(item.title||DATA.name)}" loading="lazy" onerror="this.src='video-thumb-fallback.png'">`:''}
-      <div><div class="ww2-h-kicker">${esc(kind||item.k||'reference')}</div><h3>${esc(item.title)}</h3><p>${esc(item.text||'Aircraft-specific reference route.')}</p></div>
-    </a>`;
-  }
-
-  function buildReference(){
-    const panel=ensureTab('reference');
-    panel.innerHTML = `
-      <section class="ww2-hurricane-structure">
-        <div class="ww2-h-subtabs">
-          <button class="ww2-h-btn on" type="button" data-ref="map">Map</button>
-          <button class="ww2-h-btn" type="button" data-ref="timeline">Timeline</button>
-          <button class="ww2-h-btn" type="button" data-ref="compare">Compare</button>
-          <button class="ww2-h-btn" type="button" data-ref="survivors">Survivors</button>
-          <button class="ww2-h-btn" type="button" data-ref="books">Books</button>
-        </div>
-        <div id="rsub-map" class="ww2-h-ref-panel"></div>
-        <div id="rsub-timeline" class="ww2-h-ref-panel" style="display:none"></div>
-        <div id="rsub-compare" class="ww2-h-ref-panel" style="display:none"></div>
-        <div id="rsub-survivors" class="ww2-h-ref-panel" style="display:none"></div>
-        <div id="rsub-books" class="ww2-h-ref-panel" style="display:none"></div>
-      </section>`;
-    $$('.ww2-h-btn', panel).forEach(btn=>{
-      btn.onclick=()=>setRefSub(btn.dataset.ref, btn);
-    });
-    renderMap();
-  }
-
-  window.setRefSub=function(sub, btn){
-    const root=ensureTab('reference');
-    ['map','timeline','compare','survivors','books'].forEach(s=>{
-      const p=document.getElementById('rsub-'+s);
-      if(p) p.style.display = s===sub ? '' : 'none';
-    });
-    $$('.ww2-h-btn',root).forEach(b=>b.classList.remove('on'));
-    if(btn) btn.classList.add('on');
-    if(sub==='map') renderMap();
-    if(sub==='timeline') renderTimeline(0);
-    if(sub==='compare') renderCompare();
-    if(sub==='survivors') renderSurvivors();
-    if(sub==='books') renderBooks();
-  };
-
-  function openUnit(unit){
-    const unitPanel=document.getElementById('tab-squadrons')||document.getElementById('tab-units');
-    if(window.openSqn){ window.openSqn(unit); return; }
-    if(window.openUnit){ window.openUnit(unit); return; }
-    switchTab(unitPanel && unitPanel.id==='tab-units' ? 'units':'squadrons', document.querySelector('.nav-tab,.tab-btn'));
-    setTimeout(()=>{
-      const cards=$$('.unit-card,.sq-card,#tab-squadrons article,#tab-units article');
-      const match=cards.find(c=>c.textContent.toLowerCase().includes(String(unit).toLowerCase()))||cards[0];
-      if(match) match.scrollIntoView({behavior:'smooth',block:'center'});
-    },60);
-  }
-
-  function renderMap(){
-    const p=document.getElementById('rsub-map');
-    if(!p) return;
-    p.innerHTML=`<div class="ww2-h-map-grid">
-      <div class="ww2-h-map" id="leaflet-map">
-        <div class="ww2-h-panel" style="position:absolute;left:1rem;top:1rem;background:rgba(0,0,0,.45);max-width:320px">
-          <div class="ww2-h-kicker">${esc(DATA.cat)}</div><h3>${esc(DATA.name)} map</h3><p>Click a base marker to show linked unit/squadron cards, using the same base-to-unit workflow.</p>
-        </div>
-        ${DATA.bases.map((b,i)=>`<button class="ww2-h-dot" type="button" data-i="${i}" title="${esc(b.base)}" style="left:${b.x}%;top:${b.y}%"></button>`).join('')}
-      </div>
-      <div class="ww2-h-panel" id="map-sqn-list"></div>
-    </div>`;
-    const side=$('#map-sqn-list',p);
-    function show(i){
-      const b=DATA.bases[i]||DATA.bases[0];
-      side.innerHTML=`<div class="ww2-h-kicker">Selected base</div><h3>${esc(b.base)}</h3><p><b>Linked unit route:</b> ${esc(b.unit)}</p><p>${esc(b.note)}</p>
-      <div class="ww2-h-grid">${b.linked.map(x=>`<button type="button" class="ww2-h-btn ww2-h-open" data-unit="${esc(x)}">${esc(x)}</button>`).join('')}</div>`;
-      $$('.ww2-h-open',side).forEach(btn=>btn.onclick=()=>openUnit(btn.dataset.unit));
-    }
-    $$('.ww2-h-dot',p).forEach(dot=>dot.onclick=()=>show(+dot.dataset.i));
-    show(0);
-  }
-
-  function renderTimeline(idx){
-    const p=document.getElementById('rsub-timeline');
-    if(!p) return;
-    const max=DATA.timeline.length-1;
-    const item=DATA.timeline[idx]||DATA.timeline[0];
-    p.innerHTML=`<div class="ww2-h-panel"><div class="ww2-h-kicker">Campaign timeline</div><h3>${esc(DATA.name)}</h3>
-      <p>Same timeline structure across the aircraft library: early service → main campaign → operational wear → late/reference stage.</p>
-      <input id="tl-slider" type="range" min="0" max="${max}" value="${idx}" style="width:100%;margin:1rem 0">
-      <h3 id="tl-date">${esc(item.date)} — ${esc(item.phase)}</h3><div id="timeline-detail"></div></div>
-      <div class="ww2-h-grid ww2-timeline-list">${DATA.timeline.map((t,i)=>`<div class="ww2-h-panel ${i===idx?'active':''}"><div class="ww2-h-kicker">${esc(t.date)}</div><h3>${esc(t.phase)}</h3><p>${esc(t.text)}</p></div>`).join('')}</div>`;
-    $('#tl-slider',p).oninput=e=>renderTimeline(+e.target.value);
-  }
-  window.updateTimeline=v=>renderTimeline(+v||0);
-
-  function renderCompare(){
-    const p=document.getElementById('rsub-compare');
-    if(!p) return;
-    p.innerHTML=`<div class="ww2-h-grid" id="compare-grid">${DATA.compare.map(c=>`<div class="ww2-h-panel"><div class="ww2-h-kicker">Compare</div><h3>${esc(c.h)}</h3><p>${esc(c.t)}</p></div>`).join('')}</div>`;
-  }
-
-  function renderSurvivors(){
-    const p=document.getElementById('rsub-survivors');
-    if(!p) return;
-    p.innerHTML=`<div class="ww2-h-grid" id="survivors-grid">${DATA.media.map(m=>card(m,'reference source')).join('')}</div>`;
-  }
-
-  function renderBooks(){
-    const p=document.getElementById('rsub-books');
-    if(!p) return;
-    p.innerHTML=`<div class="ww2-h-grid" id="books-grid">${DATA.shops.filter(x=>x.k==='Books').concat([{title:DATA.name+' unit and markings references',url:'https://www.amazon.co.uk/s?k='+encodeURIComponent(DATA.query+' units markings World War 2'),text:'Book route for unit histories, serials, markings and theatre placement.'}]).map(m=>card(m,'book')).join('')}</div>`;
-  }
-
-  window.renderMediaFinal=function(){
-    const panel=ensureTab('media');
-    panel.innerHTML=`<section class="ww2-hurricane-structure"><div class="ww2-h-kicker">Media</div><h2>${esc(DATA.name)} media board</h2><p>Same card structure across the site: archive, photo reference and kit database routes.</p><div class="ww2-h-grid">${DATA.media.map(m=>card(m,m.k)).join('')}</div></section>`;
-  };
-
-  window.renderWalkaroundFinal=function(){
-    const panel=ensureTab('walkaround');
-    panel.innerHTML=`<section class="ww2-hurricane-structure"><div class="ww2-h-kicker">Walkaround</div><h2>${esc(DATA.name)} walkaround board</h2><p>Same walkaround structure across the site: airframe, cockpit, landing gear/stores and paint/weathering.</p><div class="ww2-h-grid">${DATA.walk.map(w=>card({title:w.title,url:w.url,img:w.img,text:'Aircraft-specific walkaround/photo route.'},'walkaround')).join('')}</div></section>`;
-  };
-
-  function renderBuildSupplement(){
-    const panel=document.getElementById('tab-build');
-    if(!panel || $('#ww2-shop-supplement',panel)) return;
-    const div=document.createElement('section');
-    div.id='ww2-shop-supplement';
-    div.className='ww2-hurricane-structure';
-    div.innerHTML=`<div class="ww2-h-kicker">Checked routes</div><h2>${esc(DATA.name)} shop/book/reference routes</h2><div class="ww2-h-grid">${DATA.shops.map(s=>card(s,s.k)).join('')}</div>`;
-    panel.appendChild(div);
-  }
-
-  window.switchTab=function(id,el){
-    $$('.tab-panel').forEach(p=>p.classList.remove('active'));
-    const panel=ensureTab(id);
-    panel.classList.add('active');
-    $$('.nav-tab,.tab-btn').forEach(b=>b.classList.remove('active'));
-    if(el) el.classList.add('active');
-    const bar=document.getElementById('sqn-bar');
-    if(bar) bar.style.display=(id==='squadrons'||id==='units')?'flex':'none';
-    if(id==='reference') buildReference();
-    if(id==='media') renderMediaFinal();
-    if(id==='walkaround') renderWalkaroundFinal();
-    if(id==='build') renderBuildSupplement();
-  };
-
-  function bindClicks(){
-    $$('button[onclick*="switchTab"]').forEach(btn=>{
-      btn.addEventListener('click',ev=>{
-        const m=(btn.getAttribute('onclick')||'').match(/switchTab\('([^']+)'/);
-        if(m){ev.preventDefault();ev.stopImmediatePropagation();switchTab(m[1],btn);}
-      },true);
-    });
-    $$('button[data-tab]').forEach(btn=>{
-      btn.addEventListener('click',ev=>{ev.preventDefault();ev.stopImmediatePropagation();switchTab(btn.dataset.tab,btn);},true);
-    });
-    document.addEventListener('click',ev=>{
-      const b=ev.target.closest('[data-ref]');
-      if(b){ev.preventDefault();setRefSub(b.dataset.ref,b);}
-    },true);
-  }
-
-  document.addEventListener('DOMContentLoaded',()=>{
-    bindClicks();
-    if(document.getElementById('tab-reference')?.classList.contains('active')) buildReference();
-  });
-})();
-</script>
-
-<style id="true-side-theme">
-:root{--ww2-side-primary:#162b45;--ww2-side-secondary:#293f55;--ww2-side-accent:#c9a84c}
-.aircraft-hero,.hero,.page-hero{background:linear-gradient(135deg,var(--ww2-side-primary),var(--ww2-side-secondary))!important;border-bottom:1px solid var(--ww2-side-accent)!important}
-.section-label,.ww2-h-kicker{color:var(--ww2-side-accent)!important}
-.true-side-identity{display:flex;align-items:center;gap:.8rem;margin:.9rem 0 0;max-width:760px;padding:.75rem .9rem;border:1px solid color-mix(in srgb,var(--ww2-side-accent) 45%,transparent);border-radius:14px;background:rgba(0,0,0,.22);color:#f4ead7}
-.true-side-emblem{width:54px;height:54px;min-width:54px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:1.5rem;color:#fff;border:2px solid rgba(255,255,255,.82);background:var(--ww2-side-accent)}
-body.true-side-raf .true-side-emblem{background:radial-gradient(circle,#c3162f 0 18%,#fff 19% 34%,#1f4f9a 35% 68%,#7a0f24 69% 100%);font-size:0;color:transparent}
-body.true-side-usaaf .true-side-emblem,body.true-side-usn .true-side-emblem{border-radius:12px;background:linear-gradient(90deg,#fff 0 18%,#244f86 18% 82%,#fff 82% 100%)}
-body.true-side-luftwaffe .true-side-emblem{border-radius:10px;background:#e8e0cc;color:#111;font-size:2rem}
-body.true-side-japanese .true-side-emblem{background:#fff;color:#d04b3e;font-size:2.4rem}
-body.true-side-soviet .true-side-emblem{background:#b51e26;color:#ffd97a}
-body.true-side-italian .true-side-emblem{background:conic-gradient(#267447 0 33%,#f5f1df 33% 66%,#b63a30 66% 100%);color:#1d1d1d}
-body.true-side-other .true-side-emblem{background:radial-gradient(circle,#c6283b 0 25%,#fff 26% 48%,#1e4d90 49% 100%);font-size:0;color:transparent}
-.hero-roundel{display:none!important}
-</style>
-<script id="true-side-theme">
-(function(){const D={"label": "RAF / Commonwealth", "emblem": "RAF", "primary": "#162b45", "secondary": "#293f55", "accent": "#c9a84c", "note": "Roundel identity · navy, brass and cream archive style", "side": "raf"};function go(){document.body.classList.add('true-side-'+D.side);document.querySelectorAll('.hero-roundel,.ww2-side-identity').forEach(e=>e.remove());if(document.querySelector('.true-side-identity'))return;const t=document.querySelector('.hero-title')||document.querySelector('h1');const w=document.createElement('div');w.className='true-side-identity';w.innerHTML='<div class="true-side-emblem">'+D.emblem+'</div><div><h2 style="margin:0;color:#fff;font-size:.9rem;letter-spacing:.13em;text-transform:uppercase">'+D.label+'</h2><p style="margin:.25rem 0 0;color:rgba(244,234,215,.76);line-height:1.45">'+D.note+'</p></div>';if(t)t.insertAdjacentElement('afterend',w);} if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();})();
-</script>
-
 </body>
 </html>
