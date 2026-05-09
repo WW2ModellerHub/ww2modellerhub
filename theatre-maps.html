@@ -11,13 +11,73 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
 :root{--bg:#11140f;--panel:#222619;--panel2:#151911;--ink:#f3efe2;--muted:#c9c0a3;--line:rgba(218,190,116,.28);--gold:#c5a24b;--gold2:#e0c36b;--olive:#2d351f;--red:#9f1f18;--blue:#17284a;--shadow:0 20px 60px rgba(0,0,0,.42)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at top,#313827 0,#11140f 36%,#080a07 100%);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}.page{max-width:1920px;margin:auto;background:#11140f;min-height:100vh}.topbar{min-height:108px;background:linear-gradient(180deg,#111712,#07100e);display:grid;grid-template-columns:1.2fr 1fr auto;align-items:center;gap:28px;padding:18px 46px;border-bottom:1px solid rgba(255,255,255,.08)}.brand{display:flex;align-items:center;gap:18px;text-decoration:none;color:#fff}.roundel{width:78px;height:78px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#fff 0 18%,#c71922 19% 29%,#fff 30% 50%,#1e3664 51% 76%,#f6f1dc 77% 100%);box-shadow:0 0 0 3px rgba(255,255,255,.15),0 10px 30px rgba(0,0,0,.45)}.logo-title{font-family:Anton,Impact,sans-serif;font-size:54px;letter-spacing:.035em;line-height:.86;text-transform:uppercase;text-shadow:0 4px 0 rgba(0,0,0,.35)}.logo-title span{background:linear-gradient(180deg,#ead27e,#a98224);-webkit-background-clip:text;background-clip:text;color:transparent}.tagline{font-family:Barlow Condensed,sans-serif;font-weight:700;font-size:18px;letter-spacing:.18em;text-transform:uppercase;color:#f4efe2;margin-top:9px}.search{height:52px;display:flex;align-items:center;border:1px solid rgba(255,255,255,.28);background:rgba(0,0,0,.28);border-radius:4px;overflow:hidden}.search input{width:100%;height:100%;background:transparent;border:0;color:#fff;padding:0 18px;font-size:17px;outline:none}.search button{width:58px;height:100%;border:0;border-left:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.04);color:#eee;font-size:26px}.social{display:flex;gap:16px}.social a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:#fff;text-decoration:none;font-weight:800}.fb{background:#315496}.ig{background:linear-gradient(135deg,#6435b6,#e43d61,#e0a127)}.yt{background:#c91818}.nav{min-height:54px;display:flex;justify-content:center;flex-wrap:wrap;background:linear-gradient(180deg,#27301e,#192016);border-bottom:1px solid rgba(255,255,255,.07)}.nav a{font-family:Barlow Condensed,sans-serif;font-weight:700;letter-spacing:.04em;font-size:18px;color:#fff;text-decoration:none;padding:16px 24px;border-left:1px solid rgba(255,255,255,.03);position:relative}.nav a.active,.nav a:hover{background:#354022}.nav a.active:after,.nav a:hover:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--gold)}.hero{position:relative;min-height:340px;overflow:hidden;background:linear-gradient(90deg,rgba(6,10,8,.96) 0%,rgba(13,17,13,.84) 36%,rgba(20,23,16,.34) 72%,rgba(13,16,13,.16) 100%),url('assets/maps/map-europe.jpg') center center/cover no-repeat}.hero:after{content:"";position:absolute;inset:auto 0 0 0;height:120px;background:linear-gradient(0deg,#11140f,transparent)}.hero-copy{position:relative;z-index:2;padding:48px 74px;max-width:850px}.kicker{font-family:Barlow Condensed,sans-serif;color:var(--gold2);text-transform:uppercase;letter-spacing:.16em;font-weight:800;font-size:17px}.hero h1{font-family:Anton,Impact,sans-serif;font-size:64px;line-height:.94;margin:10px 0 18px;text-transform:uppercase;letter-spacing:.015em;text-shadow:0 5px 0 rgba(0,0,0,.35)}.hero p{font-size:21px;line-height:1.45;color:#f8f3e7;margin:0 0 26px}.main{padding:28px 56px 58px}.panel{background:linear-gradient(180deg,#24281b,#171b12);border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.28)}.panel h2{font-family:Barlow Condensed,sans-serif;font-size:27px;letter-spacing:.04em;text-transform:uppercase;margin:0;padding:18px 20px 12px;border-bottom:1px solid rgba(218,190,116,.18)}.panel-body{padding:20px}.intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-bottom:20px}.copy p{color:var(--muted);line-height:1.62;font-size:17px}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{background:rgba(0,0,0,.2);border:1px solid rgba(218,190,116,.22);padding:16px}.stat b{display:block;font-family:Anton,Impact,sans-serif;font-size:42px;color:#e0c36b;line-height:1}.stat span{font-family:Barlow Condensed,sans-serif;text-transform:uppercase;letter-spacing:.06em;color:#f3efe2}.theatre-shell{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:18px}.map-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.map-tabs button{border:1px solid rgba(218,190,116,.35);background:#192016;color:#f6f1dc;padding:12px 15px;border-radius:3px;font-family:Barlow Condensed,sans-serif;font-size:18px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;cursor:pointer}.map-tabs button.active,.map-tabs button:hover{background:linear-gradient(180deg,#d7b653,#a98224);color:#111}.map-stage{position:relative;min-height:610px;border:1px solid rgba(218,190,116,.35);background:#0b1518;overflow:hidden;box-shadow:inset 0 0 80px rgba(0,0,0,.45)}.map-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.08) brightness(.78)}.map-stage:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,transparent 0 48%,rgba(0,0,0,.2) 77%,rgba(0,0,0,.45) 100%);pointer-events:none}.route-line{position:absolute;height:2px;background:linear-gradient(90deg,rgba(224,195,107,.1),rgba(224,195,107,.9),rgba(224,195,107,.1));transform-origin:left center;z-index:2;box-shadow:0 0 10px rgba(224,195,107,.35)}.marker{position:absolute;z-index:5;transform:translate(-50%,-50%);border:0;background:transparent;cursor:pointer}.marker span{display:block;width:17px;height:17px;border-radius:50%;background:#e0c36b;border:3px solid #111;box-shadow:0 0 0 2px rgba(224,195,107,.6),0 0 18px rgba(224,195,107,.85)}.marker:hover span,.marker.active span{background:#c71922;box-shadow:0 0 0 3px rgba(255,255,255,.72),0 0 20px rgba(199,25,34,.95)}.marker em{position:absolute;left:18px;top:-7px;white-space:nowrap;font-style:normal;font-family:Barlow Condensed,sans-serif;font-weight:800;font-size:15px;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.66);border:1px solid rgba(255,255,255,.18);padding:3px 7px}.intel-card{background:linear-gradient(180deg,#24281b,#151911);border:1px solid rgba(218,190,116,.32);min-height:610px}.intel-card .head{padding:18px 18px 12px;border-bottom:1px solid rgba(218,190,116,.18)}.intel-card small{display:block;color:#e0c36b;font-weight:800;text-transform:uppercase;letter-spacing:.1em}.intel-card h3{font-family:Anton,Impact,sans-serif;font-size:38px;line-height:1;margin:7px 0;text-transform:uppercase}.intel-card p{color:#d8cfb8;line-height:1.55}.intel-card .body{padding:18px}.badge-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.badge{border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.25);padding:6px 9px;border-radius:999px;font-size:13px;color:#f6f1dc}.link-list{display:grid;gap:9px;margin-top:14px}.rowlink{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:12px 14px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.08);text-decoration:none;color:#f8f3e7}.rowlink:hover{border-color:#e0c36b;background:rgba(197,162,75,.12)}.route-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:18px}.route-card{background:linear-gradient(180deg,#2a2e1f,#171b12);border:1px solid rgba(218,190,116,.25);padding:18px;color:#fff;text-decoration:none}.route-card:hover{border-color:#e0c36b;transform:translateY(-2px)}.route-card small{display:block;color:#e0c36b;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.route-card b{display:block;margin:5px 0 8px;font-family:Barlow Condensed,sans-serif;font-size:25px;text-transform:uppercase}.route-card p{margin:0;color:#c9c0a3;line-height:1.5}.footer{border-top:1px solid rgba(255,255,255,.08);background:#080b07;padding:30px 56px;color:#c9c0a3;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer a{color:#e0c36b;text-decoration:none}
 @media(max-width:1150px){.topbar{grid-template-columns:1fr}.social{display:none}.intro-grid,.theatre-shell{grid-template-columns:1fr}.intel-card{min-height:auto}.map-stage{min-height:540px}.main{padding:20px}.hero-copy{padding:38px 28px}.hero h1{font-size:48px}.logo-title{font-size:40px}.roundel{width:58px;height:58px}.stat-grid{grid-template-columns:1fr}.nav a{padding:14px 14px}.marker em{display:none}.footer{padding:24px}}
 @media(max-width:650px){.map-stage{min-height:430px}.map-tabs button{font-size:16px;padding:10px 12px}.hero h1{font-size:42px}}
+
+/* Theatre hub now uses the same Leaflet map pattern as the aircraft guide / Paradise pages. */
+.map-stage{position:relative;min-height:610px;border:1px solid rgba(218,190,116,.35);background:#0b1518;overflow:hidden;box-shadow:inset 0 0 80px rgba(0,0,0,.45)}
+.theatre-leaflet-map{height:610px;width:100%;background:#0c1722;z-index:1}
+.theatre-leaflet-map .leaflet-control-attribution{font-size:9px;background:rgba(8,12,18,.72)!important;color:rgba(255,255,255,.62)!important}
+.theatre-leaflet-map .leaflet-control-zoom a{background:#1b2116;color:#f6f1dc;border-color:rgba(218,190,116,.25)}
+.theatre-marker{background:#e0c36b;border:3px solid #111;border-radius:50%;box-shadow:0 0 0 2px rgba(224,195,107,.62),0 0 18px rgba(224,195,107,.75)}
+.theatre-marker.active-marker{background:#c71922;box-shadow:0 0 0 3px rgba(255,255,255,.72),0 0 20px rgba(199,25,34,.95)}
+.leaflet-tooltip.theatre-label{background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.2);box-shadow:none;color:#fff;font-family:Barlow Condensed,sans-serif;font-weight:800;font-size:15px;letter-spacing:.04em;text-transform:uppercase;padding:3px 7px}
+.leaflet-popup-content-wrapper{background:#171b12;color:#f3efe2;border:1px solid rgba(218,190,116,.35);border-radius:4px}.leaflet-popup-tip{background:#171b12}.leaflet-popup-content{font-family:Inter,system-ui,sans-serif}.leaflet-popup-content b{font-family:Barlow Condensed,sans-serif;text-transform:uppercase;color:#e0c36b;font-size:18px}
+@media(max-width:1150px){.theatre-leaflet-map{height:540px}}@media(max-width:650px){.theatre-leaflet-map{height:430px}}
+
+/* 2026 header/logo modernisation patch */
+.topbar{
+  min-height:92px!important;height:auto!important;
+  display:grid!important;grid-template-columns:minmax(260px,auto) minmax(240px,520px) auto!important;
+  gap:22px!important;padding:14px 34px!important;overflow:hidden!important;
+  background:linear-gradient(180deg,#0e1512,#08100d)!important;
+}
+.brand{min-width:0!important;gap:14px!important;align-items:center!important;overflow:hidden!important;}
+.brand>span:last-child{min-width:0!important;display:block!important;}
+.roundel{width:62px!important;height:62px!important;flex:0 0 62px!important;box-shadow:0 0 0 1px rgba(255,255,255,.22),0 8px 22px rgba(0,0,0,.38)!important;}
+.logo-title{
+  display:block!important;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif!important;
+  font-size:clamp(31px,4.2vw,46px)!important;font-weight:900!important;line-height:.98!important;
+  letter-spacing:-.035em!important;text-transform:uppercase!important;text-shadow:none!important;white-space:nowrap!important;
+}
+.logo-title span{color:#d2b35f!important;background:none!important;-webkit-background-clip:initial!important;background-clip:initial!important;}
+.tagline{
+  display:block!important;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif!important;
+  font-size:clamp(10px,1vw,12px)!important;font-weight:800!important;letter-spacing:.18em!important;
+  margin-top:7px!important;color:#e8dfc8!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;max-width:100%!important;
+}
+.search{height:44px!important;border-radius:999px!important;background:rgba(255,255,255,.055)!important;border-color:rgba(226,205,141,.22)!important;}
+.search input{font-size:15px!important;}
+.search button{font-size:20px!important;border-left-color:rgba(226,205,141,.18)!important;}
+.social a{width:38px!important;height:38px!important;font-size:15px!important;}
+.nav{height:auto!important;min-height:52px!important;display:flex!important;flex-wrap:wrap!important;justify-content:center!important;background:linear-gradient(180deg,#202a1b,#161f14)!important;}
+.nav a{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif!important;font-size:14px!important;font-weight:800!important;letter-spacing:.01em!important;padding:17px 24px!important;white-space:nowrap!important;}
+.nav a.active:after,.nav a:hover:after{height:3px!important;}
+.hero h1{font-family:Barlow Condensed,Inter,system-ui,sans-serif!important;font-weight:800!important;letter-spacing:-.015em!important;text-shadow:0 2px 10px rgba(0,0,0,.45)!important;}
+.panel h2,.panel h3,.btn,.mini-btn,.outline,.card b,.feature h3{font-family:Barlow Condensed,Inter,system-ui,sans-serif!important;}
+.stats{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))!important;margin-left:clamp(18px,4vw,56px)!important;margin-right:clamp(18px,4vw,56px)!important;}
+.stat{border-bottom:1px solid rgba(255,255,255,.06)!important;}
+@media(max-width:1180px){
+  .topbar{grid-template-columns:minmax(0,1fr) minmax(220px,420px)!important;padding:14px 22px!important;}
+  .social{display:none!important;}
+  .nav{justify-content:flex-start!important;overflow-x:auto!important;flex-wrap:nowrap!important;}
+  .nav a{padding:15px 18px!important;}
+}
+@media(max-width:760px){
+  .topbar{grid-template-columns:1fr!important;gap:12px!important;}
+  .roundel{width:52px!important;height:52px!important;flex-basis:52px!important;}
+  .logo-title{font-size:34px!important;}
+  .tagline{font-size:9.5px!important;letter-spacing:.12em!important;}
+  .topbar .search{display:none!important;}
+  .mobile-search{display:flex!important;}
+}
 </style>
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Special+Elite&display=swap" rel="stylesheet"/><link href="assets/site-theme.css" rel="stylesheet"/></head>
 <body>
 <div class="page">
 <header class="topbar"><a aria-label="WW2 Modeller homepage" class="brand" href="index.html"><span class="roundel"></span><span><span class="logo-title">WW2 <span>Modeller</span></span><span class="tagline">Build history. Share passion. Remember.</span></span></a><form class="search" onsubmit="return siteSearch(event)" role="search"><input aria-label="Search site" id="siteSearch" placeholder="Search aircraft, kits, articles..." type="search"/><button aria-label="Search">⌕</button></form><div class="social"><a aria-label="Facebook" class="fb" href="about.html">f</a><a aria-label="Instagram" class="ig" href="about.html">◎</a><a aria-label="YouTube" class="yt" href="media.html">▶</a></div></header>
@@ -31,41 +91,73 @@
 <footer class="footer"><span>© WW2 Modeller — free World War II aircraft modelling reference.</span><span><a href="privacy.html">Privacy</a> · <a href="contact.html">Contact</a> · <a href="aircraft.html">Aircraft Index</a></span></footer>
 </div>
 <script>
+
 const theatres={
- europe:{img:'assets/maps/map-europe.jpg',routes:[
-  {id:'biggin',x:42,y:62,label:'Biggin Hill',title:'Biggin Hill',desc:'Battle of Britain fighter station route for RAF day fighters, squadron markings and early-war camouflage.',tags:['RAF','Battle of Britain','Fighter Command'],links:[['Hawker Hurricane guide','hurricane_paradise.html'],['Supermarine Spitfire guide','spitfire_paradise.html'],['Battle of Britain squadron article','article-bob-squadrons-guide.html']]},
-  {id:'duxford',x:43.5,y:57,label:'Duxford',title:'Duxford',desc:'Cambridgeshire fighter base route for Spitfire and Hurricane subjects, with early-war RAF modelling references.',tags:['RAF','Duxford','Spitfire'],links:[['Spitfire guide','spitfire_paradise.html'],['Hurricane guide','hurricane_paradise.html'],['Spitfire cockpit guide','article-spitfire-cockpit-guide.html']]},
-  {id:'tangmere',x:39,y:66,label:'Tangmere',title:'Tangmere',desc:'South coast RAF route for Battle of Britain and Channel Front fighter operations.',tags:['RAF','Channel Front','Fighters'],links:[['Hurricane weathering','article-hurricane-weathering.html'],['Spitfire weathering','article-spitfire-weathering.html'],['Paint codes','paint-codes.html']]},
-  {id:'normandy',x:48,y:70,label:'Normandy',title:'Normandy & Northern France',desc:'D-Day and post-invasion route for USAAF/RAF fighter-bombers, invasion stripes and weathered tactical aircraft.',tags:['ETO','D-Day','Invasion stripes'],links:[['P-51 Mustang guide','p51_paradise.html'],['P-47 Thunderbolt guide','p47_paradise.html'],['Typhoon guide','typhoon_paradise.html']]},
-  {id:'eastanglia',x:45,y:54,label:'East Anglia',title:'East Anglia bomber fields',desc:'USAAF heavy bomber route for B-17, B-24 and escort fighters operating over occupied Europe.',tags:['USAAF','8th Air Force','Heavy bombers'],links:[['B-17 Flying Fortress guide','b17_paradise.html'],['B-24 Liberator guide','b24_paradise.html'],['P-51 Mustang guide','p51_paradise.html']]},
-  {id:'reich',x:65,y:50,label:'Reich defence',title:'Reich defence',desc:'Late-war Luftwaffe defence route for mottling, RLM greys, interceptors and heavily weathered fighters.',tags:['Luftwaffe','RLM','Defence of the Reich'],links:[['Bf 109 guide','bf109_paradise.html'],['Fw 190 guide','fw190_paradise.html'],['Me 262 guide','me262_paradise.html']]}
+ europe:{center:[51.2,4.8],zoom:5,routes:[
+  {id:'biggin',lat:51.33,lng:0.03,label:'Biggin Hill',title:'Biggin Hill',desc:'Battle of Britain fighter station route for RAF day fighters, squadron markings and early-war camouflage.',tags:['RAF','Battle of Britain','Fighter Command'],links:[['Hawker Hurricane guide','hurricane_paradise.html'],['Supermarine Spitfire guide','spitfire_paradise.html'],['Battle of Britain squadron article','article-bob-squadrons-guide.html']]},
+  {id:'duxford',lat:52.09,lng:0.13,label:'Duxford',title:'Duxford',desc:'Cambridgeshire fighter base route for Spitfire and Hurricane subjects, with early-war RAF modelling references.',tags:['RAF','Duxford','Spitfire'],links:[['Spitfire guide','spitfire_paradise.html'],['Hurricane guide','hurricane_paradise.html'],['Spitfire cockpit guide','article-spitfire-cockpit-guide.html']]},
+  {id:'tangmere',lat:50.85,lng:-0.72,label:'Tangmere',title:'Tangmere',desc:'South coast RAF route for Battle of Britain and Channel Front fighter operations.',tags:['RAF','Channel Front','Fighters'],links:[['Hurricane weathering','article-hurricane-weathering.html'],['Spitfire weathering','article-spitfire-weathering.html'],['Paint codes','paint-codes.html']]},
+  {id:'normandy',lat:49.18,lng:-0.37,label:'Normandy',title:'Normandy & Northern France',desc:'D-Day and post-invasion route for USAAF/RAF fighter-bombers, invasion stripes and weathered tactical aircraft.',tags:['ETO','D-Day','Invasion stripes'],links:[['P-51 Mustang guide','p51_paradise.html'],['P-47 Thunderbolt guide','p47_paradise.html'],['Typhoon guide','typhoon_paradise.html']]},
+  {id:'eastanglia',lat:52.55,lng:1.05,label:'East Anglia',title:'East Anglia bomber fields',desc:'USAAF heavy bomber route for B-17, B-24 and escort fighters operating over occupied Europe.',tags:['USAAF','8th Air Force','Heavy bombers'],links:[['B-17 Flying Fortress guide','b17_paradise.html'],['B-24 Liberator guide','b24_paradise.html'],['P-51 Mustang guide','p51_paradise.html']]},
+  {id:'reich',lat:51.5,lng:10.5,label:'Reich defence',title:'Reich defence',desc:'Late-war Luftwaffe defence route for mottling, RLM greys, interceptors and heavily weathered fighters.',tags:['Luftwaffe','RLM','Defence of the Reich'],links:[['Bf 109 guide','bf109_paradise.html'],['Fw 190 guide','fw190_paradise.html'],['Me 262 guide','me262_paradise.html']]}
  ]},
- med:{img:'assets/maps/map-mediterranean.jpg',routes:[
-  {id:'malta',x:47,y:55,label:'Malta',title:'Malta',desc:'Siege of Malta route for dusty, sun-faded RAF and Axis Mediterranean aircraft subjects.',tags:['Malta','RAF','Regia Aeronautica'],links:[['Spitfire guide','spitfire_paradise.html'],['Hurricane guide','hurricane_paradise.html'],['Macchi C.202 guide','macchi_c202_paradise.html']]},
-  {id:'sicily',x:50,y:49,label:'Sicily',title:'Sicily',desc:'Central Mediterranean route for Italian fighters, Allied invasion subjects and weathered desert-to-island finishes.',tags:['Sicily','Regia Aeronautica','Allied invasion'],links:[['Macchi C.205 guide','macchi_c205_paradise.html'],['Re.2005 guide','re2005_paradise.html'],['P-40 Warhawk guide','p40_paradise.html']]},
-  {id:'tunisia',x:42,y:61,label:'Tunisia',title:'Tunisia',desc:'North African route for desert schemes, tropical filters, dust staining and Axis/Allied fighter subjects.',tags:['North Africa','Desert','Trop'],links:[['Bf 109 guide','bf109_paradise.html'],['P-40 Warhawk guide','p40_paradise.html'],['Bf 109 E-7/Trop article','article-bf109-e7-trop.html']]},
-  {id:'italy',x:53,y:39,label:'Italy',title:'Italian campaign',desc:'Late-war Italy route for Allied tactical aircraft and Italian ANR/Regia Aeronautica modelling subjects.',tags:['Italy','ANR','Tactical air war'],links:[['Fiat G.55 guide','fiat_g55_paradise.html'],['Macchi C.205 guide','macchi_c205_paradise.html'],['A-20 Havoc guide','a20_paradise.html']]}
+ med:{center:[37.5,13.5],zoom:5,routes:[
+  {id:'malta',lat:35.89,lng:14.51,label:'Malta',title:'Malta',desc:'Siege of Malta route for dusty, sun-faded RAF and Axis Mediterranean aircraft subjects.',tags:['Malta','RAF','Regia Aeronautica'],links:[['Spitfire guide','spitfire_paradise.html'],['Hurricane guide','hurricane_paradise.html'],['Macchi C.202 guide','macchi_c202_paradise.html']]},
+  {id:'sicily',lat:37.6,lng:14.0,label:'Sicily',title:'Sicily',desc:'Central Mediterranean route for Italian fighters, Allied invasion subjects and weathered desert-to-island finishes.',tags:['Sicily','Regia Aeronautica','Allied invasion'],links:[['Macchi C.205 guide','macchi_c205_paradise.html'],['Re.2005 guide','re2005_paradise.html'],['P-40 Warhawk guide','p40_paradise.html']]},
+  {id:'tunisia',lat:36.8,lng:10.2,label:'Tunisia',title:'Tunisia',desc:'North African route for desert schemes, tropical filters, dust staining and Axis/Allied fighter subjects.',tags:['North Africa','Desert','Trop'],links:[['Bf 109 guide','bf109_paradise.html'],['P-40 Warhawk guide','p40_paradise.html'],['Bf 109 E-7/Trop article','article-bf109-e7-trop.html']]},
+  {id:'italy',lat:41.9,lng:12.5,label:'Italy',title:'Italian campaign',desc:'Late-war Italy route for Allied tactical aircraft and Italian ANR/Regia Aeronautica modelling subjects.',tags:['Italy','ANR','Tactical air war'],links:[['Fiat G.55 guide','fiat_g55_paradise.html'],['Macchi C.205 guide','macchi_c205_paradise.html'],['A-20 Havoc guide','a20_paradise.html']]}
  ]},
- east:{img:'assets/maps/map-eastern-front.jpg',routes:[
-  {id:'moscow',x:43,y:43,label:'Moscow',title:'Moscow front',desc:'Early Eastern Front route for I-16, Yak-1 and winter emergency finishes around Moscow.',tags:['Soviet VVS','Winter','1941'],links:[['I-16 guide','i16_paradise.html'],['Yak-1 guide','yak1_paradise.html'],['Paint codes','paint-codes.html']]},
-  {id:'stalingrad',x:56,y:66,label:'Stalingrad',title:'Stalingrad',desc:'Hard-used Soviet and Luftwaffe aircraft route for rough-field weathering, winter grime and tactical markings.',tags:['Stalingrad','VVS','Luftwaffe'],links:[['Yak-1 guide','yak1_paradise.html'],['La-5 guide','la5_paradise.html'],['Ju 87 Stuka guide','ju87_paradise.html']]},
-  {id:'kursk',x:46,y:56,label:'Kursk',title:'Kursk',desc:'Mid-war Eastern Front route for Il-2, La-5/La-5FN and Luftwaffe ground-attack opposition.',tags:['Kursk','Ground attack','1943'],links:[['Il-2 guide','il2_paradise.html'],['La-5FN guide','la5fn_paradise.html'],['Fw 190 guide','fw190_paradise.html']]},
-  {id:'berlin',x:19,y:58,label:'Berlin',title:'Berlin route',desc:'Late-war route for Soviet grey schemes, Luftwaffe late-war camouflage and battered operational finishes.',tags:['Late war','VVS','Luftwaffe'],links:[['La-7 guide','la7_paradise.html'],['Yak-3 guide','yak3_paradise.html'],['Me 262 guide','me262_paradise.html']]}
+ east:{center:[51.0,32.0],zoom:4,routes:[
+  {id:'moscow',lat:55.76,lng:37.62,label:'Moscow',title:'Moscow front',desc:'Early Eastern Front route for I-16, Yak-1 and winter emergency finishes around Moscow.',tags:['Soviet VVS','Winter','1941'],links:[['I-16 guide','i16_paradise.html'],['Yak-1 guide','yak1_paradise.html'],['Paint codes','paint-codes.html']]},
+  {id:'stalingrad',lat:48.71,lng:44.51,label:'Stalingrad',title:'Stalingrad',desc:'Hard-used Soviet and Luftwaffe aircraft route for rough-field weathering, winter grime and tactical markings.',tags:['Stalingrad','VVS','Luftwaffe'],links:[['Yak-1 guide','yak1_paradise.html'],['La-5 guide','la5_paradise.html'],['Ju 87 Stuka guide','ju87_paradise.html']]},
+  {id:'kursk',lat:51.73,lng:36.19,label:'Kursk',title:'Kursk',desc:'Mid-war Eastern Front route for Il-2, La-5/La-5FN and Luftwaffe ground-attack opposition.',tags:['Kursk','Ground attack','1943'],links:[['Il-2 guide','il2_paradise.html'],['La-5FN guide','la5fn_paradise.html'],['Fw 190 guide','fw190_paradise.html']]},
+  {id:'berlin',lat:52.52,lng:13.40,label:'Berlin',title:'Berlin route',desc:'Late-war route for Soviet grey schemes, Luftwaffe late-war camouflage and battered operational finishes.',tags:['Late war','VVS','Luftwaffe'],links:[['La-7 guide','la7_paradise.html'],['Yak-3 guide','yak3_paradise.html'],['Me 262 guide','me262_paradise.html']]}
  ]},
- pacific:{img:'assets/maps/map-pacific.jpg',routes:[
-  {id:'pearl',x:13,y:47,label:'Pearl Harbor',title:'Pearl Harbor',desc:'Opening Pacific War route for early US Navy and IJN carrier aircraft with pre-war and early-war markings.',tags:['US Navy','IJN','Carrier war'],links:[['A6M Zero guide','zero_paradise.html'],['B5N Kate guide','b5n_kate_paradise.html'],['D3A Val guide','d3a_val_paradise.html']]},
-  {id:'midway',x:31,y:44,label:'Midway',title:'Midway',desc:'Carrier battle route for US Navy dive bombers, torpedo aircraft and IJN strike aircraft.',tags:['Midway','US Navy','IJN'],links:[['SBD Dauntless guide','dauntless_paradise.html'],['TBD Devastator guide','tbd_paradise.html'],['A6M Zero guide','zero_paradise.html']]},
-  {id:'guadalcanal',x:61,y:73,label:'Guadalcanal',title:'Guadalcanal',desc:'Solomons route for heavily weathered carrier and land-based aircraft in tropical conditions.',tags:['Solomons','Tropical weathering','Cactus Air Force'],links:[['F4F Wildcat guide','wildcat_paradise.html'],['F4U Corsair guide','corsair_paradise.html'],['G4M Betty guide','g4m_betty_paradise.html']]},
-  {id:'newguinea',x:65,y:66,label:'New Guinea',title:'New Guinea',desc:'Jungle strip route for P-38, P-40, Ki-43 and IJAAF aircraft with faded paint and field repairs.',tags:['New Guinea','IJAAF','USAAF'],links:[['P-38 Lightning guide','p38_paradise.html'],['P-40 Warhawk guide','p40_paradise.html'],['Ki-43 Oscar guide','ki43_paradise.html']]}
+ pacific:{center:[5,160],zoom:3,routes:[
+  {id:'pearl',lat:21.31,lng:-157.92,label:'Pearl Harbor',title:'Pearl Harbor',desc:'Opening Pacific War route for early US Navy and IJN carrier aircraft with pre-war and early-war markings.',tags:['US Navy','IJN','Carrier war'],links:[['A6M Zero guide','zero_paradise.html'],['B5N Kate guide','b5n_kate_paradise.html'],['D3A Val guide','d3a_val_paradise.html']]},
+  {id:'midway',lat:28.20,lng:-177.38,label:'Midway',title:'Midway',desc:'Carrier battle route for US Navy dive bombers, torpedo aircraft and IJN strike aircraft.',tags:['Midway','US Navy','IJN'],links:[['SBD Dauntless guide','dauntless_paradise.html'],['TBD Devastator guide','tbd_paradise.html'],['A6M Zero guide','zero_paradise.html']]},
+  {id:'guadalcanal',lat:-9.43,lng:160.05,label:'Guadalcanal',title:'Guadalcanal',desc:'Solomons route for heavily weathered carrier and land-based aircraft in tropical conditions.',tags:['Solomons','Tropical weathering','Cactus Air Force'],links:[['F4F Wildcat guide','wildcat_paradise.html'],['F4U Corsair guide','corsair_paradise.html'],['G4M Betty guide','g4m_betty_paradise.html']]},
+  {id:'newguinea',lat:-6.31,lng:147.0,label:'New Guinea',title:'New Guinea',desc:'Jungle strip route for P-38, P-40, Ki-43 and IJAAF aircraft with faded paint and field repairs.',tags:['New Guinea','IJAAF','USAAF'],links:[['P-38 Lightning guide','p38_paradise.html'],['P-40 Warhawk guide','p40_paradise.html'],['Ki-43 Oscar guide','ki43_paradise.html']]}
  ]}
 };
 const stage=document.getElementById('mapStage');
 const card=document.getElementById('intelCard');
+let theatreMap=null;
+let activeLayer=null;
+let routeLayers=[];
+function markerIcon(active=false){return L.divIcon({className:'theatre-marker'+(active?' active-marker':''),iconSize:[18,18],iconAnchor:[9,9]});}
 function renderCard(route){card.innerHTML=`<div class="head"><small>Selected route</small><h3>${route.title}</h3><p>${route.desc}</p></div><div class="body"><div class="badge-row">${route.tags.map(t=>`<span class="badge">${t}</span>`).join('')}</div><div class="link-list">${route.links.map(([label,href])=>`<a class="rowlink" href="${href}"><span>${label}</span><span>›</span></a>`).join('')}</div></div>`}
-function renderTheatre(key){const t=theatres[key];stage.innerHTML=`<img src="${t.img}" alt="${key} theatre map">`;t.routes.forEach((r,i)=>{const btn=document.createElement('button');btn.className='marker';btn.type='button';btn.style.left=r.x+'%';btn.style.top=r.y+'%';btn.innerHTML=`<span></span><em>${r.label}</em>`;btn.addEventListener('click',()=>{document.querySelectorAll('.marker').forEach(m=>m.classList.remove('active'));btn.classList.add('active');renderCard(r)});stage.appendChild(btn);if(i===0){btn.classList.add('active');renderCard(r)}})}
+function initMap(){
+ stage.innerHTML='<div id="theatreLeafletMap" class="theatre-leaflet-map" aria-label="Interactive theatre map"></div>';
+ theatreMap=L.map('theatreLeafletMap',{scrollWheelZoom:false,worldCopyJump:true});
+ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:8,attribution:'&copy; OpenStreetMap contributors'}).addTo(theatreMap);
+}
+function clearRoutes(){routeLayers.forEach(l=>theatreMap.removeLayer(l));routeLayers=[];activeLayer=null;}
+function selectRoute(route, marker){
+ routeLayers.forEach(l=>{if(l.setIcon)l.setIcon(markerIcon(false));});
+ marker.setIcon(markerIcon(true));activeLayer=marker;renderCard(route);
+ theatreMap.panTo([route.lat,route.lng],{animate:true,duration:.45});
+}
+function renderTheatre(key){
+ if(!theatreMap)initMap();
+ const t=theatres[key];clearRoutes();
+ theatreMap.setView(t.center,t.zoom);
+ const bounds=[];
+ t.routes.forEach((r,i)=>{
+  const m=L.marker([r.lat,r.lng],{icon:markerIcon(i===0),title:r.label}).addTo(theatreMap);
+  m.bindTooltip(r.label,{permanent:true,direction:'right',offset:[12,0],className:'theatre-label'});
+  m.bindPopup(`<b>${r.title}</b><br>${r.desc}`);
+  m.on('click',()=>selectRoute(r,m));
+  routeLayers.push(m);bounds.push([r.lat,r.lng]);
+  if(i===0){activeLayer=m;renderCard(r)}
+ });
+ if(bounds.length>1){theatreMap.fitBounds(bounds,{padding:[45,45],maxZoom:t.zoom});}
+ setTimeout(()=>theatreMap.invalidateSize(),80);
+}
 document.querySelectorAll('.map-tabs button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.map-tabs button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderTheatre(btn.dataset.theatre)}));
 function siteSearch(e){e.preventDefault();const q=(document.getElementById('siteSearch')?.value||'').trim().toLowerCase();if(!q)return false;const map={spitfire:'spitfire_paradise.html',hurricane:'hurricane_paradise.html',lancaster:'lancaster_paradise.html',mustang:'p51_paradise.html','p-51':'p51_paradise.html',bf109:'bf109_paradise.html','bf 109':'bf109_paradise.html',fw190:'fw190_paradise.html','fw 190':'fw190_paradise.html',zero:'zero_paradise.html',paint:'paint-codes.html',kit:'kits.html',article:'articles.html',book:'books.html',map:'theatre-maps.html',theatre:'theatre-maps.html'};for(const k in map){if(q.includes(k)){location.href=map[k];return false}}location.href='aircraft.html';return false}
 renderTheatre('europe');
+
 </script>
 </body>
 </html>
