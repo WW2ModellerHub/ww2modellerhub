@@ -136,5 +136,22 @@ function renderVariant(key='mk1'){const el=document.getElementById('variantResul
 document.querySelectorAll('[data-variant]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-variant]').forEach(x=>x.classList.remove('on'));b.classList.add('on');renderVariant(b.dataset.variant)}));
 renderBuildProfile();renderWizard();renderVariant();renderOverviewTimeline();renderUnits();renderReference();renderBuild();renderMedia();setTimeout(initOverviewMap,80);
 </script>
+<script id="ww2-image-fallbacks">
+(function(){
+  var fallbacks = ["https://commons.wikimedia.org/wiki/Special:FilePath/Junkers%20Ju%2087%20B-2%20Stuka%20RAF%20Hendon%202014.jpg?width=900", "https://commons.wikimedia.org/wiki/Special:FilePath/Junkers%20Ju%2087%20G-2%20Kanonenvogel.jpg?width=900", "${safeImg(src)}"];
+  if (!fallbacks.length) return;
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('img').forEach(function(img){
+      var attempt = 0;
+      img.addEventListener('error', function(){
+        while (attempt < fallbacks.length && img.src.indexOf(encodeURI(fallbacks[attempt]).split('?')[0]) !== -1) attempt++;
+        if (attempt < fallbacks.length) {
+          img.src = fallbacks[attempt++];
+        }
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>

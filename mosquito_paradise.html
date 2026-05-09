@@ -121,5 +121,22 @@ function renderVariant(key='mk1'){const el=document.getElementById('variantResul
 document.querySelectorAll('[data-variant]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-variant]').forEach(x=>x.classList.remove('on'));b.classList.add('on');renderVariant(b.dataset.variant)}));
 renderBuildProfile();renderWizard();renderVariant();renderOverviewTimeline();renderUnits();renderReference();renderBuild();renderMedia();setTimeout(initOverviewMap,80);
 </script>
+<script id="ww2-image-fallbacks">
+(function(){
+  var fallbacks = ["https://commons.wikimedia.org/wiki/Special:FilePath/15%20Dehavilland%20Mosquito%20Merlin%20Engine%20B.Mk%20IV%20in%20service%20with%20105%20Sq%20RAF%20%2815650368848%29.jpg?width=900", "https://commons.wikimedia.org/wiki/Special:FilePath/105%20Squadron%20Mosquito%20and%20crew%20WWII%20IWM%20CH%2015100.jpg?width=900", "${safeImg(src)}"];
+  if (!fallbacks.length) return;
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('img').forEach(function(img){
+      var attempt = 0;
+      img.addEventListener('error', function(){
+        while (attempt < fallbacks.length && img.src.indexOf(encodeURI(fallbacks[attempt]).split('?')[0]) !== -1) attempt++;
+        if (attempt < fallbacks.length) {
+          img.src = fallbacks[attempt++];
+        }
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>

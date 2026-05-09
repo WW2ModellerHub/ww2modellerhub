@@ -121,5 +121,22 @@ function renderVariant(key='mk1'){const el=document.getElementById('variantResul
 document.querySelectorAll('[data-variant]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-variant]').forEach(x=>x.classList.remove('on'));b.classList.add('on');renderVariant(b.dataset.variant)}));
 renderBuildProfile();renderWizard();renderVariant();renderOverviewTimeline();renderUnits();renderReference();renderBuild();renderMedia();setTimeout(initOverviewMap,80);
 </script>
+<script id="ww2-image-fallbacks">
+(function(){
+  var fallbacks = ["https://commons.wikimedia.org/wiki/Special:FilePath/Squadron%20Leader%20Robert%20Stanford%20Tuck%2C%20commanding%20No.%20257%20Squadron%2C%20in%20the%20cockpit%20of%20his%20Hawker%20Hurricane%20at%20Martelsham%20Heath%2C%20November%201940.%20CH1680.jpg?width=900", "https://commons.wikimedia.org/wiki/Special:FilePath/SmithsonianHawkerHurricane.jpg?width=900", "${safeImg(src)}"];
+  if (!fallbacks.length) return;
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('img').forEach(function(img){
+      var attempt = 0;
+      img.addEventListener('error', function(){
+        while (attempt < fallbacks.length && img.src.indexOf(encodeURI(fallbacks[attempt]).split('?')[0]) !== -1) attempt++;
+        if (attempt < fallbacks.length) {
+          img.src = fallbacks[attempt++];
+        }
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>

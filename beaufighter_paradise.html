@@ -120,5 +120,22 @@ function renderVariant(key='mk1'){const el=document.getElementById('variantResul
 document.querySelectorAll('[data-variant]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-variant]').forEach(x=>x.classList.remove('on'));b.classList.add('on');renderVariant(b.dataset.variant)}));
 renderBuildProfile();renderWizard();renderVariant();renderOverviewTimeline();renderUnits();renderReference();renderBuild();renderMedia();setTimeout(initOverviewMap,80);
 </script>
+<script id="ww2-image-fallbacks">
+(function(){
+  var fallbacks = ["https://commons.wikimedia.org/wiki/Special:FilePath/252%20Squadron%20RAF%20Beaufighter%20cockpit%20at%20Chivenor%20IWM%20CH%2017305.jpg?width=900", "https://commons.wikimedia.org/wiki/Special:FilePath/Bristol%20Beaufighter%20cockpit%2C%20Imperial%20War%20Museum%2C%20Duxford.%20%2834002231404%29.jpg?width=900", "${safeImg(src)}"];
+  if (!fallbacks.length) return;
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('img').forEach(function(img){
+      var attempt = 0;
+      img.addEventListener('error', function(){
+        while (attempt < fallbacks.length && img.src.indexOf(encodeURI(fallbacks[attempt]).split('?')[0]) !== -1) attempt++;
+        if (attempt < fallbacks.length) {
+          img.src = fallbacks[attempt++];
+        }
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
