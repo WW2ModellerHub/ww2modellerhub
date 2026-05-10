@@ -1,16 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Fairey Swordfish Aircraft Guide — Fleet Air Arm Model Kit, Paint & Markings Reference</title>
-<meta name="description" content="Fairey Swordfish World War II aircraft modelling reference with Fleet Air Arm squadrons, carrier operations, paint colours, kit guide, media, books, weathering and walkaround-style reference notes."/>
-<meta name="keywords" content="Fairey Swordfish model kit, World War II aircraft modelling reference, WW2 aircraft paint colours, Fleet Air Arm markings, Swordfish torpedo bomber, WW2 aircraft scale modelling guide, aircraft walkaround photos, biplane rigging guide"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fairey Swordfish Aircraft Guide — Fleet Air Arm Model Kit, Paint &amp; Markings Reference</title>
+<meta content="Fairey Swordfish RAF and Fleet Air Arm World War II aircraft modelling reference with squadron markings, camouflage notes, model kit guidance, media, books, weathering and walkaround-style reference notes." name="description"/>
+<meta content="Fairey Swordfish model kit, Fairey Swordfish paint colours, Fairey Swordfish markings, RAF squadron markings, RAF roundels, MAP paint colours, Dark Green, Ocean Grey, Sky Type S, Fleet Air Arm, WW2 aircraft scale modelling guide, aircraft walkaround photos" name="keywords"/>
 <link href="favicon.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="favicon.ico" rel="shortcut icon"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&amp;family=Oswald:wght@400;500;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
@@ -48,110 +49,113 @@
 .map-side-photo-wrap{width:100%;height:130px;border:1px solid var(--line);margin:.7rem 0;background:#07111f;overflow:hidden}
 .map-side-photo-wrap img{width:100%;height:100%;object-fit:cover}
 
+
+/* image bug-fix layer */
+img{background:#07111f;object-fit:cover} .card img,.article-card img{aspect-ratio:16/9;width:100%;height:auto;min-height:120px;object-fit:cover} .hero{background-image:linear-gradient(90deg,rgba(7,17,31,.92),rgba(7,17,31,.48),rgba(7,17,31,.16)),var(--hero-img)!important;background-size:cover!important;background-position:center!important}
 </style>
-</head>
-<body>
-<nav class="site-nav"><div class="site-nav-inner"><a class="site-nav-logo" href="index.html"><span class="mini-roundel"></span><span class="site-nav-logo-text">WW2 <span>Modeller</span></span></a><div class="site-nav-links"><a class="site-nav-link" href="aircraft.html">Aircraft</a><a class="site-nav-link" href="paint-codes.html">Paint Codes</a><a class="site-nav-link" href="articles.html">Articles</a></div></div></nav>
+<link href="assets/mobile-fix.css" rel="stylesheet"/><link href="assets/unified-nav.css" rel="stylesheet"/>
+<link href="assets/paradise-visual-theme.css" rel="stylesheet">
+</link><link href="assets/paradise-theme-fix.css" rel="stylesheet"/></head>
+<body class="paradise-aircraft paradise-theme-raf theme-raf">
+<header class="ww2-top"><div class="ww2-top-inner"><a class="ww2-brand" href="index.html"><span class="ww2-roundel"></span><span><span class="ww2-brand-title">WW2 <span>Modeller</span></span><span class="ww2-brand-tag">Build history. Share passion. Remember.</span></span></a><form class="ww2-search" onsubmit="var q=this.querySelector('input').value.trim(); if(q) location.href='aircraft.html?q='+encodeURIComponent(q); return false;"><input placeholder="Search aircraft, kits, articles..." type="search"/><button aria-label="Search">⌕</button></form><div class="ww2-social"><span>f</span><span>◎</span><span>▶</span></div></div></header><nav class="ww2-main-nav" id="ww2MainNav"><button class="ww2-menu-toggle" onclick="document.getElementById('ww2MainNav').classList.toggle('open')" type="button">Menu</button><div class="ww2-nav-inner"><a class="" href="index.html">Home</a><a class="active" href="aircraft.html">Aircraft Index</a><a class="" href="paint-codes.html">Paint Codes</a><a class="" href="kits.html">Kits &amp; Markets</a><a class="" href="articles.html">Articles</a><a class="" href="techniques-bank.html">Techniques Bank</a><a class="" href="aircraft-comparison.html">Compare Aircraft</a><a class="" href="books.html">Books</a><a class="" href="theatre-maps.html">Theatre Maps</a><a class="" href="about.html">About</a><a class="" href="contact.html">Contact</a></div></nav>
 <main class="page">
-<header class="hero"><div><div class="hero-main"><div class="hero-roundel"></div><div><div class="eyebrow">Fleet Air Arm · Atlantic, Mediterranean & Arctic</div><h1>Fairey Swordfish</h1><div class="hero-sub">Mk.I / Mk.II / Mk.III · Fleet Air Arm · 1936–1945</div></div></div><p class="hero-copy">The Fairey Swordfish served as a carrier torpedo bomber, reconnaissance aircraft, anti-submarine aircraft and strike aircraft throughout World War II. Its rugged biplane structure, slow-speed handling and ability to operate from small carrier decks make it one of the richest WW2 aircraft modelling subjects.</p></div><div class="hero-stats"><div><div class="stat-value">19</div><div class="stat-label">Squadrons</div></div><div><div class="stat-value">529</div><div class="stat-label">Strike impact</div></div><div><div class="stat-value">36%</div><div class="stat-label">FAA kills</div></div><div><div class="stat-value">1,126</div><div class="stat-label">Sorties</div></div></div></header>
-<nav class="tabs" aria-label="Swordfish page sections"><button class="tab active" data-tab="overview">Overview</button><button class="tab" data-tab="squadrons">Squadrons</button><button class="tab" data-tab="reference">Reference</button><button class="tab" data-tab="build">Build Guide</button><button class="tab" data-tab="media">Media</button></nav>
+<header class="hero" style="--hero-img:url('assets/aircraft-index-custom/swordfish.jpg')"><div><div class="hero-main"><div class="hero-roundel"></div><div><div class="eyebrow">Fleet Air Arm · Atlantic, Mediterranean &amp; Arctic</div><h1>Fairey Swordfish</h1><div class="hero-sub">Mk.I / Mk.II / Mk.III · Fleet Air Arm · 1936–1945</div></div></div><p class="hero-copy">The Fairey Swordfish served as a carrier torpedo bomber, reconnaissance aircraft, anti-submarine aircraft and strike aircraft throughout World War II. Its rugged biplane structure, slow-speed handling and ability to operate from small carrier decks make it one of the richest WW2 aircraft modelling subjects.</p></div><div class="hero-stats"><div><div class="stat-value">19</div><div class="stat-label">Squadrons</div></div><div><div class="stat-value">529</div><div class="stat-label">Strike impact</div></div><div><div class="stat-value">36%</div><div class="stat-label">FAA kills</div></div><div><div class="stat-value">1,126</div><div class="stat-label">Sorties</div></div></div></header>
+<nav aria-label="Swordfish page sections" class="tabs"><button class="tab active" data-tab="overview">Overview</button><button class="tab" data-tab="squadrons">Squadrons</button><button class="tab" data-tab="reference">Reference</button><button class="tab" data-tab="build">Build Guide</button><button class="tab" data-tab="media">Media</button></nav>
 <div class="layout"><div class="content">
-<section class="tab-panel active" id="tab-overview"><div class="overview-grid"><div class="panel panel-pad"><h2 class="section-title">Fleet Air Arm Swordfish operations · 1939–1945</h2><p>The Swordfish was the backbone of Fleet Air Arm torpedo bomber forces from the outbreak of war to the final operations of 1945. It flew from fleet carriers, escort carriers and land bases across the Atlantic, Mediterranean, Arctic and Indian Ocean theatres.</p><div class="mini-grid"><div class="mini-stat"><b>19</b><span class="stat-label">Units</span></div><div class="mini-stat"><b>3</b><span class="stat-label">Crew</span></div><div class="mini-stat"><b>1,610 lb</b><span class="stat-label">Torpedo</span></div><div class="mini-stat"><b>660 mi</b><span class="stat-label">Range</span></div></div></div><div><div class="overview-img"><img alt="Fairey Swordfish flying near carrier" src="https://commons.wikimedia.org/wiki/Special:FilePath/A%20Fairey%20Swordfish%20in%20Flight%20TR1139.jpg?width=900" onerror="this.src='https://commons.wikimedia.org/wiki/Special:FilePath/A%20Fairey%20Swordfish%20in%20Flight%20TR1139.jpg?width=900'"></div><div class="caption">Swordfish reference imagery: carrier strike, rigging and fabric finish are the key modelling focus.</div></div></div><div class="lower-grid"><div class="panel panel-pad"><h3 class="section-title">Role & strengths</h3><ul class="card-list"><li>Carrier torpedo bomber</li><li>Reconnaissance and anti-submarine work</li><li>Close support and armed escort</li><li>Excellent low-speed carrier handling</li><li>Rugged fabric-and-metal construction</li></ul></div><div class="panel panel-pad"><h3 class="section-title">Key theatres</h3><div class="world-map-card"><div class="overview-leaflet-map" id="overview-leaflet-map"></div></div><ul class="card-list"><li>Atlantic convoys</li><li>Mediterranean and Taranto</li><li>Arctic and North Cape</li><li>Indian Ocean and Far East</li></ul></div><div class="panel panel-pad"><h3 class="section-title">Specification Mk.III</h3><div class="spec-grid"><b>Crew</b><span>3</span><b>Length</b><span>36 ft 7 in</span><b>Wingspan</b><span>45 ft 6 in</span><b>Max speed</b><span>139 mph</span><b>Range</b><span>660 miles</span><b>Armament</b><span>Torpedo, depth charges, rockets or bombs</span></div></div><div class="panel panel-pad"><h3 class="section-title">Survivors today</h3><div class="media-img-wrap"><img alt="Fleet Air Arm Museum Fairey Swordfish survivor reference" src="https://commons.wikimedia.org/wiki/Special:FilePath/A%20Fairey%20Swordfish%20in%20Flight%20TR1138.jpg?width=900" onerror="this.src='https://commons.wikimedia.org/wiki/Special:FilePath/A%20Fairey%20Swordfish%20in%20Flight%20TR1139.jpg?width=900'"></div><p>Surviving aircraft provide excellent references for rigging, bracing wires, fabric sag, torpedo gear and weathering around carrier-deck handling points.</p><a class="btn" href="#" onclick="showTab('reference');return false">View survivors</a></div></div><div class="panel panel-pad timeline-strip"><h3 class="section-title">Timeline highlights</h3><div class="tl-line" id="overviewTimeline"></div></div>
+<section class="tab-panel active" id="tab-overview"><div class="overview-grid"><div class="panel panel-pad"><h2 class="section-title">Fleet Air Arm Swordfish operations · 1939–1945</h2><p>The Swordfish was the backbone of Fleet Air Arm torpedo bomber forces from the outbreak of war to the final operations of 1945. It flew from fleet carriers, escort carriers and land bases across the Atlantic, Mediterranean, Arctic and Indian Ocean theatres.</p><div class="mini-grid"><div class="mini-stat"><b>19</b><span class="stat-label">Units</span></div><div class="mini-stat"><b>3</b><span class="stat-label">Crew</span></div><div class="mini-stat"><b>1,610 lb</b><span class="stat-label">Torpedo</span></div><div class="mini-stat"><b>660 mi</b><span class="stat-label">Range</span></div></div></div><div><div class="overview-img"><img alt="Fairey Swordfish flying near carrier" onerror="this.src='https://commons.wikimedia.org/wiki/Special:FilePath/A%20Fairey%20Swordfish%20in%20Flight%20TR1139.jpg?width=900'" src="https://commons.wikimedia.org/wiki/Special:FilePath/A%20Fairey%20Swordfish%20in%20Flight%20TR1139.jpg?width=900"/></div><div class="caption">Swordfish reference imagery: carrier strike, rigging and fabric finish are the key modelling focus.</div></div></div><div class="lower-grid"><div class="panel panel-pad"><h3 class="section-title">Role &amp; strengths</h3><ul class="card-list"><li>Carrier torpedo bomber</li><li>Reconnaissance and anti-submarine work</li><li>Close support and armed escort</li><li>Excellent low-speed carrier handling</li><li>Rugged fabric-and-metal construction</li></ul></div><div class="panel panel-pad"><h3 class="section-title">Key theatres</h3><div class="world-map-card"><div class="overview-leaflet-map" id="overview-leaflet-map"></div></div><ul class="card-list"><li>Atlantic convoys</li><li>Mediterranean and Taranto</li><li>Arctic and North Cape</li><li>Indian Ocean and Far East</li></ul></div><div class="panel panel-pad"><h3 class="section-title">Specification Mk.III</h3><div class="spec-grid"><b>Crew</b><span>3</span><b>Length</b><span>36 ft 7 in</span><b>Wingspan</b><span>45 ft 6 in</span><b>Max speed</b><span>139 mph</span><b>Range</b><span>660 miles</span><b>Armament</b><span>Torpedo, depth charges, rockets or bombs</span></div></div><div class="panel panel-pad"><h3 class="section-title">Survivors today</h3><div class="media-img-wrap"><img alt="Fleet Air Arm Museum Fairey Swordfish survivor reference" onerror="this.src='https://commons.wikimedia.org/wiki/Special:FilePath/A%20Fairey%20Swordfish%20in%20Flight%20TR1139.jpg?width=900'" src="https://commons.wikimedia.org/wiki/Special:FilePath/A%20Fairey%20Swordfish%20in%20Flight%20TR1138.jpg?width=900"/></div><p>Surviving aircraft provide excellent references for rigging, bracing wires, fabric sag, torpedo gear and weathering around carrier-deck handling points.</p><a class="btn" href="#" onclick="showTab('reference');return false">View survivors</a></div></div><div class="panel panel-pad timeline-strip"><h3 class="section-title">Timeline highlights</h3><div class="tl-line" id="overviewTimeline"></div></div>
 <div class="prof-grid">
-  <div class="panel panel-pad">
-    <h3 class="section-title">Build this Swordfish as…</h3>
-    <p style="color:var(--muted);line-height:1.6">Choose a modelling route and the page will point you toward the matching finish, stores, weathering and references.</p>
-    <div class="decision-row">
-      <button class="choice-btn on" data-profile="taranto">Taranto raid</button>
-      <button class="choice-btn" data-profile="bismarck">Bismarck strike</button>
-      <button class="choice-btn" data-profile="atlantic">Atlantic convoy</button>
-      <button class="choice-btn" data-profile="arctic">Arctic convoy</button>
-      <button class="choice-btn" data-profile="training">Training / late war</button>
-    </div>
-    <div class="profile-card" id="buildProfile"></div>
-  </div>
-  <div class="panel panel-pad">
-    <h3 class="section-title">Swordfish modelling identity</h3>
-    <div class="icon-strip">
-      <div class="air-icon"><span>⚓</span><b>Fleet Air Arm</b></div>
-      <div class="air-icon"><span>🧵</span><b>Rigging</b></div>
-      <div class="air-icon"><span>🛩</span><b>Biplane</b></div>
-      <div class="air-icon"><span>🧭</span><b>Carrier ops</b></div>
-      <div class="air-icon"><span>💣</span><b>Torpedo</b></div>
-      <div class="air-icon"><span>🌊</span><b>Salt wear</b></div>
-    </div>
-    <div class="warning-grid" style="margin-top:.75rem">
-      <div class="warning-card"><b>Rigging warning</b><p>The rigging will make or break the model. Drill, dry-fit, and work symmetrically.</p></div>
-      <div class="warning-card"><b>Fabric warning</b><p>Weather fabric with fading and grime, not heavy metal-style paint chipping.</p></div>
-    </div>
-  </div>
+<div class="panel panel-pad">
+<h3 class="section-title">Build this Swordfish as…</h3>
+<p style="color:var(--muted);line-height:1.6">Choose a modelling route and the page will point you toward the matching finish, stores, weathering and references.</p>
+<div class="decision-row">
+<button class="choice-btn on" data-profile="taranto">Taranto raid</button>
+<button class="choice-btn" data-profile="bismarck">Bismarck strike</button>
+<button class="choice-btn" data-profile="atlantic">Atlantic convoy</button>
+<button class="choice-btn" data-profile="arctic">Arctic convoy</button>
+<button class="choice-btn" data-profile="training">Training / late war</button>
+</div>
+<div class="profile-card" id="buildProfile"></div>
+</div>
+<div class="panel panel-pad">
+<h3 class="section-title">Swordfish modelling identity</h3>
+<div class="icon-strip">
+<div class="air-icon"><span>⚓</span><b>Fleet Air Arm</b></div>
+<div class="air-icon"><span>🧵</span><b>Rigging</b></div>
+<div class="air-icon"><span>🛩</span><b>Biplane</b></div>
+<div class="air-icon"><span>🧭</span><b>Carrier ops</b></div>
+<div class="air-icon"><span>💣</span><b>Torpedo</b></div>
+<div class="air-icon"><span>🌊</span><b>Salt wear</b></div>
+</div>
+<div class="warning-grid" style="margin-top:.75rem">
+<div class="warning-card"><b>Rigging warning</b><p>The rigging will make or break the model. Drill, dry-fit, and work symmetrically.</p></div>
+<div class="warning-card"><b>Fabric warning</b><p>Weather fabric with fading and grime, not heavy metal-style paint chipping.</p></div>
+</div>
+</div>
 </div>
 <div class="panel panel-pad prof-full">
-  <h3 class="section-title">Paint scheme cards</h3>
-  <div class="paint-scheme-grid">
-    <div class="paint-scheme"><span class="confidence">Common FAA route</span><b>Temperate Sea Scheme</b><div class="paint-swatches"><i class="paint-swatch" style="background:#2f3f35"></i><i class="paint-swatch" style="background:#5f6f6d"></i><i class="paint-swatch" style="background:#c7c2ad"></i></div><p>Extra Dark Sea Grey, Dark Slate Grey and Sky/Sky Grey. Best for late-war carrier and convoy subjects.</p></div>
-    <div class="paint-scheme"><span class="confidence">Check references</span><b>Shadow-shaded biplane</b><div class="paint-swatches"><i class="paint-swatch" style="background:#2f3f35"></i><i class="paint-swatch" style="background:#5f6f6d"></i><i class="paint-swatch" style="background:#7a7560"></i></div><p>Upper and lower wings may use different tonal values. This is where Swordfish research matters.</p></div>
-    <div class="paint-scheme"><span class="confidence">Theatre dependent</span><b>Mediterranean / Taranto</b><div class="paint-swatches"><i class="paint-swatch" style="background:#2d3a37"></i><i class="paint-swatch" style="background:#111"></i><i class="paint-swatch" style="background:#b2b0a1"></i></div><p>Night raid aircraft need careful handling: dark distemper, carrier grime and restrained wear.</p></div>
-    <div class="paint-scheme"><span class="confidence">Late war</span><b>Training / rocket aircraft</b><div class="paint-swatches"><i class="paint-swatch" style="background:#1e3144"></i><i class="paint-swatch" style="background:#e5b532"></i><i class="paint-swatch" style="background:#2f3f35"></i></div><p>Training and late-war schemes can differ sharply from famous Taranto subjects. Match stores and markings.</p></div>
-  </div>
+<h3 class="section-title">Paint scheme cards</h3>
+<div class="paint-scheme-grid">
+<div class="paint-scheme"><span class="confidence">Common FAA route</span><b>Temperate Sea Scheme</b><div class="paint-swatches"><i class="paint-swatch" style="background:#2f3f35"></i><i class="paint-swatch" style="background:#5f6f6d"></i><i class="paint-swatch" style="background:#c7c2ad"></i></div><p>Extra Dark Sea Grey, Dark Slate Grey and Sky/Sky Grey. Best for late-war carrier and convoy subjects.</p></div>
+<div class="paint-scheme"><span class="confidence">Check references</span><b>Shadow-shaded biplane</b><div class="paint-swatches"><i class="paint-swatch" style="background:#2f3f35"></i><i class="paint-swatch" style="background:#5f6f6d"></i><i class="paint-swatch" style="background:#7a7560"></i></div><p>Upper and lower wings may use different tonal values. This is where Swordfish research matters.</p></div>
+<div class="paint-scheme"><span class="confidence">Theatre dependent</span><b>Mediterranean / Taranto</b><div class="paint-swatches"><i class="paint-swatch" style="background:#2d3a37"></i><i class="paint-swatch" style="background:#111"></i><i class="paint-swatch" style="background:#b2b0a1"></i></div><p>Night raid aircraft need careful handling: dark distemper, carrier grime and restrained wear.</p></div>
+<div class="paint-scheme"><span class="confidence">Late war</span><b>Training / rocket aircraft</b><div class="paint-swatches"><i class="paint-swatch" style="background:#1e3144"></i><i class="paint-swatch" style="background:#e5b532"></i><i class="paint-swatch" style="background:#2f3f35"></i></div><p>Training and late-war schemes can differ sharply from famous Taranto subjects. Match stores and markings.</p></div>
+</div>
 </div>
 <div class="panel panel-pad prof-full">
-  <h3 class="section-title">Campaign cards</h3>
-  <div class="campaign-grid">
-    <div class="campaign-card"><b>Taranto</b><p>Night torpedo attack, HMS Illustrious, early-war FAA finish and torpedo handling.</p><button class="btn" onclick="showTab('reference');setTimeout(()=>updateMapPanel(swordfishPlaces[1]),120)">Open Taranto map</button></div>
-    <div class="campaign-card"><b>Bismarck chase</b><p>Ark Royal Swordfish, rough Atlantic weather, torpedo strike and carrier-deck wear.</p><button class="btn" onclick="showTab('reference');setTimeout(()=>updateMapPanel(swordfishPlaces[0]),120)">Open Ark Royal map</button></div>
-    <div class="campaign-card"><b>Channel Dash</b><p>Operation Fuller, 825 NAS, Manston, winter weather and stark story context.</p><button class="btn" onclick="showTab('reference');setTimeout(()=>updateMapPanel(swordfishPlaces[2]),120)">Open Channel Dash map</button></div>
-    <div class="campaign-card"><b>Convoy escort</b><p>Atlantic and Arctic ASW Swordfish with rockets, depth charges and salt-worn finishes.</p><button class="btn" onclick="showTab('reference');setTimeout(()=>updateMapPanel(swordfishPlaces[3]),120)">Open convoy map</button></div>
-  </div>
+<h3 class="section-title">Campaign cards</h3>
+<div class="campaign-grid">
+<div class="campaign-card"><b>Taranto</b><p>Night torpedo attack, HMS Illustrious, early-war FAA finish and torpedo handling.</p><button class="btn" onclick="showTab('reference');setTimeout(()=&gt;updateMapPanel(swordfishPlaces[1]),120)">Open Taranto map</button></div>
+<div class="campaign-card"><b>Bismarck chase</b><p>Ark Royal Swordfish, rough Atlantic weather, torpedo strike and carrier-deck wear.</p><button class="btn" onclick="showTab('reference');setTimeout(()=&gt;updateMapPanel(swordfishPlaces[0]),120)">Open Ark Royal map</button></div>
+<div class="campaign-card"><b>Channel Dash</b><p>Operation Fuller, 825 NAS, Manston, winter weather and stark story context.</p><button class="btn" onclick="showTab('reference');setTimeout(()=&gt;updateMapPanel(swordfishPlaces[2]),120)">Open Channel Dash map</button></div>
+<div class="campaign-card"><b>Convoy escort</b><p>Atlantic and Arctic ASW Swordfish with rockets, depth charges and salt-worn finishes.</p><button class="btn" onclick="showTab('reference');setTimeout(()=&gt;updateMapPanel(swordfishPlaces[3]),120)">Open convoy map</button></div>
+</div>
 </div></section>
 <section class="tab-panel" id="tab-squadrons"><div class="panel panel-pad"><h2 class="section-title">Fleet Air Arm Swordfish squadrons and detachments</h2><p style="color:var(--muted);max-width:900px;line-height:1.65;margin-bottom:1rem">Sortable squadron cards covering carrier strike, convoy escort, training, Arctic and Mediterranean Swordfish operations. Click a card for modelling notes, carrier/base context and markings.</p><div class="filter-row"><span class="filter-label">Theatre:</span><button class="filter-btn on" data-filter="all">All</button><button class="filter-btn" data-filter="Home Fleet">Home Fleet</button><button class="filter-btn" data-filter="Atlantic">Atlantic</button><button class="filter-btn" data-filter="Mediterranean">Mediterranean</button><button class="filter-btn" data-filter="Training / Arctic">Training / Arctic</button><span class="filter-label" style="margin-left:.8rem">Sort:</span><button class="filter-btn on" data-sort="num">Number</button><button class="filter-btn" data-sort="impact">Strike impact ↓</button><button class="filter-btn" data-sort="base">Base A–Z</button><span class="count" id="unitCount"></span></div><div class="unit-grid" id="unitGrid"></div><div class="detail-box" id="unitDetail"></div></div></section>
 <section class="tab-panel" id="tab-reference"><div class="panel panel-pad"><h2 class="section-title">Swordfish operating map</h2><div class="wizard-output"><b style="color:var(--gold2);font-family:Oswald,sans-serif;letter-spacing:.1em;text-transform:uppercase">Variant selector</b><div class="variant-row"><button class="choice-btn on" data-variant="mk1">Mk.I torpedo aircraft</button><button class="choice-btn" data-variant="mk2">Mk.II rockets / ASW</button><button class="choice-btn" data-variant="mk3">Mk.III radar fit</button></div><div id="variantResult"></div></div><div class="map-shell"><div class="map-board"><div class="leaflet-map" id="leaflet-map"></div></div><div class="panel panel-pad map-side" id="mapInfo"><h3 class="section-title">Carrier and base info</h3><p>Click a marker to show the linked Swordfish unit cards and modelling notes. Same functional map style as the current Spitfire page; only bases and theatre data are changed.</p></div></div></div><div class="ref-grid"><div class="panel panel-pad"><h3 class="section-title">Campaign timeline</h3><div id="refTimeline"></div></div><div class="panel panel-pad"><h3 class="section-title">Survivors</h3><div id="survivors"></div></div></div><div class="panel panel-pad" style="margin-top:1rem"><h3 class="section-title">Books and reference sources</h3><div class="book-grid" id="bookGrid"></div></div></section>
 <section class="tab-panel" id="tab-build"><div class="panel panel-pad"><h2 class="section-title">Swordfish build guide</h2><div class="wizard-output"><b style="color:var(--gold2);font-family:Oswald,sans-serif;letter-spacing:.1em;text-transform:uppercase">Kit choice wizard</b><div class="wizard-row"><button class="choice-btn on" data-wizard="easy">Easiest 1:48</button><button class="choice-btn" data-wizard="detail">Best detail</button><button class="choice-btn" data-wizard="large">Large scale</button><button class="choice-btn" data-wizard="rigging">Rigging focused</button></div><div id="kitWizardResult"></div></div><div class="build-tabs"><button class="filter-btn on" data-build="kits">Kits</button><button class="filter-btn" data-build="aftermarket">Aftermarket</button><button class="filter-btn" data-build="weathering">Weathering</button><button class="filter-btn" data-build="sequence">Build sequence</button></div><div class="build-grid" id="buildGrid"></div></div></section>
 <section class="tab-panel" id="tab-media"><div class="panel panel-pad"><h2 class="section-title">Swordfish videos, photos and archive material</h2><p style="color:var(--muted);max-width:900px;line-height:1.65;margin-bottom:1rem">Media now replaces the old separate walkaround tab: cockpit, rigging, engine, torpedo, carrier operations, museum references, archive imagery and video cards are all grouped here.</p><div class="media-grid" id="mediaGrid"></div></div></section>
 </div><aside class="side swordfish-side-reference">
-  <div class="panel panel-pad side-paint-panel">
-    <h3 class="section-title">Swordfish paint notes</h3>
-    <p class="side-note">Fleet Air Arm Swordfish finishes changed by theatre and date. Use these as quick modelling checkpoints before choosing decals or weathering.</p>
-    <div class="paint-note"><span class="swatch" style="background:#2f3f35"></span><div><b>Extra Dark Sea Grey</b><span>Upper camouflage on later Temperate Sea Scheme aircraft.</span></div></div>
-    <div class="paint-note"><span class="swatch" style="background:#5f6f6d"></span><div><b>Dark Slate Grey</b><span>Green-grey upper colour; fades unevenly on fabric wings.</span></div></div>
-    <div class="paint-note"><span class="swatch" style="background:#c7c2ad"></span><div><b>Sky Grey / Sky</b><span>Check date and theatre: early-war undersides vary.</span></div></div>
-    <div class="paint-note"><span class="swatch" style="background:#b7924a"></span><div><b>Deck & salt wear</b><span>Use restrained chipping, rigging grime and salt bleaching.</span></div></div>
-    <button class="side-action" onclick="showTab('build');setTimeout(()=>document.querySelector('[data-build=weathering]')?.click(),80)">Open weathering guide</button>
-  </div>
-  <div class="panel panel-pad side-jump-panel">
-    <h3 class="section-title">Modeller shortcuts</h3>
-    <button class="side-jump" onclick="showTab('squadrons')"><b>Squadrons</b><span>FAA units, carrier codes and crew context</span></button>
-    <button class="side-jump" onclick="showTab('reference')"><b>Reference map</b><span>Carriers, bases, survivors and books</span></button>
-    <button class="side-jump" onclick="showTab('build')"><b>Kits & aftermarket</b><span>Tamiya, Airfix, Trumpeter and detail sets</span></button>
-    <button class="side-jump" onclick="showTab('media')"><b>Media references</b><span>Photos, videos, museum aircraft and walkaround material</span></button>
-  </div>
-  <div class="panel panel-pad side-checklist-panel">
-    <h3 class="section-title">Build checklist</h3>
-    <ul class="side-checklist">
-      <li>Rigging tension and double-bay wing alignment</li>
-      <li>Bristol Pegasus exhaust staining and oil streaks</li>
-      <li>Torpedo crutches, rocket rails or ASV radar fit</li>
-      <li>Fabric sag, rib tapes and carrier-deck scuffing</li>
-      <li>FAA roundel type and theatre-specific fin flash</li>
-    </ul>
-  </div>
-
-  <div class="panel panel-pad">
-    <h3 class="section-title">Build difficulty</h3>
-    <div class="difficulty-grid" style="display:block">
-      <div class="difficulty-card"><b>Overall difficulty</b><p>High — biplane alignment and rigging dominate the build.</p><div class="difficulty-meter"><i style="width:86%"></i></div></div>
-      <div class="difficulty-card" style="margin-top:.55rem"><b>Weathering risk</b><p>Moderate — salt and fabric fading should stay subtle.</p><div class="difficulty-meter"><i style="width:58%"></i></div></div>
-    </div>
-  </div>
-  <div class="panel panel-pad">
-    <h3 class="section-title">Related guides</h3>
-    <a class="side-jump" href="paint-codes.html"><b>FAA paint codes</b><span>MAP / Fleet Air Arm colour guide</span></a>
-    <a class="side-jump" href="techniques-bank.html"><b>Rigging biplanes</b><span>Technique route for wires and alignment</span></a>
-    <a class="side-jump" href="articles.html"><b>Carrier weathering</b><span>Salt, deck grime and fabric fading</span></a>
-  </div>
+<div class="panel panel-pad side-paint-panel">
+<h3 class="section-title">Swordfish paint notes</h3>
+<p class="side-note">Fleet Air Arm Swordfish finishes changed by theatre and date. Use these as quick modelling checkpoints before choosing decals or weathering.</p>
+<div class="paint-note"><span class="swatch" style="background:#2f3f35"></span><div><b>Extra Dark Sea Grey</b><span>Upper camouflage on later Temperate Sea Scheme aircraft.</span></div></div>
+<div class="paint-note"><span class="swatch" style="background:#5f6f6d"></span><div><b>Dark Slate Grey</b><span>Green-grey upper colour; fades unevenly on fabric wings.</span></div></div>
+<div class="paint-note"><span class="swatch" style="background:#c7c2ad"></span><div><b>Sky Grey / Sky</b><span>Check date and theatre: early-war undersides vary.</span></div></div>
+<div class="paint-note"><span class="swatch" style="background:#b7924a"></span><div><b>Deck &amp; salt wear</b><span>Use restrained chipping, rigging grime and salt bleaching.</span></div></div>
+<button class="side-action" onclick="showTab('build');setTimeout(()=&gt;document.querySelector('[data-build=weathering]')?.click(),80)">Open weathering guide</button>
+</div>
+<div class="panel panel-pad side-jump-panel">
+<h3 class="section-title">Modeller shortcuts</h3>
+<button class="side-jump" onclick="showTab('squadrons')"><b>Squadrons</b><span>FAA units, carrier codes and crew context</span></button>
+<button class="side-jump" onclick="showTab('reference')"><b>Reference map</b><span>Carriers, bases, survivors and books</span></button>
+<button class="side-jump" onclick="showTab('build')"><b>Kits &amp; aftermarket</b><span>Tamiya, Airfix, Trumpeter and detail sets</span></button>
+<button class="side-jump" onclick="showTab('media')"><b>Media references</b><span>Photos, videos, museum aircraft and walkaround material</span></button>
+</div>
+<div class="panel panel-pad side-checklist-panel">
+<h3 class="section-title">Build checklist</h3>
+<ul class="side-checklist">
+<li>Rigging tension and double-bay wing alignment</li>
+<li>Bristol Pegasus exhaust staining and oil streaks</li>
+<li>Torpedo crutches, rocket rails or ASV radar fit</li>
+<li>Fabric sag, rib tapes and carrier-deck scuffing</li>
+<li>FAA roundel type and theatre-specific fin flash</li>
+</ul>
+</div>
+<div class="panel panel-pad">
+<h3 class="section-title">Build difficulty</h3>
+<div class="difficulty-grid" style="display:block">
+<div class="difficulty-card"><b>Overall difficulty</b><p>High — biplane alignment and rigging dominate the build.</p><div class="difficulty-meter"><i style="width:86%"></i></div></div>
+<div class="difficulty-card" style="margin-top:.55rem"><b>Weathering risk</b><p>Moderate — salt and fabric fading should stay subtle.</p><div class="difficulty-meter"><i style="width:58%"></i></div></div>
+</div>
+</div>
+<div class="panel panel-pad">
+<h3 class="section-title">Related guides</h3>
+<a class="side-jump" href="paint-codes.html"><b>FAA paint codes</b><span>MAP / Fleet Air Arm colour guide</span></a>
+<a class="side-jump" href="techniques-bank.html"><b>Rigging biplanes</b><span>Technique route for wires and alignment</span></a>
+<a class="side-jump" href="articles.html"><b>Carrier weathering</b><span>Salt, deck grime and fabric fading</span></a>
+</div>
 </aside></div>
 </main><footer>WW2 Modeller Hub · Aircraft Reference · Modelling Reference · Field Guide</footer>
-
 <script>
 const units=[
  {num:'810 NAS',base:'HMS Ark Royal / Hal Far',theatre:'Mediterranean',impact:92,marks:'Mk.I',codes:'A2, A4, carrier deck letters',crew:'Mediterranean carrier crews',pilot:'Taranto and Malta strike crews',photo:'https://commons.wikimedia.org/wiki/Special:FilePath/A%20Fairey%20Swordfish%20in%20Flight%20TR1139.jpg?width=900',photoLink:'https://www.iwm.org.uk/collections/search?query=810%20Naval%20Air%20Squadron%20Swordfish',ops:'Mediterranean carrier strike unit covering reconnaissance, torpedo attack and convoy support. Good subject for early-war shadow shading, torpedo fit, worn fabric, salt bleaching and deck-handling scuffs.',notes:'Taranto-era finish, torpedo loading, carrier deck wear, Mediterranean fading',map:'taranto'},
@@ -292,7 +296,6 @@ document.querySelectorAll('[data-variant]').forEach(b=>b.addEventListener('click
 renderBuildProfile();renderWizard();renderVariant();
 renderOverviewTimeline();renderUnits();renderReference();renderBuild();renderMedia();setTimeout(initOverviewMap,80);
 </script>
-
 <script id="ww2-image-fallbacks">
 (function(){
   var fallbacks = ["https://commons.wikimedia.org/wiki/Special:FilePath/A%20Fairey%20Swordfish%20in%20Flight%20TR1139.jpg?width=900", "https://commons.wikimedia.org/wiki/Special:FilePath/A%20Fairey%20Swordfish%20in%20Flight%20TR1138.jpg?width=900", "${safeImg(src)}"];
@@ -310,5 +313,9 @@ renderOverviewTimeline();renderUnits();renderReference();renderBuild();renderMed
   });
 })();
 </script>
-</body>
+<script>
+(function(){var b=document.querySelector('.mobile-nav-toggle');if(!b)return;b.addEventListener('click',function(){document.body.classList.toggle('nav-open');});})();
+</script>
+<script>document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('img').forEach(img=>{img.loading=img.loading||'lazy';if(!img.getAttribute('onerror'))img.onerror=function(){this.onerror=null;this.src='assets/image-fallbacks/generic-aircraft.jpg';};});});</script>
+<script>(function(){document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('header.ww2-top')){document.querySelectorAll('.topbar,.brand-bar,.search-bar,nav.nav,header.topbar').forEach(function(n){if(!n.closest('.ww2-top')&&!n.closest('.ww2-main-nav')) n.remove();});var tops=[...document.querySelectorAll('header.ww2-top')];if(tops.length>1){tops.slice(1).forEach(n=>n.remove());}var navs=[...document.querySelectorAll('nav.ww2-main-nav')];if(navs.length>1){navs.slice(1).forEach(n=>n.remove());}}});})();</script><script src="assets/nav-cleanup.js"></script></body>
 </html>
