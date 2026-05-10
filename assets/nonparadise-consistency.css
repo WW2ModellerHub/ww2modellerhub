@@ -39,8 +39,3 @@ body{background:var(--ww2-pass-bg)!important;color:var(--ww2-pass-ink)!important
 .site .index-main{max-width:1500px!important;margin:0 auto!important}
 .main{max-width:1500px!important;margin-left:auto!important;margin-right:auto!important}
 @media(max-width:900px){.hero.hero-refresh,.hero.hero-refresh-wide{width:100%!important;margin-left:0!important;margin-right:0!important}}
-
-/* Hero hard fallback after direct fix */
-.hero .hero-callouts,
-.hero .market-hero-note,
-.hero .kickerline{display:none!important;}
