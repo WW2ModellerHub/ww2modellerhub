@@ -1,0 +1,100 @@
+
+/* FINAL HERO REPAIR — self-contained */
+html, body{
+  overflow-x:hidden !important;
+}
+
+.hero,
+.hero.hero-refresh,
+.hero.hero-refresh-wide{
+  position:relative !important;
+  display:block !important;
+  width:100% !important;
+  max-width:none !important;
+  min-height:360px !important;
+  margin:0 !important;
+  overflow:hidden !important;
+  background-size:cover !important;
+  background-position:center center !important;
+  background-repeat:no-repeat !important;
+  border-bottom:1px solid rgba(215,173,69,.32) !important;
+}
+
+.hero::after,
+.hero.hero-refresh::after,
+.hero.hero-refresh-wide::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  z-index:1 !important;
+  background:linear-gradient(90deg,rgba(7,17,31,.98) 0%,rgba(7,17,31,.86) 33%,rgba(7,17,31,.46) 72%,rgba(7,17,31,.16) 100%) !important;
+  pointer-events:none !important;
+}
+
+.hero-copy,
+.hero.hero-refresh>.hero-copy,
+.hero.hero-refresh-wide>.hero-copy{
+  position:relative !important;
+  z-index:2 !important;
+  max-width:920px !important;
+  margin:0 !important;
+  padding:54px 32px 44px 56px !important;
+  text-align:left !important;
+  transform:none !important;
+  left:auto !important;
+  right:auto !important;
+}
+
+.hero .kicker{
+  display:block !important;
+  margin:0 0 12px 0 !important;
+  font-family:'Oswald',Arial,sans-serif !important;
+  font-size:14px !important;
+  font-weight:700 !important;
+  letter-spacing:.16em !important;
+  line-height:1.2 !important;
+  color:#d7ad45 !important;
+  text-transform:uppercase !important;
+}
+
+.hero h1{
+  margin:0 0 18px 0 !important;
+  max-width:850px !important;
+  font-family:'Oswald',Impact,sans-serif !important;
+  font-size:clamp(3.2rem,6.8vw,5.6rem) !important;
+  line-height:.92 !important;
+  letter-spacing:.02em !important;
+  color:#fff !important;
+  text-align:left !important;
+  text-transform:uppercase !important;
+  white-space:normal !important;
+}
+
+.hero p{
+  max-width:760px !important;
+  margin:0 !important;
+  font-family:Georgia,'Times New Roman',serif !important;
+  font-size:clamp(1.08rem,1.65vw,1.35rem) !important;
+  line-height:1.45 !important;
+  color:#f6efe1 !important;
+  text-align:left !important;
+}
+
+.hero .hero-callouts,
+.hero .market-hero-note,
+.hero .kickerline{
+  display:none !important;
+}
+
+@media(max-width:800px){
+  .hero,
+  .hero.hero-refresh,
+  .hero.hero-refresh-wide{
+    min-height:300px !important;
+  }
+  .hero-copy,
+  .hero.hero-refresh>.hero-copy,
+  .hero.hero-refresh-wide>.hero-copy{
+    padding:38px 18px 34px 22px !important;
+  }
+}

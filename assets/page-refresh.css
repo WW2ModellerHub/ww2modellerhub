@@ -1,0 +1,47 @@
+
+/* WW2 Modeller refresh layer */
+.hero.hero-refresh,.hero.hero-refresh-wide{background-size:cover!important;background-position:center!important;min-height:340px;position:relative;overflow:hidden}
+.hero.hero-refresh::after,.hero.hero-refresh-wide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,17,31,.92) 0%,rgba(7,17,31,.78) 34%,rgba(7,17,31,.42) 70%,rgba(7,17,31,.14) 100%);pointer-events:none}
+.hero.hero-refresh > *,.hero.hero-refresh-wide > *{position:relative;z-index:1}
+.hero-statbar,.quick-links,.story-grid,.shelf-grid,.tech-sequence,.map-story-grid,.book-rail,.split-grid,.feature-panels,.hero-callouts,.family-filter-bar{display:grid;gap:1rem}
+.hero-callouts{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-top:1rem}
+.hero-chip{border:1px solid rgba(223,198,113,.24);background:rgba(10,16,24,.68);padding:.85rem 1rem}
+.hero-chip b{display:block;font:700 1rem Oswald,sans-serif;color:#fff;text-transform:uppercase;letter-spacing:.06em}
+.hero-chip span{display:block;color:rgba(245,239,223,.78);font-size:.92rem;line-height:1.45;margin-top:.35rem}
+.family-filter-bar{grid-template-columns:repeat(auto-fit,minmax(120px,1fr));margin-bottom:1rem}
+.family-filter-bar button{background:#0b1118;border:1px solid rgba(223,198,113,.24);color:#f4ecd9;padding:.7rem .8rem;font:700 .82rem Oswald,sans-serif;text-transform:uppercase;letter-spacing:.08em;cursor:pointer}
+.family-filter-bar button.active,.family-filter-bar button:hover{background:rgba(223,198,113,.12);border-color:rgba(223,198,113,.54);color:#fff;box-shadow:inset 0 -2px #d7ad45}
+.visually-hidden{position:absolute!important;left:-9999px!important;opacity:0!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.split-grid{grid-template-columns:1.1fr .9fr;align-items:start}
+.feature-panels{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.feature-panel,.route-card,.story-card,.book-card,.sequence-step{background:linear-gradient(180deg,rgba(24,33,21,.97),rgba(12,18,15,.97));border:1px solid rgba(223,198,113,.18);box-shadow:0 12px 28px rgba(0,0,0,.2)}
+.feature-panel{padding:1rem 1rem 1.1rem}
+.feature-panel small,.route-card small,.story-card small,.book-card small,.sequence-step small{display:block;color:#dfc671;font:700 .76rem Oswald,sans-serif;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.45rem}
+.feature-panel b,.route-card b,.story-card b,.book-card b,.sequence-step b{display:block;font:700 1.1rem Oswald,sans-serif;text-transform:uppercase;color:#fff;letter-spacing:.03em;margin-bottom:.45rem}
+.feature-panel p,.route-card p,.story-card p,.book-card p,.sequence-step p{margin:.25rem 0 0;line-height:1.55;color:rgba(245,239,223,.78)}
+.tech-sequence{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-bottom:1rem}
+.sequence-step{padding:1rem}
+.sequence-step .num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid rgba(223,198,113,.35);color:#dfc671;font:700 1rem Oswald,sans-serif;margin-bottom:.7rem}
+.spotlight-grid,.shelf-grid,.map-story-grid,.book-rail{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.story-card img,.book-card img{width:100%;aspect-ratio:16/9;object-fit:cover;border-bottom:1px solid rgba(223,198,113,.12);display:block}
+.story-card .body,.book-card .body{padding:1rem}
+.route-card{padding:1rem}
+.route-card a,.story-card a,.book-card a{text-decoration:none}
+.map-story-grid .story-card{overflow:hidden}
+.kickerline{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+.kickerline span{border:1px solid rgba(223,198,113,.24);padding:.35rem .55rem;background:rgba(8,12,18,.62);color:#f4ecd9;font:700 .72rem Oswald,sans-serif;text-transform:uppercase;letter-spacing:.09em}
+.promo-row .promo img{aspect-ratio:16/9;object-fit:cover;border-left:1px solid rgba(223,198,113,.16)}
+.promo-row .promo h3{font:700 1.55rem Oswald,sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.book-rail .book-card img{aspect-ratio:4/3}
+.map-story-grid .story-card img{aspect-ratio:16/10}
+.panel .eyebrow{color:#dfc671;font:700 .78rem Oswald,sans-serif;text-transform:uppercase;letter-spacing:.14em;margin-bottom:.45rem}
+.callout-banner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.1rem;border:1px solid rgba(223,198,113,.18);background:linear-gradient(90deg,rgba(26,36,23,.95),rgba(12,18,15,.95))}
+.callout-banner b{font:700 1.15rem Oswald,sans-serif;text-transform:uppercase;color:#fff}
+.callout-banner p{margin:0;color:rgba(245,239,223,.8);line-height:1.5}
+.story-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.story-strip .route-card{min-height:100%}
+.theme-dark-fixed,.theme-dark-fixed *{background-color:transparent}
+@media(max-width:900px){.split-grid{grid-template-columns:1fr}.hero.hero-refresh,.hero.hero-refresh-wide{min-height:300px}}
+
+/* Market / books / article refresh additions */
+.market-hero-note{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:1rem}.market-hero-note div{border:1px solid rgba(223,198,113,.24);background:rgba(7,17,31,.66);padding:.85rem 1rem}.market-grid,.book-grid,.article-hub-grid,.technique-grid,.theatre-article-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}.market-card,.book-link-card,.article-hub-card,.technique-card,.theatre-read-card{background:linear-gradient(180deg,rgba(24,33,21,.97),rgba(10,17,14,.98));border:1px solid rgba(223,198,113,.22);box-shadow:0 14px 30px rgba(0,0,0,.22);overflow:hidden}.market-card img,.book-link-card img,.article-hub-card img,.technique-card img,.theatre-read-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-bottom:1px solid rgba(223,198,113,.16)}.market-card .body,.book-link-card .body,.article-hub-card .body,.technique-card .body,.theatre-read-card .body{padding:1rem}.market-card small,.book-link-card small,.article-hub-card small,.technique-card small,.theatre-read-card small{display:block;color:#dfc671;font:700 .74rem Oswald,sans-serif;text-transform:uppercase;letter-spacing:.13em;margin-bottom:.4rem}.market-card b,.book-link-card b,.article-hub-card b,.technique-card b,.theatre-read-card b{display:block;color:#fff;font:700 1.25rem Oswald,sans-serif;text-transform:uppercase;letter-spacing:.03em;line-height:1.1;margin-bottom:.45rem}.market-card p,.book-link-card p,.article-hub-card p,.technique-card p,.theatre-read-card p{color:rgba(245,239,223,.78);line-height:1.55;margin:.35rem 0}.button-row{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.85rem}.button-row a,.amazon-btn{border:1px solid rgba(223,198,113,.34);background:#0b1118;color:#f4ecd9;text-decoration:none;padding:.48rem .65rem;font:700 .75rem Oswald,sans-serif;text-transform:uppercase;letter-spacing:.08em}.button-row a:hover,.amazon-btn:hover{background:rgba(223,198,113,.14);color:#fff}.step-list{counter-reset:step;margin:.8rem 0 0;padding:0;list-style:none}.step-list li{counter-increment:step;margin:.55rem 0;padding-left:2.2rem;position:relative;color:rgba(245,239,223,.82);line-height:1.45}.step-list li:before{content:counter(step);position:absolute;left:0;top:.05rem;width:1.5rem;height:1.5rem;display:grid;place-items:center;border:1px solid rgba(223,198,113,.38);color:#dfc671;font:700 .8rem Oswald,sans-serif}.route-banner{border:1px solid rgba(223,198,113,.22);background:linear-gradient(90deg,rgba(29,41,23,.96),rgba(7,17,31,.92));padding:1rem 1.2rem;margin-bottom:1rem}.route-banner b{font:700 1.35rem Oswald,sans-serif;text-transform:uppercase;color:#fff}.route-banner p{color:rgba(245,239,223,.78);line-height:1.55;margin:.35rem 0 0}.book-meta{display:grid;grid-template-columns:1fr;gap:.35rem;margin:.7rem 0;color:rgba(245,239,223,.75);font-size:.92rem}.book-meta span strong{color:#dfc671}.tag-strip{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.65rem}.tag-strip span{border:1px solid rgba(223,198,113,.2);background:rgba(7,17,31,.55);padding:.28rem .45rem;color:#dfc671;font:700 .68rem Oswald,sans-serif;text-transform:uppercase;letter-spacing:.08em}.theatre-link-block{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin-top:1rem}.theatre-link-block a{border:1px solid rgba(223,198,113,.2);background:#0b1118;text-decoration:none;padding:.8rem;color:#f4ecd9}.theatre-link-block a b{display:block;color:#fff;font-family:Oswald,sans-serif;text-transform:uppercase}.theatre-link-block a span{display:block;color:rgba(245,239,223,.7);margin-top:.25rem}.article-hub-card.featured{grid-column:span 2}@media(max-width:800px){.article-hub-card.featured{grid-column:span 1}.button-row a{flex:1 1 auto;text-align:center}}

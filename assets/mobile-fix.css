@@ -1,0 +1,179 @@
+
+/* MOBILE RESPONSIVE PATCH - added after page inline styles */
+.mobile-nav-toggle{display:none}
+@media (max-width: 820px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden!important;}
+  .page{width:100%!important;overflow-x:hidden!important;}
+  .topbar{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:.8rem!important;
+    min-height:auto!important;
+    padding:14px 16px!important;
+    align-items:stretch!important;
+  }
+  .brand{
+    display:flex!important;
+    align-items:center!important;
+    gap:10px!important;
+    min-width:0!important;
+    width:100%!important;
+    overflow:visible!important;
+  }
+  .brand>span:last-child{min-width:0!important;max-width:calc(100vw - 86px)!important;display:block!important;}
+  .roundel{
+    position:relative!important;
+    width:42px!important;
+    height:42px!important;
+    flex:0 0 42px!important;
+    display:grid!important;
+    place-items:center!important;
+    margin:0!important;
+    transform:none!important;
+  }
+  .roundel:after{width:14px!important;height:14px!important;box-shadow:0 0 0 7px #f6f0dc,0 0 0 12px #294472!important;}
+  .logo-title{
+    display:block!important;
+    font-size:clamp(1.65rem,7vw,2.15rem)!important;
+    line-height:.95!important;
+    white-space:normal!important;
+    overflow-wrap:normal!important;
+    max-width:100%!important;
+  }
+  .tagline{
+    font-size:.58rem!important;
+    letter-spacing:.12em!important;
+    line-height:1.35!important;
+    margin-top:.25rem!important;
+    white-space:normal!important;
+  }
+  .topbar .search,
+  form.search{
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:44px!important;
+    display:grid!important;
+    grid-template-columns:1fr 48px!important;
+    overflow:hidden!important;
+    border-radius:0!important;
+  }
+  .search input{
+    min-width:0!important;
+    width:100%!important;
+    font-size:16px!important;
+    padding:0 12px!important;
+  }
+  .search button{
+    width:48px!important;
+    min-width:48px!important;
+    padding:0!important;
+    display:grid!important;
+    place-items:center!important;
+  }
+  .social{display:none!important;}
+  .mobile-nav-toggle{
+    display:flex!important;
+    width:100%!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    background:rgba(212,168,58,.13)!important;
+    color:#f2ead6!important;
+    border:1px solid rgba(212,168,58,.36)!important;
+    padding:12px 16px!important;
+    font-family:'Oswald',sans-serif!important;
+    text-transform:uppercase!important;
+    letter-spacing:.12em!important;
+    font-weight:700!important;
+  }
+  .mobile-nav-toggle:after{content:'☰';font-size:1.15rem;line-height:1;}
+  body.nav-open .mobile-nav-toggle:after{content:'×';font-size:1.35rem;}
+  .nav{
+    display:none!important;
+    grid-template-columns:1fr!important;
+    width:100%!important;
+    overflow:visible!important;
+    min-height:0!important;
+    max-height:none!important;
+    border-bottom:1px solid rgba(212,168,58,.28)!important;
+  }
+  body.nav-open .nav{display:grid!important;}
+  .nav a{
+    display:block!important;
+    width:100%!important;
+    padding:13px 18px!important;
+    border-left:0!important;
+    border-top:1px solid rgba(212,168,58,.14)!important;
+    font-size:.84rem!important;
+    text-align:left!important;
+    white-space:normal!important;
+  }
+  .hero,
+  .homepage-hero{
+    min-height:0!important;
+    display:block!important;
+    background-position:center top!important;
+    background-size:cover!important;
+  }
+  .homepage-hero:before{
+    content:'';
+    display:block;
+    height:220px;
+    background:var(--hero-img,url('assets/home/hero-dogfight.jpg')) center center/cover no-repeat;
+    border-bottom:1px solid rgba(212,168,58,.26);
+  }
+  .hero-copy,
+  .homepage-hero .hero-copy{
+    max-width:none!important;
+    width:100%!important;
+    padding:1.4rem 1.1rem 1.7rem!important;
+    background:linear-gradient(180deg,rgba(3,10,18,.98),rgba(7,17,31,.94))!important;
+  }
+  .kicker{font-size:.68rem!important;letter-spacing:.12em!important;line-height:1.4!important;}
+  .hero h1,
+  .homepage-hero h1{
+    font-size:clamp(2.25rem,13vw,3.45rem)!important;
+    line-height:.94!important;
+    margin:.7rem 0 .9rem!important;
+    text-shadow:0 3px 0 rgba(0,0,0,.32)!important;
+  }
+  .hero p,
+  .homepage-hero p{
+    font-size:1.04rem!important;
+    line-height:1.45!important;
+    max-width:100%!important;
+    margin-bottom:1rem!important;
+  }
+  .btn{width:auto!important;max-width:100%!important;padding:.75rem 1rem!important;font-size:.9rem!important;}
+  .features{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    width:auto!important;
+    max-width:none!important;
+    margin:0 12px 12px!important;
+  }
+  .feature{padding:.9rem 1rem!important;border-right:0!important;border-bottom:1px solid rgba(212,168,58,.2)!important;}
+  .main{padding:12px!important;width:100%!important;max-width:100%!important;}
+  .home-grid,.three,.two,.layout,.lower-home{display:grid!important;grid-template-columns:1fr!important;gap:12px!important;}
+  .grid,.cards{grid-template-columns:1fr!important;gap:12px!important;}
+  .panel{margin-bottom:12px!important;}
+  .panel h2{font-size:1.25rem!important;padding:.9rem 1rem!important;}
+  .panel-body{padding:12px!important;}
+  .card img{height:170px!important;}
+  .card b{font-size:1.2rem!important;}
+  .article-row{grid-template-columns:76px 1fr!important;}
+  .article-row img{width:76px!important;height:56px!important;}
+  .feature-card{grid-template-columns:1fr!important;}
+  .feature-card img{width:100%!important;height:150px!important;}
+  .table-wrap{overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;}
+  table{min-width:760px!important;}
+  .footer{padding:18px 16px!important;display:block!important;}
+}
+@media (max-width: 420px){
+  .logo-title{font-size:1.55rem!important;}
+  .tagline{font-size:.52rem!important;}
+  .homepage-hero:before{height:190px;}
+  .hero h1,.homepage-hero h1{font-size:2.35rem!important;}
+  .hero p,.homepage-hero p{font-size:1rem!important;}
+  .card img{height:155px!important;}
+}

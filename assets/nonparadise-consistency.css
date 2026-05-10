@@ -1,0 +1,46 @@
+/* Non-paradise header consistency pass */
+:root{--ww2-pass-bg:#07111f;--ww2-pass-bg2:#08131d;--ww2-pass-line:rgba(215,173,69,.28);--ww2-pass-gold:#d7ad45;--ww2-pass-ink:#f6efe1;--ww2-pass-muted:#d8cfb6}
+body{background:var(--ww2-pass-bg)!important;color:var(--ww2-pass-ink)!important;font-family:'Source Serif 4',Georgia,serif!important}
+.page,.site{max-width:1920px!important;margin:0 auto!important;min-height:100vh!important;background:radial-gradient(circle at 20% 0,rgba(215,173,69,.07),transparent 24%),linear-gradient(180deg,var(--ww2-pass-bg),var(--ww2-pass-bg2) 45%,var(--ww2-pass-bg))!important}
+.hero.hero-refresh,.hero.hero-refresh-wide{position:relative!important;min-height:360px!important;overflow:hidden!important;background-size:cover!important;background-position:center center!important;border-bottom:1px solid var(--ww2-pass-line)!important}
+.hero.hero-refresh::after,.hero.hero-refresh-wide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,17,31,.96) 0%,rgba(7,17,31,.82) 34%,rgba(7,17,31,.44) 70%,rgba(7,17,31,.16) 100%)!important;pointer-events:none}
+.hero.hero-refresh>.hero-copy,.hero.hero-refresh-wide>.hero-copy{position:relative!important;z-index:1!important;max-width:960px!important;padding:30px 14px 28px 14px!important;text-align:left!important}
+@media(min-width:900px){.hero.hero-refresh>.hero-copy,.hero.hero-refresh-wide>.hero-copy{padding:32px 26px 30px 26px!important}}
+.hero .kicker{font-family:'Oswald',sans-serif!important;font-size:14px!important;font-weight:700!important;letter-spacing:.16em!important;color:var(--ww2-pass-gold)!important;text-transform:uppercase!important}
+.hero h1{font-family:'Oswald',sans-serif!important;font-weight:700!important;font-size:clamp(3.2rem,7vw,5.4rem)!important;line-height:.9!important;letter-spacing:.02em!important;text-transform:uppercase!important;margin:.3rem 0 .9rem!important;text-align:left!important;color:#fff!important}
+.hero p{font-family:'Source Serif 4',Georgia,serif!important;font-size:clamp(1.12rem,1.8vw,1.4rem)!important;line-height:1.42!important;max-width:760px!important;color:#f4ede0!important;margin:0!important}
+.market-hero-note,.hero-callouts{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))!important;gap:14px!important;max-width:1040px!important;margin-top:18px!important}
+.market-hero-note>div,.hero-chip{border:1px solid rgba(223,198,113,.24)!important;background:rgba(7,17,31,.52)!important;padding:14px!important}
+.market-hero-note b,.hero-chip b{display:block!important;font-family:'Oswald',sans-serif!important;font-size:1rem!important;line-height:1.15!important;color:#fff!important;text-transform:uppercase!important;letter-spacing:.03em!important;margin-bottom:.45rem!important}
+.market-hero-note p,.hero-chip span{display:block!important;font-family:'Source Serif 4',serif!important;font-size:.97rem!important;line-height:1.5!important;color:rgba(245,239,223,.82)!important;margin:0!important}
+.kickerline{display:flex!important;flex-wrap:wrap!important;gap:.6rem!important;margin-top:1rem!important}
+.kickerline span{border:1px solid rgba(223,198,113,.24)!important;background:rgba(7,17,31,.66)!important;padding:.4rem .6rem!important;color:#f4ecd9!important;font:700 .74rem Oswald,sans-serif!important;text-transform:uppercase!important;letter-spacing:.09em!important}
+.main{max-width:1500px!important;margin:0 auto!important;padding:26px 28px 56px!important}
+.layout,.split-grid,.theatre-shell{gap:18px!important}
+.panel,.feature-panel,.route-card,.story-card,.book-card,.sequence-step,.market-card,.book-link-card,.article-hub-card,.technique-card,.theatre-read-card{background:linear-gradient(180deg,#16221d,#0d1612)!important;border:1px solid var(--ww2-pass-line)!important;box-shadow:0 12px 30px rgba(0,0,0,.24)!important}
+.panel h2{font-family:'Oswald',sans-serif!important;font-size:clamp(1.6rem,2.2vw,2.15rem)!important;line-height:1.05!important;letter-spacing:.03em!important;text-transform:uppercase!important;color:#fff!important}
+.panel h3,.route-banner b,.route-card b,.feature h3,.card b,.market-card b,.book-link-card b,.article-hub-card b,.technique-card b,.theatre-read-card b{font-family:'Oswald',sans-serif!important}
+.card,.market-card,.book-link-card,.article-hub-card,.technique-card,.theatre-read-card{background:linear-gradient(180deg,#18211b,#0e1511)!important;border-color:rgba(223,198,113,.2)!important}
+.footer{max-width:1920px!important;margin:0 auto!important;border-top:1px solid var(--ww2-pass-line)!important;padding:24px 28px!important;background:#050c14!important}
+.site .index-main{max-width:1500px!important;padding:26px 28px 50px!important}
+.site .index-main .route-panel{margin-top:18px!important}
+.site .index-main .countbar{border-top:1px solid rgba(215,173,69,.18)!important}
+.site .index-main .route-box{background:linear-gradient(180deg,#16221d,#0d1612)!important;border-color:var(--ww2-pass-line)!important}
+.site .index-main .route-box b,.site .index-main .countbar b,.site .index-main .countbar span,.site .index-main .chip,.site .index-main button.control{font-family:'Oswald',sans-serif!important}
+.site .index-main .route-box span,.site .index-main .meta{color:var(--ww2-pass-muted)!important}
+.site .index-main .aircraft-card{background:linear-gradient(180deg,#0d1612,#101a15)!important}
+@media(max-width:900px){.hero.hero-refresh,.hero.hero-refresh-wide{min-height:320px!important}.main,.site .index-main{padding:20px 16px 44px!important}.hero.hero-refresh>.hero-copy,.hero.hero-refresh-wide>.hero-copy{padding:30px 14px 28px 14px!important}.market-hero-note,.hero-callouts{grid-template-columns:1fr!important}}
+
+
+/* Full-width hero lock: match Techniques Bank header width */
+.page,.site{width:100%!important;max-width:none!important;margin:0!important;overflow-x:hidden!important}
+.hero.hero-refresh,.hero.hero-refresh-wide{width:100vw!important;max-width:none!important;margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;border-left:0!important;border-right:0!important}
+.site>.hero.hero-refresh,.page>.hero.hero-refresh,.page>.hero.hero-refresh-wide{margin-left:0!important;margin-right:0!important;width:100%!important}
+.site .index-main{max-width:1500px!important;margin:0 auto!important}
+.main{max-width:1500px!important;margin-left:auto!important;margin-right:auto!important}
+@media(max-width:900px){.hero.hero-refresh,.hero.hero-refresh-wide{width:100%!important;margin-left:0!important;margin-right:0!important}}
+
+/* Hero hard fallback after direct fix */
+.hero .hero-callouts,
+.hero .market-hero-note,
+.hero .kickerline{display:none!important;}
