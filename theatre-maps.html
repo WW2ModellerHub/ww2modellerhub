@@ -114,7 +114,23 @@ img{background:#07111f;object-fit:cover} .card img,.article-card img{aspect-rati
 .theatre-story-rich strong{
   color:#d7ad45;
 }
-</style><link href="assets/hero-image-layer-fix.css" rel="stylesheet"/></head>
+</style><link href="assets/hero-image-layer-fix.css" rel="stylesheet"/><style id="theatre-image-fix">
+.story-card img,
+.theatre-story-rich img,
+.theatre-article-body img{
+  display:block;
+  width:100%;
+  object-fit:cover;
+  background:#07111f;
+}
+.story-card img,
+.theatre-story-rich img{
+  height:190px;
+}
+.theatre-article-body img{
+  max-height:360px;
+}
+</style></head>
 <body class="content-polish theatre-page">
 <div class="page">
 <header class="ww2-top"><div class="ww2-top-inner"><a class="ww2-brand" href="index.html"><span class="ww2-roundel"></span><span><span class="ww2-brand-title">WW2 <span>Modeller</span></span><span class="ww2-brand-tag">Build history. Share passion. Remember.</span></span></a><form class="ww2-search" onsubmit="var q=this.querySelector('input').value.trim(); if(q) location.href='aircraft.html?q='+encodeURIComponent(q); return false;"><input placeholder="Search aircraft, kits, articles..." type="search"/><button aria-label="Search">⌕</button></form><div class="ww2-social"><span>f</span><span>◎</span><span>▶</span></div></div></header><nav class="ww2-main-nav" id="ww2MainNav"><button class="ww2-menu-toggle" onclick="document.getElementById('ww2MainNav').classList.toggle('open')" type="button">Menu</button><div class="ww2-nav-inner"><a class="" href="index.html">Home</a><a class="" href="aircraft.html">Aircraft Index</a><a class="" href="paint-codes.html">Paint Codes</a><a class="" href="kits.html">Kits &amp; Markets</a><a class="" href="articles.html">Articles</a><a class="" href="techniques-bank.html">Techniques Bank</a><a class="" href="aircraft-comparison.html">Compare Aircraft</a><a class="" href="books.html">Books</a><a class="active" href="theatre-maps.html">Theatre Maps</a><a class="" href="about.html">About</a><a class="" href="contact.html">Contact</a></div></nav>
