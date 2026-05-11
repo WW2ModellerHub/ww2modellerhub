@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Kit Comparison Tool | WW2 Modeller</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#07111f;--panel:#101a15;--panel2:#16221d;--line:rgba(215,173,69,.28);--gold:#d7ad45;--ink:#f6efe1;--muted:#d8cfb6}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+a{color:#f5d06b}
+.hero{position:relative;min-height:360px;background:#07111f;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero img.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,17,31,.98),rgba(7,17,31,.82) 40%,rgba(7,17,31,.25));z-index:1}
+.hero-copy{position:relative;z-index:2;max-width:940px;padding:54px 32px 44px 56px}
+.kicker{font:700 14px 'Oswald',Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.hero h1{font-family:'Oswald',Impact,sans-serif;text-transform:uppercase;font-size:clamp(3rem,6vw,5.3rem);line-height:.92;margin:0 0 18px;color:white}
+.hero p{font-size:clamp(1.08rem,1.6vw,1.35rem);line-height:1.5;max-width:780px;margin:0}
+.main{max-width:1450px;margin:0 auto;padding:28px 24px 60px}
+.panel{border:1px solid var(--line);background:linear-gradient(180deg,var(--panel2),#0d1612);box-shadow:0 16px 38px rgba(0,0,0,.25);margin-bottom:20px}
+.panel h2{font-family:'Oswald',Arial,sans-serif;text-transform:uppercase;letter-spacing:.04em;margin:0;padding:20px 22px;border-bottom:1px solid rgba(215,173,69,.22)}
+.panel-body{padding:20px 22px}
+.compare-controls{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.compare-controls label{display:block;font-family:'Oswald',Arial,sans-serif;text-transform:uppercase;letter-spacing:.07em;color:var(--gold);font-size:.8rem;margin-bottom:6px}
+.compare-controls select{width:100%;height:46px;background:#07111f;color:var(--ink);border:1px solid rgba(215,173,69,.35);padding:0 12px}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.kit-card{border:1px solid rgba(215,173,69,.25);background:#07111f;overflow:hidden}
+.kit-card img{width:100%;height:210px;object-fit:cover;display:block}
+.kit-card .body{padding:16px}
+.kit-card small{display:block;font-family:'Oswald',Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-size:.75rem;margin-bottom:7px}
+.kit-card h3{font-family:'Oswald',Arial,sans-serif;text-transform:uppercase;line-height:1.05;margin:0 0 8px;color:#fff;font-size:1.45rem}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badges span{border:1px solid rgba(215,173,69,.32);background:#101a15;color:#f5d06b;padding:4px 7px;font-family:'Oswald',Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:.72rem}
+.stat-row{display:grid;grid-template-columns:180px 1fr 48px;gap:10px;align-items:center;margin:9px 0}
+.stat-row b{font-family:'Oswald',Arial,sans-serif;text-transform:uppercase;font-size:.78rem;letter-spacing:.05em;color:#fff}
+.bar{height:9px;background:#1d2b25;border:1px solid rgba(215,173,69,.18);overflow:hidden}
+.bar span{display:block;height:100%;background:linear-gradient(90deg,#8f6e21,#d7ad45)}
+.score{font-family:'Oswald',Arial,sans-serif;color:#f5d06b;text-align:right}
+.verdict{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.verdict-card{border:1px solid rgba(215,173,69,.22);background:#07111f;padding:14px}
+.verdict-card b{display:block;font-family:'Oswald',Arial,sans-serif;text-transform:uppercase;color:#fff;margin-bottom:6px}
+.link-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.link-row a{display:inline-block;border:1px solid rgba(215,173,69,.38);background:#101a15;color:#f5d06b;text-decoration:none;text-transform:uppercase;font-family:'Oswald',Arial,sans-serif;letter-spacing:.06em;font-size:.76rem;padding:8px 10px}
+.table-wrap{overflow:auto}
+.kit-table{width:100%;border-collapse:collapse;min-width:900px}
+.kit-table th,.kit-table td{border:1px solid rgba(215,173,69,.2);padding:10px;text-align:left;vertical-align:top}
+.kit-table th{background:#07111f;color:var(--gold);font-family:'Oswald',Arial,sans-serif;text-transform:uppercase;font-size:.8rem;letter-spacing:.05em}
+@media(max-width:800px){.compare-controls,.compare-grid{grid-template-columns:1fr}.hero-copy{padding:38px 20px 34px 24px}.kit-card img{height:160px}}
+</style>
+<style id="kit-table-sortable-css">
+/* Sortable kit table */
+.kit-table th.sortable{
+  cursor:pointer;
+  user-select:none;
+  position:relative;
+  padding-right:24px;
+}
+.kit-table th.sortable::after{
+  content:"↕";
+  position:absolute;
+  right:8px;
+  opacity:.55;
+  color:#d7ad45;
+}
+.kit-table th.sortable.sort-asc::after{
+  content:"↑";
+  opacity:1;
+}
+.kit-table th.sortable.sort-desc::after{
+  content:"↓";
+  opacity:1;
+}
+</style><style id="kit-comparison-nav-css">
+/* WW2Modeller standard navigation for kit comparison */
+.ww2-topbar{
+  background:#07111f;
+  border-bottom:1px solid rgba(215,173,69,.32);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.ww2-nav-inner{
+  max-width:1450px;
+  margin:0 auto;
+  padding:10px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+.ww2-brand{
+  font-family:'Oswald',Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:#fff;
+  text-decoration:none;
+  font-size:1.05rem;
+  white-space:nowrap;
+}
+.ww2-nav-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  justify-content:flex-end;
+}
+.ww2-nav-links a{
+  border:1px solid rgba(215,173,69,.26);
+  background:#0d1612;
+  color:#f5d06b;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-family:'Oswald',Arial,sans-serif;
+  letter-spacing:.06em;
+  font-size:.75rem;
+  padding:8px 10px;
+}
+.ww2-nav-links a.active{
+  background:rgba(215,173,69,.18);
+  color:#fff;
+  border-color:rgba(215,173,69,.65);
+}
+@media(max-width:800px){
+  .ww2-nav-inner{align-items:flex-start;flex-direction:column}
+  .ww2-nav-links{justify-content:flex-start}
+}
+</style></head>
+<body><nav class="ww2-topbar" id="ww2-standard-nav"><div class="ww2-nav-inner"><a class="ww2-brand" href="index.html">WW2 Modeller</a><div class="ww2-nav-links"><a href="index.html">Home</a><a href="aircraft.html">Aircraft Index</a><a href="kits.html">Kits &amp; Markets</a><a class="active" href="kit-comparison.html">Kit Compare</a><a href="paint-codes.html">Paint Codes</a><a href="techniques-bank.html">Techniques</a><a href="theatre-maps.html">Theatre Maps</a><a href="articles.html">Articles</a><a href="books.html">Books</a></div></div></nav>
+<section class="hero">
+<img alt="" aria-hidden="true" class="hero-bg-img" src="assets/home/kits-hero-final.png"/>
+<div class="hero-copy">
+<div class="kicker">World War II aircraft modelling field manual</div>
+<h1>Kit Comparison Tool</h1>
+<p>Compare WW2 aircraft kits by accuracy, fit, cockpit detail, decals, price/value, aftermarket need, beginner friendliness and best use case.</p>
+</div>
+</section>
+<main class="main">
+<section class="panel">
+<h2>Compare two kits</h2>
+<div class="panel-body">
+<div class="compare-controls">
+<div><label for="kitA">Kit A</label><select id="kitA"></select></div>
+<div><label for="kitB">Kit B</label><select id="kitB"></select></div>
+</div>
+<div class="compare-grid" id="compareCards"></div>
+</div>
+</section>
+<section class="panel">
+<h2>Verdict</h2>
+<div class="panel-body">
+<div class="verdict" id="verdict"></div>
+</div>
+</section>
+<section class="panel">
+<h2>All kit scores</h2>
+<div class="panel-body table-wrap">
+<table class="kit-table">
+<thead><tr><th class="sortable" data-sort-index="0">Aircraft</th><th class="sortable" data-sort-index="1">Kit</th><th class="sortable" data-sort-index="2">Rating</th><th class="sortable" data-sort-index="3">Accuracy</th><th class="sortable" data-sort-index="4">Fit</th><th class="sortable" data-sort-index="5">Cockpit</th><th class="sortable" data-sort-index="6">Decals</th><th class="sortable" data-sort-index="7">Price</th><th class="sortable" data-sort-index="8">Aftermarket</th><th class="sortable" data-sort-index="9">Best use</th><th class="sortable" data-sort-index="10">Link</th></tr></thead>
+<tbody id="kitRows"></tbody>
+</table>
+</div>
+</section>
+</main>
+<script>
+const KITS = [{"id": "airfix-hurricane-mki", "aircraft": "Hawker Hurricane", "kit": "Airfix 1/48 Hawker Hurricane Mk.I", "maker": "Airfix", "scale": "1/48", "img": "assets/aircraft-index-custom/hurricane.jpg", "accuracy": 82, "fit": 78, "cockpit": 72, "decals": 76, "price": 84, "aftermarket": 72, "beginner": 88, "rating": "★★★★☆", "priceBand": "££", "aftermarketNeed": "Low/Medium", "bestUse": "Best first Battle of Britain fighter", "summary": "Approachable, widely available and ideal for RAF camouflage practice. Add masks and belts before deeper upgrades.", "product": "https://uk.airfix.com/products/hawker-hurricane-mk1-a05127a", "guide": "hurricane_paradise.html"}, {"id": "arma-hurricane-mkiic", "aircraft": "Hawker Hurricane", "kit": "Arma Hobby 1/48 Hurricane Mk.IIc", "maker": "Arma Hobby", "scale": "1/48", "img": "assets/aircraft-index-custom/hurricane.jpg", "accuracy": 92, "fit": 82, "cockpit": 84, "decals": 86, "price": 68, "aftermarket": 80, "beginner": 68, "rating": "★★★★★", "priceBand": "£££", "aftermarketNeed": "Low", "bestUse": "Best detail/accuracy Hurricane route", "summary": "Sharper detail and strong accuracy, but less beginner-forgiving than Airfix.", "product": "https://www.armahobby.com/category/1-48-aircraft-models", "guide": "hurricane_paradise.html"}, {"id": "hasegawa-hurricane", "aircraft": "Hawker Hurricane", "kit": "Hasegawa 1/48 Hurricane family", "maker": "Hasegawa", "scale": "1/48", "img": "assets/aircraft-index-custom/hurricane.jpg", "accuracy": 75, "fit": 74, "cockpit": 62, "decals": 65, "price": 58, "aftermarket": 55, "beginner": 72, "rating": "★★★☆☆", "priceBand": "££ / varies", "aftermarketNeed": "Medium/High", "bestUse": "Useful if already in stash", "summary": "Buildable but ageing. Usually needs decals, cockpit help and careful checking.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Hasegawa+Hurricane+1%2F48", "guide": "hurricane_paradise.html"}, {"id": "eduard-spitfire", "aircraft": "Supermarine Spitfire", "kit": "Eduard 1/48 Spitfire ProfiPACK", "maker": "Eduard", "scale": "1/48", "img": "assets/aircraft-index-custom/spitfire.jpg", "accuracy": 94, "fit": 86, "cockpit": 90, "decals": 90, "price": 76, "aftermarket": 88, "beginner": 70, "rating": "★★★★★", "priceBand": "£££", "aftermarketNeed": "Low", "bestUse": "Best all-round Spitfire route", "summary": "High detail, strong decals and useful extras in ProfiPACK boxings.", "product": "https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/spitfire-mk-ia-1-48.html", "guide": "spitfire_paradise.html"}, {"id": "tamiya-spitfire-mki", "aircraft": "Supermarine Spitfire", "kit": "Tamiya 1/48 Spitfire Mk.I", "maker": "Tamiya", "scale": "1/48", "img": "assets/aircraft-index-custom/spitfire.jpg", "accuracy": 88, "fit": 95, "cockpit": 82, "decals": 78, "price": 72, "aftermarket": 82, "beginner": 86, "rating": "★★★★★", "priceBand": "£££", "aftermarketNeed": "Low", "bestUse": "Best easy premium Spitfire build", "summary": "Superb fit and a very smooth build, ideal if you value assembly quality.", "product": "https://www.tamiya.com/english/products/61119/index.html", "guide": "spitfire_paradise.html"}, {"id": "airfix-spitfire-mki", "aircraft": "Supermarine Spitfire", "kit": "Airfix 1/48 Spitfire Mk.I", "maker": "Airfix", "scale": "1/48", "img": "assets/aircraft-index-custom/spitfire.jpg", "accuracy": 80, "fit": 74, "cockpit": 70, "decals": 76, "price": 86, "aftermarket": 70, "beginner": 80, "rating": "★★★★☆", "priceBand": "££", "aftermarketNeed": "Medium", "bestUse": "Best value Spitfire starter", "summary": "Good value and accessible, but not as refined as Eduard or Tamiya.", "product": "https://uk.airfix.com/search?q=Spitfire%201%2F48", "guide": "spitfire_paradise.html"}, {"id": "eduard-bf109e", "aircraft": "Messerschmitt Bf 109", "kit": "Eduard 1/48 Bf 109E ProfiPACK", "maker": "Eduard", "scale": "1/48", "img": "assets/aircraft-index-custom/bf109.jpg", "accuracy": 90, "fit": 82, "cockpit": 88, "decals": 88, "price": 76, "aftermarket": 86, "beginner": 68, "rating": "★★★★★", "priceBand": "£££", "aftermarketNeed": "Low", "bestUse": "Best Battle of Britain Luftwaffe route", "summary": "Excellent Emil route with useful cockpit detail and markings.", "product": "https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/bf-109e-1-1-48.html", "guide": "bf109_paradise.html"}, {"id": "eduard-bf109g6", "aircraft": "Messerschmitt Bf 109", "kit": "Eduard 1/48 Bf 109G-6 ProfiPACK", "maker": "Eduard", "scale": "1/48", "img": "assets/aircraft-index-custom/bf109.jpg", "accuracy": 92, "fit": 84, "cockpit": 88, "decals": 90, "price": 74, "aftermarket": 86, "beginner": 66, "rating": "★★★★★", "priceBand": "£££", "aftermarketNeed": "Low", "bestUse": "Best late-war Bf 109 route", "summary": "Great for mottling, Reich defence and late-war decal options.", "product": "https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/bf-109g-6-1-48-1.html", "guide": "bf109_paradise.html"}, {"id": "tamiya-bf109g6", "aircraft": "Messerschmitt Bf 109", "kit": "Tamiya 1/48 Bf 109G-6", "maker": "Tamiya", "scale": "1/48", "img": "assets/aircraft-index-custom/bf109.jpg", "accuracy": 88, "fit": 95, "cockpit": 82, "decals": 76, "price": 70, "aftermarket": 80, "beginner": 82, "rating": "★★★★★", "priceBand": "£££", "aftermarketNeed": "Low/Medium", "bestUse": "Best easy G-6 build", "summary": "Excellent engineering and very smooth fit, though with fewer boxing options than Eduard.", "product": "https://www.tamiya.com/english/products/61117/index.html", "guide": "bf109_paradise.html"}, {"id": "zvezda-bf109f", "aircraft": "Messerschmitt Bf 109", "kit": "Zvezda 1/48 Bf 109F-2", "maker": "Zvezda", "scale": "1/48", "img": "assets/aircraft-index-custom/bf109.jpg", "accuracy": 84, "fit": 76, "cockpit": 74, "decals": 68, "price": 86, "aftermarket": 62, "beginner": 70, "rating": "★★★★☆", "priceBand": "££", "aftermarketNeed": "Medium", "bestUse": "Best value Friedrich route", "summary": "Good shape/value, but benefits from masks, belts and better decals.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Zvezda+Bf+109F+1%2F48", "guide": "bf109_paradise.html"}, {"id": "eduard-fw190a", "aircraft": "Focke-Wulf Fw 190", "kit": "Eduard 1/48 Fw 190A ProfiPACK", "maker": "Eduard", "scale": "1/48", "img": "assets/aircraft-index-custom/fw190.jpg", "accuracy": 92, "fit": 82, "cockpit": 88, "decals": 88, "price": 76, "aftermarket": 86, "beginner": 64, "rating": "★★★★★", "priceBand": "£££", "aftermarketNeed": "Low", "bestUse": "Best Luftwaffe mottling/weathering route", "summary": "Great markings and detail; paint and variant choices need care.", "product": "https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/?cur=2&listtype=search&searchparam=fw+190", "guide": "fw190_paradise.html"}, {"id": "tamiya-fw190a3", "aircraft": "Focke-Wulf Fw 190", "kit": "Tamiya 1/48 Fw 190A-3", "maker": "Tamiya", "scale": "1/48", "img": "assets/aircraft-index-custom/fw190.jpg", "accuracy": 82, "fit": 92, "cockpit": 76, "decals": 70, "price": 78, "aftermarket": 72, "beginner": 82, "rating": "★★★★☆", "priceBand": "££", "aftermarketNeed": "Medium", "bestUse": "Best easy Fw 190 build", "summary": "Very buildable and clean, though not as modern in detail as Eduard.", "product": "https://www.tamiya.com/english/products/61037/index.html", "guide": "fw190_paradise.html"}, {"id": "hasegawa-fw190", "aircraft": "Focke-Wulf Fw 190", "kit": "Hasegawa 1/48 Fw 190 family", "maker": "Hasegawa", "scale": "1/48", "img": "assets/aircraft-index-custom/fw190.jpg", "accuracy": 78, "fit": 80, "cockpit": 68, "decals": 64, "price": 60, "aftermarket": 58, "beginner": 74, "rating": "★★★☆☆", "priceBand": "££ / varies", "aftermarketNeed": "Medium/High", "bestUse": "Useful older Fw 190 route", "summary": "Can still look good, but newer Eduard releases are usually stronger.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Hasegawa+Fw+190+1%2F48", "guide": "fw190_paradise.html"}, {"id": "tamiya-p51d", "aircraft": "North American P-51 Mustang", "kit": "Tamiya 1/48 P-51D Mustang", "maker": "Tamiya", "scale": "1/48", "img": "assets/aircraft-index-custom/p51.jpg", "accuracy": 86, "fit": 94, "cockpit": 78, "decals": 75, "price": 82, "aftermarket": 78, "beginner": 88, "rating": "★★★★★", "priceBand": "££", "aftermarketNeed": "Low/Medium", "bestUse": "Best natural metal first build", "summary": "Smooth route into natural metal; surface prep matters most.", "product": "https://www.tamiya.com/english/products/61040/index.html", "guide": "p51_paradise.html"}, {"id": "eduard-p51d", "aircraft": "North American P-51 Mustang", "kit": "Eduard 1/48 P-51D ProfiPACK", "maker": "Eduard", "scale": "1/48", "img": "assets/aircraft-index-custom/p51.jpg", "accuracy": 94, "fit": 86, "cockpit": 90, "decals": 92, "price": 70, "aftermarket": 90, "beginner": 68, "rating": "★★★★★", "priceBand": "£££", "aftermarketNeed": "Low", "bestUse": "Best detail Mustang route", "summary": "Excellent cockpit/detail and decals; better for careful builders.", "product": "https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/p-51d-5-1-48.html", "guide": "p51_paradise.html"}, {"id": "airfix-p51d", "aircraft": "North American P-51 Mustang", "kit": "Airfix 1/48 P-51D Mustang", "maker": "Airfix", "scale": "1/48", "img": "assets/aircraft-index-custom/p51.jpg", "accuracy": 80, "fit": 76, "cockpit": 72, "decals": 74, "price": 84, "aftermarket": 68, "beginner": 78, "rating": "★★★★☆", "priceBand": "££", "aftermarketNeed": "Medium", "bestUse": "Best value Mustang route", "summary": "Good value, but surface prep and decals may need more work.", "product": "https://uk.airfix.com/search?q=P-51D%20Mustang", "guide": "p51_paradise.html"}, {"id": "tamiya-p47d", "aircraft": "Republic P-47 Thunderbolt", "kit": "Tamiya 1/48 P-47D Thunderbolt", "maker": "Tamiya", "scale": "1/48", "img": "assets/aircraft-index-custom/p47.jpg", "accuracy": 90, "fit": 94, "cockpit": 82, "decals": 78, "price": 74, "aftermarket": 82, "beginner": 82, "rating": "★★★★★", "priceBand": "£££", "aftermarketNeed": "Low", "bestUse": "Best large USAAF fighter", "summary": "Excellent engineering and big presence; great in OD or natural metal.", "product": "https://www.tamiya.com/english/products/61086/index.html", "guide": "p47_paradise.html"}, {"id": "hasegawa-p47", "aircraft": "Republic P-47 Thunderbolt", "kit": "Hasegawa 1/48 P-47D", "maker": "Hasegawa", "scale": "1/48", "img": "assets/aircraft-index-custom/p47.jpg", "accuracy": 78, "fit": 78, "cockpit": 66, "decals": 64, "price": 62, "aftermarket": 58, "beginner": 72, "rating": "★★★☆☆", "priceBand": "££ / varies", "aftermarketNeed": "Medium/High", "bestUse": "Older alternative", "summary": "Buildable, but Tamiya is the cleaner route for most modellers.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Hasegawa+P-47D+1%2F48", "guide": "p47_paradise.html"}, {"id": "academy-p38", "aircraft": "Lockheed P-38 Lightning", "kit": "Academy 1/48 P-38 Lightning", "maker": "Academy", "scale": "1/48", "img": "assets/aircraft-index-custom/p38.jpg", "accuracy": 76, "fit": 70, "cockpit": 68, "decals": 70, "price": 76, "aftermarket": 58, "beginner": 54, "rating": "★★★☆☆", "priceBand": "££", "aftermarketNeed": "High", "bestUse": "Budget twin-boom route", "summary": "Useful but needs careful alignment and benefits from detail upgrades.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Academy+P-38+1%2F48", "guide": "p38_paradise.html"}, {"id": "tamiya-p38", "aircraft": "Lockheed P-38 Lightning", "kit": "Tamiya 1/48 P-38F/G Lightning", "maker": "Tamiya", "scale": "1/48", "img": "assets/aircraft-index-custom/p38.jpg", "accuracy": 94, "fit": 96, "cockpit": 86, "decals": 82, "price": 58, "aftermarket": 84, "beginner": 72, "rating": "★★★★★", "priceBand": "££££", "aftermarketNeed": "Low", "bestUse": "Best P-38 route", "summary": "Premium engineering and accuracy; expensive but excellent.", "product": "https://www.tamiya.com/english/products/61120/index.html", "guide": "p38_paradise.html"}, {"id": "airfix-p40", "aircraft": "Curtiss P-40 Warhawk", "kit": "Airfix 1/48 P-40B Warhawk", "maker": "Airfix", "scale": "1/48", "img": "assets/aircraft-index-custom/p40.jpg", "accuracy": 82, "fit": 78, "cockpit": 72, "decals": 78, "price": 82, "aftermarket": 70, "beginner": 80, "rating": "★★★★☆", "priceBand": "££", "aftermarketNeed": "Medium", "bestUse": "Best desert starter route", "summary": "Good value and strong desert/Pacific scheme potential.", "product": "https://uk.airfix.com/search?q=P-40B", "guide": "p40_paradise.html"}, {"id": "hasegawa-p40", "aircraft": "Curtiss P-40 Warhawk", "kit": "Hasegawa 1/48 P-40 family", "maker": "Hasegawa", "scale": "1/48", "img": "assets/aircraft-index-custom/p40.jpg", "accuracy": 80, "fit": 78, "cockpit": 68, "decals": 68, "price": 62, "aftermarket": 60, "beginner": 72, "rating": "★★★☆☆", "priceBand": "££ / varies", "aftermarketNeed": "Medium", "bestUse": "Older P-40 route", "summary": "Still useful if found cheaply, but may need decals and cockpit help.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Hasegawa+P-40+1%2F48", "guide": "p40_paradise.html"}, {"id": "eduard-hellcat", "aircraft": "Grumman F6F Hellcat", "kit": "Eduard 1/48 F6F-3 Hellcat ProfiPACK", "maker": "Eduard", "scale": "1/48", "img": "assets/aircraft-index-custom/hellcat.jpg", "accuracy": 90, "fit": 84, "cockpit": 88, "decals": 88, "price": 76, "aftermarket": 86, "beginner": 72, "rating": "★★★★★", "priceBand": "£££", "aftermarketNeed": "Low", "bestUse": "Best Pacific carrier fighter", "summary": "Strong out of the box with useful extras and great Pacific marking routes.", "product": "https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/f6f-3-1-48-1.html", "guide": "hellcat_paradise.html"}, {"id": "hobbyboss-hellcat", "aircraft": "Grumman F6F Hellcat", "kit": "HobbyBoss 1/48 F6F Hellcat", "maker": "HobbyBoss", "scale": "1/48", "img": "assets/aircraft-index-custom/hellcat.jpg", "accuracy": 76, "fit": 80, "cockpit": 70, "decals": 68, "price": 76, "aftermarket": 62, "beginner": 76, "rating": "★★★☆☆", "priceBand": "££", "aftermarketNeed": "Medium", "bestUse": "Budget Hellcat route", "summary": "Good if found cheap, but Eduard is stronger for detail and decals.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=HobbyBoss+F6F+Hellcat+1%2F48", "guide": "hellcat_paradise.html"}, {"id": "tamiya-corsair", "aircraft": "Vought F4U Corsair", "kit": "Tamiya 1/48 F4U-1A Corsair", "maker": "Tamiya", "scale": "1/48", "img": "assets/aircraft-index-custom/corsair.jpg", "accuracy": 88, "fit": 92, "cockpit": 80, "decals": 76, "price": 78, "aftermarket": 80, "beginner": 78, "rating": "★★★★☆", "priceBand": "£££", "aftermarketNeed": "Low/Medium", "bestUse": "Best island-strip weathering route", "summary": "Excellent Corsair route with strong weathering potential.", "product": "https://www.scalemodelshop.co.uk/tamiya-vought-f4u-1a-corsair-61070/", "guide": "corsair_paradise.html"}, {"id": "hobbyboss-corsair", "aircraft": "Vought F4U Corsair", "kit": "HobbyBoss 1/48 F4U Corsair", "maker": "HobbyBoss", "scale": "1/48", "img": "assets/aircraft-index-custom/corsair.jpg", "accuracy": 78, "fit": 80, "cockpit": 70, "decals": 68, "price": 76, "aftermarket": 62, "beginner": 74, "rating": "★★★☆☆", "priceBand": "££", "aftermarketNeed": "Medium", "bestUse": "Budget Corsair route", "summary": "Usable, but Tamiya is the safer, cleaner recommendation.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=HobbyBoss+F4U+Corsair+1%2F48", "guide": "corsair_paradise.html"}, {"id": "tamiya-zero", "aircraft": "Mitsubishi A6M Zero", "kit": "Tamiya 1/48 Mitsubishi A6M Zero", "maker": "Tamiya", "scale": "1/48", "img": "assets/aircraft-index-custom/zero.jpg", "accuracy": 88, "fit": 92, "cockpit": 80, "decals": 74, "price": 78, "aftermarket": 78, "beginner": 78, "rating": "★★★★☆", "priceBand": "£££", "aftermarketNeed": "Low/Medium", "bestUse": "Best IJN starter route", "summary": "Clean Japanese naval route; colour discipline matters.", "product": "https://www.tamiya.com/english/products/61103/index.html", "guide": "zero_paradise.html"}, {"id": "eduard-zero", "aircraft": "Mitsubishi A6M Zero", "kit": "Eduard 1/48 A6M2 Zero ProfiPACK", "maker": "Eduard", "scale": "1/48", "img": "assets/aircraft-index-custom/zero.jpg", "accuracy": 94, "fit": 86, "cockpit": 90, "decals": 90, "price": 70, "aftermarket": 88, "beginner": 68, "rating": "★★★★★", "priceBand": "£££", "aftermarketNeed": "Low", "bestUse": "Best detailed Zero route", "summary": "Excellent modern detail and decal options, but a more delicate build.", "product": "https://www.eduard.com/eduard/plastic-kits/profipack/aircraft/1-48/a6m2-zero-type-21-1-48.html", "guide": "zero_paradise.html"}, {"id": "tamiya-wildcat", "aircraft": "Grumman F4F Wildcat", "kit": "Tamiya 1/48 F4F Wildcat", "maker": "Tamiya", "scale": "1/48", "img": "assets/aircraft-index-custom/wildcat.jpg", "accuracy": 82, "fit": 90, "cockpit": 74, "decals": 70, "price": 78, "aftermarket": 70, "beginner": 84, "rating": "★★★★☆", "priceBand": "££", "aftermarketNeed": "Medium", "bestUse": "Best easy Wildcat route", "summary": "Older but smooth and satisfying; a good Pacific shelf companion.", "product": "https://www.tamiya.com/english/products/61034/index.html", "guide": "wildcat_paradise.html"}, {"id": "accurate-dauntless", "aircraft": "Douglas SBD Dauntless", "kit": "Accurate Miniatures 1/48 SBD Dauntless", "maker": "Accurate Miniatures", "scale": "1/48", "img": "assets/aircraft-index-custom/dauntless.jpg", "accuracy": 86, "fit": 76, "cockpit": 84, "decals": 78, "price": 60, "aftermarket": 68, "beginner": 50, "rating": "★★★★☆", "priceBand": "££ / varies", "aftermarketNeed": "Medium/High", "bestUse": "Best detailed Dauntless route", "summary": "Excellent for Midway, but not beginner simple.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Accurate+Miniatures+SBD+Dauntless+1%2F48", "guide": "dauntless_paradise.html"}, {"id": "academy-avenger", "aircraft": "Grumman TBF/TBM Avenger", "kit": "Academy 1/48 TBF/TBM Avenger", "maker": "Academy", "scale": "1/48", "img": "assets/aircraft-index-custom/avenger.jpg", "accuracy": 78, "fit": 72, "cockpit": 76, "decals": 70, "price": 68, "aftermarket": 54, "beginner": 42, "rating": "★★★☆☆", "priceBand": "£££", "aftermarketNeed": "High", "bestUse": "Large Pacific torpedo bomber", "summary": "Big visual impact, but canopy, size and interior make it more involved.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Academy+Avenger+1%2F48", "guide": "avenger_paradise.html"}, {"id": "airfix-lancaster", "aircraft": "Avro Lancaster", "kit": "Airfix 1/72 Lancaster B.III Special Dambusters", "maker": "Airfix", "scale": "1/72", "img": "assets/aircraft-index-custom/lancaster.jpg", "accuracy": 84, "fit": 76, "cockpit": 76, "decals": 82, "price": 70, "aftermarket": 56, "beginner": 46, "rating": "★★★★☆", "priceBand": "£££", "aftermarketNeed": "High", "bestUse": "Best mission-story bomber", "summary": "A big story build. Masks, wheels and barrels beat hidden interior upgrades.", "product": "https://uk.airfix.com/products/avro-lancaster-biii-special-dambusters-a09007a", "guide": "lancaster_paradise.html"}, {"id": "revell-lancaster", "aircraft": "Avro Lancaster", "kit": "Revell 1/72 Lancaster", "maker": "Revell", "scale": "1/72", "img": "assets/aircraft-index-custom/lancaster.jpg", "accuracy": 78, "fit": 72, "cockpit": 70, "decals": 72, "price": 82, "aftermarket": 50, "beginner": 50, "rating": "★★★☆☆", "priceBand": "££", "aftermarketNeed": "High", "bestUse": "Budget Lancaster route", "summary": "Good value but less refined; masks are strongly recommended.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Revell+Lancaster+1%2F72", "guide": "lancaster_paradise.html"}, {"id": "b17-route", "aircraft": "Boeing B-17 Flying Fortress", "kit": "B-17 Flying Fortress kit route", "maker": "Airfix / Revell / HK Models", "scale": "1/72 / 1/48", "img": "assets/aircraft-index-custom/b17.jpg", "accuracy": 78, "fit": 68, "cockpit": 78, "decals": 82, "price": 48, "aftermarket": 42, "beginner": 34, "rating": "★★★☆☆", "priceBand": "££££", "aftermarketNeed": "High", "bestUse": "Best nose-art heavy bomber project", "summary": "Choose scale and display space first; masks and decals matter most.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=B-17+Flying+Fortress", "guide": "b17_paradise.html"}, {"id": "academy-b24", "aircraft": "Consolidated B-24 Liberator", "kit": "Academy 1/72 B-24 Liberator", "maker": "Academy", "scale": "1/72", "img": "assets/aircraft-index-custom/b24.jpg", "accuracy": 76, "fit": 70, "cockpit": 68, "decals": 72, "price": 70, "aftermarket": 46, "beginner": 38, "rating": "★★★☆☆", "priceBand": "£££", "aftermarketNeed": "High", "bestUse": "Best B-24 entry route", "summary": "Large and complex; most value comes from masks, decals and careful assembly.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Academy+B-24+Liberator+1%2F72", "guide": "b24_paradise.html"}, {"id": "airfix-b25", "aircraft": "North American B-25 Mitchell", "kit": "Airfix 1/72 B-25 Mitchell", "maker": "Airfix", "scale": "1/72", "img": "assets/aircraft-index-custom/b25.jpg", "accuracy": 84, "fit": 80, "cockpit": 78, "decals": 80, "price": 76, "aftermarket": 60, "beginner": 58, "rating": "★★★★☆", "priceBand": "£££", "aftermarketNeed": "Medium/High", "bestUse": "Best medium bomber route", "summary": "Strong balance of size, detail and mission variety.", "product": "https://uk.airfix.com/search?q=B-25", "guide": "b25_paradise.html"}, {"id": "airfix-mosquito", "aircraft": "de Havilland Mosquito", "kit": "Airfix 1/72 Mosquito", "maker": "Airfix", "scale": "1/72", "img": "assets/aircraft-index-custom/mosquito.jpg", "accuracy": 82, "fit": 78, "cockpit": 74, "decals": 76, "price": 82, "aftermarket": 64, "beginner": 70, "rating": "★★★★☆", "priceBand": "££", "aftermarketNeed": "Medium", "bestUse": "Best value Mosquito route", "summary": "Versatile twin-engine subject with fighter-bomber, night fighter and PR options.", "product": "https://uk.airfix.com/search?q=Mosquito", "guide": "mosquito_paradise.html"}, {"id": "tamiya-mosquito", "aircraft": "de Havilland Mosquito", "kit": "Tamiya 1/48 Mosquito", "maker": "Tamiya", "scale": "1/48", "img": "assets/aircraft-index-custom/mosquito.jpg", "accuracy": 90, "fit": 92, "cockpit": 86, "decals": 78, "price": 54, "aftermarket": 76, "beginner": 62, "rating": "★★★★★", "priceBand": "££££", "aftermarketNeed": "Low/Medium", "bestUse": "Best premium Mosquito route", "summary": "Excellent but larger and pricier; a serious display build.", "product": "https://www.tamiya.com/english/products/61062/index.html", "guide": "mosquito_paradise.html"}, {"id": "tamiya-beaufighter", "aircraft": "Bristol Beaufighter", "kit": "Tamiya 1/48 Beaufighter", "maker": "Tamiya", "scale": "1/48", "img": "assets/aircraft-index-custom/beaufighter.jpg", "accuracy": 84, "fit": 90, "cockpit": 76, "decals": 70, "price": 60, "aftermarket": 70, "beginner": 66, "rating": "★★★★☆", "priceBand": "£££", "aftermarketNeed": "Medium", "bestUse": "Best Beaufighter route", "summary": "A smooth classic Tamiya twin with strong coastal/night fighter potential.", "product": "https://www.tamiya.com/english/products/61053/index.html", "guide": "beaufighter_paradise.html"}, {"id": "icm-ju88", "aircraft": "Junkers Ju 88", "kit": "ICM 1/48 Ju 88 family", "maker": "ICM", "scale": "1/48", "img": "assets/aircraft-index-custom/ju88.jpg", "accuracy": 86, "fit": 74, "cockpit": 82, "decals": 78, "price": 56, "aftermarket": 58, "beginner": 34, "rating": "★★★★☆", "priceBand": "££££", "aftermarketNeed": "High", "bestUse": "Best large Luftwaffe twin", "summary": "Impressive and detailed, but not quick or beginner-friendly.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=ICM+Ju+88+1%2F48", "guide": "ju88_paradise.html"}, {"id": "icm-he111", "aircraft": "Heinkel He 111", "kit": "ICM 1/48 He 111", "maker": "ICM", "scale": "1/48", "img": "assets/aircraft-index-custom/he111.jpg", "accuracy": 86, "fit": 72, "cockpit": 82, "decals": 78, "price": 54, "aftermarket": 50, "beginner": 28, "rating": "★★★★☆", "priceBand": "££££", "aftermarketNeed": "High", "bestUse": "Best Battle of Britain bomber", "summary": "Large, glazed and complex; masks are not optional.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=ICM+He+111+1%2F48", "guide": "he111_paradise.html"}, {"id": "tamiya-il2", "aircraft": "Ilyushin Il-2 Sturmovik", "kit": "Tamiya 1/48 Il-2 Sturmovik", "maker": "Tamiya", "scale": "1/48", "img": "assets/aircraft-index-custom/il2.jpg", "accuracy": 90, "fit": 92, "cockpit": 82, "decals": 78, "price": 58, "aftermarket": 76, "beginner": 70, "rating": "★★★★★", "priceBand": "££££", "aftermarketNeed": "Low/Medium", "bestUse": "Best Eastern Front attack aircraft", "summary": "Excellent kit; weathering and winter finish potential is huge.", "product": "https://www.tamiya.com/english/products/61113/index.html", "guide": "il2_paradise.html"}, {"id": "zvezda-yak3", "aircraft": "Yakovlev Yak-3", "kit": "Zvezda 1/48 Yak-3", "maker": "Zvezda", "scale": "1/48", "img": "assets/aircraft-index-custom/yak3.jpg", "accuracy": 82, "fit": 78, "cockpit": 70, "decals": 68, "price": 84, "aftermarket": 62, "beginner": 76, "rating": "★★★★☆", "priceBand": "££", "aftermarketNeed": "Medium", "bestUse": "Best simple VVS fighter", "summary": "Good value route into Soviet fighter colours.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Zvezda+Yak-3+1%2F48", "guide": "yak3_paradise.html"}, {"id": "zvezda-la5fn", "aircraft": "Lavochkin La-5FN", "kit": "Zvezda 1/48 La-5FN", "maker": "Zvezda", "scale": "1/48", "img": "assets/aircraft-index-custom/la5fn.jpg", "accuracy": 82, "fit": 76, "cockpit": 72, "decals": 68, "price": 82, "aftermarket": 62, "beginner": 72, "rating": "★★★★☆", "priceBand": "££", "aftermarketNeed": "Medium", "bestUse": "Best VVS radial fighter", "summary": "Good Eastern Front route with weathering potential.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Zvezda+La-5FN+1%2F48", "guide": "la5fn_paradise.html"}, {"id": "italeri-macchi202", "aircraft": "Macchi C.202 Folgore", "kit": "Italeri / Hasegawa 1/48 Macchi C.202", "maker": "Italeri / Hasegawa", "scale": "1/48", "img": "assets/aircraft-index-custom/macchi_c202.jpg", "accuracy": 76, "fit": 70, "cockpit": 66, "decals": 64, "price": 62, "aftermarket": 48, "beginner": 48, "rating": "★★★☆☆", "priceBand": "££ / varies", "aftermarketNeed": "High", "bestUse": "Italian smoke-ring route", "summary": "The paint scheme is the real challenge; decals and masks help.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Macchi+C.202+1%2F48", "guide": "macchi_c202_paradise.html"}, {"id": "hasegawa-ki61", "aircraft": "Kawasaki Ki-61 Hien", "kit": "Hasegawa 1/48 Ki-61 Hien", "maker": "Hasegawa", "scale": "1/48", "img": "assets/aircraft-index-custom/ki61.jpg", "accuracy": 78, "fit": 76, "cockpit": 68, "decals": 66, "price": 60, "aftermarket": 56, "beginner": 62, "rating": "★★★☆☆", "priceBand": "££ / varies", "aftermarketNeed": "Medium/High", "bestUse": "Best Japanese Army fighter route", "summary": "Good subject for worn green and natural metal Japanese Army schemes.", "product": "https://www.scalemates.com/search.php?fkSECTION[]=Kits&q=Hasegawa+Ki-61+1%2F48", "guide": "ki61_paradise.html"}, {"id": "airfix-swordfish", "aircraft": "Fairey Swordfish", "kit": "Airfix 1/72 Fairey Swordfish", "maker": "Airfix", "scale": "1/72", "img": "assets/aircraft-index-custom/swordfish.jpg", "accuracy": 84, "fit": 78, "cockpit": 78, "decals": 78, "price": 76, "aftermarket": 52, "beginner": 34, "rating": "★★★★☆", "priceBand": "£££", "aftermarketNeed": "High", "bestUse": "Best biplane/rigging route", "summary": "Excellent subject but rigging makes it advanced.", "product": "https://uk.airfix.com/search?q=Swordfish", "guide": "swordfish_paradise.html"}, {"id": "airfix-stuka", "aircraft": "Junkers Ju 87 Stuka", "kit": "Airfix 1/48 Ju 87B Stuka", "maker": "Airfix", "scale": "1/48", "img": "assets/aircraft-index-custom/ju87.jpg", "accuracy": 80, "fit": 76, "cockpit": 74, "decals": 74, "price": 76, "aftermarket": 60, "beginner": 62, "rating": "★★★★☆", "priceBand": "££", "aftermarketNeed": "Medium", "bestUse": "Best classic dive-bomber route", "summary": "Strong visual subject with canopy masking and weathering work.", "product": "https://uk.airfix.com/search?q=Ju%2087", "guide": "ju87_paradise.html"}];
+const METRICS = [
+  ['accuracy','Accuracy'],
+  ['fit','Fit'],
+  ['cockpit','Cockpit detail'],
+  ['decals','Decals'],
+  ['price','Price/value'],
+  ['aftermarket','Aftermarket included / less needed'],
+  ['beginner','Beginner friendliness']
+];
+function optionLabel(k){return `${k.aircraft} — ${k.kit}`;}
+function fillSelects(){
+  const a=document.getElementById('kitA'), b=document.getElementById('kitB');
+  KITS.forEach((k,i)=>{
+    const o1=new Option(optionLabel(k),k.id); const o2=new Option(optionLabel(k),k.id);
+    a.add(o1); b.add(o2);
+  });
+  a.value='airfix-hurricane'; b.value='arma-hurricane';
+}
+function kitById(id){return KITS.find(k=>k.id===id)||KITS[0];}
+function avg(k){return Math.round(METRICS.reduce((s,m)=>s+k[m[0]],0)/METRICS.length);}
+function card(k,label){
+  return `<article class="kit-card">
+    <img src="${k.img}" alt="${k.kit}">
+    <div class="body">
+      <small>${label} · ${k.maker} · ${k.scale}</small>
+      <h3>${k.kit}</h3>
+      <div class="badges"><span>${k.rating}</span><span>${k.priceBand}</span><span>${k.aftermarketNeed}</span></div>
+      <p>${k.summary}</p>
+      ${METRICS.map(m=>`<div class="stat-row"><b>${m[1]}</b><div class="bar"><span style="width:${k[m[0]]}%"></span></div><div class="score">${k[m[0]]}</div></div>`).join('')}
+      <p><b>Best use:</b> ${k.bestUse}</p>
+      <div class="link-row"><a href="${k.guide}">Aircraft guide</a><a href="${k.product}" target="_blank" rel="noopener noreferrer">Kit / product page</a></div>
+    </div>
+  </article>`;
+}
+function render(){
+  const a=kitById(document.getElementById('kitA').value);
+  const b=kitById(document.getElementById('kitB').value);
+  document.getElementById('compareCards').innerHTML=card(a,'Kit A')+card(b,'Kit B');
+  const winner = avg(a)===avg(b) ? 'Draw' : (avg(a)>avg(b)?a.kit:b.kit);
+  const beginner = a.beginner===b.beginner ? 'Similar' : (a.beginner>b.beginner?a.kit:b.kit);
+  const detail = ((a.accuracy+a.cockpit+a.decals) === (b.accuracy+b.cockpit+b.decals)) ? 'Similar' : ((a.accuracy+a.cockpit+a.decals)>(b.accuracy+b.cockpit+b.decals)?a.kit:b.kit);
+  document.getElementById('verdict').innerHTML = `
+    <div class="verdict-card"><b>Overall pick</b><p>${winner} (${avg(a)} vs ${avg(b)})</p></div>
+    <div class="verdict-card"><b>Best for beginners</b><p>${beginner}</p></div>
+    <div class="verdict-card"><b>Best detail package</b><p>${detail}</p></div>
+    <div class="verdict-card"><b>Aftermarket logic</b><p>${a.aftermarketNeed} vs ${b.aftermarketNeed}. Lower need usually means better value out of the box.</p></div>`;
+}
+function renderTable(){
+  document.getElementById('kitRows').innerHTML = KITS.map(k=>`<tr>
+    <td><b>${k.aircraft}</b></td><td>${k.kit}</td><td>${k.rating}</td><td>${k.accuracy}</td><td>${k.fit}</td><td>${k.cockpit}</td><td>${k.decals}</td><td>${k.priceBand}</td><td>${k.aftermarketNeed}</td><td>${k.bestUse}</td><td><a href="${k.product}" target="_blank" rel="noopener noreferrer">Product</a></td>
+  </tr>`).join('');
+}
+document.addEventListener('DOMContentLoaded',()=>{fillSelects();render();renderTable();document.getElementById('kitA').addEventListener('change',render);document.getElementById('kitB').addEventListener('change',render);});
+</script>
+<script id="kit-table-sortable-js">
+(function(){
+  function cellValue(row, index){
+    var cell = row.children[index];
+    if(!cell) return '';
+    var text = cell.textContent.trim();
+    var numeric = text.replace(/[£★☆/ ]/g,'');
+    if(/^-?\d+(\.\d+)?$/.test(numeric)) return Number(numeric);
+    if(index === 2){
+      return (text.match(/★/g)||[]).length;
+    }
+    return text.toLowerCase();
+  }
+  function sortTable(table, index, asc){
+    var tbody = table.querySelector('tbody');
+    var rows = Array.from(tbody.querySelectorAll('tr'));
+    rows.sort(function(a,b){
+      var av = cellValue(a,index);
+      var bv = cellValue(b,index);
+      if(typeof av === 'number' && typeof bv === 'number') return asc ? av-bv : bv-av;
+      return asc ? String(av).localeCompare(String(bv)) : String(bv).localeCompare(String(av));
+    });
+    rows.forEach(function(r){ tbody.appendChild(r); });
+  }
+  function init(){
+    var table = document.querySelector('.kit-table');
+    if(!table) return;
+    table.querySelectorAll('th.sortable').forEach(function(th){
+      th.addEventListener('click', function(){
+        var index = Number(th.dataset.sortIndex || 0);
+        var asc = !th.classList.contains('sort-asc');
+        table.querySelectorAll('th').forEach(function(h){ h.classList.remove('sort-asc','sort-desc'); });
+        th.classList.add(asc ? 'sort-asc' : 'sort-desc');
+        sortTable(table,index,asc);
+      });
+    });
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</body>
+</html>
