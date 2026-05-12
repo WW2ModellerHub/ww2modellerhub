@@ -73,61 +73,12 @@ a{color:#f5d06b}
   content:"↓";
   opacity:1;
 }
-</style><style id="kit-comparison-nav-css">
-/* WW2Modeller standard navigation for kit comparison */
-.ww2-topbar{
-  background:#07111f;
-  border-bottom:1px solid rgba(215,173,69,.32);
-  position:sticky;
-  top:0;
-  z-index:50;
-}
-.ww2-nav-inner{
-  max-width:1450px;
-  margin:0 auto;
-  padding:10px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-}
-.ww2-brand{
-  font-family:'Oswald',Arial,sans-serif;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  color:#fff;
-  text-decoration:none;
-  font-size:1.05rem;
-  white-space:nowrap;
-}
-.ww2-nav-links{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  justify-content:flex-end;
-}
-.ww2-nav-links a{
-  border:1px solid rgba(215,173,69,.26);
-  background:#0d1612;
-  color:#f5d06b;
-  text-decoration:none;
-  text-transform:uppercase;
-  font-family:'Oswald',Arial,sans-serif;
-  letter-spacing:.06em;
-  font-size:.75rem;
-  padding:8px 10px;
-}
-.ww2-nav-links a.active{
-  background:rgba(215,173,69,.18);
-  color:#fff;
-  border-color:rgba(215,173,69,.65);
-}
-@media(max-width:800px){
-  .ww2-nav-inner{align-items:flex-start;flex-direction:column}
-  .ww2-nav-links{justify-content:flex-start}
-}
+</style><style id="site-internal-links-css">
+.site-internal-links{border-top:1px solid rgba(215,173,69,.24);background:#07111f;padding:18px 22px;text-align:center;margin-top:28px}
+.site-internal-links a{display:inline-block;margin:4px 8px;color:#f5d06b;text-transform:uppercase;font-family:'Oswald',Arial,sans-serif;letter-spacing:.06em;font-size:.76rem;text-decoration:none}
+.site-internal-links a:hover{text-decoration:underline}
 </style></head>
-<body><nav class="ww2-topbar" id="ww2-standard-nav"><div class="ww2-nav-inner"><a class="ww2-brand" href="index.html">WW2 Modeller</a><div class="ww2-nav-links"><a href="index.html">Home</a><a href="aircraft.html">Aircraft Index</a><a href="kits.html">Kits &amp; Markets</a><a class="active" href="kit-comparison.html">Kit Compare</a><a href="paint-codes.html">Paint Codes</a><a href="techniques-bank.html">Techniques</a><a href="theatre-maps.html">Theatre Maps</a><a href="articles.html">Articles</a><a href="books.html">Books</a></div></div></nav>
+<body>
 <section class="hero">
 <img alt="" aria-hidden="true" class="hero-bg-img" src="assets/home/kits-hero-final.png"/>
 <div class="hero-copy">
@@ -260,5 +211,5 @@ document.addEventListener('DOMContentLoaded',()=>{fillSelects();render();renderT
   else init();
 })();
 </script>
-</body>
+<nav aria-label="Internal site links" class="site-internal-links" id="site-internal-links"><a href="index.html">Home</a><a href="aircraft.html">Aircraft Index</a><a href="kits.html">Kits &amp; Markets</a><a href="paint-codes.html">Paint Codes</a><a href="techniques-bank.html">Techniques</a><a href="theatre-maps.html">Theatre Maps</a><a href="articles.html">Articles</a><a href="books.html">Books</a><a href="sitemap.html">Sitemap</a></nav></body>
 </html>
