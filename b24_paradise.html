@@ -243,6 +243,81 @@ img{background:#07111f;object-fit:cover} .card img,.article-card img{aspect-rati
   font-size:10px;
   margin-bottom:.2rem;
 }
+</style><style id="b24-history-style-fix-css">
+/* B-24 actual history panel display fix — no hero changes */
+.squadron-history{
+  display:block !important;
+  margin:1.15rem 0 0 !important;
+  padding:.9rem !important;
+  border:1px solid rgba(212,168,58,.32) !important;
+  background:linear-gradient(145deg,rgba(15,33,56,.78),rgba(5,16,31,.78)) !important;
+  box-sizing:border-box !important;
+}
+.squadron-history h4{
+  display:block !important;
+  font-family:'Oswald',sans-serif !important;
+  text-transform:uppercase !important;
+  letter-spacing:.12em !important;
+  color:var(--gold2) !important;
+  font-size:12px !important;
+  line-height:1.2 !important;
+  margin:0 0 .7rem !important;
+}
+.squadron-history-grid{
+  display:grid !important;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr)) !important;
+  gap:.72rem !important;
+  align-items:stretch !important;
+}
+.squadron-history-cell{
+  display:block !important;
+  border-left:3px solid rgba(212,168,58,.85) !important;
+  border-top:1px solid rgba(255,255,255,.06) !important;
+  background:rgba(255,255,255,.035) !important;
+  padding:.72rem .78rem !important;
+  color:var(--muted) !important;
+  font-family:'Source Serif 4',Georgia,serif !important;
+  font-size:14px !important;
+  line-height:1.45 !important;
+  box-sizing:border-box !important;
+}
+.squadron-history-cell b{
+  display:block !important;
+  font-family:'Oswald',sans-serif !important;
+  text-transform:uppercase !important;
+  letter-spacing:.09em !important;
+  color:#fff !important;
+  font-size:11px !important;
+  line-height:1.2 !important;
+  margin:0 0 .35rem !important;
+}
+.squadron-history-cell .btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:auto !important;
+  margin-top:.25rem !important;
+  font-family:'Oswald',sans-serif !important;
+  font-size:11px !important;
+  line-height:1 !important;
+  text-decoration:none !important;
+}
+@media (max-width:720px){
+  .squadron-history{
+    padding:.75rem !important;
+  }
+  .squadron-history-grid{
+    display:block !important;
+  }
+  .squadron-history-cell{
+    margin:0 0 .75rem !important;
+    font-size:14px !important;
+    line-height:1.45 !important;
+  }
+  .squadron-history-cell:last-child{
+    margin-bottom:0 !important;
+  }
+}
 </style></head>
 <body class="paradise-aircraft paradise-theme-us theme-usa">
 <header class="ww2-top"><div class="ww2-top-inner"><a class="ww2-brand" href="index.html"><span class="ww2-roundel"></span><span><span class="ww2-brand-title">WW2 <span>Modeller</span></span><span class="ww2-brand-tag">Build history. Share passion. Remember.</span></span></a><form class="ww2-search" onsubmit="var q=this.querySelector('input').value.trim(); if(q) location.href='aircraft.html?q='+encodeURIComponent(q); return false;"><input placeholder="Search aircraft, kits, articles..." type="search"/><button aria-label="Search">⌕</button></form><div class="ww2-social"><span>f</span><span>◎</span><span>▶</span></div></div></header><nav class="ww2-main-nav" id="ww2MainNav"><button class="ww2-menu-toggle" onclick="document.getElementById('ww2MainNav').classList.toggle('open')" type="button">Menu</button><div class="ww2-nav-inner"><a class="" href="index.html">Home</a><a class="active" href="aircraft.html">Aircraft Index</a><a class="" href="paint-codes.html">Paint Codes</a><a class="" href="kits.html">Kits &amp; Markets</a><a class="" href="articles.html">Articles</a><a class="" href="techniques-bank.html">Techniques Bank</a><a class="" href="aircraft-comparison.html">Compare Aircraft</a><a class="" href="books.html">Books</a><a class="" href="theatre-maps.html">Theatre Maps</a><a class="" href="about.html">About</a><a class="" href="contact.html">Contact</a></div></nav>
