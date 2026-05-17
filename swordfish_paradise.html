@@ -135,7 +135,96 @@ img{background:#07111f;object-fit:cover} .card img,.article-card img{aspect-rati
       "articleSection": "WW2 aircraft modelling"
     }
   ]
-}</script><link href="assets/site-hero-regression-fix.css" rel="stylesheet"/><style id="all-paradise-history-panel-css">
+}</script><link href="assets/site-hero-regression-fix.css" rel="stylesheet"/><style id="squadron-card-photo-only-css">
+/* Squadron/unit photo fix only — does not affect hero */
+.unit-card .unit-photo{
+  overflow:hidden;
+  background:#07111f;
+}
+.unit-card .unit-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+</style><style id="side-paint-panel-text-only-css">
+/* Side paint panel: clean text-only version. Main paint scheme cards hold the swatches. */
+.side-paint-panel .paint-note{
+  display:block !important;
+  padding:.78rem .85rem !important;
+  border-left:3px solid var(--gold) !important;
+  background:rgba(5,16,31,.42) !important;
+  margin:.55rem 0 !important;
+}
+.side-paint-panel .paint-note > div{
+  display:block !important;
+}
+.side-paint-panel .paint-note b{
+  display:block !important;
+  font-family:'Special Elite',cursive !important;
+  color:#fff !important;
+  font-size:15px !important;
+  line-height:1.2 !important;
+  margin:0 0 .25rem !important;
+  padding:0 !important;
+  background:transparent !important;
+}
+.side-paint-panel .paint-note span{
+  display:block !important;
+  font-family:'Source Serif 4',Georgia,serif !important;
+  text-transform:none !important;
+  letter-spacing:0 !important;
+  font-size:13px !important;
+  line-height:1.35 !important;
+  color:var(--muted) !important;
+  margin:0 !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+}
+.side-paint-panel .side-swatch-row,
+.side-paint-panel .swatch{
+  display:none !important;
+}
+</style><style id="modellers-brief-css">
+/* Squadron detail Modeller's brief — content only, no hero/layout change */
+.modeller-brief{
+  margin-top:1rem;
+  border:1px solid rgba(212,168,58,.32);
+  background:rgba(5,16,31,.48);
+  padding:.85rem;
+}
+.modeller-brief h4{
+  font-family:'Oswald',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--gold2);
+  font-size:12px;
+  margin:0 0 .55rem;
+}
+.modeller-brief-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:.55rem;
+}
+.modeller-brief-cell{
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.03);
+  padding:.58rem;
+  color:var(--muted);
+  line-height:1.4;
+  font-size:14px;
+}
+.modeller-brief-cell b{
+  display:block;
+  font-family:'Oswald',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  color:var(--muted2);
+  font-size:10px;
+  margin-bottom:.2rem;
+}
+</style><style id="all-paradise-history-panel-css">
 /* Paradise squadron history panel style only — no hero changes */
 .squadron-history{
   display:block !important;
@@ -252,10 +341,10 @@ img{background:#07111f;object-fit:cover} .card img,.article-card img{aspect-rati
 <div class="panel panel-pad side-paint-panel">
 <h3 class="section-title">Swordfish paint notes</h3>
 <p class="side-note">Fleet Air Arm Swordfish finishes changed by theatre and date. Use these as quick modelling checkpoints before choosing decals or weathering.</p>
-<div class="paint-note"><span class="swatch" style="background:#2f3f35"></span><div><b>Extra Dark Sea Grey</b><span>Upper camouflage on later Temperate Sea Scheme aircraft.</span></div></div>
-<div class="paint-note"><span class="swatch" style="background:#5f6f6d"></span><div><b>Dark Slate Grey</b><span>Green-grey upper colour; fades unevenly on fabric wings.</span></div></div>
-<div class="paint-note"><span class="swatch" style="background:#c7c2ad"></span><div><b>Sky Grey / Sky</b><span>Check date and theatre: early-war undersides vary.</span></div></div>
-<div class="paint-note"><span class="swatch" style="background:#b7924a"></span><div><b>Deck &amp; salt wear</b><span>Use restrained chipping, rigging grime and salt bleaching.</span></div></div>
+<div class="paint-note"><div><b>Temperate Sea Scheme</b><span>Extra Dark Sea Grey, Dark Slate Grey and Sky/Sky Grey. Best for late-war carrier and convoy subjects.</span></div></div>
+<div class="paint-note"><div><b>Shadow-shaded biplane</b><span>Upper and lower wings may use different tonal values. This is where Swordfish research matters.</span></div></div>
+<div class="paint-note"><div><b>Mediterranean / Taranto</b><span>Night raid aircraft need careful handling: dark distemper, carrier grime and restrained wear.</span></div></div>
+<div class="paint-note"><div><b>Training / rocket aircraft</b><span>Training and late-war schemes can differ sharply from famous Taranto subjects. Match stores and markings.</span></div></div>
 <button class="side-action" onclick="showTab('build');setTimeout(()=&gt;document.querySelector('[data-build=weathering]')?.click(),80)">Open weathering guide</button>
 </div>
 <div class="panel panel-pad side-jump-panel">
@@ -367,19 +456,36 @@ function showTab(id){document.querySelectorAll('.tab').forEach(b=>b.classList.to
 document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
 function safeImg(src){return src||'https://commons.wikimedia.org/wiki/Special:FilePath/A%20Fairey%20Swordfish%20in%20Flight%20TR1139.jpg?width=900'}
 function handlePhotoError(img,title,url){
-  const box=img.closest('.unit-photo,.media-img-wrap,.overview-img,.map-side-photo-wrap,.survivor-card,.media-card');
-  img.remove();
-  const fallback=document.createElement('div');
-  fallback.className='photo-fallback';
-  fallback.innerHTML=`<b>${title}</b><span>Image could not be embedded here.</span><a href="${url}" target="_blank" rel="noopener">Open real photo source</a>`;
-  if(box&&box.classList.contains('survivor-card')){box.insertBefore(fallback,box.firstChild)}else if(box){box.appendChild(fallback)}
+  img.onerror = null;
+  img.removeAttribute('referrerpolicy');
+  img.src = 'assets/swordfish/swordfish-squadron-card.webp';
 }
 function imgTag(src,alt,title,url){
-  return `<img alt="${alt}" src="${safeImg(src)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handlePhotoError(this,'${title}','${url}')">`;
+  return `<img alt="${alt}" src="${safeImg(src)}" loading="lazy" decoding="async" onerror="handlePhotoError(this,'${title}','${url}')">`;
 }
 function renderOverviewTimeline(){document.getElementById('overviewTimeline').innerHTML=timeline.map(t=>`<div class="tl-item"><div class="tl-year">${t[0]}</div><div class="tl-text">${t[1]}</div></div>`).join('')}
-function renderUnits(){let list=units.filter(u=>currentFilter==='all'||u.theatre===currentFilter);list.sort((a,b)=>currentSort==='impact'?b.impact-a.impact:currentSort==='base'?a.base.localeCompare(b.base):String(a.num).localeCompare(String(b.num),undefined,{numeric:true}));document.getElementById('unitCount').textContent=`${list.length} units`;document.getElementById('unitGrid').innerHTML=list.map(u=>`<article class="unit-card" onclick="openUnit('${u.num}')"><div class="unit-photo">${imgTag(u.photo, u.num+' Fairey Swordfish reference photo', 'Swordfish real photo source', 'https://commons.wikimedia.org/wiki/Category:Fairey_Swordfish')}</div><h3>${u.num}</h3><div class="unit-meta">${u.marks} · ${u.base} · ${u.theatre}</div><span class="unit-code">${u.codes}</span><p>${u.ops}</p><div class="tag-row">${u.notes.split(',').map(n=>`<span class="tag">${n.trim()}</span>`).join('')}</div></article>`).join('')}
-function openUnit(num){const u=units.find(x=>x.num===num);if(!u)return;const box=document.getElementById('unitDetail');box.classList.add('open');const people=u.people||u.pilot||u.crew||`${u.num} crews and pilots. Use this as the starting point for named-pilot, crew-photo, logbook or memoir research where available.`;const missions=u.missions||u.ops||`${u.num} route. Use the unit as the starting point for documented sorties, raids, patrols or operational work.`;const story=u.story||u.notes||`Build the aircraft as a moment in service rather than a generic scheme: let the unit story guide markings, finish and weathering.`;const battles=u.battles||`${u.base} / ${u.theatre}. Use this unit route to research the key campaign, raids, patrols or sorties linked to the aircraft.`;const modellingUse=u.modellingUse||`Use this history to choose the variant, serial/code style, markings, nose art, finish, weathering level and display caption.`;const sourceRoute=u.sourceRoute||`Treat this as a modelling route, then confirm the final scheme against photos, squadron records and reference sources.`;box.innerHTML=`<h3>${u.num}</h3><div class="unit-meta">${u.base} · ${u.theatre} · ${u.codes}</div><p>${u.ops}</p><div class="detail-grid"><div class="detail-cell"><b>Base</b>${u.base}</div><div class="detail-cell"><b>Variant</b>${u.marks}</div><div class="detail-cell"><b>Codes</b>${u.codes}</div><div class="detail-cell"><b>Pilots</b>${u.pilot}</div></div><p style="color:var(--muted)"><b style="color:var(--gold2)">Modelling notes:</b> ${u.notes}</p><a class="btn" href="${u.photoLink}" target="_blank" rel="noopener">Open archive reference</a><div class="squadron-history"><h4>Actual history, pilots and missions</h4><div class="squadron-history-grid"><div class="squadron-history-cell"><b>Named people / crews</b>${people}</div><div class="squadron-history-cell"><b>Actual missions / raids</b>${missions}</div><div class="squadron-history-cell"><b>Story to model</b>${story}</div><div class="squadron-history-cell"><b>Battles / bombing runs</b>${battles}</div><div class="squadron-history-cell"><b>Modelling use</b>${modellingUse}</div><div class="squadron-history-cell"><b>Source route</b>${sourceRoute}</div></div></div>`;box.scrollIntoView({behavior:'smooth',block:'nearest'})}
+function renderUnits(){let list=units.filter(u=>currentFilter==='all'||u.theatre===currentFilter);list.sort((a,b)=>currentSort==='impact'?b.impact-a.impact:currentSort==='base'?a.base.localeCompare(b.base):String(a.num).localeCompare(String(b.num),undefined,{numeric:true}));document.getElementById('unitCount').textContent=`${list.length} units`;document.getElementById('unitGrid').innerHTML=list.map(u=>`<article class="unit-card" onclick="openUnit('${u.num}')"><div class="unit-photo">${imgTag(u.photo, u.num+' Fairey Swordfish reference photo', 'Reference image', 'https://commons.wikimedia.org/wiki/Category:Fairey_Swordfish')}</div><h3>${u.num}</h3><div class="unit-meta">${u.marks} · ${u.base} · ${u.theatre}</div><span class="unit-code">${u.codes}</span><p>${u.ops}</p><div class="tag-row">${u.notes.split(',').map(n=>`<span class="tag">${n.trim()}</span>`).join('')}</div></article>`).join('')}
+
+function modellerBrief(u){
+  const theatre = u.theatre || 'Theatre route';
+  const marks = u.marks || 'variant to confirm';
+  const codes = u.codes || 'unit markings';
+  const notes = u.notes || u.ops || 'Check aircraft-specific references before committing to paint and decals.';
+  const pilot = u.pilot || u.crew || 'crew story';
+  return `<div class="modeller-brief">
+    <h4>Modeller's brief</h4>
+    <div class="modeller-brief-grid">
+      <div class="modeller-brief-cell"><b>Historical hook</b>${u.ops || 'Use this unit as a story-led route into the aircraft, theatre and markings.'}</div>
+      <div class="modeller-brief-cell"><b>Modelling appeal</b>${theatre} subject with ${marks}, ${codes} and ${pilot} context.</div>
+      <div class="modeller-brief-cell"><b>Markings to check</b>${codes}. Confirm date, unit codes, national markings, theatre bands and aircraft-specific details before decals.</div>
+      <div class="modeller-brief-cell"><b>Paint / weathering</b>${notes}</div>
+      <div class="modeller-brief-cell"><b>Kit / decal route</b>Choose the kit/boxing that matches ${marks}; check decals and aftermarket against the exact aircraft.</div>
+      <div class="modeller-brief-cell"><b>Difficulty</b>${(u.impact && u.impact >= 95) ? 'Advanced research subject' : (u.impact && u.impact >= 80) ? 'Medium / advanced' : 'Medium'} — references and markings matter more than generic kit choice.</div>
+    </div>
+  </div>`;
+}
+
+function openUnit(num){const u=units.find(x=>x.num===num);if(!u)return;const box=document.getElementById('unitDetail');box.classList.add('open');const people=u.people||u.namedPeople||u.pilot||u.crew||`${u.num} crews and pilots. Use this as the starting point for named-pilot, crew-photo, logbook or memoir research where available.`;const missions=u.missions||u.ops||`${u.num} route. Use the unit as the starting point for documented sorties, raids, patrols or operational work.`;const story=u.story||u.history||u.notes||`Build the aircraft as a moment in service rather than a generic scheme: let the unit story guide markings, finish and weathering.`;const battles=u.battles||u.battleList||`${u.base} / ${u.theatre}. Use this unit route to research the key campaign, raids, patrols or sorties linked to the aircraft.`;const modellingUse=u.modellingUse||`Use this history to choose the variant, serial/code style, markings, nose art, finish, weathering level and display caption.`;const sourceRoute=u.sourceRoute||`Treat this as a modelling route, then confirm the final scheme against photos, squadron records and reference sources.`;box.innerHTML=`<h3>${u.num}</h3><div class="unit-meta">${u.base} · ${u.theatre} · ${u.codes}</div><p>${u.ops}</p><div class="detail-grid"><div class="detail-cell"><b>Base</b>${u.base}</div><div class="detail-cell"><b>Variant</b>${u.marks}</div><div class="detail-cell"><b>Codes</b>${u.codes}</div><div class="detail-cell"><b>Pilots</b>${u.pilot}</div></div><p style="color:var(--muted)"><b style="color:var(--gold2)">Modelling notes:</b> ${u.notes}</p><a class="btn" href="${u.photoLink}" target="_blank" rel="noopener">Open archive reference</a><div class="squadron-history"><h4>Actual history, pilots and missions</h4><div class="squadron-history-grid"><div class="squadron-history-cell"><b>Named people / crews</b>${people}</div><div class="squadron-history-cell"><b>Actual missions / raids</b>${missions}</div><div class="squadron-history-cell"><b>Story to model</b>${story}</div><div class="squadron-history-cell"><b>Battles / bombing runs</b>${battles}</div><div class="squadron-history-cell"><b>Modelling use</b>${modellingUse}</div><div class="squadron-history-cell"><b>Source route</b>${sourceRoute}</div></div></div>`;box.scrollIntoView({behavior:'smooth',block:'nearest'})}
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('on'));b.classList.add('on');currentFilter=b.dataset.filter;renderUnits()}));
 document.querySelectorAll('[data-sort]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-sort]').forEach(x=>x.classList.remove('on'));b.classList.add('on');currentSort=b.dataset.sort;renderUnits()}));
 let overviewMap,map;
@@ -394,13 +500,13 @@ function addSwordfishTileLayer(targetMap){return L.tileLayer('https://{s}.tile.o
 function swordMarkerIcon(kind='full'){return L.divIcon({className:kind==='mini'?'swordship-mini':'swordship',iconSize:kind==='mini'?[12,12]:[18,18],iconAnchor:kind==='mini'?[6,6]:[9,9]})}
 function initOverviewMap(){const el=document.getElementById('overview-leaflet-map');if(!el||overviewMap)return;overviewMap=L.map(el,{scrollWheelZoom:false,zoomControl:false,attributionControl:false}).setView([46,-8],2);addSwordfishTileLayer(overviewMap);const bounds=[];swordfishPlaces.forEach((p)=>{bounds.push([p.lat,p.lng]);L.marker([p.lat,p.lng],{icon:swordMarkerIcon('mini'),title:p.title}).addTo(overviewMap).bindTooltip(p.title,{direction:'top'});});overviewMap.fitBounds(bounds,{padding:[18,18]})}
 function mapUnitButtons(place){return place.units.map(n=>`<button class="filter-btn map-unit-chip" onclick="showTab('squadrons');openUnit('${n}')">${n}</button>`).join('')}
-function updateMapPanel(place){document.getElementById('mapInfo').innerHTML=`<h3 class="section-title">${place.title}</h3><p style="color:var(--muted);line-height:1.6">${place.desc}</p><div class="map-side-photo-wrap">${imgTag(place.img, place.title+' Fairey Swordfish reference photo', 'Swordfish real photo source', 'https://commons.wikimedia.org/wiki/Category:Fairey_Swordfish')}</div><div style="margin-top:.75rem"><div class="unit-meta">Linked squadron cards</div>${mapUnitButtons(place)}</div>`}
+function updateMapPanel(place){document.getElementById('mapInfo').innerHTML=`<h3 class="section-title">${place.title}</h3><p style="color:var(--muted);line-height:1.6">${place.desc}</p><div class="map-side-photo-wrap">${imgTag(place.img, place.title+' Fairey Swordfish reference photo', 'Reference image', 'https://commons.wikimedia.org/wiki/Category:Fairey_Swordfish')}</div><div style="margin-top:.75rem"><div class="unit-meta">Linked squadron cards</div>${mapUnitButtons(place)}</div>`}
 function initMap(){if(map)return;map=L.map('leaflet-map',{scrollWheelZoom:false}).setView([46,-8],3);addSwordfishTileLayer(map);const bounds=[];swordfishPlaces.forEach((p,i)=>{bounds.push([p.lat,p.lng]);const marker=L.marker([p.lat,p.lng],{icon:swordMarkerIcon('full'),title:p.title}).addTo(map);marker.bindTooltip(String(i+1),{permanent:true,direction:'center',className:'sword-marker'});marker.on('click',()=>updateMapPanel(p))});map.fitBounds(bounds,{padding:[35,35]});updateMapPanel(swordfishPlaces[0])}
-function renderReference(){document.getElementById('refTimeline').innerHTML=timeline.map(t=>`<div style="margin-bottom:.85rem"><div class="tl-year">${t[0]}</div><p style="color:var(--muted);line-height:1.45">${t[1]}</p></div>`).join('');document.getElementById('survivors').innerHTML=survivors.map(s=>`<article class="book-card survivor-card">${imgTag(s.img, s.serial+' Fairey Swordfish reference photo', 'Swordfish real photo source', 'https://commons.wikimedia.org/wiki/Category:Fairey_Swordfish')}<div><h3>${s.serial}</h3><div class="unit-meta">${s.status} · ${s.where}</div><p>${s.desc}</p><a class="btn" href="${s.url}" target="_blank" rel="noopener">Open survivor reference</a></div></article>`).join('');document.getElementById('bookGrid').innerHTML=books.map(b=>`<article class="book-card"><h3>${b.title}</h3><p>${b.desc}</p><ul>${b.use.map(u=>`<li>${u}</li>`).join('')}</ul><a class="btn" href="${b.url}" target="_blank" rel="noopener">Open Amazon book</a></article>`).join('')}
+function renderReference(){document.getElementById('refTimeline').innerHTML=timeline.map(t=>`<div style="margin-bottom:.85rem"><div class="tl-year">${t[0]}</div><p style="color:var(--muted);line-height:1.45">${t[1]}</p></div>`).join('');document.getElementById('survivors').innerHTML=survivors.map(s=>`<article class="book-card survivor-card">${imgTag(s.img, s.serial+' Fairey Swordfish reference photo', 'Reference image', 'https://commons.wikimedia.org/wiki/Category:Fairey_Swordfish')}<div><h3>${s.serial}</h3><div class="unit-meta">${s.status} · ${s.where}</div><p>${s.desc}</p><a class="btn" href="${s.url}" target="_blank" rel="noopener">Open survivor reference</a></div></article>`).join('');document.getElementById('bookGrid').innerHTML=books.map(b=>`<article class="book-card"><h3>${b.title}</h3><p>${b.desc}</p><ul>${b.use.map(u=>`<li>${u}</li>`).join('')}</ul><a class="btn" href="${b.url}" target="_blank" rel="noopener">Open Amazon book</a></article>`).join('')}
 let currentBuild='kits';
 function renderBuild(){document.getElementById('buildGrid').innerHTML=build[currentBuild].map(x=>`<article class="build-card"><h3>${x.title}</h3><div class="rating">${x.rating}<span>${currentBuild==='kits'||currentBuild==='aftermarket'?'rating / usefulness':'modelling guide'}</span></div><p>${x.desc}</p><ul>${x.tips.map(t=>`<li>${t}</li>`).join('')}</ul>${x.url==='#'?'<span class="btn">'+x.button+'</span>':`<a class="btn" href="${x.url}" target="_blank" rel="noopener">${x.button}</a>`}</article>`).join('')}
 document.querySelectorAll('[data-build]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-build]').forEach(x=>x.classList.remove('on'));b.classList.add('on');currentBuild=b.dataset.build;renderBuild()}));
-function renderMedia(){document.getElementById('mediaGrid').innerHTML=media.map(m=>`<article class="media-card"><div class="media-img-wrap">${imgTag(m.thumb, m.title+' Fairey Swordfish reference photo', 'Swordfish real photo source', 'https://commons.wikimedia.org/wiki/Category:Fairey_Swordfish')}</div><span class="video-badge">${m.kind}</span><h3>${m.title}</h3><p>${m.desc}</p><a class="btn" href="${m.url}" target="_blank" rel="noopener">${m.button}</a></article>`).join('')}
+function renderMedia(){document.getElementById('mediaGrid').innerHTML=media.map(m=>`<article class="media-card"><div class="media-img-wrap">${imgTag(m.thumb, m.title+' Fairey Swordfish reference photo', 'Reference image', 'https://commons.wikimedia.org/wiki/Category:Fairey_Swordfish')}</div><span class="video-badge">${m.kind}</span><h3>${m.title}</h3><p>${m.desc}</p><a class="btn" href="${m.url}" target="_blank" rel="noopener">${m.button}</a></article>`).join('')}
 
 const buildProfiles={
  taranto:{title:'Taranto raid Swordfish',summary:'Best for a dramatic early-war Fleet Air Arm subject: night operation, torpedo fit, HMS Illustrious context and dark operational wear.',scheme:'Early FAA camouflage; check shadow-shading and possible night distemper notes.',stores:'18-inch torpedo, carrier deck handling gear.',weathering:'Restrained night-fighter style grime: exhaust, oil, deck scuffs and salt haze.',links:'Use 815 NAS / 819 NAS material, torpedo references and Taranto campaign notes.'},
