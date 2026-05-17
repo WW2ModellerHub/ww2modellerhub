@@ -310,11 +310,12 @@ function modellerBrief(u){
 
 
 function squadronHistory(u){
-  const namedPeople = u.namedPeople || u.pilot || u.crew || 'Named pilot and crew details still need aircraft-specific source checking.';
-  const missions = u.missions || u.ops || 'Use this unit to anchor the aircraft in a real operational route.';
-  const story = u.story || u.history || u.notes || 'Let the historical story guide markings, finish and weathering.';
-  const battleList = u.battleList || 'Check exact battle, raid, date and aircraft identity before final decals.';
-  const sourceUrl = u.sourceUrl || u.photoLink || '#';
+  const h = (typeof b24ActualHistory !== 'undefined' && b24ActualHistory[u.num]) ? b24ActualHistory[u.num] : {};
+  const namedPeople = h.people || u.namedPeople || u.pilot || u.crew || 'Named pilot and crew details still need aircraft-specific source checking.';
+  const missions = h.missions || u.missions || u.ops || 'Use this unit to anchor the aircraft in a real operational route.';
+  const story = h.story || u.story || u.history || u.notes || 'Let the historical story guide markings, finish and weathering.';
+  const battleList = h.battles || u.battleList || 'Check exact battle, raid, date and aircraft identity before final decals.';
+  const sourceUrl = h.source || u.sourceUrl || u.photoLink || '#';
   return `<div class="squadron-history">
     <h4>Actual history, pilots and missions</h4>
     <div class="squadron-history-grid">
@@ -329,7 +330,67 @@ function squadronHistory(u){
 }
 
 
-function openUnit(num){const u=units.find(x=>x.num===num);if(!u)return;const box=document.getElementById('unitDetail');box.classList.add('open');box.innerHTML=`<h3>${u.num}</h3><div class="unit-meta">${u.base} · ${u.theatre} · ${u.codes}</div><p>${u.ops}</p><div class="detail-grid"><div class="detail-cell"><b>Base</b>${u.base}</div><div class="detail-cell"><b>Variant</b>${u.marks}</div><div class="detail-cell"><b>Codes</b>${u.codes}</div><div class="detail-cell"><b>Pilots</b>${u.pilot}</div></div><p style="color:var(--muted)"><b style="color:var(--gold2)">Modelling notes:</b> ${u.notes}</p>${modellerBrief(u)}<a class="btn" href="${u.photoLink}" target="_blank" rel="noopener">Open archive reference</a>`;box.scrollIntoView({behavior:'smooth',block:'nearest'})}
+
+const b24ActualHistory = {
+  "44th Bomb Group Flying Eight-Balls": {
+    people: "Lt Col James T. Posey led 21 aircraft from the 44th on its assigned low-level attack run against the Creditul Minier refinery during Operation Tidal Wave.",
+    missions: "Operation Tidal Wave, 1 August 1943: 44th Bomb Group aircraft attacked the Creditul Minier refinery south of Ploesti. Later Eighth Air Force service from Shipdham gives a classic UK-based B-24 route.",
+    story: "The 44th was known as the Flying Eight-Balls; its B-24s carried the winged bomb-and-8-ball identity. Model this as a group-marked formation bomber with flak wear, heavy exhaust and European daylight-bombing context.",
+    battles: "Ploesti / Creditul Minier; Eighth Air Force daylight bombing; European strategic targets.",
+    source: "https://www.americanairmuseum.com/archive/unit/44th-bomb-group"
+  },
+  "93rd Bomb Group Travelling Circus": {
+    people: "Lt Col Addison Baker and Maj John L. Jerstad flew B-24D Hell's Wench during Operation Tidal Wave and were posthumously awarded the Medal of Honor. Maj Ramsay D. Potts flew The Duchess, and Maj George S. Brown flew Queenie during the raid.",
+    missions: "Operation Tidal Wave, 1 August 1943: the 93rd Bomb Group attacked the Ploesti oil-refinery complex at very low level and suffered severe losses over the target area.",
+    story: "This is one of the strongest B-24 modelling stories: low-level Liberators, smoke, flak, refinery targets, named aircraft and heroic crew actions. Hell's Wench, The Duchess, Queenie and Jose Carioca all give historically rich aircraft routes.",
+    battles: "Ploesti / Columbia Aquila; Astra Romana; Unirea Orion; Operation Tidal Wave.",
+    source: "https://www.americanairmuseum.com/archive/unit/93rd-bomb-group"
+  },
+  "98th Bomb Group Pyramiders": {
+    people: "Col John R. Kane led the 98th Bomb Group during Operation Tidal Wave and received the Medal of Honor. B-24 Old Baldy is a notable 98th BG story from the raid.",
+    missions: "Operation Tidal Wave, 1 August 1943: 98th BG aircraft attacked the Ploesti refinery area from North African bases. Old Baldy was hit by an 88 mm battery near Corlatesti and crashed onto the gun position.",
+    story: "The 98th gives a dramatic Mediterranean B-24 route: low-level refinery attack, heavy flak, dust, heat, worn Olive Drab and the Pyramiders' North Africa / Italy operating story.",
+    battles: "Ploesti oil raids; Mediterranean heavy-bomber operations; North Africa / Italy route.",
+    source: "https://www.americanairmuseum.com/archive/unit/98th-bomb-group"
+  },
+  "376th Bomb Group Liberandos": {
+    people: "Col Leon W. Johnson commanded the 376th Bomb Group during Operation Tidal Wave and received the Medal of Honor for pressing the attack despite confusion, smoke and heavy defences.",
+    missions: "Operation Tidal Wave, 1 August 1943: the 376th formed part of the low-level B-24 force attacking the Ploesti oil complex and later served in wider Mediterranean heavy-bomber operations.",
+    story: "The 376th is a superb sun-baked Mediterranean Liberator subject: hard-used B-24s, low-level Ploesti context, dust, faded Olive Drab, oil-streaked nacelles and heavily worked ground crews.",
+    battles: "Ploesti / Tidal Wave; North Africa; Italy; Mediterranean bombing route.",
+    source: "https://www.americanairmuseum.com/archive/unit/376th-bomb-group"
+  },
+  "448th Bomb Group": {
+    people: "The 448th operated from RAF Seething. Research routes include 712th, 713th, 714th and 715th Bomb Squadron B-24s, with individual aircraft such as Bag O' Bolts and Dual Sack often used as modelling leads.",
+    missions: "The 448th entered combat from Seething on 22 December 1943 and flew strategic bombing missions against Gotha aircraft factories, Berlin ball-bearing plants, Hanau airfield, Kiel U-boat facilities, Ludwigshafen chemical works, Politz synthetic oil refineries, Rostock aircraft-engine plants, Cologne marshalling yards and Fallersleben V-1 assembly work.",
+    story: "This is the late-war Eighth Air Force route: natural metal or Olive Drab B-24s, group markings, English airfield operations, Big Week, long flights over Germany, flak damage and heavy operational wear.",
+    battles: "Big Week; Gotha; Berlin; Hanau; Kiel; Ludwigshafen; Politz; Rostock; Cologne; Fallersleben.",
+    source: "https://americanlibrary.uk/article/2082/History"
+  },
+  "7th Bomb Group": {
+    people: "Lt Ben Graves, copilot Lt Cyrus Kurth, TSgt Douglas Labat and navigator Lt Grant Erwin are tied to the 11 November 1943 He-ho airfield mission. Kurth was killed, Graves was wounded, and Labat helped save the crippled B-24 and crew.",
+    missions: "CBI operations: the 7th moved to India in March 1942, converted to B-24s late in 1942, attacked Japanese airfields, fuel and supply dumps, railways, bridges, docks, warehouses and shipping in Burma, Thailand, China and the Andaman Sea, and also ferried gasoline over the Hump to China.",
+    story: "The He-ho mission gives the page a real crew story: a damaged B-24, a killed copilot, a wounded pilot, Labat leaving the turret to help fly the aircraft, and an emergency landing near Chittagong.",
+    battles: "Rangoon; He-ho airfield; Akyab; Burma rail and bridge targets; Thailand rail lines; Andaman Sea shipping; Hump support.",
+    source: "https://www.10af.org/7th-bomb-group.cfm"
+  },
+  "Navy PB4Y-1 route": {
+    people: "VP-84 is a key PB4Y-1 reference route: a Navy Liberator from Patrol Squadron 84 attacked and sank U-408 on 5 November 1942.",
+    missions: "The PB4Y-1 was the U.S. Navy version of the B-24 and entered squadron service in 1942. It was used for long-range patrol and anti-submarine work, including Bay of Biscay and Atlantic convoy-protection routes.",
+    story: "This is the B-24 as a maritime patrol aircraft rather than a formation bomber: long lonely patrols, U-boat hunting, radar/antenna fits, search patterns, salt weathering and restrained patrol finishes.",
+    battles: "Atlantic anti-submarine patrol; Bay of Biscay route; convoy protection; U-408 attack by VP-84.",
+    source: "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/aircraft-us/aircraft-usn-p/pb4y-1.html"
+  },
+  "Survivor reference route": {
+    people: "Use surviving aircraft such as Witchcraft / B-24J and Diamond Lil / B-24D as detail references, but treat restoration colours and markings cautiously.",
+    missions: "This route is not a wartime combat unit; it is a research route for surviving airframes, cockpit layouts, turrets, waist positions, undercarriage, nacelles and Davis wing stance.",
+    story: "Survivors are valuable because they show structure and detail in colour, but they are not automatic proof of wartime finish. Use them for shapes, glazing, turret layout and weathering logic, then check wartime photos for the exact aircraft.",
+    battles: "Museum reference; cockpit detail; turret and waist-gun checks; Davis wing stance; restoration caution.",
+    source: "https://commons.wikimedia.org/wiki/Category:Consolidated_B-24_Liberator"
+  }
+};
+
+function openUnit(num){const u=units.find(x=>x.num===num);if(!u)return;const box=document.getElementById('unitDetail');box.classList.add('open');box.innerHTML=`<h3>${u.num}</h3><div class="unit-meta">${u.base} · ${u.theatre} · ${u.codes}</div><p>${u.ops}</p><div class="detail-grid"><div class="detail-cell"><b>Base</b>${u.base}</div><div class="detail-cell"><b>Variant</b>${u.marks}</div><div class="detail-cell"><b>Codes</b>${u.codes}</div><div class="detail-cell"><b>Pilots</b>${u.pilot}</div></div><p style="color:var(--muted)"><b style="color:var(--gold2)">Modelling notes:</b> ${u.notes}</p>${squadronHistory(u)}${modellerBrief(u)}<a class="btn" href="${u.photoLink}" target="_blank" rel="noopener">Open archive reference</a>`;box.scrollIntoView({behavior:'smooth',block:'nearest'})}
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('on'));b.classList.add('on');currentFilter=b.dataset.filter;renderUnits()}));
 document.querySelectorAll('[data-sort]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-sort]').forEach(x=>x.classList.remove('on'));b.classList.add('on');currentSort=b.dataset.sort;renderUnits()}));
 function addTileLayer(targetMap){return L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:8,attribution:'Map data'}).addTo(targetMap)}
