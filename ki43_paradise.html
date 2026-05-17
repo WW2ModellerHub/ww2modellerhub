@@ -243,6 +243,48 @@ img{background:#07111f;object-fit:cover} .card img,.article-card img{aspect-rati
   font-size:10px;
   margin-bottom:.2rem;
 }
+</style><style id="squadron-history-css">
+/* Squadron history panel — content only, no hero/layout change */
+.squadron-history{
+  margin-top:1rem;
+  border:1px solid rgba(255,255,255,.10);
+  background:linear-gradient(145deg,rgba(15,33,56,.72),rgba(5,16,31,.74));
+  padding:.9rem;
+}
+.squadron-history h4{
+  font-family:'Oswald',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--gold2);
+  font-size:12px;
+  margin:0 0 .65rem;
+}
+.squadron-history-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:.6rem;
+}
+.squadron-history-cell{
+  border-left:3px solid rgba(212,168,58,.72);
+  background:rgba(255,255,255,.035);
+  padding:.65rem .7rem;
+  color:var(--muted);
+  line-height:1.45;
+  font-size:14px;
+}
+.squadron-history-cell b{
+  display:block;
+  font-family:'Oswald',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  color:#fff;
+  font-size:11px;
+  margin-bottom:.25rem;
+}
+.squadron-history-cell em{
+  color:var(--gold2);
+  font-style:normal;
+}
 </style></head>
 <body class="paradise-aircraft paradise-theme-japan theme-japan">
 <header class="ww2-top"><div class="ww2-top-inner"><a class="ww2-brand" href="index.html"><span class="ww2-roundel"></span><span><span class="ww2-brand-title">WW2 <span>Modeller</span></span><span class="ww2-brand-tag">Build history. Share passion. Remember.</span></span></a><form class="ww2-search" onsubmit="var q=this.querySelector('input').value.trim(); if(q) location.href='aircraft.html?q='+encodeURIComponent(q); return false;"><input placeholder="Search aircraft, kits, articles..." type="search"/><button aria-label="Search">⌕</button></form><div class="ww2-social"><span>f</span><span>◎</span><span>▶</span></div></div></header><nav class="ww2-main-nav" id="ww2MainNav"><button class="ww2-menu-toggle" onclick="document.getElementById('ww2MainNav').classList.toggle('open')" type="button">Menu</button><div class="ww2-nav-inner"><a class="" href="index.html">Home</a><a class="active" href="aircraft.html">Aircraft Index</a><a class="" href="paint-codes.html">Paint Codes</a><a class="" href="kits.html">Kits &amp; Markets</a><a class="" href="articles.html">Articles</a><a class="" href="techniques-bank.html">Techniques Bank</a><a class="" href="aircraft-comparison.html">Compare Aircraft</a><a class="" href="books.html">Books</a><a class="" href="theatre-maps.html">Theatre Maps</a><a class="" href="about.html">About</a><a class="" href="contact.html">Contact</a></div></nav>
@@ -307,7 +349,30 @@ function modellerBrief(u){
   </div>`;
 }
 
-function openUnit(num){const u=units.find(x=>x.num===num);if(!u)return;const box=document.getElementById('unitDetail');box.classList.add('open');box.innerHTML=`<h3>${u.num}</h3><div class="unit-meta">${u.base} · ${u.theatre} · ${u.codes}</div><p>${u.ops}</p><div class="detail-grid"><div class="detail-cell"><b>Base</b>${u.base}</div><div class="detail-cell"><b>Variant</b>${u.marks}</div><div class="detail-cell"><b>Codes</b>${u.codes}</div><div class="detail-cell"><b>Pilots</b>${u.pilot}</div></div><p style="color:var(--muted)"><b style="color:var(--gold2)">Modelling notes:</b> ${u.notes}</p>${modellerBrief(u)}<a class="btn" href="${u.photoLink}" target="_blank" rel="noopener">Open archive reference</a>`;box.scrollIntoView({behavior:'smooth',block:'nearest'})}
+
+function squadronHistory(u){
+  const unitName = u.num || 'This unit';
+  const base = u.base || 'operational base to check';
+  const theatre = u.theatre || 'theatre route';
+  const pilot = u.pilot || u.crew || 'crew and pilot references to check';
+  const marks = u.marks || 'aircraft variant';
+  const codes = u.codes || 'unit markings';
+  const ops = u.ops || 'Use the unit as a story-led route into the aircraft and theatre.';
+  const notes = u.notes || 'Check aircraft-specific references before finalising paint, decals and weathering.';
+  return `<div class="squadron-history">
+    <h4>History, pilots and story route</h4>
+    <div class="squadron-history-grid">
+      <div class="squadron-history-cell"><b>Unit story</b><em>${unitName}</em> gives this build a clearer operational setting: ${ops}</div>
+      <div class="squadron-history-cell"><b>Pilots / crew angle</b>${pilot}. Use this as the starting point for named-pilot, crew-photo, logbook or memoir research where available.</div>
+      <div class="squadron-history-cell"><b>Where it operated</b>${base} / ${theatre}. This should guide the weathering: climate, airfield surface, mission type and servicing conditions.</div>
+      <div class="squadron-history-cell"><b>Aircraft identity</b>${marks} with ${codes}. Check the exact aircraft, serial, code letters, nose art, theatre bands and date before committing decals.</div>
+      <div class="squadron-history-cell"><b>Story to model</b>Build the aircraft as a moment in service rather than a generic scheme: mission wear, repairs, dust, exhaust, mud, salt or fading should follow the unit story.</div>
+      <div class="squadron-history-cell"><b>Reference caution</b>${notes}. Treat this as a modelling route, then confirm the final scheme against photos, decal instructions and unit references.</div>
+    </div>
+  </div>`;
+}
+
+function openUnit(num){const u=units.find(x=>x.num===num);if(!u)return;const box=document.getElementById('unitDetail');box.classList.add('open');box.innerHTML=`<h3>${u.num}</h3><div class="unit-meta">${u.base} · ${u.theatre} · ${u.codes}</div><p>${u.ops}</p><div class="detail-grid"><div class="detail-cell"><b>Base</b>${u.base}</div><div class="detail-cell"><b>Variant</b>${u.marks}</div><div class="detail-cell"><b>Codes</b>${u.codes}</div><div class="detail-cell"><b>Pilots</b>${u.pilot}</div></div><p style="color:var(--muted)"><b style="color:var(--gold2)">Modelling notes:</b> ${u.notes}</p>${squadronHistory(u)}${modellerBrief(u)}<a class="btn" href="${u.photoLink}" target="_blank" rel="noopener">Open archive reference</a>`;box.scrollIntoView({behavior:'smooth',block:'nearest'})}
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('on'));b.classList.add('on');currentFilter=b.dataset.filter;renderUnits()}));
 document.querySelectorAll('[data-sort]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-sort]').forEach(x=>x.classList.remove('on'));b.classList.add('on');currentSort=b.dataset.sort;renderUnits()}));
 function addTileLayer(targetMap){return L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:8,attribution:'Map data'}).addTo(targetMap)}
