@@ -205,6 +205,44 @@ img{background:#07111f;object-fit:cover} .card img,.article-card img{aspect-rati
 .side-paint-panel .swatch{
   display:none !important;
 }
+</style><style id="modellers-brief-css">
+/* Squadron detail Modeller's brief — content only, no hero/layout change */
+.modeller-brief{
+  margin-top:1rem;
+  border:1px solid rgba(212,168,58,.32);
+  background:rgba(5,16,31,.48);
+  padding:.85rem;
+}
+.modeller-brief h4{
+  font-family:'Oswald',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--gold2);
+  font-size:12px;
+  margin:0 0 .55rem;
+}
+.modeller-brief-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:.55rem;
+}
+.modeller-brief-cell{
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.03);
+  padding:.58rem;
+  color:var(--muted);
+  line-height:1.4;
+  font-size:14px;
+}
+.modeller-brief-cell b{
+  display:block;
+  font-family:'Oswald',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  color:var(--muted2);
+  font-size:10px;
+  margin-bottom:.2rem;
+}
 </style></head>
 <body class="paradise-aircraft paradise-theme-luftwaffe theme-germany">
 <header class="ww2-top"><div class="ww2-top-inner"><a class="ww2-brand" href="index.html"><span class="ww2-roundel"></span><span><span class="ww2-brand-title">WW2 <span>Modeller</span></span><span class="ww2-brand-tag">Build history. Share passion. Remember.</span></span></a><form class="ww2-search" onsubmit="var q=this.querySelector('input').value.trim(); if(q) location.href='aircraft.html?q='+encodeURIComponent(q); return false;"><input placeholder="Search aircraft, kits, articles..." type="search"/><button aria-label="Search">⌕</button></form><div class="ww2-social"><span>f</span><span>◎</span><span>▶</span></div></div></header><nav class="ww2-main-nav" id="ww2MainNav"><button class="ww2-menu-toggle" onclick="document.getElementById('ww2MainNav').classList.toggle('open')" type="button">Menu</button><div class="ww2-nav-inner"><a class="" href="index.html">Home</a><a class="active" href="aircraft.html">Aircraft Index</a><a class="" href="paint-codes.html">Paint Codes</a><a class="" href="kits.html">Kits &amp; Markets</a><a class="" href="articles.html">Articles</a><a class="" href="techniques-bank.html">Techniques Bank</a><a class="" href="aircraft-comparison.html">Compare Aircraft</a><a class="" href="books.html">Books</a><a class="" href="theatre-maps.html">Theatre Maps</a><a class="" href="about.html">About</a><a class="" href="contact.html">Contact</a></div></nav>
@@ -249,7 +287,27 @@ function showTab(name){document.querySelectorAll('.tab').forEach(b=>b.classList.
 document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
 function renderOverviewTimeline(){document.getElementById('overviewTimeline').innerHTML=timeline.map(t=>`<div class="tl-item"><div class="tl-year">${t[0]}</div><div class="tl-text">${t[1]}</div></div>`).join('')}
 function renderUnits(){let list=[...units];if(currentFilter!=='all')list=list.filter(u=>u.theatre===currentFilter);if(currentSort==='impact')list.sort((a,b)=>b.impact-a.impact);else if(currentSort==='base')list.sort((a,b)=>a.base.localeCompare(b.base));else list.sort((a,b)=>a.num.localeCompare(b.num,undefined,{numeric:true}));document.getElementById('unitCount').textContent=list.length+' units shown';document.getElementById('unitGrid').innerHTML=list.map(u=>`<article class="unit-card" onclick="openUnit('${u.num}')"><div class="unit-photo">${imgTag(u.photo, u.num+' Junkers Ju 88 reference photo', 'Reference image', 'https://commons.wikimedia.org/wiki/Category:Hawker_Ju 88')}</div><h3>${u.num}</h3><div class="unit-meta">${u.base} · ${u.theatre} · ${u.codes}</div><span class="unit-code">${u.codes}</span><p>${u.ops}</p><div class="tag-row"><span class="tag">${u.marks}</span><span class="tag">${u.pilot}</span></div></article>`).join('')}
-function openUnit(num){const u=units.find(x=>x.num===num);if(!u)return;const box=document.getElementById('unitDetail');box.classList.add('open');box.innerHTML=`<h3>${u.num}</h3><div class="unit-meta">${u.base} · ${u.theatre} · ${u.codes}</div><p>${u.ops}</p><div class="detail-grid"><div class="detail-cell"><b>Base</b>${u.base}</div><div class="detail-cell"><b>Variant</b>${u.marks}</div><div class="detail-cell"><b>Codes</b>${u.codes}</div><div class="detail-cell"><b>Pilots</b>${u.pilot}</div></div><p style="color:var(--muted)"><b style="color:var(--gold2)">Modelling notes:</b> ${u.notes}</p><a class="btn" href="${u.photoLink}" target="_blank" rel="noopener">Open archive reference</a>`;box.scrollIntoView({behavior:'smooth',block:'nearest'})}
+
+function modellerBrief(u){
+  const theatre = u.theatre || 'Theatre route';
+  const marks = u.marks || 'variant to confirm';
+  const codes = u.codes || 'unit markings';
+  const notes = u.notes || u.ops || 'Check aircraft-specific references before committing to paint and decals.';
+  const pilot = u.pilot || u.crew || 'crew story';
+  return `<div class="modeller-brief">
+    <h4>Modeller's brief</h4>
+    <div class="modeller-brief-grid">
+      <div class="modeller-brief-cell"><b>Historical hook</b>${u.ops || 'Use this unit as a story-led route into the aircraft, theatre and markings.'}</div>
+      <div class="modeller-brief-cell"><b>Modelling appeal</b>${theatre} subject with ${marks}, ${codes} and ${pilot} context.</div>
+      <div class="modeller-brief-cell"><b>Markings to check</b>${codes}. Confirm date, unit codes, national markings, theatre bands and aircraft-specific details before decals.</div>
+      <div class="modeller-brief-cell"><b>Paint / weathering</b>${notes}</div>
+      <div class="modeller-brief-cell"><b>Kit / decal route</b>Choose the kit/boxing that matches ${marks}; check decals and aftermarket against the exact aircraft.</div>
+      <div class="modeller-brief-cell"><b>Difficulty</b>${(u.impact && u.impact >= 95) ? 'Advanced research subject' : (u.impact && u.impact >= 80) ? 'Medium / advanced' : 'Medium'} — references and markings matter more than generic kit choice.</div>
+    </div>
+  </div>`;
+}
+
+function openUnit(num){const u=units.find(x=>x.num===num);if(!u)return;const box=document.getElementById('unitDetail');box.classList.add('open');box.innerHTML=`<h3>${u.num}</h3><div class="unit-meta">${u.base} · ${u.theatre} · ${u.codes}</div><p>${u.ops}</p><div class="detail-grid"><div class="detail-cell"><b>Base</b>${u.base}</div><div class="detail-cell"><b>Variant</b>${u.marks}</div><div class="detail-cell"><b>Codes</b>${u.codes}</div><div class="detail-cell"><b>Pilots</b>${u.pilot}</div></div><p style="color:var(--muted)"><b style="color:var(--gold2)">Modelling notes:</b> ${u.notes}</p>${modellerBrief(u)}<a class="btn" href="${u.photoLink}" target="_blank" rel="noopener">Open archive reference</a>`;box.scrollIntoView({behavior:'smooth',block:'nearest'})}
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('on'));b.classList.add('on');currentFilter=b.dataset.filter;renderUnits()}));
 document.querySelectorAll('[data-sort]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-sort]').forEach(x=>x.classList.remove('on'));b.classList.add('on');currentSort=b.dataset.sort;renderUnits()}));
 function addTileLayer(targetMap){return L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:8,attribution:'Map data'}).addTo(targetMap)}
