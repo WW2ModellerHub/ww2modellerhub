@@ -55,3 +55,23 @@
   .hero,.hero.hero-refresh,.hero.hero-refresh-wide,.theatre-route-hero{min-height:300px!important;}
   .hero-copy,.hero.hero-refresh>.hero-copy,.hero.hero-refresh-wide>.hero-copy,.theatre-route-hero .hero-copy{padding:38px 18px 34px 22px!important;}
 }
+
+/* Keep hero copy/stats above the dark image overlay.
+   This fixes RAF/FAA paradise heroes where the ::after overlay was sitting over the text. */
+.hero > *,.hero.hero-refresh > *,.hero.hero-refresh-wide > *,.theatre-route-hero > *{
+  position:relative!important;
+  z-index:2!important;
+}
+.hero .hero-main,.hero .hero-stats,.hero .hero-copy,.hero h1,.hero .eyebrow,.hero .hero-sub{
+  position:relative!important;
+  z-index:3!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+.hero h1{color:#f7f2df!important;text-shadow:0 3px 18px rgba(0,0,0,.75)!important;}
+.hero .eyebrow,.hero .stat-value{color:#d7ad45!important;text-shadow:0 2px 14px rgba(0,0,0,.75)!important;}
+.hero .hero-sub,.hero .hero-copy,.hero .stat-label{color:rgba(236,229,203,.88)!important;text-shadow:0 2px 12px rgba(0,0,0,.72)!important;}
+.hero::after,.theatre-route-hero::after{
+  z-index:1!important;
+  background:linear-gradient(90deg,rgba(7,17,31,.86) 0%,rgba(7,17,31,.68) 36%,rgba(7,17,31,.34) 70%,rgba(7,17,31,.12) 100%)!important;
+}
