@@ -1,1 +1,0 @@
-B-17 theme corrected to USAAF visual language: USAAF hero watermark, star-and-bar hero badge, blue/gold active states, and RAF roundel visual leftovers overridden.
