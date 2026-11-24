@@ -1,0 +1,1 @@
+(function(){function go(){var h=(location.hash||"").replace(/^#(tab-)?/,"");if(h&&typeof showTab==="function"&&document.querySelector('.tab[data-tab="'+h+'"]')){showTab(h);}}window.addEventListener("load",go);window.addEventListener("hashchange",go);})();

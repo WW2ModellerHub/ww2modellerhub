@@ -63,26 +63,8 @@ img{background:#07111f;object-fit:cover} .card img,.article-card img{aspect-rati
 <link href="assets/mobile-fix.css" rel="stylesheet"/><link href="assets/unified-nav.css" rel="stylesheet"/>
 <link href="assets/paradise-visual-theme.css" rel="stylesheet"/>
 <link href="assets/paradise-theme-fix.css" rel="stylesheet"/>
-<style id="aircraft-paint-list-widget-css">
-.paint-list-generator{border:1px solid rgba(215,173,69,.28);background:linear-gradient(180deg,#16221d,#0d1612);margin:22px 0;box-shadow:0 14px 34px rgba(0,0,0,.22)}
-.paint-list-generator .plg-head{padding:18px 20px;border-bottom:1px solid rgba(215,173,69,.22);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.paint-list-generator h2{font-family:'Oswald',Arial,sans-serif;text-transform:uppercase;letter-spacing:.04em;margin:0;color:#fff;font-size:1.8rem}
-.paint-list-generator p{margin:.4rem 0 0;line-height:1.5}
-.paint-list-generator button{border:1px solid rgba(215,173,69,.45);background:#07111f;color:#f5d06b;text-transform:uppercase;font-family:'Oswald',Arial,sans-serif;letter-spacing:.08em;padding:10px 13px;cursor:pointer}
-.paint-list-generator .paint-list-output{display:none;padding:18px 20px}
-.paint-list-generator.generated .paint-list-output{display:block}
-.paint-list-table{width:100%;border-collapse:collapse;margin-top:12px}
-.paint-list-table th,.paint-list-table td{border:1px solid rgba(215,173,69,.2);padding:10px;text-align:left;vertical-align:top;line-height:1.35}
-.paint-list-table th{background:#07111f;color:#d7ad45;font-family:'Oswald',Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.82rem}
-.paint-list-table td:first-child{font-weight:700;color:#fff}
-.paint-note{border-left:4px solid #d7ad45;background:#07111f;padding:10px 12px;margin-top:12px;line-height:1.45}
-@media(max-width:760px){.paint-list-table,.paint-list-table tbody,.paint-list-table tr,.paint-list-table th,.paint-list-table td{display:block;width:100%}.paint-list-table thead{display:none}.paint-list-table td{border-bottom:0}.paint-list-table tr{border:1px solid rgba(215,173,69,.2);margin-bottom:10px}.paint-list-table td::before{display:block;color:#d7ad45;font-family:'Oswald',Arial,sans-serif;text-transform:uppercase;font-size:.72rem;letter-spacing:.06em}.paint-list-table td:nth-child(1)::before{content:'Colour'}.paint-list-table td:nth-child(2)::before{content:'Use'}.paint-list-table td:nth-child(3)::before{content:'Tamiya'}.paint-list-table td:nth-child(4)::before{content:'Vallejo'}.paint-list-table td:nth-child(5)::before{content:'AK'}.paint-list-table td:nth-child(6)::before{content:'Mr Hobby'}}
-</style>
-<style id="site-internal-links-css">
-.site-internal-links{border-top:1px solid rgba(215,173,69,.24);background:#07111f;padding:18px 22px;text-align:center;margin-top:28px}
-.site-internal-links a{display:inline-block;margin:4px 8px;color:#f5d06b;text-transform:uppercase;font-family:'Oswald',Arial,sans-serif;letter-spacing:.06em;font-size:.76rem;text-decoration:none}
-.site-internal-links a:hover{text-decoration:underline}
-</style><script id="ww2modeller-structured-data" type="application/ld+json">{
+<link href="assets/paradise/aircraft-paint-list-widget-css.css" rel="stylesheet"/>
+<link href="assets/paradise/site-internal-links-css.css" rel="stylesheet"/><script id="ww2modeller-structured-data" type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -144,104 +126,7 @@ img{background:#07111f;object-fit:cover} .card img,.article-card img{aspect-rati
       "image": "https://www.ww2modeller.co.uk/assets/beaufighter/beaufighter-overview-card.webp"
     }
   ]
-}</script><link href="assets/site-hero-regression-fix.css" rel="stylesheet"/><style id="squadron-card-photo-only-css">
-/* Squadron/unit photo fix only — does not affect hero */
-.unit-card .unit-photo{
-  overflow:hidden;
-  background:#07111f;
-}
-.unit-card .unit-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-</style><style id="side-paint-panel-text-only-css">
-/* Side paint panel: clean text-only version. Main paint scheme cards hold the swatches. */
-.side-paint-panel .paint-note{
-  display:block !important;
-  padding:.78rem .85rem !important;
-  border-left:3px solid var(--gold) !important;
-  background:rgba(5,16,31,.42) !important;
-  margin:.55rem 0 !important;
-}
-.side-paint-panel .paint-note > div{
-  display:block !important;
-}
-.side-paint-panel .paint-note b{
-  display:block !important;
-  font-family:'Special Elite',cursive !important;
-  color:#fff !important;
-  font-size:15px !important;
-  line-height:1.2 !important;
-  margin:0 0 .25rem !important;
-  padding:0 !important;
-  background:transparent !important;
-}
-.side-paint-panel .paint-note span{
-  display:block !important;
-  font-family:'Source Serif 4',Georgia,serif !important;
-  text-transform:none !important;
-  letter-spacing:0 !important;
-  font-size:13px !important;
-  line-height:1.35 !important;
-  color:var(--muted) !important;
-  margin:0 !important;
-  padding:0 !important;
-  background:transparent !important;
-  border:0 !important;
-}
-.side-paint-panel .side-swatch-row,
-.side-paint-panel .swatch{
-  display:none !important;
-}
-</style><style id="modellers-brief-css">
-/* Squadron detail Modeller's brief — content only, no hero/layout change */
-.modeller-brief{
-  margin-top:1rem;
-  border:1px solid rgba(212,168,58,.32);
-  background:rgba(5,16,31,.48);
-  padding:.85rem;
-}
-.modeller-brief h4{
-  font-family:'Oswald',sans-serif;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  color:var(--gold2);
-  font-size:12px;
-  margin:0 0 .55rem;
-}
-.modeller-brief-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-  gap:.55rem;
-}
-.modeller-brief-cell{
-  border:1px solid rgba(255,255,255,.08);
-  background:rgba(255,255,255,.03);
-  padding:.58rem;
-  color:var(--muted);
-  line-height:1.4;
-  font-size:14px;
-}
-.modeller-brief-cell b{
-  display:block;
-  font-family:'Oswald',sans-serif;
-  text-transform:uppercase;
-  letter-spacing:.09em;
-  color:var(--muted2);
-  font-size:10px;
-  margin-bottom:.2rem;
-}
-</style><style id="batch1-history-css">
-/* Batch 1 actual history panel style — no hero changes */
-.squadron-history{display:block !important;margin:1.15rem 0 0 !important;padding:.9rem !important;border:1px solid rgba(212,168,58,.32) !important;background:linear-gradient(145deg,rgba(15,33,56,.82),rgba(5,16,31,.82)) !important;box-sizing:border-box !important;}
-.squadron-history h4{display:block !important;font-family:'Oswald',sans-serif !important;text-transform:uppercase !important;letter-spacing:.12em !important;color:var(--gold2) !important;font-size:12px !important;line-height:1.2 !important;margin:0 0 .75rem !important;}
-.squadron-history-grid{display:grid !important;grid-template-columns:repeat(auto-fit,minmax(240px,1fr)) !important;gap:.75rem !important;}
-.squadron-history-cell{display:block !important;border-left:3px solid rgba(212,168,58,.85) !important;border-top:1px solid rgba(255,255,255,.06) !important;background:rgba(255,255,255,.04) !important;padding:.78rem .82rem !important;color:var(--muted) !important;font-family:'Source Serif 4',Georgia,serif !important;font-size:14px !important;line-height:1.48 !important;box-sizing:border-box !important;}
-.squadron-history-cell b{display:block !important;font-family:'Oswald',sans-serif !important;text-transform:uppercase !important;letter-spacing:.09em !important;color:#fff !important;font-size:11px !important;line-height:1.2 !important;margin:0 0 .38rem !important;}
-@media (max-width:720px){.squadron-history{padding:.75rem !important;}.squadron-history-grid{display:block !important;}.squadron-history-cell{margin:0 0 .75rem !important;font-size:14px !important;line-height:1.48 !important;}.squadron-history-cell:last-child{margin-bottom:0 !important;}}
-</style><link rel="canonical" href="https://www.ww2modeller.co.uk/beaufighter_paradise.html"/>
+}</script><link href="assets/site-hero-regression-fix.css" rel="stylesheet"/><link href="assets/paradise/squadron-card-photo-only-css.css" rel="stylesheet"/><link href="assets/paradise/side-paint-panel-text-only-css.css" rel="stylesheet"/><link href="assets/paradise/modellers-brief-css.css" rel="stylesheet"/><link href="assets/paradise/batch1-history-css.css" rel="stylesheet"/><link rel="canonical" href="https://www.ww2modeller.co.uk/beaufighter_paradise.html"/>
 <meta property="og:site_name" content="WW2 Modeller"/>
 <meta property="og:locale" content="en_GB"/>
 <meta property="og:type" content="website"/>
@@ -354,28 +239,9 @@ renderBuildProfile();renderWizard();renderVariant();renderOverviewTimeline();ren
   });
 })();
 </script>
-<script>
-(function(){var b=document.querySelector('.mobile-nav-toggle');if(!b)return;b.addEventListener('click',function(){document.body.classList.toggle('nav-open');});})();
-</script>
-<script>document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('img').forEach(img=>{img.loading=img.loading||'lazy';if(!img.getAttribute('onerror'))img.onerror=function(){this.onerror=null;this.src='assets/image-fallbacks/generic-aircraft.jpg';};});});</script>
-<script>(function(){document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('header.ww2-top')){document.querySelectorAll('.topbar,.brand-bar,.search-bar,nav.nav,header.topbar').forEach(function(n){if(!n.closest('.ww2-top')&&!n.closest('.ww2-main-nav')) n.remove();});var tops=[...document.querySelectorAll('header.ww2-top')];if(tops.length>1){tops.slice(1).forEach(n=>n.remove());}var navs=[...document.querySelectorAll('nav.ww2-main-nav')];if(navs.length>1){navs.slice(1).forEach(n=>n.remove());}}});})();</script><script id="tab-hash-deeplink">(function(){function go(){var h=(location.hash||"").replace(/^#(tab-)?/,"");if(h&&typeof showTab==="function"&&document.querySelector('.tab[data-tab="'+h+'"]')){showTab(h);}}window.addEventListener("load",go);window.addEventListener("hashchange",go);})();</script><script src="assets/nav-cleanup.js"></script>
-<script id="aircraft-paint-list-widget-js">
-(function(){
-  function initPaintLists(){
-    document.querySelectorAll('.paint-list-generator').forEach(function(box){
-      var btn = box.querySelector('[data-generate-paints]');
-      var out = box.querySelector('.paint-list-output');
-      if(!btn || !out || btn.dataset.bound) return;
-      btn.dataset.bound = '1';
-      btn.addEventListener('click', function(){
-        box.classList.toggle('generated');
-        btn.textContent = box.classList.contains('generated') ? 'Hide paint list' : 'Generate paint list';
-      });
-    });
-  }
-  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initPaintLists);
-  else initPaintLists();
-})();
-</script>
+<script src="assets/paradise/shared-893b712e.js"></script>
+<script src="assets/paradise/shared-89a33ff4.js"></script>
+<script src="assets/paradise/shared-3bc737e5.js"></script><script src="assets/paradise/tab-hash-deeplink.js"></script><script src="assets/nav-cleanup.js"></script>
+<script src="assets/paradise/aircraft-paint-list-widget-js.js"></script>
 <nav aria-label="Internal site links" class="site-internal-links" id="site-internal-links"><a href="index.html">Home</a><a href="aircraft.html">Aircraft Index</a><a href="kits.html">Kits &amp; Markets</a><a href="kit-comparison.html">Kit Compare</a><a href="paint-codes.html">Paint Codes</a><a href="techniques-bank.html">Techniques</a><a href="theatre-maps.html">Theatre Maps</a><a href="articles.html">Articles</a><a href="books.html">Books</a><a href="sitemap.html">Sitemap</a></nav></body>
 </html>

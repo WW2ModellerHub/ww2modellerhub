@@ -1,0 +1,13 @@
+.paint-list-generator{border:1px solid rgba(215,173,69,.28);background:linear-gradient(180deg,#16221d,#0d1612);margin:22px 0;box-shadow:0 14px 34px rgba(0,0,0,.22)}
+.paint-list-generator .plg-head{padding:18px 20px;border-bottom:1px solid rgba(215,173,69,.22);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.paint-list-generator h2{font-family:'Oswald',Arial,sans-serif;text-transform:uppercase;letter-spacing:.04em;margin:0;color:#fff;font-size:1.8rem}
+.paint-list-generator p{margin:.4rem 0 0;line-height:1.5}
+.paint-list-generator button{border:1px solid rgba(215,173,69,.45);background:#07111f;color:#f5d06b;text-transform:uppercase;font-family:'Oswald',Arial,sans-serif;letter-spacing:.08em;padding:10px 13px;cursor:pointer}
+.paint-list-generator .paint-list-output{display:none;padding:18px 20px}
+.paint-list-generator.generated .paint-list-output{display:block}
+.paint-list-table{width:100%;border-collapse:collapse;margin-top:12px}
+.paint-list-table th,.paint-list-table td{border:1px solid rgba(215,173,69,.2);padding:10px;text-align:left;vertical-align:top;line-height:1.35}
+.paint-list-table th{background:#07111f;color:#d7ad45;font-family:'Oswald',Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.82rem}
+.paint-list-table td:first-child{font-weight:700;color:#fff}
+.paint-note{border-left:4px solid #d7ad45;background:#07111f;padding:10px 12px;margin-top:12px;line-height:1.45}
+@media(max-width:760px){.paint-list-table,.paint-list-table tbody,.paint-list-table tr,.paint-list-table th,.paint-list-table td{display:block;width:100%}.paint-list-table thead{display:none}.paint-list-table td{border-bottom:0}.paint-list-table tr{border:1px solid rgba(215,173,69,.2);margin-bottom:10px}.paint-list-table td::before{display:block;color:#d7ad45;font-family:'Oswald',Arial,sans-serif;text-transform:uppercase;font-size:.72rem;letter-spacing:.06em}.paint-list-table td:nth-child(1)::before{content:'Colour'}.paint-list-table td:nth-child(2)::before{content:'Use'}.paint-list-table td:nth-child(3)::before{content:'Tamiya'}.paint-list-table td:nth-child(4)::before{content:'Vallejo'}.paint-list-table td:nth-child(5)::before{content:'AK'}.paint-list-table td:nth-child(6)::before{content:'Mr Hobby'}}
