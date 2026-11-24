@@ -1,0 +1,2097 @@
+{
+"families": {
+"raf": "RAF / MAP",
+"rlm": "Luftwaffe / RLM",
+"usaaf": "USAAF / ANA",
+"usn": "US Navy",
+"ijn": "Japanese Navy (IJN)",
+"ijaaf": "Japanese Army (IJAAF)",
+"vvs": "Soviet VVS",
+"italian": "Regia Aeronautica",
+"interior": "Interior & details"
+},
+"brands": {
+"h": "Humbrol",
+"t": "Tamiya",
+"v": "Vallejo",
+"a": "AK",
+"m": "Mr Hobby"
+},
+"paints": [
+{
+"name": "Dark Earth",
+"ref": "MAP Dark Earth",
+"cat": "raf",
+"hex": "#5c3d1e",
+"h": {
+"c": "29",
+"n": "Dark Earth (Matt)"
+},
+"t": {
+"c": "XF-52",
+"n": "Flat Earth"
+},
+"v": {
+"c": "70.871",
+"n": "Leather Brown"
+},
+"a": {
+"c": "AK2014",
+"n": "RAF Dark Earth"
+},
+"id": "dark-earth",
+"m": {
+"c": "H72",
+"n": ""
+}
+},
+{
+"name": "Dark Green",
+"ref": "MAP Dark Green",
+"cat": "raf",
+"hex": "#2d4a1e",
+"h": {
+"c": "30",
+"n": "Dark Green (Matt)"
+},
+"t": {
+"c": "XF-81",
+"n": "Dark Green 2 (RAF)"
+},
+"v": {
+"c": "70.890",
+"n": "Reflective Green"
+},
+"a": {
+"c": "AK2015",
+"n": "RAF Dark Green"
+},
+"id": "dark-green",
+"m": {
+"c": "H73",
+"n": ""
+}
+},
+{
+"name": "Sky (Camouflage)",
+"ref": "MAP Sky S.2",
+"cat": "raf",
+"hex": "#a8c8a0",
+"h": {
+"c": "90",
+"n": "Beige Green (Matt)"
+},
+"t": {
+"c": "XF-21",
+"n": "Sky"
+},
+"v": {
+"c": "70.971",
+"n": "Green Grey"
+},
+"a": {
+"c": "AK2016",
+"n": "RAF Sky"
+},
+"id": "sky-camouflage",
+"m": {
+"c": "H74",
+"n": ""
+}
+},
+{
+"name": "Ocean Grey",
+"ref": "MAP Ocean Grey BS381 638",
+"cat": "raf",
+"hex": "#7a8a80",
+"h": {
+"c": "106",
+"n": "Ocean Grey (Matt)"
+},
+"t": {
+"c": "XF-82",
+"n": "Ocean Gray 2 (RAF)"
+},
+"v": {
+"c": "70.870",
+"n": "Medium Sea Grey"
+},
+"a": {
+"c": "AK2019",
+"n": "RAF Ocean Grey"
+},
+"id": "ocean-grey"
+},
+{
+"name": "Medium Sea Grey",
+"ref": "MAP Medium Sea Grey BS381 637",
+"cat": "raf",
+"hex": "#8a9898",
+"h": {
+"c": "165",
+"n": "Medium Sea Grey"
+},
+"t": {
+"c": "XF-83",
+"n": "Medium Sea Grey"
+},
+"v": {
+"c": "70.870",
+"n": "Medium Sea Grey"
+},
+"a": {
+"c": "AK2020",
+"n": "RAF Medium Sea Grey"
+},
+"id": "medium-sea-grey",
+"m": {
+"c": "H335",
+"n": ""
+}
+},
+{
+"name": "Dark Sea Grey",
+"ref": "MAP Dark Sea Grey",
+"cat": "raf",
+"hex": "#5a6468",
+"h": {
+"c": "123",
+"n": "Extra Dark Sea Grey"
+},
+"t": {
+"c": "XF-54",
+"n": "Dark Sea Grey"
+},
+"v": {
+"c": "70.870",
+"n": "Medium Sea Grey (darkened)"
+},
+"a": {
+"c": "AK2021",
+"n": "RAF Dark Sea Grey"
+},
+"id": "dark-sea-grey"
+},
+{
+"name": "PRU Blue",
+"ref": "MAP PRU Blue",
+"cat": "raf",
+"hex": "#2a4a6a",
+"h": {
+"c": "144",
+"n": "Intermediate Blue"
+},
+"t": {
+"c": "XF-18",
+"n": "Medium Blue"
+},
+"v": {
+"c": "70.906",
+"n": "Pale Blue"
+},
+"a": {
+"c": "AK2024",
+"n": "PRU Blue"
+},
+"id": "pru-blue"
+},
+{
+"name": "Sky Blue",
+"ref": "MAP Sky Blue BS381 101",
+"cat": "raf",
+"hex": "#7aaac8",
+"h": {
+"c": "65",
+"n": "Aircraft Blue (Matt)"
+},
+"t": {
+"c": "XF-23",
+"n": "Light Blue"
+},
+"v": {
+"c": "70.961",
+"n": "Sky Blue"
+},
+"a": {
+"c": "AK2023",
+"n": "RAF Sky Blue"
+},
+"id": "sky-blue"
+},
+{
+"name": "Night (Special Night)",
+"ref": "MAP Special Night",
+"cat": "raf",
+"hex": "#0a0a0a",
+"h": {
+"c": "33",
+"n": "Matt Black"
+},
+"t": {
+"c": "XF-1",
+"n": "Flat Black"
+},
+"v": {
+"c": "70.950",
+"n": "Black"
+},
+"a": {
+"c": "AK2016",
+"n": "Flat Black"
+},
+"id": "night-special-night"
+},
+{
+"name": "Temperate Sea Scheme Grey",
+"ref": "MAP Extra Dark Sea Grey",
+"cat": "raf",
+"hex": "#4a5258",
+"h": {
+"c": "123",
+"n": "Extra Dark Sea Grey"
+},
+"t": {
+"c": "XF-54",
+"n": "Dark Sea Grey"
+},
+"v": {
+"c": "70.862",
+"n": "Black Grey"
+},
+"a": {
+"c": "AK2022",
+"n": "Extra Dark Sea Grey"
+},
+"id": "temperate-sea-scheme-grey"
+},
+{
+"name": "Sand (Middle East)",
+"ref": "MAP Sand",
+"cat": "raf",
+"hex": "#c8aa6a",
+"h": {
+"c": "93",
+"n": "Desert Yellow (Matt)"
+},
+"t": {
+"c": "XF-59",
+"n": "Desert Yellow"
+},
+"v": {
+"c": "70.916",
+"n": "Sand Yellow"
+},
+"a": {
+"c": "AK2028",
+"n": "RAF Sand"
+},
+"id": "sand-middle-east"
+},
+{
+"name": "Azure Blue (Middle East)",
+"ref": "MAP Azure Blue",
+"cat": "raf",
+"hex": "#6a9ac8",
+"h": {
+"c": "65",
+"n": "Aircraft Blue"
+},
+"t": {
+"c": "XF-8",
+"n": "Flat Blue"
+},
+"v": {
+"c": "70.901",
+"n": "Pastel Blue"
+},
+"a": {
+"c": "AK2029",
+"n": "Azure Blue"
+},
+"id": "azure-blue-middle-east"
+},
+{
+"name": "Interior Grey-Green (Cockpit)",
+"ref": "DTD 224 Interior Grey-Green",
+"cat": "interior",
+"hex": "#4a6b47",
+"h": {
+"c": "78",
+"n": "Cockpit Green (Matt)"
+},
+"t": {
+"c": "XF-71",
+"n": "Cockpit Green (IJN)"
+},
+"v": {
+"c": "70.886",
+"n": "Green Grey"
+},
+"a": {
+"c": "AK2073",
+"n": "RAF Interior Green"
+},
+"id": "interior-grey-green-cockpit"
+},
+{
+"name": "Night Black (Instruments)",
+"ref": "MAP Night",
+"cat": "interior",
+"hex": "#141414",
+"h": {
+"c": "33",
+"n": "Matt Black"
+},
+"t": {
+"c": "XF-1",
+"n": "Flat Black"
+},
+"v": {
+"c": "70.950",
+"n": "Black"
+},
+"a": {
+"c": "AK2016",
+"n": "Flat Black"
+},
+"id": "night-black-instruments"
+},
+{
+"name": "Aluminium (Bare Metal)",
+"ref": "Bare aluminium",
+"cat": "interior",
+"hex": "#a8b0b8",
+"h": {
+"c": "56",
+"n": "Aluminium (Metallic)"
+},
+"t": {
+"c": "XF-16",
+"n": "Flat Aluminium"
+},
+"v": {
+"c": "70.997",
+"n": "Silver"
+},
+"a": {
+"c": "AK479",
+"n": "Pale Burnt Metal"
+},
+"id": "aluminium-bare-metal"
+},
+{
+"name": "Dull Aluminium (Worn)",
+"ref": "Worn aluminium",
+"cat": "interior",
+"hex": "#909098",
+"h": {
+"c": "56",
+"n": "Aluminium"
+},
+"t": {
+"c": "XF-16",
+"n": "Flat Aluminium"
+},
+"v": {
+"c": "70.993",
+"n": "White Aluminium"
+},
+"a": {
+"c": "AK480",
+"n": "Exhaust Manifold"
+},
+"id": "dull-aluminium-worn"
+},
+{
+"name": "RLM 02 — Grau",
+"ref": "RLM 02",
+"cat": "rlm",
+"hex": "#7a8060",
+"h": {
+"c": "86",
+"n": "Light Olive (Matt)"
+},
+"t": {
+"c": "XF-22",
+"n": "RLM Grey"
+},
+"v": {
+"c": "70.830",
+"n": "German Field Grey"
+},
+"a": {
+"c": "AK2050",
+"n": "RLM 02 Grey"
+},
+"id": "rlm-02-grau",
+"m": {
+"c": "H70",
+"n": ""
+}
+},
+{
+"name": "RLM 04 — Gelb",
+"ref": "RLM 04",
+"cat": "rlm",
+"hex": "#d4a818",
+"h": {
+"c": "154",
+"n": "Yellow (Matt)"
+},
+"t": {
+"c": "XF-3",
+"n": "Flat Yellow"
+},
+"v": {
+"c": "70.952",
+"n": "Lemon Yellow"
+},
+"a": {
+"c": "AK2054",
+"n": "RLM 04 Yellow"
+},
+"id": "rlm-04-gelb",
+"m": {
+"c": "H413",
+"n": ""
+}
+},
+{
+"name": "RLM 21 — Weiß",
+"ref": "RLM 21",
+"cat": "rlm",
+"hex": "#e8e0d0",
+"h": {
+"c": "34",
+"n": "White (Matt)"
+},
+"t": {
+"c": "XF-2",
+"n": "Flat White"
+},
+"v": {
+"c": "70.951",
+"n": "White"
+},
+"a": {
+"c": "AK2051",
+"n": "RLM 21 White"
+},
+"id": "rlm-21-wei"
+},
+{
+"name": "RLM 22 — Schwarz",
+"ref": "RLM 22",
+"cat": "rlm",
+"hex": "#141414",
+"h": {
+"c": "33",
+"n": "Matt Black"
+},
+"t": {
+"c": "XF-1",
+"n": "Flat Black"
+},
+"v": {
+"c": "70.950",
+"n": "Black"
+},
+"a": {
+"c": "AK2052",
+"n": "RLM 22 Black"
+},
+"id": "rlm-22-schwarz"
+},
+{
+"name": "RLM 23 — Rot",
+"ref": "RLM 23",
+"cat": "rlm",
+"hex": "#c03020",
+"h": {
+"c": "60",
+"n": "Scarlet (Matt)"
+},
+"t": {
+"c": "XF-7",
+"n": "Flat Red"
+},
+"v": {
+"c": "70.909",
+"n": "Vermillion"
+},
+"a": {
+"c": "AK2053",
+"n": "RLM 23 Red"
+},
+"id": "rlm-23-rot"
+},
+{
+"name": "RLM 65 — Hellblau",
+"ref": "RLM 65",
+"cat": "rlm",
+"hex": "#7fa8c4",
+"h": {
+"c": "65",
+"n": "Aircraft Blue (Matt)"
+},
+"t": {
+"c": "XF-23",
+"n": "Light Blue"
+},
+"v": {
+"c": "70.907",
+"n": "Pale Greyblue"
+},
+"a": {
+"c": "AK2062",
+"n": "RLM 65 Light Blue"
+},
+"id": "rlm-65-hellblau",
+"m": {
+"c": "H67",
+"n": ""
+}
+},
+{
+"name": "RLM 66 — Schwarzgrau",
+"ref": "RLM 66",
+"cat": "rlm",
+"hex": "#282c30",
+"h": {
+"c": "32",
+"n": "Dark Grey (Matt)"
+},
+"t": {
+"c": "XF-63",
+"n": "German Grey"
+},
+"v": {
+"c": "70.862",
+"n": "Black Grey"
+},
+"a": {
+"c": "AK2066",
+"n": "RLM 66 Black Grey"
+},
+"id": "rlm-66-schwarzgrau",
+"m": {
+"c": "H416",
+"n": ""
+}
+},
+{
+"name": "RLM 70 — Schwarzgrün",
+"ref": "RLM 70",
+"cat": "rlm",
+"hex": "#1a2814",
+"h": {
+"c": "31",
+"n": "Dark Green (Satin)"
+},
+"t": {
+"c": "XF-27",
+"n": "Black Green"
+},
+"v": {
+"c": "70.897",
+"n": "Bronze Green"
+},
+"a": {
+"c": "AK2060",
+"n": "RLM 70 Black Green"
+},
+"id": "rlm-70-schwarzgrun",
+"m": {
+"c": "H65",
+"n": ""
+}
+},
+{
+"name": "RLM 71 — Dunkelgrün",
+"ref": "RLM 71",
+"cat": "rlm",
+"hex": "#2d3d1f",
+"h": {
+"c": "116",
+"n": "US Dark Green"
+},
+"t": {
+"c": "XF-61",
+"n": "Dark Green"
+},
+"v": {
+"c": "70.890",
+"n": "Reflective Green"
+},
+"a": {
+"c": "AK2061",
+"n": "RLM 71 Dark Green"
+},
+"id": "rlm-71-dunkelgrun",
+"m": {
+"c": "H64",
+"n": ""
+}
+},
+{
+"name": "RLM 74 — Graugrün",
+"ref": "RLM 74",
+"cat": "rlm",
+"hex": "#3d4a38",
+"h": {
+"c": "155",
+"n": "Olive Drab"
+},
+"t": {
+"c": "XF-73",
+"n": "JGSDF Dark Green"
+},
+"v": {
+"c": "70.867",
+"n": "Dark Bluegrey"
+},
+"a": {
+"c": "AK2064",
+"n": "RLM 74 Grey Green"
+},
+"id": "rlm-74-graugrun",
+"m": {
+"c": "H68",
+"n": ""
+}
+},
+{
+"name": "RLM 75 — Grauviolett",
+"ref": "RLM 75",
+"cat": "rlm",
+"hex": "#5a5468",
+"h": {
+"c": "140",
+"n": "Grey Violet (mix)"
+},
+"t": {
+"c": "XF-19",
+"n": "Sky Grey (lightened)"
+},
+"v": {
+"c": "70.989",
+"n": "Sky Grey"
+},
+"a": {
+"c": "AK2065",
+"n": "RLM 75 Grey Violet"
+},
+"id": "rlm-75-grauviolett",
+"m": {
+"c": "H69",
+"n": ""
+}
+},
+{
+"name": "RLM 76 — Lichtblau",
+"ref": "RLM 76",
+"cat": "rlm",
+"hex": "#adbfcc",
+"h": {
+"c": "147",
+"n": "Light Grey (Matt)"
+},
+"t": {
+"c": "XF-19",
+"n": "Sky Grey"
+},
+"v": {
+"c": "70.971",
+"n": "Light Grey"
+},
+"a": {
+"c": "AK2066",
+"n": "RLM 76 Light Blue"
+},
+"id": "rlm-76-lichtblau",
+"m": {
+"c": "H417",
+"n": ""
+}
+},
+{
+"name": "RLM 78 — Himmelblau",
+"ref": "RLM 78",
+"cat": "rlm",
+"hex": "#7aacc8",
+"h": {
+"c": "65",
+"n": "Aircraft Blue"
+},
+"t": {
+"c": "XF-21",
+"n": "Sky"
+},
+"v": {
+"c": "70.961",
+"n": "Sky Blue"
+},
+"a": {
+"c": "AK2078",
+"n": "RLM 78 Sky Blue"
+},
+"id": "rlm-78-himmelblau"
+},
+{
+"name": "RLM 79 — Sandgelb",
+"ref": "RLM 79",
+"cat": "rlm",
+"hex": "#c8a84a",
+"h": {
+"c": "93",
+"n": "Desert Yellow"
+},
+"t": {
+"c": "XF-59",
+"n": "Desert Yellow"
+},
+"v": {
+"c": "70.916",
+"n": "Sand Yellow"
+},
+"a": {
+"c": "AK2079",
+"n": "RLM 79 Sand Yellow"
+},
+"id": "rlm-79-sandgelb"
+},
+{
+"name": "RLM 80 — Olivgrün",
+"ref": "RLM 80",
+"cat": "rlm",
+"hex": "#4a5830",
+"h": {
+"c": "155",
+"n": "Olive Drab"
+},
+"t": {
+"c": "XF-58",
+"n": "Olive Green"
+},
+"v": {
+"c": "70.888",
+"n": "Olive Grey"
+},
+"a": {
+"c": "AK2080",
+"n": "RLM 80 Olive Green"
+},
+"id": "rlm-80-olivgrun"
+},
+{
+"name": "RLM 81 — Braunviolett",
+"ref": "RLM 81",
+"cat": "rlm",
+"hex": "#5a4840",
+"h": {
+"c": "98",
+"n": "Chocolate (Matt)"
+},
+"t": {
+"c": "XF-64",
+"n": "Red Brown"
+},
+"v": {
+"c": "70.984",
+"n": "Flat Brown"
+},
+"a": {
+"c": "AK2081",
+"n": "RLM 81 Brown Violet"
+},
+"id": "rlm-81-braunviolett"
+},
+{
+"name": "RLM 82 — Hellgrün",
+"ref": "RLM 82",
+"cat": "rlm",
+"hex": "#5a7840",
+"h": {
+"c": "116",
+"n": "US Dark Green"
+},
+"t": {
+"c": "XF-26",
+"n": "Deep Green"
+},
+"v": {
+"c": "70.891",
+"n": "Intermediate Green"
+},
+"a": {
+"c": "AK2082",
+"n": "RLM 82 Light Green"
+},
+"id": "rlm-82-hellgrun"
+},
+{
+"name": "RLM 83 — Dunkelgrün",
+"ref": "RLM 83 late",
+"cat": "rlm",
+"hex": "#2a4020",
+"h": {
+"c": "30",
+"n": "Dark Green"
+},
+"t": {
+"c": "XF-61",
+"n": "Dark Green"
+},
+"v": {
+"c": "70.897",
+"n": "Bronze Green"
+},
+"a": {
+"c": "AK2083",
+"n": "RLM 83 Dark Green"
+},
+"id": "rlm-83-dunkelgrun"
+},
+{
+"name": "RLM 02 — Cockpit Grey (early)",
+"ref": "RLM 02 interior",
+"cat": "interior",
+"hex": "#7a8060",
+"h": {
+"c": "86",
+"n": "Light Olive"
+},
+"t": {
+"c": "XF-22",
+"n": "RLM Grey"
+},
+"v": {
+"c": "70.830",
+"n": "German Field Grey"
+},
+"a": {
+"c": "AK2050",
+"n": "RLM 02 Grey"
+},
+"id": "rlm-02-cockpit-grey-early"
+},
+{
+"name": "RLM 66 — Cockpit Black Grey (1941+)",
+"ref": "RLM 66 interior",
+"cat": "interior",
+"hex": "#282c30",
+"h": {
+"c": "32",
+"n": "Dark Grey"
+},
+"t": {
+"c": "XF-63",
+"n": "German Grey"
+},
+"v": {
+"c": "70.862",
+"n": "Black Grey"
+},
+"a": {
+"c": "AK2066",
+"n": "RLM 66 Black Grey"
+},
+"id": "rlm-66-cockpit-black-grey-1941"
+},
+{
+"name": "Olive Drab (early)",
+"ref": "ANA 613 Olive Drab",
+"cat": "usaaf",
+"hex": "#4a4820",
+"h": {
+"c": "155",
+"n": "Olive Drab"
+},
+"t": {
+"c": "XF-62",
+"n": "Olive Drab"
+},
+"v": {
+"c": "70.887",
+"n": "Brown Violet"
+},
+"a": {
+"c": "AK2030",
+"n": "USAAF Olive Drab"
+},
+"id": "olive-drab-early",
+"m": {
+"c": "H52",
+"n": ""
+}
+},
+{
+"name": "Olive Drab (late, faded)",
+"ref": "ANA 613 faded",
+"cat": "usaaf",
+"hex": "#5a5830",
+"h": {
+"c": "155",
+"n": "Olive Drab (lightened)"
+},
+"t": {
+"c": "XF-62",
+"n": "Olive Drab (lightened)"
+},
+"v": {
+"c": "70.921",
+"n": "English Uniform"
+},
+"a": {
+"c": "AK2031",
+"n": "USAAF Olive Drab Faded"
+},
+"id": "olive-drab-late-faded"
+},
+{
+"name": "Neutral Grey",
+"ref": "ANA 603 Neutral Grey",
+"cat": "usaaf",
+"hex": "#808080",
+"h": {
+"c": "40",
+"n": "Grey (Matt)"
+},
+"t": {
+"c": "XF-20",
+"n": "Medium Grey"
+},
+"v": {
+"c": "70.990",
+"n": "Light Grey"
+},
+"a": {
+"c": "AK2032",
+"n": "USAAF Neutral Grey"
+},
+"id": "neutral-grey",
+"m": {
+"c": "H53",
+"n": ""
+}
+},
+{
+"name": "Azure Blue (USAAF)",
+"ref": "ANA 609 Azure Blue",
+"cat": "usaaf",
+"hex": "#5888b0",
+"h": {
+"c": "144",
+"n": "Intermediate Blue"
+},
+"t": {
+"c": "XF-18",
+"n": "Medium Blue"
+},
+"v": {
+"c": "70.906",
+"n": "Pale Blue"
+},
+"a": {
+"c": "AK2033",
+"n": "USAAF Azure Blue"
+},
+"id": "azure-blue-usaaf"
+},
+{
+"name": "Insignia White",
+"ref": "ANA 601 White",
+"cat": "usaaf",
+"hex": "#e8e8e0",
+"h": {
+"c": "34",
+"n": "White (Matt)"
+},
+"t": {
+"c": "XF-2",
+"n": "Flat White"
+},
+"v": {
+"c": "70.951",
+"n": "White"
+},
+"a": {
+"c": "AK2034",
+"n": "Insignia White"
+},
+"id": "insignia-white"
+},
+{
+"name": "Insignia Red",
+"ref": "ANA 619 Red",
+"cat": "usaaf",
+"hex": "#b82020",
+"h": {
+"c": "60",
+"n": "Scarlet (Matt)"
+},
+"t": {
+"c": "XF-7",
+"n": "Flat Red"
+},
+"v": {
+"c": "70.909",
+"n": "Vermillion"
+},
+"a": {
+"c": "AK2035",
+"n": "Insignia Red"
+},
+"id": "insignia-red"
+},
+{
+"name": "Insignia Blue",
+"ref": "ANA 605 Blue",
+"cat": "usaaf",
+"hex": "#1a3a6a",
+"h": {
+"c": "15",
+"n": "Midnight Blue (Matt)"
+},
+"t": {
+"c": "XF-8",
+"n": "Flat Blue"
+},
+"v": {
+"c": "70.925",
+"n": "Blue"
+},
+"a": {
+"c": "AK2036",
+"n": "Insignia Blue"
+},
+"id": "insignia-blue"
+},
+{
+"name": "Interior Green (USAAF cockpit)",
+"ref": "ANA 611 Interior Green",
+"cat": "interior",
+"hex": "#4a6038",
+"h": {
+"c": "75",
+"n": "Bronze Green (Matt)"
+},
+"t": {
+"c": "XF-26",
+"n": "Deep Green"
+},
+"v": {
+"c": "70.886",
+"n": "Green Grey"
+},
+"a": {
+"c": "AK2037",
+"n": "USAAF Interior Green"
+},
+"id": "interior-green-usaaf-cockpit"
+},
+{
+"name": "Natural Metal — Polished",
+"ref": "NMF bright panels",
+"cat": "usaaf",
+"hex": "#c8d0d8",
+"h": {
+"c": "56",
+"n": "Aluminium (Metallic)"
+},
+"t": {
+"c": "X-11",
+"n": "Chrome Silver"
+},
+"v": {
+"c": "70.997",
+"n": "Silver"
+},
+"a": {
+"c": "AK479",
+"n": "Pale Burnt Metal"
+},
+"id": "natural-metal-polished"
+},
+{
+"name": "Natural Metal — Bare Alloy",
+"ref": "NMF standard panels",
+"cat": "usaaf",
+"hex": "#a0a8b0",
+"h": {
+"c": "56",
+"n": "Aluminium"
+},
+"t": {
+"c": "XF-16",
+"n": "Flat Aluminium"
+},
+"v": {
+"c": "70.993",
+"n": "White Aluminium"
+},
+"a": {
+"c": "AK480",
+"n": "NMF Aluminium"
+},
+"id": "natural-metal-bare-alloy"
+},
+{
+"name": "Natural Metal — Wing Panels",
+"ref": "NMF wing upper",
+"cat": "usaaf",
+"hex": "#888898",
+"h": {
+"c": "191",
+"n": "Chrome (Metallic)"
+},
+"t": {
+"c": "XF-16",
+"n": "Flat Aluminium"
+},
+"v": {
+"c": "70.997",
+"n": "Silver"
+},
+"a": {
+"c": "AK481",
+"n": "Dull Aluminium"
+},
+"id": "natural-metal-wing-panels"
+},
+{
+"name": "Yellow (Training / markings)",
+"ref": "MAP Yellow",
+"cat": "raf",
+"hex": "#d4c020",
+"h": {
+"c": "69",
+"n": "Yellow (Matt)"
+},
+"t": {
+"c": "XF-3",
+"n": "Flat Yellow"
+},
+"v": {
+"c": "70.952",
+"n": "Lemon Yellow"
+},
+"a": {
+"c": "AK2042",
+"n": "Yellow"
+},
+"id": "yellow-training-markings"
+},
+{
+"name": "Red (Roundel)",
+"ref": "MAP Red BS381 537",
+"cat": "raf",
+"hex": "#b82020",
+"h": {
+"c": "60",
+"n": "Scarlet"
+},
+"t": {
+"c": "XF-7",
+"n": "Flat Red"
+},
+"v": {
+"c": "70.909",
+"n": "Vermillion"
+},
+"a": {
+"c": "AK2043",
+"n": "RAF Red"
+},
+"id": "red-roundel"
+},
+{
+"name": "Blue (Roundel)",
+"ref": "MAP Blue BS381 110",
+"cat": "raf",
+"hex": "#1a3a8a",
+"h": {
+"c": "15",
+"n": "Midnight Blue"
+},
+"t": {
+"c": "XF-8",
+"n": "Flat Blue"
+},
+"v": {
+"c": "70.925",
+"n": "Blue"
+},
+"a": {
+"c": "AK2044",
+"n": "RAF Blue"
+},
+"id": "blue-roundel"
+},
+{
+"name": "Trainer Yellow (Tiger Moth)",
+"ref": "MAP Chrome Yellow",
+"cat": "raf",
+"hex": "#e0a010",
+"h": {
+"c": "24",
+"n": "Trainer Yellow"
+},
+"t": {
+"c": "XF-3",
+"n": "Flat Yellow"
+},
+"v": {
+"c": "70.915",
+"n": "Deep Yellow"
+},
+"a": {
+"c": "AK2045",
+"n": "Chrome Yellow"
+},
+"id": "trainer-yellow-tiger-moth"
+},
+{
+"name": "Gun Metal (Weapons)",
+"ref": "Generic gun metal",
+"cat": "interior",
+"hex": "#384048",
+"h": {
+"c": "53",
+"n": "Gun Metal"
+},
+"t": {
+"c": "XF-56",
+"n": "Metallic Grey"
+},
+"v": {
+"c": "70.863",
+"n": "Gunmetal Grey"
+},
+"a": {
+"c": "AK482",
+"n": "Gun Metal"
+},
+"id": "gun-metal-weapons"
+},
+{
+"name": "Exhaust Stain (Brown-Black)",
+"ref": "Exhaust weathering",
+"cat": "interior",
+"hex": "#2a1a0a",
+"h": {
+"c": "33",
+"n": "Matt Black + 98 Chocolate"
+},
+"t": {
+"c": "XF-64",
+"n": "Red Brown (darkened)"
+},
+"v": {
+"c": "70.984",
+"n": "Flat Brown (dark mix)"
+},
+"a": {
+"c": "AK2048",
+"n": "Exhaust Stain"
+},
+"id": "exhaust-stain-brown-black"
+},
+{
+"name": "Mud — Chalk (Biggin Hill)",
+"ref": "Chalk downland",
+"cat": "interior",
+"hex": "#d8d0b8",
+"h": {
+"c": "103",
+"n": "Cream (Matt)"
+},
+"t": {
+"c": "XF-57",
+"n": "Buff / XF-2 1:1"
+},
+"v": {
+"c": "70.986",
+"n": "Deck Tan"
+},
+"a": {
+"c": "AK2049",
+"n": "Dry Mud / Dust"
+},
+"id": "mud-chalk-biggin-hill"
+},
+{
+"name": "Mud — Devon Red (Exeter)",
+"ref": "Devon red clay",
+"cat": "interior",
+"hex": "#8a3820",
+"h": {
+"c": "70",
+"n": "Brick Red"
+},
+"t": {
+"c": "XF-64",
+"n": "Red Brown + XF-7"
+},
+"v": {
+"c": "70.981",
+"n": "Orange Brown"
+},
+"a": {
+"c": "AK2046",
+"n": "Red Soil Mud"
+},
+"id": "mud-devon-red-exeter"
+},
+{
+"name": "Mud — Sussex Clay (Tangmere)",
+"ref": "Sussex clay",
+"cat": "interior",
+"hex": "#6a4020",
+"h": {
+"c": "98",
+"n": "Chocolate"
+},
+"t": {
+"c": "XF-64",
+"n": "Red Brown"
+},
+"v": {
+"c": "70.984",
+"n": "Flat Brown"
+},
+"a": {
+"c": "AK2047",
+"n": "European Mud"
+},
+"id": "mud-sussex-clay-tangmere"
+},
+{
+"name": "IJN Amber Grey / Ame-iro",
+"ref": "IJN early Zero grey-green",
+"cat": "ijn",
+"hex": "#b7b29a",
+"h": {
+"c": "168",
+"n": "Hemp (approx)"
+},
+"t": {
+"c": "XF-76",
+"n": "Gray Green (IJN)"
+},
+"v": {
+"c": "71.312",
+"n": "IJN Ash Grey"
+},
+"a": {
+"c": "AK2061",
+"n": "IJN J3 Hai-iro / grey-green"
+},
+"id": "ijn-amber-grey-ame-iro"
+},
+{
+"name": "Mitsubishi IJN Green",
+"ref": "IJN upper surface green",
+"cat": "ijn",
+"hex": "#1f3b28",
+"h": {
+"c": "75",
+"n": "Bronze Green (approx)"
+},
+"t": {
+"c": "XF-11",
+"n": "J.N. Green"
+},
+"v": {
+"c": "71.322",
+"n": "IJN Black Green"
+},
+"a": {
+"c": "AK2062",
+"n": "IJN D1 Deep Green Black"
+},
+"id": "mitsubishi-ijn-green"
+},
+{
+"name": "Nakajima IJN Green",
+"ref": "IJN Nakajima factory green",
+"cat": "ijn",
+"hex": "#2c4427",
+"h": {
+"c": "195",
+"n": "Dark Green (approx)"
+},
+"t": {
+"c": "XF-11",
+"n": "J.N. Green"
+},
+"v": {
+"c": "71.310",
+"n": "IJN Deep Green"
+},
+"a": {
+"c": "AK2063",
+"n": "IJN Nakajima Green"
+},
+"id": "nakajima-ijn-green"
+},
+{
+"name": "Aotake Translucent Blue-Green",
+"ref": "Japanese protective lacquer",
+"cat": "interior",
+"hex": "#1b8a80",
+"h": {
+"c": "1322",
+"n": "Clear Blue + Green mix"
+},
+"t": {
+"c": "X-23 + X-25",
+"n": "Clear Blue/Green mix"
+},
+"v": {
+"c": "71.419",
+"n": "Aotake"
+},
+"a": {
+"c": "AK2064",
+"n": "Aotake"
+},
+"id": "aotake-translucent-blue-green"
+},
+{
+"name": "IJAAF #7 Olive Brown",
+"ref": "Japanese Army late-war olive brown",
+"cat": "ijaaf",
+"hex": "#4d4327",
+"h": {
+"c": "155",
+"n": "Olive Drab (approx)"
+},
+"t": {
+"c": "XF-62",
+"n": "Olive Drab"
+},
+"v": {
+"c": "71.326",
+"n": "IJA Olive Brown"
+},
+"a": {
+"c": "AK2261",
+"n": "IJA #7 Ohryoku Nana Go Shoku"
+},
+"id": "ijaaf-7-olive-brown"
+},
+{
+"name": "IJAAF Grey-Green Underside",
+"ref": "Japanese Army lower surface grey-green",
+"cat": "ijaaf",
+"hex": "#a8ad96",
+"h": {
+"c": "90",
+"n": "Beige Green (approx)"
+},
+"t": {
+"c": "XF-14",
+"n": "J.A. Grey"
+},
+"v": {
+"c": "71.311",
+"n": "IJA Grey Green"
+},
+"a": {
+"c": "AK2262",
+"n": "IJA Grey Green"
+},
+"id": "ijaaf-grey-green-underside"
+},
+{
+"name": "AMT-4 Green",
+"ref": "Soviet VVS upper green",
+"cat": "vvs",
+"hex": "#36552b",
+"h": {
+"c": "117",
+"n": "US Light Green (approx)"
+},
+"t": {
+"c": "XF-58",
+"n": "Olive Green"
+},
+"v": {
+"c": "71.409",
+"n": "AMT-4 Green"
+},
+"a": {
+"c": "AK2251",
+"n": "AMT-4 Green"
+},
+"id": "amt-4-green"
+},
+{
+"name": "AMT-6 Black",
+"ref": "Soviet VVS disruptive black",
+"cat": "vvs",
+"hex": "#171717",
+"h": {
+"c": "33",
+"n": "Matt Black"
+},
+"t": {
+"c": "XF-1",
+"n": "Flat Black"
+},
+"v": {
+"c": "71.057",
+"n": "Black"
+},
+"a": {
+"c": "AK2252",
+"n": "AMT-6 Black"
+},
+"id": "amt-6-black"
+},
+{
+"name": "AMT-7 Blue",
+"ref": "Soviet VVS underside blue",
+"cat": "vvs",
+"hex": "#6f9fc0",
+"h": {
+"c": "65",
+"n": "Aircraft Blue"
+},
+"t": {
+"c": "XF-23",
+"n": "Light Blue"
+},
+"v": {
+"c": "71.408",
+"n": "AMT-7 Greyish Blue"
+},
+"a": {
+"c": "AK2253",
+"n": "AMT-7 Blue"
+},
+"id": "amt-7-blue"
+},
+{
+"name": "A-14 Steel Grey",
+"ref": "Soviet cockpit/interior grey",
+"cat": "interior",
+"hex": "#6b7070",
+"h": {
+"c": "27",
+"n": "Sea Grey (approx)"
+},
+"t": {
+"c": "XF-53",
+"n": "Neutral Grey"
+},
+"v": {
+"c": "71.406",
+"n": "A-14 Steel Grey"
+},
+"a": {
+"c": "AK2254",
+"n": "A-14 Steel Grey"
+},
+"id": "a-14-steel-grey"
+},
+{
+"name": "Giallo Mimetico 3",
+"ref": "Italian desert yellow",
+"cat": "italian",
+"hex": "#c99b45",
+"h": {
+"c": "93",
+"n": "Desert Yellow"
+},
+"t": {
+"c": "XF-59",
+"n": "Desert Yellow"
+},
+"v": {
+"c": "71.284",
+"n": "Italian Sand Yellow"
+},
+"a": {
+"c": "AK2171",
+"n": "Giallo Mimetico 3"
+},
+"id": "giallo-mimetico-3"
+},
+{
+"name": "Verde Mimetico 2",
+"ref": "Italian camouflage green",
+"cat": "italian",
+"hex": "#3e5a2e",
+"h": {
+"c": "117",
+"n": "US Light Green"
+},
+"t": {
+"c": "XF-58",
+"n": "Olive Green"
+},
+"v": {
+"c": "71.285",
+"n": "Italian Green"
+},
+"a": {
+"c": "AK2172",
+"n": "Verde Mimetico"
+},
+"id": "verde-mimetico-2"
+},
+{
+"name": "Nocciola Chiaro 4",
+"ref": "Italian hazelnut tan",
+"cat": "italian",
+"hex": "#b98b54",
+"h": {
+"c": "118",
+"n": "US Tan"
+},
+"t": {
+"c": "XF-52",
+"n": "Flat Earth lightened"
+},
+"v": {
+"c": "71.286",
+"n": "Italian Hazel Tan"
+},
+"a": {
+"c": "AK2173",
+"n": "Nocciola Chiaro 4"
+},
+"id": "nocciola-chiaro-4"
+},
+{
+"name": "Grigio Azzurro Chiaro",
+"ref": "Italian light blue-grey underside",
+"cat": "italian",
+"hex": "#9aa7a8",
+"h": {
+"c": "64",
+"n": "Light Grey"
+},
+"t": {
+"c": "XF-19",
+"n": "Sky Grey"
+},
+"v": {
+"c": "71.287",
+"n": "Grigio Azzurro Chiaro"
+},
+"a": {
+"c": "AK2174",
+"n": "Grigio Azzurro Chiaro"
+},
+"id": "grigio-azzurro-chiaro"
+},
+{
+"name": "IJN J3 Hai-iro / Ash Grey",
+"ref": "IJN carrier aircraft grey",
+"cat": "ijn",
+"hex": "#9fa79a",
+"h": {
+"c": "168",
+"n": "Hemp / light grey-green mix"
+},
+"t": {
+"c": "XF-76",
+"n": "Gray Green (IJN)"
+},
+"v": {
+"c": "71.311",
+"n": "IJN Ash Grey"
+},
+"a": {
+"c": "AK2061",
+"n": "J3 Hai-iro"
+},
+"id": "ijn-j3-hai-iro-ash-grey"
+},
+{
+"name": "IJN D1 Deep Green Black",
+"ref": "IJN upper surface green",
+"cat": "ijn",
+"hex": "#1f3328",
+"h": {
+"c": "195",
+"n": "Dark Green"
+},
+"t": {
+"c": "XF-11",
+"n": "J.N. Green"
+},
+"v": {
+"c": "71.322",
+"n": "IJN Black Green"
+},
+"a": {
+"c": "AK2062",
+"n": "IJN D1 Deep Green"
+},
+"id": "ijn-d1-deep-green-black"
+},
+{
+"name": "IJN Q1 Anti-Glare Black",
+"ref": "IJN cowling / anti-glare",
+"cat": "ijn",
+"hex": "#10120f",
+"h": {
+"c": "85",
+"n": "Coal Black"
+},
+"t": {
+"c": "XF-69",
+"n": "NATO Black"
+},
+"v": {
+"c": "70.862",
+"n": "Black Grey"
+},
+"a": {
+"c": "AK2064",
+"n": "Q1 Anti-Glare Black"
+},
+"id": "ijn-q1-anti-glare-black"
+},
+{
+"name": "IJAAF #21 Midori Iro",
+"ref": "Army dark green upper",
+"cat": "ijaaf",
+"hex": "#2f4426",
+"h": {
+"c": "116",
+"n": "US Dark Green"
+},
+"t": {
+"c": "XF-13",
+"n": "J.A. Green"
+},
+"v": {
+"c": "71.285",
+"n": "IJAAF Dark Green"
+},
+"a": {
+"c": "AK2261",
+"n": "IJAAF Dark Green"
+},
+"id": "ijaaf-21-midori-iro"
+},
+{
+"name": "IJAAF #1 Hairyokushoku",
+"ref": "Army grey-green",
+"cat": "ijaaf",
+"hex": "#9aa38f",
+"h": {
+"c": "90",
+"n": "Beige Green"
+},
+"t": {
+"c": "XF-14",
+"n": "J.A. Grey"
+},
+"v": {
+"c": "71.326",
+"n": "IJAAF Grey Green"
+},
+"a": {
+"c": "AK2262",
+"n": "IJAAF Grey Green"
+},
+"id": "ijaaf-1-hairyokushoku"
+},
+{
+"name": "IJAAF #30 Karekusa Iro",
+"ref": "Army dry grass / brown",
+"cat": "ijaaf",
+"hex": "#8a6d3d",
+"h": {
+"c": "84",
+"n": "Mid Stone"
+},
+"t": {
+"c": "XF-49",
+"n": "Khaki"
+},
+"v": {
+"c": "71.323",
+"n": "IJAAF Khaki Brown"
+},
+"a": {
+"c": "AK2263",
+"n": "IJAAF Khaki Brown"
+},
+"id": "ijaaf-30-karekusa-iro"
+},
+{
+"name": "AMT-11 Blue Grey",
+"ref": "VVS late-war upper grey",
+"cat": "vvs",
+"hex": "#64717a",
+"h": {
+"c": "145",
+"n": "Medium Grey"
+},
+"t": {
+"c": "XF-53",
+"n": "Neutral Grey"
+},
+"v": {
+"c": "71.304",
+"n": "AMT-11 Blue Grey"
+},
+"a": {
+"c": "AK2241",
+"n": "AMT-11 Blue Grey"
+},
+"id": "amt-11-blue-grey"
+},
+{
+"name": "AMT-12 Dark Grey",
+"ref": "VVS late-war upper dark grey",
+"cat": "vvs",
+"hex": "#3f4548",
+"h": {
+"c": "32",
+"n": "Dark Grey"
+},
+"t": {
+"c": "XF-24",
+"n": "Dark Grey"
+},
+"v": {
+"c": "71.308",
+"n": "AMT-12 Dark Grey"
+},
+"a": {
+"c": "AK2242",
+"n": "AMT-12 Dark Grey"
+},
+"id": "amt-12-dark-grey"
+},
+{
+"name": "AII Light Blue",
+"ref": "Early Soviet underside blue",
+"cat": "vvs",
+"hex": "#79a6bd",
+"h": {
+"c": "65",
+"n": "Aircraft Blue"
+},
+"t": {
+"c": "XF-23",
+"n": "Light Blue"
+},
+"v": {
+"c": "71.318",
+"n": "AII Light Blue"
+},
+"a": {
+"c": "AK2246",
+"n": "AII Light Blue"
+},
+"id": "aii-light-blue"
+},
+{
+"name": "AII Green",
+"ref": "Early Soviet upper green",
+"cat": "vvs",
+"hex": "#3b5a2a",
+"h": {
+"c": "150",
+"n": "Forest Green"
+},
+"t": {
+"c": "XF-5",
+"n": "Flat Green"
+},
+"v": {
+"c": "71.317",
+"n": "AII Green"
+},
+"a": {
+"c": "AK2247",
+"n": "AII Green"
+},
+"id": "aii-green"
+},
+{
+"name": "Verde Oliva Scuro 2",
+"ref": "Italian dark olive green",
+"cat": "italian",
+"hex": "#3e4b2c",
+"h": {
+"c": "116",
+"n": "US Dark Green"
+},
+"t": {
+"c": "XF-58",
+"n": "Olive Green"
+},
+"v": {
+"c": "71.010",
+"n": "Interior Green / adjusted"
+},
+"a": {
+"c": "AK2141",
+"n": "Verde Oliva Scuro"
+},
+"id": "verde-oliva-scuro-2"
+},
+{
+"name": "Grigio Mimetico",
+"ref": "Italian camouflage grey",
+"cat": "italian",
+"hex": "#7f8783",
+"h": {
+"c": "140",
+"n": "Gull Grey"
+},
+"t": {
+"c": "XF-19",
+"n": "Sky Grey"
+},
+"v": {
+"c": "71.046",
+"n": "Pale Grey Blue"
+},
+"a": {
+"c": "AK2142",
+"n": "Grigio Mimetico"
+},
+"id": "grigio-mimetico"
+},
+{
+"name": "Rosso Mimetico",
+"ref": "Italian red-brown mottle",
+"cat": "italian",
+"hex": "#7d3f2d",
+"h": {
+"c": "160",
+"n": "German Camouflage Red Brown"
+},
+"t": {
+"c": "XF-64",
+"n": "Red Brown"
+},
+"v": {
+"c": "71.105",
+"n": "Brown RLM26"
+},
+"a": {
+"c": "AK2143",
+"n": "Rosso Mimetico"
+},
+"id": "rosso-mimetico"
+},
+{
+"name": "Bianco Avorio / White Theatre Band",
+"ref": "Italian theatre markings",
+"cat": "italian",
+"hex": "#e6dfc8",
+"h": {
+"c": "34",
+"n": "Matt White warmed"
+},
+"t": {
+"c": "XF-2 + buff",
+"n": "Warm White"
+},
+"v": {
+"c": "70.820",
+"n": "Offwhite"
+},
+"a": {
+"c": "AK2144",
+"n": "Italian Theatre White"
+},
+"id": "bianco-avorio-white-theatre-band"
+},
+{
+"id": "blue-gray",
+"name": "Blue Gray",
+"ref": "US Navy 1941–42 upper surfaces",
+"cat": "usn",
+"hex": "#5b6e80",
+"t": {
+"c": "XF-18 mix",
+"n": "Medium Blue + grey"
+},
+"v": {
+"c": "71.114",
+"n": ""
+},
+"a": {
+"c": "RC255",
+"n": ""
+}
+},
+{
+"id": "light-gray-usn",
+"name": "Light Gray (USN)",
+"ref": "US Navy 1941–42 undersides",
+"cat": "usn",
+"hex": "#b8bcbc"
+},
+{
+"id": "non-specular-sea-blue",
+"name": "Non-specular Sea Blue",
+"ref": "US Navy 1943–44 upper surfaces",
+"cat": "usn",
+"hex": "#2c3a4e",
+"t": {
+"c": "XF-17",
+"n": "Sea Blue"
+},
+"v": {
+"c": "71.300",
+"n": ""
+},
+"a": {
+"c": "RC258",
+"n": ""
+},
+"m": {
+"c": "H54",
+"n": ""
+}
+},
+{
+"id": "intermediate-blue",
+"name": "Intermediate Blue",
+"ref": "US Navy 1943–44 sides",
+"cat": "usn",
+"hex": "#56708a",
+"t": {
+"c": "XF-18",
+"n": "Medium Blue"
+},
+"v": {
+"c": "71.299",
+"n": ""
+},
+"a": {
+"c": "RC256",
+"n": ""
+},
+"m": {
+"c": "H56",
+"n": ""
+}
+},
+{
+"id": "glossy-sea-blue",
+"name": "Glossy Sea Blue",
+"ref": "US Navy 1944–45 overall",
+"cat": "usn",
+"hex": "#1f2a3c",
+"t": {
+"c": "X-3 mix",
+"n": "Royal Blue + black (gloss)"
+}
+}
+]
+}
