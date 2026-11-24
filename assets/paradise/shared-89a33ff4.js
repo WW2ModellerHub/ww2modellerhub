@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('img').forEach(img=>{img.loading=img.loading||'lazy';if(!img.getAttribute('onerror'))img.onerror=function(){this.onerror=null;this.src='assets/image-fallbacks/generic-aircraft.jpg';};});});

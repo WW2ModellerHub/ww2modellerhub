@@ -58,3 +58,19 @@ Recommended: **Namecheap.com** — search for `ww2modellerhub.co.uk` or `ww2mode
 - Bf 109 reference page
 - Mosquito reference page
 - Fw 190 reference page
+
+---
+
+## Maintaining the site
+
+| Task | How |
+|------|-----|
+| Turn on Google Analytics, Amazon / Hannants affiliate tags, social links | Edit the `WW2_CONFIG` block at the top of `assets/site.js` |
+| Rebuild the site search after adding or editing pages | `python3 tools/build-search-index.py` |
+| Add a reader build to the gallery | `python3 tools/add-gallery-entry.py --title "..." --builder "..." photo.jpg` (see the script header for all options) |
+| Add or correct paint colours (converter, My Stash, colour chips) | Edit `assets/paints.json` |
+| Add or correct markings-by-date rules | Edit `assets/tools/markings-data.js` |
+| Shared aircraft-page styles and scripts | `assets/paradise/` (one change updates all aircraft pages) |
+| Image credits for hosted Wikimedia photos | `image-credits.html` |
+
+Before publishing ads: in AdSense, turn on **Privacy & messaging → European regulations** so UK/EEA visitors see a consent message.

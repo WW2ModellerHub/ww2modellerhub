@@ -1,0 +1,11 @@
+/* Squadron/unit photo fix only — does not affect hero */
+.unit-card .unit-photo{
+  overflow:hidden;
+  background:#07111f;
+}
+.unit-card .unit-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
