@@ -9,7 +9,7 @@
   var listeners = [];
   var mem = null; // fallback when storage is blocked
 
-  function blank() { return { paints: { owned: {}, want: {} }, kits: [] }; }
+  function blank() { return { paints: { owned: {}, want: {} }, extra: [], kits: [] }; }
 
   function read() {
     try {
@@ -20,6 +20,7 @@
         d.paints.owned = d.paints.owned || {};
         d.paints.want = d.paints.want || {};
         d.kits = d.kits || [];
+        d.extra = d.extra || [];
         return d;
       }
     } catch (e) { if (mem) return mem; }
@@ -43,6 +44,13 @@
       write(d);
     },
     togglePaint: function (id, list) { api.setPaint(id, list, !api.hasPaint(id, list)); },
+    /* free-text shopping items, e.g. from an aircraft page paint list */
+    addExtra: function (text, from) {
+      var d = read();
+      if (d.extra.some(function (x) { return x.t === text; })) return false;
+      d.extra.push({ t: text, from: from || '' }); write(d); return true;
+    },
+    removeExtra: function (i) { var d = read(); d.extra.splice(i, 1); write(d); },
     addKit: function (k) {
       var d = read();
       k.id = 'k' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
