@@ -65,6 +65,16 @@ var WW2_CONFIG = {
       }
     }
 
+    /* Image credits link in every footer. */
+    var ft = document.querySelector('footer');
+    if (ft && !ft.querySelector('a[href$="image-credits.html"]')) {
+      var a2 = document.createElement('a');
+      a2.href = (location.pathname.indexOf('/404') === 0 ? '/' : '') + 'image-credits.html';
+      a2.textContent = 'Image credits';
+      a2.style.marginLeft = '.6rem';
+      ft.appendChild(a2);
+    }
+
     /* Social icons in the header: link them if configured, otherwise hide. */
     var map = { 'f': 'facebook', '◎': 'instagram', '▶': 'youtube' };
     document.querySelectorAll('.ww2-social').forEach(function (box) {
