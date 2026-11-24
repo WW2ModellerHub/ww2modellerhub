@@ -108,6 +108,16 @@ var WW2_CONFIG = {
       });
     }
   }
+
+  /* Paint colour chips in page text (loaded only when a page mentions a known colour). */
+  function loadSwatches() {
+    if (/paint-converter\.html|my-stash\.html/.test(location.pathname)) return;
+    var me = document.querySelector('script[src*="assets/site.js"]');
+    var sc = document.createElement('script'); sc.defer = true;
+    sc.src = (me ? me.src.replace(/assets\/site\.js.*$/, '') : '') + 'assets/tools/swatches.js';
+    document.body.appendChild(sc);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadSwatches); else loadSwatches();
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', onReady);
   else onReady();
 })();
